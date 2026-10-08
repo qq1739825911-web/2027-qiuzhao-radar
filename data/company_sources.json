@@ -104,5 +104,49 @@
     "trust": "high",
     "enabled": true,
     "notes": "官方校园招聘页面；公开职位列表可核验"
+  },
+  {
+    "id": "bytedance",
+    "company": "字节跳动",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://bytedance.jobs.feishu.cn/campus/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；公开职位与项目可核验"
+  },
+  {
+    "id": "xiaomi",
+    "company": "小米",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://hr.xiaomi.com/campus/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；仅采集公开可见字段"
+  },
+  {
+    "id": "pdd",
+    "company": "拼多多",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://careers.pddglobalhr.com/campus",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；2027届应届生招聘公开入口"
+  },
+  {
+    "id": "xiaopeng",
+    "company": "小鹏汽车",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://www.xiaopeng.com/join.html",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方招聘入口；后续细分校招职位"
   }
 ]
