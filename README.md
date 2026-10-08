@@ -74,3 +74,31 @@
 **招聘数据层 + 岗位搜索 + AI 匹配 + 投递管理 + 秋招信息提醒。**
 
 这也是这个项目作为个人作品集项目最有价值的地方。
+
+## V1.2：数据层正式搭起来
+
+这一版开始把项目从“前端页面”往“招聘信息产品”推进：
+
+- `data/jobs.json`：公开展示岗位库
+- `data/jobs.inbox.json`：新岗位待审核入口
+- `data/sources.json`：招聘信源目录
+- `scripts/normalize_jobs.py`：字段标准化
+- `scripts/dedupe_jobs.py`：岗位去重
+- `scripts/expire_jobs.py`：截止岗位状态维护
+- `scripts/check_sources.py`：公开信源可访问性检查
+- `.github/workflows/data-quality.yml`：每天自动运行数据质量任务
+- `docs/research-and-licenses.md`：记录参考的开源项目与许可证边界
+
+### 关于参考 GitHub 开源项目
+
+我们已经研究了多个成熟项目：包括 xixicc2027 的 2027 秋招聚合、OfferPilot AI、Career Agent、JobHunter。它们分别提供了“每日更新/交叉确认”“求职工作台”“GitHub Actions + 增量分析”“多源抓取 + 去重”等值得借鉴的思路。citeturn0search0turn0search2turn0search6turn0search4
+
+但不会直接把没有明确许可证的第三方代码或岗位数据库整包复制进来。V1.2 采用“研究架构 → 自己实现”的方式；对于 MIT/Apache-2.0 项目，未来如直接复用代码，会保留对应许可证和版权声明。
+
+### 下一步 V1.3
+
+V1.2 先把数据结构和自动维护底座搭好。下一步才开始接真正的数据采集器：
+
+**官方招聘页 / 允许使用的公开数据源 → 采集器 → inbox → 标准化 → 去重 → 过期判断 → 人工/规则核验 → jobs.json → GitHub Pages**
+
+这样以后岗位从几十条扩展到几百、几千条，网站本身不需要推倒重写。
