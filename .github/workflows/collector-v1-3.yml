@@ -6,6 +6,7 @@ on:
       - "scripts/collect_public_sources.py"
       - "scripts/publish_collected_jobs.py"
       - "data/company_sources.json"
+      - "data/jobs.json"
       - "index.html"
   workflow_dispatch:
   schedule:
