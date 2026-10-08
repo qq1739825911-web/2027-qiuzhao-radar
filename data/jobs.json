@@ -1,0 +1,5 @@
+[
+  {"id":1,"company":"牛客","title":"AI产品 / 产品运营 / AI应用","category":"产品 / 运营","city":"全国","enterprise_type":"互联网/科技","degree":"本科","deadline":"2026-12-31","publish_date":"2026-10-08","last_verified":"2026-10-08","source":"牛客","source_url":"https://www.nowcoder.com/","keywords":["AI","产品","大模型","运营"],"status":"source_entry","demo":true},
+  {"id":2,"company":"应届生求职网","title":"AIGC / 新媒体 / 运营 / 设计","category":"内容 / 新媒体","city":"全国","enterprise_type":"综合企业","degree":"本科","deadline":"2026-12-31","publish_date":"2026-10-08","last_verified":"2026-10-08","source":"应届生求职网","source_url":"https://www.yingjiesheng.com/","keywords":["新媒体","抖音","小红书","AIGC"],"status":"source_entry","demo":true},
+  {"id":3,"company":"BOSS直聘","title":"AI / 运营 / 电商 / 设计 / 技术","category":"综合岗位","city":"全国","enterprise_type":"综合企业","degree":"本科","deadline":"2026-12-31","publish_date":"2026-10-08","last_verified":"2026-10-08","source":"BOSS直聘","source_url":"https://www.zhipin.com/","keywords":["AI","运营","电商","产品","设计"],"status":"source_entry","demo":true}
+]
