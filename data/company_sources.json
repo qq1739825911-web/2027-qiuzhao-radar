@@ -1,0 +1,53 @@
+[
+  {
+    "id": "huawei",
+    "company": "华为",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校招职位列表；仅采集公开可见字段"
+  },
+  {
+    "id": "nowcoder",
+    "company": "牛客",
+    "type": "platform_entry",
+    "url": "https://www.nowcoder.com/",
+    "access": "public_entry",
+    "trust": "medium",
+    "enabled": false,
+    "notes": "暂作为信源入口，不做绕过登录/风控的抓取"
+  },
+  {
+    "id": "yingjiesheng",
+    "company": "应届生求职网",
+    "type": "platform_entry",
+    "url": "https://www.yingjiesheng.com/",
+    "access": "public_entry",
+    "trust": "medium",
+    "enabled": false,
+    "notes": "暂作为信源入口，后续按公开页面能力接入"
+  },
+  {
+    "id": "iguopin",
+    "company": "国聘",
+    "type": "official_portal",
+    "url": "https://www.iguopin.com/",
+    "access": "public_entry",
+    "trust": "high",
+    "enabled": false,
+    "notes": "后续研究公开数据接口/页面"
+  },
+  {
+    "id": "mohrss",
+    "company": "中国公共招聘网",
+    "type": "official_portal",
+    "url": "https://job.mohrss.gov.cn/",
+    "access": "public_entry",
+    "trust": "high",
+    "enabled": false,
+    "notes": "后续研究公开数据接口/页面"
+  }
+]
