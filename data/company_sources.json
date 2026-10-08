@@ -49,5 +49,60 @@
     "trust": "high",
     "enabled": false,
     "notes": "后续研究公开数据接口/页面"
+  },
+  {
+    "id": "tencent",
+    "company": "腾讯",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://careers.tencent.com/en-us/campusrecruit.html",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；仅采集公开可见字段"
+  },
+  {
+    "id": "alibaba",
+    "company": "阿里巴巴",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://campus-talent.alibaba.com/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；仅采集公开可见字段"
+  },
+  {
+    "id": "baidu",
+    "company": "百度",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://talent.baidu.com/jobs/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；仅采集公开可见字段"
+  },
+  {
+    "id": "meituan",
+    "company": "美团",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://zhaopin.meituan.com/web/campus/schedule",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；部分岗位招满可能提前结束"
+  },
+  {
+    "id": "nio",
+    "company": "蔚来",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://campus.nio.com/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "官方校园招聘页面；公开职位列表可核验"
   }
 ]
