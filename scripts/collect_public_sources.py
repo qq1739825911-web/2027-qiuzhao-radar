@@ -13,6 +13,7 @@ from datetime import date
 from html.parser import HTMLParser
 from urllib.parse import urljoin,urlparse,urlunparse
 from urllib.request import Request,urlopen
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT=Path(__file__).resolve().parents[1]
 REGISTRY=ROOT/"data/company_sources.json"; INBOX=ROOT/"data/jobs.inbox.json"; MANIFEST=ROOT/"data/collection-manifest.json"
@@ -49,7 +50,7 @@ class Parser(HTMLParser):
 
 def fetch(url):
     req=Request(url,headers=HEADERS)
-    with urlopen(req,timeout=25) as r:
+    with urlopen(req,timeout=10) as r:
         raw=r.read(4_000_000); enc=r.headers.get_content_charset() or "utf-8"; final=r.geturl()
     return raw.decode(enc,errors="ignore"),final
 
@@ -106,7 +107,7 @@ def table_records(company,source,parser,cohort):
 
 def collect_source(src):
     company,root=src["company"],src["url"]; queue=[root]; visited=set(); seen=set(); rows=[]
-    while queue and len(visited)<5 and len(rows)<500:
+    while queue and len(visited)<3 and len(rows)<300:
         page=queue.pop(0)
         cp=canonical(page)
         if cp in visited: continue
@@ -124,7 +125,7 @@ def collect_source(src):
             if sc<5: continue
             seen.add(href)
             rows.append(record(company,title,href,company+"官方招聘",cohort,sc))
-            if len(queue)<5 and len(visited)+len(queue)<5 and any(x.lower() in href.lower() for x in ROLE_HREF):
+            if len(queue)<3 and len(visited)+len(queue)<3 and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
     # de-dupe within source, preferring higher confidence
     best={}
@@ -136,12 +137,18 @@ def collect_source(src):
 sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
 enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
 all_rows=[]; results=[]; active=review=0
-for s in enabled:
-    rows,visited=collect_source(s); all_rows.extend(rows)
-    active+=sum(r["status"]=="active" for r in rows); review+=sum(r["status"]!="active" for r in rows)
-    results.append({"id":s["id"],"company":s["company"],"pages_visited":len(visited),"records_found":len(rows),
-                    "active_candidates":sum(r["status"]=="active" for r in rows),"pending_review":sum(r["status"]!="active" for r in rows)})
-    time.sleep(.1)
+with ThreadPoolExecutor(max_workers=min(8,len(enabled) or 1)) as pool:
+    futures={pool.submit(collect_source,s):s for s in enabled}
+    for fut in as_completed(futures):
+        s=futures[fut]
+        try: rows,visited=fut.result()
+        except Exception: rows,visited=[],set()
+        all_rows.extend(rows)
+        a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
+        active+=a; review+=rr
+        results.append({"id":s["id"],"company":s["company"],"pages_visited":len(visited),"records_found":len(rows),
+                        "active_candidates":a,"pending_review":rr})
+results.sort(key=lambda x:x["company"])
 INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
 MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"3.0","enabled_sources":len(enabled),
  "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
