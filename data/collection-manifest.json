@@ -1,0 +1,112 @@
+{
+  "run_date": "2026-10-08",
+  "collector_version": "2.0",
+  "enabled_sources": 17,
+  "records_found": 25,
+  "results": [
+    {
+      "id": "huawei",
+      "company": "华为",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "tencent",
+      "company": "腾讯",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "alibaba",
+      "company": "阿里巴巴",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "baidu",
+      "company": "百度",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "meituan",
+      "company": "美团",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "nio",
+      "company": "蔚来",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "bytedance",
+      "company": "字节跳动",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "xiaomi",
+      "company": "小米",
+      "pages_visited": 2,
+      "records_found": 1
+    },
+    {
+      "id": "pdd",
+      "company": "拼多多",
+      "pages_visited": 1,
+      "records_found": 1
+    },
+    {
+      "id": "xiaopeng",
+      "company": "小鹏汽车",
+      "pages_visited": 2,
+      "records_found": 1
+    },
+    {
+      "id": "boc",
+      "company": "中国银行",
+      "pages_visited": 3,
+      "records_found": 12
+    },
+    {
+      "id": "ccb",
+      "company": "中国建设银行",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "psbc",
+      "company": "中国邮政储蓄银行",
+      "pages_visited": 3,
+      "records_found": 9
+    },
+    {
+      "id": "cmb",
+      "company": "招商银行",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "icbc",
+      "company": "中国工商银行",
+      "pages_visited": 1,
+      "records_found": 0
+    },
+    {
+      "id": "cib",
+      "company": "兴业银行",
+      "pages_visited": 2,
+      "records_found": 1
+    },
+    {
+      "id": "citic",
+      "company": "中信银行",
+      "pages_visited": 1,
+      "records_found": 0
+    }
+  ],
+  "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
+  "granularity": "Prefer concrete job/listing links. Non-job program pages remain pending_review and are not silently promoted to active."
+}
