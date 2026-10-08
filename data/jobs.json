@@ -684,5 +684,181 @@
       "招商银行官方招聘入口"
     ],
     "cohort": "2027届"
+  },
+  {
+    "id": "icbc-2027-software-center",
+    "company": "中国工商银行",
+    "title": "软件开发中心2027年度校园招聘",
+    "category": "技术 / 软件 / 数据",
+    "city": "北京、上海、浙江、广东、陕西",
+    "enterprise_type": "国有大型商业银行",
+    "degree": "本科",
+    "publish_date": "2026-09-28",
+    "deadline": "2026-10-08",
+    "last_verified": "2026-10-08",
+    "source": "中国工商银行官方招聘公告",
+    "source_url": "https://career.hebut.edu.cn/home/correcruit/content/id/81349.html",
+    "keywords": [
+      "软件开发",
+      "科技菁英",
+      "系统运维",
+      "数据",
+      "人力资源"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中国工商银行官方招聘公告"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "cib-2027-head-office",
+    "company": "兴业银行",
+    "title": "总行2027校园招聘",
+    "category": "金融 / 银行 / 科技",
+    "city": "北京、上海、福州等",
+    "enterprise_type": "股份制商业银行",
+    "degree": "硕士及以上",
+    "publish_date": "2026-09-22",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "兴业银行官方招聘",
+    "source_url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html",
+    "keywords": [
+      "人工智能",
+      "运维",
+      "FinTech",
+      "投资交易",
+      "产品设计",
+      "数据分析",
+      "智能体",
+      "软件研发"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "兴业银行官方招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "citi-2027-campus",
+    "company": "中信银行",
+    "title": "2027年校园招聘",
+    "category": "金融 / 银行 / 综合",
+    "city": "全国",
+    "enterprise_type": "股份制商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-01",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中信银行校园招聘公告",
+    "source_url": "https://career.nankai.edu.cn/correcruit/content/id/117681.html",
+    "keywords": [
+      "金融",
+      "管理",
+      "法学",
+      "理学",
+      "工学",
+      "银行",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中信银行校园招聘公告"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "ccb-2027-subsidiaries",
+    "company": "中国建设银行",
+    "title": "综合化经营子公司2027年度校园招聘",
+    "category": "金融 / 基金 / 保险 / 科技",
+    "city": "全国",
+    "enterprise_type": "国有大型商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-04",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国建设银行官方招聘",
+    "source_url": "https://job1.ccb.com/cn/job/announcement.html?annoId=20260904115022720661&planType=XY",
+    "keywords": [
+      "基金",
+      "金融租赁",
+      "保险",
+      "期货",
+      "养老金",
+      "科技",
+      "研究",
+      "管理培训生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中国建设银行官方招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "ccb-2027-direct-org",
+    "company": "中国建设银行",
+    "title": "总行直属机构2027年度校园招聘",
+    "category": "金融 / 科技 / 数据 / 运营",
+    "city": "北京、广州、天津、合肥、上海等",
+    "enterprise_type": "国有大型商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-04",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国建设银行官方招聘",
+    "source_url": "https://job1.ccb.com/cn/job/announcement.html?annoId=20260904110808720852&isImpAnno=1&planType=XY",
+    "keywords": [
+      "数据运营",
+      "业务需求研发",
+      "金融科技",
+      "大数据",
+      "电子银行",
+      "平台运营",
+      "智能银行"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中国建设银行官方招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "cmb-2027-campus-detail",
+    "company": "招商银行",
+    "title": "总行、分行及子公司2027校园招聘",
+    "category": "金融 / AI / 产品 / 运营 / 技术",
+    "city": "全国",
+    "enterprise_type": "股份制商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-08-31",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "招商银行校园招聘公告",
+    "source_url": "https://career.nankai.edu.cn/correcruit/content/id/117199.html",
+    "keywords": [
+      "AI",
+      "大模型",
+      "系统研发",
+      "智能运维",
+      "产品经理",
+      "用户增长",
+      "品牌传播",
+      "数据分析",
+      "软件开发"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "招商银行校园招聘公告"
+    ],
+    "cohort": "2027届"
   }
 ]
