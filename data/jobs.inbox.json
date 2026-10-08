@@ -1,0 +1,17 @@
+[
+  {
+    "company":"示例岗位（待审核）",
+    "title":"请将新岗位放在这里",
+    "category":"待分类",
+    "city":"全国",
+    "enterprise_type":"待核验",
+    "degree":"不限",
+    "publish_date":"2026-10-08",
+    "deadline":null,
+    "source":"待审核",
+    "source_url":"",
+    "last_verified":"2026-10-08",
+    "keywords":[],
+    "status":"pending_review"
+  }
+]
