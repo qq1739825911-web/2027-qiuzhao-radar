@@ -514,5 +514,62 @@
       "蔚来校园招聘"
     ],
     "cohort": "2027届"
+  },
+  {
+    "id": "bytedance-2027-seed",
+    "company": "字节跳动 Seed",
+    "title": "2027届大模型人才校招",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、上海、深圳、杭州、新加坡、圣何塞、西雅图",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-04-01",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "字节跳动官方招聘",
+    "source_url": "https://seed.bytedance.com/zh/seedearlycareer",
+    "keywords": [
+      "大模型",
+      "机器学习",
+      "视觉智能",
+      "语音智能",
+      "AI搜索",
+      "具身智能",
+      "AI应用"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "字节跳动官方招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "pdd-2027-campus",
+    "company": "拼多多",
+    "title": "2027届校园招聘",
+    "category": "综合 / 电商 / 技术",
+    "city": "中国",
+    "enterprise_type": "民营/互联网电商",
+    "degree": "2027届应届生",
+    "publish_date": "2026-08-01",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "拼多多官方校园招聘",
+    "source_url": "https://careers.pddglobalhr.com/campus",
+    "keywords": [
+      "研发",
+      "管培生",
+      "区域业务",
+      "仓储",
+      "电商",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "拼多多官方校园招聘"
+    ],
+    "cohort": "2027届"
   }
 ]
