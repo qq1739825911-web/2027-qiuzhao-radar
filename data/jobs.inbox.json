@@ -1,51 +1,5 @@
 [
   {
-    "id": "auto-cc099fb7999846cd",
-    "company": "小米",
-    "title": "招聘项目",
-    "category": "人力资源",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "小米官方招聘",
-    "source_url": "https://hr.xiaomi.com/website/campus.html",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "小米官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-98904168334cc834",
-    "company": "拼多多",
-    "title": "拼多多集团 - PDD 校园招聘",
-    "category": "人力资源",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "拼多多官方招聘",
-    "source_url": "https://careers.pddglobalhr.com/campus",
-    "keywords": [
-      "PDD"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "拼多多官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
     "id": "auto-9c5426473905f0a8",
     "company": "小鹏汽车",
     "title": "大客户销售",
@@ -53,256 +7,42 @@
     "city": "全国",
     "enterprise_type": "待核验",
     "degree": "待核验",
+    "salary": "",
     "publish_date": "",
     "deadline": "",
     "last_verified": "2026-10-08",
     "source": "小鹏汽车官方招聘",
     "source_url": "https://www.xiaopeng.com/fleet_sales.html",
-    "keywords": [],
+    "keywords": [
+      "大客户销售"
+    ],
     "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "小鹏汽车官方公开页面"
     ],
     "cohort": "2027届",
-    "collector": "public-html-v2"
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
   },
   {
-    "id": "auto-4a191930192aa8f6",
+    "id": "auto-717632bb987eceba",
     "company": "中国银行",
-    "title": "信用卡产品",
-    "category": "产品 / 运营",
+    "title": "金融市场",
+    "category": "销售 / 商务 / 营销",
     "city": "全国",
     "enterprise_type": "待核验",
     "degree": "待核验",
+    "salary": "",
     "publish_date": "",
     "deadline": "",
     "last_verified": "2026-10-08",
     "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/bcservice/bc1",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-4136cb98246720e7",
-    "company": "中国银行",
-    "title": "借记卡产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/bcservice/bc2",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-a24099978636c103",
-    "company": "中国银行",
-    "title": "自营理财产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/cs8",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-5107fefbc6a49c7a",
-    "company": "中国银行",
-    "title": "子公司理财产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/bocwm",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-ea9dc10456e3fe5c",
-    "company": "中国银行",
-    "title": "托管理财产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/fp5",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-e83cb43a5dde1a73",
-    "company": "中国银行",
-    "title": "代销理财产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/fp6",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-285531b403236c70",
-    "company": "中国银行",
-    "title": "托管基金产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/fund",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-e2deb14fd917cc07",
-    "company": "中国银行",
-    "title": "柜台债券产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/fp3",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-f43ff0ab1f5a9c83",
-    "company": "中国银行",
-    "title": "代销基金产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/fp2",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-e98f69b63cf1d5ac",
-    "company": "中国银行",
-    "title": "代理保险产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/fimarkets/fp4",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-a307c79b68d33c96",
-    "company": "中国银行",
-    "title": "中银淘宝校园卡(2017年4月26日截止发行)",
-    "category": "综合 / 校园招聘",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/bcservice/bc1/bc14/201010/t20101028_1182669.html",
+    "source_url": "https://www.boc.cn/fimarkets",
     "keywords": [
-      "2017",
-      "26"
+      "金融市场"
     ],
     "status": "pending_review",
     "demo": false,
@@ -310,248 +50,289 @@
       "中国银行官方公开页面"
     ],
     "cohort": "2027届",
-    "collector": "public-html-v2"
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
   },
   {
-    "id": "auto-99e4e04804681016",
+    "id": "auto-4cd739d663d3917e",
     "company": "中国银行",
-    "title": "长城校园卡",
-    "category": "综合 / 校园招聘",
+    "title": "公司金融市场服务",
+    "category": "销售 / 商务 / 营销",
     "city": "全国",
     "enterprise_type": "待核验",
     "degree": "待核验",
+    "salary": "",
     "publish_date": "",
     "deadline": "",
     "last_verified": "2026-10-08",
     "source": "中国银行官方招聘",
-    "source_url": "https://www.boc.cn/bcservice/bc2/201410/t20141024_4051274.html",
-    "keywords": [],
+    "source_url": "https://www.boc.cn/cbservice/cb4",
+    "keywords": [
+      "公司金融市场服务"
+    ],
     "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "中国银行官方公开页面"
     ],
     "cohort": "2027届",
-    "collector": "public-html-v2"
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
   },
   {
-    "id": "auto-d310e2617d3e60aa",
-    "company": "中国邮政储蓄银行",
-    "title": "人才招聘",
-    "category": "人力资源",
+    "id": "auto-58edafb9c61b2fa4",
+    "company": "中国银行",
+    "title": "外汇市场分析",
+    "category": "销售 / 商务 / 营销",
     "city": "全国",
     "enterprise_type": "待核验",
     "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘",
+    "source_url": "https://www.boc.cn/fimarkets/foreignx",
+    "keywords": [
+      "外汇市场分析"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-ba54c3a1e932bbdc",
+    "company": "中国银行",
+    "title": "黄金市场分析",
+    "category": "销售 / 商务 / 营销",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘",
+    "source_url": "https://www.boc.cn/fimarkets/fm7",
+    "keywords": [
+      "黄金市场分析"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-dc47dc91ae63b9bc",
+    "company": "中国银行",
+    "title": "债券市场分析",
+    "category": "销售 / 商务 / 营销",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘",
+    "source_url": "https://www.boc.cn/fimarkets/boud",
+    "keywords": [
+      "债券市场分析"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-96ba3cef860d15d2",
+    "company": "中国银行",
+    "title": "安全防护",
+    "category": "综合 / 校园招聘",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘",
+    "source_url": "https://www.boc.cn/ebanking/security",
+    "keywords": [
+      "安全防护"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f461fa0e8a1a4279",
+    "company": "中国银行",
+    "title": "财务报告",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘",
+    "source_url": "https://www.boc.cn/investor/ir3",
+    "keywords": [
+      "财务报告"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-3c1adb0ea217d5da",
+    "company": "中国银行",
+    "title": "资本市场荣誉",
+    "category": "销售 / 商务 / 营销",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘",
+    "source_url": "https://www.boc.cn/investor/ir8",
+    "keywords": [
+      "资本市场荣誉"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-fe4c0232e36aa91d",
+    "company": "中国邮政储蓄银行",
+    "title": "财务信息",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
     "publish_date": "",
     "deadline": "",
     "last_verified": "2026-10-08",
     "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/rczp",
-    "keywords": [],
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx",
+    "keywords": [
+      "财务信息"
+    ],
     "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "中国邮政储蓄银行官方公开页面"
     ],
     "cohort": "2027届",
-    "collector": "public-html-v2"
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
   },
   {
-    "id": "auto-5d1d2d0a62a1acf4",
+    "id": "auto-b2f70fbb457cd27f",
     "company": "中国邮政储蓄银行",
-    "title": "产品服务",
-    "category": "产品 / 运营",
+    "title": "财务概要",
+    "category": "金融 / 银行",
     "city": "全国",
     "enterprise_type": "待核验",
     "degree": "待核验",
+    "salary": "",
     "publish_date": "",
     "deadline": "",
     "last_verified": "2026-10-08",
     "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gsfw/cpfw",
-    "keywords": [],
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwgy",
+    "keywords": [
+      "财务概要"
+    ],
     "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "中国邮政储蓄银行官方公开页面"
     ],
     "cohort": "2027届",
-    "collector": "public-html-v2"
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
   },
   {
-    "id": "auto-1894f9a78f949bee",
+    "id": "auto-71a8da90b4b6633e",
     "company": "中国邮政储蓄银行",
-    "title": "小企业信贷产品",
-    "category": "产品 / 运营",
+    "title": "财务报告",
+    "category": "金融 / 银行",
     "city": "全国",
     "enterprise_type": "待核验",
     "degree": "待核验",
+    "salary": "",
     "publish_date": "",
     "deadline": "",
     "last_verified": "2026-10-08",
     "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/xqyfw/xqyxdcp",
-    "keywords": [],
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwbg",
+    "keywords": [
+      "财务报告"
+    ],
     "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "中国邮政储蓄银行官方公开页面"
     ],
     "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-b5dbd1e2ec24c226",
-    "company": "中国邮政储蓄银行",
-    "title": "地区特色产品",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/snfw/sngrfw/dqtscp",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-666158c797fcaa50",
-    "company": "中国邮政储蓄银行",
-    "title": "校园招聘",
-    "category": "人力资源",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/rczp/xyzp",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-429ec565e393ac75",
-    "company": "中国邮政储蓄银行",
-    "title": "产品推荐",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/ycfm/spzq/zdcp",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-42115c640646053b",
-    "company": "中国邮政储蓄银行",
-    "title": "社会招聘",
-    "category": "人力资源",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/rczp/shzp",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-c81d6242dfdc8b45",
-    "company": "中国邮政储蓄银行",
-    "title": "其他招聘",
-    "category": "人力资源",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/rczp/qtzp",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-55d1fb61bd4ac2cd",
-    "company": "中国邮政储蓄银行",
-    "title": "金融产品和服务标准自我声明",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/qybzzwsm/jrcphfwbzzwsm",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
-  },
-  {
-    "id": "auto-1af4725b75da3dd2",
-    "company": "兴业银行",
-    "title": "招聘启事",
-    "category": "人力资源",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-08",
-    "source": "兴业银行官方招聘",
-    "source_url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/index.html",
-    "keywords": [],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "兴业银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "collector": "public-html-v2"
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
   }
 ]
