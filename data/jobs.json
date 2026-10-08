@@ -571,5 +571,118 @@
       "拼多多官方校园招聘"
     ],
     "cohort": "2027届"
+  },
+  {
+    "id": "boc-2027-campus",
+    "company": "中国银行",
+    "title": "2027年全球校园招聘",
+    "category": "金融 / 银行",
+    "city": "全国及海外",
+    "enterprise_type": "国有大型商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-03",
+    "deadline": "2026-10-09",
+    "last_verified": "2026-10-08",
+    "source": "中国银行官方招聘公告",
+    "source_url": "https://www.boc.cn/aboutboc/bi4/202609/t20260903_25689311.html",
+    "keywords": [
+      "银行",
+      "金融",
+      "信息科技",
+      "业务发展",
+      "金融市场",
+      "风险合规",
+      "综合管理",
+      "全球化"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中国银行官方招聘公告"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "ccb-2027-head-office",
+    "company": "中国建设银行",
+    "title": "总行2027年度校园招聘",
+    "category": "金融 / 银行",
+    "city": "北京、上海",
+    "enterprise_type": "国有大型商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-04",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国建设银行官方招聘",
+    "source_url": "https://job.ccb.com/cn/job/announcement.html?annoId=20260903163254718082",
+    "keywords": [
+      "银行",
+      "金融",
+      "科技金融",
+      "风险管理",
+      "数字金融"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中国建设银行官方招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "psbc-2027-campus",
+    "company": "中国邮政储蓄银行",
+    "title": "2027年度校园招聘",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "国有大型商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-07",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/rczp/xyzp/202609/t20260907_460394.html",
+    "keywords": [
+      "银行",
+      "金融",
+      "总行",
+      "分行",
+      "信用卡",
+      "综合管理"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "cmb-2027-campus",
+    "company": "招商银行",
+    "title": "2027秋季校园招聘",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "股份制商业银行",
+    "degree": "本科 / 硕士 / 博士",
+    "publish_date": "2026-09-02",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "招商银行官方招聘入口",
+    "source_url": "https://career.cmbchina.com/",
+    "keywords": [
+      "银行",
+      "市场营销",
+      "运营",
+      "信息技术",
+      "金融",
+      "管培生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "招商银行官方招聘入口"
+    ],
+    "cohort": "2027届"
   }
 ]
