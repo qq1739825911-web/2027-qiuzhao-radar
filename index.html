@@ -28,15 +28,26 @@ a{color:inherit}.top{height:64px;background:#101522;color:#fff;display:flex;alig
 </section>
 </main><div class="footer">2027秋招雷达 V1.1 · GitHub Pages · 数据仅作信息整理工具，不代表任何企业招聘承诺。</div>
 <script>
-const DATA=[
-{id:1,company:"牛客",title:"AI产品 / 产品运营 / AI应用",category:"产品 / 运营",city:"全国",type:"互联网/科技",degree:"本科",deadline:"2026-12-31",publish_date:"2026-10-08",last_verified:"2026-10-08",source:"牛客",url:"https://www.nowcoder.com/",keywords:"AI 产品 大模型 运营",demo:true},
-{id:2,company:"应届生求职网",title:"AIGC / 新媒体 / 运营 / 设计",category:"内容 / 新媒体",city:"全国",type:"综合企业",degree:"本科",deadline:"2026-12-31",publish_date:"2026-10-08",last_verified:"2026-10-08",source:"应届生求职网",url:"https://www.yingjiesheng.com/",keywords:"新媒体 抖音 小红书 AIGC",demo:true},
-{id:3,company:"BOSS直聘",title:"AI / 运营 / 电商 / 设计 / 技术",category:"综合岗位",city:"全国",type:"综合企业",degree:"本科",deadline:"2026-12-31",publish_date:"2026-10-08",last_verified:"2026-10-08",source:"BOSS直聘",url:"https://www.zhipin.com/",keywords:"AI 运营 电商 产品 设计",demo:true},
-{id:4,company:"示例科技公司",title:"AI产品运营（演示）",category:"产品 / 运营",city:"杭州",type:"民营/中型企业",degree:"本科",deadline:"2026-10-12",publish_date:"2026-10-07",last_verified:"2026-10-08",source:"演示数据",url:"#",keywords:"AI 产品运营 数据分析",demo:true},
-{id:5,company:"示例品牌公司",title:"AI新媒体运营（演示）",category:"内容 / 新媒体",city:"上海",type:"民营/中小企业",degree:"本科",deadline:"2026-10-15",publish_date:"2026-10-07",last_verified:"2026-10-08",source:"演示数据",url:"#",keywords:"AI 新媒体 短视频",demo:true},
-{id:6,company:"示例视觉公司",title:"AIGC视觉设计师（演示）",category:"设计 / 视觉",city:"广州",type:"民营/小型企业",degree:"本科",deadline:"2026-10-20",publish_date:"2026-10-05",last_verified:"2026-10-08",source:"演示数据",url:"#",keywords:"视觉 AIGC 平面 品牌",demo:true},
-{id:7,company:"示例软件公司",title:"AI应用开发（演示）",category:"技术 / 开发",city:"深圳",type:"创业公司",degree:"本科",deadline:"2026-10-30",publish_date:"2026-10-04",last_verified:"2026-10-08",source:"演示数据",url:"#",keywords:"Python AI Agent",demo:true}
-];
+let DATA=[];
+async function loadData(){
+  try{
+    const r=await fetch("data/jobs.json?ts="+Date.now(),{cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const rows=await r.json();
+    DATA=rows.map(x=>({
+      id:x.id,company:x.company,title:x.title,category:x.category||x.industry||"其他",
+      city:Array.isArray(x.locations)?x.locations.join("、"):(x.city||"全国"),
+      type:x.enterprise_type||x.company_type||"未分类",degree:x.degree||"不限",
+      deadline:x.deadline||"2099-12-31",publish_date:x.publish_date||x.first_seen||"",
+      last_verified:x.last_verified||x.last_seen||"",source:x.source||"待核验",
+      url:x.source_url||x.apply_url||"#",keywords:Array.isArray(x.keywords)?x.keywords.join(" "):(x.keywords||""),
+      demo:!!x.demo,status:x.status||"active"
+    }));
+  }catch(e){
+    console.error("岗位数据加载失败",e);
+    DATA=[];
+  }
+}
 const SOURCES=[
 ["牛客","综合校招/互联网/技术/产品","https://www.nowcoder.com/"],
 ["应届生求职网","全专业校招信息","https://www.yingjiesheng.com/"],
@@ -56,5 +67,5 @@ function renderBoard(){let a=DATA.filter(x=>fav.includes(x.id));$("board").inner
 function renderProfile(){$("profile").innerHTML='<div class="grid2"><div><h3>求职画像（本地保存）</h3><p class="muted">填写后仅保存在当前浏览器，用于下一阶段 AI 匹配功能。</p><div class="list"><input id="major" class="input" placeholder="专业，如：视觉传达设计"><input id="skills" class="input" placeholder="技能，如：AIGC / 新媒体 / PS / 剪映"><input id="cities" class="input" placeholder="期望城市，如：上海 / 杭州 / 深圳"><select id="degree" class="select"><option>本科</option><option>硕士</option><option>博士</option></select><button class="primary" id="saveProfile">保存求职画像</button></div></div><div><h3>下一版匹配逻辑</h3><div class="list"><div class="item"><span>专业匹配</span><b>待接入</b></div><div class="item"><span>技能匹配</span><b>待接入</b></div><div class="item"><span>城市偏好</span><b>待接入</b></div><div class="item"><span>岗位门槛/学历</span><b>待接入</b></div></div></div></div>';let p=JSON.parse(localStorage.getItem("radar_profile")||"{}");["major","skills","cities","degree"].forEach(k=>{if(p[k])$(k).value=p[k]});$("saveProfile").onclick=()=>{let p={major:$("major").value,skills:$("skills").value,cities:$("cities").value,degree:$("degree").value};localStorage.setItem("radar_profile",JSON.stringify(p));$("saveProfile").textContent="已保存 ✓";setTimeout(()=>$("saveProfile").textContent="保存求职画像",1200)}}
 function renderSources(){$("sources").innerHTML='<div class="list">'+SOURCES.map(s=>'<div class="item"><div><b>'+s[0]+'</b><div class="muted">'+s[1]+'</div></div><a class="source" target="_blank" rel="noopener" href="'+s[2]+'">打开信源 →</a></div>').join("")+'</div>'}
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));t.classList.add("on");["jobs","board","profile","sources"].forEach(x=>$(x).style.display=x===t.dataset.tab?"block":"none");if(t.dataset.tab==="board")renderBoard();if(t.dataset.tab==="profile")renderProfile();if(t.dataset.tab==="sources")renderSources()});
-["q","cat","city","type","status"].forEach(id=>$(id).addEventListener("input",render));$("reset").onclick=()=>{["q","cat","city","type","status"].forEach(id=>$(id).value="");render()};setup();render();
+["q","cat","city","type","status"].forEach(id=>$(id).addEventListener("input",render));$("reset").onclick=()=>{["q","cat","city","type","status"].forEach(id=>$(id).value="");render()};loadData().then(()=>{setup();render();});
 </script></body></html>
