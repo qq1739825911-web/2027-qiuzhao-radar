@@ -3,7 +3,7 @@ name: public-source-collector
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 0 * * *"
+    - cron: "15 */6 * * *"
 
 permissions:
   contents: write
@@ -11,19 +11,24 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build source manifest
+      - name: Collect public official sources
         run: python scripts/collect_public_sources.py
-      - name: Validate current data
+      - name: Merge collected records
+        run: python scripts/publish_collected_jobs.py
+      - name: Validate
         run: python scripts/validate_jobs.py
-      - name: Commit manifest if changed
+      - name: Deduplicate
+        run: python scripts/dedupe_jobs.py
+      - name: Commit collected data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/collection-manifest.json
-          git diff --cached --quiet || git commit -m "chore: refresh source collection manifest"
+          git add data/jobs.inbox.json data/jobs.json data/collection-manifest.json
+          git diff --cached --quiet || git commit -m "chore: collect public 2027 campus jobs"
           git push
