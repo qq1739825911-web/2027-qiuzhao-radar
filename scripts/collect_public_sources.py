@@ -42,7 +42,7 @@ def fetch(url):
     return raw.decode(enc,errors="ignore"),r.geturl()
 
 def clean(s):
-    return re.sub(r"\\s+"," ",re.sub(r"<[^>]+>"," ",s or "")).strip()
+    return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",s or "")).strip()
 
 def same_host(a,b):
     return urlparse(a).netloc.lower()==urlparse(b).netloc.lower()
@@ -67,7 +67,7 @@ def infer_category(title):
     return "综合 / 校园招聘"
 
 def extract_year(text):
-    m=re.search(r"(20\\d{2})届",text or "")
+    m=re.search(r"(20\d{2})届",text or "")
     return m.group(1)+"届" if m else "2027届"
 
 def make_id(company,title,url):
