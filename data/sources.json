@@ -1,0 +1,7 @@
+[
+  {"id":"nowcoder","name":"牛客","type":"job_platform","access":"public_entry","url":"https://www.nowcoder.com/","trust":"medium"},
+  {"id":"yingjiesheng","name":"应届生求职网","type":"job_platform","access":"public_entry","url":"https://www.yingjiesheng.com/","trust":"medium"},
+  {"id":"boss","name":"BOSS直聘","type":"job_platform","access":"public_entry","url":"https://www.zhipin.com/","trust":"medium"},
+  {"id":"iguopin","name":"国聘","type":"official_portal","access":"public_entry","url":"https://www.iguopin.com/","trust":"high"},
+  {"id":"mohrss","name":"中国公共招聘网","type":"official_portal","access":"public_entry","url":"https://job.mohrss.gov.cn/","trust":"high"}
+]
