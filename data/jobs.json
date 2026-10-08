@@ -1726,5 +1726,349 @@
     "collector": "public-html-v3",
     "granularity": "review",
     "verification_score": 5
+  },
+  {
+    "id": "huawei-2027-hardware",
+    "company": "华为",
+    "title": "硬件技术工程师",
+    "category": "技术 / 硬件",
+    "city": "苏州、东莞、南京、西安、杭州、成都、武汉、北京、上海、合肥、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "华为官方招聘",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "硬件技术工程师"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "huawei-2027-materials",
+    "company": "华为",
+    "title": "结构与材料工程师",
+    "category": "技术 / 工程",
+    "city": "苏州、东莞、南京、西安、杭州、成都、武汉、北京、上海、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "华为官方招聘",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "结构与材料工程师"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "huawei-2027-thermal",
+    "company": "华为",
+    "title": "热设计工程师",
+    "category": "技术 / 工程",
+    "city": "苏州、东莞、南京、西安、杭州、成都、武汉、北京、上海、合肥、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "华为官方招聘",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "热设计工程师"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "huawei-2027-chip",
+    "company": "华为",
+    "title": "芯片与器件设计工程师",
+    "category": "技术 / 芯片",
+    "city": "苏州、东莞、南京、西安、杭州、成都、武汉、北京、上海、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "华为官方招聘",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "芯片与器件设计工程师"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-network-rd",
+    "company": "百度",
+    "title": "网络研发工程师(J100700)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-08-05",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISHMHJ&recruitType=GRADUATE",
+    "keywords": [
+      "网络研发工程师",
+      "J100700"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-backend",
+    "company": "百度",
+    "title": "后端开发工程师(J100737)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-07-21",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISHMHJ&recruitType=GRADUATE",
+    "keywords": [
+      "后端开发工程师",
+      "J100737"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-ai-pm",
+    "company": "百度",
+    "title": "AI产品经理(J100665)",
+    "category": "产品 / 运营",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-07-21",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISHMHJ&recruitType=GRADUATE",
+    "keywords": [
+      "AI产品经理",
+      "J100665"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-agent",
+    "company": "百度",
+    "title": "智能体算法工程师(J101017)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-07-21",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISHMHJ&recruitType=GRADUATE",
+    "keywords": [
+      "智能体算法工程师",
+      "J101017"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-llm",
+    "company": "百度",
+    "title": "大模型算法工程师(J100728)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-07-21",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISHMHJ&recruitType=GRADUATE",
+    "keywords": [
+      "大模型算法工程师",
+      "J100728"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-hr",
+    "company": "百度",
+    "title": "人力资源专员(J105970)",
+    "category": "人力资源",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-09-20",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISSNBG&recruitType=GRADUATE",
+    "keywords": [
+      "人力资源专员",
+      "J105970"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-ai-network",
+    "company": "百度",
+    "title": "AI网络工程师(J104899)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-09-10",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度官方招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISSNBG&recruitType=GRADUATE",
+    "keywords": [
+      "AI网络工程师",
+      "J104899"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "alibaba-2027-agent-infra",
+    "company": "阿里巴巴",
+    "title": "Agent Infra工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、广州、杭州、上海、深圳",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "2027届应届生",
+    "salary": "",
+    "publish_date": "2026-09-03",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "阿里巴巴官方招聘",
+    "source_url": "https://campus-talent.alibaba.com/campus/position/199907640058?deptCodes=UGWZCC%2C0NZ8T6%2CJOQMU5%2C23DWTR%2CAT1LW3%2C9SQM5Z",
+    "keywords": [
+      "Agent",
+      "Infra工程师"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "阿里巴巴官方招聘"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘",
+    "collector": "official-manual-v1",
+    "granularity": "job",
+    "verification_score": 9
   }
 ]
