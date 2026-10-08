@@ -1,1 +1,41 @@
-{"version":"1.0","job_fields":["company","title","category","city","enterprise_type","degree","salary","publish_date","deadline","source","source_url","last_verified","keywords","description"]}
+{
+  "version": "1.2",
+  "job_fields": [
+    "id",
+    "company",
+    "title",
+    "category",
+    "city",
+    "enterprise_type",
+    "degree",
+    "salary",
+    "publish_date",
+    "deadline",
+    "source",
+    "source_url",
+    "last_verified",
+    "keywords",
+    "status",
+    "cohort",
+    "batch",
+    "first_seen",
+    "last_seen",
+    "confirmed_by",
+    "program"
+  ],
+  "statuses": [
+    "active",
+    "pending_review",
+    "expired",
+    "source_entry"
+  ],
+  "data_pipeline": [
+    "source",
+    "inbox",
+    "normalize",
+    "dedupe",
+    "expiry",
+    "validate",
+    "publish"
+  ]
+}
