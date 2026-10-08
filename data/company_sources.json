@@ -192,5 +192,38 @@
     "trust": "high",
     "enabled": true,
     "notes": "官方校园招聘入口；各分行岗位单独发布"
+  },
+  {
+    "id": "icbc",
+    "company": "中国工商银行",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://www.icbc.com.cn/ICBC/%E7%BD%91%E4%B8%8A%E4%BA%BA%E6%89%8D%E6%8B%9B%E8%81%98/default.htm",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "软件开发中心2027校招公告可公开核验"
+  },
+  {
+    "id": "cib",
+    "company": "兴业银行",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "总行2027校园招聘公告"
+  },
+  {
+    "id": "citic",
+    "company": "中信银行",
+    "type": "official_campus",
+    "cohort": "2027届",
+    "url": "https://career.citicbank.com/",
+    "access": "public",
+    "trust": "high",
+    "enabled": true,
+    "notes": "2027校园招聘公开公告"
   }
 ]
