@@ -1,5 +1,323 @@
 [
-  {"id":1,"company":"牛客","title":"AI产品 / 产品运营 / AI应用","category":"产品 / 运营","city":"全国","enterprise_type":"互联网/科技","degree":"本科","deadline":"2026-12-31","publish_date":"2026-10-08","last_verified":"2026-10-08","source":"牛客","source_url":"https://www.nowcoder.com/","keywords":["AI","产品","大模型","运营"],"status":"source_entry","demo":true},
-  {"id":2,"company":"应届生求职网","title":"AIGC / 新媒体 / 运营 / 设计","category":"内容 / 新媒体","city":"全国","enterprise_type":"综合企业","degree":"本科","deadline":"2026-12-31","publish_date":"2026-10-08","last_verified":"2026-10-08","source":"应届生求职网","source_url":"https://www.yingjiesheng.com/","keywords":["新媒体","抖音","小红书","AIGC"],"status":"source_entry","demo":true},
-  {"id":3,"company":"BOSS直聘","title":"AI / 运营 / 电商 / 设计 / 技术","category":"综合岗位","city":"全国","enterprise_type":"综合企业","degree":"本科","deadline":"2026-12-31","publish_date":"2026-10-08","last_verified":"2026-10-08","source":"BOSS直聘","source_url":"https://www.zhipin.com/","keywords":["AI","运营","电商","产品","设计"],"status":"source_entry","demo":true}
+  {
+    "id": 1,
+    "company": "牛客",
+    "title": "AI产品 / 产品运营 / AI应用",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "互联网/科技",
+    "degree": "本科",
+    "deadline": "2026-12-31",
+    "publish_date": "2026-10-08",
+    "last_verified": "2026-10-08",
+    "source": "牛客",
+    "source_url": "https://www.nowcoder.com/",
+    "keywords": [
+      "AI",
+      "产品",
+      "大模型",
+      "运营"
+    ],
+    "status": "source_entry",
+    "demo": true
+  },
+  {
+    "id": 2,
+    "company": "应届生求职网",
+    "title": "AIGC / 新媒体 / 运营 / 设计",
+    "category": "内容 / 新媒体",
+    "city": "全国",
+    "enterprise_type": "综合企业",
+    "degree": "本科",
+    "deadline": "2026-12-31",
+    "publish_date": "2026-10-08",
+    "last_verified": "2026-10-08",
+    "source": "应届生求职网",
+    "source_url": "https://www.yingjiesheng.com/",
+    "keywords": [
+      "新媒体",
+      "抖音",
+      "小红书",
+      "AIGC"
+    ],
+    "status": "source_entry",
+    "demo": true
+  },
+  {
+    "id": 3,
+    "company": "BOSS直聘",
+    "title": "AI / 运营 / 电商 / 设计 / 技术",
+    "category": "综合岗位",
+    "city": "全国",
+    "enterprise_type": "综合企业",
+    "degree": "本科",
+    "deadline": "2026-12-31",
+    "publish_date": "2026-10-08",
+    "last_verified": "2026-10-08",
+    "source": "BOSS直聘",
+    "source_url": "https://www.zhipin.com/",
+    "keywords": [
+      "AI",
+      "运营",
+      "电商",
+      "产品",
+      "设计"
+    ],
+    "status": "source_entry",
+    "demo": true
+  },
+  {
+    "id": "huawei-2027-ai-infra",
+    "company": "华为",
+    "title": "AI Infra工程师",
+    "category": "技术 / AI",
+    "city": "苏州、杭州、北京、长沙、济南、东莞、南京、西安、成都、武汉、上海、合肥、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "AI",
+      "Infra",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-ai-app",
+    "company": "华为",
+    "title": "AI应用工程师",
+    "category": "技术 / AI",
+    "city": "苏州、济南、东莞、南京、西安、杭州、成都、武汉、北京、长沙、上海、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "AI",
+      "应用",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-ai-model",
+    "company": "华为",
+    "title": "AI模型工程师",
+    "category": "技术 / AI",
+    "city": "苏州、杭州、北京、长沙、济南、东莞、南京、西安、成都、武汉、上海、合肥、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "AI",
+      "模型",
+      "大模型",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-ai-security",
+    "company": "华为",
+    "title": "AI安全与隐私工程师",
+    "category": "技术 / AI",
+    "city": "苏州、济南、东莞、南京、西安、杭州、成都、武汉、北京、长沙、上海、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "AI安全",
+      "隐私",
+      "安全",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-software",
+    "company": "华为",
+    "title": "软件开发工程师",
+    "category": "技术 / 软件",
+    "city": "苏州、济南、东莞、南京、西安、杭州、成都、武汉、北京、长沙、上海、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "软件开发",
+      "编程",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-data-science",
+    "company": "华为",
+    "title": "数据科学工程师",
+    "category": "技术 / 数据",
+    "city": "苏州、东莞、南京、西安、杭州、成都、武汉、北京、上海、深圳",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-17",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "数据科学",
+      "数据",
+      "AI",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-sales",
+    "company": "华为",
+    "title": "销售类岗位",
+    "category": "销售 / 商务",
+    "city": "中国",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-15",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment",
+    "keywords": [
+      "销售",
+      "商务",
+      "客户",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-finance",
+    "company": "华为",
+    "title": "财经类岗位",
+    "category": "金融 / 财经",
+    "city": "中国",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-15",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "财经",
+      "财务",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-supplychain",
+    "company": "华为",
+    "title": "供应链类岗位",
+    "category": "供应链 / 制造",
+    "city": "中国",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-15",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "供应链",
+      "制造",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "huawei-2027-hr",
+    "company": "华为",
+    "title": "人力资源类岗位",
+    "category": "人力资源",
+    "city": "中国",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-15",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "华为招聘官网",
+    "source_url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+    "keywords": [
+      "人力资源",
+      "HR",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "华为招聘官网"
+    ],
+    "cohort": "2027届"
+  }
 ]
