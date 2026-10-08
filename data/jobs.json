@@ -319,5 +319,200 @@
       "华为招聘官网"
     ],
     "cohort": "2027届"
+  },
+  {
+    "id": "tencent-2027-campus",
+    "company": "腾讯",
+    "title": "2027届校园招聘岗位",
+    "category": "综合 / 科技",
+    "city": "中国",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-08-11",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "腾讯招聘官网",
+    "source_url": "https://careers.tencent.com/en-us/campusrecruit.html",
+    "keywords": [
+      "腾讯",
+      "校招",
+      "产品",
+      "技术",
+      "运营",
+      "职能"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "腾讯招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "alibaba-2027-campus",
+    "company": "阿里巴巴",
+    "title": "2027届应届生招聘",
+    "category": "综合 / 科技",
+    "city": "中国",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-10-08",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "阿里巴巴校园招聘",
+    "source_url": "https://campus-talent.alibaba.com/",
+    "keywords": [
+      "算法",
+      "研发",
+      "芯片",
+      "产品",
+      "游戏",
+      "运营",
+      "商务拓展"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "阿里巴巴校园招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "baidu-2027-campus",
+    "company": "百度",
+    "title": "2027届校园招聘",
+    "category": "综合 / 科技",
+    "city": "北京、上海、深圳等",
+    "enterprise_type": "民营/科技",
+    "degree": "应届生",
+    "publish_date": "2026-07-21",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "百度校园招聘",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISKGRB",
+    "keywords": [
+      "技术",
+      "产品",
+      "政企",
+      "销售",
+      "综合",
+      "AI"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度校园招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "meituan-2027-campus",
+    "company": "美团",
+    "title": "2027届秋季校园招聘",
+    "category": "综合 / 互联网",
+    "city": "中国",
+    "enterprise_type": "民营/互联网",
+    "degree": "应届生",
+    "publish_date": "2026-08-11",
+    "deadline": "2026-10-31",
+    "last_verified": "2026-10-08",
+    "source": "美团招聘官网",
+    "source_url": "https://zhaopin.meituan.com/web/campus/schedule",
+    "keywords": [
+      "校招",
+      "AI面试",
+      "零售",
+      "销售",
+      "客服",
+      "支持"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "美团招聘官网"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "nio-2027-campus",
+    "company": "蔚来",
+    "title": "2027届秋季校园招聘",
+    "category": "综合 / 汽车科技",
+    "city": "上海、北京、合肥、深圳、杭州、武汉、宁波",
+    "enterprise_type": "民营/汽车科技",
+    "degree": "应届生",
+    "publish_date": "2026-10-08",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "蔚来校园招聘",
+    "source_url": "https://campus.nio.com/",
+    "keywords": [
+      "产品",
+      "项目管理",
+      "设计",
+      "工程技术",
+      "数字技术",
+      "智能制造",
+      "用户服务"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "蔚来校园招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "nio-2027-marketing",
+    "company": "蔚来",
+    "title": "2027届营销Sparks校园招聘",
+    "category": "营销 / 商务",
+    "city": "中国",
+    "enterprise_type": "民营/汽车科技",
+    "degree": "应届生",
+    "publish_date": "2026-10-08",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "蔚来校园招聘",
+    "source_url": "https://nio.jobs.feishu.cn/campus/",
+    "keywords": [
+      "营销",
+      "销售",
+      "商务",
+      "品牌",
+      "应届生"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "蔚来校园招聘"
+    ],
+    "cohort": "2027届"
+  },
+  {
+    "id": "nio-2027-design",
+    "company": "蔚来",
+    "title": "设计类岗位",
+    "category": "设计",
+    "city": "中国",
+    "enterprise_type": "民营/汽车科技",
+    "degree": "应届生",
+    "publish_date": "2026-10-08",
+    "deadline": "",
+    "last_verified": "2026-10-08",
+    "source": "蔚来校园招聘",
+    "source_url": "https://nio.jobs.feishu.cn/campus/",
+    "keywords": [
+      "设计",
+      "视觉",
+      "产品设计",
+      "用户体验"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "蔚来校园招聘"
+    ],
+    "cohort": "2027届"
   }
 ]
