@@ -1,6 +1,10 @@
 name: public-source-collector
 
 on:
+  push:
+    paths:
+      - ".github/workflows/collector-v1-3.yml"
+      - "scripts/collect_public_sources.py"
   workflow_dispatch:
   schedule:
     - cron: "15 */6 * * *"
