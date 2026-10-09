@@ -28,7 +28,48 @@
 <div class="footer">2027秋招雷达 V1.4 · 岗位级公开信源聚合 + 官方核验 · GitHub Pages · 信息整理工具，投递前请以企业官方页面为准。</div>
 <script>
 let DATA=[];
-async function loadData(){let rows;let errors=[];for(const u of ["./data/jobs.json?ts="+Date.now(),"https://raw.githubusercontent.com/qq1739825911-web/2027-qiuzhao-radar/main/data/jobs.json?ts="+Date.now()]){try{const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);rows=await r.json();if(Array.isArray(rows)&&rows.length)break;}catch(e){errors.push(e.message)}}if(!Array.isArray(rows)||!rows.length)throw new Error("岗位数据加载失败："+errors.join(" / "));DATA=rows.map(x=>({id:x.id,company:x.company,title:x.title,category:x.category||x.industry||"其他",city:Array.isArray(x.locations)?x.locations.join("、"):(x.city||"全国"),type:x.enterprise_type||x.company_type||"未分类",degree:x.degree||"不限",deadline:x.deadline||"",publish_date:x.publish_date||x.first_seen||"",last_verified:x.last_verified||x.last_seen||"",source:x.source||"待核验",url:x.source_url||x.apply_url||"#",keywords:Array.isArray(x.keywords)?x.keywords.join(" "):(x.keywords||""),demo:!!x.demo,status:x.status||"active",confirmed_by:x.confirmed_by||[]}));}
+async function loadData(){
+ const urls=[
+  "./data/jobs.json?ts="+Date.now(),
+  "/2027-qiuzhao-radar/data/jobs.json?ts="+Date.now(),
+  "https://raw.githubusercontent.com/qq1739825911-web/2027-qiuzhao-radar/main/data/jobs.json?ts="+Date.now()
+ ];
+ let rows=null; const errors=[];
+ for(const u of urls){
+  try{
+   const r=await fetch(u,{cache:"no-store"});
+   if(!r.ok) throw new Error(u+" HTTP "+r.status);
+   const payload=await r.json();
+   if(!Array.isArray(payload)) throw new Error(u+" JSON不是数组");
+   if(payload.length===0) throw new Error(u+" 返回空数组");
+   rows=payload; break;
+  }catch(e){errors.push(e.message||String(e));}
+ }
+ if(!Array.isArray(rows)||rows.length===0){
+  $("dataNotice").textContent="岗位数据加载失败，已尝试多个数据地址。请稍后刷新；诊断："+errors.join(" / ");
+  $("dataNotice").className="notice";
+  throw new Error(errors.join(" / "));
+ }
+ DATA=rows.map(x=>({
+  id:String(x.id||[x.company,x.title,x.city].join("-")),
+  company:x.company||"待核验企业",
+  title:x.title||"待核验岗位",
+  category:x.category||x.industry||"其他",
+  city:Array.isArray(x.locations)?x.locations.join("、"):(x.city||"全国"),
+  type:x.enterprise_type||x.company_type||"未分类",
+  degree:x.degree||"待核验",
+  deadline:x.deadline||"",
+  publish_date:x.publish_date||x.first_seen||"",
+  last_verified:x.last_verified||x.last_seen||"",
+  source:x.source||"待核验",
+  url:x.source_url||x.apply_url||"#",
+  keywords:Array.isArray(x.keywords)?x.keywords.join(" "):(x.keywords||""),
+  demo:!!x.demo,
+  status:x.status||"pending_review",
+  confirmed_by:Array.isArray(x.confirmed_by)?x.confirmed_by:[]
+ }));
+ $("dataNotice").textContent="岗位数据读取成功："+DATA.length+" 条；数据地址已验证。";
+}
 const SOURCES=[["牛客","综合校招 / 互联网 / 技术 / 产品","https://www.nowcoder.com/"],["应届生求职网","全专业校招信息","https://www.yingjiesheng.com/"],["BOSS直聘","民企 / 中小企业 / 社招与校招","https://www.zhipin.com/"],["国聘","央国企及大型企业招聘入口","https://www.iguopin.com/"],["中国公共招聘网","公共就业招聘信息","https://job.mohrss.gov.cn/"]];
 let fav=JSON.parse(localStorage.getItem("radar_fav")||"[]"),apps=JSON.parse(localStorage.getItem("radar_apps")||"{}");
 const $=id=>document.getElementById(id),today=new Date(),days=x=>Math.ceil((new Date(x)-new Date(today.toDateString()))/86400000);
