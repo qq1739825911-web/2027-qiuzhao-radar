@@ -140,11 +140,11 @@
     "company": "字节跳动",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://bytedance.jobs.feishu.cn/campus/",
+    "url": "https://jobs.bytedance.com/campus/",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；公开职位与项目可核验"
+    "notes": "字节跳动官方校园招聘入口；包含2027届校园招聘、前沿技术领域人才校招和Seed大模型人才校招项目。"
   },
   {
     "id": "xiaomi",
@@ -200,11 +200,11 @@
     "company": "中国建设银行",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://job.ccb.com/cn/job/announcement.html",
+    "url": "https://job2.ccb.com/",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方2027校园招聘公告"
+    "notes": "中国建设银行官方招聘平台；公开展示2027年度校园招聘公告及岗位搜索。"
   },
   {
     "id": "psbc",
@@ -233,11 +233,11 @@
     "company": "中国工商银行",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://www.icbc.com.cn/ICBC/%E7%BD%91%E4%B8%8A%E4%BA%BA%E6%89%8D%E6%8B%9B%E8%81%98/default.htm",
+    "url": "https://job.icbc.com.cn/",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "软件开发中心2027校招公告可公开核验"
+    "notes": "中国工商银行官方人才招聘平台；公开展示2027年度校园招聘公告。"
   },
   {
     "id": "cib",
@@ -255,11 +255,11 @@
     "company": "中信银行",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://career.citicbank.com/",
+    "url": "https://job.citicbank.com/",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "2027校园招聘公开公告"
+    "notes": "中信银行官方招聘入口；2027届校园招聘公告指向该域名。"
   },
   {
     "id": "qiuzhaowang",
