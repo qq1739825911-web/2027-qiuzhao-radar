@@ -14,22 +14,22 @@
       8,
       9,
       10,
-      101,
-      102,
-      103,
-      104,
-      105,
-      106,
-      107,
-      108,
-      109,
-      110
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
     ],
-    "qiuzhaowang_next_page": 111
+    "qiuzhaowang_next_page": 121
   },
-  "records_found": 2738,
-  "active_candidates": 142,
-  "pending_review": 2596,
+  "records_found": 3092,
+  "active_candidates": 128,
+  "pending_review": 2964,
   "results": [
     {
       "id": "citic",
@@ -139,8 +139,8 @@
       "id": "nowcoder",
       "company": "牛客",
       "pages_visited": 40,
-      "records_found": 142,
-      "active_candidates": 142,
+      "records_found": 128,
+      "active_candidates": 128,
       "pending_review": 0
     },
     {
@@ -155,9 +155,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 2563,
+      "records_found": 2931,
       "active_candidates": 0,
-      "pending_review": 2563
+      "pending_review": 2931
     },
     {
       "id": "meituan",

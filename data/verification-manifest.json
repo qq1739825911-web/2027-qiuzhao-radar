@@ -1,114 +1,374 @@
 {
-  "last_run_at": "2026-10-09T06:28:08+00:00",
-  "checked": 20,
-  "eligible_direct_links": 20,
-  "link_alive": 17,
-  "missing_needs_recheck": 1,
-  "unknown": 2,
+  "last_run_at": "2026-10-09T06:40:16+00:00",
+  "checked": 60,
+  "records_touched": 105,
+  "eligible_direct_links": 1736,
+  "link_alive": 57,
+  "missing_needs_recheck": 0,
+  "unknown": 3,
   "closed_after_two_checks": 0,
   "batch_size": 60,
-  "note": "已修复间隔不足6小时的误关闭；等待下一轮定时核验确认。",
+  "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
   "checked_items": [
     {
-      "id": "auto-669e5aab3a599d5d",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-fc4dab695439b9fd",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "xiaomi-2027-embedded-software-7670893035149052211",
-      "result": "missing",
-      "http_status": 404
-    },
-    {
-      "id": "auto-05a732691e1a4099",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-0589de296e0d125d",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-e8bc5e03719a5d44",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-c6c7c863e957fa5b",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-dd276ffe83baa604",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-b1c4fd6cc3e0b7cc",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-892e5c3b3ad84706",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-c14337981d2b647e",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-6ce70c3b24abdd2f",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-eef981de104832dd",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-763a8bb8e17cef03",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "xiaomi-2027-ai-software-7670893035119249690",
+      "url": "https://qiuzhaowang.com/jobs/abb中国-研发工程师等23类岗位-4b6b42d49c",
       "result": "unknown",
-      "http_status": 0
+      "http_status": 0,
+      "records": 23
     },
     {
-      "id": "xiaomi-2027-ai-infra-7671295378604607754",
+      "url": "https://qiuzhaowang.com/jobs/boss直聘-算法类等5类岗位-01d3929676",
       "result": "unknown",
-      "http_status": 0
+      "http_status": 0,
+      "records": 3
     },
     {
-      "id": "auto-9b84a11728cc2831",
-      "result": "alive",
-      "http_status": 200
+      "url": "https://qiuzhaowang.com/jobs/58同城-大语言模型-语音大模型方向-多模态大模型及应用方向-搜索推荐方向-全栈开发工程师-al-infra方向-agent开发工程师方向--d8cb90ee4d",
+      "result": "unknown",
+      "http_status": 0,
+      "records": 1
     },
     {
-      "id": "auto-9e97831eb030796d",
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-49981",
       "result": "alive",
-      "http_status": 200
+      "http_status": 200,
+      "records": 1
     },
     {
-      "id": "auto-f5bf5cb80a6e8063",
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-49601",
       "result": "alive",
-      "http_status": 200
+      "http_status": 200,
+      "records": 2
     },
     {
-      "id": "auto-3d30f32e56855cb5",
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-49770",
       "result": "alive",
-      "http_status": 200
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-49863",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50052",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50056",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50088",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-49938",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50094",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50113",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50096",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50260",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50229",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50278",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50415",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50420",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50411",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50395",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50287",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50443",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50447",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50488",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50567",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50625",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50655",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://talent.baidu.com/jobs/list?recommendCode=ISKGRB",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50492",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50708",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50660",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50710",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/index.html",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50759",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50765",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50813",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50822",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50821",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50762",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50832",
+      "result": "alive",
+      "http_status": 200,
+      "records": 18
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50850",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50853",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50865",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50869",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50919",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50888",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50922",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50929",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50937",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50969",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50971",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-50981",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-51001",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-51023",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-51039",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-51048",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-51043",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/campus-supplement-51046",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
     }
-  ],
-  "corrected_premature_closures": 1
+  ]
 }
