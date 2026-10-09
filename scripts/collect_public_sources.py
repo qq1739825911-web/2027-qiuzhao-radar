@@ -28,10 +28,11 @@ ROLE_HREF=("job","position","career","campus","recruit","zhaopin","jobs","vacanc
 
 class Parser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.scripts=[]; self._script_buf=None; self._a=None; self._td=None; self._row=[]
+        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]
     def handle_starttag(self,tag,attrs):
         d=dict(attrs); tag=tag.lower()
         if tag=="a": self._a={"href":d.get("href",""),"text":""}
+        if tag=="title": self._in_title=True
         if tag in ("td","th"): self._td=""
         if tag=="tr": self._row=[]
         if tag=="script": self._script_buf=[]
@@ -40,10 +41,12 @@ class Parser(HTMLParser):
         if s: self.text.append(s)
         if self._a is not None: self._a["text"]+=(" "+s if s else "")
         if self._script_buf is not None: self._script_buf.append(data)
+        if self._in_title: self.page_title+=data
         if self._td is not None: self._td+=(" "+s if s else "")
     def handle_endtag(self,tag):
         tag=tag.lower()
         if tag=="a" and self._a is not None: self.links.append(self._a); self._a=None
+        if tag=="title": self._in_title=False
         if tag=="script" and self._script_buf is not None:
             body="".join(self._script_buf).strip()
             if body and len(body)<5000000: self.scripts.append(body)
@@ -139,7 +142,7 @@ def table_records(company,source,parser,cohort):
     return out
 
 def collect_source(src):
-    company,root=src["company"],src["url"]; queue=[root]; visited=set(); seen=set(); rows=[]
+    company,root=src["company"],src["url"]; queue=list(src.get("seed_urls") or [root])[:6]; visited=set(); seen=set(); rows=[]
     while queue and len(visited)<6 and len(rows)<500:
         page=queue.pop(0)
         cp=canonical(page)
@@ -148,6 +151,10 @@ def collect_source(src):
         try: html,final=fetch(page)
         except Exception: continue
         p=Parser(); p.feed(html); cohort=year(html[:20000])
+        page_title=clean(p.page_title)
+        if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
+            sc=score(page_title,final,"")
+            if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF): rows.append(record(company,page_title,final,company+"官方招聘",cohort,sc))
         rows.extend(table_records(company,final,p,cohort))
         rows.extend(embedded_records(company,final,p,cohort))
         for a in p.links:
