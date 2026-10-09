@@ -122,6 +122,8 @@ function setup(){
  if(DATA_SOURCE_FALLBACK){$("dataNotice").className="notice";$("dataNotice").textContent="在线岗位文件读取失败，当前使用内置兜底："+DATA.length+" 条；请稍后刷新。"}else{$("dataNotice").className="notice "+(DATA.some(x=>!x.demo)?"good":"");$("dataNotice").textContent=DATA.some(x=>!x.demo)?"岗位数据已读取："+DATA.length.toLocaleString("zh-CN")+" 条。公开信息聚合结果仍需回到原始来源确认。":"当前显示的是信源入口演示数据，不代表已抓取该平台全部岗位。";}
  renderFeaturedCompanies();
 }
+let favoritesOnly=false;
+function syncFavoriteButton(){const b=$("favOnly");if(!b)return;b.classList.toggle("on",favoritesOnly);b.textContent=favoritesOnly?"★ 正在查看收藏":"☆ 只看收藏";}
 function filtered(){
  const q=$("q").value.trim().toLowerCase(),c=$("cat").value,ci=$("city").value,t=$("type").value,s=$("status").value;
  return DATA.filter(x=>(!q||(x.company+" "+x.title+" "+x.keywords+" "+x.category+" "+x.city+" "+x.type+" "+x.degree+" "+x.program+" "+x.cohort).toLowerCase().includes(q))
