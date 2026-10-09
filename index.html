@@ -123,7 +123,6 @@ function setup(){
  if(DATA_SOURCE_FALLBACK){$("dataNotice").className="notice";$("dataNotice").textContent="在线岗位文件读取失败，当前使用内置兜底："+DATA.length+" 条；请稍后刷新。"}else{$("dataNotice").className="notice "+(DATA.some(x=>!x.demo)?"good":"");$("dataNotice").textContent=DATA.some(x=>!x.demo)?"岗位数据已读取："+DATA.length.toLocaleString("zh-CN")+" 条。公开信息聚合结果仍需回到原始来源确认。":"当前显示的是信源入口演示数据，不代表已抓取该平台全部岗位。";}
  renderFeaturedCompanies();
 }
-function filtered()
 function filtered(){
  const q=$("q").value.trim().toLowerCase(),c=$("cat").value,ci=$("city").value,t=$("type").value,s=$("status").value;
  return DATA.filter(x=>(!q||(x.company+" "+x.title+" "+x.keywords+" "+x.category+" "+x.city+" "+x.type+" "+x.degree+" "+x.program+" "+x.cohort).toLowerCase().includes(q))
@@ -131,7 +130,6 @@ function filtered(){
  &&(!s||(s==="open"&&x.status==="active")||(s==="urgent"&&x.deadline&&days(x.deadline)>=0&&days(x.deadline)<=7))
  &&(!favoritesOnly||fav.includes(x.id)));
 }
-function escapeHtml
 function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function render(){
  let a=filtered().slice();a.sort((x,y)=>(Number(y.status==="active")-Number(x.status==="active"))||(y.publish_date||"").localeCompare(x.publish_date||"")||x.title.localeCompare(y.title,"zh-CN"));
@@ -158,8 +156,6 @@ function renderFeaturedCompanies(){
  $("featuredCompanies").innerHTML=top.map(([name,c])=>'<button type="button" class="featured-company" data-company="'+escapeHtml(name)+'"><strong>'+escapeHtml(name)+'</strong><span><b class="company-count">'+c.active+'</b> 个在招候选 · '+c.all+' 条记录</span></button>').join("")||'<div class="empty">暂无企业数据</div>';
  document.querySelectorAll("[data-company]").forEach(b=>b.onclick=()=>{$("q").value=b.dataset.company;favoritesOnly=false;currentPage=1;syncFavoriteButton();render();$("workbench").scrollIntoView({behavior:"smooth",block:"start"})});
 }
-function toggle(id)
-function toggle(id)
 function toggle(id){fav=fav.includes(id)?fav.filter(x=>x!==id):fav.concat(id);storageSet("radar_fav",JSON.stringify(fav));render()}
 function renderBoard(){let a=DATA.filter(x=>fav.includes(x.id));$("board").innerHTML='<div class="grid2"><div><h3>我的收藏</h3><div class="list">'+(a.map(x=>'<div class="item"><div><b>'+x.company+'</b><br>'+x.title+'<div class="muted">'+x.category+' · '+x.city+'</div></div><select class="smallbtn" data-app="'+x.id+'"><option>收藏</option><option>已投递</option><option>笔试</option><option>面试</option><option>Offer</option><option>淘汰</option></select></div>').join("")||'<div class="empty">先在岗位库收藏岗位。</div>')+'</div></div><div><h3>投递进度</h3><div class="list">'+["已投递","笔试","面试","Offer","淘汰"].map(s=>'<div class="item"><span>'+s+'</span><b>'+a.filter(x=>(apps[x.id]||"收藏")===s).length+'</b></div>').join("")+'</div></div></div>';document.querySelectorAll("[data-app]").forEach(x=>{x.value=apps[x.dataset.app]||"收藏";x.onchange=()=>{apps[x.dataset.app]=x.value;storageSet("radar_apps",JSON.stringify(apps));renderBoard()}})}
 function renderProfile(){$("profile").innerHTML='<div class="grid2"><div><h3>求职画像（本地保存）</h3><p class="muted">填写后仅保存在当前浏览器，后续用于岗位匹配。</p><div class="list"><input id="major" class="input" placeholder="专业，如：视觉传达设计"><input id="skills" class="input" placeholder="技能，如：AIGC / 新媒体 / PS / 剪映"><input id="cities" class="input" placeholder="期望城市，如：上海 / 杭州 / 深圳"><select id="degree" class="select"><option>本科</option><option>硕士</option><option>博士</option></select><button class="primary" id="saveProfile">保存求职画像</button></div></div><div><h3>匹配引擎路线</h3><div class="list"><div class="item"><span>专业 / 关键词</span><b>V1.4</b></div><div class="item"><span>城市偏好</span><b>V1.4</b></div><div class="item"><span>学历门槛</span><b>V1.4</b></div><div class="item"><span>AI JD 分析</span><b>后续</b></div></div></div></div>';let p=storageJSON("radar_profile",{});["major","skills","cities","degree"].forEach(k=>{if(p[k])$(k).value=p[k]});$("saveProfile").onclick=()=>{let p={major:$("major").value,skills:$("skills").value,cities:$("cities").value,degree:$("degree").value};storageSet("radar_profile",JSON.stringify(p));$("saveProfile").textContent="已保存 ✓";setTimeout(()=>$("saveProfile").textContent="保存求职画像",1200)}}
