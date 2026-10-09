@@ -68,7 +68,13 @@ def fetch(url):
 
 def clean(s): return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",s or "")).strip()
 def canonical(u):
-    p=urlparse(u); return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"","",""))
+    p=urlparse(u)
+    # Preserve meaningful query parameters such as page=2 and jobId=123.
+    # Strip only analytics/tracking parameters so paginated pages and distinct jobs do not collapse.
+    tracking={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid"}
+    query=sorted((k,v) for k,v in __import__("urllib.parse",fromlist=["parse_qsl"]).parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
+    from urllib.parse import urlencode
+    return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True),""))
 def same_host(a,b): return urlparse(a).netloc.lower()==urlparse(b).netloc.lower()
 def year(s):
     m=re.search(r"(20\d{2})\s*[届年]",s or "")
@@ -152,6 +158,8 @@ def table_records(company,source,parser,cohort,source_label=None):
                    and any(w.lower() in x.lower() for w in CONCRETE_WORDS)
                    and not x.endswith(("类","方向","相关专业","等相关专业","专业"))
                    and not x.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求","本科","硕士","博士"))),None)
+        if not role: continue
+        role=re.sub(r"\s*更新[:：]?\s*.*$","",role).strip()
         if not role: continue
         employer=company
         if source_label and "公开" in source_label:

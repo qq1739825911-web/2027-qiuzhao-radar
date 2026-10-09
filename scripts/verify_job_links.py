@@ -4,7 +4,7 @@ A link is marked closed only after two consecutive 404/410 or explicit closed ma
 """
 import json, re, time
 from pathlib import Path
-from datetime import datetime, timezone, date
+from datetime import datetime, timezone, date, timedelta
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -28,7 +28,30 @@ def main():
     jobs=json.loads(JOBS.read_text(encoding="utf-8"))
     try: state=json.loads(STATE.read_text(encoding="utf-8"))
     except Exception: state={"cursor":0,"failures":{}}
+    # The workflow also runs on code pushes. Do not count those as separate confirmations
+    # unless at least 5h45m passed since the previous link-verification batch.
+    previous=state.get("last_run_at")
+    if previous:
+        try:
+            prev_dt=datetime.fromisoformat(previous.replace("Z","+00:00"))
+            if (datetime.now(timezone.utc)-prev_dt)<timedelta(hours=5,minutes=45):
+                print(f"LINK VERIFICATION SKIPPED: previous batch was {previous}; next scheduled verification window is six hours.")
+                return
+        except Exception: pass
     failures=state.setdefault("failures",{})
+    last_missing=state.setdefault("last_missing_at",{})
+    # Repair premature closures made by earlier versions that counted two quick push runs.
+    now_dt=datetime.now(timezone.utc)
+    for job in jobs:
+        jid=str(job.get("id",""))
+        if job.get("status")=="closed" and "连续两次核验确认链接失效" in job.get("verification_note",""):
+            prior=last_missing.get(jid) or previous
+            try: elapsed=now_dt-datetime.fromisoformat(prior.replace("Z","+00:00"))
+            except Exception: elapsed=timedelta(0)
+            if elapsed<timedelta(hours=5,minutes=45):
+                job["status"]="pending_review"; job["verification_status"]="missing_recheck"
+                job["verification_note"]="上个版本两次异常间隔不足6小时，恢复待复查；需要下一轮定时核验确认"
+                failures[jid]=1; last_missing[jid]=prior or STAMP
     eligible=[j for j in jobs if not j.get("demo") and j.get("source_url","").startswith("https://") and DIRECT.search(urlparse(j.get("source_url","")).path)]
     eligible.sort(key=lambda j:(j.get("last_verified",""),j.get("company",""),j.get("title","")))
     batch_size=60
@@ -50,13 +73,22 @@ def main():
             checked.append({"id":job.get("id"),"result":result,"http_status":status})
             jid=str(job.get("id",""))
             if result=="alive":
-                alive+=1; failures[jid]=0; job["verification_status"]="link_alive"; job["last_verified"]=TODAY; job["last_verified_at"]=STAMP; job["verification_http_status"]=status
+                alive+=1; failures[jid]=0; last_missing.pop(jid,None); job["verification_status"]="link_alive"; job["last_verified"]=TODAY; job["last_verified_at"]=STAMP; job["verification_http_status"]=status
                 job["verification_note"]="公开详情链接可访问；不代表招聘条件已由雇主再次确认"
             elif result=="missing":
-                missing+=1; failures[jid]=int(failures.get(jid,0))+1; job["verification_status"]="missing_recheck"; job["verification_http_status"]=status
-                job["verification_note"]=f"详情链接异常，连续核验 {failures[jid]} 次"
-                if failures[jid]>=2:
-                    job["status"]="closed"; job["verification_status"]="closed"; job["verification_note"]="连续两次核验确认链接失效/岗位下线"; closed+=1
+                missing+=1; job["verification_http_status"]=status
+                prior=last_missing.get(jid)
+                if not prior:
+                    failures[jid]=max(1,int(failures.get(jid,0))); last_missing[jid]=STAMP
+                else:
+                    try: elapsed=now_dt-datetime.fromisoformat(prior.replace("Z","+00:00"))
+                    except Exception: elapsed=timedelta(0)
+                    if elapsed>=timedelta(hours=5,minutes=45):
+                        failures[jid]=int(failures.get(jid,1))+1; last_missing[jid]=STAMP
+                job["verification_status"]="missing_recheck"
+                job["verification_note"]=f"详情链接异常，已确认 {failures.get(jid,1)} 次；需至少间隔6小时再次确认"
+                if failures.get(jid,1)>=2 and last_missing.get(jid)!=STAMP:
+                    job["status"]="closed"; job["verification_status"]="closed"; job["verification_note"]="间隔至少6小时的两次核验均确认链接失效/岗位下线"; closed+=1
             else:
                 unknown+=1; job["verification_status"]="unknown"; job["verification_http_status"]=status; job["verification_note"]="访问受限或暂时失败，未据此关闭岗位"
             time.sleep(0.05)
