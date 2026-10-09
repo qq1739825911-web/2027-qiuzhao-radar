@@ -102,7 +102,7 @@ def record(company,title,url,source,cohort,confidence,program=""):
       "program":program,"collector":"public-html-v3","granularity":"job" if status=="active" else "review",
       "verification_score":confidence}
 
-def embedded_records(company,source,parser,cohort):
+def embedded_records(company,source,parser,cohort,source_label=None):
     out=[]; host=urlparse(source).netloc.lower()
     # Only parse JSON embedded in public HTML; never call hidden APIs.
     for blob in parser.scripts:
@@ -125,12 +125,12 @@ def embedded_records(company,source,parser,cohort):
                         url=canonical(urljoin(source,val)); break
                 if title and url and urlparse(url).netloc.lower()==host:
                     sc=score(title,url,"")
-                    if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF): out.append(record(company,title,url,company+"官方招聘",cohort,sc))
+                    if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF): out.append(record(company,title,url,source_label or company+"官方招聘",cohort,sc))
                 stack.extend(v for v in node.values() if isinstance(v,(dict,list)))
             elif isinstance(node,list): stack.extend(v for v in node if isinstance(v,(dict,list)))
     return out
 
-def table_records(company,source,parser,cohort):
+def table_records(company,source,parser,cohort,source_label=None):
     out=[]
     for row in parser.tables:
         if len(row)<2: continue
@@ -138,7 +138,7 @@ def table_records(company,source,parser,cohort):
         role=next((x for x in row if any(w in x for w in CONCRETE_WORDS) and 2<len(x)<80),None)
         if not role: continue
         if any(x in joined for x in NAV_BAD): continue
-        out.append(record(company,role,source,company+"官方招聘",cohort,8))
+        out.append(record(company,role,source,source_label or company+"官方招聘",cohort,8))
     return out
 
 def collect_source(src):
@@ -151,16 +151,24 @@ def collect_source(src):
         try: html,final=fetch(page)
         except Exception: continue
         p=Parser(); p.feed(html); cohort=year(html[:20000])
-        page_title=clean(p.page_title)
+        raw_page_title=clean(p.page_title)
+        page_company=company
+        record_source=company+"官方招聘"
+        if src.get("id")=="nowcoder":
+            # Job detail title pattern: role_title_company校招_牛客网
+            m=re.search(r"_([^_]+?)(?:校招|实习|社招)_牛客网", raw_page_title)
+            if m: page_company=m.group(1).strip()
+            record_source="牛客公开岗位"
+        page_title=raw_page_title
         # Strip location prefixes and aggregator suffixes so the stored title remains job-level.
         page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
         page_title=re.sub(r"[_|｜].*(?:校招|实习|社招|招聘).*?$", "", page_title).strip()
         page_title=re.split(r"\s+[|｜_—]\s+|\s+-\s+(?:百度校园招聘|小米校园招聘|校园招聘).*$",page_title,1)[0].strip()
         if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
             sc=score(page_title,final,"")
-            if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF): rows.append(record(company,page_title,final,company+"官方招聘",cohort,sc))
-        rows.extend(table_records(company,final,p,cohort))
-        rows.extend(embedded_records(company,final,p,cohort))
+            if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF): rows.append(record(page_company,page_title,final,record_source,cohort,sc))
+        rows.extend(table_records(page_company,final,p,cohort,record_source))
+        rows.extend(embedded_records(page_company,final,p,cohort,record_source))
         for a in p.links:
             title=clean(a["text"]); href=canonical(urljoin(final,a["href"]))
             if not title or len(title)<4 or len(title)>100 or not href or href in seen: continue
@@ -169,7 +177,7 @@ def collect_source(src):
             sc=score(title,href,p.page_text())
             if sc<5: continue
             seen.add(href)
-            rows.append(record(company,title,href,company+"官方招聘",cohort,sc))
+            rows.append(record(page_company,title,href,record_source,cohort,sc))
             if len(queue)<6 and len(visited)+len(queue)<6 and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
     # de-dupe within source, preferring higher confidence
