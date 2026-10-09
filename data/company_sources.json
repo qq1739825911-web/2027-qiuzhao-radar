@@ -13,12 +13,20 @@
   {
     "id": "nowcoder",
     "company": "牛客",
-    "type": "platform_entry",
-    "url": "https://www.nowcoder.com/",
-    "access": "public_entry",
+    "type": "public_job_aggregator",
+    "url": "https://www.nowcoder.com/jobs/detail/462572",
+    "access": "public",
     "trust": "medium",
-    "enabled": false,
-    "notes": "暂作为信源入口，不做绕过登录/风控的抓取"
+    "enabled": true,
+    "notes": "公开可访问的岗位详情页；只采集公开职位标题与详情链接，不抓取登录态字段；平台来源需保留来源标识",
+    "seed_urls": [
+      "https://www.nowcoder.com/jobs/detail/462572",
+      "https://www.nowcoder.com/jobs/detail/462503",
+      "https://www.nowcoder.com/jobs/detail/462504",
+      "https://www.nowcoder.com/jobs/detail/467982",
+      "https://www.nowcoder.com/jobs/detail/459432",
+      "https://www.nowcoder.com/jobs/detail/462574"
+    ]
   },
   {
     "id": "yingjiesheng",
