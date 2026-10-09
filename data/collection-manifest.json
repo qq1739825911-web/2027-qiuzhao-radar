@@ -2,8 +2,8 @@
   "run_date": "2026-10-09",
   "collector_version": "4.0",
   "enabled_sources": 19,
-  "records_found": 33,
-  "active_candidates": 21,
+  "records_found": 44,
+  "active_candidates": 32,
   "pending_review": 12,
   "results": [
     {
@@ -113,9 +113,9 @@
     {
       "id": "nowcoder",
       "company": "牛客",
-      "pages_visited": 6,
-      "records_found": 6,
-      "active_candidates": 6,
+      "pages_visited": 17,
+      "records_found": 17,
+      "active_candidates": 17,
       "pending_review": 0
     },
     {

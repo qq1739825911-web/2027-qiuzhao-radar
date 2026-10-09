@@ -2982,5 +2982,348 @@
     "collector": "public-html-v3",
     "granularity": "job",
     "verification_score": 8
+  },
+  {
+    "id": "auto-f5bf5cb80a6e8063",
+    "company": "诺瓦星云",
+    "title": "27校招-软件工程师（西安）(J12263)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462497",
+    "keywords": [
+      "27",
+      "校招",
+      "软件工程师",
+      "西安",
+      "J12263"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "诺瓦星云官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-3d30f32e56855cb5",
+    "company": "诺瓦星云",
+    "title": "27校招-嵌入式工程师（Linux）（西安）(J12265)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462500",
+    "keywords": [
+      "27",
+      "校招",
+      "嵌入式工程师",
+      "Linux",
+      "西安",
+      "J12265"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "诺瓦星云官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-9b84a11728cc2831",
+    "company": "诺瓦星云",
+    "title": "27校招-嵌入式工程师（MCU）（西安）(J12267)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462502",
+    "keywords": [
+      "27",
+      "校招",
+      "嵌入式工程师",
+      "MCU",
+      "西安",
+      "J12267"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "诺瓦星云官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-e8bc5e03719a5d44",
+    "company": "数字政通",
+    "title": "27届校招-Agent研发工程师（长沙）",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/467980",
+    "keywords": [
+      "27",
+      "届校招",
+      "-Agent",
+      "研发工程师",
+      "长沙"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "数字政通官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-dd276ffe83baa604",
+    "company": "海能达通信",
+    "title": "产品经理培训生（27届校招）",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/459352",
+    "keywords": [
+      "产品经理培训生",
+      "27",
+      "届校招"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "海能达通信官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-fc4dab695439b9fd",
+    "company": "Dexmal 原力灵机",
+    "title": "【27届校招】产品经理(A154176)",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/460860",
+    "keywords": [
+      "27",
+      "届校招",
+      "产品经理",
+      "A154176"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "Dexmal 原力灵机官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-892e5c3b3ad84706",
+    "company": "未岚大陆",
+    "title": "2027届校招-产品经理（北京）",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/465296",
+    "keywords": [
+      "2027",
+      "届校招",
+      "产品经理",
+      "北京"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "未岚大陆官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 8
+  },
+  {
+    "id": "auto-0589de296e0d125d",
+    "company": "广联达",
+    "title": "27届校招-解决方案销售工程师（数字行业服务）",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/469470",
+    "keywords": [
+      "27",
+      "届校招",
+      "解决方案销售工程",
+      "数字行业服务"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "广联达官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-669e5aab3a599d5d",
+    "company": "字节跳动",
+    "title": "产品经理",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462835",
+    "keywords": [
+      "产品经理"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "字节跳动官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-05a732691e1a4099",
+    "company": "北森",
+    "title": "2027届校招-软件产品经理（北京、成都）(J14870)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/469521",
+    "keywords": [
+      "2027",
+      "届校招",
+      "软件产品经理",
+      "北京",
+      "成都",
+      "J14870"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "北森官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 8
+  },
+  {
+    "id": "auto-c6c7c863e957fa5b",
+    "company": "昆仑万维",
+    "title": "【校招岗】产品经理",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/464800",
+    "keywords": [
+      "校招岗",
+      "产品经理"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "昆仑万维官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
   }
 ]
