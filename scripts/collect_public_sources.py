@@ -152,7 +152,8 @@ def collect_source(src):
         except Exception: continue
         p=Parser(); p.feed(html); cohort=year(html[:20000])
         page_title=clean(p.page_title)
-        page_title=re.split(r"\s*[-|｜_]\s*",page_title,1)[0].strip()
+        page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
+        page_title=re.split(r"\s+[|｜_—]\s+|\s+-\s+(?:百度校园招聘|小米校园招聘|校园招聘).*$",page_title,1)[0].strip()
         if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
             sc=score(page_title,final,"")
             if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF): rows.append(record(company,page_title,final,company+"官方招聘",cohort,sc))
