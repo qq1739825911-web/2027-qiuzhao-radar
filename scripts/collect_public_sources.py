@@ -169,10 +169,10 @@ def collect_source(src):
         page=queue.pop(0)
         cp=(page.split("#",1)[0] if src.get("id")=="qiuzhaowang" else canonical(page))
         if cp in visited: continue
-        visited.add(cp)
         if src.get("id")=="qiuzhaowang" and visited: time.sleep(0.5)
         try: html,final=fetch(page)
         except Exception: continue
+        visited.add(cp)
         p=Parser(); p.feed(html); cohort=year(html[:20000])
         raw_page_title=clean(p.page_title)
         page_company=company
