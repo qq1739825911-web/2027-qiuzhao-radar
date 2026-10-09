@@ -142,8 +142,8 @@ def table_records(company,source,parser,cohort,source_label=None):
     return out
 
 def collect_source(src):
-    company,root=src["company"],src["url"]; queue=list(src.get("seed_urls") or [root])[:6]; visited=set(); seen=set(); rows=[]
-    while queue and len(visited)<6 and len(rows)<500:
+    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
+    while queue and len(visited)<max_pages and len(rows)<500:
         page=queue.pop(0)
         cp=canonical(page)
         if cp in visited: continue
@@ -178,7 +178,7 @@ def collect_source(src):
             if sc<5: continue
             seen.add(href)
             rows.append(record(page_company,title,href,record_source,cohort,sc))
-            if len(queue)<6 and len(visited)+len(queue)<6 and any(x.lower() in href.lower() for x in ROLE_HREF):
+            if len(queue)<max_pages and len(visited)+len(queue)<max_pages and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
     # de-dupe within source, preferring higher confidence
     best={}
