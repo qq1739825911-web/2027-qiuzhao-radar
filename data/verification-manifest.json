@@ -5,9 +5,9 @@
   "link_alive": 17,
   "missing_needs_recheck": 1,
   "unknown": 2,
-  "closed_after_two_checks": 1,
+  "closed_after_two_checks": 0,
   "batch_size": 60,
-  "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件。",
+  "note": "已修复间隔不足6小时的误关闭；等待下一轮定时核验确认。",
   "checked_items": [
     {
       "id": "auto-669e5aab3a599d5d",
@@ -109,5 +109,6 @@
       "result": "alive",
       "http_status": 200
     }
-  ]
+  ],
+  "corrected_premature_closures": 1
 }

@@ -14,30 +14,30 @@
       8,
       9,
       10,
-      71,
-      72,
-      73,
-      74,
-      75,
-      76,
-      77,
-      78,
-      79,
-      80
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90
     ],
-    "qiuzhaowang_next_page": 81
+    "qiuzhaowang_next_page": 91
   },
-  "records_found": 1603,
-  "active_candidates": 17,
-  "pending_review": 1586,
+  "records_found": 2548,
+  "active_candidates": 67,
+  "pending_review": 2481,
   "results": [
     {
       "id": "91bangtu",
       "company": "91邦途",
       "pages_visited": 5,
-      "records_found": 8,
+      "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 8
+      "pending_review": 0
     },
     {
       "id": "citic",
@@ -67,17 +67,17 @@
       "id": "psbc",
       "company": "中国邮政储蓄银行",
       "pages_visited": 1,
-      "records_found": 3,
+      "records_found": 15,
       "active_candidates": 0,
-      "pending_review": 3
+      "pending_review": 15
     },
     {
       "id": "boc",
       "company": "中国银行",
       "pages_visited": 1,
-      "records_found": 8,
+      "records_found": 13,
       "active_candidates": 0,
-      "pending_review": 8
+      "pending_review": 13
     },
     {
       "id": "cib",
@@ -123,9 +123,9 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 1,
-      "records_found": 10,
+      "records_found": 4,
       "active_candidates": 0,
-      "pending_review": 10
+      "pending_review": 4
     },
     {
       "id": "cmb",
@@ -146,9 +146,9 @@
     {
       "id": "nowcoder",
       "company": "牛客",
-      "pages_visited": 17,
-      "records_found": 17,
-      "active_candidates": 17,
+      "pages_visited": 24,
+      "records_found": 67,
+      "active_candidates": 67,
       "pending_review": 0
     },
     {
@@ -163,9 +163,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 1556,
+      "records_found": 2448,
       "active_candidates": 0,
-      "pending_review": 1556
+      "pending_review": 2448
     },
     {
       "id": "meituan",
