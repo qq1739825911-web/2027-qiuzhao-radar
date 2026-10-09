@@ -4,7 +4,7 @@
     "auto-669e5aab3a599d5d": 0,
     "auto-fc4dab695439b9fd": 0,
     "xiaomi-2027-ai-infra-7671295378604607754": 1,
-    "xiaomi-2027-embedded-software-7670893035149052211": 1,
+    "xiaomi-2027-embedded-software-7670893035149052211": 2,
     "auto-05a732691e1a4099": 0,
     "xiaomi-2027-ai-software-7670893035119249690": 1,
     "auto-0589de296e0d125d": 0,
@@ -22,7 +22,7 @@
     "auto-f5bf5cb80a6e8063": 0,
     "auto-6ce70c3b24abdd2f": 0
   },
-  "last_run_at": "2026-10-09T06:26:28+00:00",
+  "last_run_at": "2026-10-09T06:28:08+00:00",
   "last_batch_size": 20,
   "eligible_count": 20
 }

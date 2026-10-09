@@ -14,23 +14,31 @@
       8,
       9,
       10,
-      51,
-      52,
-      53,
-      54,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70
     ],
-    "qiuzhaowang_next_page": 61
+    "qiuzhaowang_next_page": 71
   },
-  "records_found": 1796,
+  "records_found": 1305,
   "active_candidates": 17,
-  "pending_review": 1779,
+  "pending_review": 1288,
   "results": [
+    {
+      "id": "91bangtu",
+      "company": "91邦途",
+      "pages_visited": 1,
+      "records_found": 8,
+      "active_candidates": 0,
+      "pending_review": 8
+    },
     {
       "id": "citic",
       "company": "中信银行",
@@ -155,9 +163,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 1757,
+      "records_found": 1258,
       "active_candidates": 0,
-      "pending_review": 1757
+      "pending_review": 1258
     },
     {
       "id": "meituan",
@@ -186,14 +194,6 @@
     {
       "id": "alibaba",
       "company": "阿里巴巴",
-      "pages_visited": 1,
-      "records_found": 0,
-      "active_candidates": 0,
-      "pending_review": 0
-    },
-    {
-      "id": "mianlingai",
-      "company": "面灵AI公开岗位索引",
       "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,

@@ -1,11 +1,11 @@
 {
-  "last_run_at": "2026-10-09T06:26:28+00:00",
+  "last_run_at": "2026-10-09T06:28:08+00:00",
   "checked": 20,
   "eligible_direct_links": 20,
   "link_alive": 17,
-  "missing_needs_recheck": 3,
-  "unknown": 0,
-  "closed_after_two_checks": 0,
+  "missing_needs_recheck": 1,
+  "unknown": 2,
+  "closed_after_two_checks": 1,
   "batch_size": 60,
   "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件。",
   "checked_items": [
@@ -20,11 +20,6 @@
       "http_status": 200
     },
     {
-      "id": "xiaomi-2027-ai-infra-7671295378604607754",
-      "result": "missing",
-      "http_status": 404
-    },
-    {
       "id": "xiaomi-2027-embedded-software-7670893035149052211",
       "result": "missing",
       "http_status": 404
@@ -35,12 +30,22 @@
       "http_status": 200
     },
     {
-      "id": "xiaomi-2027-ai-software-7670893035119249690",
-      "result": "missing",
-      "http_status": 404
+      "id": "auto-0589de296e0d125d",
+      "result": "alive",
+      "http_status": 200
     },
     {
-      "id": "auto-0589de296e0d125d",
+      "id": "auto-e8bc5e03719a5d44",
+      "result": "alive",
+      "http_status": 200
+    },
+    {
+      "id": "auto-c6c7c863e957fa5b",
+      "result": "alive",
+      "http_status": 200
+    },
+    {
+      "id": "auto-dd276ffe83baa604",
       "result": "alive",
       "http_status": 200
     },
@@ -55,17 +60,12 @@
       "http_status": 200
     },
     {
-      "id": "auto-e8bc5e03719a5d44",
+      "id": "auto-c14337981d2b647e",
       "result": "alive",
       "http_status": 200
     },
     {
-      "id": "auto-dd276ffe83baa604",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-c6c7c863e957fa5b",
+      "id": "auto-6ce70c3b24abdd2f",
       "result": "alive",
       "http_status": 200
     },
@@ -75,22 +75,22 @@
       "http_status": 200
     },
     {
-      "id": "auto-c14337981d2b647e",
+      "id": "auto-763a8bb8e17cef03",
       "result": "alive",
       "http_status": 200
+    },
+    {
+      "id": "xiaomi-2027-ai-software-7670893035119249690",
+      "result": "unknown",
+      "http_status": 0
+    },
+    {
+      "id": "xiaomi-2027-ai-infra-7671295378604607754",
+      "result": "unknown",
+      "http_status": 0
     },
     {
       "id": "auto-9b84a11728cc2831",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-3d30f32e56855cb5",
-      "result": "alive",
-      "http_status": 200
-    },
-    {
-      "id": "auto-763a8bb8e17cef03",
       "result": "alive",
       "http_status": 200
     },
@@ -105,7 +105,7 @@
       "http_status": 200
     },
     {
-      "id": "auto-6ce70c3b24abdd2f",
+      "id": "auto-3d30f32e56855cb5",
       "result": "alive",
       "http_status": 200
     }
