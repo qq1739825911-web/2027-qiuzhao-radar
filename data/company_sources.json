@@ -32,12 +32,16 @@
   {
     "id": "yingjiesheng",
     "company": "应届生求职网",
-    "type": "platform_entry",
-    "url": "https://www.yingjiesheng.com/",
-    "access": "public_entry",
+    "type": "public_job_aggregator",
+    "url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "access": "public",
     "trust": "medium",
-    "enabled": false,
-    "notes": "暂作为信源入口，后续按公开页面能力接入"
+    "enabled": true,
+    "notes": "公开校招宣讲/招聘详情页；从可见岗位表提取岗位级记录，保留原始公告链接和平台来源",
+    "seed_urls": [
+      "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864"
+    ],
+    "max_pages": 10
   },
   {
     "id": "iguopin",
