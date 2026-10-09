@@ -159,6 +159,11 @@ def collect_source(src):
             m=re.search(r"_([^_]+?)(?:校招|实习|社招)_牛客网", raw_page_title)
             if m: page_company=m.group(1).strip()
             record_source="牛客公开岗位"
+        elif src.get("id")=="yingjiesheng":
+            # Article title pattern: employer + cohort/recruitment event + site suffix.
+            m=re.search(r"^(.+?)(?:20\d{2}届|2027届|校招|校园招聘|招聘宣讲)", raw_page_title)
+            if m: page_company=m.group(1).strip(" _-—")
+            record_source="应届生求职网公开岗位"
         page_title=raw_page_title
         # Strip location prefixes and aggregator suffixes so the stored title remains job-level.
         page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
