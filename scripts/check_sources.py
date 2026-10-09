@@ -6,6 +6,7 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
 ROOT=Path(__file__).resolve().parents[1]
+# v2: health-check only enabled public sources; transient network blocks are reported, not fatal.
 REGISTRY=ROOT/"data/company_sources.json"
 OUT=ROOT/"data/source-health.json"
 sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
