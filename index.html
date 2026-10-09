@@ -30,9 +30,9 @@
 let DATA=[];
 async function loadData(){
  const urls=[
+  "https://raw.githubusercontent.com/qq1739825911-web/2027-qiuzhao-radar/main/data/jobs.json?ts="+Date.now(),
   "./data/jobs.json?ts="+Date.now(),
-  "/2027-qiuzhao-radar/data/jobs.json?ts="+Date.now(),
-  "https://raw.githubusercontent.com/qq1739825911-web/2027-qiuzhao-radar/main/data/jobs.json?ts="+Date.now()
+  "/2027-qiuzhao-radar/data/jobs.json?ts="+Date.now()
  ];
  let rows=null; const errors=[];
  for(const u of urls){
