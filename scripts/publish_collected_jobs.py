@@ -26,5 +26,15 @@ for x in incoming:
         idx[k]=x; added+=1
         if x.get("source_url"): by_url[x.get("source_url")]=x
         by_role[(x.get("company","").strip().lower(),x.get("title","").strip().lower(),x.get("cohort","").strip().lower())]=x
+# Downgrade broad headings / qualification fragments previously emitted from this public article.
+for row in idx.values():
+    if (row.get("source_url","").startswith("https://m.yingjiesheng.com/xuanjianghui/xjh_6268864")
+        and row.get("source")=="应届生求职网公开岗位"):
+        title=row.get("title","").strip()
+        if (len(title)>45 or title.endswith(("类","方向","相关专业","等相关专业"))
+            or title.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求"))):
+            row["status"]="pending_review"
+            row["granularity"]="review"
+            row["verification_score"]=min(row.get("verification_score",5),5)
 J.write_text(json.dumps(list(idx.values()),ensure_ascii=False,indent=2),encoding="utf-8")
 print(f"incoming={len(incoming)} added={added} updated={updated} total={len(idx)}")
