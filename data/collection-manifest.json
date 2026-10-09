@@ -14,22 +14,22 @@
       8,
       9,
       10,
-      31,
-      32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39,
-      40
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
     ],
-    "qiuzhaowang_next_page": 41
+    "qiuzhaowang_next_page": 51
   },
-  "records_found": 2392,
+  "records_found": 1819,
   "active_candidates": 17,
-  "pending_review": 2375,
+  "pending_review": 1802,
   "results": [
     {
       "id": "citic",
@@ -155,9 +155,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 2348,
+      "records_found": 1775,
       "active_candidates": 0,
-      "pending_review": 2348
+      "pending_review": 1775
     },
     {
       "id": "meituan",
