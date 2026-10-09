@@ -28,21 +28,26 @@ ROLE_HREF=("job","position","career","campus","recruit","zhaopin","jobs","vacanc
 
 class Parser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self._a=None; self._td=None; self._row=[]
+        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.scripts=[]; self._script_buf=None; self._a=None; self._td=None; self._row=[]
     def handle_starttag(self,tag,attrs):
         d=dict(attrs); tag=tag.lower()
         if tag=="a": self._a={"href":d.get("href",""),"text":""}
         if tag in ("td","th"): self._td=""
         if tag=="tr": self._row=[]
-        if tag=="script": self._script=d.get("type","")
+        if tag=="script": self._script_buf=[]
     def handle_data(self,data):
         s=re.sub(r"\s+"," ",data).strip()
         if s: self.text.append(s)
         if self._a is not None: self._a["text"]+=(" "+s if s else "")
+        if self._script_buf is not None: self._script_buf.append(data)
         if self._td is not None: self._td+=(" "+s if s else "")
     def handle_endtag(self,tag):
         tag=tag.lower()
         if tag=="a" and self._a is not None: self.links.append(self._a); self._a=None
+        if tag=="script" and self._script_buf is not None:
+            body="".join(self._script_buf).strip()
+            if body and len(body)<5000000: self.scripts.append(body)
+            self._script_buf=None
         if tag in ("td","th") and self._td is not None:
             self._row.append(self._td.strip()); self._td=None
         if tag=="tr" and self._row: self.tables.append(self._row)
@@ -94,6 +99,34 @@ def record(company,title,url,source,cohort,confidence,program=""):
       "program":program,"collector":"public-html-v3","granularity":"job" if status=="active" else "review",
       "verification_score":confidence}
 
+def embedded_records(company,source,parser,cohort):
+    out=[]; host=urlparse(source).netloc.lower()
+    # Only parse JSON embedded in public HTML; never call hidden APIs.
+    for blob in parser.scripts:
+        if not (blob.startswith("{") or blob.startswith("[")): continue
+        try: obj=json.loads(blob)
+        except Exception: continue
+        stack=[obj]
+        while stack and len(out)<500:
+            node=stack.pop()
+            if isinstance(node,dict):
+                title=""
+                for key in ("positionName","jobName","recruitJobName","postName","title","name"):
+                    val=node.get(key)
+                    if isinstance(val,str) and 3<len(val.strip())<90 and any(w.lower() in val.lower() for w in CONCRETE_WORDS):
+                        title=val.strip(); break
+                url=""
+                for key in ("positionUrl","jobUrl","detailUrl","url","href","link"):
+                    val=node.get(key)
+                    if isinstance(val,str) and val.startswith(("http://","https://","/")):
+                        url=canonical(urljoin(source,val)); break
+                if title and url and urlparse(url).netloc.lower()==host:
+                    sc=score(title,url,"")
+                    if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF): out.append(record(company,title,url,company+"官方招聘",cohort,sc))
+                stack.extend(v for v in node.values() if isinstance(v,(dict,list)))
+            elif isinstance(node,list): stack.extend(v for v in node if isinstance(v,(dict,list)))
+    return out
+
 def table_records(company,source,parser,cohort):
     out=[]
     for row in parser.tables:
@@ -107,7 +140,7 @@ def table_records(company,source,parser,cohort):
 
 def collect_source(src):
     company,root=src["company"],src["url"]; queue=[root]; visited=set(); seen=set(); rows=[]
-    while queue and len(visited)<3 and len(rows)<300:
+    while queue and len(visited)<6 and len(rows)<500:
         page=queue.pop(0)
         cp=canonical(page)
         if cp in visited: continue
@@ -116,6 +149,7 @@ def collect_source(src):
         except Exception: continue
         p=Parser(); p.feed(html); cohort=year(html[:20000])
         rows.extend(table_records(company,final,p,cohort))
+        rows.extend(embedded_records(company,final,p,cohort))
         for a in p.links:
             title=clean(a["text"]); href=canonical(urljoin(final,a["href"]))
             if not title or len(title)<4 or len(title)>100 or not href or href in seen: continue
@@ -125,7 +159,7 @@ def collect_source(src):
             if sc<5: continue
             seen.add(href)
             rows.append(record(company,title,href,company+"官方招聘",cohort,sc))
-            if len(queue)<3 and len(visited)+len(queue)<3 and any(x.lower() in href.lower() for x in ROLE_HREF):
+            if len(queue)<6 and len(visited)+len(queue)<6 and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
     # de-dupe within source, preferring higher confidence
     best={}
@@ -137,7 +171,7 @@ def collect_source(src):
 sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
 enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
 all_rows=[]; results=[]; active=review=0
-with ThreadPoolExecutor(max_workers=min(8,len(enabled) or 1)) as pool:
+with ThreadPoolExecutor(max_workers=min(12,len(enabled) or 1)) as pool:
     futures={pool.submit(collect_source,s):s for s in enabled}
     for fut in as_completed(futures):
         s=futures[fut]
@@ -150,7 +184,7 @@ with ThreadPoolExecutor(max_workers=min(8,len(enabled) or 1)) as pool:
                         "active_candidates":a,"pending_review":rr})
 results.sort(key=lambda x:x["company"])
 INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"3.0","enabled_sources":len(enabled),
+MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"4.0","enabled_sources":len(enabled),
  "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
  "policy":"Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
  "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."},
