@@ -3,8 +3,8 @@
   "collector_version": "4.0",
   "enabled_sources": 20,
   "records_found": 1618,
-  "active_candidates": 32,
-  "pending_review": 1586,
+  "active_candidates": 17,
+  "pending_review": 1601,
   "results": [
     {
       "id": "citic",
@@ -91,8 +91,8 @@
       "company": "应届生求职网",
       "pages_visited": 1,
       "records_found": 15,
-      "active_candidates": 15,
-      "pending_review": 0
+      "active_candidates": 0,
+      "pending_review": 15
     },
     {
       "id": "cmb",

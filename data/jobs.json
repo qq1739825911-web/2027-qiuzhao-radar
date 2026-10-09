@@ -2333,7 +2333,7 @@
     "category": "AI / 算法 / 技术",
     "city": "西安",
     "enterprise_type": "待核验",
-    "degree": "本科及以上",
+    "degree": "待核验",
     "salary": "薪资面议",
     "publish_date": "",
     "deadline": "2029-08-21",
@@ -2368,7 +2368,7 @@
     "category": "AI / 算法 / 技术",
     "city": "西安",
     "enterprise_type": "待核验",
-    "degree": "待核验",
+    "degree": "硕士及以上",
     "salary": "薪资面议",
     "publish_date": "",
     "deadline": "2029-08-21",
@@ -2436,7 +2436,7 @@
     "category": "AI / 算法 / 技术",
     "city": "武汉",
     "enterprise_type": "待核验",
-    "degree": "硕士",
+    "degree": "待核验",
     "salary": "16-20K * 13薪",
     "publish_date": "",
     "deadline": "2027-01-31",
@@ -2470,7 +2470,7 @@
     "category": "金融 / 银行",
     "city": "全国",
     "enterprise_type": "待核验",
-    "degree": "待核验",
+    "degree": "本科及以上",
     "salary": "10-15K * 14薪",
     "publish_date": "",
     "deadline": "2027-06-30",
@@ -2575,7 +2575,7 @@
       "AI",
       "应用工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2583,8 +2583,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-f628b67e7109ce2d",
@@ -2603,7 +2603,7 @@
     "keywords": [
       "机械工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2611,8 +2611,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-d3637a4774b3301a",
@@ -2633,7 +2633,7 @@
       "机械",
       "力学"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2641,8 +2641,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-ec8e3bd4a8e8c872",
@@ -2664,7 +2664,7 @@
       "电机",
       "电磁方向"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2672,8 +2672,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-6ed32f276430ad23",
@@ -2692,7 +2692,7 @@
     "keywords": [
       "电气工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2700,8 +2700,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-0b4e09d470f13b7c",
@@ -2720,7 +2720,7 @@
     "keywords": [
       "硬件工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2728,8 +2728,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-22cbfbf0840a90b3",
@@ -2748,7 +2748,7 @@
     "keywords": [
       "仪表工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2756,8 +2756,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-48f99806add14563",
@@ -2776,7 +2776,7 @@
     "keywords": [
       "海外技术销售工程"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2784,8 +2784,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-0471d6b60684b9e5",
@@ -2804,7 +2804,7 @@
     "keywords": [
       "国内销售工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2812,8 +2812,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-6426606e223d8c06",
@@ -2832,7 +2832,7 @@
     "keywords": [
       "海外销售经理"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2840,8 +2840,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-f7024d39740b4fd9",
@@ -2860,7 +2860,7 @@
     "keywords": [
       "技术服务工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2868,8 +2868,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-16fd6d81699b0516",
@@ -2888,7 +2888,7 @@
     "keywords": [
       "海外技术服务工程"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2896,8 +2896,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-3fbc4e84cf7f484d",
@@ -2916,7 +2916,7 @@
     "keywords": [
       "采购工程师"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2924,8 +2924,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-e858d05d092d99e3",
@@ -2944,7 +2944,7 @@
     "keywords": [
       "财务专员"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2952,8 +2952,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-52b3ab230c7fc825",
@@ -2972,7 +2972,7 @@
     "keywords": [
       "人力资源专员"
     ],
-    "status": "active",
+    "status": "pending_review",
     "demo": false,
     "confirmed_by": [
       "烟台杰瑞集团官方公开页面"
@@ -2980,8 +2980,8 @@
     "cohort": "2027届",
     "program": "",
     "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
+    "granularity": "review",
+    "verification_score": 5
   },
   {
     "id": "auto-f5bf5cb80a6e8063",
@@ -2990,7 +2990,7 @@
     "category": "AI / 算法 / 技术",
     "city": "西安",
     "enterprise_type": "待核验",
-    "degree": "待核验",
+    "degree": "本科及以上",
     "salary": "薪资面议",
     "publish_date": "",
     "deadline": "2029-08-21",
@@ -3181,7 +3181,7 @@
     "category": "产品 / 运营",
     "city": "北京",
     "enterprise_type": "待核验",
-    "degree": "本科及以上",
+    "degree": "待核验",
     "salary": "15-30K * 15薪",
     "publish_date": "",
     "deadline": "2026-11-30",
@@ -3243,7 +3243,7 @@
     "category": "产品 / 运营",
     "city": "全国",
     "enterprise_type": "待核验",
-    "degree": "本科及以上",
+    "degree": "待核验",
     "salary": "薪资面议",
     "publish_date": "",
     "deadline": "2028-09-23",

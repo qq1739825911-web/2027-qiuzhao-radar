@@ -28,6 +28,432 @@
     "verification_score": 5
   },
   {
+    "id": "auto-880c70bede023c1c",
+    "company": "烟台杰瑞集团",
+    "title": "AI 应用工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "深圳、成都、青岛、烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士/博士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "AI",
+      "应用工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f628b67e7109ce2d",
+    "company": "烟台杰瑞集团",
+    "title": "机械工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、上海、深圳、天津、烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "机械工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-d3637a4774b3301a",
+    "company": "烟台杰瑞集团",
+    "title": "仿真工程师 （机械/力学）",
+    "category": "AI / 算法 / 技术",
+    "city": "烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "仿真工程师",
+      "机械",
+      "力学"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-ec8e3bd4a8e8c872",
+    "company": "烟台杰瑞集团",
+    "title": "仿真工程师 （信号/电机/电磁方向）",
+    "category": "AI / 算法 / 技术",
+    "city": "烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "仿真工程师",
+      "信号",
+      "电机",
+      "电磁方向"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-6ed32f276430ad23",
+    "company": "烟台杰瑞集团",
+    "title": "电气工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、上海、深圳、天津、烟台",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "电气工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-0b4e09d470f13b7c",
+    "company": "烟台杰瑞集团",
+    "title": "硬件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、上海、深圳、天津、烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "硬件工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-22cbfbf0840a90b3",
+    "company": "烟台杰瑞集团",
+    "title": "仪表工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、上海、深圳、天津、烟台",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "仪表工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-48f99806add14563",
+    "company": "烟台杰瑞集团",
+    "title": "海外技术销售工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "海外",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "海外技术销售工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-0471d6b60684b9e5",
+    "company": "烟台杰瑞集团",
+    "title": "国内销售工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "国内销售工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-6426606e223d8c06",
+    "company": "烟台杰瑞集团",
+    "title": "海外销售经理 （西、阿、葡、俄、法）",
+    "category": "销售 / 商务 / 营销",
+    "city": "海外",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "海外销售经理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f7024d39740b4fd9",
+    "company": "烟台杰瑞集团",
+    "title": "技术服务工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "技术服务工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-16fd6d81699b0516",
+    "company": "烟台杰瑞集团",
+    "title": "海外技术服务工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "海外",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "海外技术服务工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-3fbc4e84cf7f484d",
+    "company": "烟台杰瑞集团",
+    "title": "采购工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、天津、烟台",
+    "enterprise_type": "待核验",
+    "degree": "本科/硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "采购工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-e858d05d092d99e3",
+    "company": "烟台杰瑞集团",
+    "title": "财务专员",
+    "category": "金融 / 银行",
+    "city": "烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "财务专员"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-52b3ab230c7fc825",
+    "company": "烟台杰瑞集团",
+    "title": "人力资源专员",
+    "category": "人力资源",
+    "city": "北京、天津、烟台",
+    "enterprise_type": "待核验",
+    "degree": "硕士",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "人力资源专员"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "应届生求职网公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
     "id": "auto-fe4c0232e36aa91d",
     "company": "中国邮政储蓄银行",
     "title": "财务信息",
@@ -110,432 +536,6 @@
     "collector": "public-html-v3",
     "granularity": "review",
     "verification_score": 5
-  },
-  {
-    "id": "auto-880c70bede023c1c",
-    "company": "烟台杰瑞集团",
-    "title": "AI 应用工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "深圳、成都、青岛、烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士/博士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "AI",
-      "应用工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-f628b67e7109ce2d",
-    "company": "烟台杰瑞集团",
-    "title": "机械工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "北京、上海、深圳、天津、烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "机械工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-d3637a4774b3301a",
-    "company": "烟台杰瑞集团",
-    "title": "仿真工程师 （机械/力学）",
-    "category": "AI / 算法 / 技术",
-    "city": "烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "仿真工程师",
-      "机械",
-      "力学"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-ec8e3bd4a8e8c872",
-    "company": "烟台杰瑞集团",
-    "title": "仿真工程师 （信号/电机/电磁方向）",
-    "category": "AI / 算法 / 技术",
-    "city": "烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "仿真工程师",
-      "信号",
-      "电机",
-      "电磁方向"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-6ed32f276430ad23",
-    "company": "烟台杰瑞集团",
-    "title": "电气工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "北京、上海、深圳、天津、烟台",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "电气工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-0b4e09d470f13b7c",
-    "company": "烟台杰瑞集团",
-    "title": "硬件工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "北京、上海、深圳、天津、烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "硬件工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-22cbfbf0840a90b3",
-    "company": "烟台杰瑞集团",
-    "title": "仪表工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "北京、上海、深圳、天津、烟台",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "仪表工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-48f99806add14563",
-    "company": "烟台杰瑞集团",
-    "title": "海外技术销售工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "海外",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "海外技术销售工程"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-0471d6b60684b9e5",
-    "company": "烟台杰瑞集团",
-    "title": "国内销售工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "国内销售工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-6426606e223d8c06",
-    "company": "烟台杰瑞集团",
-    "title": "海外销售经理 （西、阿、葡、俄、法）",
-    "category": "销售 / 商务 / 营销",
-    "city": "海外",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "海外销售经理"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-f7024d39740b4fd9",
-    "company": "烟台杰瑞集团",
-    "title": "技术服务工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "技术服务工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-16fd6d81699b0516",
-    "company": "烟台杰瑞集团",
-    "title": "海外技术服务工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "海外",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "海外技术服务工程"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-3fbc4e84cf7f484d",
-    "company": "烟台杰瑞集团",
-    "title": "采购工程师",
-    "category": "AI / 算法 / 技术",
-    "city": "北京、天津、烟台",
-    "enterprise_type": "待核验",
-    "degree": "本科/硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "采购工程师"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-e858d05d092d99e3",
-    "company": "烟台杰瑞集团",
-    "title": "财务专员",
-    "category": "金融 / 银行",
-    "city": "烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "财务专员"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-52b3ab230c7fc825",
-    "company": "烟台杰瑞集团",
-    "title": "人力资源专员",
-    "category": "人力资源",
-    "city": "北京、天津、烟台",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "应届生求职网公开岗位",
-    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-    "keywords": [
-      "人力资源专员"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "烟台杰瑞集团官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
   },
   {
     "id": "auto-717632bb987eceba",
@@ -760,540 +760,6 @@
     "collector": "public-html-v3",
     "granularity": "review",
     "verification_score": 5
-  },
-  {
-    "id": "auto-dd648af87b2c2e70",
-    "company": "诺瓦星云",
-    "title": "27届校招-PCB工程师 (西安)(J12276)",
-    "category": "AI / 算法 / 技术",
-    "city": "西安",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2029-08-21",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462572",
-    "keywords": [
-      "27",
-      "届校招",
-      "-PCB",
-      "工程师",
-      "西安",
-      "J12276"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-ae31697dc2a1d2e1",
-    "company": "诺瓦星云",
-    "title": "27届校招-算法工程师(西安)(J12268)",
-    "category": "AI / 算法 / 技术",
-    "city": "西安",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462503",
-    "keywords": [
-      "27",
-      "届校招",
-      "算法工程师",
-      "西安",
-      "J12268"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-ab8ef4cfdfc1963f",
-    "company": "诺瓦星云",
-    "title": "27届校招-大模型算法工程师(西安)(J12269)",
-    "category": "AI / 算法 / 技术",
-    "city": "西安",
-    "enterprise_type": "待核验",
-    "degree": "硕士及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2029-08-21",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462504",
-    "keywords": [
-      "27",
-      "届校招",
-      "大模型算法工程师",
-      "西安",
-      "J12269"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-77c93c7522ad5cad",
-    "company": "数字政通",
-    "title": "27届校招-AI产品经理（武汉）",
-    "category": "AI / 算法 / 技术",
-    "city": "武汉",
-    "enterprise_type": "待核验",
-    "degree": "硕士",
-    "salary": "16-20K * 13薪",
-    "publish_date": "",
-    "deadline": "2027-01-31",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/467982",
-    "keywords": [
-      "27",
-      "届校招",
-      "-AI",
-      "产品经理",
-      "武汉"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-76c85f08b436d180",
-    "company": "海能达通信",
-    "title": "财务专员（27届校招）",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/459432",
-    "keywords": [
-      "财务专员",
-      "27",
-      "届校招"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-6471c9756f0a27d3",
-    "company": "诺瓦星云",
-    "title": "27校招-营销管培生（全国）(J12277)",
-    "category": "销售 / 商务 / 营销",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2029-08-21",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462574",
-    "keywords": [
-      "27",
-      "校招",
-      "营销管培生",
-      "全国",
-      "J12277"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-f5bf5cb80a6e8063",
-    "company": "诺瓦星云",
-    "title": "27校招-软件工程师（西安）(J12263)",
-    "category": "AI / 算法 / 技术",
-    "city": "西安",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462497",
-    "keywords": [
-      "27",
-      "校招",
-      "软件工程师",
-      "西安",
-      "J12263"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-3d30f32e56855cb5",
-    "company": "诺瓦星云",
-    "title": "27校招-嵌入式工程师（Linux）（西安）(J12265)",
-    "category": "AI / 算法 / 技术",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2029-08-21",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462500",
-    "keywords": [
-      "27",
-      "校招",
-      "嵌入式工程师",
-      "Linux",
-      "西安",
-      "J12265"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-9b84a11728cc2831",
-    "company": "诺瓦星云",
-    "title": "27校招-嵌入式工程师（MCU）（西安）(J12267)",
-    "category": "AI / 算法 / 技术",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2029-08-21",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462502",
-    "keywords": [
-      "27",
-      "校招",
-      "嵌入式工程师",
-      "MCU",
-      "西安",
-      "J12267"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-e8bc5e03719a5d44",
-    "company": "数字政通",
-    "title": "27届校招-Agent研发工程师（长沙）",
-    "category": "AI / 算法 / 技术",
-    "city": "长沙",
-    "enterprise_type": "待核验",
-    "degree": "硕士及以上",
-    "salary": "18-22K * 13薪",
-    "publish_date": "",
-    "deadline": "2027-01-31",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/467980",
-    "keywords": [
-      "27",
-      "届校招",
-      "-Agent",
-      "研发工程师",
-      "长沙"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-dd276ffe83baa604",
-    "company": "海能达通信",
-    "title": "产品经理培训生（27届校招）",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "14-20K * 14薪",
-    "publish_date": "",
-    "deadline": "2027-06-30",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/459352",
-    "keywords": [
-      "产品经理培训生",
-      "27",
-      "届校招"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-fc4dab695439b9fd",
-    "company": "Dexmal 原力灵机",
-    "title": "【27届校招】产品经理(A154176)",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2026-12-31",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/460860",
-    "keywords": [
-      "27",
-      "届校招",
-      "产品经理",
-      "A154176"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-892e5c3b3ad84706",
-    "company": "未岚大陆",
-    "title": "2027届校招-产品经理（北京）",
-    "category": "产品 / 运营",
-    "city": "北京",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "15-30K * 15薪",
-    "publish_date": "",
-    "deadline": "2026-11-30",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/465296",
-    "keywords": [
-      "2027",
-      "届校招",
-      "产品经理",
-      "北京"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-0589de296e0d125d",
-    "company": "广联达",
-    "title": "27届校招-解决方案销售工程师（数字行业服务）",
-    "category": "AI / 算法 / 技术",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2027-09-01",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/469470",
-    "keywords": [
-      "27",
-      "届校招",
-      "解决方案销售工程",
-      "数字行业服务"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-669e5aab3a599d5d",
-    "company": "字节跳动",
-    "title": "产品经理",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2028-09-23",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/462835",
-    "keywords": [
-      "产品经理"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
-  },
-  {
-    "id": "auto-05a732691e1a4099",
-    "company": "北森",
-    "title": "2027届校招-软件产品经理（北京、成都）(J14870)",
-    "category": "AI / 算法 / 技术",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "14-20K * 14薪",
-    "publish_date": "",
-    "deadline": "2027-08-31",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/469521",
-    "keywords": [
-      "2027",
-      "届校招",
-      "软件产品经理",
-      "北京",
-      "成都",
-      "J14870"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 8
-  },
-  {
-    "id": "auto-c6c7c863e957fa5b",
-    "company": "昆仑万维",
-    "title": "【校招岗】产品经理",
-    "category": "产品 / 运营",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "本科及以上",
-    "salary": "薪资面议",
-    "publish_date": "",
-    "deadline": "2028-09-01",
-    "last_verified": "2026-10-09",
-    "source": "牛客公开岗位",
-    "source_url": "https://www.nowcoder.com/jobs/detail/464800",
-    "keywords": [
-      "校招岗",
-      "产品经理"
-    ],
-    "status": "active",
-    "demo": false,
-    "confirmed_by": [
-      "牛客公开岗位"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "job",
-    "verification_score": 7
   },
   {
     "id": "auto-4af1bf2be3222d5c",
@@ -45835,5 +45301,539 @@
     "collector": "public-html-v3",
     "granularity": "review",
     "verification_score": 5
+  },
+  {
+    "id": "auto-dd648af87b2c2e70",
+    "company": "诺瓦星云",
+    "title": "27届校招-PCB工程师 (西安)(J12276)",
+    "category": "AI / 算法 / 技术",
+    "city": "西安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462572",
+    "keywords": [
+      "27",
+      "届校招",
+      "-PCB",
+      "工程师",
+      "西安",
+      "J12276"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-ae31697dc2a1d2e1",
+    "company": "诺瓦星云",
+    "title": "27届校招-算法工程师(西安)(J12268)",
+    "category": "AI / 算法 / 技术",
+    "city": "西安",
+    "enterprise_type": "待核验",
+    "degree": "硕士及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2029-08-21",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462503",
+    "keywords": [
+      "27",
+      "届校招",
+      "算法工程师",
+      "西安",
+      "J12268"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-ab8ef4cfdfc1963f",
+    "company": "诺瓦星云",
+    "title": "27届校招-大模型算法工程师(西安)(J12269)",
+    "category": "AI / 算法 / 技术",
+    "city": "西安",
+    "enterprise_type": "待核验",
+    "degree": "硕士及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2029-08-21",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462504",
+    "keywords": [
+      "27",
+      "届校招",
+      "大模型算法工程师",
+      "西安",
+      "J12269"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-77c93c7522ad5cad",
+    "company": "数字政通",
+    "title": "27届校招-AI产品经理（武汉）",
+    "category": "AI / 算法 / 技术",
+    "city": "武汉",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/467982",
+    "keywords": [
+      "27",
+      "届校招",
+      "-AI",
+      "产品经理",
+      "武汉"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-76c85f08b436d180",
+    "company": "海能达通信",
+    "title": "财务专员（27届校招）",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "10-15K * 14薪",
+    "publish_date": "",
+    "deadline": "2027-06-30",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/459432",
+    "keywords": [
+      "财务专员",
+      "27",
+      "届校招"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-6471c9756f0a27d3",
+    "company": "诺瓦星云",
+    "title": "27校招-营销管培生（全国）(J12277)",
+    "category": "销售 / 商务 / 营销",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2029-08-21",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462574",
+    "keywords": [
+      "27",
+      "校招",
+      "营销管培生",
+      "全国",
+      "J12277"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-f5bf5cb80a6e8063",
+    "company": "诺瓦星云",
+    "title": "27校招-软件工程师（西安）(J12263)",
+    "category": "AI / 算法 / 技术",
+    "city": "西安",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2029-08-21",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462497",
+    "keywords": [
+      "27",
+      "校招",
+      "软件工程师",
+      "西安",
+      "J12263"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-3d30f32e56855cb5",
+    "company": "诺瓦星云",
+    "title": "27校招-嵌入式工程师（Linux）（西安）(J12265)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2029-08-21",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462500",
+    "keywords": [
+      "27",
+      "校招",
+      "嵌入式工程师",
+      "Linux",
+      "西安",
+      "J12265"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-9b84a11728cc2831",
+    "company": "诺瓦星云",
+    "title": "27校招-嵌入式工程师（MCU）（西安）(J12267)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2029-08-21",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462502",
+    "keywords": [
+      "27",
+      "校招",
+      "嵌入式工程师",
+      "MCU",
+      "西安",
+      "J12267"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-e8bc5e03719a5d44",
+    "company": "数字政通",
+    "title": "27届校招-Agent研发工程师（长沙）",
+    "category": "AI / 算法 / 技术",
+    "city": "长沙",
+    "enterprise_type": "待核验",
+    "degree": "硕士及以上",
+    "salary": "18-22K * 13薪",
+    "publish_date": "",
+    "deadline": "2027-01-31",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/467980",
+    "keywords": [
+      "27",
+      "届校招",
+      "-Agent",
+      "研发工程师",
+      "长沙"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-dd276ffe83baa604",
+    "company": "海能达通信",
+    "title": "产品经理培训生（27届校招）",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "14-20K * 14薪",
+    "publish_date": "",
+    "deadline": "2027-06-30",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/459352",
+    "keywords": [
+      "产品经理培训生",
+      "27",
+      "届校招"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-fc4dab695439b9fd",
+    "company": "Dexmal 原力灵机",
+    "title": "【27届校招】产品经理(A154176)",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2026-12-31",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/460860",
+    "keywords": [
+      "27",
+      "届校招",
+      "产品经理",
+      "A154176"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-892e5c3b3ad84706",
+    "company": "未岚大陆",
+    "title": "2027届校招-产品经理（北京）",
+    "category": "产品 / 运营",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/465296",
+    "keywords": [
+      "2027",
+      "届校招",
+      "产品经理",
+      "北京"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 8
+  },
+  {
+    "id": "auto-0589de296e0d125d",
+    "company": "广联达",
+    "title": "27届校招-解决方案销售工程师（数字行业服务）",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2027-09-01",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/469470",
+    "keywords": [
+      "27",
+      "届校招",
+      "解决方案销售工程",
+      "数字行业服务"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-669e5aab3a599d5d",
+    "company": "字节跳动",
+    "title": "产品经理",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/462835",
+    "keywords": [
+      "产品经理"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
+  },
+  {
+    "id": "auto-05a732691e1a4099",
+    "company": "北森",
+    "title": "2027届校招-软件产品经理（北京、成都）(J14870)",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "14-20K * 14薪",
+    "publish_date": "",
+    "deadline": "2027-08-31",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/469521",
+    "keywords": [
+      "2027",
+      "届校招",
+      "软件产品经理",
+      "北京",
+      "成都",
+      "J14870"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 8
+  },
+  {
+    "id": "auto-c6c7c863e957fa5b",
+    "company": "昆仑万维",
+    "title": "【校招岗】产品经理",
+    "category": "产品 / 运营",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
+    "publish_date": "",
+    "deadline": "2028-09-01",
+    "last_verified": "2026-10-09",
+    "source": "牛客公开岗位",
+    "source_url": "https://www.nowcoder.com/jobs/detail/464800",
+    "keywords": [
+      "校招岗",
+      "产品经理"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "牛客公开岗位"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 7
   }
 ]
