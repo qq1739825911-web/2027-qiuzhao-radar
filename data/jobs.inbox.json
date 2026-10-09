@@ -1,5 +1,117 @@
 [
   {
+    "id": "auto-9c5426473905f0a8",
+    "company": "小鹏汽车",
+    "title": "大客户销售",
+    "category": "销售 / 商务 / 营销",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "小鹏汽车官方招聘",
+    "source_url": "https://www.xiaopeng.com/fleet_sales.html",
+    "keywords": [
+      "大客户销售"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "小鹏汽车官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-fe4c0232e36aa91d",
+    "company": "中国邮政储蓄银行",
+    "title": "财务信息",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx",
+    "keywords": [
+      "财务信息"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-b2f70fbb457cd27f",
+    "company": "中国邮政储蓄银行",
+    "title": "财务概要",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwgy",
+    "keywords": [
+      "财务概要"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-71a8da90b4b6633e",
+    "company": "中国邮政储蓄银行",
+    "title": "财务报告",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwbg",
+    "keywords": [
+      "财务报告"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
     "id": "auto-717632bb987eceba",
     "company": "中国银行",
     "title": "金融市场",
@@ -216,118 +328,6 @@
     "demo": false,
     "confirmed_by": [
       "中国银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
-    "id": "auto-9c5426473905f0a8",
-    "company": "小鹏汽车",
-    "title": "大客户销售",
-    "category": "销售 / 商务 / 营销",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "小鹏汽车官方招聘",
-    "source_url": "https://www.xiaopeng.com/fleet_sales.html",
-    "keywords": [
-      "大客户销售"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "小鹏汽车官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
-    "id": "auto-fe4c0232e36aa91d",
-    "company": "中国邮政储蓄银行",
-    "title": "财务信息",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx",
-    "keywords": [
-      "财务信息"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
-    "id": "auto-b2f70fbb457cd27f",
-    "company": "中国邮政储蓄银行",
-    "title": "财务概要",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwgy",
-    "keywords": [
-      "财务概要"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
-    "id": "auto-71a8da90b4b6633e",
-    "company": "中国邮政储蓄银行",
-    "title": "财务报告",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwbg",
-    "keywords": [
-      "财务报告"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
     ],
     "cohort": "2027届",
     "program": "",
