@@ -1,8 +1,149 @@
 {
-  "checked_at": null,
-  "enabled_sources": 0,
-  "reachable": 0,
-  "warnings": 0,
-  "results": [],
-  "note": "等待首次自动信源检查。"
+  "checked_at": "2026-10-09T06:35:23+00:00",
+  "enabled_sources": 20,
+  "reachable": 16,
+  "warnings": 4,
+  "results": [
+    {
+      "id": "citic",
+      "name": "中信银行",
+      "url": "https://career.citicbank.com/",
+      "status": "unavailable",
+      "detail": "<urlopen error [Errno -5] No address associated with hostname>"
+    },
+    {
+      "id": "icbc",
+      "name": "中国工商银行",
+      "url": "https://www.icbc.com.cn/ICBC/%E7%BD%91%E4%B8%8A%E4%BA%BA%E6%89%8D%E6%8B%9B%E8%81%98/default.htm",
+      "status": "unavailable",
+      "http_status": 404
+    },
+    {
+      "id": "ccb",
+      "name": "中国建设银行",
+      "url": "https://job.ccb.com/cn/job/announcement.html",
+      "status": "unavailable",
+      "detail": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>"
+    },
+    {
+      "id": "psbc",
+      "name": "中国邮政储蓄银行",
+      "url": "https://www.psbc.com/cn/gyyc/rczp/xyzp/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "boc",
+      "name": "中国银行",
+      "url": "https://www.boc.cn/aboutboc/bi4/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "cib",
+      "name": "兴业银行",
+      "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "huawei",
+      "name": "华为",
+      "url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "bytedance",
+      "name": "字节跳动",
+      "url": "https://bytedance.jobs.feishu.cn/campus/",
+      "status": "unavailable",
+      "http_status": 404
+    },
+    {
+      "id": "xiaomi",
+      "name": "小米",
+      "url": "https://hr.xiaomi.com/campus/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "xiaopeng",
+      "name": "小鹏汽车",
+      "url": "https://www.xiaopeng.com/join.html",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "yingjiesheng",
+      "name": "应届生求职网",
+      "url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "cmb",
+      "name": "招商银行",
+      "url": "https://career.cmbchina.com/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "pdd",
+      "name": "拼多多",
+      "url": "https://careers.pddglobalhr.com/campus",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "nowcoder",
+      "name": "牛客",
+      "url": "https://www.nowcoder.com/jobs/detail/462572",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "baidu",
+      "name": "百度",
+      "url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "qiuzhaowang",
+      "name": "秋招网",
+      "url": "https://qiuzhaowang.com/latest",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "meituan",
+      "name": "美团",
+      "url": "https://zhaopin.meituan.com/web/campus/schedule",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "tencent",
+      "name": "腾讯",
+      "url": "https://careers.tencent.com/en-us/campusrecruit.html",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "nio",
+      "name": "蔚来",
+      "url": "https://campus.nio.com/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "alibaba",
+      "name": "阿里巴巴",
+      "url": "https://campus-talent.alibaba.com/",
+      "status": "reachable",
+      "http_status": 200
+    }
+  ],
+  "note": "信源网络受限仅作警告，不自动判定岗位失效。"
 }
