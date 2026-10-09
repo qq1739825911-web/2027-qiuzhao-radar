@@ -11,7 +11,6 @@ for x in incoming:
     if not all(k): continue
     old=idx.get(k) or by_url.get(x.get("source_url"))
     if old:
-        idx[k]=old
         old["last_verified"]=x.get("last_verified") or old.get("last_verified","")
         old["collector"]=x.get("collector",old.get("collector",""))
         if x.get("verification_score",0)>old.get("verification_score",0):
