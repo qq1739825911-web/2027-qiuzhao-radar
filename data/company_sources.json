@@ -125,7 +125,12 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；仅采集公开可见字段"
+    "notes": "官方校园招聘页面；仅采集公开可见字段",
+    "seed_urls": [
+      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035119249690/detail",
+      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7671295378604607754/detail",
+      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035149052211/detail"
+    ]
   },
   {
     "id": "pdd",
