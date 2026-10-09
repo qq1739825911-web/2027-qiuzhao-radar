@@ -77,11 +77,16 @@
     "company": "百度",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://talent.baidu.com/jobs/",
+    "url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；仅采集公开可见字段"
+    "notes": "官方校园招聘页面；仅采集公开可见字段",
+    "seed_urls": [
+      "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/4a24a509-42b0-42fe-989d-bc24e863ce7b"
+    ]
   },
   {
     "id": "meituan",
