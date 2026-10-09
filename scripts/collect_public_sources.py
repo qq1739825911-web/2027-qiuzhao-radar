@@ -12,7 +12,7 @@ import json,re,hashlib
 from pathlib import Path
 from datetime import date
 from html.parser import HTMLParser
-from urllib.parse import urljoin,urlparse,urlunparse
+from urllib.parse import urljoin,urlparse,urlunparse,parse_qsl,urlencode
 from urllib.request import Request,urlopen
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -22,7 +22,7 @@ TODAY=str(date.today())
 HEADERS={"User-Agent":"2027-Qiuzhao-Radar-PublicCollector/3.0"}
 
 JOB_WORDS=("工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","管培生","管理培训生","咨询","教师","医生","护士","质量","项目经理")
-CONCRETE_WORDS=("工程师","开发","研发","算法","数据","产品经理","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","管培生","管理培训生","咨询","教师","医生","护士","质量","项目经理")
+CONCRETE_WORDS=("工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","研究岗","行业研究","分析师","分析岗","管培生","管理培训生","培训生","咨询","教师","医生","护士","质量","项目经理","策划","内容运营","新媒体","客服","行政","人事","风控","风险","信贷","会计","策略","助理","客户经理","技术支持","商业分析","投资","证券","保险","精算","编辑","翻译","业务专员","运营岗","产品运营","品牌","公关","电商","市场拓展","Sales","Marketing","Analyst","Engineer","Intern","Associate","Manager","Specialist","Consultant","Accountant","Finance","Risk","Audit","Legal","Research","Strategy","Operations","Supply Chain","Procurement","Quality","Manufacturing","Mechanical","Electrical","Clinical","Medical","Education","Teacher","Editor","Content","Copywriter","Designer","Design","Product","Business","HR","Data Science","Data Analyst")
 PROGRAM_WORDS=("招聘公告","招聘启事","校园招聘","校招公告","招聘简章","招聘信息","招聘计划","招聘项目","招聘专场","秋季招聘","春季招聘","招聘通知")
 NAV_BAD=("登录","注册","首页","关于我们","新闻","公告","联系我们","隐私","下载","帮助","返回","信用卡产品","借记卡产品","自营金融","产品服务","理财","基金产品")
 ROLE_HREF=("job","position","career","campus","recruit","zhaopin","jobs","vacancy","detail","post")
@@ -72,8 +72,7 @@ def canonical(u):
     # Preserve meaningful query parameters such as page=2 and jobId=123.
     # Strip only analytics/tracking parameters so paginated pages and distinct jobs do not collapse.
     tracking={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid"}
-    query=sorted((k,v) for k,v in __import__("urllib.parse",fromlist=["parse_qsl"]).parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
-    from urllib.parse import urlencode
+    query=sorted((k,v) for k,v in parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
     return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True),""))
 def same_host(a,b): return urlparse(a).netloc.lower()==urlparse(b).netloc.lower()
 def year(s):
@@ -154,7 +153,8 @@ def table_records(company,source,parser,cohort,source_label=None):
         joined=" | ".join(row)
         if any(x in joined for x in NAV_BAD): continue
         # Keep actual role names, not category headings or copied qualification paragraphs.
-        role=next((x for x in row if 2<len(x)<=45
+        role_cells=row[1:] if source_label and "公开" in source_label else row
+        role=next((x for x in role_cells if 2<len(x)<=45
                    and any(w.lower() in x.lower() for w in CONCRETE_WORDS)
                    and not x.endswith(("类","方向","相关专业","等相关专业","专业"))
                    and not x.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求","本科","硕士","博士"))),None)
@@ -172,7 +172,7 @@ def table_records(company,source,parser,cohort,source_label=None):
                 if i==role_idx or not (2<=len(candidate)<=60): continue
                 if any(tok in candidate for tok in city_tokens+bad_terms) or any(tok in candidate for tok in degree_words): continue
                 if candidate in NAV_BAD or candidate in PROGRAM_WORDS: continue
-                if any(w.lower() in candidate.lower() for w in CONCRETE_WORDS): continue
+                if i>role_idx and any(w.lower() in candidate.lower() for w in CONCRETE_WORDS): continue
                 if re.fullmatch(r"[\d年月日./:-]+",candidate): continue
                 candidates.append(candidate)
             if candidates:

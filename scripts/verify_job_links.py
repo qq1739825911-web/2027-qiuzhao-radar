@@ -28,20 +28,12 @@ def main():
     jobs=json.loads(JOBS.read_text(encoding="utf-8"))
     try: state=json.loads(STATE.read_text(encoding="utf-8"))
     except Exception: state={"cursor":0,"failures":{}}
-    # The workflow also runs on code pushes. Do not count those as separate confirmations
-    # unless at least 5h45m passed since the previous link-verification batch.
+    # Push-triggered runs are frequent. Link status must be checked at least 5h45m apart.
     previous=state.get("last_run_at")
-    if previous:
-        try:
-            prev_dt=datetime.fromisoformat(previous.replace("Z","+00:00"))
-            if (datetime.now(timezone.utc)-prev_dt)<timedelta(hours=5,minutes=45):
-                print(f"LINK VERIFICATION SKIPPED: previous batch was {previous}; next scheduled verification window is six hours.")
-                return
-        except Exception: pass
     failures=state.setdefault("failures",{})
     last_missing=state.setdefault("last_missing_at",{})
-    # Repair premature closures made by earlier versions that counted two quick push runs.
     now_dt=datetime.now(timezone.utc)
+    repaired=0
     for job in jobs:
         jid=str(job.get("id",""))
         if job.get("status")=="closed" and "连续两次核验确认链接失效" in job.get("verification_note",""):
@@ -51,7 +43,24 @@ def main():
             if elapsed<timedelta(hours=5,minutes=45):
                 job["status"]="pending_review"; job["verification_status"]="missing_recheck"
                 job["verification_note"]="上个版本两次异常间隔不足6小时，恢复待复查；需要下一轮定时核验确认"
-                failures[jid]=1; last_missing[jid]=prior or STAMP
+                failures[jid]=1; last_missing[jid]=prior or STAMP; repaired+=1
+    if previous:
+        try:
+            prev_dt=datetime.fromisoformat(previous.replace("Z","+00:00"))
+            if (now_dt-prev_dt)<timedelta(hours=5,minutes=45):
+                if repaired:
+                    JOBS.write_text(json.dumps(jobs,ensure_ascii=False,indent=2),encoding="utf-8")
+                    STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
+                    try:
+                        old_manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+                        old_manifest["closed_after_two_checks"]=max(0,int(old_manifest.get("closed_after_two_checks",0))-repaired)
+                        old_manifest["corrected_premature_closures"]=repaired
+                        old_manifest["note"]="已修复间隔不足6小时的误关闭；等待下一轮定时核验确认。"
+                        MANIFEST.write_text(json.dumps(old_manifest,ensure_ascii=False,indent=2),encoding="utf-8")
+                    except Exception: pass
+                print(f"LINK VERIFICATION SKIPPED: previous batch was {previous}; the next verification window is six hours.")
+                return
+        except Exception: pass
     eligible=[j for j in jobs if not j.get("demo") and j.get("source_url","").startswith("https://") and DIRECT.search(urlparse(j.get("source_url","")).path)]
     eligible.sort(key=lambda j:(j.get("last_verified",""),j.get("company",""),j.get("title","")))
     batch_size=60
@@ -77,17 +86,17 @@ def main():
                 job["verification_note"]="公开详情链接可访问；不代表招聘条件已由雇主再次确认"
             elif result=="missing":
                 missing+=1; job["verification_http_status"]=status
-                prior=last_missing.get(jid)
+                prior=last_missing.get(jid); second_confirmation=False
                 if not prior:
                     failures[jid]=max(1,int(failures.get(jid,0))); last_missing[jid]=STAMP
                 else:
                     try: elapsed=now_dt-datetime.fromisoformat(prior.replace("Z","+00:00"))
                     except Exception: elapsed=timedelta(0)
                     if elapsed>=timedelta(hours=5,minutes=45):
-                        failures[jid]=int(failures.get(jid,1))+1; last_missing[jid]=STAMP
+                        failures[jid]=int(failures.get(jid,1))+1; last_missing[jid]=STAMP; second_confirmation=True
                 job["verification_status"]="missing_recheck"
                 job["verification_note"]=f"详情链接异常，已确认 {failures.get(jid,1)} 次；需至少间隔6小时再次确认"
-                if failures.get(jid,1)>=2 and last_missing.get(jid)!=STAMP:
+                if failures.get(jid,1)>=2 and second_confirmation:
                     job["status"]="closed"; job["verification_status"]="closed"; job["verification_note"]="间隔至少6小时的两次核验均确认链接失效/岗位下线"; closed+=1
             else:
                 unknown+=1; job["verification_status"]="unknown"; job["verification_http_status"]=status; job["verification_note"]="访问受限或暂时失败，未据此关闭岗位"
