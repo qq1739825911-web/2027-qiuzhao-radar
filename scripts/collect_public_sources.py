@@ -177,11 +177,30 @@ def collect_source(src):
             m=re.search(r"^(.+?)(?:20\d{2}届|2027届|校招|校园招聘|招聘宣讲)", raw_page_title)
             if m: page_company=m.group(1).strip(" _-—")
             record_source="应届生求职网公开岗位"
+        elif src.get("id")=="qiuzhaowang":
+            parts=re.split(r"[|｜]",raw_page_title)
+            if "/jobs/" in urlparse(final).path and parts: page_company=parts[0].strip()
+            record_source="秋招网公开聚合"
         page_title=raw_page_title
         # Strip location prefixes and aggregator suffixes so the stored title remains job-level.
         page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
         page_title=re.sub(r"[_|｜].*(?:校招|实习|社招|招聘).*?$", "", page_title).strip()
         page_title=re.split(r"\s+[|｜_—]\s+|\s+-\s+(?:百度校园招聘|小米校园招聘|校园招聘).*$",page_title,1)[0].strip()
+        if src.get("id")=="qiuzhaowang" and "/jobs/" in urlparse(final).path:
+            page_text=p.page_text()
+            role_match=re.search(r"招聘岗位\s*(.+?)\s*工作城市",page_text)
+            city_match=re.search(r"工作城市\s*(.+?)\s*面向届次",page_text)
+            if role_match:
+                role_text=re.sub(r"招聘项目包含.*$","",role_match.group(1)).strip()
+                role_names=[clean(x) for x in re.split(r"\s*[·•]\s*",role_text) if clean(x)]
+                city_text=clean(city_match.group(1)) if city_match else "全国"
+                for role_name in role_names:
+                    if not (2<len(role_name)<=45): continue
+                    if role_name.startswith(("招聘项目","具体岗位","岗位要求","招聘方向")): continue
+                    item=record(page_company,role_name,final,record_source,cohort,5)
+                    item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
+                    item["city"]=city_text or "全国"; item["confirmed_by"]=[record_source]
+                    rows.append(item)
         if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
             sc=score(page_title,final,"")
             if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF):
@@ -205,9 +224,12 @@ def collect_source(src):
                             item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=4
                     if "已结束" in page_text[:600]:
                         item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=4
+                if "公开岗位" in record_source or "公开聚合" in record_source:
+                    item["confirmed_by"]=[record_source]
                 rows.append(item)
-        rows.extend(table_records(page_company,final,p,cohort,record_source))
-        rows.extend(embedded_records(page_company,final,p,cohort,record_source))
+        if src.get("id")!="qiuzhaowang":
+            rows.extend(table_records(page_company,final,p,cohort,record_source))
+            rows.extend(embedded_records(page_company,final,p,cohort,record_source))
         for a in p.links:
             title=clean(a["text"]); href=canonical(urljoin(final,a["href"]))
             if not title or len(title)<4 or len(title)>100 or not href or href in seen: continue
@@ -216,7 +238,14 @@ def collect_source(src):
             sc=score(title,href,p.page_text())
             if sc<5: continue
             seen.add(href)
-            rows.append(record(page_company,title,href,record_source,cohort,sc))
+            if src.get("id")=="qiuzhaowang":
+                if "/jobs/" in urlparse(href).path and len(queue)<max_pages and len(visited)+len(queue)<max_pages:
+                    queue.append(href)
+                continue
+            link_record=record(page_company,title,href,record_source,cohort,sc)
+            if "公开岗位" in record_source or "公开聚合" in record_source:
+                link_record["confirmed_by"]=[record_source]
+            rows.append(link_record)
             if len(queue)<max_pages and len(visited)+len(queue)<max_pages and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
     # de-dupe within source, preferring higher confidence

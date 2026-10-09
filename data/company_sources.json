@@ -259,5 +259,20 @@
     "trust": "high",
     "enabled": true,
     "notes": "2027校园招聘公开公告"
+  },
+  {
+    "id": "qiuzhaowang",
+    "company": "秋招网",
+    "type": "public_job_aggregator",
+    "cohort": "2027届",
+    "url": "https://qiuzhaowang.com/latest",
+    "seed_urls": [
+      "https://qiuzhaowang.com/latest"
+    ],
+    "max_pages": 20,
+    "access": "public",
+    "trust": "medium",
+    "enabled": true,
+    "notes": "公开列表与公开岗位汇总页；仅提取公开岗位方向并标记待核验，不读取会员专属投递信息"
   }
 ]
