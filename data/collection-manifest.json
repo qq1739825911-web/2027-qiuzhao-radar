@@ -2,8 +2,8 @@
   "run_date": "2026-10-09",
   "collector_version": "4.0",
   "enabled_sources": 19,
-  "records_found": 40,
-  "active_candidates": 28,
+  "records_found": 33,
+  "active_candidates": 21,
   "pending_review": 12,
   "results": [
     {
@@ -90,8 +90,8 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 1,
-      "records_found": 22,
-      "active_candidates": 22,
+      "records_found": 15,
+      "active_candidates": 15,
       "pending_review": 0
     },
     {
