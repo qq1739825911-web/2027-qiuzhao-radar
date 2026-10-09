@@ -115,4 +115,5 @@ function renderSources(){
 }
 document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("on"));t.classList.add("on");["jobs","board","profile","sources"].forEach(x=>$(x).style.display=x===t.dataset.tab?"block":"none");if(t.dataset.tab==="board")renderBoard();if(t.dataset.tab==="profile")renderProfile();if(t.dataset.tab==="sources")renderSources()});
 ["q","cat","city","type","status"].forEach(id=>$(id).addEventListener("input",()=>{currentPage=1;render()}));$("reset").onclick=()=>{["q","cat","city","type","status"].forEach(id=>$(id).value="");currentPage=1;render()};loadData().then(()=>{setup();render();setInterval(()=>loadData().then(()=>{setup();render()}),300000)}).catch(e=>{$("dataNotice").textContent="岗位数据加载失败，请检查 data/jobs.json；"+e.message;$("dataNotice").className="notice"});
-</script></body></html>
+</script></body><!-- deployment refresh 2026-10-09 -->
+</html>
