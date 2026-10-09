@@ -152,6 +152,7 @@ def collect_source(src):
         except Exception: continue
         p=Parser(); p.feed(html); cohort=year(html[:20000])
         page_title=clean(p.page_title)
+        page_title=re.split(r"\s*[-|｜_]\s*",page_title,1)[0].strip()
         if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
             sc=score(page_title,final,"")
             if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF): rows.append(record(company,page_title,final,company+"官方招聘",cohort,sc))
