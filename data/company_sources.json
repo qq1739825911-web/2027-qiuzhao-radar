@@ -302,7 +302,27 @@
     "max_candidates": 600,
     "access": "public",
     "trust": "medium",
+    "enabled": false,
+    "notes": "已暂时停用：当前页面未返回可稳定提取的公开岗位结构，避免每轮重复空跑；待专用解析器完成后再启用。"
+  },
+  {
+    "id": "91bangtu",
+    "company": "91邦途",
+    "type": "public_job_aggregator",
+    "cohort": "2027届",
+    "url": "https://91bangtu.com/positions?page=1",
+    "seed_urls": [
+      "https://91bangtu.com/positions?page=1",
+      "https://91bangtu.com/positions?page=2",
+      "https://91bangtu.com/positions?page=3",
+      "https://91bangtu.com/positions?page=4",
+      "https://91bangtu.com/positions?page=5"
+    ],
+    "max_pages": 5,
+    "max_candidates": 600,
+    "access": "public",
+    "trust": "medium",
     "enabled": true,
-    "notes": "公开岗位列表声称每日重抓企业官方岗位；采集只保留公开职位名、公司、城市和原始投递链接，聚合信息默认待核验。"
+    "notes": "公开岗位列表包含企业、岗位、地区和届次；只采集公开字段，聚合来源岗位默认待核验。"
   }
 ]

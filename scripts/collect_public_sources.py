@@ -169,6 +169,7 @@ def table_records(company,source,parser,cohort,source_label=None):
                 candidates.append(candidate)
             if candidates:
                 employer=candidates[0]
+                employer=re.split(r"\s+(?:金融|互联网/科技/AI|中国大陆|香港|美国|英国|新加坡|其他|金融/银行/证券|生产制造/工业|汽车/新能源|物流/供应链|快消/零售|生物医药/制药|教育/培训|房地产/建筑|咨询/四大|外企/合资|私企/民企|央国企/事业单位)\b",employer,1)[0].strip()
                 employer=re.sub(r"(世界500强|知名互联网|独角兽|半导体大厂|头部外企|新势力车企|大模型公司|行业领先|上市公司|福利完善|成长空间大|团队氛围好).*$","",employer).strip(" ·-_")
             if not employer or employer==company: continue
         role_url=source
@@ -221,6 +222,8 @@ def collect_source(src):
             record_source="秋招网公开聚合"
         elif src.get("id")=="mianlingai":
             record_source="面灵AI公开聚合"
+        elif src.get("id")=="91bangtu":
+            record_source="91邦途公开聚合"
         page_title=raw_page_title
         # Strip location prefixes and aggregator suffixes so the stored title remains job-level.
         page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
