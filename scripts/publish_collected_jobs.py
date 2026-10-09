@@ -9,8 +9,13 @@ idx={key(x):x for x in existing}; by_url={x.get("source_url"):x for x in existin
 for x in incoming:
     k=key(x)
     if not all(k): continue
-    old=idx.get(k) or by_url.get(x.get("source_url"))
-    if not old and x.get("city")=="全国": old=by_role.get((x.get("company","").strip().lower(),x.get("title","").strip().lower(),x.get("cohort","").strip().lower()))
+    old=idx.get(k)
+    # A listing/article URL can contain many distinct jobs, so URL alone is not a unique job key.
+    # Use URL-based correction only for the one-role-per-detail-page aggregator (Nowcoder).
+    if not old and x.get("source")=="牛客公开岗位":
+        old=by_url.get(x.get("source_url"))
+    if not old and x.get("city")=="全国":
+        old=by_role.get((x.get("company","").strip().lower(),x.get("title","").strip().lower(),x.get("cohort","").strip().lower()))
     if old:
         old["last_verified"]=x.get("last_verified") or old.get("last_verified","")
         old["collector"]=x.get("collector",old.get("collector",""))
