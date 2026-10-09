@@ -158,7 +158,7 @@ def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
     while queue and len(visited)<max_pages and len(rows)<500:
         page=queue.pop(0)
-        cp=canonical(page)
+        cp=(page.split("#",1)[0] if src.get("id")=="qiuzhaowang" else canonical(page))
         if cp in visited: continue
         visited.add(cp)
         try: html,final=fetch(page)
@@ -186,6 +186,48 @@ def collect_source(src):
         page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
         page_title=re.sub(r"[_|｜].*(?:校招|实习|社招|招聘).*?$", "", page_title).strip()
         page_title=re.split(r"\s+[|｜_—]\s+|\s+-\s+(?:百度校园招聘|小米校园招聘|校园招聘).*$",page_title,1)[0].strip()
+        if src.get("id")=="qiuzhaowang" and urlparse(final).path=="/latest":
+            page_text=p.page_text()
+            seen_groups=set()
+            role_hints=("工程师","研发","算法","产品","经理","销售","财务","设计","运营","管理","技术","教师","审计","法律","采购","管培","分析","工艺","自动化","质量","研究","岗位","方向","PM","AI","硬件","软件","芯片","医学","金融","会计","营销","供应链","商务","专员","服务","项目","研究员","分析师","咨询","物流","教师","顾问","工程技术")
+            for link_index,a in enumerate(p.links):
+                group_title=clean(a["text"])
+                group_href=urljoin(final,a["href"])
+                if not same_host(final,group_href) or "/jobs/" not in urlparse(group_href).path: continue
+                if len(group_title)<4 or len(group_title)>500: continue
+                if any(x.lower() in group_title.lower() for x in NAV_BAD): continue
+                if not any(x.lower() in group_title.lower() for x in role_hints): continue
+                group_url=canonical(group_href)
+                if group_url in seen_groups: continue
+                company_name=""
+                for previous in reversed(p.links[max(0,link_index-3):link_index]):
+                    candidate=clean(previous["text"])
+                    candidate_url=urljoin(final,previous["href"])
+                    if len(candidate)<2 or len(candidate)>60 or "/jobs/" in urlparse(candidate_url).path: continue
+                    if any(x.lower() in candidate.lower() for x in NAV_BAD): continue
+                    company_name=candidate
+                    break
+                if not company_name: continue
+                seen_groups.add(group_url)
+                position=page_text.find(company_name)
+                chunk=page_text[position:position+1000] if position>=0 else page_text
+                city_match=re.search(r"工作地点\s*(.+?)\s*届次批次",chunk)
+                city=clean(city_match.group(1)) if city_match else "全国"
+                cohort=year(chunk) or "2027届"
+                role_text=re.sub(r"(?:\.\.\.|…)+$","",group_title).replace("//"," · ")
+                if "·" in role_text or "•" in role_text:
+                    role_names=re.split(r"\s*[·•]\s*",role_text)
+                else:
+                    role_names=re.split(r"\s+(?=(?:AI|FPGA|大数据|算法|研发|软件|应用|嵌入式|人力资源|供应链|销售|财务|项目|产品|技术|工程|质量|管理|采购|市场|运营|数据|机械|电气|材料|设计|法律|法务|审计|教师|研究|客户|生产|工艺|医学|药学|营销|品牌|战略|风险|金融|投资|管培|行政|专员|计算机|通信|网络|硬件|芯片|自动化|控制|系统|测试|运维|服务|助理|顾问|咨询|业务|商务|物流|设备|计划|渠道|会计|客服|机器人|研究员|分析师))",role_text)
+                for role_name in role_names:
+                    role_name=clean(role_name)
+                    if len(role_name)<2 or len(role_name)>45: continue
+                    if role_name.endswith(("类","方向","体系","专业")): continue
+                    if role_name.startswith(("招聘项目","具体岗位","岗位要求","招聘方向","需求专业","工作地点","届次批次")): continue
+                    item=record(company_name,role_name,group_url,record_source,cohort,5)
+                    item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
+                    item["city"]=city or "全国"; item["confirmed_by"]=[record_source]
+                    rows.append(item)
         if src.get("id")=="qiuzhaowang" and "/jobs/" in urlparse(final).path:
             page_text=p.page_text()
             role_match=re.search(r"招聘岗位\s*(.+?)\s*工作城市",page_text)
@@ -238,10 +280,7 @@ def collect_source(src):
             sc=score(title,href,p.page_text())
             if sc<5: continue
             seen.add(href)
-            if src.get("id")=="qiuzhaowang":
-                if "/jobs/" in urlparse(href).path and len(queue)<max_pages and len(visited)+len(queue)<max_pages:
-                    queue.append(href)
-                continue
+            if src.get("id")=="qiuzhaowang": continue
             link_record=record(page_company,title,href,record_source,cohort,sc)
             if "公开岗位" in record_source or "公开聚合" in record_source:
                 link_record["confirmed_by"]=[record_source]
