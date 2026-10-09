@@ -1,7 +1,7 @@
 {
   "run_date": "2026-10-09",
   "collector_version": "4.0",
-  "enabled_sources": 21,
+  "enabled_sources": 20,
   "pagination_state": {
     "qiuzhaowang_pages": [
       1,
@@ -14,31 +14,23 @@
       8,
       9,
       10,
-      81,
-      82,
-      83,
-      84,
-      85,
-      86,
-      87,
-      88,
-      89,
-      90
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100
     ],
-    "qiuzhaowang_next_page": 91
+    "qiuzhaowang_next_page": 101
   },
-  "records_found": 2548,
-  "active_candidates": 67,
-  "pending_review": 2481,
+  "records_found": 2830,
+  "active_candidates": 118,
+  "pending_review": 2712,
   "results": [
-    {
-      "id": "91bangtu",
-      "company": "91邦途",
-      "pages_visited": 5,
-      "records_found": 0,
-      "active_candidates": 0,
-      "pending_review": 0
-    },
     {
       "id": "citic",
       "company": "中信银行",
@@ -146,9 +138,9 @@
     {
       "id": "nowcoder",
       "company": "牛客",
-      "pages_visited": 24,
-      "records_found": 67,
-      "active_candidates": 67,
+      "pages_visited": 40,
+      "records_found": 118,
+      "active_candidates": 118,
       "pending_review": 0
     },
     {
@@ -163,9 +155,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 2448,
+      "records_found": 2679,
       "active_candidates": 0,
-      "pending_review": 2448
+      "pending_review": 2679
     },
     {
       "id": "meituan",
