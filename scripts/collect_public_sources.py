@@ -310,22 +310,54 @@ def collect_source(src):
     return list(best.values()),visited
 
 sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
+STATE_PATH=ROOT/"data/collection-state.json"
+try:
+    state=json.loads(STATE_PATH.read_text(encoding="utf-8"))
+except Exception:
+    state={"qiuzhaowang_next_page":21}
+rotation_start=int(state.get("qiuzhaowang_next_page",21))
+rotation_pages=[]
+page_num=rotation_start
+while len(rotation_pages)<10:
+    if page_num>192: page_num=11
+    if page_num not in range(1,11) and page_num not in rotation_pages:
+        rotation_pages.append(page_num)
+    page_num+=1
+qiuzhaowang_pages=list(range(1,11))+rotation_pages
+for source in sources:
+    if source.get("id")=="qiuzhaowang":
+        source["seed_urls"]=[f"https://qiuzhaowang.com/latest?page={n}&year=2027" for n in qiuzhaowang_pages]
+        source["max_pages"]=20
+        source["max_candidates"]=3000
 enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
-all_rows=[]; results=[]; active=review=0
+all_rows=[]; results=[]; active=review=0; qiuzhaowang_visited=set()
 with ThreadPoolExecutor(max_workers=min(12,len(enabled) or 1)) as pool:
     futures={pool.submit(collect_source,s):s for s in enabled}
     for fut in as_completed(futures):
         s=futures[fut]
         try: rows,visited=fut.result()
         except Exception: rows,visited=[],set()
+        if s.get("id")=="qiuzhaowang": qiuzhaowang_visited=visited
         all_rows.extend(rows)
         a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
         active+=a; review+=rr
         results.append({"id":s["id"],"company":s["company"],"pages_visited":len(visited),"records_found":len(rows),
                         "active_candidates":a,"pending_review":rr})
 results.sort(key=lambda x:x["company"])
+rot_seen=set()
+for visited_url in qiuzhaowang_visited:
+    match=re.search(r"[?&]page=(\d+)",visited_url)
+    if match and int(match.group(1)) in rotation_pages: rot_seen.add(int(match.group(1)))
+next_page=rotation_start
+while next_page in rot_seen:
+    next_page+=1
+    if next_page>192: next_page=11
+state["qiuzhaowang_next_page"]=next_page
+state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
+STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
 INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
 MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"4.0","enabled_sources":len(enabled),
+ "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page},
  "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
  "policy":"Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
  "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."},

@@ -276,23 +276,13 @@
       "https://qiuzhaowang.com/latest?page=7&year=2027",
       "https://qiuzhaowang.com/latest?page=8&year=2027",
       "https://qiuzhaowang.com/latest?page=9&year=2027",
-      "https://qiuzhaowang.com/latest?page=10&year=2027",
-      "https://qiuzhaowang.com/latest?page=11&year=2027",
-      "https://qiuzhaowang.com/latest?page=12&year=2027",
-      "https://qiuzhaowang.com/latest?page=13&year=2027",
-      "https://qiuzhaowang.com/latest?page=14&year=2027",
-      "https://qiuzhaowang.com/latest?page=15&year=2027",
-      "https://qiuzhaowang.com/latest?page=16&year=2027",
-      "https://qiuzhaowang.com/latest?page=17&year=2027",
-      "https://qiuzhaowang.com/latest?page=18&year=2027",
-      "https://qiuzhaowang.com/latest?page=19&year=2027",
-      "https://qiuzhaowang.com/latest?page=20&year=2027"
+      "https://qiuzhaowang.com/latest?page=10&year=2027"
     ],
     "max_pages": 20,
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "公开列表前20页，限速抓取；提取可见岗位方向并标记待核验，不读取会员专属投递信息。",
+    "notes": "每6小时采集最新10页并轮转10页；公开列表限速抓取，覆盖其余分页，不读取会员专属投递信息。",
     "max_candidates": 3000
   }
 ]
