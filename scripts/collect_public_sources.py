@@ -7,6 +7,7 @@ Rules:
 - extract visible links, HTML tables/lists, JSON-LD and common embedded JSON.
 - score records and only promote high-confidence concrete roles.
 """
+import time
 import json,re,time,hashlib
 from pathlib import Path
 from datetime import date
@@ -155,12 +156,13 @@ def table_records(company,source,parser,cohort,source_label=None):
     return out
 
 def collect_source(src):
-    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
-    while queue and len(visited)<max_pages and len(rows)<500:
+    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
+    while queue and len(visited)<max_pages and len(rows)<max_candidates:
         page=queue.pop(0)
         cp=(page.split("#",1)[0] if src.get("id")=="qiuzhaowang" else canonical(page))
         if cp in visited: continue
         visited.add(cp)
+        if src.get("id")=="qiuzhaowang" and visited: time.sleep(0.5)
         try: html,final=fetch(page)
         except Exception: continue
         p=Parser(); p.feed(html); cohort=year(html[:20000])
@@ -195,6 +197,7 @@ def collect_source(src):
                 group_href=urljoin(final,a["href"])
                 if not same_host(final,group_href) or "/jobs/" not in urlparse(group_href).path: continue
                 if len(group_title)<4 or len(group_title)>500: continue
+                if group_title.startswith(("查看","开通会员","登录")) or group_title in ("岗位发现","我的机会","求职记录","全部岗位"): continue
                 if any(x.lower() in group_title.lower() for x in NAV_BAD): continue
                 if not any(x.lower() in group_title.lower() for x in role_hints): continue
                 group_url=canonical(group_href)
@@ -204,6 +207,7 @@ def collect_source(src):
                     candidate=clean(previous["text"])
                     candidate_url=urljoin(final,previous["href"])
                     if len(candidate)<2 or len(candidate)>60 or "/jobs/" in urlparse(candidate_url).path: continue
+                    if candidate in ("秋招网","岗位发现","我的机会","求职记录","校招资料","求职指南","会员权益"): continue
                     if any(x.lower() in candidate.lower() for x in NAV_BAD): continue
                     company_name=candidate
                     break
@@ -223,6 +227,7 @@ def collect_source(src):
                     role_name=clean(role_name)
                     if len(role_name)<2 or len(role_name)>45: continue
                     if role_name.endswith(("类","方向","体系","专业")): continue
+                    if role_name in ("工程热物理","热能工程","能源与动力工程","发电厂及电力系统","电气工程及其自动化","计算机科学与技术","软件工程","机械工程","材料科学与工程","化学工程与工艺","高电压与绝缘技术","电力系统及其自动化","电子与通信","工程力学","土木工程","地质工程","建筑学","计算机系统结构","计算机软件与理论","计算机应用技术","网络空间安全","控制科学与工程","信息与通信工程","电机与电器","电力电子与电力传动","安全科学与工程","环境科学与工程","数学与应用数学","冶金工程","矿业工程"): continue
                     if role_name.startswith(("招聘项目","具体岗位","岗位要求","招聘方向","需求专业","工作地点","届次批次")): continue
                     item=record(company_name,role_name,group_url,record_source,cohort,5)
                     item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
