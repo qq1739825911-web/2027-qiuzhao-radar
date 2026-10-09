@@ -1,7 +1,7 @@
 {
   "run_date": "2026-10-09",
   "collector_version": "4.0",
-  "enabled_sources": 20,
+  "enabled_sources": 21,
   "pagination_state": {
     "qiuzhaowang_pages": [
       1,
@@ -14,22 +14,22 @@
       8,
       9,
       10,
-      41,
-      42,
-      43,
-      44,
-      45,
-      46,
-      47,
-      48,
-      49,
-      50
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
     ],
-    "qiuzhaowang_next_page": 51
+    "qiuzhaowang_next_page": 61
   },
-  "records_found": 1819,
+  "records_found": 1796,
   "active_candidates": 17,
-  "pending_review": 1802,
+  "pending_review": 1779,
   "results": [
     {
       "id": "citic",
@@ -115,9 +115,9 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 1,
-      "records_found": 15,
+      "records_found": 10,
       "active_candidates": 0,
-      "pending_review": 15
+      "pending_review": 10
     },
     {
       "id": "cmb",
@@ -155,9 +155,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 1775,
+      "records_found": 1757,
       "active_candidates": 0,
-      "pending_review": 1775
+      "pending_review": 1757
     },
     {
       "id": "meituan",
@@ -186,6 +186,14 @@
     {
       "id": "alibaba",
       "company": "阿里巴巴",
+      "pages_visited": 1,
+      "records_found": 0,
+      "active_candidates": 0,
+      "pending_review": 0
+    },
+    {
+      "id": "mianlingai",
+      "company": "面灵AI公开岗位索引",
       "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
