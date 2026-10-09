@@ -29,13 +29,15 @@ ROLE_HREF=("job","position","career","campus","recruit","zhaopin","jobs","vacanc
 
 class Parser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]
+        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.table_links=[]; self._row_links=[]; self._in_row=False; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]
     def handle_starttag(self,tag,attrs):
         d=dict(attrs); tag=tag.lower()
-        if tag=="a": self._a={"href":d.get("href",""),"text":""}
+        if tag=="a":
+            self._a={"href":d.get("href",""),"text":""}
+            if self._in_row and d.get("href"): self._row_links.append(d.get("href",""))
         if tag=="title": self._in_title=True
         if tag in ("td","th"): self._td=""
-        if tag=="tr": self._row=[]
+        if tag=="tr": self._row=[]; self._row_links=[]; self._in_row=True
         if tag=="script": self._script_buf=[]
     def handle_data(self,data):
         s=re.sub(r"\s+"," ",data).strip()
@@ -54,7 +56,8 @@ class Parser(HTMLParser):
             self._script_buf=None
         if tag in ("td","th") and self._td is not None:
             self._row.append(self._td.strip()); self._td=None
-        if tag=="tr" and self._row: self.tables.append(self._row)
+        if tag=="tr" and self._row:
+            self.tables.append(self._row); self.table_links.append(self._row_links); self._in_row=False
     def page_text(self): return " ".join(self.text)
 
 def fetch(url):
@@ -140,7 +143,7 @@ def table_records(company,source,parser,cohort,source_label=None):
     out=[]
     cities=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外","全国")
     degree_words=("博士","硕士","本科","大专")
-    for row in parser.tables:
+    for row_index,row in enumerate(parser.tables):
         if len(row)<2: continue
         joined=" | ".join(row)
         if any(x in joined for x in NAV_BAD): continue
@@ -150,9 +153,34 @@ def table_records(company,source,parser,cohort,source_label=None):
                    and not x.endswith(("类","方向","相关专业","等相关专业","专业"))
                    and not x.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求","本科","硕士","博士"))),None)
         if not role: continue
-        score_value=5 if source_label=="应届生求职网公开岗位" else 8
-        r=record(company,role,source,source_label or company+"官方招聘",cohort,score_value)
+        employer=company
         if source_label and "公开" in source_label:
+            role_idx=next((i for i,x in enumerate(row) if x==role),-1)
+            city_tokens=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外","全国","台北","新竹")
+            bad_terms=("2027","2026","2025","校招","校园招聘","实习","社招","投递","截止","更新","登录","未公布","已结束","招聘对象","工作地点","届次批次","岗位","职位","薪资")
+            candidates=[]
+            for i,candidate in enumerate(row):
+                candidate=clean(candidate)
+                if i==role_idx or not (2<=len(candidate)<=60): continue
+                if any(tok in candidate for tok in city_tokens+bad_terms) or any(tok in candidate for tok in degree_words): continue
+                if candidate in NAV_BAD or candidate in PROGRAM_WORDS: continue
+                if any(w.lower() in candidate.lower() for w in CONCRETE_WORDS): continue
+                if re.fullmatch(r"[\d年月日./:-]+",candidate): continue
+                candidates.append(candidate)
+            if candidates:
+                employer=candidates[0]
+                employer=re.sub(r"(世界500强|知名互联网|独角兽|半导体大厂|头部外企|新势力车企|大模型公司|行业领先|上市公司|福利完善|成长空间大|团队氛围好).*$","",employer).strip(" ·-_")
+            if not employer or employer==company: continue
+        role_url=source
+        row_links=parser.table_links[row_index] if row_index<len(getattr(parser,"table_links",[])) else []
+        for href in row_links:
+            full=urljoin(source,href)
+            if urlparse(full).scheme in ("http","https") and any(x.lower() in full.lower() for x in ROLE_HREF):
+                role_url=canonical(full); break
+        score_value=5 if source_label and "公开" in source_label else 8
+        r=record(employer,role,role_url,source_label or company+"官方招聘",cohort,score_value)
+        if source_label and "公开" in source_label:
+            r["status"]="pending_review"; r["granularity"]="review"; r["verification_score"]=5
             r["confirmed_by"]=[source_label]
         found_cities=[]
         for city in cities:
@@ -191,6 +219,8 @@ def collect_source(src):
             parts=re.split(r"[|｜]",raw_page_title)
             if "/jobs/" in urlparse(final).path and parts: page_company=parts[0].strip()
             record_source="秋招网公开聚合"
+        elif src.get("id")=="mianlingai":
+            record_source="面灵AI公开聚合"
         page_title=raw_page_title
         # Strip location prefixes and aggregator suffixes so the stored title remains job-level.
         page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)

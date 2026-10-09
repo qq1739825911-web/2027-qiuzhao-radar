@@ -34,6 +34,8 @@ jobs:
         run: python scripts/validate_jobs.py
       - name: Deduplicate
         run: python scripts/dedupe_jobs.py
+      - name: Verify rotating batch of direct job links
+        run: python scripts/verify_job_links.py
       - name: Quality summary
         run: |
           python - <<'PY'
@@ -45,6 +47,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/jobs.inbox.json data/jobs.json data/collection-manifest.json data/collection-state.json
+          git add data/jobs.inbox.json data/jobs.json data/collection-manifest.json data/collection-state.json data/verification-state.json data/verification-manifest.json
           git diff --cached --quiet || git commit -m "chore: collect verified 2027 campus jobs v3"
           git push

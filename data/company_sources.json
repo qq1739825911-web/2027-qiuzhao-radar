@@ -284,5 +284,25 @@
     "enabled": true,
     "notes": "每6小时采集最新10页并轮转10页；公开列表限速抓取，覆盖其余分页，不读取会员专属投递信息。",
     "max_candidates": 3000
+  },
+  {
+    "id": "mianlingai",
+    "company": "面灵AI公开岗位索引",
+    "type": "public_job_aggregator",
+    "cohort": "2027届",
+    "url": "https://www.mianlingai.com/jobs/",
+    "seed_urls": [
+      "https://www.mianlingai.com/jobs/?page=1",
+      "https://www.mianlingai.com/jobs/?page=2",
+      "https://www.mianlingai.com/jobs/?page=3",
+      "https://www.mianlingai.com/jobs/?page=4",
+      "https://www.mianlingai.com/jobs/?page=5"
+    ],
+    "max_pages": 5,
+    "max_candidates": 600,
+    "access": "public",
+    "trust": "medium",
+    "enabled": true,
+    "notes": "公开岗位列表声称每日重抓企业官方岗位；采集只保留公开职位名、公司、城市和原始投递链接，聚合信息默认待核验。"
   }
 ]

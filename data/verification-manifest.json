@@ -1,0 +1,11 @@
+{
+  "last_run_at": null,
+  "checked": 0,
+  "eligible_direct_links": 0,
+  "link_alive": 0,
+  "missing_needs_recheck": 0,
+  "unknown": 0,
+  "closed_after_two_checks": 0,
+  "batch_size": 60,
+  "note": "首次自动核验任务尚未运行。"
+}
