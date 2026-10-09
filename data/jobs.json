@@ -2169,5 +2169,161 @@
     "program": "2027届校园招聘计划",
     "granularity": "job",
     "verification_score": 10
+  },
+  {
+    "id": "baidu-2027-multimodal",
+    "company": "百度",
+    "title": "多模态算法工程师(J100765)",
+    "category": "技术 / AI / 算法",
+    "city": "北京、上海",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "2026-09-24",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度校园招聘官网",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+    "keywords": [
+      "多模态大模型",
+      "视觉语言",
+      "音频语言",
+      "跨模态生成",
+      "算法研究"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方2027届校园招聘职位列表"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘 / AIDU专项",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-aidu-infra",
+    "company": "百度",
+    "title": "2027AIDU-大模型Infra工程师(J99967)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "2026-09-24",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度校园招聘官网",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+    "keywords": [
+      "大模型Infra",
+      "异构计算",
+      "算子",
+      "通信库",
+      "编译系统",
+      "分布式训练推理"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方2027届校园招聘职位列表"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘 / AIDU专项",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-aidu-multimodal",
+    "company": "百度",
+    "title": "2027AIDU-多模态算法工程师(J99956)",
+    "category": "AI / 算法 / 技术",
+    "city": "北京、上海",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "2026-09-24",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度校园招聘官网",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+    "keywords": [
+      "多模态算法",
+      "视觉语言",
+      "跨模态生成",
+      "训练数据",
+      "模型评估"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方2027届校园招聘职位列表"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘 / AIDU专项",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-aidu-agent",
+    "company": "百度",
+    "title": "2027AIDU-智能体算法工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "2026-09-24",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度校园招聘官网",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+    "keywords": [
+      "智能体",
+      "Agent",
+      "任务规划",
+      "工具调用",
+      "大模型算法"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方2027届校园招聘职位列表"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘 / AIDU专项",
+    "granularity": "job",
+    "verification_score": 9
+  },
+  {
+    "id": "baidu-2027-aidu-llm",
+    "company": "百度",
+    "title": "2027AIDU-大模型算法工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "民营/互联网科技",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "2026-09-24",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "百度校园招聘官网",
+    "source_url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+    "keywords": [
+      "大模型",
+      "预训练",
+      "后训练",
+      "强化学习",
+      "推理优化"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "百度官方2027届校园招聘职位列表"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘 / AIDU专项",
+    "granularity": "job",
+    "verification_score": 9
   }
 ]
