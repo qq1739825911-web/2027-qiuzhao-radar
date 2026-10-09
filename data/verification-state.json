@@ -22,9 +22,9 @@
     "auto-f5bf5cb80a6e8063": 0,
     "auto-6ce70c3b24abdd2f": 0
   },
-  "last_run_at": "2026-10-09T06:28:08+00:00",
-  "last_batch_size": 20,
-  "eligible_count": 20,
+  "last_run_at": null,
+  "last_batch_size": 0,
+  "eligible_count": 0,
   "last_missing_at": {
     "xiaomi-2027-embedded-software-7670893035149052211": "2026-10-09T06:28:08+00:00"
   }
