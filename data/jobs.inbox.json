@@ -454,90 +454,6 @@
     "verification_score": 8
   },
   {
-    "id": "auto-fe4c0232e36aa91d",
-    "company": "中国邮政储蓄银行",
-    "title": "财务信息",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx",
-    "keywords": [
-      "财务信息"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
-    "id": "auto-b2f70fbb457cd27f",
-    "company": "中国邮政储蓄银行",
-    "title": "财务概要",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwgy",
-    "keywords": [
-      "财务概要"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
-    "id": "auto-71a8da90b4b6633e",
-    "company": "中国邮政储蓄银行",
-    "title": "财务报告",
-    "category": "金融 / 银行",
-    "city": "全国",
-    "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
-    "publish_date": "",
-    "deadline": "",
-    "last_verified": "2026-10-09",
-    "source": "中国邮政储蓄银行官方招聘",
-    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwbg",
-    "keywords": [
-      "财务报告"
-    ],
-    "status": "pending_review",
-    "demo": false,
-    "confirmed_by": [
-      "中国邮政储蓄银行官方公开页面"
-    ],
-    "cohort": "2027届",
-    "program": "",
-    "collector": "public-html-v3",
-    "granularity": "review",
-    "verification_score": 5
-  },
-  {
     "id": "auto-717632bb987eceba",
     "company": "中国银行",
     "title": "金融市场",
@@ -762,6 +678,2435 @@
     "verification_score": 5
   },
   {
+    "id": "auto-fe4c0232e36aa91d",
+    "company": "中国邮政储蓄银行",
+    "title": "财务信息",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx",
+    "keywords": [
+      "财务信息"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-b2f70fbb457cd27f",
+    "company": "中国邮政储蓄银行",
+    "title": "财务概要",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwgy",
+    "keywords": [
+      "财务概要"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-71a8da90b4b6633e",
+    "company": "中国邮政储蓄银行",
+    "title": "财务报告",
+    "category": "金融 / 银行",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "中国邮政储蓄银行官方招聘",
+    "source_url": "https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwbg",
+    "keywords": [
+      "财务报告"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "中国邮政储蓄银行官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f7e96ca950d48cd3",
+    "company": "中圣集团",
+    "title": "集团总部管理培训生",
+    "category": "综合 / 校园招聘",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "集团总部管理培训"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-2d7aed14c699b18f",
+    "company": "中圣集团",
+    "title": "电厂学员人工智能",
+    "category": "综合 / 校园招聘",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "电厂学员人工智能"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-51aa5ab1588f9685",
+    "company": "中圣集团",
+    "title": "工程热物理",
+    "category": "综合 / 校园招聘",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "工程热物理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-40c91a80a262ff71",
+    "company": "中圣集团",
+    "title": "热能工程",
+    "category": "综合 / 校园招聘",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "热能工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-173f487636bbebed",
+    "company": "中圣集团",
+    "title": "能源与动力工程",
+    "category": "综合 / 校园招聘",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "能源与动力工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-5e83837ae0b6c867",
+    "company": "中圣集团",
+    "title": "电气工程及其自动化",
+    "category": "供应链 / 制造",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "电气工程及其自动"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f74955db22195387",
+    "company": "中圣集团",
+    "title": "发电运行技术",
+    "category": "AI / 算法 / 技术",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "发电运行技术"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-2e21466ea304c76f",
+    "company": "中圣集团",
+    "title": "热能动力工程技术",
+    "category": "AI / 算法 / 技术",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "热能动力工程技术"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-24f71c09b7aedc4b",
+    "company": "中圣集团",
+    "title": "发电厂及电力系统",
+    "category": "综合 / 校园招聘",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "发电厂及电力系统"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-aee538151328d7c7",
+    "company": "中圣集团",
+    "title": "热工自动化技术",
+    "category": "AI / 算法 / 技术",
+    "city": "保定、运城、南京、苏州、泰安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32305",
+    "keywords": [
+      "热工自动化技术"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-cd2292f9b87b3c28",
+    "company": "周大生",
+    "title": "未来先锋-MT管培生",
+    "category": "综合 / 校园招聘",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32306",
+    "keywords": [
+      "未来先锋",
+      "-MT",
+      "管培生"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-ac4ff100c1519fe9",
+    "company": "周大生",
+    "title": "腾龙工程 MT管培生专业不限",
+    "category": "综合 / 校园招聘",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32306",
+    "keywords": [
+      "腾龙工程",
+      "MT",
+      "管培生专业不限"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-0f0bec9eaf470eae",
+    "company": "御风未来",
+    "title": "硬件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "硬件工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-e50e852f442efebf",
+    "company": "御风未来",
+    "title": "总体工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "总体工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f7b81fd9cd6bc09e",
+    "company": "御风未来",
+    "title": "系统工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "系统工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-df7c3ad75b7b98c5",
+    "company": "御风未来",
+    "title": "软件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "软件工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-1fe0ebd8723bc8a9",
+    "company": "御风未来",
+    "title": "算法工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "算法工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-4f26021f599b75a5",
+    "company": "御风未来",
+    "title": "结构工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "结构工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-24d7e69d64d6545b",
+    "company": "御风未来",
+    "title": "电气工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "电气工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-3a852ac0c86fd138",
+    "company": "御风未来",
+    "title": "适航工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、中山",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32315",
+    "keywords": [
+      "适航工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-181c60648963e09b",
+    "company": "河南航天精工制造",
+    "title": "材料科学与工程",
+    "category": "综合 / 校园招聘",
+    "city": "信阳",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32309",
+    "keywords": [
+      "材料科学与工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-e1be58263a3869b4",
+    "company": "河南航天精工制造",
+    "title": "机械工程",
+    "category": "供应链 / 制造",
+    "city": "信阳",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32309",
+    "keywords": [
+      "机械工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-19236e6d63747886",
+    "company": "河南航天精工制造",
+    "title": "机械设计与制造",
+    "category": "设计",
+    "city": "信阳",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32309",
+    "keywords": [
+      "机械设计与制造"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-34412c6ad5ef8007",
+    "company": "河南航天精工制造",
+    "title": "质量管理",
+    "category": "综合 / 校园招聘",
+    "city": "信阳",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32309",
+    "keywords": [
+      "质量管理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f1874c0bbbc10fcc",
+    "company": "河南航天精工制造",
+    "title": "安全工程",
+    "category": "综合 / 校园招聘",
+    "city": "信阳",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32309",
+    "keywords": [
+      "安全工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-41c65b92dded6671",
+    "company": "河南航天精工制造",
+    "title": "安全管理",
+    "category": "综合 / 校园招聘",
+    "city": "信阳",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32309",
+    "keywords": [
+      "安全管理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-88f3be1ac2c522e5",
+    "company": "AAC瑞声科技韩语人才专项",
+    "title": "研发工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "江苏常州、江苏宿迁、广西南宁",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32272",
+    "keywords": [
+      "研发工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-8b493efb900480da",
+    "company": "AAC瑞声科技韩语人才专项",
+    "title": "韩语PD",
+    "category": "综合 / 校园招聘",
+    "city": "江苏常州、江苏宿迁、广西南宁",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32272",
+    "keywords": [
+      "韩语",
+      "PD"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-cba56baa0b03e3f4",
+    "company": "AAC瑞声科技韩语人才专项",
+    "title": "产品质量工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "江苏常州、江苏宿迁、广西南宁",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32272",
+    "keywords": [
+      "产品质量工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-6e1bdb8af95a6148",
+    "company": "AAC瑞声科技韩语人才专项",
+    "title": "项目管理（PM）",
+    "category": "综合 / 校园招聘",
+    "city": "江苏常州、江苏宿迁、广西南宁",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32272",
+    "keywords": [
+      "项目管理",
+      "PM"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-e988b782ab044fe5",
+    "company": "上海智驱",
+    "title": "硬件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、杭州、温州、株洲、重庆",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32237",
+    "keywords": [
+      "硬件工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-88a99e538112a6ac",
+    "company": "上海智驱",
+    "title": "嵌入式软件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、杭州、温州、株洲、重庆",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32237",
+    "keywords": [
+      "嵌入式软件工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-5ba70e586393122e",
+    "company": "上海智驱",
+    "title": "销售工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、杭州、温州、株洲、重庆",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32237",
+    "keywords": [
+      "销售工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-c71b39128da73cb6",
+    "company": "上海智驱",
+    "title": "PM（产品经理）",
+    "category": "产品 / 运营",
+    "city": "上海、杭州、温州、株洲、重庆",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32237",
+    "keywords": [
+      "PM",
+      "产品经理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-7118388bdadeb4a6",
+    "company": "上海智驱",
+    "title": "FAE（技术支持工程师）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海、杭州、温州、株洲、重庆",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32237",
+    "keywords": [
+      "FAE",
+      "技术支持工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-a8363d99e2f4f9c1",
+    "company": "上海移动",
+    "title": "技术工程师（通信方向）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32286",
+    "keywords": [
+      "技术工程师",
+      "通信方向"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-e9becddc84d6a8b9",
+    "company": "上海移动",
+    "title": "技术工程师（算力方向）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32286",
+    "keywords": [
+      "技术工程师",
+      "算力方向"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-2afa2314a7fc19b5",
+    "company": "上海移动",
+    "title": "技术工程师（智能方向）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32286",
+    "keywords": [
+      "技术工程师",
+      "智能方向"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-20c7e6b66b6a5ace",
+    "company": "上海移动",
+    "title": "暖通动力工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32286",
+    "keywords": [
+      "暖通动力工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-a7fca0868981ae66",
+    "company": "上海移动",
+    "title": "销售工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32286",
+    "keywords": [
+      "销售工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-b0d2588c22010111",
+    "company": "东莞维科",
+    "title": "材料工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "东莞",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32224",
+    "keywords": [
+      "材料工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-76bcaa6d50f9d5ac",
+    "company": "东莞维科",
+    "title": "配方工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "东莞",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32224",
+    "keywords": [
+      "配方工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-7d8d84b999098508",
+    "company": "东莞维科",
+    "title": "产品设计工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "东莞",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32224",
+    "keywords": [
+      "产品设计工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-fdb196ee775c01d0",
+    "company": "东莞维科",
+    "title": "工艺工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "东莞",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32224",
+    "keywords": [
+      "工艺工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-696198ff787e973c",
+    "company": "东莞维科",
+    "title": "设备工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "东莞",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32224",
+    "keywords": [
+      "设备工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-fbe98f62bbe2e32a",
+    "company": "东莞维科",
+    "title": "项目工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "东莞",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32224",
+    "keywords": [
+      "项目工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-068f76a5d2635b51",
+    "company": "中国中煤能源集团",
+    "title": "研发岗",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "研发岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-406b550e254c24a2",
+    "company": "中国中煤能源集团",
+    "title": "工程师岗",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "工程师岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-59a208390b63d8e0",
+    "company": "中国中煤能源集团",
+    "title": "财务岗",
+    "category": "金融 / 银行",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "财务岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-af0a396bf931c64b",
+    "company": "中国中煤能源集团",
+    "title": "人力岗",
+    "category": "人力资源",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "人力岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-faf3f56388c9a781",
+    "company": "中国中煤能源集团",
+    "title": "法务岗",
+    "category": "法务 / 合规",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "法务岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-ecb2d0a1a0ddcce0",
+    "company": "中国中煤能源集团",
+    "title": "机械技术岗",
+    "category": "AI / 算法 / 技术",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "机械技术岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-8ffafa6c44c6186e",
+    "company": "中国中煤能源集团",
+    "title": "工程管理岗",
+    "category": "综合 / 校园招聘",
+    "city": "北京",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32293",
+    "keywords": [
+      "工程管理岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-41c6fb3e3f0520d3",
+    "company": "中国电信上海",
+    "title": "产数工程师（统招）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32281",
+    "keywords": [
+      "产数工程师",
+      "统招"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-6d1b0a27648e9252",
+    "company": "中国电信上海",
+    "title": "产数工程师（区局）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32281",
+    "keywords": [
+      "产数工程师",
+      "区局"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-414a0267e1d9058c",
+    "company": "中国电信上海",
+    "title": "云网工程师（统招）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32281",
+    "keywords": [
+      "云网工程师",
+      "统招"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-2e83fce3acc0ea09",
+    "company": "中国电信上海",
+    "title": "云网工程师（区局）",
+    "category": "AI / 算法 / 技术",
+    "city": "上海",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32281",
+    "keywords": [
+      "云网工程师",
+      "区局"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-69a38ca3c51a9ef6",
+    "company": "中国电信内蒙古",
+    "title": "数据支撑",
+    "category": "AI / 算法 / 技术",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "数据支撑"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-41ee81670672e58d",
+    "company": "中国电信内蒙古",
+    "title": "解决方案",
+    "category": "综合 / 校园招聘",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "解决方案"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-4be4a71803068a12",
+    "company": "中国电信内蒙古",
+    "title": "网络运维工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "网络运维工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-334c70a5769d3151",
+    "company": "中国电信内蒙古",
+    "title": "网络工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "网络工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-529d41824da23062",
+    "company": "中国电信内蒙古",
+    "title": "AI算法工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "AI",
+      "算法工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-f2aa273e1d08bf40",
+    "company": "中国电信内蒙古",
+    "title": "项目经理",
+    "category": "综合 / 校园招聘",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "项目经理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-cff57729eba64259",
+    "company": "中国电信内蒙古",
+    "title": "产品经理",
+    "category": "产品 / 运营",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "产品经理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-c5d2080e20f9866c",
+    "company": "中国电信内蒙古",
+    "title": "法律岗",
+    "category": "法务 / 合规",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "法律岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-7ae00a58001d1548",
+    "company": "中国电信内蒙古",
+    "title": "财务岗",
+    "category": "金融 / 银行",
+    "city": "呼和浩特、包头、呼伦贝尔、兴安、通辽、赤峰、锡林郭勒、乌兰察布、鄂尔多斯、巴彦淖尔、乌海、阿拉善",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32277",
+    "keywords": [
+      "财务岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-ac6bebc53d1cb432",
+    "company": "中国联通江西省分公司",
+    "title": "人工智能开发",
+    "category": "AI / 算法 / 技术",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "人工智能开发"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-1e20876ac351b36a",
+    "company": "中国联通江西省分公司",
+    "title": "数智应用开发",
+    "category": "AI / 算法 / 技术",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "数智应用开发"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-994f2a36880ad47f",
+    "company": "中国联通江西省分公司",
+    "title": "大数据分析",
+    "category": "AI / 算法 / 技术",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "大数据分析"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-3bc280110ed14da5",
+    "company": "中国联通江西省分公司",
+    "title": "云计算支撑",
+    "category": "综合 / 校园招聘",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "云计算支撑"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-2bb1335c64bea434",
+    "company": "中国联通江西省分公司",
+    "title": "解决方案经理",
+    "category": "综合 / 校园招聘",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "解决方案经理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-159f710596110622",
+    "company": "中国联通江西省分公司",
+    "title": "项目经理",
+    "category": "综合 / 校园招聘",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "项目经理"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-1b3ac07142f146a3",
+    "company": "中国联通江西省分公司",
+    "title": "无线网优化与维护",
+    "category": "综合 / 校园招聘",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "无线网优化与维护"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-1de2b4c6f016f2a5",
+    "company": "中国联通江西省分公司",
+    "title": "云网承载网维护与优化",
+    "category": "综合 / 校园招聘",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "云网承载网维护与",
+      "优化"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-78bc9f3f97e2a43e",
+    "company": "中国联通江西省分公司",
+    "title": "网络工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "南昌、九江、上饶、抚州、宜春、吉安、赣州、景德镇、萍乡、新余、鹰潭",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32279",
+    "keywords": [
+      "网络工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-5b43771f6cd0d446",
+    "company": "中能聚控",
+    "title": "等离子体诊断系统工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "等离子体诊断系统",
+      "工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-8fdbf5a20b2e773d",
+    "company": "中能聚控",
+    "title": "核测量系统工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "核测量系统工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-ea94f516618778f7",
+    "company": "中能聚控",
+    "title": "高速信号采集硬件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "高速信号采集硬件",
+      "工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-9784ab63d7ee743f",
+    "company": "中能聚控",
+    "title": "模拟电路设计工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "模拟电路设计工程"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-e3a412449133f017",
+    "company": "中能聚控",
+    "title": "FPGA工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "FPGA",
+      "工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-c272c8b8329f703e",
+    "company": "中能聚控",
+    "title": "软件工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "软件工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-b4e487cd1c6b54f2",
+    "company": "中能聚控",
+    "title": "结构工程师",
+    "category": "AI / 算法 / 技术",
+    "city": "合肥",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32227",
+    "keywords": [
+      "结构工程师"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
+    "id": "auto-d20a4b01d353fee5",
+    "company": "中车永济电机2027届秋招",
+    "title": "技术研发岗 产品开发岗",
+    "category": "AI / 算法 / 技术",
+    "city": "运城、西安",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "秋招网公开聚合",
+    "source_url": "https://qiuzhaowang.com/jobs/qiuzhifangzhou-32299",
+    "keywords": [
+      "技术研发岗",
+      "产品开发岗"
+    ],
+    "status": "pending_review",
+    "demo": false,
+    "confirmed_by": [
+      "秋招网公开聚合"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "review",
+    "verification_score": 5
+  },
+  {
     "id": "auto-dd648af87b2c2e70",
     "company": "诺瓦星云",
     "title": "27届校招-PCB工程师 (西安)(J12276)",
@@ -786,7 +3131,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -818,7 +3163,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -833,10 +3178,10 @@
     "category": "AI / 算法 / 技术",
     "city": "西安",
     "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
+    "degree": "硕士及以上",
+    "salary": "薪资面议",
     "publish_date": "",
-    "deadline": "",
+    "deadline": "2029-08-21",
     "last_verified": "2026-10-09",
     "source": "牛客公开岗位",
     "source_url": "https://www.nowcoder.com/jobs/detail/462504",
@@ -850,7 +3195,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -882,7 +3227,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "数字政通官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -912,7 +3257,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "海能达通信官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -944,7 +3289,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -976,7 +3321,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1009,7 +3354,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1024,10 +3369,10 @@
     "category": "AI / 算法 / 技术",
     "city": "全国",
     "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
+    "degree": "本科及以上",
+    "salary": "薪资面议",
     "publish_date": "",
-    "deadline": "",
+    "deadline": "2029-08-21",
     "last_verified": "2026-10-09",
     "source": "牛客公开岗位",
     "source_url": "https://www.nowcoder.com/jobs/detail/462502",
@@ -1042,7 +3387,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "诺瓦星云官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1074,7 +3419,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "数字政通官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1089,10 +3434,10 @@
     "category": "产品 / 运营",
     "city": "全国",
     "enterprise_type": "待核验",
-    "degree": "待核验",
-    "salary": "",
+    "degree": "本科及以上",
+    "salary": "14-20K * 14薪",
     "publish_date": "",
-    "deadline": "",
+    "deadline": "2027-06-30",
     "last_verified": "2026-10-09",
     "source": "牛客公开岗位",
     "source_url": "https://www.nowcoder.com/jobs/detail/459352",
@@ -1104,7 +3449,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "海能达通信官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1119,10 +3464,10 @@
     "category": "产品 / 运营",
     "city": "全国",
     "enterprise_type": "待核验",
-    "degree": "本科",
-    "salary": "薪资面议",
+    "degree": "待核验",
+    "salary": "",
     "publish_date": "",
-    "deadline": "2026-12-31",
+    "deadline": "",
     "last_verified": "2026-10-09",
     "source": "牛客公开岗位",
     "source_url": "https://www.nowcoder.com/jobs/detail/460860",
@@ -1135,7 +3480,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "Dexmal 原力灵机官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1166,7 +3511,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "未岚大陆官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1197,7 +3542,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "广联达官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1225,7 +3570,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "字节跳动官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1258,7 +3603,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "北森官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",
@@ -1287,7 +3632,7 @@
     "status": "active",
     "demo": false,
     "confirmed_by": [
-      "昆仑万维官方公开页面"
+      "牛客公开岗位"
     ],
     "cohort": "2027届",
     "program": "",

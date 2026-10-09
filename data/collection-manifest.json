@@ -1,10 +1,10 @@
 {
   "run_date": "2026-10-09",
   "collector_version": "4.0",
-  "enabled_sources": 19,
-  "records_found": 44,
+  "enabled_sources": 20,
+  "records_found": 127,
   "active_candidates": 32,
-  "pending_review": 12,
+  "pending_review": 95,
   "results": [
     {
       "id": "citic",
@@ -125,6 +125,14 @@
       "records_found": 0,
       "active_candidates": 0,
       "pending_review": 0
+    },
+    {
+      "id": "qiuzhaowang",
+      "company": "秋招网",
+      "pages_visited": 18,
+      "records_found": 83,
+      "active_candidates": 0,
+      "pending_review": 83
     },
     {
       "id": "meituan",
