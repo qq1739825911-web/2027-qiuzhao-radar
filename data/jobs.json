@@ -2070,5 +2070,104 @@
     "collector": "official-manual-v1",
     "granularity": "job",
     "verification_score": 9
+  },
+  {
+    "id": "xiaomi-2027-ai-software-7670893035119249690",
+    "company": "小米",
+    "title": "AI软件工程师",
+    "category": "技术 / AI",
+    "city": "成都、北京、西安、上海",
+    "enterprise_type": "民营/科技",
+    "degree": "硕士及以上",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "小米校园招聘官网",
+    "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035119249690/detail",
+    "keywords": [
+      "AI框架",
+      "底层驱动",
+      "高性能算子",
+      "图编译器",
+      "C++",
+      "Python",
+      "模型优化"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "小米校园招聘官网岗位详情"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘计划",
+    "granularity": "job",
+    "verification_score": 10
+  },
+  {
+    "id": "xiaomi-2027-ai-infra-7671295378604607754",
+    "company": "小米",
+    "title": "AI Infra工程师",
+    "category": "技术 / AI",
+    "city": "北京、上海",
+    "enterprise_type": "民营/科技",
+    "degree": "硕士及以上",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "小米校园招聘官网",
+    "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/position/7671295378604607754/detail",
+    "keywords": [
+      "AI Infra",
+      "视觉算法",
+      "模型优化",
+      "模型量化",
+      "模型压缩",
+      "端侧推理",
+      "异构计算"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "小米校园招聘官网岗位详情"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘计划",
+    "granularity": "job",
+    "verification_score": 10
+  },
+  {
+    "id": "xiaomi-2027-embedded-software-7670893035149052211",
+    "company": "小米",
+    "title": "嵌入式软件研发工程师",
+    "category": "技术 / 软件",
+    "city": "北京、西安、上海",
+    "enterprise_type": "民营/科技",
+    "degree": "本科及以上",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "小米校园招聘官网",
+    "source_url": "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035149052211/detail",
+    "keywords": [
+      "嵌入式",
+      "操作系统",
+      "Android",
+      "C/C++",
+      "音视频",
+      "驱动开发",
+      "AI"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "小米校园招聘官网岗位详情"
+    ],
+    "cohort": "2027届",
+    "program": "2027届校园招聘计划",
+    "granularity": "job",
+    "verification_score": 10
   }
 ]
