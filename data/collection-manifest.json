@@ -14,27 +14,27 @@
       8,
       9,
       10,
-      91,
-      92,
-      93,
-      94,
-      95,
-      96,
-      97,
-      98,
-      99,
-      100
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
     ],
-    "qiuzhaowang_next_page": 101
+    "qiuzhaowang_next_page": 111
   },
-  "records_found": 2830,
-  "active_candidates": 118,
-  "pending_review": 2712,
+  "records_found": 2738,
+  "active_candidates": 142,
+  "pending_review": 2596,
   "results": [
     {
       "id": "citic",
       "company": "中信银行",
-      "pages_visited": 0,
+      "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
       "pending_review": 0
@@ -90,7 +90,7 @@
     {
       "id": "bytedance",
       "company": "字节跳动",
-      "pages_visited": 0,
+      "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
       "pending_review": 0
@@ -139,8 +139,8 @@
       "id": "nowcoder",
       "company": "牛客",
       "pages_visited": 40,
-      "records_found": 118,
-      "active_candidates": 118,
+      "records_found": 142,
+      "active_candidates": 142,
       "pending_review": 0
     },
     {
@@ -155,9 +155,9 @@
       "id": "qiuzhaowang",
       "company": "秋招网",
       "pages_visited": 20,
-      "records_found": 2679,
+      "records_found": 2563,
       "active_candidates": 0,
-      "pending_review": 2679
+      "pending_review": 2563
     },
     {
       "id": "meituan",
