@@ -14,7 +14,12 @@ for x in incoming:
     if old:
         old["last_verified"]=x.get("last_verified") or old.get("last_verified","")
         old["collector"]=x.get("collector",old.get("collector",""))
-        if x.get("verification_score",0)>old.get("verification_score",0):
+        # When an aggregator seed was initially stored as the platform name, correct it
+        # from the public detail page while retaining the direct source URL.
+        if x.get("source")=="牛客公开岗位":
+            for f in ("company","title","category","city","degree","source","source_url","cohort","program","granularity","verification_score","confirmed_by"):
+                if x.get(f) not in (None,""): old[f]=x[f]
+        elif x.get("verification_score",0)>old.get("verification_score",0):
             for f in ("status","granularity","verification_score","source_url","source","program","confirmed_by"): old[f]=x.get(f,old.get(f))
         updated+=1
     else:
