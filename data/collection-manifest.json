@@ -1,9 +1,9 @@
 {
   "run_date": "2026-10-09",
   "collector_version": "4.0",
-  "enabled_sources": 18,
-  "records_found": 18,
-  "active_candidates": 6,
+  "enabled_sources": 19,
+  "records_found": 40,
+  "active_candidates": 28,
   "pending_review": 12,
   "results": [
     {
@@ -85,6 +85,14 @@
       "records_found": 1,
       "active_candidates": 0,
       "pending_review": 1
+    },
+    {
+      "id": "yingjiesheng",
+      "company": "应届生求职网",
+      "pages_visited": 1,
+      "records_found": 22,
+      "active_candidates": 22,
+      "pending_review": 0
     },
     {
       "id": "cmb",

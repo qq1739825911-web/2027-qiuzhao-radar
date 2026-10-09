@@ -2528,5 +2528,33 @@
     "collector": "public-html-v3",
     "granularity": "job",
     "verification_score": 7
+  },
+  {
+    "id": "auto-c101d6af74ad011b",
+    "company": "烟台杰瑞集团",
+    "title": "技术研发类",
+    "category": "AI / 算法 / 技术",
+    "city": "全国",
+    "enterprise_type": "待核验",
+    "degree": "待核验",
+    "salary": "",
+    "publish_date": "",
+    "deadline": "",
+    "last_verified": "2026-10-09",
+    "source": "应届生求职网公开岗位",
+    "source_url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "keywords": [
+      "技术研发类"
+    ],
+    "status": "active",
+    "demo": false,
+    "confirmed_by": [
+      "烟台杰瑞集团官方公开页面"
+    ],
+    "cohort": "2027届",
+    "program": "",
+    "collector": "public-html-v3",
+    "granularity": "job",
+    "verification_score": 8
   }
 ]
