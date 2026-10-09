@@ -132,13 +132,26 @@ def embedded_records(company,source,parser,cohort,source_label=None):
 
 def table_records(company,source,parser,cohort,source_label=None):
     out=[]
+    cities=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外","全国")
+    degree_words=("博士","硕士","本科","大专")
     for row in parser.tables:
         if len(row)<2: continue
         joined=" | ".join(row)
-        role=next((x for x in row if any(w in x for w in CONCRETE_WORDS) and 2<len(x)<80),None)
-        if not role: continue
         if any(x in joined for x in NAV_BAD): continue
-        out.append(record(company,role,source,source_label or company+"官方招聘",cohort,8))
+        # Keep actual role names, not category headings or copied qualification paragraphs.
+        role=next((x for x in row if 2<len(x)<=45
+                   and any(w.lower() in x.lower() for w in CONCRETE_WORDS)
+                   and not x.endswith(("类","方向","相关专业","等相关专业","专业"))
+                   and not x.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求","本科","硕士","博士"))),None)
+        if not role: continue
+        r=record(company,role,source,source_label or company+"官方招聘",cohort,8)
+        found_cities=[]
+        for city in cities:
+            if city in joined and city not in found_cities: found_cities.append(city)
+        if found_cities: r["city"]="、".join(found_cities)
+        degree=next((x for x in row if any(d in x for d in degree_words) and len(x)<=35),None)
+        if degree: r["degree"]=degree
+        out.append(r)
     return out
 
 def collect_source(src):
