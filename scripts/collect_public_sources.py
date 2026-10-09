@@ -184,7 +184,28 @@ def collect_source(src):
         page_title=re.split(r"\s+[|｜_—]\s+|\s+-\s+(?:百度校园招聘|小米校园招聘|校园招聘).*$",page_title,1)[0].strip()
         if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
             sc=score(page_title,final,"")
-            if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF): rows.append(record(page_company,page_title,final,record_source,cohort,sc))
+            if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF):
+                item=record(page_company,page_title,final,record_source,cohort,sc)
+                if src.get("id")=="nowcoder":
+                    page_text=p.page_text()
+                    # Parse visible job fields from the public detail page; never infer a field when absent.
+                    city_list=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外")
+                    city_match=re.search(r"[（(]([^（）()]{2,12})[）)]",page_title)
+                    if city_match and city_match.group(1).strip() in city_list:
+                        item["city"]=city_match.group(1).strip()
+                    degree=next((d for d in ("博士及以上","硕士及以上","本科及以上","大专及以上","博士","硕士","本科","大专") if d in page_text[:1800]),None)
+                    if degree: item["degree"]=degree
+                    salary_match=re.search(r"(\d{1,2}(?:-\d{1,2})?K\s*(?:\*\s*\d+薪)?|薪资面议)",page_text[:1500],re.I)
+                    if salary_match: item["salary"]=re.sub(r"\s+"," ",salary_match.group(1)).strip()
+                    deadline_match=re.search(r"投递时间[:：]?\s*(20\d{2})年(\d{1,2})月(\d{1,2})日\s*[-—至到]\s*(20\d{2})年(\d{1,2})月(\d{1,2})日",page_text[:8000])
+                    if deadline_match:
+                        yy,mm,dd=deadline_match.group(4),int(deadline_match.group(5)),int(deadline_match.group(6))
+                        item["deadline"]=f"{yy}-{mm:02d}-{dd:02d}"
+                        if item["deadline"] < TODAY:
+                            item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=4
+                    if "已结束" in page_text[:600]:
+                        item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=4
+                rows.append(item)
         rows.extend(table_records(page_company,final,p,cohort,record_source))
         rows.extend(embedded_records(page_company,final,p,cohort,record_source))
         for a in p.links:
