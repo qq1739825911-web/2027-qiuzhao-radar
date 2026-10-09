@@ -8,7 +8,7 @@ Rules:
 - score records and only promote high-confidence concrete roles.
 """
 import time
-import json,re,time,hashlib
+import json,re,hashlib
 from pathlib import Path
 from datetime import date
 from html.parser import HTMLParser
@@ -126,7 +126,12 @@ def embedded_records(company,source,parser,cohort,source_label=None):
                         url=canonical(urljoin(source,val)); break
                 if title and url and urlparse(url).netloc.lower()==host:
                     sc=score(title,url,"")
-                    if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF): out.append(record(company,title,url,source_label or company+"官方招聘",cohort,sc))
+                    if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF):
+                        item=record(company,title,url,source_label or company+"官方招聘",cohort,sc)
+                        if source_label=="应届生求职网公开岗位":
+                            item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
+                        if source_label and "公开" in source_label: item["confirmed_by"]=[source_label]
+                        out.append(item)
                 stack.extend(v for v in node.values() if isinstance(v,(dict,list)))
             elif isinstance(node,list): stack.extend(v for v in node if isinstance(v,(dict,list)))
     return out
@@ -145,7 +150,10 @@ def table_records(company,source,parser,cohort,source_label=None):
                    and not x.endswith(("类","方向","相关专业","等相关专业","专业"))
                    and not x.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求","本科","硕士","博士"))),None)
         if not role: continue
-        r=record(company,role,source,source_label or company+"官方招聘",cohort,8)
+        score_value=5 if source_label=="应届生求职网公开岗位" else 8
+        r=record(company,role,source,source_label or company+"官方招聘",cohort,score_value)
+        if source_label and "公开" in source_label:
+            r["confirmed_by"]=[source_label]
         found_cities=[]
         for city in cities:
             if city in joined and city not in found_cities: found_cities.append(city)
@@ -289,6 +297,8 @@ def collect_source(src):
             link_record=record(page_company,title,href,record_source,cohort,sc)
             if "公开岗位" in record_source or "公开聚合" in record_source:
                 link_record["confirmed_by"]=[record_source]
+            if record_source=="应届生求职网公开岗位":
+                link_record["status"]="pending_review"; link_record["granularity"]="review"; link_record["verification_score"]=5
             rows.append(link_record)
             if len(queue)<max_pages and len(visited)+len(queue)<max_pages and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)

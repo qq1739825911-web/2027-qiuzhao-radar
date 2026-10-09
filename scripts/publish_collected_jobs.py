@@ -31,6 +31,12 @@ for x in incoming:
         idx[k]=x; added+=1
         if x.get("source_url"): by_url[x.get("source_url")]=x
         by_role[(x.get("company","").strip().lower(),x.get("title","").strip().lower(),x.get("cohort","").strip().lower())]=x
+# Aggregator summaries are not employer-verified: keep them visible but never claim active status.
+for row in idx.values():
+    if row.get("source")=="应届生求职网公开岗位":
+        row["status"]="pending_review"
+        row["granularity"]="review"
+        row["verification_score"]=min(row.get("verification_score",5),5)
 # Downgrade broad headings / qualification fragments previously emitted from this public article.
 for row in idx.values():
     if (row.get("source_url","").startswith("https://m.yingjiesheng.com/xuanjianghui/xjh_6268864")
