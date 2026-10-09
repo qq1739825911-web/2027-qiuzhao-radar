@@ -5,6 +5,7 @@ on:
       - ".github/workflows/collector-v1-3.yml"
       - "scripts/collect_public_sources.py"
       - "scripts/publish_collected_jobs.py"
+      - "scripts/verify_job_links.py"
       - "data/company_sources.json"
   workflow_dispatch:
   schedule:

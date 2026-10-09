@@ -101,6 +101,17 @@ def main():
             else:
                 unknown+=1; job["verification_status"]="unknown"; job["verification_http_status"]=status; job["verification_note"]="访问受限或暂时失败，未据此关闭岗位"
             time.sleep(0.05)
+    # Mark records whose last observation is older than seven days as stale, without falsely closing them.
+    cutoff=(date.today()-timedelta(days=7)).isoformat()
+    for job in jobs:
+        if job.get("demo") or job.get("status")=="closed" or job.get("verification_status")=="missing_recheck": continue
+        last=job.get("last_verified","")
+        if not last or last<cutoff:
+            job["verification_status"]="stale"
+            job["verification_note"]="最近一次核验超过7天或缺少核验日期；需重新核对，未据此关闭岗位"
+        elif job.get("verification_status")=="stale":
+            job["verification_status"]="not_checked"
+            job.pop("verification_note",None)
     state.update({"cursor":(start+len(batch))%max(1,len(eligible)),"last_run_at":STAMP,"last_batch_size":len(batch),"eligible_count":len(eligible)})
     STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     MANIFEST.write_text(json.dumps({"last_run_at":STAMP,"checked":len(batch),"eligible_direct_links":len(eligible),"link_alive":alive,"missing_needs_recheck":missing,"unknown":unknown,"closed_after_two_checks":closed,"batch_size":batch_size,"note":"链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件。","checked_items":checked},ensure_ascii=False,indent=2),encoding="utf-8")

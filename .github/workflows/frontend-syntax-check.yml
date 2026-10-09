@@ -1,0 +1,40 @@
+name: frontend-syntax-check
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - ".github/workflows/frontend-syntax-check.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract inline JavaScript and check syntax
+        shell: bash
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          class ScriptParser(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.in_script=False; self.blocks=[]; self.current=[]
+              def handle_starttag(self, tag, attrs):
+                  if tag.lower()=="script":
+                      self.in_script=True; self.current=[]
+              def handle_data(self, data):
+                  if self.in_script: self.current.append(data)
+              def handle_endtag(self, tag):
+                  if tag.lower()=="script" and self.in_script:
+                      self.blocks.append("".join(self.current)); self.current=[]; self.in_script=False
+          parser=ScriptParser()
+          with open("index.html",encoding="utf-8") as f: parser.feed(f.read())
+          inline=[s for s in parser.blocks if s.strip()]
+          if not inline: raise SystemExit("No inline JavaScript found")
+          with open("/tmp/radar-inline.js","w",encoding="utf-8") as f: f.write("\n".join(inline))
+          print(f"Extracted {len(inline)} inline script block(s)")
+          PY
+          node --check /tmp/radar-inline.js

@@ -18,7 +18,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "公开可访问的岗位详情页；只采集公开职位标题与详情链接，不抓取登录态字段；平台来源需保留来源标识",
+    "notes": "公开岗位详情页；每轮最多访问40个公开详情页，优先岗位级记录并保留来源标识。",
     "seed_urls": [
       "https://www.nowcoder.com/jobs/detail/462572",
       "https://www.nowcoder.com/jobs/detail/462503",
@@ -38,7 +38,8 @@
       "https://www.nowcoder.com/jobs/detail/469521",
       "https://www.nowcoder.com/jobs/detail/464800"
     ],
-    "max_pages": 24
+    "max_pages": 40,
+    "max_candidates": 1200
   },
   {
     "id": "yingjiesheng",
@@ -322,7 +323,7 @@
     "max_candidates": 600,
     "access": "public",
     "trust": "medium",
-    "enabled": true,
-    "notes": "公开岗位列表包含企业、岗位、地区和届次；只采集公开字段，聚合来源岗位默认待核验。"
+    "enabled": false,
+    "notes": "已暂时停用：5页公开访问成功但未提取到可靠岗位级记录，避免把页面入口误当岗位；待专用解析器完成后再启用。"
   }
 ]
