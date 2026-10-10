@@ -49,7 +49,7 @@ class Parser(HTMLParser):
         if tag=="script": self._script_buf=[]
     def handle_data(self,data):
         s=re.sub(r"\s+"," ",data).strip()
-        if s: self.text.append(s)
+        if s and self._script_buf is None: self.text.append(s)
         if self._a is not None: self._a["text"]+=(" "+s if s else "")
         if self._script_buf is not None: self._script_buf.append(data)
         if self._in_title: self.page_title+=data
@@ -80,6 +80,37 @@ def fetch(url):
     return raw.decode(enc,errors="ignore"),final
 
 def clean(s): return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",s or "")).strip()
+
+DETAIL_JSON_KEYS=("jobCity","careerJobId","deliverBegin","deliverEnd","refreshBegin","latestProcessTime","graduationYear","salaryType","salaryMin","salaryMax","jobKeys","companyId","companyName","positionId","positionName","recruitJobName","jobName","jobOffer","eduLevel")
+
+def sanitize_extracted_text(value, max_length=6500):
+    """Remove embedded job-card JSON accidentally joined to visible detail text."""
+    if not isinstance(value, str):
+        return value
+    text=value.replace("\\r\\n", "\\n").replace("\\n", "\\n").replace("\\t", " ")
+    text=text.replace("\\u002F", "/").replace("\\u002f", "/")
+    text=re.sub(r"[ \t]+", " ", text).strip()
+    marker=-1
+    for key in DETAIL_JSON_KEYS:
+        start=0
+        while True:
+            at=text.find(key, start)
+            if at < 0:
+                break
+            colon=text.find(":", at+len(key), at+len(key)+10)
+            if colon >= 0:
+                if marker < 0 or at < marker:
+                    marker=at
+                break
+            start=at+len(key)
+    if marker >= 0:
+        brace=text.rfind("{", 0, marker+1)
+        if brace == 0:
+            return ""
+        if brace > 0 and marker-brace < 120:
+            text=text[:brace].rstrip(" \t,;")
+    return text[:max_length].strip()
+
 def canonical(u):
     p=urlparse(u)
     # Preserve meaningful query parameters such as page=2 and jobId=123.
@@ -145,8 +176,10 @@ TITLE_NOISE = re.compile(r"(?:\d+\s*分钟前在线|HR\s*反馈率|反馈率\s*[
 ROLE_TERMS=("AIGC","AI产品","AI应用","视频","影视","创意制作","制作","创作","动画","短视频","剪辑","编导","文案","游戏","直播","摄影","工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","设计","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","分析师","管培生","管理培训生","咨询","教师","医生","护士","质量","项目经理","策划","内容","新媒体","客服","行政","人事","风控","信贷","会计","策略","助理","客户经理","技术支持","商业分析","投资","证券","保险","精算","编辑","翻译","品牌","公关","电商","市场拓展","芯片","硬件","软件","制造","HR","Engineer","Designer","Analyst","Product","Operations")
 
 def clean_job_title(title, source_id=""):
-    """Remove visible platform and HR-status pollution without inventing a job title."""
+    """Remove cohort chips, platform metadata and HR-status pollution from titles."""
     t=clean(title)
+    t=re.sub(r"^\s*[【\[（(]\s*(?:20\d{2}|\d{2})\s*届\s*(?:校招|校园招聘|正式批|秋招)?\s*[】\]）)]\s*[-—:：_ ]*", "", t)
+    t=re.sub(r"^\s*(?:20\d{2}|\d{2})\s*届(?:校招|校园招聘)?\s*[-—:：_ ]*", "", t)
     if source_id=="nowcoder":
         m=re.match(r"^(.+?)_[^_]+?(?:校招|实习|社招)_牛客网$",t)
         if m: t=m.group(1)
@@ -161,14 +194,14 @@ def clean_job_title(title, source_id=""):
     t=re.sub(r"\s*反馈时长\s*[:：]?.*$","",t,flags=re.I)
     t=re.sub(r"\s*(?:招聘经理|人事经理|招聘专员).*$","",t)
     t=re.sub(r"^(?:招聘岗位|职位|岗位名称)\s*[:：]\s*","",t)
-    t=re.sub(r"\s*[（(]J\d{3,}[）)]\s*$","",t,flags=re.I)
+    t=re.sub(r"\s*[（(]\s*[A-Z]{1,4}\d{4,}\s*[）)]\s*$","",t,flags=re.I)
     t=re.sub(r"\s+"," ",t).strip(" -—_|｜")
     return t
 
 def is_concrete_role_title(title):
     t=clean_job_title(title)
     if len(t)<2 or len(t)>90 or TITLE_NOISE.search(t): return False
-    if any(w in t for w in ("招聘公告","招聘简章","招聘计划","校园招聘会","招聘宣讲","专业目录","需求专业","岗位要求","任职要求","职位描述","职位亮点","公司信息","查看更多","点击查看")): return False
+    if any(w in t for w in ("招聘公告","招聘简章","招聘计划","校园招聘会","招聘宣讲","专业目录","需求专业","岗位要求","任职要求","职位描述","职位亮点","公司信息","查看更多","点击查看","招聘信息","福利待遇","工作环境","员工评价","职位搜索","职位列表","岗位列表","招聘官网","校园招聘官网","加入我们")): return False
     return any(w.lower() in t.lower() for w in ROLE_TERMS)
 
 def extract_section(text, starts, ends, limit=5000):
