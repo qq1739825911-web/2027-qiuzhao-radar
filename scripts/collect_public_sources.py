@@ -90,27 +90,17 @@ def sanitize_extracted_text(value, max_length=6500):
     text=value.replace("\\r\\n", "\n").replace("\\n", "\n").replace("\\t", " ")
     text=text.replace("\\u002F", "/").replace("\\u002f", "/")
     text=re.sub(r"[ \t]+", " ", text).strip()
-    marker=-1
-    for key in DETAIL_JSON_KEYS:
-        start=0
-        while True:
-            at=text.find(key, start)
-            if at < 0:
-                break
-            colon=text.find(":", at+len(key), at+len(key)+10)
-            if colon >= 0:
-                if marker < 0 or at < marker:
-                    marker=at
-                break
-            start=at+len(key)
-    if marker >= 0:
-        brace=text.rfind("{", 0, marker+1)
-        if brace == 0:
-            return ""
-        if brace > 0 and marker-brace < 120:
-            text=text[:brace].rstrip(" \t,;")
+    property_key = re.compile(
+        r'''[,;]\s*(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:''',
+        re.I,
+    )
+    match=property_key.search(text)
+    if match:
+        text=text[:match.start()].rstrip(" \t,;\\")
+    elif re.match(r'''^\s*[{[]\s*(?:\\?["'])?(?:jobCity|careerJobId|positionId|jobKeys)(?:\\?["'])?\s*:''', text, re.I):
+        return ""
     return text[:max_length].strip()
-
+    
 def canonical(u):
     p=urlparse(u)
     # Preserve meaningful query parameters such as page=2 and jobId=123.
