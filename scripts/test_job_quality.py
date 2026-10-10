@@ -37,6 +37,11 @@ dirty = r'岗位职责：完成测试并整理报告。\n3. 相关职责说明�
 cleaned = sanitize_extracted_text(dirty)
 check("historical description sanitizer removes embedded JSON",
       "岗位职责" in cleaned and "careerJobId" not in cleaned and "salaryMax" not in cleaned)
+check("historical description sanitizer removes trailing serialization quotes",
+      not cleaned.endswith(("\\", '"', "}")))
+check("JSON-only embedded fragment is not shown as job description",
+      sanitize_extracted_text(r'{"jobCity":"北京","careerJobId":11025}') == "")
+
 
 
 # Direct URLs only; aggregator/search/list pages are not job details.
