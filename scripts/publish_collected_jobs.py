@@ -46,6 +46,7 @@ for row in incoming:
     if not row.get("company") or not row.get("title") or not row.get("source_url"): continue
     row.setdefault("last_collected",TODAY)
     row.setdefault("last_verified","")
+    row.setdefault("last_seen",row.get("last_collected") or TODAY)
     k=role_key(row)
     old=idx.get(k)
     url_key=norm_url(row.get("source_url",""))

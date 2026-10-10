@@ -15,7 +15,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: public-source-collector-${{ github.ref }}
+  group: job-data-maintenance-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   collect:
