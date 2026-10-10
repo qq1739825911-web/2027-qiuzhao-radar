@@ -66,4 +66,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/jobs.json data/source-health.json data/collection-manifest.json
           git commit -m "chore: maintain normalized job data"
-          git push
+          # Another code/data commit may land while collection runs. Rebase the generated data commit onto latest main before pushing.
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
