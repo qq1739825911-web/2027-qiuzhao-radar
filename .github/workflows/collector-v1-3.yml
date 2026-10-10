@@ -7,6 +7,7 @@ on:
       - "scripts/publish_collected_jobs.py"
       - "scripts/verify_job_links.py"
       - "scripts/quality_rules.py"
+      - "scripts/finalize_job_quality.py"
       - "scripts/test_job_quality.py"
       - "data/company_sources.json"
   workflow_dispatch:
@@ -41,6 +42,8 @@ jobs:
         run: python scripts/dedupe_jobs.py
       - name: Verify rotating batch of direct job links
         run: python scripts/verify_job_links.py
+      - name: Recalculate priority vs. lead buckets after verification
+        run: python scripts/finalize_job_quality.py
       - name: Quality summary
         run: |
           python - <<'PY'

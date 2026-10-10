@@ -77,6 +77,7 @@ missing_cohort = dict(base, cohort="", cohort_evidence="", cohort_confirmed=Fals
 check("missing cohort downgraded", not assess(missing_cohort, today=date(2026, 10, 10)))
 stale = dict(base, verification_status="stale")
 check("stale detail downgraded", not assess(stale, today=date(2026, 10, 10)))
+check("lead bucketing does not destroy lifecycle status", stale["status"] == "active" and stale["review_bucket"] == "lead")
 old_v3 = dict(base, collector="public-html-v3", cohort_evidence="", cohort_confirmed=False)
 check("legacy default 2027 does not count as evidence", not assess(old_v3, today=date(2026, 10, 10)))
 expired = dict(base, deadline="2026-10-09")

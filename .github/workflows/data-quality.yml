@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Sync with the latest main before data maintenance
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -40,6 +44,8 @@ jobs:
 
       - name: Expire closed jobs
         run: python scripts/expire_jobs.py
+      - name: Recalculate priority vs. lead buckets
+        run: python scripts/finalize_job_quality.py
 
       - name: Check public source entry points
         run: python scripts/check_sources.py
@@ -52,6 +58,6 @@ jobs:
           fi
           git config user.name "2027-qiuzhao-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/jobs.json data/source-health.json
+          git add data/jobs.json data/source-health.json data/collection-manifest.json
           git commit -m "chore: maintain normalized job data"
           git push

@@ -49,7 +49,6 @@ def assess(row, today=None):
     ready=(not reasons and row.get("status")=="active")
     row["review_bucket"]="priority" if ready else "lead"
     row["review_reasons"]=[] if ready else list(dict.fromkeys(reasons or ["等待人工核验"]))
-    if not ready and row.get("status")=="active":
-        row["status"]="pending_review"
-        row["granularity"]="review"
+    # Keep lifecycle status separate from the review bucket. A fresh successful
+    # link check on a later run may promote an active candidate from lead to priority.
     return ready
