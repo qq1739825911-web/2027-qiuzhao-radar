@@ -1,0 +1,48 @@
+name: Browser UI Smoke Tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "data/jobs.json"
+      - "scripts/e2e_smoke.cjs"
+      - ".github/workflows/browser-smoke.yml"
+  pull_request:
+    paths:
+      - "index.html"
+      - "data/jobs.json"
+      - "scripts/e2e_smoke.cjs"
+      - ".github/workflows/browser-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright
+        run: npm install --no-save --no-package-lock playwright
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local static site
+        run: |
+          python -m http.server 4173 --bind 127.0.0.1 >/tmp/radar-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/radar-http.log
+          exit 1
+      - name: Test real browser interactions with current repository data
+        run: node scripts/e2e_smoke.cjs
