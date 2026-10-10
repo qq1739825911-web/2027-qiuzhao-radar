@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - "scripts/check_sources.py"
+      - "scripts/quality_rules.py"
+      - "scripts/finalize_job_quality.py"
+      - "scripts/dedupe_jobs.py"
+      - "scripts/expire_jobs.py"
+      - "scripts/test_job_quality.py"
+      - "data/company_sources.json"
       - ".github/workflows/data-quality.yml"
   workflow_dispatch:
   schedule:
