@@ -30,6 +30,6 @@ check("priority gate requires explicit cohort evidence", 'function has2027Eviden
 check("priority gate rejects old source observations", 'seenCutoff' in HTML and 'x.last_seen||x.last_collected' in HTML)
 check("in-site detail renders salary and location", '"薪资"' in HTML and '"工作城市"' in HTML and "工作地址：</b>" in HTML)
 check("in-site detail renders education and job descriptions", '"学历要求"' in HTML and "job.responsibilities" in HTML and "job.requirements" in HTML)
-check("company and original source stay available", "job.company" in HTML and "打开原始招聘页面" in HTML)
+check("company and source CTA stay available", "job.company" in HTML and ("打开原始职位页面" in HTML or "前往官方招聘渠道核对" in HTML))
 check("missing values are not invented", "系统不会用猜测补齐" in HTML)
 print("FRONTEND CONTRACT TESTS PASSED")
