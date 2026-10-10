@@ -15,7 +15,15 @@ JOBS=ROOT/"data/jobs.json"; STATE=ROOT/"data/verification-state.json"; MANIFEST=
 TODAY=str(date.today()); STAMP=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 HEADERS={"User-Agent":"2027-Qiuzhao-Radar-PublicVerifier/1.1"}
 # Covers Nowcoder details, Xiaomi/Baidu detail pages, and Qiuzhaowang /jobs/<slug> pages.
-DIRECT=re.compile(r"/(?:jobs/(?!latest(?:/|$))[^/?#]+|positions/[^/?#]+|campus/position/[^/]+/detail|position/[^/]+/detail|job/detail/|job/position/)",re.I)
+DIRECT=re.compile(r"/(?:jobs/detail/\d+|jobs/hr/\d+|jobs/(?!latest(?:/|$)|list(?:/|$))[^/?#]+|jobdetail/\d+|job-\d{3}-\d{3}-\d+\.html|positions/[^/?#]+|campus/position/[^/]+/detail|position/[^/]+/detail|job/detail/|job/position/|jobdesc\.html|web/position/detail)",re.I)
+
+def is_direct_detail(url):
+    p=urlparse(url); path=p.path.lower(); query=p.query.lower()
+    if not DIRECT.search(path): return False
+    if "/jobs/hr/" in path and not re.search(r"(?:^|&)jobid=\d+",query): return False
+    if path.endswith("/jobdesc.html") and not re.search(r"(?:^|&)postid=[^&]+",query): return False
+    if path.endswith("/web/position/detail") and not re.search(r"(?:^|&)jobunionid=\d+",query): return False
+    return True
 CLOSED_MARKERS=("职位已下线","岗位已下线","职位不存在","岗位不存在","招聘已结束","投递已结束","职位已关闭","岗位已关闭","该职位已失效")
 GAP=timedelta(hours=5,minutes=45)
 def fetch(url):
@@ -66,10 +74,10 @@ def main():
     by_url={}
     for job in jobs:
         url=job.get("source_url","")
-        if job.get("demo") or not url.startswith("https://") or not DIRECT.search(urlparse(url).path): continue
+        if job.get("demo") or not url.startswith("https://") or not is_direct_detail(url): continue
         by_url.setdefault(url,[]).append(job)
     eligible_urls=sorted(by_url,key=lambda u:(min((j.get("last_verified","") for j in by_url[u]),default=""),u))
-    batch_size=60
+    batch_size=120
     if eligible_urls:
         start=int(state.get("cursor",0))%len(eligible_urls)
         batch_urls=(eligible_urls+eligible_urls)[start:start+min(batch_size,len(eligible_urls))]

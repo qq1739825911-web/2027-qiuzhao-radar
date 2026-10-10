@@ -49,11 +49,16 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "公开校招宣讲/招聘详情页；从可见岗位表提取岗位级记录，保留原始公告链接和平台来源",
+    "notes": "从应届生求职网公开职位详情与校招发布页提取薪资、城市、学历、职责、要求及公司信息；只有详情URL和明确2027届证据才进入可优先核验池，其余留作线索。",
     "seed_urls": [
-      "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864"
+      "https://m.yingjiesheng.com/jobdetail/170935981",
+      "https://m.yingjiesheng.com/jobdetail/173508261",
+      "https://m.yingjiesheng.com/jobdetail/173505576",
+      "https://m.yingjiesheng.com/job-008-098-278.html",
+      "https://m.yingjiesheng.com/job-008-102-094.html",
+      "https://m.yingjiesheng.com/jobdetail/163535411"
     ],
-    "max_pages": 10
+    "max_pages": 12
   },
   {
     "id": "iguopin",
@@ -80,38 +85,51 @@
     "company": "腾讯",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://careers.tencent.com/en-us/campusrecruit.html",
+    "url": "https://careers.tencent.com/search.html?pcid=40011",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；仅采集公开可见字段"
+    "notes": "腾讯官方招聘职位搜索页（校园招聘/校招应届生筛选）；只将可访问的具体职位详情和页面明确届别的职位加入优先核验候选，公告页保留为线索。海外页面的地区和毕业范围需在详情中复核。",
+    "seed_urls": [
+      "https://careers.tencent.com/search.html?pcid=40011"
+    ],
+    "max_pages": 8,
+    "max_candidates": 300
   },
   {
     "id": "alibaba",
     "company": "阿里巴巴",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://campus-talent.alibaba.com/",
+    "url": "https://campus-talent.alibaba.com/campus/index",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；仅采集公开可见字段"
+    "notes": "阿里巴巴官方校园招聘入口；页面由前端动态渲染，优先检查页面公开链接与嵌入式公开结构，无法取得岗位详情时只保留明确的公告线索。",
+    "seed_urls": [
+      "https://campus-talent.alibaba.com/campus/index"
+    ],
+    "max_pages": 6
   },
   {
     "id": "baidu",
     "company": "百度",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+    "url": "https://talent.baidu.com/jobs/list?projectType=3&recruitType=GRADUATE",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；仅采集公开可见字段",
+    "notes": "百度官方2027届校招职位列表与公开详情页；已加入岗位详情样本，用于提取职位名称、城市、学历、职责和任职要求。详情页能打开仍不等于招聘开放，截止/届别信息以页面为准。",
     "seed_urls": [
-      "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+      "https://talent.baidu.com/jobs/list?projectType=3&recruitType=GRADUATE",
       "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571",
-      "https://talent.baidu.com/jobs/detail/GRADUATE/4a24a509-42b0-42fe-989d-bc24e863ce7b"
-    ]
+      "https://talent.baidu.com/jobs/detail/GRADUATE/4a24a509-42b0-42fe-989d-bc24e863ce7b",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/a20dfb76-4c9d-4814-bd74-7561616e2773",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/ab5ec82f-a8be-4b4a-8e6f-5debc34ea804"
+    ],
+    "max_pages": 8,
+    "max_candidates": 200
   },
   {
     "id": "meituan",
@@ -122,7 +140,13 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；部分岗位招满可能提前结束"
+    "notes": "美团官方校招入口加公开职位详情样本；详情页标题优先从可见h1/h2/h3提取，薪资、地点、学历、岗位职责只采集页面实际可见字段。",
+    "seed_urls": [
+      "https://zhaopin.meituan.com/web/position/detail?highlightType=campus&jobShareType=1&jobUnionId=4683995941",
+      "https://zhaopin.meituan.com/web/campus/schedule"
+    ],
+    "max_pages": 6,
+    "max_candidates": 150
   },
   {
     "id": "nio",
@@ -151,27 +175,36 @@
     "company": "小米",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://hr.xiaomi.com/campus/",
+    "url": "https://xiaomi.jobs.f.mioffice.cn/campus/?current=14&limit=10",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；仅采集公开可见字段",
+    "notes": "小米官方校园职位列表和具体岗位详情；直接详情页可提取薪资（若公开）、城市、学历、职位描述与要求。若运行器无法访问，应在采集报告中标明TLS/访问原因，不用旧采集日期假装已核验。",
     "seed_urls": [
+      "https://xiaomi.jobs.f.mioffice.cn/campus/?current=14&limit=10",
       "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035119249690/detail",
       "https://xiaomi.jobs.f.mioffice.cn/campus/position/7671295378604607754/detail",
-      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035149052211/detail"
-    ]
+      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035149052211/detail",
+      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670906437498341678/detail"
+    ],
+    "max_pages": 8,
+    "max_candidates": 200
   },
   {
     "id": "pdd",
     "company": "拼多多",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://careers.pddglobalhr.com/campus",
+    "url": "https://careers.pddglobalhr.com/campus/grad",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘页面；2027届应届生招聘公开入口"
+    "notes": "拼多多官方应届生招聘公开列表；当前职位卡片部分由前端动态渲染，如无法从公开HTML提取具体职位，仅记录页面明确的2027招聘入口线索，不把卡片目录冒充具体职位。",
+    "seed_urls": [
+      "https://careers.pddglobalhr.com/campus/grad"
+    ],
+    "max_pages": 6,
+    "max_candidates": 200
   },
   {
     "id": "xiaopeng",
@@ -204,7 +237,13 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "中国建设银行官方招聘平台；公开展示2027年度校园招聘公告及岗位搜索。"
+    "notes": "建行官方2027校园招聘公告与招聘入口。运行器此前出现TLS legacy renegotiation兼容性错误；若仍失败，记录访问故障，不将网页不可访问误判为无岗位。",
+    "seed_urls": [
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903145558718023&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260901194840667699&planType=XY",
+      "https://job2.ccb.com/"
+    ],
+    "max_pages": 5
   },
   {
     "id": "psbc",
@@ -226,7 +265,12 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方校园招聘入口；各分行岗位单独发布"
+    "notes": "招商银行官方校园招聘公告入口和站点；若公开HTML为JavaScript应用壳，只诊断并保留公告线索，不尝试绕过登录或调用未公开接口。",
+    "seed_urls": [
+      "https://career.cmbchina.com/detail/school?id=4B58639A-C643-475D-AB57-6B9E980040CD",
+      "https://career.cmbchina.com/"
+    ],
+    "max_pages": 4
   },
   {
     "id": "icbc",
@@ -237,7 +281,11 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "中国工商银行官方人才招聘平台；公开展示2027年度校园招聘公告。"
+    "notes": "工商银行官方人才招聘平台。运行器此前出现TLS legacy renegotiation兼容性错误；若仍失败，报告为访问受限，保留来源供后续官方替代入口诊断。",
+    "seed_urls": [
+      "https://job.icbc.com.cn/"
+    ],
+    "max_pages": 3
   },
   {
     "id": "cib",
@@ -248,7 +296,12 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "总行2027校园招聘公告"
+    "notes": "兴业银行官方网站2027校招公告与招聘入口；公告只作为待核验线索，具体职位需进入银行招聘网站核对，不将公告名称作为职位。",
+    "seed_urls": [
+      "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922.html",
+      "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/"
+    ],
+    "max_pages": 5
   },
   {
     "id": "citic",
@@ -259,7 +312,12 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "中信银行官方招聘入口；2027届校园招聘公告指向该域名。"
+    "notes": "中信银行官方招聘入口与公开校招FAQ/公告；公告类记录单独放在待核验线索。若页面动态渲染导致无职位级字段，采集报告应明确显示未解析而不虚构岗位。",
+    "seed_urls": [
+      "https://job.citicbank.com/static/gggs1_209.html",
+      "https://job.citicbank.com/"
+    ],
+    "max_pages": 4
   },
   {
     "id": "qiuzhaowang",

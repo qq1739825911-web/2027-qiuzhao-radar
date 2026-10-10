@@ -10,7 +10,7 @@ Rules:
 import time
 import json,re,hashlib
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from urllib.parse import urljoin,urlparse,urlunparse,parse_qsl,urlencode
 from urllib.request import Request,urlopen
@@ -19,23 +19,29 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 ROOT=Path(__file__).resolve().parents[1]
 REGISTRY=ROOT/"data/company_sources.json"; INBOX=ROOT/"data/jobs.inbox.json"; MANIFEST=ROOT/"data/collection-manifest.json"
 TODAY=str(date.today())
+STAMP=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 HEADERS={"User-Agent":"2027-Qiuzhao-Radar-PublicCollector/3.0"}
 
 JOB_WORDS=("工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","管培生","管理培训生","咨询","教师","医生","护士","质量","项目经理")
-CONCRETE_WORDS=("工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","研究岗","行业研究","分析师","分析岗","管培生","管理培训生","培训生","咨询","教师","医生","护士","质量","项目经理","策划","内容运营","新媒体","客服","行政","人事","风控","风险","信贷","会计","策略","助理","客户经理","技术支持","商业分析","投资","证券","保险","精算","编辑","翻译","业务专员","运营岗","产品运营","品牌","公关","电商","市场拓展","Sales","Marketing","Analyst","Engineer","Intern","Associate","Manager","Specialist","Consultant","Accountant","Finance","Risk","Audit","Legal","Research","Strategy","Operations","Supply Chain","Procurement","Quality","Manufacturing","Mechanical","Electrical","Clinical","Medical","Education","Teacher","Editor","Content","Copywriter","Designer","Design","Product","Business","HR","Data Science","Data Analyst")
+CONCRETE_WORDS=("AIGC","AI产品","AI应用","视频","影视","创意制作","制作","创作","动画","短视频","剪辑","编导","文案","游戏","直播","摄影","工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","研究岗","行业研究","分析师","分析岗","管培生","管理培训生","培训生","咨询","教师","医生","护士","质量","项目经理","策划","内容运营","新媒体","客服","行政","人事","风控","风险","信贷","会计","策略","助理","客户经理","技术支持","商业分析","投资","证券","保险","精算","编辑","翻译","业务专员","运营岗","产品运营","品牌","公关","电商","市场拓展","Sales","Marketing","Analyst","Engineer","Intern","Associate","Manager","Specialist","Consultant","Accountant","Finance","Risk","Audit","Legal","Research","Strategy","Operations","Supply Chain","Procurement","Quality","Manufacturing","Mechanical","Electrical","Clinical","Medical","Education","Teacher","Editor","Content","Copywriter","Designer","Design","Product","Business","HR","Data Science","Data Analyst")
 PROGRAM_WORDS=("招聘公告","招聘启事","校园招聘","校招公告","招聘简章","招聘信息","招聘计划","招聘项目","招聘专场","秋季招聘","春季招聘","招聘通知")
 NAV_BAD=("登录","注册","首页","关于我们","新闻","公告","联系我们","隐私","下载","帮助","返回","信用卡产品","借记卡产品","自营金融","产品服务","理财","基金产品")
 ROLE_HREF=("job","position","career","campus","recruit","zhaopin","jobs","vacancy","detail","post")
 
 class Parser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.table_links=[]; self._row_links=[]; self._in_row=False; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]
+        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.table_links=[]; self._row_links=[]; self._in_row=False; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]; self.headings=[]; self._heading_buf=None; self._heading_tag=None
     def handle_starttag(self,tag,attrs):
         d=dict(attrs); tag=tag.lower()
+        if tag=="img" and d.get("alt"):
+            alt=re.sub(r"\s+"," ",d.get("alt","")).strip()
+            if alt: self.text.append(alt)
         if tag=="a":
             self._a={"href":d.get("href",""),"text":""}
             if self._in_row and d.get("href"): self._row_links.append(d.get("href",""))
         if tag=="title": self._in_title=True
+        if tag in ("h1","h2","h3","h4"):
+            self._heading_buf=[]; self._heading_tag=tag
         if tag in ("td","th"): self._td=""
         if tag=="tr": self._row=[]; self._row_links=[]; self._in_row=True
         if tag=="script": self._script_buf=[]
@@ -45,11 +51,16 @@ class Parser(HTMLParser):
         if self._a is not None: self._a["text"]+=(" "+s if s else "")
         if self._script_buf is not None: self._script_buf.append(data)
         if self._in_title: self.page_title+=data
+        if self._heading_buf is not None: self._heading_buf.append(data)
         if self._td is not None: self._td+=(" "+s if s else "")
     def handle_endtag(self,tag):
         tag=tag.lower()
         if tag=="a" and self._a is not None: self.links.append(self._a); self._a=None
         if tag=="title": self._in_title=False
+        if tag in ("h1","h2","h3","h4") and self._heading_buf is not None and tag==self._heading_tag:
+            heading=re.sub(r"\s+"," ","".join(self._heading_buf)).strip()
+            if heading: self.headings.append(heading)
+            self._heading_buf=None; self._heading_tag=None
         if tag=="script" and self._script_buf is not None:
             body="".join(self._script_buf).strip()
             if body and len(body)<5000000: self.scripts.append(body)
@@ -71,13 +82,20 @@ def canonical(u):
     p=urlparse(u)
     # Preserve meaningful query parameters such as page=2 and jobId=123.
     # Strip only analytics/tracking parameters so paginated pages and distinct jobs do not collapse.
-    tracking={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid"}
+    tracking={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid","property","requestid","policytype","policyid","pagecode","pagesource","isinitiative","issuggest","jobrank","advid"}
     query=sorted((k,v) for k,v in parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
     return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True),""))
 def same_host(a,b): return urlparse(a).netloc.lower()==urlparse(b).netloc.lower()
 def year(s):
-    m=re.search(r"(20\d{2})\s*[届年]",s or "")
-    return (m.group(1)+"届") if m else "2027届"
+    """Return a cohort only when visible text explicitly provides one; never guess 2027."""
+    text=s or ""
+    m=re.search(r"(?<!\d)(20\d{2})\s*届",text)
+    if m: return m.group(1)+"届"
+    m=re.search(r"(?<!\d)(2[5-9])\s*届",text)
+    if m: return "20"+m.group(1)+"届"
+    m=re.search(r"(?<!\d)(20\d{2})\s*年(?:应届|毕业)",text)
+    if m: return m.group(1)+"届"
+    return ""
 def category(t):
     t=t.lower()
     if any(x in t for x in ("ai","算法","大模型","机器学习","软件","开发","工程师","数据","技术","研发","嵌入式")): return "AI / 算法 / 技术"
@@ -101,17 +119,165 @@ def score(title,href,context):
     if len(title)>70: s-=2
     return s
 
-def record(company,title,url,source,cohort,confidence,program=""):
-    status="active" if confidence>=7 else "pending_review"
+def is_direct_detail_url(url):
+    p=urlparse(url or "")
+    path=p.path.lower()
+    if re.search(r"/jobs/detail/\d+",path): return True
+    if re.search(r"/jobs/detail/(?:graduate|intern)/[0-9a-f-]{20,}",path): return True
+    if re.search(r"/jobs/hr/\d+",path) and re.search(r"(?:^|&)jobid=\d+",p.query.lower()): return True
+    if re.search(r"/jobdetail/\d+",path): return True
+    if path.endswith("/jobdesc.html") and re.search(r"(?:^|&)postid=[^&]+",p.query.lower()): return True
+    if path.endswith("/web/position/detail") and re.search(r"(?:^|&)jobunionid=\d+",p.query.lower()): return True
+    if re.search(r"/campus/position/\d+/detail",path): return True
+    if re.search(r"/position/\d+/detail",path): return True
+    if re.search(r"/positions/\d+(?:/|$)",path): return True
+    if re.search(r"/job/detail/\d+",path): return True
+    if re.search(r"/job/position/\d+",path): return True
+    if re.search(r"/job-\d{3}-\d{3}-\d+\.html$",path): return True
+    return False
+
+TITLE_NOISE = re.compile(r"(?:\d+\s*分钟前在线|HR\s*反馈率|反馈率\s*[:：]?|反馈时长\s*[:：]?|招聘经理|人事经理|招聘专员|今日活跃|刚刚活跃)",re.I)
+ROLE_TERMS=("AIGC","AI产品","AI应用","视频","影视","创意制作","制作","创作","动画","短视频","剪辑","编导","文案","游戏","直播","摄影","工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","设计","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","分析师","管培生","管理培训生","咨询","教师","医生","护士","质量","项目经理","策划","内容","新媒体","客服","行政","人事","风控","信贷","会计","策略","助理","客户经理","技术支持","商业分析","投资","证券","保险","精算","编辑","翻译","品牌","公关","电商","市场拓展","芯片","硬件","软件","制造","HR","Engineer","Designer","Analyst","Product","Operations")
+
+def clean_job_title(title, source_id=""):
+    """Remove visible platform and HR-status pollution without inventing a job title."""
+    t=clean(title)
+    if source_id=="nowcoder":
+        m=re.match(r"^(.+?)_[^_]+?(?:校招|实习|社招)_牛客网$",t)
+        if m: t=m.group(1)
+        t=re.sub(r"^(?:20\d{2}|\d{2})届(?:校招)?[-—_\s]*","",t)
+    if source_id=="yingjiesheng" and "招聘_" in t:
+        t=t.split("招聘_",1)[0].strip()
+    t=re.sub(r"\s*[_|｜]\s*(?:牛客网|应届生求职网).*$","",t)
+    t=re.sub(r"\s*[-—]\s*(?:牛客网|应届生求职网).*$","",t)
+    t=re.sub(r"\s*\d+\s*分钟前在线.*$","",t)
+    t=re.sub(r"\s*[·|｜]\s*HR\s*反馈率.*$","",t,flags=re.I)
+    t=re.sub(r"\s*(?:HR\s*)?反馈率\s*[:：]?.*$","",t,flags=re.I)
+    t=re.sub(r"\s*反馈时长\s*[:：]?.*$","",t,flags=re.I)
+    t=re.sub(r"\s*(?:招聘经理|人事经理|招聘专员).*$","",t)
+    t=re.sub(r"^(?:招聘岗位|职位|岗位名称)\s*[:：]\s*","",t)
+    t=re.sub(r"\s*[（(]J\d{3,}[）)]\s*$","",t,flags=re.I)
+    t=re.sub(r"\s+"," ",t).strip(" -—_|｜")
+    return t
+
+def is_concrete_role_title(title):
+    t=clean_job_title(title)
+    if len(t)<2 or len(t)>90 or TITLE_NOISE.search(t): return False
+    if any(w in t for w in ("招聘公告","招聘简章","招聘计划","校园招聘会","招聘宣讲","专业目录","需求专业","岗位要求","任职要求","职位描述","职位亮点","公司信息","查看更多","点击查看")): return False
+    return any(w.lower() in t.lower() for w in ROLE_TERMS)
+
+def extract_section(text, starts, ends, limit=5000):
+    start_re="(?:"+"|".join(starts)+r")\s*[:：]?\s*"
+    m=re.search(start_re,text or "",re.I)
+    if not m: return ""
+    tail=(text or "")[m.end():]
+    positions=[]
+    for end in ends:
+        hit=re.search(r"\s*(?:"+end+r")\s*[:：]?\s*",tail,re.I)
+        if hit: positions.append(hit.start())
+    if positions: tail=tail[:min(positions)]
+    return re.sub(r"\s+"," ",tail).strip(" :-—")[:limit].strip()
+
+def extract_yingjiesheng_fields(raw_title, text, url):
+    """Extract visible fields from public Yingjiesheng job-detail pages."""
+    fields={}; title=""; company=""
+    path=urlparse(url).path.lower()
+    if "/jobdetail/" in path:
+        if "招聘_" in raw_title:
+            title,rest=raw_title.split("招聘_",1)
+            title=title.strip()
+            company=re.split(r"招聘信息|_应届生求职网",rest,1)[0].strip(" _-")
+        else:
+            title=raw_title.split("_",1)[0].strip()
+    else:
+        m=re.search(r"职位\s*[:：]\s*(.+?)\s+发布时间",text or "")
+        if m: title=m.group(1).strip()
+        m=re.search(r"\[(?:全国|北京|上海|广州|深圳|杭州|南京|成都|武汉|西安)[^\]]*\]\s*(.+?)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
+        if m: company=m.group(1).strip()
+        if not company:
+            m=re.search(r"(?:^|\s)([^\s]{2,40}有限公司)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
+            if m: company=m.group(1).strip()
+    fields["title"]=clean_job_title(title,"yingjiesheng")
+    fields["company"]=company
+    top=(text or "")[:3500]
+    salary=re.search(r"(?<![A-Za-z])\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|每月|月)?",top)
+    if salary: fields["salary"]=re.sub(r"\s+","",salary.group(0))
+    degree=next((d for d in ("博士研究生及以上","硕士研究生及以上","本科及以上","大专及以上","博士及以上","硕士及以上","本科","硕士","博士","大专") if d in top), "")
+    if degree: fields["degree"]=degree
+    cities=("上海","北京","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨")
+    city=next((name for name in cities if re.search(name+r"(?:[-·区市]|\s)",top[:1800])), "")
+    if city: fields["city"]=city
+    pub=re.search(r"发布时间\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",top)
+    if pub: fields["publish_date"]=f"{pub.group(1)}-{int(pub.group(2)):02d}-{int(pub.group(3)):02d}"
+    deadline=re.search(r"(?:截止时间|报名截止|投递截止|截止日期)\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",text or "")
+    if deadline: fields["deadline"]=f"{deadline.group(1)}-{int(deadline.group(2)):02d}-{int(deadline.group(3)):02d}"
+    fields["benefits"]=extract_section(text,("职位亮点","职位诱惑","福利待遇","薪酬福利"),("职位描述","岗位职责","工作职责","职位要求","任职要求","岗位要求","公司信息","单位简介"),1600)
+    fields["responsibilities"]=extract_section(text,("岗位职责","工作职责","工作内容"),("岗位要求","任职要求","任职资格","加分项","职位亮点","职位诱惑","工作时间","公司信息","单位简介"),3500)
+    fields["requirements"]=extract_section(text,("岗位要求","任职要求","任职资格"),("加分项","职位亮点","职位诱惑","工作时间","工作地址","公司地址","公司信息","单位简介","投递说明","上一条","下一条"),3500)
+    fields["description"]=extract_section(text,("职位描述","招聘岗位"),("公司信息","单位简介","上一条","下一条","Top"),7000)
+    fields["company_info"]=extract_section(text,("公司信息","单位简介"),("上一条","下一条","登录","Top"),1800)
+    addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|单位简介|上一条|下一条|Top|$))",text or "",re.I)
+    if addr: fields["address"]=addr.group(1).strip()
+    for label in ("实习","全职","兼职","校招"):
+        if label in top:
+            fields["job_type"]=label; break
+    exp=re.search(r"(?:工作经验|经验要求|经验)\s*[:：]?\s*(不限|无经验|\d+[-—至]\d+年|\d+年以上|应届毕业生)",top)
+    if exp: fields["experience"]=exp.group(1)
+    headcount=re.search(r"(?:招|招聘人数\s*[:：]?)\s*(\d+)\s*人",top)
+    if headcount: fields["headcount"]=headcount.group(1)
+    return fields
+
+def extract_detail_fields_generic(text, raw_title=""):
+    fields={}
+    top=(text or "")[:4500]
+    degree=next((d for d in ("博士研究生及以上","硕士研究生及以上","本科及以上","大专及以上","博士及以上","硕士及以上","本科","硕士","博士","大专") if d in top), "")
+    if degree: fields["degree"]=degree
+    salary=re.search(r"(?:薪资|月薪)\s*[:：]?\s*(\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|月)?|薪资面议)",top)
+    if not salary: salary=re.search(r"\b(\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|月)?)",top)
+    if salary: fields["salary"]=re.sub(r"\s+","",salary.group(1))
+    cities=("北京","上海","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外")
+    city=next((name for name in cities if re.search(r"(?:^|\s|[-·])"+name+r"(?:$|\s|[-·区市])",top[:1800])), "")
+    if city: fields["city"]=city
+    cohort=year(raw_title+" "+top)
+    if cohort:
+        fields["cohort"]=cohort; fields["cohort_evidence"]="page_text"; fields["cohort_confirmed"]=True
+    dr=re.search(r"投递时间\s*[:：]?\s*(20\d{2})年(\d{1,2})月(\d{1,2})日\s*[-—至到]\s*(20\d{2})年(\d{1,2})月(\d{1,2})日",text or "")
+    if dr: fields["deadline"]=f"{dr.group(4)}-{int(dr.group(5)):02d}-{int(dr.group(6)):02d}"
+    fields["responsibilities"]=extract_section(text,("岗位职责","工作职责","工作内容"),("岗位要求","任职要求","职位亮点","职位描述","公司信息","上一条","下一条"),3500)
+    fields["requirements"]=extract_section(text,("岗位要求","任职要求","任职资格"),("加分项","职位亮点","工作时间","公司信息","上一条","下一条"),3500)
+    fields["benefits"]=extract_section(text,("职位亮点","职位诱惑","福利待遇"),("岗位职责","工作职责","职位描述","公司信息","上一条","下一条"),1800)
+    fields["description"]=extract_section(text,("职位描述","岗位职责"),("公司信息","上一条","下一条","Top"),6500)
+    fields["company_info"]=extract_section(text,("公司信息","公司介绍"),("查看其他","上一条","下一条","Top"),1800)
+    addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|上一条|下一条|Top|$))",text or "",re.I)
+    if addr: fields["address"]=addr.group(1).strip()
+    exp=re.search(r"(?:工作经验|经验要求|经验)\s*[:：]?\s*(不限|无经验|\d+[-—至]\d+年|\d+年以上|应届毕业生)",top)
+    if exp: fields["experience"]=exp.group(1)
+    if "全职" in top: fields["job_type"]="全职"
+    elif "实习" in top: fields["job_type"]="实习"
+    return fields
+
+def merge_detail_fields(row, fields):
+    for key,value in fields.items():
+        if value not in (None,"",[],{}): row[key]=value
+    return row
+
+def record(company,title,url,source,cohort,confidence,program="",cohort_evidence=""):
+    title=clean_job_title(title)
+    direct=is_direct_detail_url(url)
+    cohort_ok=bool(cohort and cohort.strip() not in ("待核验","未知") and cohort_evidence)
+    title_ok=is_concrete_role_title(title)
+    status="active" if confidence>=7 and direct and cohort_ok and title_ok else "pending_review"
     return {"id":make_id(company,title,url),"company":company,"title":title,
       "category":category(title),"city":"全国","enterprise_type":"待核验","degree":"待核验",
-      "salary":"","publish_date":"","deadline":"","last_verified":TODAY,"source":source,
+      "salary":"","publish_date":"","deadline":"","last_verified":"","last_collected":TODAY,"source":source,
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
-      "status":status,"demo":False,"confirmed_by":[company+"官方公开页面"],"cohort":cohort,
-      "program":program,"collector":"public-html-v3","granularity":"job" if status=="active" else "review",
-      "verification_score":confidence}
+      "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
+      "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
+      "program":program,"collector":"public-html-v4","granularity":"job" if status=="active" else "review",
+      "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
+      "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
-def embedded_records(company,source,parser,cohort,source_label=None):
+def embedded_records(company,source,parser,cohort,source_label=None,cohort_evidence=""):
     out=[]; host=urlparse(source).netloc.lower()
     # Only parse JSON embedded in public HTML; never call hidden APIs.
     for blob in parser.scripts:
@@ -135,7 +301,7 @@ def embedded_records(company,source,parser,cohort,source_label=None):
                 if title and url and urlparse(url).netloc.lower()==host:
                     sc=score(title,url,"")
                     if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF):
-                        item=record(company,title,url,source_label or company+"官方招聘",cohort,sc)
+                        item=record(company,title,url,source_label or company+"官方招聘",cohort,sc,cohort_evidence=cohort_evidence)
                         if source_label=="应届生求职网公开岗位":
                             item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
                         if source_label and "公开" in source_label: item["confirmed_by"]=[source_label]
@@ -144,7 +310,7 @@ def embedded_records(company,source,parser,cohort,source_label=None):
             elif isinstance(node,list): stack.extend(v for v in node if isinstance(v,(dict,list)))
     return out
 
-def table_records(company,source,parser,cohort,source_label=None):
+def table_records(company,source,parser,cohort,source_label=None,cohort_evidence=""):
     out=[]
     cities=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外","全国")
     degree_words=("博士","硕士","本科","大专")
@@ -187,7 +353,7 @@ def table_records(company,source,parser,cohort,source_label=None):
             if urlparse(full).scheme in ("http","https") and any(x.lower() in full.lower() for x in ROLE_HREF):
                 role_url=canonical(full); break
         score_value=5 if source_label and "公开" in source_label else 8
-        r=record(employer,role,role_url,source_label or company+"官方招聘",cohort,score_value)
+        r=record(employer,role,role_url,source_label or company+"官方招聘",cohort,score_value,cohort_evidence=cohort_evidence)
         if source_label and "公开" in source_label:
             r["status"]="pending_review"; r["granularity"]="review"; r["verification_score"]=5
             r["confirmed_by"]=[source_label]
@@ -202,17 +368,42 @@ def table_records(company,source,parser,cohort,source_label=None):
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"sample_title":"","last_error":"","parser_modes":[]}
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
+        rows_before_page=len(rows)
         page=queue.pop(0)
         cp=(page.split("#",1)[0] if src.get("id")=="qiuzhaowang" else canonical(page))
         if cp in visited: continue
         if src.get("id")=="qiuzhaowang" and visited: time.sleep(0.5)
+        diagnostics["pages_attempted"]+=1
         try: html,final=fetch(page)
-        except Exception: continue
+        except Exception as exc:
+            diagnostics["pages_failed"]+=1
+            diagnostics["last_error"]=f"{type(exc).__name__}: {str(exc)[:140]}"
+            continue
         visited.add(cp)
-        p=Parser(); p.feed(html); cohort=year(html[:20000])
+        diagnostics["html_bytes"]+=len(html.encode("utf-8",errors="ignore"))
+        p=Parser(); p.feed(html)
+        page_text=p.page_text()
         raw_page_title=clean(p.page_title)
+        if not diagnostics["sample_title"]: diagnostics["sample_title"]=raw_page_title[:140]
+        diagnostics["links_seen"]+=len(p.links); diagnostics["tables_seen"]+=len(p.tables); diagnostics["embedded_json_blocks"]+=len(p.scripts)
+        detail_heading=""
+        if is_direct_detail_url(final):
+            detail_heading=next((clean_job_title(head,src.get("id","")) for head in p.headings
+                                 if is_concrete_role_title(clean_job_title(head,src.get("id","")))), "")
+        explicit_cohort=year(raw_page_title+" "+page_text+" "+" ".join(p.headings))
+        source_cohort=src.get("cohort","") if src.get("type")=="official_campus" else ""
+        if src.get("id")=="qiuzhaowang" and re.search(r"(?:[?&])year=2027(?:&|$)",page):
+            source_cohort="2027届"
+        cohort=explicit_cohort or source_cohort
+        cohort_evidence=("page_text" if explicit_cohort else ("source_registry" if source_cohort else ""))
         page_company=company
+        detail_fields={}
+        if src.get("id")=="yingjiesheng":
+            detail_fields=extract_yingjiesheng_fields(raw_page_title,page_text,final)
+            if detail_fields.get("title"): raw_page_title=detail_fields["title"]
+            if detail_fields.get("company"): page_company=detail_fields["company"]
         record_source=company+"官方招聘"
         if src.get("id")=="nowcoder":
             # Job detail title pattern: role_title_company校招_牛客网
@@ -220,9 +411,7 @@ def collect_source(src):
             if m: page_company=m.group(1).strip()
             record_source="牛客公开岗位"
         elif src.get("id")=="yingjiesheng":
-            # Article title pattern: employer + cohort/recruitment event + site suffix.
-            m=re.search(r"^(.+?)(?:20\d{2}届|2027届|校招|校园招聘|招聘宣讲)", raw_page_title)
-            if m: page_company=m.group(1).strip(" _-—")
+            # Company/title were extracted from visible fields above where available.
             record_source="应届生求职网公开岗位"
         elif src.get("id")=="qiuzhaowang":
             parts=re.split(r"[|｜]",raw_page_title)
@@ -232,11 +421,12 @@ def collect_source(src):
             record_source="面灵AI公开聚合"
         elif src.get("id")=="91bangtu":
             record_source="91邦途公开聚合"
-        page_title=raw_page_title
-        # Strip location prefixes and aggregator suffixes so the stored title remains job-level.
-        page_title=re.sub(r"^(北京|上海|深圳|杭州|广州|成都|西安|武汉|南京|苏州|合肥|天津|重庆|济南)[-—_ ]+", "", page_title)
-        page_title=re.sub(r"[_|｜].*(?:校招|实习|社招|招聘).*?$", "", page_title).strip()
-        page_title=re.split(r"\s+[|｜_—]\s+|\s+-\s+(?:百度校园招聘|小米校园招聘|校园招聘).*$",page_title,1)[0].strip()
+        page_title=clean_job_title(detail_fields.get("title") or detail_heading or raw_page_title,src.get("id",""))
+        if src.get("id")=="nowcoder":
+            page_title=clean_job_title(detail_heading or p.page_title,"nowcoder")
+        if is_direct_detail_url(final):
+            for k,v in extract_detail_fields_generic(page_text,detail_heading or raw_page_title).items():
+                detail_fields.setdefault(k,v)
         if src.get("id")=="qiuzhaowang" and urlparse(final).path=="/latest":
             page_text=p.page_text()
             seen_groups=set()
@@ -266,7 +456,7 @@ def collect_source(src):
                 chunk=page_text[position:position+1000] if position>=0 else page_text
                 city_match=re.search(r"工作地点\s*(.+?)\s*届次批次",chunk)
                 city=clean(city_match.group(1)) if city_match else "全国"
-                cohort=year(chunk) or "2027届"
+                cohort=year(chunk) or ("2027届" if "year=2027" in page else "")
                 role_text=re.sub(r"(?:\.\.\.|…)+$","",group_title).replace("//"," · ")
                 if "·" in role_text or "•" in role_text:
                     role_names=re.split(r"\s*[·•]\s*",role_text)
@@ -297,110 +487,171 @@ def collect_source(src):
                     item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
                     item["city"]=city_text or "全国"; item["confirmed_by"]=[record_source]
                     rows.append(item)
-        if page_title and any(w.lower() in page_title.lower() for w in CONCRETE_WORDS):
-            sc=score(page_title,final,"")
-            if sc>=7 and any(x.lower() in final.lower() for x in ROLE_HREF):
-                item=record(page_company,page_title,final,record_source,cohort,sc)
-                if src.get("id")=="nowcoder":
-                    page_text=p.page_text()
-                    # Parse visible job fields from the public detail page; never infer a field when absent.
-                    city_list=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外")
-                    city_match=re.search(r"[（(]([^（）()]{2,12})[）)]",page_title)
-                    if city_match and city_match.group(1).strip() in city_list:
-                        item["city"]=city_match.group(1).strip()
-                    degree=next((d for d in ("博士及以上","硕士及以上","本科及以上","大专及以上","博士","硕士","本科","大专") if d in page_text[:1800]),None)
-                    if degree: item["degree"]=degree
-                    salary_match=re.search(r"(\d{1,2}(?:-\d{1,2})?K\s*(?:\*\s*\d+薪)?|薪资面议)",page_text[:1500],re.I)
-                    if salary_match: item["salary"]=re.sub(r"\s+"," ",salary_match.group(1)).strip()
-                    deadline_match=re.search(r"投递时间[:：]?\s*(20\d{2})年(\d{1,2})月(\d{1,2})日\s*[-—至到]\s*(20\d{2})年(\d{1,2})月(\d{1,2})日",page_text[:8000])
-                    if deadline_match:
-                        yy,mm,dd=deadline_match.group(4),int(deadline_match.group(5)),int(deadline_match.group(6))
-                        item["deadline"]=f"{yy}-{mm:02d}-{dd:02d}"
-                        if item["deadline"] < TODAY:
-                            item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=4
-                    if "已结束" in page_text[:600]:
-                        item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=4
-                if "公开岗位" in record_source or "公开聚合" in record_source:
-                    item["confirmed_by"]=[record_source]
+        if page_title and is_concrete_role_title(page_title):
+            sc=score(page_title,final,page_text)
+            if sc>=5 and is_direct_detail_url(final):
+                item=record(page_company,page_title,final,record_source,cohort,sc,cohort_evidence=cohort_evidence)
+                merge_detail_fields(item,detail_fields)
+                item["cohort"]=item.get("cohort") or cohort or ""
+                item["cohort_evidence"]=item.get("cohort_evidence") or cohort_evidence or ""
+                item["cohort_confirmed"]=bool(item.get("cohort_confirmed") or item["cohort_evidence"])
+                if item.get("deadline") and item["deadline"] < TODAY:
+                    item["status"]="expired"; item["granularity"]="review"; item["verification_score"]=min(item.get("verification_score",5),4)
+                if "已结束" in page_text[:1000]:
+                    item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=min(item.get("verification_score",5),4)
+                item["last_collected"]=TODAY
+                if is_direct_detail_url(final):
+                    item["last_verified"]=TODAY; item["last_verified_at"]=STAMP
+                    item["verification_status"]="link_alive"; item["verification_http_status"]=200
+                    item["verification_note"]="采集器成功读取公开详情页；不代表雇主再次确认仍在招聘"
                 rows.append(item)
         if src.get("id")!="qiuzhaowang":
-            rows.extend(table_records(page_company,final,p,cohort,record_source))
-            rows.extend(embedded_records(page_company,final,p,cohort,record_source))
+            table_rows=table_records(page_company,final,p,cohort,record_source,cohort_evidence)
+            embedded_rows=embedded_records(page_company,final,p,cohort,record_source,cohort_evidence)
+            for extracted in table_rows+embedded_rows:
+                if detail_fields: merge_detail_fields(extracted,detail_fields)
+                extracted["last_collected"]=TODAY; extracted["last_verified"]=""
+                extracted["cohort_evidence"]=extracted.get("cohort_evidence") or cohort_evidence or ""
+                extracted["cohort_confirmed"]=bool(extracted.get("cohort_confirmed") or extracted["cohort_evidence"])
+                if not is_direct_detail_url(extracted.get("source_url","")) or not extracted["cohort_confirmed"]:
+                    extracted["status"]="pending_review"; extracted["granularity"]="review"
+            rows.extend(table_rows); rows.extend(embedded_rows)
         for a in p.links:
-            title=clean(a["text"]); href=canonical(urljoin(final,a["href"]))
-            if not title or len(title)<4 or len(title)>100 or not href or href in seen: continue
+            title=clean_job_title(a["text"],src.get("id","")); href=canonical(urljoin(final,a["href"]))
+            if not title or len(title)<3 or len(title)>100 or not href or href in seen: continue
+            if not is_concrete_role_title(title): continue
             if not same_host(final,href): continue
             if any(x.lower() in title.lower() for x in NAV_BAD): continue
-            sc=score(title,href,p.page_text())
+            diagnostics["role_like_links"]+=1
+            sc=score(title,href,page_text)
             if sc<5: continue
             seen.add(href)
             if src.get("id")=="qiuzhaowang": continue
-            link_record=record(page_company,title,href,record_source,cohort,sc)
+            link_record=record(page_company,title,href,record_source,cohort,sc,cohort_evidence=cohort_evidence)
+            link_record["last_collected"]=TODAY; link_record["last_verified"]=""
+            if detail_fields: merge_detail_fields(link_record,detail_fields)
             if "公开岗位" in record_source or "公开聚合" in record_source:
                 link_record["confirmed_by"]=[record_source]
-            if record_source=="应届生求职网公开岗位":
-                link_record["status"]="pending_review"; link_record["granularity"]="review"; link_record["verification_score"]=5
             rows.append(link_record)
             if len(queue)<max_pages and len(visited)+len(queue)<max_pages and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
+        # If a public official page exposes a 2027 recruitment announcement but no job-level
+        # data, retain exactly one clearly-labelled lead instead of mislabelling it as a job.
+        # We do not synthesize salary, location, degree, or job descriptions for this lead.
+        if len(rows)==rows_before_page:
+            announcement_candidates=[]
+            for link in p.links:
+                ann_title=clean(link.get("text",""))
+                if len(ann_title)<8 or len(ann_title)>180: continue
+                if not re.search(r"(?:20\d{2}\s*届|20\d{2}年|27届)",ann_title): continue
+                if not any(term in ann_title for term in PROGRAM_WORDS): continue
+                if any(term.lower() in ann_title.lower() for term in NAV_BAD): continue
+                ann_url=canonical(urljoin(final,link.get("href","")))
+                if not ann_url or not same_host(final,ann_url): continue
+                announcement_candidates.append((ann_title,ann_url))
+            if not announcement_candidates and re.search(r"(?:20\d{2}\s*届|20\d{2}年|27届)",raw_page_title) and any(term in raw_page_title for term in PROGRAM_WORDS):
+                announcement_candidates.append((raw_page_title,canonical(final)))
+            if not announcement_candidates:
+                # Some public campus portals render job cards via client-side JS but expose
+                # an explicit 2027 cohort in their visible banner/alt text. Keep one landing-page
+                # lead only; never interpret those banners as individual vacancies.
+                visible_year=year(page_text)
+                ann_terms=("校园招聘","招聘公告","招聘计划","应届生招聘","校招正式批","校招公告","秋季校园招聘")
+                if visible_year and any(term in page_text for term in ann_terms):
+                    announcement_candidates.append((f"{company} {visible_year}校园招聘入口线索",canonical(final)))
+            if announcement_candidates:
+                ann_title,ann_url=max(announcement_candidates,key=lambda item:(len(item[0]),item[0]))
+                ann_year=year(ann_title) or cohort
+                ann=record(page_company,ann_title,ann_url,record_source,ann_year,2,
+                           program="招聘公告/计划线索",cohort_evidence="visible_announcement_title")
+                ann["status"]="pending_review"
+                ann["granularity"]="announcement"
+                ann["verification_score"]=2
+                ann["last_verified"]=""
+                ann["last_collected"]=TODAY
+                ann["announcement_only"]=True
+                rows.append(ann)
     # de-dupe within source, preferring higher confidence
     best={}
     for r in rows:
         k=(r["company"],r["title"],r["source_url"])
         if k not in best or r["verification_score"]>best[k]["verification_score"]: best[k]=r
-    return list(best.values()),visited
+    best_rows=list(best.values())
+    role_rows=[r for r in best_rows if r.get("granularity")!="announcement"]
+    announcement_rows=[r for r in best_rows if r.get("granularity")=="announcement"]
+    diagnostics["role_records"]=len(role_rows)
+    diagnostics["announcement_records"]=len(announcement_rows)
+    diagnostics["source_status"]="ok" if role_rows else ("announcement_only" if announcement_rows else ("reachable_no_records" if visited else "access_error"))
+    diagnostics["parser_modes"]=[name for name,count in (("links",diagnostics["links_seen"]),("tables",diagnostics["tables_seen"]),("embedded_json",diagnostics["embedded_json_blocks"])) if count]
+    return best_rows,visited,diagnostics
 
-sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
-STATE_PATH=ROOT/"data/collection-state.json"
-try:
-    state=json.loads(STATE_PATH.read_text(encoding="utf-8"))
-except Exception:
-    state={"qiuzhaowang_next_page":21}
-rotation_start=int(state.get("qiuzhaowang_next_page",21))
-rotation_pages=[]
-page_num=rotation_start
-while len(rotation_pages)<10:
-    if page_num>192: page_num=11
-    if page_num not in range(1,11) and page_num not in rotation_pages:
-        rotation_pages.append(page_num)
-    page_num+=1
-qiuzhaowang_pages=list(range(1,11))+rotation_pages
-for source in sources:
-    if source.get("id")=="qiuzhaowang":
-        source["seed_urls"]=[f"https://qiuzhaowang.com/latest?page={n}&year=2027" for n in qiuzhaowang_pages]
-        source["max_pages"]=20
-        source["max_candidates"]=3000
-enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
-all_rows=[]; results=[]; active=review=0; qiuzhaowang_visited=set()
-with ThreadPoolExecutor(max_workers=min(12,len(enabled) or 1)) as pool:
-    futures={pool.submit(collect_source,s):s for s in enabled}
-    for fut in as_completed(futures):
-        s=futures[fut]
-        try: rows,visited=fut.result()
-        except Exception: rows,visited=[],set()
-        if s.get("id")=="qiuzhaowang": qiuzhaowang_visited=visited
-        all_rows.extend(rows)
-        a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
-        active+=a; review+=rr
-        results.append({"id":s["id"],"company":s["company"],"pages_visited":len(visited),"records_found":len(rows),
-                        "active_candidates":a,"pending_review":rr})
-results.sort(key=lambda x:x["company"])
-rot_seen=set()
-for visited_url in qiuzhaowang_visited:
-    match=re.search(r"[?&]page=(\d+)",visited_url)
-    if match and int(match.group(1)) in rotation_pages: rot_seen.add(int(match.group(1)))
-next_page=rotation_start
-while next_page in rot_seen:
-    next_page+=1
-    if next_page>192: next_page=11
-state["qiuzhaowang_next_page"]=next_page
-state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
-STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
-INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"4.0","enabled_sources":len(enabled),
- "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page},
- "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
- "policy":"Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
- "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."},
- ensure_ascii=False,indent=2),encoding="utf-8")
-print(f"sources={len(enabled)} records={len(all_rows)} active_candidates={active} pending_review={review}")
+def main():
+    sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    STATE_PATH=ROOT/"data/collection-state.json"
+    try:
+        state=json.loads(STATE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        state={"qiuzhaowang_next_page":21}
+    rotation_start=int(state.get("qiuzhaowang_next_page",21))
+    rotation_pages=[]
+    page_num=rotation_start
+    while len(rotation_pages)<10:
+        if page_num>192: page_num=11
+        if page_num not in range(1,11) and page_num not in rotation_pages:
+            rotation_pages.append(page_num)
+        page_num+=1
+    qiuzhaowang_pages=list(range(1,11))+rotation_pages
+    for source in sources:
+        if source.get("id")=="qiuzhaowang":
+            source["seed_urls"]=[f"https://qiuzhaowang.com/latest?page={n}&year=2027" for n in qiuzhaowang_pages]
+            source["max_pages"]=20
+            source["max_candidates"]=3000
+    enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
+    all_rows=[]; results=[]; active=review=0; qiuzhaowang_visited=set()
+    with ThreadPoolExecutor(max_workers=min(12,len(enabled) or 1)) as pool:
+        futures={pool.submit(collect_source,s):s for s in enabled}
+        for fut in as_completed(futures):
+            s=futures[fut]
+            try: rows,visited,diag=fut.result()
+            except Exception as exc:
+                rows,visited=[],set()
+                diag={"pages_attempted":1,"pages_failed":1,"html_bytes":0,"links_seen":0,"tables_seen":0,
+                      "embedded_json_blocks":0,"role_like_links":0,"sample_title":"","last_error":f"{type(exc).__name__}: {str(exc)[:140]}",
+                      "parser_modes":[],"source_status":"access_error"}
+            if s.get("id")=="qiuzhaowang": qiuzhaowang_visited=visited
+            all_rows.extend(rows)
+            a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
+            active+=a; review+=rr
+            results.append({"id":s["id"],"company":s["company"],"pages_visited":len(visited),"records_found":len(rows),
+                            "active_candidates":a,"pending_review":rr,
+                            "pages_attempted":diag.get("pages_attempted",0),"pages_failed":diag.get("pages_failed",0),
+                            "html_bytes":diag.get("html_bytes",0),"links_seen":diag.get("links_seen",0),
+                            "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
+                            "role_like_links":diag.get("role_like_links",0),"role_records":diag.get("role_records",0),
+                            "announcement_records":diag.get("announcement_records",0),"sample_title":diag.get("sample_title",""),
+                            "last_error":diag.get("last_error",""),"parser_modes":diag.get("parser_modes",[]),
+                            "source_status":diag.get("source_status","access_error")})
+    results.sort(key=lambda x:x["company"])
+    rot_seen=set()
+    for visited_url in qiuzhaowang_visited:
+        match=re.search(r"[?&]page=(\d+)",visited_url)
+        if match and int(match.group(1)) in rotation_pages: rot_seen.add(int(match.group(1)))
+    next_page=rotation_start
+    while next_page in rot_seen:
+        next_page+=1
+        if next_page>192: next_page=11
+    state["qiuzhaowang_next_page"]=next_page
+    state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
+    STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
+    INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"4.0","enabled_sources":len(enabled),
+     "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page},
+     "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
+     "policy":"Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
+     "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."},
+     ensure_ascii=False,indent=2),encoding="utf-8")
+    print(f"sources={len(enabled)} records={len(all_rows)} active_candidates={active} pending_review={review}")
+    
+
+if __name__ == "__main__":
+    main()

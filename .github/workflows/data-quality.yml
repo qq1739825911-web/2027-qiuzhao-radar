@@ -25,6 +25,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Parser and classification regression tests
+        run: python scripts/test_job_quality.py
+
       - name: Validate normalized job data
         run: python scripts/validate_jobs.py
 
