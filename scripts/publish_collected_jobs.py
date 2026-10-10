@@ -1,5 +1,6 @@
 """Merge collected public job records without promoting article/announcement rows."""
 import json
+import re
 from pathlib import Path
 from datetime import date
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
@@ -99,7 +100,55 @@ for row in idx.values():
         row["verification_status"]="stale"
     assess(row)
 
-published=list(idx.values())
+def merge_same_id(rows):
+    """Collapse duplicates caused by one detail URL being parsed with conflicting list-page metadata."""
+    merged={}
+    richer_fields=("salary","degree","deadline","publish_date","description","responsibilities",
+                   "requirements","benefits","company_info","address","work_time","experience",
+                   "job_type","headcount","program")
+    placeholders={"","待核验","未公开","未提取","待确认","全国","暂无","未知"}
+    def richness(row):
+        count=sum(1 for field in richer_fields if str(row.get(field,"") or "").strip() not in placeholders)
+        detail_len=sum(len(str(row.get(field,"") or "")) for field in ("description","responsibilities","requirements"))
+        return (count, detail_len, 1 if row.get("verification_status")=="link_alive" else 0)
+    for row in rows:
+        rid=str(row.get("id",""))
+        if not rid:
+            merged["__missing__"+str(len(merged))]=row
+            continue
+        if rid not in merged:
+            merged[rid]=row
+            continue
+        old=merged[rid]
+        winner,other=(row,old) if richness(row)>richness(old) else (old,row)
+        for field in richer_fields:
+            a=str(winner.get(field,"") or "").strip()
+            b=str(other.get(field,"") or "").strip()
+            if a in placeholders and b not in placeholders:
+                winner[field]=other[field]
+            elif field in {"description","responsibilities","requirements","benefits","company_info"} and len(b)>len(a) and b not in placeholders:
+                winner[field]=other[field]
+        for field in ("city","keywords","confirmed_by"):
+            vals=[]
+            for source_row in (winner,other):
+                raw=source_row.get(field,"")
+                vals.extend(raw if isinstance(raw,list) else re.split(r"[、,，;；]",str(raw or "")))
+            vals=list(dict.fromkeys(v.strip() for v in vals if v and v.strip() not in placeholders))
+            winner[field]="、".join(vals) if field=="city" and vals else ("全国" if field=="city" else vals)
+        # Conflicting cohort claims cannot be combined into stronger evidence.
+        if winner.get("cohort")!=other.get("cohort") and winner.get("cohort_evidence") not in {"page_text","visible_announcement_title","job_detail_title","job_detail_text"}:
+            winner["cohort"]=""; winner["cohort_evidence"]=""; winner["cohort_confirmed"]=False
+        for field in ("last_collected","last_seen"):
+            winner[field]=max(str(winner.get(field,"") or ""),str(other.get(field,"") or ""))
+        terminal={"closed","expired","withdrawn","cancelled"}
+        if winner.get("status") not in terminal and other.get("status") in terminal:
+            winner["status"]=other["status"]
+        merged[rid]=winner
+    return list(merged.values())
+
+published=merge_same_id(list(idx.values()))
+for row in published:
+    assess(row)
 J.write_text(json.dumps(published,ensure_ascii=False,indent=2),encoding="utf-8")
 try:
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
