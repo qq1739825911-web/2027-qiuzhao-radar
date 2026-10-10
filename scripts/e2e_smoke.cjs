@@ -53,7 +53,12 @@ const { chromium } = require("playwright");
     await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
 
     // Favorites, delivery status, profile, source monitor, and reset interactions.
-    await role.locator(".star").click();
+    // Modal history navigation rerenders company groups collapsed by design.
+    if (await page.locator("#jobs .role-row .star").count() === 0) {
+      await page.locator("#jobs .company-group").first().locator("summary").click();
+      await page.locator("#jobs .role-row .star").first().waitFor({ state: "visible", timeout: 10000 });
+    }
+    await page.locator("#jobs .role-row .star").first().click();
     await page.getByRole("button", { name: "投递看板" }).click();
     const status = page.locator("#board [data-app]").first();
     await status.waitFor({ state: "visible", timeout: 10000 });
