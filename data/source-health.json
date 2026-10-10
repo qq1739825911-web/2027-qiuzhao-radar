@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-10T05:29:19+00:00",
+  "checked_at": "2026-10-10T05:35:44+00:00",
   "enabled_sources": 20,
-  "reachable": 16,
-  "warnings": 4,
+  "reachable": 17,
+  "warnings": 3,
   "results": [
     {
       "id": "citic",
@@ -78,8 +78,8 @@
       "id": "yingjiesheng",
       "name": "应届生求职网",
       "url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-      "status": "unavailable",
-      "detail": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "cmb",
