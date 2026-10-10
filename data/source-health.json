@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-09T06:41:12+00:00",
+  "checked_at": "2026-10-10T05:29:19+00:00",
   "enabled_sources": 20,
-  "reachable": 18,
-  "warnings": 2,
+  "reachable": 16,
+  "warnings": 4,
   "results": [
     {
       "id": "citic",
@@ -63,9 +63,9 @@
     {
       "id": "xiaomi",
       "name": "小米",
-      "url": "https://hr.xiaomi.com/campus/",
-      "status": "reachable",
-      "http_status": 200
+      "url": "https://xiaomi.jobs.f.mioffice.cn/campus/?current=14&limit=10",
+      "status": "unavailable",
+      "http_status": 404
     },
     {
       "id": "xiaopeng",
@@ -78,8 +78,8 @@
       "id": "yingjiesheng",
       "name": "应届生求职网",
       "url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
-      "status": "reachable",
-      "http_status": 200
+      "status": "unavailable",
+      "detail": "<urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "id": "cmb",
@@ -91,7 +91,7 @@
     {
       "id": "pdd",
       "name": "拼多多",
-      "url": "https://careers.pddglobalhr.com/campus",
+      "url": "https://careers.pddglobalhr.com/campus/grad",
       "status": "reachable",
       "http_status": 200
     },
@@ -105,7 +105,7 @@
     {
       "id": "baidu",
       "name": "百度",
-      "url": "https://talent.baidu.com/jobs/list?recommendCode=ISV4A3",
+      "url": "https://talent.baidu.com/jobs/list?projectType=3&recruitType=GRADUATE",
       "status": "reachable",
       "http_status": 200
     },
@@ -126,7 +126,7 @@
     {
       "id": "tencent",
       "name": "腾讯",
-      "url": "https://careers.tencent.com/en-us/campusrecruit.html",
+      "url": "https://careers.tencent.com/search.html?pcid=40011",
       "status": "reachable",
       "http_status": 200
     },
@@ -140,7 +140,7 @@
     {
       "id": "alibaba",
       "name": "阿里巴巴",
-      "url": "https://campus-talent.alibaba.com/",
+      "url": "https://campus-talent.alibaba.com/campus/index",
       "status": "reachable",
       "http_status": 200
     }
