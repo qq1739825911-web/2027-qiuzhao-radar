@@ -138,9 +138,14 @@ function sanitizeDetailField(value,maxLength=6500){
  let text=String(value??"").split("\\r\\n").join("\n").split("\\n").join("\n").split("\\t").join(" ");
  text=text.split("\\u002F").join("/").split("\\u002f").join("/").replace(/&quot;/gi,'"').replace(/&#39;/gi,"'");
  const keys=["jobCity","careerJobId","deliverBegin","deliverEnd","refreshBegin","latestProcessTime","graduationYear","salaryType","salaryMin","salaryMax","jobKeys","companyId","companyName","positionId","positionName","recruitJobName","jobName","jobOffer","eduLevel"];
+ const leading=text.trimStart();
+ const keyPattern=/(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)/i;
+ if((leading.startsWith("{")||leading.startsWith("["))&&keyPattern.test(leading.slice(0,120)))return "";
  const metadata=/(?:[,;]\s*)(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/i.exec(text);
- if(metadata)text=text.slice(0,metadata.index).replace(/[ \t,;\\]+$/,"");
- else{const leading=text.trimStart();if((leading.startsWith("{")||leading.startsWith("["))&&keys.some(key=>leading.includes('"'+key+'"')||leading.startsWith(key+":")))return "";}
+ if(metadata){
+  text=text.slice(0,metadata.index).replace(/[ \t,;\\]+$/,"");
+  while(/["'}\]]$/.test(text))text=text.slice(0,-1).replace(/[ \t,;\\]+$/,"");
+ }
  return text.replace(/\n[ \t]*\n[ \t]*\n+/g,"\n\n").trim().slice(0,maxLength);
 }
 function cleanUiTitle(value){
