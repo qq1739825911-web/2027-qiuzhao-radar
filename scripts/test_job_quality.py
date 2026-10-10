@@ -3,7 +3,7 @@ import json
 from datetime import date
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields,
+    extract_yingjiesheng_fields, Parser, sanitize_extracted_text,
 )
 from quality_rules import assess, compact_json
 
@@ -25,6 +25,19 @@ clean_title = clean_job_title(
 check("Nowcoder title is cleaned", clean_title == "算法工程师(西安)")
 noise_title = "诺瓦星云 3分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天"
 check("HR status text is not a role title", not is_concrete_role_title(noise_title))
+check("Bracketed 27-cohort title and application code are cleaned",
+      clean_job_title("【27届校招】测试工程师(A54426)", "nowcoder") == "测试工程师")
+check("Generic recruitment-site title is not a concrete role",
+      not is_concrete_role_title("小鹏汽车招聘、福利待遇、工作环境丨小鹏汽车"))
+parsed = Parser()
+parsed.feed('<p>岗位职责：完成测试并整理报告。</p><script>{"jobCity":"北京","careerJobId":11025,"salaryMax":9999999}</script>')
+check("embedded script JSON is excluded from visible page text",
+      "岗位职责" in parsed.page_text() and "careerJobId" not in parsed.page_text())
+dirty = r'岗位职责：完成测试并整理报告。\\n{"jobCity":"北京","careerJobId":11025,"salaryMax":9999999}'
+cleaned = sanitize_extracted_text(dirty)
+check("historical description sanitizer removes embedded JSON",
+      "岗位职责" in cleaned and "careerJobId" not in cleaned and "salaryMax" not in cleaned)
+
 
 # Direct URLs only; aggregator/search/list pages are not job details.
 check("YJS numeric job detail recognized", is_direct_detail_url("https://m.yingjiesheng.com/jobdetail/170935981"))
