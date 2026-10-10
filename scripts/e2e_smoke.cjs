@@ -59,24 +59,24 @@ const { chromium } = require("playwright");
       await page.locator("#jobs .role-row .star").first().waitFor({ state: "visible", timeout: 10000 });
     }
     await page.locator("#jobs .role-row .star").first().click();
-    await page.getByRole("button", { name: "投递看板" }).click();
+    await page.locator('#workbench .tab[data-tab="board"]').click();
     const status = page.locator("#board [data-app]").first();
     await status.waitFor({ state: "visible", timeout: 10000 });
     await status.selectOption({ label: "已投递" });
     assert.ok(await page.locator("#board").innerText().then(t => t.includes("已投递")), "delivery board should render");
 
-    await page.getByRole("button", { name: "求职画像" }).click();
+    await page.locator('#workbench .tab[data-tab="profile"]').click();
     await page.locator("#major").fill("视觉传达设计");
     await page.locator("#saveProfile").click();
     const storedProfile = await page.evaluate(() => localStorage.getItem("radar_profile"));
     assert.ok(storedProfile && storedProfile.includes("视觉传达设计"), "profile should save locally");
 
-    await page.getByRole("button", { name: "数据与信源" }).click();
+    await page.locator('#workbench .tab[data-tab="sources"]').click();
     await page.locator("#collectorStatus").waitFor({ state: "visible" });
     await page.waitForTimeout(500);
     assert.ok((await page.locator("#collectorStatus").innerText()).length > 0, "collector monitoring panel should render");
 
-    await page.getByRole("button", { name: "岗位库" }).click();
+    await page.locator('#workbench .tab[data-tab="jobs"]').click();
     await page.locator("#reset").click();
     assert.equal(await page.locator("#q").inputValue(), "", "reset clears search");
     assert.equal(await page.locator("#city").inputValue(), "", "reset clears city");
