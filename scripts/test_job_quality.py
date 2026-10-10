@@ -15,6 +15,7 @@ def check(name, condition):
 check("publication date is not a cohort", year("发布时间：2026-09-28") == "")
 check("two-digit cohort is normalized", year("27届校招岗位") == "2027届")
 check("explicit 2027 cohort is detected", year("岗位面向2027届毕业生") == "2027届")
+check("2027 campus announcement is treated as cohort evidence", year("兴业银行2027校园招聘公告") == "2027届")
 
 # Platform/HR metadata must not pollute the stored role title.
 clean_title = clean_job_title(

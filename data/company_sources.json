@@ -175,19 +175,15 @@
     "company": "小米",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://xiaomi.jobs.f.mioffice.cn/campus/?current=14&limit=10",
+    "url": "https://hr.xiaomi.com/website/campus.html",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "小米官方校园职位列表和具体岗位详情；直接详情页可提取薪资（若公开）、城市、学历、职位描述与要求。若运行器无法访问，应在采集报告中标明TLS/访问原因，不用旧采集日期假装已核验。",
+    "notes": "小米官方校招入口已改为运行器可公开访问的 hr.xiaomi.com/website/campus.html。岗位详情域名在GitHub运行器返回404时不绕过限制，仅保留当前可访问的官方入口线索；有明确字段的公开详情才进入具体岗位池。",
     "seed_urls": [
-      "https://xiaomi.jobs.f.mioffice.cn/campus/?current=14&limit=10",
-      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035119249690/detail",
-      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7671295378604607754/detail",
-      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670893035149052211/detail",
-      "https://xiaomi.jobs.f.mioffice.cn/campus/position/7670906437498341678/detail"
+      "https://hr.xiaomi.com/website/campus.html"
     ],
-    "max_pages": 8,
+    "max_pages": 6,
     "max_candidates": 200
   },
   {

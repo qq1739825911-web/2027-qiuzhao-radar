@@ -93,6 +93,9 @@ def year(s):
     if m: return m.group(1)+"届"
     m=re.search(r"(?<!\d)(2[5-9])\s*届",text)
     if m: return "20"+m.group(1)+"届"
+    # Recruitment titles often say "2027校园招聘/2027校招" without the 届 suffix.
+    m=re.search(r"(?<!\d)(20\d{2})(?:年)?\s*(?:校园招聘|校招公告|校招职位|秋季招聘|秋招|春招)",text)
+    if m: return m.group(1)+"届"
     m=re.search(r"(?<!\d)(20\d{2})\s*年(?:应届|毕业)",text)
     if m: return m.group(1)+"届"
     return ""
@@ -559,17 +562,27 @@ def collect_source(src):
                 ann_terms=("校园招聘","招聘公告","招聘计划","应届生招聘","校招正式批","校招公告","秋季校园招聘")
                 if visible_year and any(term in page_text for term in ann_terms):
                     announcement_candidates.append((f"{company} {visible_year}校园招聘入口线索",canonical(final)))
+            portal_candidate=False
+            if not announcement_candidates and src.get("type")=="official_campus" and source_cohort:
+                title_year=year(raw_page_title)
+                source_context=(final+" "+raw_page_title+" "+src.get("url","")).lower()
+                campus_hints=("campus","校招","校园招聘","招聘项目","招聘公告","职位列表","招聘网站","search.html","/jobs","/job/")
+                if (not title_year or title_year==source_cohort) and any(hint in source_context for hint in campus_hints) and not is_direct_detail_url(final):
+                    announcement_candidates.append((f"{company} {source_cohort}官方招聘入口线索",canonical(final)))
+                    portal_candidate=True
             if announcement_candidates:
                 ann_title,ann_url=max(announcement_candidates,key=lambda item:(len(item[0]),item[0]))
-                ann_year=year(ann_title) or cohort
+                ann_year=year(ann_title) or cohort or source_cohort
                 ann=record(page_company,ann_title,ann_url,record_source,ann_year,2,
-                           program="招聘公告/计划线索",cohort_evidence="visible_announcement_title")
+                           program=("官方招聘入口线索" if portal_candidate else "招聘公告/计划线索"),
+                           cohort_evidence=("source_registry" if portal_candidate else "visible_announcement_title"))
                 ann["status"]="pending_review"
-                ann["granularity"]="announcement"
+                ann["granularity"]="entry" if portal_candidate else "announcement"
                 ann["verification_score"]=2
                 ann["last_verified"]=""
                 ann["last_collected"]=TODAY
-                ann["announcement_only"]=True
+                ann["announcement_only"]=not portal_candidate
+                ann["entry_only"]=portal_candidate
                 rows.append(ann)
     # de-dupe within source, preferring higher confidence
     best={}
@@ -577,11 +590,13 @@ def collect_source(src):
         k=(r["company"],r["title"],r["source_url"])
         if k not in best or r["verification_score"]>best[k]["verification_score"]: best[k]=r
     best_rows=list(best.values())
-    role_rows=[r for r in best_rows if r.get("granularity")!="announcement"]
+    role_rows=[r for r in best_rows if r.get("granularity") not in {"announcement","entry"}]
     announcement_rows=[r for r in best_rows if r.get("granularity")=="announcement"]
+    entry_rows=[r for r in best_rows if r.get("granularity")=="entry"]
     diagnostics["role_records"]=len(role_rows)
     diagnostics["announcement_records"]=len(announcement_rows)
-    diagnostics["source_status"]="ok" if role_rows else ("announcement_only" if announcement_rows else ("reachable_no_records" if visited else "access_error"))
+    diagnostics["portal_entries"]=len(entry_rows)
+    diagnostics["source_status"]="ok" if role_rows else ("announcement_only" if announcement_rows else ("entry_only" if entry_rows else ("reachable_no_records" if visited else "access_error")))
     diagnostics["parser_modes"]=[name for name,count in (("links",diagnostics["links_seen"]),("tables",diagnostics["tables_seen"]),("embedded_json",diagnostics["embedded_json_blocks"])) if count]
     return best_rows,visited,diagnostics
 
@@ -628,7 +643,8 @@ def main():
                             "html_bytes":diag.get("html_bytes",0),"links_seen":diag.get("links_seen",0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"role_records":diag.get("role_records",0),
-                            "announcement_records":diag.get("announcement_records",0),"sample_title":diag.get("sample_title",""),
+                            "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
+                            "sample_title":diag.get("sample_title",""),
                             "last_error":diag.get("last_error",""),"parser_modes":diag.get("parser_modes",[]),
                             "source_status":diag.get("source_status","access_error")})
     results.sort(key=lambda x:x["company"])
