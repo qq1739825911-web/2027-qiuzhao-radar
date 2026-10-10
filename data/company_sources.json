@@ -233,13 +233,19 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "建行官方2027校园招聘公告与招聘入口。运行器此前出现TLS legacy renegotiation兼容性错误；若仍失败，记录访问故障，不将网页不可访问误判为无岗位。",
+    "notes": "建行官网2027校招公告样本：总行、境内分支机构、建银咨询、综合经营子公司、建信金科、远程智能银行中心、深圳分行及招聘入口。页面若动态渲染或访问失败，将记录具体网络错误；公告信息只作为待核验线索，不能冒充详情岗位。",
     "seed_urls": [
       "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903145558718023&planType=XY",
       "https://job2.ccb.com/cn/job/announcement.html?annoId=20260901194840667699&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903150357717853",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260904115022720661&isImpAnno=1&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903100124717047&isImpAnno=1",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903110323717139&isImpAnno=1&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903144455718976&planType=XY",
       "https://job2.ccb.com/"
     ],
-    "max_pages": 5
+    "max_pages": 8,
+    "max_candidates": 500
   },
   {
     "id": "psbc",
@@ -261,12 +267,19 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "招商银行官方校园招聘公告入口和站点；若公开HTML为JavaScript应用壳，只诊断并保留公告线索，不尝试绕过登录或调用未公开接口。",
+    "notes": "招行官方2027届校招分行公告页样本（北京、郑州、武汉、长沙、昆明、青岛、济南、贵阳）加官方入口。用于尽可能提取公开岗位表；若网页只返回前端JS壳则记录为reachable_no_records，不把公告标题冒充具体岗位。",
     "seed_urls": [
       "https://career.cmbchina.com/detail/school?id=4B58639A-C643-475D-AB57-6B9E980040CD",
-      "https://career.cmbchina.com/"
+      "https://career.cmbchina.com/detail/school?id=2446D692-2093-41EB-BAA5-4E69D1F1950B",
+      "https://career.cmbchina.com/detail/school?id=EA490799-1A8F-4DE5-A8C9-8A2F19FF06EA",
+      "https://career.cmbchina.com/detail/school?id=96FBB031-3A04-4568-B1C4-3BDFF9CF101A",
+      "https://career.cmbchina.com/detail/school?id=95139209-563D-46BC-873A-86B91594CBFC",
+      "https://career.cmbchina.com/detail/school?id=617FBDC9-7535-40F7-B48A-70B28D23D52E",
+      "https://career.cmbchina.com/detail/school?id=A7C50F26-36AA-44AD-A49C-D4A03494FBCC",
+      "https://career.cmbchina.com/detail/school?id=FF73DE4D-B31B-4D26-BDCC-F79EB78279AF"
     ],
-    "max_pages": 4
+    "max_pages": 9,
+    "max_candidates": 500
   },
   {
     "id": "icbc",
@@ -277,8 +290,9 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "工商银行官方人才招聘平台。运行器此前出现TLS legacy renegotiation兼容性错误；若仍失败，报告为访问受限，保留来源供后续官方替代入口诊断。",
+    "notes": "工商银行官方人才招聘PC入口与首页。运行器此前遇到TLS legacy renegotiation错误时不绕过证书/协议限制，而是保留为访问故障，待官方公共页面兼容后继续解析。",
     "seed_urls": [
+      "https://job.icbc.com.cn/pc/index.html",
       "https://job.icbc.com.cn/"
     ],
     "max_pages": 3
