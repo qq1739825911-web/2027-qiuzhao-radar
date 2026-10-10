@@ -87,7 +87,7 @@ def sanitize_extracted_text(value, max_length=6500):
     """Remove embedded job-card JSON accidentally joined to visible detail text."""
     if not isinstance(value, str):
         return value
-    text=value.replace("\\r\\n", "\\n").replace("\\n", "\\n").replace("\\t", " ")
+    text=value.replace("\\r\\n", "\n").replace("\\n", "\n").replace("\\t", " ")
     text=text.replace("\\u002F", "/").replace("\\u002f", "/")
     text=re.sub(r"[ \t]+", " ", text).strip()
     marker=-1
