@@ -33,7 +33,7 @@ parsed = Parser()
 parsed.feed('<p>岗位职责：完成测试并整理报告。</p><script>{"jobCity":"北京","careerJobId":11025,"salaryMax":9999999}</script>')
 check("embedded script JSON is excluded from visible page text",
       "岗位职责" in parsed.page_text() and "careerJobId" not in parsed.page_text())
-dirty = r'岗位职责：完成测试并整理报告。\\n{"jobCity":"北京","careerJobId":11025,"salaryMax":9999999}'
+dirty = r'岗位职责：完成测试并整理报告。\n3. 相关职责说明。","jobCity":"北京","careerJobId":11025,"salaryMax":9999999'
 cleaned = sanitize_extracted_text(dirty)
 check("historical description sanitizer removes embedded JSON",
       "岗位职责" in cleaned and "careerJobId" not in cleaned and "salaryMax" not in cleaned)
