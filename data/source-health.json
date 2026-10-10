@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-10T05:35:44+00:00",
+  "checked_at": "2026-10-10T06:16:19+00:00",
   "enabled_sources": 20,
-  "reachable": 17,
-  "warnings": 3,
+  "reachable": 18,
+  "warnings": 2,
   "results": [
     {
       "id": "citic",
@@ -63,9 +63,9 @@
     {
       "id": "xiaomi",
       "name": "小米",
-      "url": "https://xiaomi.jobs.f.mioffice.cn/campus/?current=14&limit=10",
-      "status": "unavailable",
-      "http_status": 404
+      "url": "https://hr.xiaomi.com/website/campus.html",
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "xiaopeng",
