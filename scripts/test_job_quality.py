@@ -1,10 +1,11 @@
 """Offline regression tests for public job parsing and quality buckets."""
+import json
 from datetime import date
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields,
 )
-from quality_rules import assess
+from quality_rules import assess, compact_json
 
 def check(name, condition):
     if not condition:
@@ -92,5 +93,11 @@ old_v3 = dict(base, collector="public-html-v3", cohort_evidence="", cohort_confi
 check("legacy default 2027 does not count as evidence", not assess(old_v3, today=date(2026, 10, 10)))
 expired = dict(base, deadline="2026-10-09")
 check("expired job is not prioritized", not assess(expired, today=date(2026, 10, 10)) and expired["status"] == "expired")
+
+compact_sample = [{"company": "上海基美影业", "title": "AIGC影视创意制作", "city": "上海"}]
+compact_payload = compact_json(compact_sample)
+check("published JSON serialization stays compact and round-trips",
+      "\\n" not in compact_payload and ": " not in compact_payload
+      and ", " not in compact_payload and json.loads(compact_payload) == compact_sample)
 
 print("QUALITY REGRESSION TESTS PASSED")

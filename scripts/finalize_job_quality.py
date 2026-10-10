@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from datetime import datetime, timezone
 
-from quality_rules import assess
+from quality_rules import assess, compact_json
 
 ROOT=Path(__file__).resolve().parents[1]
 JOBS=ROOT/"data/jobs.json"
@@ -16,7 +16,7 @@ for row in jobs:
     if assess(row): priority+=1
     else: lead+=1
 
-JOBS.write_text(json.dumps(jobs,ensure_ascii=False,indent=2),encoding="utf-8")
+JOBS.write_text(compact_json(jobs),encoding="utf-8")
 try:
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
 except Exception:

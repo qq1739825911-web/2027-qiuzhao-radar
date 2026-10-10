@@ -1,10 +1,15 @@
 """Single source of truth for deciding which job records deserve priority review."""
+import json
 from datetime import date, timedelta
 from collect_public_sources import clean_job_title, is_concrete_role_title, is_direct_detail_url
 
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
 COHORT_EVIDENCE_OK = {"page_text", "visible_announcement_title", "job_detail_title", "job_detail_text"}
+
+def compact_json(payload):
+    """Serialize the published job database without indentation to reduce page load size."""
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 def cohort_is_confirmed(row):
     cohort = str(row.get("cohort", "")).strip()
