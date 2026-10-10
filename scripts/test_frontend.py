@@ -44,4 +44,32 @@ try:
 finally:
     js_path.unlink(missing_ok=True)
 
-print(f"FRONTEND SMOKE TESTS PASSED: {len(checks) + 1} checks")
+helper_start = scripts[0].find("function sanitizeDetailField")
+helper_end = scripts[0].find("function setup(){", helper_start)
+if helper_start < 0 or helper_end < 0:
+    raise AssertionError("Could not isolate pure detail helpers for runtime tests")
+helper_code = scripts[0][helper_start:helper_end]
+helper_test = r'''
+const assert = require("node:assert/strict");
+''' + helper_code + r'''
+const dirty = "岗位职责：完成测试并整理报告。\n3. 跟踪结果。\",\"jobCity\":\"北京\",\"careerJobId\":11025,\"salaryMax\":9999999";
+const clean = sanitizeDetailField(dirty);
+assert.equal(clean, "岗位职责：完成测试并整理报告。\n3. 跟踪结果。");
+assert.equal(sanitizeDetailField("{\"jobCity\":\"北京\",\"careerJobId\":11025}"), "");
+assert.equal(cleanUiTitle("【27届校招】测试工程师(A54426)"), "测试工程师");
+assert.equal(usesOfficialRecruitmentFlow({company:"中国建设银行",type:"银行"}), true);
+assert.equal(usesOfficialRecruitmentFlow({company:"上海基美影业股份有限公司",type:"民营"}), false);
+console.log("PASS: sanitizer, title cleanup and employer route helpers");
+'''
+with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".js", delete=False) as handle:
+    handle.write(helper_test)
+    helper_path = Path(handle.name)
+try:
+    result = subprocess.run(["node", str(helper_path)], text=True, capture_output=True)
+    if result.returncode:
+        raise AssertionError("Frontend helper runtime tests failed:\n" + result.stdout + result.stderr)
+    print(result.stdout.strip())
+finally:
+    helper_path.unlink(missing_ok=True)
+
+print(f"FRONTEND SMOKE TESTS PASSED: {len(checks) + 2} checks")
