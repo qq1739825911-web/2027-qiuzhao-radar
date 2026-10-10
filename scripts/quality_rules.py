@@ -1,7 +1,7 @@
 """Single source of truth for deciding which job records deserve priority review."""
 import json
 from datetime import date, timedelta
-from collect_public_sources import clean_job_title, is_concrete_role_title, is_direct_detail_url
+from collect_public_sources import clean_job_title, is_concrete_role_title, is_direct_detail_url, sanitize_extracted_text
 
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
@@ -25,6 +25,14 @@ def assess(row, today=None):
     title = clean_job_title(row.get("title", ""), source_id)
     if title:
         row["title"] = title
+    # Clean existing historical records too; otherwise the fixed collector
+    # would leave already-published JSON fragments visible in the detail modal.
+    field_limits = {"description": 6500, "responsibilities": 4500, "requirements": 4500,
+                    "benefits": 2000, "company_info": 2000, "address": 240, "work_time": 500}
+    for field, limit in field_limits.items():
+        value = row.get(field)
+        if isinstance(value, str) and value:
+            row[field] = sanitize_extracted_text(value, limit)
     reasons = []
     if not title or not is_concrete_role_title(title):
         reasons.append("职位名称不够明确或混有平台/招聘文案")
