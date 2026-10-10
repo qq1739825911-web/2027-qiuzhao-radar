@@ -560,6 +560,9 @@ def collect_source(src):
             if not is_concrete_role_title(title): continue
             if not same_host(final,href): continue
             if any(x.lower() in title.lower() for x in NAV_BAD): continue
+            # Generic corporate pages such as financial-market pages must not
+            # become false job leads merely because their titles contain "市场".
+            if not any(x.lower() in href.lower() for x in ROLE_HREF): continue
             diagnostics["role_like_links"]+=1
             sc=score(title,href,page_text)
             if sc<5: continue
