@@ -65,6 +65,8 @@ base = {
     "verification_status": "link_alive",
     "verification_http_status": 200,
     "last_verified": "2026-10-09",
+    "last_seen": "2026-10-10",
+    "last_collected": "2026-10-10",
     "last_verified_at": "2026-10-09T12:00:00+00:00",
     "deadline": "2026-12-31",
     "collector": "public-html-v4",
@@ -76,6 +78,13 @@ generic = dict(base, source_url="https://www.yingjiesheng.com/")
 check("generic portal downgraded", not assess(generic, today=date(2026, 10, 10)))
 missing_cohort = dict(base, cohort="", cohort_evidence="", cohort_confirmed=False)
 check("missing cohort downgraded", not assess(missing_cohort, today=date(2026, 10, 10)))
+
+unproven_cohort = dict(base, cohort="2027届", cohort_evidence="", cohort_confirmed=False)
+check("a 2027 label without visible evidence is downgraded", not assess(unproven_cohort, today=date(2026, 10, 10)))
+registry_only = dict(base, cohort_evidence="source_registry", cohort_confirmed=True)
+check("site registry cohort alone is not proof", not assess(registry_only, today=date(2026, 10, 10)))
+stale_discovery = dict(base, last_seen="2026-09-25", last_collected="2026-09-25")
+check("job not rediscovered for 14 days is downgraded", not assess(stale_discovery, today=date(2026, 10, 10)))
 stale = dict(base, verification_status="stale")
 check("stale detail downgraded", not assess(stale, today=date(2026, 10, 10)))
 check("lead bucketing does not destroy lifecycle status", stale["status"] == "active" and stale["review_bucket"] == "lead")

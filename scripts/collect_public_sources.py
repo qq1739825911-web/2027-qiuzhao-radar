@@ -27,6 +27,8 @@ CONCRETE_WORDS=("AIGC","AI产品","AI应用","视频","影视","创意制作","�
 PROGRAM_WORDS=("招聘公告","招聘启事","校园招聘","校招公告","招聘简章","招聘信息","招聘计划","招聘项目","招聘专场","秋季招聘","春季招聘","招聘通知")
 NAV_BAD=("登录","注册","首页","关于我们","新闻","公告","联系我们","隐私","下载","帮助","返回","信用卡产品","借记卡产品","自营金融","产品服务","理财","基金产品")
 ROLE_HREF=("job","position","career","campus","recruit","zhaopin","jobs","vacancy","detail","post")
+# Cohort evidence must come from visible text, not merely a site-level registry label.
+COHORT_EVIDENCE_OK={"page_text","visible_announcement_title","job_detail_title","job_detail_text"}
 
 class Parser(HTMLParser):
     def __init__(self):
@@ -267,7 +269,7 @@ def merge_detail_fields(row, fields):
 def record(company,title,url,source,cohort,confidence,program="",cohort_evidence=""):
     title=clean_job_title(title)
     direct=is_direct_detail_url(url)
-    cohort_ok=bool(cohort and cohort.strip() not in ("待核验","未知") and cohort_evidence)
+    cohort_ok=bool(cohort and cohort.strip() not in ("待核验","未知") and cohort_evidence in COHORT_EVIDENCE_OK)
     title_ok=is_concrete_role_title(title)
     status="active" if confidence>=7 and direct and cohort_ok and title_ok else "pending_review"
     return {"id":make_id(company,title,url),"company":company,"title":title,
@@ -400,7 +402,7 @@ def collect_source(src):
         if src.get("id")=="qiuzhaowang" and re.search(r"(?:[?&])year=2027(?:&|$)",page):
             source_cohort="2027届"
         cohort=explicit_cohort or source_cohort
-        cohort_evidence=("page_text" if explicit_cohort else ("source_registry" if source_cohort else ""))
+        cohort_evidence=("page_text" if explicit_cohort else "")
         page_company=company
         detail_fields={}
         if src.get("id")=="yingjiesheng":

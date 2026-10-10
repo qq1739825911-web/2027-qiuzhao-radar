@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "scripts/test_frontend_contract.py"
       - ".github/workflows/frontend-syntax-check.yml"
   workflow_dispatch:
 permissions:
@@ -38,3 +39,5 @@ jobs:
           print(f"Extracted {len(inline)} inline script block(s)")
           PY
           node --check /tmp/radar-inline.js
+      - name: Check job detail and quality UI contract
+        run: python scripts/test_frontend_contract.py
