@@ -18,6 +18,11 @@ checks = {
     "official recruitment route is distinguished": "function usesOfficialRecruitmentFlow" in source,
     "close button has accessible label": 'aria-label="关闭详情"' in source,
     "reset control exists": 'id="reset"' in source,
+    "search input is wired to a debounced renderer": 'setTimeout(render,140)' in source and 'addEventListener("input"' in source,
+    "filter reset button has a handler": '$("reset").onclick=' in source,
+    "tab navigation has click handlers": 't.onclick=()=>switchTab(t.dataset.tab)' in source,
+    "modal close and escape handlers exist": 'b.onclick=()=>closeJobDetail(true)' in source and 'e.key==="Escape"' in source,
+    "favorites and application status changes have handlers": 'b.onclick=()=>toggle(b.dataset.id)' in source and 'x.onchange=()=>{apps[x.dataset.app]=x.value' in source,
     "favorite and delivery board handlers exist": "function renderBoard()" in source and 'data-app="' in source,
 }
 for name, okay in checks.items():
