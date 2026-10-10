@@ -9,6 +9,7 @@ on:
       - "scripts/quality_rules.py"
       - "scripts/finalize_job_quality.py"
       - "scripts/test_job_quality.py"
+      - "scripts/test_frontend.py"
       - "data/company_sources.json"
   workflow_dispatch:
   schedule:
@@ -32,6 +33,8 @@ jobs:
         with: {python-version: "3.12"}
       - name: Parser and classification regression tests
         run: python scripts/test_job_quality.py
+      - name: Frontend syntax and interaction smoke tests
+        run: python scripts/test_frontend.py
       - name: Collect V3 public official sources
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
