@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-10T06:16:19+00:00",
+  "checked_at": "2026-10-10T07:28:18+00:00",
   "enabled_sources": 20,
   "reachable": 18,
   "warnings": 2,
@@ -21,7 +21,7 @@
     {
       "id": "ccb",
       "name": "中国建设银行",
-      "url": "https://job2.ccb.com/",
+      "url": "https://job.ccb.com/",
       "status": "unavailable",
       "detail": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>"
     },
