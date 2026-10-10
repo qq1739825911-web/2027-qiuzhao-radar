@@ -90,17 +90,20 @@ def sanitize_extracted_text(value, max_length=6500):
     text=value.replace("\\r\\n", "\n").replace("\\n", "\n").replace("\\t", " ")
     text=text.replace("\\u002F", "/").replace("\\u002f", "/")
     text=re.sub(r"[ \t]+", " ", text).strip()
+    keys = r"(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)"
+    if re.match(r'''^\s*[\{\[]\s*(?:\\?["'])?''' + keys + r'''(?:\\?["'])?\s*:''', text, re.I):
+        return ""
     property_key = re.compile(
-        r'''[,;]\s*(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:''',
+        r'''[,;]\s*(?:\\?["'])?''' + keys + r'''(?:\\?["'])?\s*:''',
         re.I,
     )
     match=property_key.search(text)
     if match:
         text=text[:match.start()].rstrip(" \t,;\\")
-    elif re.match(r'''^\s*[{[]\s*(?:\\?["'])?(?:jobCity|careerJobId|positionId|jobKeys)(?:\\?["'])?\s*:''', text, re.I):
-        return ""
+        while text.endswith(('"', "'", "}", "]")):
+            text=text[:-1].rstrip(" \t,;\\")
     return text[:max_length].strip()
-    
+
 def canonical(u):
     p=urlparse(u)
     # Preserve meaningful query parameters such as page=2 and jobId=123.
