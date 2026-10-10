@@ -135,12 +135,12 @@ const SOURCES=[["秋招网","2027届岗位汇总 / 公开岗位方向","https://
 const storageGet=(k,d)=>{try{return localStorage.getItem(k)||d}catch{return d}},storageSet=(k,v)=>{try{localStorage.setItem(k,v)}catch{}},storageJSON=(k,d)=>{try{return JSON.parse(storageGet(k,JSON.stringify(d)))}catch{return d}};let fav=storageJSON("radar_fav",[]),apps=storageJSON("radar_apps",{}),currentPage=1;const COMPANY_PAGE_SIZE=25;
 const $=id=>document.getElementById(id),today=new Date(),days=x=>Math.ceil((new Date(x)-new Date(today.toDateString()))/86400000);
 function sanitizeDetailField(value,maxLength=6500){
- let text=String(value??"").split("\\n").join("\n").split("\\r\\n").join("\n").split("\\t").join(" ");
+ let text=String(value??"").split("\\r\\n").join("\n").split("\\n").join("\n").split("\\t").join(" ");
  text=text.split("\\u002F").join("/").split("\\u002f").join("/").replace(/&quot;/gi,'"').replace(/&#39;/gi,"'");
  const keys=["jobCity","careerJobId","deliverBegin","deliverEnd","refreshBegin","latestProcessTime","graduationYear","salaryType","salaryMin","salaryMax","jobKeys","companyId","companyName","positionId","positionName","recruitJobName","jobName","jobOffer","eduLevel"];
- let marker=-1;
- for(const key of keys){let at=text.indexOf(key);while(at>=0){const colon=text.indexOf(":",at+key.length);if(colon>=0&&colon-at<10){if(marker<0||at<marker)marker=at;break;}at=text.indexOf(key,at+key.length);}}
- if(marker>=0){const brace=text.lastIndexOf("{",marker);if(brace===0)return "";if(brace>0&&marker-brace<120)text=text.slice(0,brace);}
+ const metadata=/(?:[,;]\s*)(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/i.exec(text);
+ if(metadata)text=text.slice(0,metadata.index).replace(/[ \t,;\\]+$/,"");
+ else{const leading=text.trimStart();if((leading.startsWith("{")||leading.startsWith("["))&&keys.some(key=>leading.includes('"'+key+'"')||leading.startsWith(key+":")))return "";}
  return text.replace(/\n[ \t]*\n[ \t]*\n+/g,"\n\n").trim().slice(0,maxLength);
 }
 function cleanUiTitle(value){
