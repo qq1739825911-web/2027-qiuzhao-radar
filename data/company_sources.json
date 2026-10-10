@@ -49,14 +49,17 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "从应届生求职网公开职位详情与校招发布页提取薪资、城市、学历、职责、要求及公司信息；只有详情URL和明确2027届证据才进入可优先核验池，其余留作线索。",
+    "notes": "从公开职位详情页提取真实可见薪资、城市、学历、职责、要求、地址和公司信息；详情不清晰或届别证据不足的记录只进入待核验区。每轮优先检查固定的岗位详情样本，不把招聘首页当具体岗位。",
     "seed_urls": [
       "https://m.yingjiesheng.com/jobdetail/170935981",
       "https://m.yingjiesheng.com/jobdetail/173508261",
       "https://m.yingjiesheng.com/jobdetail/173505576",
       "https://m.yingjiesheng.com/job-008-098-278.html",
       "https://m.yingjiesheng.com/job-008-102-094.html",
-      "https://m.yingjiesheng.com/jobdetail/163535411"
+      "https://m.yingjiesheng.com/jobdetail/163535411",
+      "https://m.yingjiesheng.com/jobdetail/152284775",
+      "https://m.yingjiesheng.com/jobdetail/157306881",
+      "https://m.yingjiesheng.com/jobdetail/169863772"
     ],
     "max_pages": 12
   },
