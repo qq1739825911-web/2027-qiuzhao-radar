@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-10-09",
+  "run_date": "2026-10-10",
   "collector_version": "4.0",
   "enabled_sources": 20,
   "pagination_state": {
@@ -14,30 +14,46 @@
       8,
       9,
       10,
-      131,
-      132,
-      133,
-      134,
-      135,
-      136,
-      137,
-      138,
-      139,
-      140
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150
     ],
-    "qiuzhaowang_next_page": 141
+    "qiuzhaowang_next_page": 150
   },
-  "records_found": 3141,
-  "active_candidates": 143,
-  "pending_review": 2998,
+  "records_found": 3119,
+  "active_candidates": 74,
+  "pending_review": 3045,
   "results": [
     {
       "id": "citic",
       "company": "中信银行",
-      "pages_visited": 1,
+      "pages_visited": 2,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 2,
+      "pages_failed": 0,
+      "html_bytes": 190032,
+      "links_seen": 14,
+      "tables_seen": 0,
+      "embedded_json_blocks": 1,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "公告",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "icbc",
@@ -45,7 +61,20 @@
       "pages_visited": 0,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 1,
+      "pages_failed": 1,
+      "html_bytes": 0,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 0,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "",
+      "last_error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>",
+      "parser_modes": [],
+      "source_status": "access_error"
     },
     {
       "id": "ccb",
@@ -53,15 +82,44 @@
       "pages_visited": 0,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 3,
+      "pages_failed": 3,
+      "html_bytes": 0,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 0,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "",
+      "last_error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>",
+      "parser_modes": [],
+      "source_status": "access_error"
     },
     {
       "id": "psbc",
       "company": "中国邮政储蓄银行",
       "pages_visited": 1,
-      "records_found": 15,
+      "records_found": 17,
       "active_candidates": 0,
-      "pending_review": 15
+      "pending_review": 17,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 103247,
+      "links_seen": 321,
+      "tables_seen": 0,
+      "embedded_json_blocks": 13,
+      "role_like_links": 17,
+      "role_records": 17,
+      "announcement_records": 0,
+      "sample_title": "校园招聘_中国邮政储蓄银行",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "ok"
     },
     {
       "id": "boc",
@@ -69,15 +127,47 @@
       "pages_visited": 1,
       "records_found": 13,
       "active_candidates": 0,
-      "pending_review": 13
+      "pending_review": 13,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 31788,
+      "links_seen": 127,
+      "tables_seen": 0,
+      "embedded_json_blocks": 3,
+      "role_like_links": 13,
+      "role_records": 13,
+      "announcement_records": 0,
+      "sample_title": "中国银行网站_关于中行_招聘公告",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "ok"
     },
     {
       "id": "cib",
       "company": "兴业银行",
-      "pages_visited": 1,
+      "pages_visited": 2,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 2,
+      "pages_failed": 0,
+      "html_bytes": 12196,
+      "links_seen": 15,
+      "tables_seen": 0,
+      "embedded_json_blocks": 2,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "兴业银行2027校园招聘公告 -- 兴业银行官方网站",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "huawei",
@@ -85,15 +175,46 @@
       "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 39389,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 17,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "校招职位列表",
+      "last_error": "",
+      "parser_modes": [
+        "embedded_json"
+      ],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "bytedance",
       "company": "字节跳动",
       "pages_visited": 1,
-      "records_found": 0,
+      "records_found": 1,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 1,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 916390,
+      "links_seen": 6,
+      "tables_seen": 0,
+      "embedded_json_blocks": 8,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 1,
+      "sample_title": "字节跳动校园招聘官网｜字节跳动校招",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "announcement_only"
     },
     {
       "id": "xiaomi",
@@ -101,7 +222,20 @@
       "pages_visited": 0,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 5,
+      "pages_failed": 5,
+      "html_bytes": 0,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 0,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "",
+      "last_error": "HTTPError: HTTP Error 404: Not Found",
+      "parser_modes": [],
+      "source_status": "access_error"
     },
     {
       "id": "xiaopeng",
@@ -109,63 +243,187 @@
       "pages_visited": 1,
       "records_found": 1,
       "active_candidates": 0,
-      "pending_review": 1
+      "pending_review": 1,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 12377,
+      "links_seen": 35,
+      "tables_seen": 0,
+      "embedded_json_blocks": 2,
+      "role_like_links": 2,
+      "role_records": 1,
+      "announcement_records": 0,
+      "sample_title": "小鹏汽车招聘、福利待遇、工作环境丨小鹏汽车",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "ok"
     },
     {
       "id": "yingjiesheng",
       "company": "应届生求职网",
-      "pages_visited": 1,
-      "records_found": 4,
+      "pages_visited": 2,
+      "records_found": 2,
       "active_candidates": 0,
-      "pending_review": 4
+      "pending_review": 2,
+      "pages_attempted": 6,
+      "pages_failed": 4,
+      "html_bytes": 44042,
+      "links_seen": 29,
+      "tables_seen": 0,
+      "embedded_json_blocks": 10,
+      "role_like_links": 0,
+      "role_records": 1,
+      "announcement_records": 1,
+      "sample_title": "上海泛函数智能科技有限公司2027校园招聘_上海校园招聘",
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "ok"
     },
     {
       "id": "cmb",
       "company": "招商银行",
-      "pages_visited": 1,
+      "pages_visited": 2,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 2,
+      "pages_failed": 0,
+      "html_bytes": 1188,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 0,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "招商银行招聘",
+      "last_error": "",
+      "parser_modes": [],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "pdd",
       "company": "拼多多",
       "pages_visited": 1,
-      "records_found": 0,
+      "records_found": 1,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 1,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 18427,
+      "links_seen": 5,
+      "tables_seen": 0,
+      "embedded_json_blocks": 2,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 1,
+      "sample_title": "拼多多集团-PDD校园招聘官网",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "announcement_only"
     },
     {
       "id": "nowcoder",
       "company": "牛客",
       "pages_visited": 40,
-      "records_found": 143,
-      "active_candidates": 143,
-      "pending_review": 0
+      "records_found": 75,
+      "active_candidates": 74,
+      "pending_review": 1,
+      "pages_attempted": 42,
+      "pages_failed": 2,
+      "html_bytes": 2314192,
+      "links_seen": 1739,
+      "tables_seen": 0,
+      "embedded_json_blocks": 154,
+      "role_like_links": 46,
+      "role_records": 75,
+      "announcement_records": 0,
+      "sample_title": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网",
+      "last_error": "TimeoutError: The read operation timed out",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "ok"
     },
     {
       "id": "baidu",
       "company": "百度",
-      "pages_visited": 3,
-      "records_found": 0,
+      "pages_visited": 5,
+      "records_found": 4,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 4,
+      "pages_attempted": 5,
+      "pages_failed": 0,
+      "html_bytes": 237978,
+      "links_seen": 20,
+      "tables_seen": 0,
+      "embedded_json_blocks": 19,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 4,
+      "sample_title": "百度校园招聘",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "announcement_only"
     },
     {
       "id": "qiuzhaowang",
       "company": "秋招网",
-      "pages_visited": 20,
-      "records_found": 2965,
+      "pages_visited": 19,
+      "records_found": 3005,
       "active_candidates": 0,
-      "pending_review": 2965
+      "pending_review": 3005,
+      "pages_attempted": 19,
+      "pages_failed": 0,
+      "html_bytes": 3538371,
+      "links_seen": 3229,
+      "tables_seen": 0,
+      "embedded_json_blocks": 152,
+      "role_like_links": 302,
+      "role_records": 3005,
+      "announcement_records": 0,
+      "sample_title": "2027届最新更新校招岗位｜招聘信息与截止时间｜秋招网",
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "ok"
     },
     {
       "id": "meituan",
       "company": "美团",
-      "pages_visited": 1,
+      "pages_visited": 2,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 2,
+      "pages_failed": 0,
+      "html_bytes": 69018,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 22,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "美团招聘",
+      "last_error": "",
+      "parser_modes": [
+        "embedded_json"
+      ],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "tencent",
@@ -173,7 +431,20 @@
       "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 2250,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 0,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "搜索 | 腾讯招聘",
+      "last_error": "",
+      "parser_modes": [],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "nio",
@@ -181,7 +452,20 @@
       "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 1973,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 0,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "校园招聘-NIO蔚来",
+      "last_error": "",
+      "parser_modes": [],
+      "source_status": "reachable_no_records"
     },
     {
       "id": "alibaba",
@@ -189,9 +473,30 @@
       "pages_visited": 1,
       "records_found": 0,
       "active_candidates": 0,
-      "pending_review": 0
+      "pending_review": 0,
+      "pages_attempted": 1,
+      "pages_failed": 0,
+      "html_bytes": 4144,
+      "links_seen": 0,
+      "tables_seen": 0,
+      "embedded_json_blocks": 3,
+      "role_like_links": 0,
+      "role_records": 0,
+      "announcement_records": 0,
+      "sample_title": "阿里巴巴校园招聘",
+      "last_error": "",
+      "parser_modes": [
+        "embedded_json"
+      ],
+      "source_status": "reachable_no_records"
     }
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
-  "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."
+  "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
+  "published_total_jobs": 19455,
+  "published_priority_candidates": 34,
+  "published_pending_review": 19421,
+  "records_added_this_run": 2899,
+  "records_updated_this_run": 220,
+  "quality_gate_version": "2.0"
 }
