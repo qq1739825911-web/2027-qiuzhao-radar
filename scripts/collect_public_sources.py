@@ -682,6 +682,8 @@ def main():
                             "role_like_links":diag.get("role_like_links",0),"role_records":diag.get("role_records",0),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
+                            "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
+                            "role_field_samples":[{"title":r.get("title",""),"company":r.get("company",""),"city":r.get("city",""),"salary":r.get("salary",""),"degree":r.get("degree",""),"source_url":r.get("source_url","")} for r in rows if r.get("granularity") not in {"announcement","entry"}][:5],
                             "last_error":diag.get("last_error",""),"parser_modes":diag.get("parser_modes",[]),
                             "source_status":diag.get("source_status","access_error")})
     results.sort(key=lambda x:x["company"])
