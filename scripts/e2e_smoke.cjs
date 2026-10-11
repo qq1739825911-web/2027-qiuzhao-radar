@@ -142,7 +142,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
           const facts=await page.locator("#jobDetailContent .detail-fact").evaluateAll(els=>Object.fromEntries(els.map(el=>[el.querySelector("span")?.textContent?.trim()||"",el.querySelector("b")?.textContent?.trim()||""])));
           const addressParts=await page.locator("#jobDetailContent .detail-company-info").allInnerTexts();
           const cards=page.locator("#jobDetailContent .detail-card");
-          aigcDetail={found:true,salary:facts["薪资"]||"",degree:facts["学历要求"]||"",city:facts["工作城市"]||"",address:addressParts.join(" | "),responsibilityChars:await cards.nth(2).innerText().then(t=>t.length).catch(()=>0),requirementsChars:await cards.nth(3).innerText().then(t=>t.length).catch(()=>0),bucket,title:visibleTitle};
+          aigcDetail={found:true,salary:facts["薪资"]||"",degree:facts["学历要求"]||"",city:facts["工作城市"]||"",address:addressParts.join(" | "),responsibilityChars:await cards.nth(2).innerText().then(t=>t.length).catch(()=>0),requirementsChars:await cards.nth(3).innerText().then(t=>t.length).catch(()=>0),bucket:await page.locator("[data-bucket].on").getAttribute("data-bucket"),title:visibleTitle};
           await page.locator("#jobDetailContent .detail-close").click();
           await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
           break;
@@ -173,7 +173,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
             const facts=await page.locator("#jobDetailContent .detail-fact").evaluateAll(els=>Object.fromEntries(els.map(el=>[el.querySelector("span")?.textContent?.trim()||"",el.querySelector("b")?.textContent?.trim()||""])));
             const addressParts=await page.locator("#jobDetailContent .detail-company-info").allInnerTexts();
             const cards=page.locator("#jobDetailContent .detail-card");
-            aigcDetail={found:true,salary:facts["薪资"]||"",degree:facts["学历要求"]||"",city:facts["工作城市"]||"",address:addressParts.join(" | "),responsibilityChars:await cards.nth(2).innerText().then(t=>t.length).catch(()=>0),requirementsChars:await cards.nth(3).innerText().then(t=>t.length).catch(()=>0),bucket,title:visibleTitle,cityFilter:"全部城市"};
+            aigcDetail={found:true,salary:facts["薪资"]||"",degree:facts["学历要求"]||"",city:facts["工作城市"]||"",address:addressParts.join(" | "),responsibilityChars:await cards.nth(2).innerText().then(t=>t.length).catch(()=>0),requirementsChars:await cards.nth(3).innerText().then(t=>t.length).catch(()=>0),bucket:await page.locator("[data-bucket].on").getAttribute("data-bucket"),title:visibleTitle,cityFilter:"全部城市"};
             aigcFoundWithoutCity=true;
             await page.locator("#jobDetailContent .detail-close").click();
             await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
@@ -212,6 +212,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
       if(xiaopengRoleObserved) break;
     }
     assert.ok(aigcDetail.found, "specific AIGC Shanghai job must open its in-site detail modal; got " + JSON.stringify(aigcDetail));
+    assert.equal(aigcDetail.bucket, "lead", "AIGC role without explicit 2027 cohort evidence must remain in the separate pending-review bucket: " + JSON.stringify(aigcDetail));
     assert.ok(aigcDetail.salary.includes("8千-1.5万"), "public AIGC salary should be extracted from the detail page: " + JSON.stringify(aigcDetail));
     assert.ok(aigcDetail.degree.includes("本科"), "public AIGC degree should be extracted from the detail page: " + JSON.stringify(aigcDetail));
     assert.ok(aigcDetail.city.includes("上海"), "AIGC role should remain filterable in Shanghai: " + JSON.stringify(aigcDetail));
