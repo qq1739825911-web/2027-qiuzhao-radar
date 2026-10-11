@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-11T11:47:48+00:00",
+  "checked_at": "2026-10-11T11:53:48+00:00",
   "enabled_sources": 20,
   "reachable": 17,
   "warnings": 3,
@@ -70,7 +70,7 @@
     {
       "id": "xiaopeng",
       "name": "小鹏汽车",
-      "url": "https://xiaopeng.jobs.feishu.cn/campus/position/list",
+      "url": "https://xiaopeng.jobs.feishu.cn/campus",
       "status": "unavailable",
       "http_status": 404
     },
