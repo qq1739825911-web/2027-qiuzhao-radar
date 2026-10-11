@@ -184,6 +184,8 @@ check("YJS province wrapper is removed from the company name",
       clean_yingjiesheng_company_name("[广东]珠海市龙图光罩科技有限公司")=="珠海市龙图光罩科技有限公司")
 check("explicit 2025 BOSS campus cards are rejected",
       not is_boss_campus_card_relevant("〖2025华为校园招聘〗软开/AI/算法工程师 北京 在校/应届 本科"))
+check("explicit 26-year BOSS graduate cards are rejected",
+      not is_boss_campus_card_relevant("新能源软件产品经理-26年应届生"))
 check("specific 2027 BOSS card remains accepted",
       is_boss_campus_card_relevant("2027-硬件工程师-北京 北京 在校/应届 本科"))
 check("non-graduate lifestyle/side-job BOSS card is rejected",
