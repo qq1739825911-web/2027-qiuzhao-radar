@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-11T13:49:20+00:00",
+  "checked_at": "2026-10-11T14:27:21+00:00",
   "enabled_sources": 23,
-  "reachable": 19,
-  "warnings": 4,
+  "reachable": 20,
+  "warnings": 3,
   "results": [
     {
       "id": "boss",
@@ -50,8 +50,8 @@
       "id": "cib",
       "name": "兴业银行",
       "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/",
-      "status": "restricted",
-      "http_status": 403
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "51job",
