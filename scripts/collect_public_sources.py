@@ -264,7 +264,7 @@ def should_discover_public_url(source_id,url):
         if not same_host("https://www.yingjiesheng.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         if any(x in path for x in ("/login","/register","/member","/vip","/user/","/account","/privacy","/thirdlink","/redirect")): return False
-        return (path=="/" or path.startswith(("/major/","/other/","/jobs/","/job/","/joblist/","/xuanjianghui/"))
+        return (path=="/" or path.startswith(("/major/","/zhuanye/","/other/","/jobs/","/job/","/joblist/","/xuanjianghui/"))
                 or host.startswith(("zhiwei.","q.","web.","s."))
                 or bool(re.search(r"/jobdetail/\d+",path))
                 or bool(re.search(r"/job-[a-z0-9-]+\.html$",path))

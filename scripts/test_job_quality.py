@@ -97,7 +97,8 @@ check("QZW listing hint yields concrete roles",
 check("YJS list/category page is discoverable",
       should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/major/"))
 check("YJS public zhuyanye category directory is discoverable",
-      should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/zhuanye/"))
+      should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/zhuanye/")
+      and 'path.startswith(("/major/","/zhuanye/","/other/","/jobs/","/job/","/joblist/","/xuanjianghui/"))' in COLLECTOR_SOURCE)
 check("YJS job-detail page is discoverable",
       should_discover_public_url("yingjiesheng", "https://m.yingjiesheng.com/jobdetail/173508261"))
 check("YJS unrelated host is rejected",
