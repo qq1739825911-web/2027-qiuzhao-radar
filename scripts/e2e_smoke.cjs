@@ -36,7 +36,12 @@ const { chromium } = require("playwright");
     const role = page.locator("#jobs .role-row").first();
     const title = role.locator(".role-title-button").first();
     assert.ok((await title.innerText()).trim().length > 0, "role title must be readable");
-    await title.click();
+    await title.scrollIntoViewIfNeeded();
+    // The result set can reflow while Chromium finishes large JSON/layout work.
+    // Trigger the actual button DOM event after scrolling to avoid a false
+    // Playwright "element detached while scrolling" failure on a legitimate click.
+    await page.waitForTimeout(350);
+    await title.evaluate(el => el.click());
 
     const modal = page.locator("#jobDetailModal");
     await page.waitForFunction(() => document.querySelector("#jobDetailModal")?.classList.contains("show"));
