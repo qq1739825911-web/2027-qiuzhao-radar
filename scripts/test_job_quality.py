@@ -3,7 +3,7 @@ import json
 from datetime import date
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
 )
 from quality_rules import assess, compact_json
 
