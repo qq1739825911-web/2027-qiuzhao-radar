@@ -15,7 +15,7 @@ JOBS=ROOT/"data/jobs.json"; STATE=ROOT/"data/verification-state.json"; MANIFEST=
 TODAY=str(date.today()); STAMP=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 HEADERS={"User-Agent":"2027-Qiuzhao-Radar-PublicVerifier/1.1"}
 # Covers Nowcoder details, Xiaomi/Baidu detail pages, and Qiuzhaowang /jobs/<slug> pages.
-DIRECT=re.compile(r"/(?:jobs/detail/\d+|jobs/hr/\d+|jobs/(?!latest(?:/|$)|list(?:/|$))[^/?#]+|jobdetail/\d+|job-\d{3}-\d{3}-\d+\.html|positions/[^/?#]+|campus/position/[^/]+/detail|position/[^/]+/detail|job/detail/|job/position/|jobdesc\.html|web/position/detail)",re.I)
+DIRECT=re.compile(r"/(?:jobs/detail/\d+|jobs/hr/\d+|jobs/(?!latest(?:/|$)|list(?:/|$))[^/?#]+|job_detail/[^/?#]+|jobdetail/\d+|job-\d{3}-\d{3}-\d+\.html|positions/[^/?#]+|campus/position/[^/]+/detail|position/[^/]+/detail|job/detail/|job/position/|jobdesc\.html|web/position/detail)",re.I)
 
 def is_direct_detail(url):
     p=urlparse(url); path=p.path.lower(); query=p.query.lower()
@@ -25,15 +25,20 @@ def is_direct_detail(url):
     if path.endswith("/web/position/detail") and not re.search(r"(?:^|&)jobunionid=\d+",query): return False
     return True
 CLOSED_MARKERS=("职位已下线","岗位已下线","职位不存在","岗位不存在","招聘已结束","投递已结束","职位已关闭","岗位已关闭","该职位已失效")
+ACCESS_RESTRICTED_MARKERS=("请完成安全验证","访问过于频繁","行为验证")
 GAP=timedelta(hours=5,minutes=45)
+
+def is_security_interstitial_url(url):
+    return urlparse(str(url or "")).path.rstrip("/").lower()=="/web/passport/zp/security.html"
+
 def fetch(url):
     req=Request(url,headers=HEADERS)
     try:
         with urlopen(req,timeout=8) as r:
             body=r.read(250000).decode(r.headers.get_content_charset() or "utf-8",errors="ignore")
-            return r.status,body
-    except HTTPError as e: return e.code,""
-    except (URLError,TimeoutError,ValueError): return 0,""
+            return r.status,body,r.geturl()
+    except HTTPError as e: return e.code,"",e.geturl()
+    except (URLError,TimeoutError,ValueError): return 0,"",""
 def main():
     jobs=json.loads(JOBS.read_text(encoding="utf-8"))
     try: state=json.loads(STATE.read_text(encoding="utf-8"))
@@ -84,7 +89,9 @@ def main():
     else: start=0; batch_urls=[]
     alive=missing=unknown=closed=records_touched=0; checked=[]
     def check_url(url):
-        status,body=fetch(url)
+        status,body,final_url=fetch(url)
+        if is_security_interstitial_url(final_url) or any(marker in body for marker in ACCESS_RESTRICTED_MARKERS):
+            return "unknown",status
         if status in (404,410) or (status==200 and any(m in body for m in CLOSED_MARKERS)): return "missing",status
         if 200<=status<400: return "alive",status
         return "unknown",status

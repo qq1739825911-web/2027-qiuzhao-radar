@@ -294,8 +294,16 @@ def clean_job_title(title, source_id=""):
         t=re.sub(r"^(?:20\d{2}[A-Z]{0,6}|20\d{2}|\d{2}届)[-—:：\s]*","",t)
         t=re.sub(r"^(?:校招末班车|顶尖应届|急招)[-—:：\s]*","",t)
         t=re.sub(r"[-—](?:多赛道发展|高管直带).*$","",t)
-        t=re.sub(r"\s+(?:在线|在校/应届|应届毕业生|应届生|北京\s+(?:在校/应届|本科|硕士)|上海\s+(?:在校/应届|本科|硕士)|深圳\s+(?:在校/应届|本科|硕士)|广州\s+(?:在校/应届|本科|硕士)|杭州\s+(?:在校/应届|本科|硕士)|南京\s+(?:在校/应届|本科|硕士)|成都\s+(?:在校/应届|本科|硕士)|西安\s+(?:在校/应届|本科|硕士)|本科(?:及以上)?\s+|硕士(?:及以上)?\s+|博士(?:及以上)?\s+|通信相关专业|计算机相关专业|自然语言处理|深度学习|机器学习|算法经验|开发经验|B端产品|大模型训练框架).*$","",t)
-        t=re.sub(r"\s*[-—]\s*(?:北京|上海|深圳|广州|杭州|南京|成都|西安|武汉|苏州|合肥|重庆|天津|青岛|济南|全国|远程)\s*$","",t)
+        # Public BOSS job cards append city, seniority, degree, skills and online-work labels after the role.
+        # Remove the first clearly labelled location/experience/degree segment; this keeps role names specific.
+        t=re.sub(r"[（(](?:北京|上海|深圳|广州|杭州|南京|成都|西安|武汉|苏州|合肥|重庆|天津|青岛|济南|全国|远程|在线)[）)]","",t)
+        cities="北京|上海|深圳|广州|杭州|南京|成都|西安|武汉|苏州|合肥|重庆|天津|青岛|济南|长沙|东莞|厦门|福州|郑州|宁波|无锡|南昌|哈尔滨|全国|远程|在线"
+        city_hit=re.search(r"\s+(?:"+cities+r")(?:\s|$)",t)
+        if city_hit: t=t[:city_hit.start()]
+        else:
+            meta_hit=re.search(r"\s+(?:在校/应届|应届毕业生|应届生|经验不限|\d+年以内|\d+[-—至]\d+年|本科(?:及以上)?|硕士(?:及以上)?|博士(?:及以上)?|大专(?:及以上)?|薪资面议|通信相关专业|计算机相关专业|自然语言处理|深度学习|机器学习|算法经验|开发经验|B端产品|大模型训练框架)\b.*$",t)
+            if meta_hit: t=t[:meta_hit.start()]
+        t=re.sub(r"\s*[-—]\s*(?:"+cities+r")\s*$","",t)
         t=t.strip(" -—_|｜")
     if source_id=="51job":
         t=re.sub(r"\s*[-—|｜_]\s*(?:前程无忧|51job).*$","",t,flags=re.I)
@@ -517,6 +525,54 @@ def extract_detail_fields_generic(text, raw_title=""):
     if exp: fields["experience"]=exp.group(1)
     if "全职" in top: fields["job_type"]="全职"
     elif "实习" in top: fields["job_type"]="实习"
+    return fields
+
+def extract_boss_card_company(links, role_index, page_url=""):
+    """Infer a company name from adjacent visible BOSS card links, without guessing from role text."""
+    company_tags=("计算机软件","智能硬件","电子商务","互联网","企业服务","人力资源服务","医疗健康","金融","教育培训","通信/网络设备","机器人","工业自动化","软件和信息技术服务业","信息安全","已上市","不需要融资","A轮","B轮","C轮","D轮","天使轮","人以上")
+    blocked={"boss直聘","校园招聘","查看更多","更多","公司","职位","实习","校招","应届生求职网"}
+    indices=list(range(role_index+1,min(len(links),role_index+5)))+list(range(role_index-1,max(-1,role_index-4),-1))
+    for idx in indices:
+        link=links[idx]
+        text=clean(link.get("text",""))
+        href=urljoin(page_url,link.get("href",""))
+        if not text or is_direct_detail_url(href) or text.lower() in blocked: continue
+        if len(text)>100 or any(x in text for x in ("HR反馈","立即投递","职位描述","查看更多岗位")): continue
+        candidate=text
+        tag_match=re.search(r"\s+(?:"+"|".join(map(re.escape,company_tags))+r")(?:\s|$)",candidate)
+        if tag_match:
+            candidate=candidate[:tag_match.start()].strip()
+        candidate=re.sub(r"\s+(?:已上市|不需要融资|A轮|B轮|C轮|D轮(?:及以上)?|天使轮|\d{1,5}(?:-\d{1,5})?人(?:以上)?).*$","",candidate).strip()
+        candidate=re.sub(r"\s+(?:在校/应届|应届|本科|硕士|博士|大专|互联网|智能硬件|企业服务).*$","",candidate).strip()
+        if not (2<=len(candidate)<=60) or candidate.lower() in blocked: continue
+        # Strong company-like signals win; otherwise use a short adjacent name only if it is not itself a role title.
+        if re.search(r"(?:有限公司|股份|集团|科技|大学|研究院|银行|证券|公司|中心|网络|智能|生物|机械|电子|汽车)$",candidate):
+            return candidate
+        if tag_match and not is_specific_role_title(candidate,"boss"):
+            return candidate
+        if len(candidate.split())==1 and not is_specific_role_title(candidate,"boss"):
+            return candidate
+    return ""
+
+def extract_boss_card_fields(raw_title, links, role_index, page_url=""):
+    """Parse only fields visibly present on a public BOSS vacancy card."""
+    raw=clean(raw_title)
+    title=clean_job_title(raw,"boss")
+    if not is_specific_role_title(title,"boss"):
+        return {}
+    company=extract_boss_card_company(links,role_index,page_url)
+    if not company:
+        return {}
+    fields={"title":title,"company":company}
+    fields.update({k:v for k,v in extract_detail_fields_generic(raw,raw).items() if v not in ("",None)})
+    hourly=re.search(r"(?<!\d)(\d+(?:\.\d+)?\s*[-—~至]\s*\d+(?:\.\d+)?\s*元/天)",raw)
+    if hourly: fields["salary"]=re.sub(r"\s+","",hourly.group(1))
+    cohort=year(raw)
+    if cohort:
+        fields["cohort"]=cohort
+        fields["cohort_evidence"]="page_text"
+        fields["cohort_confirmed"]=True
+    fields["source_card_text"]=raw[:500]
     return fields
 
 def extract_boss_fields(raw_title, headings, text):
@@ -938,8 +994,30 @@ def collect_source(src):
             if not title_ok: continue
             if not same_host(final,href): continue
             if "公开" in record_source:
-                # Never save an aggregator anchor as a job; fetch that detail page first.
-                if is_direct_detail_url(href) and href not in visited and href not in queue and len(queue)<max_pages:
+                # Public BOSS job cards themselves are useful leads when the direct detail page is
+                # protected by a platform security interstitial. Save only specific role titles with
+                # a real /job_detail/ URL and an adjacent company name; never call them verified.
+                if src.get("id")=="boss" and is_direct_detail_url(href):
+                    card=extract_boss_card_fields(a["text"],p.links,link_index,final)
+                    if card:
+                        company_name=card.pop("company")
+                        clean_title=card.pop("title")
+                        item=record(company_name,clean_title,href,record_source,card.get("cohort",""),5,
+                                    cohort_evidence=card.get("cohort_evidence",""))
+                        merge_detail_fields(item,card)
+                        item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
+                        item["verification_status"]="unknown"
+                        item["verification_note"]="BOSS公开校招卡片可见且有岗位级详情链接；详情访问可能受平台安全验证限制，本条未标记为核验成功"
+                        item["last_collected"]=TODAY; item["last_verified"]=""
+                        item["confirmed_by"]=[record_source]
+                        rows.append(item)
+                        seen.add(href)
+                    if href not in visited and href not in queue and len(queue)<max_pages:
+                        queue.append(href)
+                        diagnostics["discovery_pages_queued"]+=1
+                        diagnostics["direct_detail_links_queued"]+=1
+                # Other aggregators must have a parseable direct detail page before we retain them.
+                elif is_direct_detail_url(href) and href not in visited and href not in queue and len(queue)<max_pages:
                     queue.append(href)
                     diagnostics["discovery_pages_queued"]+=1
                     diagnostics["direct_detail_links_queued"]+=1

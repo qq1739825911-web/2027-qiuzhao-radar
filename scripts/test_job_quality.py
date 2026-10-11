@@ -6,8 +6,10 @@ from collect_public_sources import (
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
+    extract_boss_card_fields, extract_boss_card_company,
 )
 from quality_rules import assess, compact_json, should_publish_record
+from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
 
 def check(name, condition):
     if not condition:
@@ -172,6 +174,22 @@ boss_fields=extract_boss_fields(
     ["AIGC设计师"], "上海 本科 工作职责：制作AIGC内容。")
 check("BOSS detail title extracted from public heading", boss_fields.get("title")=="AIGC设计师")
 check("BOSS company extracted from public title", boss_fields.get("company")=="上海某某科技有限公司")
+boss_card_links=[
+    {"href":"/job_detail/0f452ccba3890a940nF92NW0E1dW.html","text":"27届校招数据安全研究员（博士后） 北京 在校/应届 博士 Python 计算机/信息安全相关专业"},
+    {"href":"/gongsi/demo.html","text":"具深智能 机器人"},
+]
+boss_card=extract_boss_card_fields(
+    boss_card_links[0]["text"],boss_card_links,0,"https://www.zhipin.com/school/")
+check("BOSS public card title is cleaned",boss_card.get("title")=="数据安全研究员（博士后）")
+check("BOSS public card company is inferred from adjacent visible company link",boss_card.get("company")=="具深智能")
+check("BOSS public card salary/degree/location metadata remains extractable",
+      boss_card.get("city")=="北京" and boss_card.get("degree")=="博士")
+check("BOSS public card explicitly shows 2027 cohort",boss_card.get("cohort")=="2027届")
+check("BOSS job_detail route is directly verifiable as a URL type",
+      verifier_is_direct_detail("https://www.zhipin.com/job_detail/0f452ccba3890a940nF92NW0E1dW.html"))
+check("BOSS security interstitial URL is not a verified vacancy",
+      is_security_interstitial_url("https://www.zhipin.com/web/passport/zp/security.html?callbackUrl=/job_detail/demo.html"))
+
 
 # Parse visible fields on a public YJS detail-page fixture; never invent absent values.
 fixture_title = "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网"
