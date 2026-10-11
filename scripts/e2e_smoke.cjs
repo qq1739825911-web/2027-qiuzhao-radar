@@ -9,7 +9,7 @@ const publishedJobs = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/j
 const aigcSourceRows = publishedJobs.filter(x => /AIGC影视创意制作|基美影业/.test(String(x.title || "") + " " + String(x.company || "")));
 console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
   total: publishedJobs.length,
-  matches: aigcSourceRows.map(x => ({id:x.id,title:x.title,company:x.company,city:x.city,locations:x.locations,keywords:x.keywords,source:x.source,url:x.source_url,cohort:x.cohort,status:x.status,granularity:x.granularity}))
+  matches: aigcSourceRows.map(x => ({id:x.id,title:x.title,company:x.company,city:x.city,locations:x.locations,keywords:x.keywords,source:x.source,url:x.source_url,cohort:x.cohort,status:x.status,granularity:x.granularity,salary:x.salary,degree:x.degree,responsibilities:String(x.responsibilities||"").length,requirements:String(x.requirements||"").length}))
 }));
 
 (async () => {
@@ -111,6 +111,20 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
     await page.locator("#q").fill("AIGC影视创意制作");
     await page.locator("#city").selectOption("上海");
     await page.waitForTimeout(350);
+    const runtimeAigcProbe = await page.evaluate(() => {
+      try {
+        const q = document.querySelector("#q").value.trim().toLocaleLowerCase();
+        const city = document.querySelector("#city").value.toLocaleLowerCase();
+        const rows = DATA.filter(x => /AIGC影视创意制作|基美影业/.test(String(x.title||"")+" "+String(x.company||"")));
+        const filteredRows = filtered();
+        return {
+          loadedCount: DATA.length, query: q, city,
+          rowMappings: rows.map(x => ({title:x.title,company:x.company,city:x.city,searchText:x.searchText,searchHit:String(x.searchText||"").includes(q),cityHit:String(x.city||"").toLocaleLowerCase().includes(city),status:x.status,bucket:isPriorityJob(x)?"priority":"lead",salary:x.salary,degree:x.degree,responsibilityChars:String(x.responsibilities||"").length,requirementsChars:String(x.requirements||"").length})),
+          filteredTargetRows: filteredRows.filter(x => /AIGC影视创意制作|基美影业/.test(String(x.title||"")+" "+String(x.company||""))).map(x=>({title:x.title,company:x.company,city:x.city,searchText:x.searchText}))
+        };
+      } catch (error) { return {error:String(error)}; }
+    });
+    console.log("FRONTEND_AIGC_FILTER_PROBE " + JSON.stringify(runtimeAigcProbe));
     for (const bucket of ["priority","lead"]) {
       await page.locator('[data-bucket="'+bucket+'"]').click();
       const yjsGroups = page.locator("#jobs .company-group");
