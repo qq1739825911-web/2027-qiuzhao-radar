@@ -96,48 +96,57 @@ const { chromium } = require("playwright");
 
     // Log the real AIGC+Shanghai detail fields. Missing public fields stay
     // explicitly unavailable; the test never invents salary/address values.
-    let aigcDetail = { found: false, salary: "", degree: "", city: "", address: "", responsibilityChars: 0, requirementsChars: 0 };
+    let aigcDetail = { found: false, salary: "", degree: "", city: "", address: "", responsibilityChars: 0, requirementsChars: 0, bucket: "", title: "" };
     await page.locator("#q").fill("AIGC影视创意制作");
     await page.locator("#city").selectOption("上海");
     await page.waitForTimeout(350);
-    const yjsGroups = page.locator("#jobs .company-group");
-    for (let gi=0; gi<await yjsGroups.count(); gi++) {
-      const group=yjsGroups.nth(gi);
-      await group.locator("summary").click();
-      const role=group.locator(".role-row").filter({hasText:"AIGC影视创意制作"}).first();
-      if (await role.count() > 0) {
-        await role.locator(".role-title-button").evaluate(el=>el.click());
-        await page.waitForFunction(() => document.querySelector("#jobDetailModal")?.classList.contains("show"));
-        const facts=await page.locator("#jobDetailContent .detail-fact").evaluateAll(els=>Object.fromEntries(els.map(el=>[el.querySelector("span")?.textContent?.trim()||"",el.querySelector("b")?.textContent?.trim()||""])));
-        const addressParts=await page.locator("#jobDetailContent .detail-company-info").allInnerTexts();
-        const cards=page.locator("#jobDetailContent .detail-card");
-        aigcDetail={found:true,salary:facts["薪资"]||"",degree:facts["学历要求"]||"",city:facts["工作城市"]||"",address:addressParts.join(" | "),responsibilityChars:await cards.nth(2).innerText().then(t=>t.length).catch(()=>0),requirementsChars:await cards.nth(3).innerText().then(t=>t.length).catch(()=>0)};
-        await page.locator("#jobDetailContent .detail-close").click();
-        await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
-        break;
+    for (const bucket of ["priority","lead"]) {
+      await page.locator('[data-bucket="'+bucket+'"]').click();
+      const yjsGroups = page.locator("#jobs .company-group");
+      for (let gi=0; gi<await yjsGroups.count(); gi++) {
+        const group=yjsGroups.nth(gi);
+        await group.locator("summary").click();
+        const role=group.locator(".role-row").filter({hasText:"AIGC影视创意制作"}).first();
+        if (await role.count() > 0) {
+          const visibleTitle=(await role.locator(".role-title-button").innerText()).trim();
+          await role.locator(".role-title-button").evaluate(el=>el.click());
+          await page.waitForFunction(() => document.querySelector("#jobDetailModal")?.classList.contains("show"));
+          const facts=await page.locator("#jobDetailContent .detail-fact").evaluateAll(els=>Object.fromEntries(els.map(el=>[el.querySelector("span")?.textContent?.trim()||"",el.querySelector("b")?.textContent?.trim()||""])));
+          const addressParts=await page.locator("#jobDetailContent .detail-company-info").allInnerTexts();
+          const cards=page.locator("#jobDetailContent .detail-card");
+          aigcDetail={found:true,salary:facts["薪资"]||"",degree:facts["学历要求"]||"",city:facts["工作城市"]||"",address:addressParts.join(" | "),responsibilityChars:await cards.nth(2).innerText().then(t=>t.length).catch(()=>0),requirementsChars:await cards.nth(3).innerText().then(t=>t.length).catch(()=>0),bucket,title:visibleTitle};
+          await page.locator("#jobDetailContent .detail-close").click();
+          await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
+          break;
+        }
+        if (await group.getAttribute("open")) await group.locator("summary").click();
       }
-      if (await group.getAttribute("open")) await group.locator("summary").click();
+      if (aigcDetail.found) break;
     }
 
-    // This is informational on older job snapshots; after the current Xpeng
-    // detail seeds are collected, the role should be visible without its 27届 chip in the title.
+    // A direct source page must yield a clean title after the revised crawler
+    // has reached and normalized the public Xpeng role details.
     let xiaopengRoleObserved=false;
     await page.locator("#reset").click();
     await page.locator("#q").fill("具身智能AI软件工程师");
     await page.locator("#city").selectOption("上海");
     await page.waitForTimeout(350);
-    const xpGroups=page.locator("#jobs .company-group");
-    for (let gi=0; gi<await xpGroups.count(); gi++) {
-      const group=xpGroups.nth(gi);
-      await group.locator("summary").click();
-      const role=group.locator(".role-row").filter({hasText:"具身智能AI软件工程师"}).first();
-      if (await role.count() > 0) {
-        const visibleTitle=(await role.locator(".role-title-button").innerText()).trim();
-        assert.ok(!/^[〖【\[]?\s*27届/.test(visibleTitle),"Xpeng title retains cohort wrapper: "+visibleTitle);
-        xiaopengRoleObserved=true;
-        break;
+    for (const bucket of ["priority","lead"]) {
+      await page.locator('[data-bucket="'+bucket+'"]').click();
+      const xpGroups=page.locator("#jobs .company-group");
+      for (let gi=0; gi<await xpGroups.count(); gi++) {
+        const group=xpGroups.nth(gi);
+        await group.locator("summary").click();
+        const role=group.locator(".role-row").filter({hasText:"具身智能AI软件工程师"}).first();
+        if (await role.count() > 0) {
+          const visibleTitle=(await role.locator(".role-title-button").innerText()).trim();
+          assert.ok(!/^[〖【\[]?\s*27届/.test(visibleTitle),"Xpeng title retains cohort wrapper: "+visibleTitle);
+          xiaopengRoleObserved=true;
+          break;
+        }
+        if (await group.getAttribute("open")) await group.locator("summary").click();
       }
-      if (await group.getAttribute("open")) await group.locator("summary").click();
+      if(xiaopengRoleObserved) break;
     }
     await page.locator("#reset").click();
     assert.equal(await page.locator("#q").inputValue(), "", "reset clears search");
