@@ -1,5 +1,16 @@
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const { chromium } = require("playwright");
+
+// Compare raw published rows with the UI results so a collector/publisher issue
+// is not misdiagnosed as a browser filter bug.
+const publishedJobs = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/jobs.json"), "utf8"));
+const aigcSourceRows = publishedJobs.filter(x => /AIGC影视创意制作|基美影业/.test(String(x.title || "") + " " + String(x.company || "")));
+console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
+  total: publishedJobs.length,
+  matches: aigcSourceRows.map(x => ({id:x.id,title:x.title,company:x.company,city:x.city,locations:x.locations,keywords:x.keywords,source:x.source,url:x.source_url,cohort:x.cohort,status:x.status,granularity:x.granularity}))
+}));
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
