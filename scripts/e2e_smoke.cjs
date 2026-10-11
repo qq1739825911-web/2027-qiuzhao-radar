@@ -148,6 +148,13 @@ const { chromium } = require("playwright");
       }
       if(xiaopengRoleObserved) break;
     }
+    assert.ok(aigcDetail.found, "specific AIGC Shanghai job must open its in-site detail modal; got " + JSON.stringify(aigcDetail));
+    assert.ok(aigcDetail.salary.includes("8千-1.5万"), "public AIGC salary should be extracted from the detail page: " + JSON.stringify(aigcDetail));
+    assert.ok(aigcDetail.degree.includes("本科"), "public AIGC degree should be extracted from the detail page: " + JSON.stringify(aigcDetail));
+    assert.ok(aigcDetail.city.includes("上海"), "AIGC role should remain filterable in Shanghai: " + JSON.stringify(aigcDetail));
+    assert.ok(aigcDetail.responsibilityChars > 40 && aigcDetail.requirementsChars > 40, "detail modal should include the public job duties and requirements: " + JSON.stringify(aigcDetail));
+    assert.ok(xiaopengRoleObserved, "Xpeng 27th-cohort AI software role should be available in Shanghai after collection");
+
     await page.locator("#reset").click();
     assert.equal(await page.locator("#q").inputValue(), "", "reset clears search");
     assert.equal(await page.locator("#city").inputValue(), "", "reset clears city");
