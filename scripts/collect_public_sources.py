@@ -678,7 +678,7 @@ def collect_source(src):
             if not should_discover_public_url(src.get("id",""),discovery_url): continue
             is_detail=is_direct_detail_url(discovery_url)
             if not is_detail and diagnostics["listing_pages_queued"]>=listing_limit: continue
-            if len(visited)+len(queue)>=max_pages or len(queue)>=max_pages: continue
+            if len(queue)>=max_pages: continue
             queue.append(discovery_url); scheduled.add(discovery_url)
             diagnostics["discovery_pages_queued"]+=1
             if not is_detail: diagnostics["listing_pages_queued"]+=1
@@ -705,7 +705,7 @@ def collect_source(src):
             if "公开岗位" in record_source or "公开聚合" in record_source:
                 link_record["confirmed_by"]=[record_source]
             rows.append(link_record)
-            if len(queue)<max_pages and len(visited)+len(queue)<max_pages and any(x.lower() in href.lower() for x in ROLE_HREF):
+            if len(queue)<max_pages and href not in visited and href not in queue and any(x.lower() in href.lower() for x in ROLE_HREF):
                 queue.append(href)
         # If a public official page exposes a 2027 recruitment announcement but no job-level
         # data, retain exactly one clearly-labelled lead instead of mislabelling it as a job.
