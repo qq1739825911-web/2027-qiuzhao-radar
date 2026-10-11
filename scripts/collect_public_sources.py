@@ -20,7 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]
 REGISTRY=ROOT/"data/company_sources.json"; INBOX=ROOT/"data/jobs.inbox.json"; MANIFEST=ROOT/"data/collection-manifest.json"
 TODAY=str(date.today())
 STAMP=datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-HEADERS={"User-Agent":"2027-Qiuzhao-Radar-PublicCollector/3.0"}
+HEADERS={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36","Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8","Accept-Language":"zh-CN,zh;q=0.9,en;q=0.8","Cache-Control":"no-cache"}
 
 JOB_WORDS=("工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","管培生","管理培训生","咨询","教师","医生","护士","质量","项目经理")
 CONCRETE_WORDS=("AIGC","AI产品","AI应用","视频","影视","创意制作","制作","创作","动画","短视频","剪辑","编导","文案","游戏","直播","摄影","工程师","开发","研发","算法","数据","产品经理","产品专员","运营","设计师","视觉","交互","销售","营销","市场","财务","审计","法务","人力资源","供应链","采购","机械","电气","嵌入式","测试","运维","安全","研究员","研究岗","行业研究","分析师","分析岗","管培生","管理培训生","培训生","咨询","教师","医生","护士","质量","项目经理","策划","内容运营","新媒体","客服","行政","人事","风控","风险","信贷","会计","策略","助理","客户经理","技术支持","商业分析","投资","证券","保险","精算","编辑","翻译","业务专员","运营岗","产品运营","品牌","公关","电商","市场拓展","Sales","Marketing","Analyst","Engineer","Intern","Associate","Manager","Specialist","Consultant","Accountant","Finance","Risk","Audit","Legal","Research","Strategy","Operations","Supply Chain","Procurement","Quality","Manufacturing","Mechanical","Electrical","Clinical","Medical","Education","Teacher","Editor","Content","Copywriter","Designer","Design","Product","Business","HR","Data Science","Data Analyst")
