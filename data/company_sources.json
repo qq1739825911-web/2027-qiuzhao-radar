@@ -18,8 +18,11 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "公开岗位详情页；每轮最多访问40个公开详情页，优先岗位级记录并保留来源标识。",
+    "notes": "从公开校招职位/日程/专场列表发现新链接并抓取公开详情；限速分页；未登录可见数据优先，详情未验证的职位只放待核验区。",
     "seed_urls": [
+      "https://www.nowcoder.com/jobs/recommend/campus",
+      "https://www.nowcoder.com/jobs/school/schedule?tab=2",
+      "https://www.nowcoder.com/jobs/activity/v2/special-activity/index/2027QZzc",
       "https://www.nowcoder.com/jobs/detail/462572",
       "https://www.nowcoder.com/jobs/detail/462503",
       "https://www.nowcoder.com/jobs/detail/462504",
@@ -38,30 +41,30 @@
       "https://www.nowcoder.com/jobs/detail/469521",
       "https://www.nowcoder.com/jobs/detail/464800"
     ],
-    "max_pages": 40,
-    "max_candidates": 1200
+    "max_pages": 60,
+    "max_candidates": 1500,
+    "listing_page_limit": 15
   },
   {
     "id": "yingjiesheng",
     "company": "应届生求职网",
     "type": "public_job_aggregator",
-    "url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+    "url": "https://www.yingjiesheng.com/",
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "从公开职位详情页提取真实可见薪资、城市、学历、职责、要求、地址和公司信息；详情不清晰或届别证据不足的记录只进入待核验区。每轮优先检查固定的岗位详情样本，不把招聘首页当具体岗位。",
+    "notes": "V1.5：以公开主页、分类求职目录、职位分类子站和公开详情页为发现入口；跨 yingjiesheng.com/.net 相关子域名发现公开职位列表、分类、分页和详情链接。每轮最多80页并限速；列表链接先进入待核验区，只有实际详情和质量规则通过后才提升可信度；不采集登录后/会员信息，不绕过验证。",
     "seed_urls": [
+      "https://www.yingjiesheng.com/",
+      "https://www.yingjiesheng.com/major/",
+      "https://zhiwei.yingjiesheng.com/",
+      "https://q.yingjiesheng.com/",
       "https://m.yingjiesheng.com/jobdetail/170935981",
-      "https://m.yingjiesheng.com/jobdetail/173508261",
-      "https://m.yingjiesheng.com/jobdetail/173505576",
-      "https://m.yingjiesheng.com/job-008-098-278.html",
-      "https://m.yingjiesheng.com/job-008-102-094.html",
-      "https://m.yingjiesheng.com/jobdetail/163535411",
-      "https://m.yingjiesheng.com/jobdetail/152284775",
-      "https://m.yingjiesheng.com/jobdetail/157306881",
-      "https://m.yingjiesheng.com/jobdetail/169863772"
+      "https://m.yingjiesheng.com/jobdetail/173508261"
     ],
-    "max_pages": 12
+    "max_pages": 80,
+    "max_candidates": 2600,
+    "listing_page_limit": 30
   },
   {
     "id": "iguopin",
@@ -346,6 +349,23 @@
       "https://job.citicbank.com/"
     ],
     "max_pages": 4
+  },
+  {
+    "id": "boss",
+    "company": "BOSS直聘",
+    "type": "public_job_aggregator",
+    "url": "https://www.zhipin.com/school/",
+    "access": "public",
+    "trust": "medium",
+    "enabled": true,
+    "notes": "公开校园招聘列表采集源：只抓取匿名访问可见的校招列表、分页和职位详情；不登录、不调用私有接口、不绕过验证码/反爬。若公开页面返回访问限制则记录失败并保留官网入口，不声称覆盖全部平台岗位。",
+    "seed_urls": [
+      "https://www.zhipin.com/school/",
+      "https://www.zhipin.com/xiaoyuan/renshebu/zywl/brqw/"
+    ],
+    "max_pages": 60,
+    "max_candidates": 1800,
+    "listing_page_limit": 12
   },
   {
     "id": "qiuzhaowang",

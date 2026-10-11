@@ -4,6 +4,7 @@ from datetime import date
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
+    same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields,
 )
 from quality_rules import assess, compact_json
 
@@ -55,6 +56,31 @@ check("Tencent detail post URL recognized", is_direct_detail_url("https://career
 check("Meituan detail ID URL recognized", is_direct_detail_url("https://zhaopin.meituan.com/web/position/detail?jobUnionId=4683995941&highlightType=campus"))
 check("HR list without jobId rejected", not is_direct_detail_url("https://www.nowcoder.com/jobs/hr/31842"))
 check("generic official list rejected", not is_direct_detail_url("https://career.huawei.com/cn/campus-recruitment-job-list"))
+
+# Public list discovery expands only within allowed recruitment-site domains.
+check("YJS related public category subdomain is allowed",
+      same_host("https://www.yingjiesheng.com/major/", "https://zhiwei.yingjiesheng.com/major/"))
+check("YJS list/category page is discoverable",
+      should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/major/"))
+check("YJS job-detail page is discoverable",
+      should_discover_public_url("yingjiesheng", "https://m.yingjiesheng.com/jobdetail/173508261"))
+check("YJS unrelated host is rejected",
+      not should_discover_public_url("yingjiesheng", "https://example.com/jobdetail/173508261"))
+check("BOSS public campus page is discoverable",
+      should_discover_public_url("boss", "https://www.zhipin.com/school/"))
+check("BOSS public detail route is recognized",
+      is_direct_detail_url("https://www.zhipin.com/job_detail/abc123.html"))
+check("Nowcoder public listing route is discoverable",
+      should_discover_public_url("nowcoder", "https://www.nowcoder.com/jobs/recommend/campus"))
+check("broad major-only strings are not concrete roles",
+      not is_specific_role_title("商务英语"))
+check("specific role with qualification suffix remains a role",
+      is_specific_role_title("销售管培生专业不限"))
+boss_fields=extract_boss_fields(
+    "AIGC设计师招聘_上海某某科技有限公司招聘信息-BOSS直聘",
+    ["AIGC设计师"], "上海 本科 工作职责：制作AIGC内容。")
+check("BOSS detail title extracted from public heading", boss_fields.get("title")=="AIGC设计师")
+check("BOSS company extracted from public title", boss_fields.get("company")=="上海某某科技有限公司")
 
 # Parse visible fields on a public YJS detail-page fixture; never invent absent values.
 fixture_title = "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网"
