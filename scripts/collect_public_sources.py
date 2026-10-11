@@ -1,4 +1,4 @@
-"""V3 public recruitment collector.
+"""V5.5 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -14,6 +14,7 @@ from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from urllib.parse import urljoin,urlparse,urlunparse,parse_qsl,urlencode,quote
 from urllib.request import Request,urlopen
+from urllib.error import HTTPError, URLError
 from http.client import IncompleteRead
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -139,15 +140,45 @@ def _shutdown_browser_worker():
 atexit.register(_shutdown_browser_worker)
 
 def fetch(url,source_id=""):
-    req=Request(url,headers=HEADERS)
-    with urlopen(req,timeout=10) as r:
+    # Yingjiesheng's older public category URLs often circulate as HTTP links.
+    # Prefer HTTPS, but if it fails at the transport/404 layer only, retry the
+    # same allow-listed public URL over HTTP. Never fall back after 401/403/429.
+    request_urls=[url]
+    if source_id=="yingjiesheng" and same_host("https://www.yingjiesheng.com/",url):
+        p=urlparse(url)
+        if p.scheme.lower() in {"http","https"}:
+            secure=urlunparse(("https",p.netloc,p.path,p.params,p.query,p.fragment))
+            plain=urlunparse(("http",p.netloc,p.path,p.params,p.query,p.fragment))
+            request_urls=list(dict.fromkeys((secure,plain)))
+    last_error=None
+    raw=None
+    final=""
+    enc="utf-8"
+    for index,request_url in enumerate(request_urls):
+        req=Request(request_url,headers=HEADERS)
         try:
-            raw=r.read(4_000_000)
-        except IncompleteRead as exc:
-            raw=exc.partial or b""
-            if not raw:
-                raise
-        enc=r.headers.get_content_charset() or "utf-8"; final=r.geturl()
+            with urlopen(req,timeout=8 if source_id=="yingjiesheng" else 10) as r:
+                try:
+                    raw=r.read(4_000_000)
+                except IncompleteRead as exc:
+                    raw=exc.partial or b""
+                    if not raw:
+                        raise
+                enc=r.headers.get_content_charset() or "utf-8"
+                final=r.geturl()
+            break
+        except HTTPError as exc:
+            if index+1<len(request_urls) and exc.code not in (401,403,429):
+                last_error=exc
+                continue
+            raise
+        except (URLError,TimeoutError) as exc:
+            last_error=exc
+            if index+1<len(request_urls):
+                continue
+            raise
+    if raw is None:
+        raise last_error or URLError("public page request returned no response")
     static_html=raw.decode(enc,errors="ignore")
     meta={"mode":"static","browser_attempted":False,"browser_success":False,
           "browser_blocked":False,"browser_body_chars":0,"browser_links":0,"browser_http_status":0,
@@ -208,6 +239,14 @@ def canonical(u):
     encoded_path=quote(p.path,safe="/:@()*+,;=-._~%")
     return urlunparse((p.scheme.lower(),p.netloc.lower(),encoded_path.rstrip("/"),"",urlencode(query,doseq=True),""))
 
+def normalize_source_url(source_id,url):
+    """Normalize discovered public listing URLs without inventing paths."""
+    value=canonical(str(url or ""))
+    p=urlparse(value)
+    if source_id=="yingjiesheng" and p.scheme.lower()=="http" and same_host("https://www.yingjiesheng.com/",value):
+        return urlunparse(("https",p.netloc,p.path,p.params,p.query,p.fragment))
+    return value
+
 def same_host(a,b):
     """Same host or approved recruitment-site subdomains (public pages only)."""
     ha=urlparse(a).netloc.lower().split(":")[0]
@@ -249,18 +288,23 @@ def should_discover_public_url(source_id,url):
         if not same_host("https://job.iguopin.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         if any(x in path for x in ("/login","/register","/resume","/member","/account","/app")): return False
-        return (path in {"/","/joblist","/jobdetail","/job-detail","/job/detail"}
-                or path.startswith(("/joblist/","/jobdetail/","/job-detail/","/position/","/positions/","/campus/","/article/","/news/"))
-                or any(k in p.query.lower() for k in ("channel=campus","channel=social","page=","pageindex=","jobid=","positionid=")))
+        return (path in {"/","/job","/joblist","/jobdetail","/job-detail","/job/detail"}
+                or path.startswith(("/job/","/joblist/","/jobdetail/","/job-detail/","/job/detail/","/position/","/positions/","/campus/","/article/","/news/"))
+                or any(k in p.query.lower() for k in ("channel=campus","channel=social","page=","pageindex=","pageno=","jobid=","positionid=","keyword=","experience=","education=")))
     if source_id=="51job":
         if not same_host("https://xy.51job.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         if any(x in path for x in ("/login","/register","/resume","/member","/account","/app/")): return False
         host=urlparse(url).netloc.lower()
+        # Public employer microsites often link company-profile pages ending in
+        # .html. They are not vacancies and used to pollute the rotating pool.
+        # Keep campus microsites for listing discovery, and only accept true
+        # numeric job-detail pages under jobs./company. hosts.
         if host.startswith("campus."): return True
-        if not host.startswith(("xy.","jobs.","company.")): return False
+        if host.startswith(("jobs.","company.")): return is_direct_detail_url(url)
+        if not host.startswith("xy."): return False
         allowed_path=(path in {"/","/default-xs.php","/default.php"}
-                      or path.startswith(("/jobs/","/job/","/campus/","/company/","/position/","/positions/","/jobdetail/","/job-detail/"))
+                      or path.startswith(("/jobs/","/job/","/campus/","/position/","/positions/","/jobdetail/","/job-detail/"))
                       or path.endswith((".html",".php")))
         allowed_query=any(k in p.query.lower() for k in ("page=","pageno=","jobid=","positionid=","keyword=","lang=e"))
         return allowed_path or allowed_query
@@ -448,7 +492,51 @@ def is_specific_role_title(title, source_id=""):
     if re.search(r"(?:最新更新|招聘信息|截止时间|职位列表|岗位列表|职位分类|岗位分类|专业目录)",t): return False
     if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","职位精选","职场优选","企业墙","地点：","地点:","校招高薪榜","薪资超","HR刚","HR今日","HR在线","助力简历","投后必反馈","全场景覆盖","数字化运营与服务能力突出")): return False
     stripped=re.sub(r"(?:专业不限|可接受应届生|接受应届生|应届生优先|相关专业)$","",t).strip()
-    return len(stripped)>=2 and not stripped.endswith(("类","方向","体系","专业"))
+    bare=re.sub(r"[（(](?:校招|校园招聘|实习生?|应届生?|应届毕业生|20\d{2}届|\d{2}届)[）)]","",stripped)
+    bare=re.sub(r"(?:校招|校园招聘|实习生?|应届生?)$","",bare).strip()
+    # A role should be granular enough to distinguish the actual job from a
+    # major/discipline heading. Do not publish bare category words as vacancy names.
+    generic_only={"工程师","设计师","设计","销售","研发","开发","算法","数据","产品","运营","财务","市场","客服","行政","人事","专员","助理","管培生","管理培训生","经理","分析师","咨询","研究员","翻译","编辑","机械","电气","物流","技术","工程","管理","培训生"}
+    return len(stripped)>=2 and bare not in generic_only and not stripped.endswith(("类","方向","体系","专业"))
+
+def clean_yingjiesheng_company_name(value):
+    company=clean(value or "")
+    company=re.sub(r"^\s*[\[【（(][^\]】）)]{1,15}[\]】）)]\s*","",company)
+    company=re.sub(r"\s*(?:招聘信息|校园招聘|招聘启事)$","",company)
+    return company.strip(" -—_|｜")
+
+def split_role_title_candidates(value,source_id=""):
+    """Split multi-role detail headings into separate role-level records."""
+    text=clean_job_title(value,source_id)
+    parts=[clean_job_title(part,source_id) for part in re.split(r"\s*[|｜丨、；;]\s*",text) if part.strip()]
+    result=[]
+    for part in parts:
+        if is_specific_role_title(part,source_id) and part not in result:
+            result.append(part)
+    return result
+
+def is_boss_campus_card_relevant(raw_title):
+    """Keep specific BOSS campus leads but discard clear non-graduate/old-cycle cards."""
+    raw=clean(raw_title or "")
+    title=clean_job_title(raw,"boss")
+    if not is_specific_role_title(title,"boss"):
+        return False
+    year_marker=re.search(r"(?<!\d)(?:20(?:2[0-6])|2[0-6])\s*(?:(?:届|年)\s*)?(?:校招|校园招聘|秋招|春招)",raw)
+    cohort=year(raw)
+    if (year_marker or (cohort and cohort!="2027届")) and not re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|秋招|春招)|(?<!\d)27\s*(?:届|校招|校园招聘|秋招|春招)",raw):
+        return False
+    positive=bool(re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|秋招|春招)|(?<!\d)27\s*(?:届|校招|校园招聘|秋招|春招)|应届|在校/应届|应届毕业生|毕业生",raw))
+    if re.search(r"(?:3\s*[-—至]\s*5|5\s*[-—至]\s*10|10\s*年以上)\s*年",raw) and not positive:
+        return False
+    if re.search(r"(?:司机|店员|保洁|保安|传菜员|服务员|日结|小时工|外卖骑手)",raw) and not positive:
+        return False
+    if "兼职" in raw and not positive:
+        return False
+    return True
+
+def should_queue_detail(source_id,url):
+    """Avoid repeated BOSS detail requests after public cards are blocked by security walls."""
+    return is_direct_detail_url(url) and source_id!="boss"
 
 def extract_qiuzhaowang_role_names(text, link_hint=""):
     """Extract concrete QZW job titles from visible detail text or its public listing card."""
@@ -539,8 +627,10 @@ def extract_yingjiesheng_fields(raw_title, text, url):
         if not company:
             m=re.search(r"(?:^|\s)([^\s]{2,40}有限公司)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
             if m: company=m.group(1).strip()
-    fields["title"]=clean_job_title(title,"yingjiesheng")
-    fields["company"]=company
+    role_titles=split_role_title_candidates(title,"yingjiesheng")
+    fields["role_titles"]=role_titles
+    fields["title"]=role_titles[0] if role_titles else clean_job_title(title,"yingjiesheng")
+    fields["company"]=clean_yingjiesheng_company_name(company)
     top=(text or "")[:3500]
     annual_salary=re.search(r"(?:年薪\s*)?\d+(?:\.\d+)?\s*(?:万元|万|元)(?:\s*/\s*年|/年|每年)",top)
     if annual_salary:
@@ -654,7 +744,7 @@ def extract_boss_card_fields(raw_title, links, role_index, page_url=""):
     """Parse only fields visibly present on a public BOSS vacancy card."""
     raw=clean(raw_title)
     title=clean_job_title(raw,"boss")
-    if not is_specific_role_title(title,"boss"):
+    if not is_boss_campus_card_relevant(raw_title):
         return {}
     company=extract_boss_card_company(links,role_index,page_url)
     if not company:
@@ -736,7 +826,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.5","granularity:"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -841,7 +931,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -984,6 +1074,8 @@ def collect_source(src):
         elif src.get("id")=="91bangtu":
             record_source="91邦途公开聚合"
         page_title=clean_job_title(detail_fields.get("title") or detail_heading or raw_page_title,src.get("id",""))
+        detail_role_titles=list(detail_fields.get("role_titles") or []) if src.get("id")=="yingjiesheng" else []
+        detail_fields_for_merge={k:v for k,v in detail_fields.items() if k not in {"title","role_titles","company"}}
         if src.get("id")=="nowcoder":
             page_title=clean_job_title(detail_heading or p.page_title,"nowcoder")
         if is_direct_detail_url(final):
@@ -1039,14 +1131,18 @@ def collect_source(src):
                 item["verification_status"]="link_alive"; item["verification_http_status"]=200
                 item["verification_note"]="公开岗位详情页可读取；届别与有效期仍需独立核验"
                 rows.append(item)
-        page_title_ok=is_specific_role_title(page_title,src.get("id","")) if "公开" in record_source else is_concrete_role_title(page_title,src.get("id",""))
-        if src.get("id")=="boss" and not (detail_fields.get("company") or (page_company and page_company not in {company,"BOSS直聘"})):
-            page_title_ok=False
-        if page_title and page_title_ok:
-            sc=score(page_title,final,page_text)
+        candidate_page_titles=detail_role_titles or ([page_title] if page_title else [])
+        for candidate_page_title in candidate_page_titles:
+            candidate_page_title=clean_job_title(candidate_page_title,src.get("id",""))
+            page_title_ok=is_specific_role_title(candidate_page_title,src.get("id","")) if "公开" in record_source else is_concrete_role_title(candidate_page_title,src.get("id",""))
+            if src.get("id")=="boss" and not (detail_fields.get("company") or (page_company and page_company not in {company,"BOSS直聘"})):
+                page_title_ok=False
+            if not candidate_page_title or not page_title_ok:
+                continue
+            sc=score(candidate_page_title,final,page_text)
             if sc>=5 and is_direct_detail_url(final):
-                item=record(page_company,page_title,final,record_source,cohort,sc,cohort_evidence=cohort_evidence)
-                merge_detail_fields(item,detail_fields)
+                item=record(page_company,candidate_page_title,final,record_source,cohort,sc,cohort_evidence=cohort_evidence)
+                merge_detail_fields(item,detail_fields_for_merge)
                 item["cohort"]=item.get("cohort") or cohort or ""
                 item["cohort_evidence"]=item.get("cohort_evidence") or cohort_evidence or ""
                 item["cohort_confirmed"]=bool(item.get("cohort_confirmed") or item["cohort_evidence"])
@@ -1094,6 +1190,11 @@ def collect_source(src):
             if not discovery_url or discovery_url in visited or discovery_url in scheduled: continue
             if not should_discover_public_url(src.get("id",""),discovery_url): continue
             is_detail=is_direct_detail_url(discovery_url)
+            if source_id=="boss" and is_detail:
+                # BOSS vacancy links consistently redirect to a security interstitial;
+                # retain the card lead, but don't spend the page budget retrying detail URLs.
+                diagnostics["direct_detail_links_skipped_access_limit"]+=1
+                continue
             if (not is_detail) and src.get("id") in {"yingjiesheng","nowcoder","boss","51job","iguopin"}:
                 candidates=diagnostics["listing_url_candidates"]
                 if discovery_url not in candidates and len(candidates)<1200:
@@ -1132,10 +1233,8 @@ def collect_source(src):
                         item["confirmed_by"]=[record_source]
                         rows.append(item)
                         seen.add(href)
-                    if href not in visited and href not in queue and len(queue)<max_pages:
-                        queue.append(href)
-                        diagnostics["discovery_pages_queued"]+=1
-                        diagnostics["direct_detail_links_queued"]+=1
+                    # Do not enqueue the BOSS detail URL: the public list card is kept as a
+                    # pending lead, and the verifier will not treat a security redirect as alive.
                 # Other aggregators must have a parseable direct detail page before we retain them.
                 elif is_direct_detail_url(href) and href not in visited and href not in queue and len(queue)<max_pages:
                     queue.append(href)
@@ -1219,12 +1318,15 @@ def collect_source(src):
     diagnostics["role_records"]=len(role_rows)
     diagnostics["announcement_records"]=len(announcement_rows)
     diagnostics["portal_entries"]=len(entry_rows)
-    diagnostics["source_status"]=("ok" if role_rows else
-        ("detail_access_restricted" if diagnostics.get("direct_detail_requests_attempted",0)>0 and diagnostics.get("direct_detail_pages_visited",0)==0 and diagnostics.get("detail_redirects",0)>0 else
-         ("announcement_only" if announcement_rows else
-          ("entry_only" if entry_rows else
-           ("listing_only_no_job_details" if diagnostics["listing_pages_queued"] and visited else
-            ("reachable_no_records" if visited else "access_error"))))))
+    if src.get("id")=="boss" and role_rows and diagnostics["direct_detail_links_skipped_access_limit"]>0 and diagnostics["direct_detail_pages_visited"]==0:
+        diagnostics["source_status"]="public_card_leads_only"
+    else:
+        diagnostics["source_status"]=("ok" if role_rows else
+            ("detail_access_restricted" if diagnostics.get("direct_detail_requests_attempted",0)>0 and diagnostics.get("direct_detail_pages_visited",0)==0 and diagnostics.get("detail_redirects",0)>0 else
+             ("announcement_only" if announcement_rows else
+              ("entry_only" if entry_rows else
+               ("listing_only_no_job_details" if diagnostics["listing_pages_queued"] and visited else
+                ("reachable_no_records" if visited else "access_error"))))))
     diagnostics["parser_modes"]=[name for name,count in (("links",diagnostics["links_seen"]),("tables",diagnostics["tables_seen"]),("embedded_json",diagnostics["embedded_json_blocks"])) if count]
     return best_rows,visited,diagnostics
 
@@ -1242,18 +1344,19 @@ def main():
     for source in sources:
         source_id=source.get("id","")
         if source_id not in rotating_sources: continue
-        base_seeds=list(source.get("seed_urls") or [source.get("url","")])
-        base_set={canonical(u) for u in base_seeds if u}
+        base_seeds=[normalize_source_url(source_id,u) for u in (source.get("seed_urls") or [source.get("url","")])]
+        base_set={normalize_source_url(source_id,u) for u in base_seeds if u}
         stored_pool=[]
         for url in state["source_listing_url_pool"].get(source_id,[]):
-            normalized=canonical(str(url))
+            normalized=normalize_source_url(source_id,str(url))
             if normalized and normalized not in base_set and not is_direct_detail_url(normalized) and should_discover_public_url(source_id,normalized) and normalized not in stored_pool:
                 stored_pool.append(normalized)
         cursor=int(state["source_listing_cursor"].get(source_id,0))
         batch_size=int(source.get("rotation_seed_batch",12))
+        pool_limit=int(source.get("listing_pool_limit",600))
         batch,next_cursor=select_rotation_batch(stored_pool,cursor,batch_size)
         source["seed_urls"]=list(dict.fromkeys(base_seeds+batch))[:int(source.get("max_pages",80))]
-        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"next_cursor":next_cursor,"batch_size":batch_size}
+        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"next_cursor":next_cursor,"batch_size":batch_size,"pool_limit":pool_limit}
     rotation_start=int(state.get("qiuzhaowang_next_page",21))
     rotation_pages=[]
     page_num=rotation_start
@@ -1287,11 +1390,11 @@ def main():
                 base_set={canonical(u) for u in meta["base_seeds"] if u}
                 pool=list(meta["pool"])
                 for url in diag.get("listing_url_candidates",[]):
-                    normalized=canonical(str(url))
+                    normalized=normalize_source_url(source_id,str(url))
                     if (normalized and normalized not in base_set and not is_direct_detail_url(normalized)
                             and should_discover_public_url(source_id,normalized) and normalized not in pool):
                         pool.append(normalized)
-                state["source_listing_url_pool"][source_id]=pool[-600:]
+                state["source_listing_url_pool"][source_id]=pool[-meta["pool_limit"]:]
                 if not meta["pool"] and not meta["batch"]:
                     visited_listing={canonical(u) for u in diag.get("listing_urls_visited",[])}
                     positions=[i for i,url in enumerate(pool) if url in visited_listing]
@@ -1299,7 +1402,7 @@ def main():
                 else:
                     cursor=meta["next_cursor"]
                 state["source_listing_cursor"][source_id]=cursor
-                diag["listing_pool_size"]=len(pool)
+                diag["listing_pool_size"]=len(state["source_listing_url_pool"][source_id])
                 diag["listing_urls_visited_count"]=len(diag.get("listing_urls_visited",[]))
             all_rows.extend(rows)
             a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
@@ -1314,7 +1417,7 @@ def main():
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
                             "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
                             "role_records":diag.get("role_records",0),
@@ -1338,7 +1441,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.4","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.5","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

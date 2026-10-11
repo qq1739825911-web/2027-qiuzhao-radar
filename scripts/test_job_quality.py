@@ -8,6 +8,8 @@ from collect_public_sources import (
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
+    normalize_source_url, clean_yingjiesheng_company_name, split_role_title_candidates,
+    is_boss_campus_card_relevant, should_queue_detail,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
@@ -165,6 +167,25 @@ check("broad major-only strings are not concrete roles",
       not is_specific_role_title("商务英语"))
 check("specific role with qualification suffix remains a role",
       is_specific_role_title("销售管培生专业不限"))
+check("bare generic engineer title is rejected for job granularity",
+      not is_specific_role_title("工程师"))
+check("bare generic designer title is rejected for job granularity",
+      not is_specific_role_title("设计"))
+check("specific engineer title remains accepted",
+      is_specific_role_title("研发工程师"))
+check("multi-role YJS detail headers split into distinct titles",
+      split_role_title_candidates("电气设计|软件设计","yingjiesheng")==["电气设计","软件设计"])
+check("YJS province wrapper is removed from the company name",
+      clean_yingjiesheng_company_name("[广东]珠海市龙图光罩科技有限公司")=="珠海市龙图光罩科技有限公司")
+check("explicit 2025 BOSS campus cards are rejected",
+      not is_boss_campus_card_relevant("〖2025华为校园招聘〗软开/AI/算法工程师 北京 在校/应届 本科"))
+check("specific 2027 BOSS card remains accepted",
+      is_boss_campus_card_relevant("2027-硬件工程师-北京 北京 在校/应届 本科"))
+check("non-graduate lifestyle/side-job BOSS card is rejected",
+      not is_boss_campus_card_relevant("便利店店员家门口上班 工作不累 薪资高 经验不限 初中及以下"))
+check("BOSS access-wall detail requests are skipped while other source details remain queued",
+      not should_queue_detail("boss","https://www.zhipin.com/job_detail/demo.html")
+      and should_queue_detail("nowcoder","https://www.nowcoder.com/jobs/detail/462503"))
 check("QZW generic majors excluded from published jobs",
       not should_publish_record({"source":"秋招网公开聚合","title":"商务英语","granularity":"review"}))
 check("QZW real role title remains publishable when detail URL is present",
@@ -189,6 +210,14 @@ check("YJS mobile public listing path is discoverable",
       should_discover_public_url("yingjiesheng", "https://m.yingjiesheng.com/other/index.html"))
 check("YJS search subdomain root is discoverable",
       should_discover_public_url("yingjiesheng", "https://s.yingjiesheng.com/"))
+check("YJS old HTTP category URLs are normalized to HTTPS",
+      normalize_source_url("yingjiesheng","http://zhiwei.yingjiesheng.com/riyu/tianjin")=="https://zhiwei.yingjiesheng.com/riyu/tianjin")
+check("Guopin current public keyword category routes are discoverable",
+      should_discover_public_url("iguopin","https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88"))
+check("51job company profile pages are rejected as listing candidates",
+      not should_discover_public_url("51job","https://jobs.51job.com/all/co114386.html"))
+check("51job employer campus microsites remain discoverable",
+      should_discover_public_url("51job","https://campus.51job.com/coach2027/index.html"))
 check("Unicode paths are percent-encoded before requests",
       "%E5" in canonical("https://m.yingjiesheng.com/地区招聘/index.html"))
 check("common BOSS major-directory cards are excluded",

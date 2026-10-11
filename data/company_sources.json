@@ -54,7 +54,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.5.2：重点扩展公开主页、专业分类、职位分类和分页 URL 的轮转发现；每轮上限120页并限速，优先抓取岗位级详情。列表/企业入口只能进待核验线索，不得因可访问就当成正式职位；不访问登录/会员数据，不绕过验证码或访问限制。",
+    "notes": "V1.6：优先完整轮转公开首页、专业/职位分类、分页和详情链接；HTTP旧链接先试HTTPS，传输失败时只对同一公开白名单URL有限回退。每轮160页封顶并限速，详情/届别证据不足仍留待核验，不代表平台全量覆盖。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
@@ -68,10 +68,11 @@
       "https://m.yingjiesheng.com/jobdetail/170935981",
       "https://m.yingjiesheng.com/jobdetail/173508261"
     ],
-    "max_pages": 120,
-    "max_candidates": 5000,
-    "listing_page_limit": 35,
-    "rotation_seed_batch": 15
+    "max_pages": 160,
+    "max_candidates": 8000,
+    "listing_page_limit": 50,
+    "rotation_seed_batch": 24,
+    "listing_pool_limit": 1000
   },
   {
     "id": "51job",
@@ -81,37 +82,39 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.5.4：前程无忧允许把站内公开HTTP校园专题链接升级为HTTPS后渲染；在专题页仅点击可见的岗位/校园招聘导航标签，以便读取JS切换展示的公开职位。禁止登录/投递/验证码互动，重定向到非白名单域名则立即停止。",
+    "notes": "V1.6：保留公开校园招聘专题页面与岗位级数字ID详情；拒绝 jobs.51job.com 下的企业介绍页进入轮转池，安全验证页面不绕过。",
     "seed_urls": [
       "https://xy.51job.com/",
       "https://xy.51job.com/default-xs.php?lang=e"
     ],
     "max_pages": 40,
     "max_candidates": 1400,
-    "listing_page_limit": 12,
-    "rotation_seed_batch": 10
+    "listing_page_limit": 20,
+    "rotation_seed_batch": 12,
+    "listing_pool_limit": 200
   },
   {
     "id": "iguopin",
     "company": "国聘",
     "type": "public_job_aggregator",
-    "url": "https://job.iguopin.com/",
+    "url": "https://www.iguopin.com/job?channel=campus",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "V1.5.4：国聘增加网站当前公开校园/社会招聘列表使用的campus_nature、nature_cn参数组合；浏览器等候页面出现可见文字/链接并记录标题、最终URL、HTTP状态与文字预览。若依旧返回空白DOM，将诊断为静态/渲染无内容，不伪造岗位。",
+    "notes": "V1.6：切换到当前公开岗位列表/分类路由（校园/社会、IT、工程师、数据开发）；只采集浏览器匿名可见的岗位卡片和详情，登录/验证拦截后停止。",
     "seed_urls": [
-      "https://job.iguopin.com/",
-      "https://job.iguopin.com/jobList?campus_nature=&channel=campus&nature_cn=",
-      "https://job.iguopin.com/jobList?campus_nature=&channel=social&nature_cn=",
-      "https://job.iguopin.com/jobList?channel=campus",
-      "https://job.iguopin.com/jobList?channel=social",
-      "https://www2.iguopin.com/"
+      "https://www.iguopin.com/",
+      "https://www.iguopin.com/job?channel=campus",
+      "https://www.iguopin.com/job?channel=social",
+      "https://www.iguopin.com/job/list?keyword=IT%2F%E4%BA%92%E8%81%94%E7%BD%91",
+      "https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88",
+      "https://www.iguopin.com/job/list?keyword=%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91"
     ],
-    "max_pages": 30,
-    "max_candidates": 1600,
-    "listing_page_limit": 12,
-    "rotation_seed_batch": 10
+    "max_pages": 40,
+    "max_candidates": 2000,
+    "listing_page_limit": 20,
+    "rotation_seed_batch": 12,
+    "listing_pool_limit": 180
   },
   {
     "id": "mohrss",
@@ -395,15 +398,16 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.5.2：仅遍历公开校园招聘页面和真实 /job_detail/ 岗位详情；明确拒绝 /web/geek/job 通用搜索/分类页，防止将搜索词误当岗位。仅匿名可见页面，不登录、不调用未公开接口、不绕过验证码/反爬；详情访问受限则放待核验或报告零产出。",
+    "notes": "V1.6：增加公开校招分类页预算；已确认岗位详情频繁跳转安全验证页，因此仅保留可见卡片中的具体岗位线索，不反复请求被拦详情、不绕过验证。剔除明确旧届、非应届兼职/生活服务类卡片。",
     "seed_urls": [
       "https://www.zhipin.com/school/",
       "https://www.zhipin.com/xiaoyuan/renshebu/zywl/brqw/"
     ],
-    "max_pages": 80,
-    "max_candidates": 2400,
-    "listing_page_limit": 18,
-    "rotation_seed_batch": 18
+    "max_pages": 110,
+    "max_candidates": 3500,
+    "listing_page_limit": 45,
+    "rotation_seed_batch": 24,
+    "listing_pool_limit": 120
   },
   {
     "id": "qiuzhaowang",
