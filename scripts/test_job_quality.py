@@ -6,7 +6,7 @@ from collect_public_sources import (
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields,
 )
-from quality_rules import assess, compact_json
+from quality_rules import assess, compact_json, should_publish_record
 
 def check(name, condition):
     if not condition:
@@ -76,6 +76,16 @@ check("broad major-only strings are not concrete roles",
       not is_specific_role_title("商务英语"))
 check("specific role with qualification suffix remains a role",
       is_specific_role_title("销售管培生专业不限"))
+check("QZW generic majors excluded from published jobs",
+      not should_publish_record({"source":"秋招网公开聚合","title":"商务英语","granularity":"review"}))
+check("QZW real role title remains publishable",
+      should_publish_record({"source":"秋招网公开聚合","title":"销售管培生专业不限","granularity":"review"}))
+check("official recruitment entry leads are retained separately",
+      should_publish_record({"source":"秋招网公开聚合","title":"2027届秋招网官方招聘入口线索","granularity":"entry"}))
+check("non-QZW review leads are not discarded by QZW filter",
+      should_publish_record({"source":"应届生求职网公开岗位","title":"商务英语","granularity":"review"}))
+check("QZW platform rollup title is cleaned to empty",
+      clean_job_title("2027届最新更新校招岗位｜招聘信息与截止时间｜秋招网","qiuzhaowang")=="")
 boss_fields=extract_boss_fields(
     "AIGC设计师招聘_上海某某科技有限公司招聘信息-BOSS直聘",
     ["AIGC设计师"], "上海 本科 工作职责：制作AIGC内容。")

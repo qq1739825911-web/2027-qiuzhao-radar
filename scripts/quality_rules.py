@@ -1,11 +1,22 @@
 """Single source of truth for deciding which job records deserve priority review."""
 import json
 from datetime import date, timedelta
-from collect_public_sources import clean_job_title, is_concrete_role_title, is_direct_detail_url, sanitize_extracted_text
+from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text
 
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
 COHORT_EVIDENCE_OK = {"page_text", "visible_announcement_title", "job_detail_title", "job_detail_text"}
+
+def should_publish_record(row):
+    """Remove historic QZW category/major-directory junk from the visible job database."""
+    source=str(row.get("source",""))
+    granularity=str(row.get("granularity",""))
+    if "秋招网" not in source:
+        return True
+    if granularity in {"announcement","entry"}:
+        return True
+    title=clean_job_title(row.get("title",""),"qiuzhaowang")
+    return is_specific_role_title(title)
 
 def compact_json(payload):
     """Serialize the published job database without indentation to reduce page load size."""
@@ -21,7 +32,7 @@ def cohort_is_confirmed(row):
 def assess(row, today=None):
     today = today or date.today()
     source = str(row.get("source", ""))
-    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else "")
+    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else "")))
     title = clean_job_title(row.get("title", ""), source_id)
     if title:
         row["title"] = title

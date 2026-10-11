@@ -6,13 +6,22 @@ from datetime import date
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 from collect_public_sources import clean_job_title, is_direct_detail_url
-from quality_rules import assess
+from quality_rules import assess, should_publish_record
 
 ROOT=Path(__file__).resolve().parents[1]
 J=ROOT/"data/jobs.json"
 I=ROOT/"data/jobs.inbox.json"
 MANIFEST=ROOT/"data/collection-manifest.json"
 TODAY=date.today().isoformat()
+
+def title_source_id(row):
+    source=str(row.get("source",""))
+    if source=="牛客公开岗位": return "nowcoder"
+    if "应届生求职网" in source: return "yingjiesheng"
+    if "秋招网" in source: return "qiuzhaowang"
+    if "BOSS直聘" in source: return "boss"
+    return ""
+
 TRACKING={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid","property","requestid","policytype","policyid","pagecode","pagesource","isinitiative","issuggest","jobrank","advid"}
 
 def norm_url(url):
@@ -43,7 +52,7 @@ added=updated=0
 
 for row in incoming:
     row=dict(row)
-    row["title"]=clean_job_title(row.get("title",""),"nowcoder" if row.get("source")=="牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in str(row.get("source","")) else ""))
+    row["title"]=clean_job_title(row.get("title",""),title_source_id(row))
     if not row.get("company") or not row.get("title") or not row.get("source_url"): continue
     row.setdefault("last_collected",TODAY)
     row.setdefault("last_verified","")
@@ -92,7 +101,7 @@ for row in incoming:
 
 # Clean old records from the polluted V3 title pattern and prevent the old implicit cohort default being trusted.
 for row in idx.values():
-    row["title"]=clean_job_title(row.get("title",""),"nowcoder" if row.get("source")=="牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in str(row.get("source","")) else ""))
+    row["title"]=clean_job_title(row.get("title",""),title_source_id(row))
     if not row.get("last_seen"): row["last_seen"]=row.get("last_collected") or row.get("last_verified","") or ""
     if not row.get("last_collected"): row["last_collected"]=row.get("last_seen","")
     if row.get("collector")=="public-html-v3" and not row.get("last_verified_at"):
@@ -146,7 +155,9 @@ def merge_same_id(rows):
         merged[rid]=winner
     return list(merged.values())
 
-published=merge_same_id(list(idx.values()))
+published_before_filter=merge_same_id(list(idx.values()))
+published=[row for row in published_before_filter if should_publish_record(row)]
+quality_filter_removed=len(published_before_filter)-len(published)
 for row in published:
     assess(row)
 J.write_text(json.dumps(published,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -161,7 +172,12 @@ try:
     manifest["published_pending_review"]=counts["lead"]
     manifest["records_added_this_run"]=added
     manifest["records_updated_this_run"]=updated
-    manifest["quality_gate_version"]="2.0"
+    manifest["quality_gate_version"]="2.1"
+    manifest["source_quality_filters"]={
+        "qiuzhaowang_non_role_titles_removed":quality_filter_removed,
+        "policy":"从展示岗位库移除秋招网中不像具体岗位名称的历史/新增条目；公告与官方入口线索如有则保留。",
+        "collector_title_rule":"is_specific_role_title"
+    }
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 except Exception as exc:
     raise RuntimeError(f"Unable to update collection manifest: {exc}") from exc

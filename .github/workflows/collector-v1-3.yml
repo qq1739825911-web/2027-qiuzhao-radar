@@ -38,7 +38,7 @@ jobs:
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
         run: python scripts/test_frontend.py
-      - name: Collect V3 public official sources
+      - name: Collect V5 public job listings and details
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
         run: python scripts/publish_collected_jobs.py
