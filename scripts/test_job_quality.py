@@ -27,6 +27,9 @@ noise_title = "诺瓦星云 3分钟前在线 西安诺瓦星云科技股份有�
 check("HR status text is not a role title", not is_concrete_role_title(noise_title))
 check("Bracketed 27-cohort title and application code are cleaned",
       clean_job_title("【27届校招】测试工程师(A54426)", "nowcoder") == "测试工程师")
+check("Xpeng corner-bracket cohort marker is cleaned",
+      clean_job_title("〖27届校招〗具身智能AI软件工程师", "xiaopeng") == "具身智能AI软件工程师")
+
 check("Generic recruitment-site title is not a concrete role",
       not is_concrete_role_title("小鹏汽车招聘、福利待遇、工作环境丨小鹏汽车"))
 parsed = Parser()
