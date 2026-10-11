@@ -215,15 +215,21 @@
     "company": "小鹏汽车",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://xiaopeng.jobs.feishu.cn/campus/position/list",
+    "url": "https://xiaopeng.jobs.feishu.cn/campus",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "从小鹏校园招聘的官方飞书招聘页获取公开入口。若页面为动态渲染导致未解析到职位详情，则清楚显示为官方招聘入口线索，并不把公司招聘主页当作具体岗位。",
+    "notes": "已改用小鹏集团官方飞书校园招聘入口，并加入近期公开的27届岗位详情样本（具身智能AI软件、多模态算法、AI研发、产品经理、HRBP和VR设计）。只采集可公开访问的详情字段，清理〖27届校招〗等标题前缀；岗位能打开仍不代表企业确认在招。",
     "seed_urls": [
-      "https://xiaopeng.jobs.feishu.cn/campus/position/list"
+      "https://xiaopeng.jobs.feishu.cn/campus/position/7666022623763056938/detail",
+      "https://xiaopeng.jobs.feishu.cn/campus/position/7662698677748107571/detail",
+      "https://xiaopeng.jobs.feishu.cn/campus/position/7678640648783022390/detail",
+      "https://xiaopeng.jobs.feishu.cn/campus/position/7681615705750784262/detail",
+      "https://xiaopeng.jobs.feishu.cn/campus/m/position/7658239801044797746/detail",
+      "https://xiaopeng.jobs.feishu.cn/398875/position/7676431883702683940/detail",
+      "https://xiaopeng.jobs.feishu.cn/campus"
     ],
-    "max_pages": 4
+    "max_pages": 7
   },
   {
     "id": "boc",
