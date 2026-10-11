@@ -170,6 +170,19 @@ def should_discover_public_url(source_id,url):
         return allowed_path or allowed_query
     return False
 
+def diagnostic_link_priority(source_id,url,title=""):
+    """Rank diagnostic links: vacancy detail first, allowed recruitment routes next, navigation last."""
+    if is_direct_detail_url(url):
+        return 0
+    if should_discover_public_url(source_id,url):
+        return 1
+    path=urlparse(url or "").path.lower()
+    text=(str(title or "")+" "+path+" "+urlparse(url or "").query).lower()
+    hints=("job","position","vacan","career","campus","recruit","zhaopin","school","jobs","joblist","职位","岗位","招聘","校招","应届")
+    if any(hint in text for hint in hints):
+        return 2
+    return 9
+
 def discovery_priority(source_id,url):
     """Prefer public list/category/pagination links while retaining direct details."""
     p=urlparse(url); path=p.path.lower(); query=p.query.lower()
@@ -676,7 +689,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -702,19 +715,27 @@ def collect_source(src):
         diagnostics["html_bytes"]+=len(html.encode("utf-8",errors="ignore"))
         p=Parser(); p.feed(html)
         source_id=src.get("id","")
-        if source_id in {"boss","51job","iguopin"} and len(diagnostics["link_samples"])<40:
+        if source_id in {"boss","51job","iguopin"}:
             for anchor in p.links:
-                if len(diagnostics["link_samples"])>=40: break
                 raw_href=anchor.get("href","")
                 if not raw_href: continue
                 link_url=canonical(urljoin(final,raw_href))
+                title_text=clean(anchor.get("text",""))
+                rank=diagnostic_link_priority(source_id,link_url,title_text)
+                if rank>=9 or not link_url: continue
+                if link_url in diagnostics["link_sample_urls"]: continue
+                diagnostics["link_sample_urls"].add(link_url)
                 diagnostics["link_samples"].append({
-                    "text":clean(anchor.get("text",""))[:80],
-                    "url":link_url[:260],
+                    "_priority":rank,
+                    "text":title_text[:100],
+                    "url":link_url[:300],
                     "same_site":same_host(final,link_url),
                     "allowed":should_discover_public_url(source_id,link_url),
                     "direct_detail":is_direct_detail_url(link_url)
                 })
+            diagnostics["link_samples"].sort(key=lambda item:(item["_priority"],not item["direct_detail"],not item["allowed"],item["url"]))
+            diagnostics["link_samples"]=diagnostics["link_samples"][:80]
+            diagnostics["link_sample_urls"]={item["url"] for item in diagnostics["link_samples"]}
         page_text=p.page_text()
         raw_page_title=clean(p.page_title)
         if not diagnostics["sample_title"]: diagnostics["sample_title"]=raw_page_title[:140]
@@ -1100,7 +1121,7 @@ def main():
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
                             "role_field_samples":[{"title":r.get("title",""),"company":r.get("company",""),"city":r.get("city",""),"salary":r.get("salary",""),"degree":r.get("degree",""),"source_url":r.get("source_url","")} for r in rows if r.get("granularity") not in {"announcement","entry"}][:5],
-                            "link_samples":diag.get("link_samples",[]),
+                            "link_samples":[{k:v for k,v in item.items() if k!="_priority"} for item in diag.get("link_samples",[])],
                             "last_error":diag.get("last_error",""),"parser_modes":diag.get("parser_modes",[]),
                             "source_status":diag.get("source_status","access_error")})
     results.sort(key=lambda x:x["company"])

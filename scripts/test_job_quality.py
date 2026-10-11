@@ -5,7 +5,7 @@ from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
-    select_rotation_batch, extract_qiuzhaowang_role_names,
+    select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
 )
 from quality_rules import assess, compact_json, should_publish_record
 
@@ -94,6 +94,14 @@ check("YJS unrelated host is rejected",
       not should_discover_public_url("yingjiesheng", "https://example.com/jobdetail/173508261"))
 check("BOSS public campus page is discoverable",
       should_discover_public_url("boss", "https://www.zhipin.com/school/"))
+check("diagnostic prioritizes direct BOSS vacancy URLs over category searches",
+      diagnostic_link_priority("boss","https://www.zhipin.com/job_detail/abc123.html","后端开发")
+      < diagnostic_link_priority("boss","https://www.zhipin.com/web/geek/job?query=后端开发","后端开发"))
+check("diagnostic drops ordinary navigation links",
+      diagnostic_link_priority("boss","https://www.zhipin.com/about/","关于我们")>=9)
+check("diagnostic keeps allowed public listing routes",
+      diagnostic_link_priority("51job","https://campus.51job.com/jobs/list.html","校园招聘职位列表")<9)
+
 check("BOSS public detail route is recognized",
       is_direct_detail_url("https://www.zhipin.com/job_detail/abc123.html"))
 check("Guopin public campus list is discoverable",
