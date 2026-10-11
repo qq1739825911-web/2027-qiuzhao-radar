@@ -14,22 +14,22 @@
       8,
       9,
       10,
-      124,
-      125,
-      126,
-      127,
-      128,
-      129,
-      130,
-      131,
       132,
-      133
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141
     ],
-    "qiuzhaowang_next_page": 132
+    "qiuzhaowang_next_page": 139
   },
-  "records_found": 3207,
-  "active_candidates": 85,
-  "pending_review": 3122,
+  "records_found": 3107,
+  "active_candidates": 84,
+  "pending_review": 3023,
   "results": [
     {
       "id": "citic",
@@ -49,6 +49,8 @@
       "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "公告",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -74,6 +76,8 @@
       "announcement_records": 0,
       "portal_entries": 0,
       "sample_title": "",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>",
       "parser_modes": [],
       "source_status": "access_error"
@@ -96,6 +100,8 @@
       "announcement_records": 0,
       "portal_entries": 0,
       "sample_title": "",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>",
       "parser_modes": [],
       "source_status": "access_error"
@@ -118,6 +124,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "校园招聘_中国邮政储蓄银行",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -143,6 +151,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "中国银行网站_关于中行_招聘公告",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -153,24 +163,29 @@
     {
       "id": "cib",
       "company": "兴业银行",
-      "pages_visited": 0,
-      "records_found": 0,
+      "pages_visited": 2,
+      "records_found": 2,
       "active_candidates": 0,
-      "pending_review": 0,
+      "pending_review": 2,
       "pages_attempted": 2,
-      "pages_failed": 2,
-      "html_bytes": 0,
-      "links_seen": 0,
+      "pages_failed": 0,
+      "html_bytes": 12196,
+      "links_seen": 15,
       "tables_seen": 0,
-      "embedded_json_blocks": 0,
+      "embedded_json_blocks": 2,
       "role_like_links": 0,
       "role_records": 0,
-      "announcement_records": 0,
+      "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "",
-      "last_error": "HTTPError: HTTP Error 403: Forbidden",
-      "parser_modes": [],
-      "source_status": "access_error"
+      "sample_title": "兴业银行2027校园招聘公告 -- 兴业银行官方网站",
+      "role_title_samples": [],
+      "role_field_samples": [],
+      "last_error": "",
+      "parser_modes": [
+        "links",
+        "embedded_json"
+      ],
+      "source_status": "announcement_only"
     },
     {
       "id": "huawei",
@@ -190,6 +205,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "校招职位列表",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "embedded_json"
@@ -205,7 +222,7 @@
       "pending_review": 1,
       "pages_attempted": 1,
       "pages_failed": 0,
-      "html_bytes": 916419,
+      "html_bytes": 916390,
       "links_seen": 6,
       "tables_seen": 0,
       "embedded_json_blocks": 8,
@@ -214,6 +231,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "字节跳动校园招聘官网｜字节跳动校招",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -239,6 +258,8 @@
       "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "校园招聘 | 小米招聘",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -255,7 +276,7 @@
       "pending_review": 1,
       "pages_attempted": 7,
       "pages_failed": 0,
-      "html_bytes": 1310099,
+      "html_bytes": 1309868,
       "links_seen": 0,
       "tables_seen": 0,
       "embedded_json_blocks": 37,
@@ -264,6 +285,55 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "【27届校招】具身智能AI软件工程师 - 加入小鹏集团",
+      "role_title_samples": [
+        "具身智能AI软件工程师 - 加入小鹏集团",
+        "算法工程师（视觉多模态方向） - 加入小鹏集团",
+        "具身智能数据硬件产品经理 - 加入小鹏集团",
+        "HRBP培训生（研发方向） - 加入小鹏集团",
+        "AI 研发工程师 - 加入小鹏集团“探索者计划”"
+      ],
+      "role_field_samples": [
+        {
+          "title": "具身智能AI软件工程师 - 加入小鹏集团",
+          "company": "小鹏汽车",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://xiaopeng.jobs.feishu.cn/campus/position/7666022623763056938/detail"
+        },
+        {
+          "title": "算法工程师（视觉多模态方向） - 加入小鹏集团",
+          "company": "小鹏汽车",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://xiaopeng.jobs.feishu.cn/campus/m/position/7662698677748107571/detail"
+        },
+        {
+          "title": "具身智能数据硬件产品经理 - 加入小鹏集团",
+          "company": "小鹏汽车",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://xiaopeng.jobs.feishu.cn/campus/position/7678640648783022390/detail"
+        },
+        {
+          "title": "HRBP培训生（研发方向） - 加入小鹏集团",
+          "company": "小鹏汽车",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://xiaopeng.jobs.feishu.cn/campus/position/7681615705750784262/detail"
+        },
+        {
+          "title": "AI 研发工程师 - 加入小鹏集团“探索者计划”",
+          "company": "小鹏汽车",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://xiaopeng.jobs.feishu.cn/398875/position/7676431883702683940/detail"
+        }
+      ],
       "last_error": "",
       "parser_modes": [
         "embedded_json"
@@ -279,7 +349,7 @@
       "pending_review": 7,
       "pages_attempted": 9,
       "pages_failed": 0,
-      "html_bytes": 180160,
+      "html_bytes": 180159,
       "links_seen": 68,
       "tables_seen": 0,
       "embedded_json_blocks": 35,
@@ -288,6 +358,56 @@
       "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
+      "role_title_samples": [
+        "AIGC影视创意制作（校招）",
+        "AIGC电商设计师",
+        "AI教育销售顾问",
+        "校招职位-人工智能算法研究员",
+        "课程顾问/AIGC大模型培训",
+        "销售/AI行业/接受应届生小白"
+      ],
+      "role_field_samples": [
+        {
+          "title": "AIGC影视创意制作（校招）",
+          "company": "上海基美影业股份有限公司",
+          "city": "上海",
+          "salary": "8千-1.5万",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/jobdetail/170935981"
+        },
+        {
+          "title": "AIGC电商设计师",
+          "company": "郑州中广通软件技术有限公司",
+          "city": "上海",
+          "salary": "5K-10K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-098-278.html"
+        },
+        {
+          "title": "AI教育销售顾问",
+          "company": "上海近屿智能科技有限公司",
+          "city": "上海",
+          "salary": "1.5万",
+          "degree": "大专",
+          "source_url": "https://m.yingjiesheng.com/jobdetail/163535411"
+        },
+        {
+          "title": "校招职位-人工智能算法研究员",
+          "company": "商飞智能技术有限公司",
+          "city": "上海",
+          "salary": "4万",
+          "degree": "博士",
+          "source_url": "https://m.yingjiesheng.com/jobdetail/152284775"
+        },
+        {
+          "title": "课程顾问/AIGC大模型培训",
+          "company": "上海近屿智能科技有限公司",
+          "city": "上海",
+          "salary": "2.5万",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/jobdetail/157306881"
+        }
+      ],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -298,13 +418,13 @@
     {
       "id": "cmb",
       "company": "招商银行",
-      "pages_visited": 0,
+      "pages_visited": 8,
       "records_found": 0,
       "active_candidates": 0,
       "pending_review": 0,
       "pages_attempted": 8,
-      "pages_failed": 8,
-      "html_bytes": 0,
+      "pages_failed": 0,
+      "html_bytes": 4752,
       "links_seen": 0,
       "tables_seen": 0,
       "embedded_json_blocks": 0,
@@ -312,10 +432,12 @@
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
-      "sample_title": "",
-      "last_error": "URLError: <urlopen error [Errno 101] Network is unreachable>",
+      "sample_title": "招商银行招聘",
+      "role_title_samples": [],
+      "role_field_samples": [],
+      "last_error": "",
       "parser_modes": [],
-      "source_status": "access_error"
+      "source_status": "reachable_no_records"
     },
     {
       "id": "pdd",
@@ -335,6 +457,8 @@
       "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "拼多多集团-PDD校园招聘官网",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -347,19 +471,71 @@
       "company": "牛客",
       "pages_visited": 40,
       "records_found": 80,
-      "active_candidates": 80,
-      "pending_review": 0,
+      "active_candidates": 79,
+      "pending_review": 1,
       "pages_attempted": 40,
       "pages_failed": 0,
-      "html_bytes": 2583916,
-      "links_seen": 2035,
+      "html_bytes": 2537884,
+      "links_seen": 1985,
       "tables_seen": 0,
-      "embedded_json_blocks": 160,
-      "role_like_links": 51,
+      "embedded_json_blocks": 159,
+      "role_like_links": 50,
       "role_records": 80,
       "announcement_records": 0,
       "portal_entries": 0,
       "sample_title": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网",
+      "role_title_samples": [
+        "PCB工程师 (西安)",
+        "算法工程师(西安)",
+        "大模型算法工程师(西安)",
+        "AI产品经理（武汉）",
+        "财务专员（27届校招）",
+        "27校招-营销管培生（全国）",
+        "27校招-软件工程师（西安）",
+        "27校招-嵌入式工程师（Linux）（西安）"
+      ],
+      "role_field_samples": [
+        {
+          "title": "PCB工程师 (西安)",
+          "company": "诺瓦星云",
+          "city": "北京、深圳、西安",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://www.nowcoder.com/jobs/detail/462572"
+        },
+        {
+          "title": "算法工程师(西安)",
+          "company": "诺瓦星云",
+          "city": "北京、深圳、西安",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://www.nowcoder.com/jobs/detail/462503"
+        },
+        {
+          "title": "大模型算法工程师(西安)",
+          "company": "诺瓦星云",
+          "city": "北京、深圳、西安",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://www.nowcoder.com/jobs/detail/462504"
+        },
+        {
+          "title": "AI产品经理（武汉）",
+          "company": "数字政通",
+          "city": "北京、武汉",
+          "salary": "20K",
+          "degree": "硕士",
+          "source_url": "https://www.nowcoder.com/jobs/detail/467982"
+        },
+        {
+          "title": "财务专员（27届校招）",
+          "company": "海能达通信",
+          "city": "北京、深圳、南京、成都、哈尔滨、海外",
+          "salary": "15K",
+          "degree": "本科及以上",
+          "source_url": "https://www.nowcoder.com/jobs/detail/459432"
+        }
+      ],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -376,7 +552,7 @@
       "pending_review": 1,
       "pages_attempted": 8,
       "pages_failed": 0,
-      "html_bytes": 407709,
+      "html_bytes": 455702,
       "links_seen": 28,
       "tables_seen": 0,
       "embedded_json_blocks": 32,
@@ -385,6 +561,8 @@
       "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "百度校园招聘",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -395,21 +573,73 @@
     {
       "id": "qiuzhaowang",
       "company": "秋招网",
-      "pages_visited": 18,
-      "records_found": 3100,
+      "pages_visited": 17,
+      "records_found": 2998,
       "active_candidates": 0,
-      "pending_review": 3100,
-      "pages_attempted": 18,
+      "pending_review": 2998,
+      "pages_attempted": 17,
       "pages_failed": 0,
-      "html_bytes": 3338775,
-      "links_seen": 3059,
+      "html_bytes": 3145427,
+      "links_seen": 2889,
       "tables_seen": 0,
-      "embedded_json_blocks": 144,
-      "role_like_links": 282,
-      "role_records": 3100,
+      "embedded_json_blocks": 136,
+      "role_like_links": 256,
+      "role_records": 2998,
       "announcement_records": 0,
       "portal_entries": 0,
       "sample_title": "2027届最新更新校招岗位｜招聘信息与截止时间｜秋招网",
+      "role_title_samples": [
+        "销售管培生",
+        "操作管培生",
+        "客服管培生专业不限",
+        "国际贸易",
+        "物流",
+        "商务英语",
+        "外语",
+        "零售管培精英项目"
+      ],
+      "role_field_samples": [
+        {
+          "title": "销售管培生",
+          "company": "AGS艾吉赛",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://qiuzhaowang.com/jobs/position-32406"
+        },
+        {
+          "title": "操作管培生",
+          "company": "AGS艾吉赛",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://qiuzhaowang.com/jobs/position-32406"
+        },
+        {
+          "title": "客服管培生专业不限",
+          "company": "AGS艾吉赛",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://qiuzhaowang.com/jobs/position-32406"
+        },
+        {
+          "title": "国际贸易",
+          "company": "AGS艾吉赛",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://qiuzhaowang.com/jobs/position-32406"
+        },
+        {
+          "title": "物流",
+          "company": "AGS艾吉赛",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://qiuzhaowang.com/jobs/position-32406"
+        }
+      ],
       "last_error": "",
       "parser_modes": [
         "links",
@@ -435,6 +665,8 @@
       "announcement_records": 0,
       "portal_entries": 3,
       "sample_title": "美团招聘",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "embedded_json"
@@ -459,6 +691,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "搜索 | 腾讯招聘",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [],
       "source_status": "entry_only"
@@ -481,6 +715,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "校园招聘-NIO蔚来",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [],
       "source_status": "entry_only"
@@ -503,6 +739,8 @@
       "announcement_records": 0,
       "portal_entries": 1,
       "sample_title": "阿里巴巴校园招聘",
+      "role_title_samples": [],
+      "role_field_samples": [],
       "last_error": "",
       "parser_modes": [
         "embedded_json"
@@ -512,12 +750,12 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 35452,
-  "published_priority_candidates": 45,
-  "published_pending_review": 35407,
-  "records_added_this_run": 3038,
-  "records_updated_this_run": 169,
+  "published_total_jobs": 35579,
+  "published_priority_candidates": 44,
+  "published_pending_review": 35535,
+  "records_added_this_run": 2945,
+  "records_updated_this_run": 162,
   "quality_gate_version": "2.1",
-  "quality_checked_at": "2026-10-11T12:05:26+00:00",
+  "quality_checked_at": "2026-10-11T12:11:52+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
