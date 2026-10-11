@@ -521,7 +521,7 @@ def is_boss_campus_card_relevant(raw_title):
     title=clean_job_title(raw,"boss")
     if not is_specific_role_title(title,"boss"):
         return False
-    year_marker=re.search(r"(?<!\d)(?:20(?:2[0-6])|2[0-6])\s*(?:(?:届|年)\s*)?(?:校招|校园招聘|秋招|春招)",raw)
+    year_marker=re.search(r"(?<!\d)(?:20(?:2[0-6])|2[0-6])\s*(?:(?:届|年)\s*)?[^，,。;；]{0,18}(?:校招|校园招聘|秋招|春招)",raw)
     cohort=year(raw)
     if (year_marker or (cohort and cohort!="2027届")) and not re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|秋招|春招)|(?<!\d)27\s*(?:届|校招|校园招聘|秋招|春招)",raw):
         return False
