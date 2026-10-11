@@ -54,7 +54,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.6：优先完整轮转公开首页、专业/职位分类、分页和详情链接；HTTP旧链接先试HTTPS，传输失败时只对同一公开白名单URL有限回退。每轮160页封顶并限速，详情/届别证据不足仍留待核验，不代表平台全量覆盖。",
+    "notes": "V1.6.1：扩展公开专业分类目录 /zhuanye/，继续按游标轮转公开首页、专业/职位分类、分页和详情链接；每轮160页封顶，旧HTTP链接先试HTTPS。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
@@ -66,10 +66,11 @@
       "https://zhiwei.yingjiesheng.com/",
       "https://q.yingjiesheng.com/",
       "https://m.yingjiesheng.com/jobdetail/170935981",
-      "https://m.yingjiesheng.com/jobdetail/173508261"
+      "https://m.yingjiesheng.com/jobdetail/173508261",
+      "https://www.yingjiesheng.com/zhuanye/"
     ],
     "max_pages": 160,
-    "max_candidates": 8000,
+    "max_candidates": 10000,
     "listing_page_limit": 50,
     "rotation_seed_batch": 24,
     "listing_pool_limit": 1000
@@ -82,33 +83,38 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.6：保留公开校园招聘专题页面与岗位级数字ID详情；拒绝 jobs.51job.com 下的企业介绍页进入轮转池，安全验证页面不绕过。",
+    "notes": "V1.6.1：以公开的企业校园招聘职位列表作种子（亚信科技、紫光同创、中集、万向等），优先解析岗位表与数字ID详情；允许同站 campus/xy 子域HTTP入口先升级HTTPS，企业介绍页和无岗位链接页面不当作岗位。",
     "seed_urls": [
       "https://xy.51job.com/",
-      "https://xy.51job.com/default-xs.php?lang=e"
+      "https://xy.51job.com/default-xs.php?lang=e",
+      "https://campus.51job.com/asiainfo/jobs.html",
+      "https://campus.51job.com/asiainfo/jobs_trainee.html",
+      "https://campus.51job.com/Pango/job.html",
+      "https://campus.51job.com/cimc/m/post.html",
+      "https://campus.51job.com/wxxz2027/about2.html"
     ],
-    "max_pages": 40,
-    "max_candidates": 1400,
-    "listing_page_limit": 20,
-    "rotation_seed_batch": 12,
-    "listing_pool_limit": 200
+    "max_pages": 55,
+    "max_candidates": 2200,
+    "listing_page_limit": 28,
+    "rotation_seed_batch": 18,
+    "listing_pool_limit": 260
   },
   {
     "id": "iguopin",
     "company": "国聘",
     "type": "public_job_aggregator",
-    "url": "https://www.iguopin.com/job?channel=campus",
+    "url": "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=&nature_cn=",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "V1.6：切换到当前公开岗位列表/分类路由（校园/社会、IT、工程师、数据开发）；只采集浏览器匿名可见的岗位卡片和详情，登录/验证拦截后停止。",
+    "notes": "V1.6.1：以当前可公开访问的 job.iguopin.com/jobList 分类列表为主入口，扩展校园/社会渠道与职位关键词；页面可展示招聘公告，但只有岗位详情和明确岗位名才能进入岗位库。匿名页面未公开的详情保持待核验，不绕过登录或验证。",
     "seed_urls": [
       "https://www.iguopin.com/",
-      "https://www.iguopin.com/job?channel=campus",
-      "https://www.iguopin.com/job?channel=social",
-      "https://www.iguopin.com/job/list?keyword=IT%2F%E4%BA%92%E8%81%94%E7%BD%91",
-      "https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88",
-      "https://www.iguopin.com/job/list?keyword=%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91"
+      "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=&nature_cn=",
+      "https://job.iguopin.com/jobList?campus_nature=&channel=social&key_word=&nature_cn=",
+      "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=IT%2F%E4%BA%92%E8%81%94%E7%BD%91&nature_cn=",
+      "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=%E5%B7%A5%E7%A8%8B%E5%B8%88&nature_cn=",
+      "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91&nature_cn="
     ],
     "max_pages": 40,
     "max_candidates": 2000,

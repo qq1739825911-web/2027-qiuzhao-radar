@@ -96,6 +96,8 @@ check("QZW listing hint yields concrete roles",
 
 check("YJS list/category page is discoverable",
       should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/major/"))
+check("YJS public zhuyanye category directory is discoverable",
+      should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/zhuanye/"))
 check("YJS job-detail page is discoverable",
       should_discover_public_url("yingjiesheng", "https://m.yingjiesheng.com/jobdetail/173508261"))
 check("YJS unrelated host is rejected",
@@ -140,20 +142,22 @@ check("Guopin public SPA route uses anonymous browser rendering",
       should_render_public_page("iguopin","https://job.iguopin.com/jobList?channel=campus","<html><body><div id='app'></div></body></html>"))
 check("Guopin detailed campus list parameters remain public-renderable",
       should_render_public_page("iguopin","https://job.iguopin.com/jobList?campus_nature=&channel=campus&nature_cn=","<html><body><div id='app'></div></body></html>"))
-check("51job renderer upgrades only allow-listed internal HTTP URLs before browser launch",
-      'if source_id=="51job" and urlparse(url).scheme.lower()=="http" and same_host("https://xy.51job.com/",url)' in COLLECTOR_SOURCE)
+check("51job renderer upgrades all allow-listed internal HTTP subdomains before browser launch",
+      'if source_id=="51job" and urlparse(url).scheme.lower()=="http" and same_host("https://51job.com/",url)' in COLLECTOR_SOURCE)
+check("51job campus microsite HTTP links are in the public rendering allow-list",
+      should_render_public_page("51job","http://campus.51job.com/asiainfo/jobs.html","<html><body><a href='javascript:;'>岗位列表</a></body></html>"))
 check("QZW partial-read fallback is implemented",
       "except IncompleteRead as exc" in COLLECTOR_SOURCE)
 check("renderer reports visible body preview and safe campus navigation",
       "body_preview" in RENDERER_SOURCE and "招聘岗位|招聘职位|职位列表" in RENDERER_SOURCE)
 constReg=json.loads((Path(__file__).resolve().parents[1]/"data/company_sources.json").read_text(encoding="utf-8"))
-check("Guopin current public campus listing configured",
-      any("https://www.iguopin.com/job?channel=campus" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
-check("Guopin public keyword category sources configured",
-      any("/job/list?keyword=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
-check("Guopin keyword-category SPA routes are browser-renderable",
-      should_render_public_page("iguopin","https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88","<html><body><div id='app'></div></body></html>")
-      and "job\\/list" in RENDERER_SOURCE and "keyword=" in RENDERER_SOURCE)
+check("Guopin current public campus jobList route configured",
+      any("https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin public keyword category sources configured with current key_word parameter",
+      any("key_word=%E5%B7%A5%E7%A8%8B%E5%B8%88" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin current jobList SPA routes are browser-renderable",
+      should_render_public_page("iguopin","https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=%E5%B7%A5%E7%A8%8B%E5%B8%88&nature_cn=","<html><body><div id='app'></div></body></html>")
+      and "job\\/list" in RENDERER_SOURCE and "joblist" in RENDERER_SOURCE)
 
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))

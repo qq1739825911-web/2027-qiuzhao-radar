@@ -105,7 +105,7 @@ def render_public_page(url,source_id):
                     text=True,encoding="utf-8",errors="replace",bufsize=1
                 )
             render_url=url
-            if source_id=="51job" and urlparse(url).scheme.lower()=="http" and same_host("https://xy.51job.com/",url):
+            if source_id=="51job" and urlparse(url).scheme.lower()=="http" and same_host("https://51job.com/",url):
                 p=urlparse(url)
                 render_url=urlunparse(("https",p.netloc,p.path,p.params,p.query,p.fragment))
             request={"url":render_url,"source_id":source_id}
