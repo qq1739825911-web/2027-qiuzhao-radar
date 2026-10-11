@@ -147,8 +147,10 @@ check("QZW partial-read fallback is implemented",
 check("renderer reports visible body preview and safe campus navigation",
       "body_preview" in RENDERER_SOURCE and "招聘岗位|招聘职位|职位列表" in RENDERER_SOURCE)
 constReg=json.loads((Path(__file__).resolve().parents[1]/"data/company_sources.json").read_text(encoding="utf-8"))
-check("Guopin public campus listing query configured",
-      any("campus_nature=&channel=campus&nature_cn=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin current public campus listing configured",
+      any("https://www.iguopin.com/job?channel=campus" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin public keyword category sources configured",
+      any("/job/list?keyword=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
 
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))
