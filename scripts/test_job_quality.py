@@ -82,8 +82,8 @@ check("QZW real role title remains publishable when detail URL is present",
       should_publish_record({"source":"秋招网公开聚合","title":"销售管培生专业不限","source_url":"https://qiuzhaowang.com/jobs/position-32406","granularity":"review"}))
 check("official recruitment entry leads are retained separately",
       should_publish_record({"source":"秋招网公开聚合","title":"2027届秋招网官方招聘入口线索","granularity":"entry"}))
-check("non-QZW review leads are not discarded by QZW filter",
-      should_publish_record({"source":"应届生求职网公开岗位","title":"商务英语","granularity":"review"}))
+check("YJS specific role with direct detail is not caught by QZW-only filter",
+      should_publish_record({"source":"应届生求职网公开岗位","title":"算法工程师","source_url":"https://m.yingjiesheng.com/jobdetail/173508261","granularity":"review"}))
 check("BOSS category query is removed from publication",
       not should_publish_record({"source":"BOSS直聘公开校招岗位","title":"后端开发","source_url":"https://www.zhipin.com/web/geek/job?experience=102&query=后端开发","granularity":"review"}))
 check("Nowcoder non-detail company card is removed from publication",
