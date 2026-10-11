@@ -1,734 +1,734 @@
 {
-  "last_run_at": "2026-10-10T21:59:54+00:00",
+  "last_run_at": "2026-10-11T06:26:10+00:00",
   "checked": 120,
-  "records_touched": 1112,
-  "eligible_direct_links": 4017,
-  "link_alive": 120,
+  "records_touched": 969,
+  "eligible_direct_links": 4031,
+  "link_alive": 119,
   "missing_needs_recheck": 0,
-  "unknown": 0,
+  "unknown": 1,
   "closed_after_two_checks": 0,
   "batch_size": 120,
   "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
   "checked_items": [
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828113",
+      "url": "https://qiuzhaowang.com/jobs/opening-8aac08f96b021d1e8297fd46",
       "result": "alive",
       "http_status": 200,
-      "records": 15
+      "records": 25
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828108",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828114",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828116",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828110",
-      "result": "alive",
-      "http_status": 200,
-      "records": 12
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828111",
-      "result": "alive",
-      "http_status": 200,
-      "records": 14
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828112",
-      "result": "alive",
-      "http_status": 200,
-      "records": 13
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260828115",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829001",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829005",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829004",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829008",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829010",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829002",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829018",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829019",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829007",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829021",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829022",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829020",
-      "result": "alive",
-      "http_status": 200,
-      "records": 13
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829026",
-      "result": "alive",
-      "http_status": 200,
-      "records": 14
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829024",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829025",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829027",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829029",
-      "result": "alive",
-      "http_status": 200,
-      "records": 12
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829028",
-      "result": "alive",
-      "http_status": 200,
-      "records": 17
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829032",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829031",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829034",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829035",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829033",
+      "url": "https://qiuzhaowang.com/jobs/opening-8d2da260e1511be571aa486f",
       "result": "alive",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829036",
-      "result": "alive",
-      "http_status": 200,
-      "records": 12
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829040",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829041",
-      "result": "alive",
-      "http_status": 200,
-      "records": 8
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829043",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829044",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829049",
-      "result": "alive",
-      "http_status": 200,
-      "records": 20
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829047",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829051",
-      "result": "alive",
-      "http_status": 200,
-      "records": 21
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829054",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829052",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829056",
-      "result": "alive",
-      "http_status": 200,
-      "records": 17
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829057",
-      "result": "alive",
-      "http_status": 200,
-      "records": 17
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829058",
+      "url": "https://qiuzhaowang.com/jobs/opening-840a2b3bf119f1f414bd4b44",
       "result": "alive",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829059",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829060",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829061",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829062",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829063",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829064",
-      "result": "alive",
-      "http_status": 200,
-      "records": 13
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829066",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829069",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829074",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829077",
+      "url": "https://qiuzhaowang.com/jobs/opening-84881b6ccb536595ae1f0923",
       "result": "alive",
       "http_status": 200,
       "records": 7
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829076",
+      "url": "https://qiuzhaowang.com/jobs/opening-8dcb23cb89766c029188b3aa",
       "result": "alive",
       "http_status": 200,
-      "records": 13
+      "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829078",
+      "url": "https://qiuzhaowang.com/jobs/opening-84c408beba59a1266839f588",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-8a1b1dfc177bae4847445ac9",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-809354022db931f179b19b5c",
       "result": "alive",
       "http_status": 200,
       "records": 5
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829081",
+      "url": "https://qiuzhaowang.com/jobs/opening-910fdd705619da51abb7dc0c",
       "result": "alive",
       "http_status": 200,
-      "records": 10
+      "records": 7
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829079",
+      "url": "https://qiuzhaowang.com/jobs/opening-9147a467e969743e94df3ef8",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-94d3b55637cccda20b55edd9",
+      "result": "alive",
+      "http_status": 200,
+      "records": 14
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-94bf83017e09ea361b194e87",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-91f3c22edeffa00425b19ef8",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-9dc52b7929dc8861e1e077ac",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-a5a829ce765a91d34ee1f43f",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-9c09d4ccf865e57693da0d84",
+      "result": "alive",
+      "http_status": 200,
+      "records": 19
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-95e40539964d70542a368a2d",
+      "result": "alive",
+      "http_status": 200,
+      "records": 14
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-a651f2a56b8fcb9243b45973",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-98c8b2118acddc921b3fc7da",
+      "result": "alive",
+      "http_status": 200,
+      "records": 36
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-a69487a5ec9b92add9b8c3a4",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-a839c06d5e8f977f7efba0a0",
+      "result": "alive",
+      "http_status": 200,
+      "records": 18
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-aa6d4383df71116d6d0577ae",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-ad87821d477ec6ce3eef0aab",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b0c61a7dd24ed9f230c6aedc",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-ac3b1571a18c2ace0a64d7d4",
+      "result": "alive",
+      "http_status": 200,
+      "records": 18
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b0ec8e7198c839c77c65186b",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b272a17636b6e3c917069237",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-a8c03130110216c5c87e7176",
+      "result": "alive",
+      "http_status": 200,
+      "records": 7
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b020b3f17d0f7cfc9b65dca4",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b76938e393668acd66e125cb",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b8da099236e8c79b0e02b506",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b8f31cddb28e6c141140db87",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b817c777ebd5cf726de7e660",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-b174a8741398a67b0d9d18c0",
       "result": "alive",
       "http_status": 200,
       "records": 8
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829082",
+      "url": "https://qiuzhaowang.com/jobs/opening-bc449bb982a36c691d8fd1bd",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-bf6a7bdde97b4d46758a9e54",
+      "result": "alive",
+      "http_status": 200,
+      "records": 11
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-c14d32938fca751473a3e088",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-c208c47571ded61879c86e88",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-c2134b5b57e909a2c7f81a1e",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-c218fbcf61647be2b40657ef",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-c22a93cfa02ede0f90e46370",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-c097202cfe593175ad809280",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-ca167e293ee8f1d49a76a88d",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-cb0486ce44e3e946c247d64f",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-ca97c3a17660a401b332cb38",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-cd3d4812dcd94c7b5539c41a",
       "result": "alive",
       "http_status": 200,
       "records": 23
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260829083",
+      "url": "https://qiuzhaowang.com/jobs/opening-c82c259e10c04ecd9e2444f1",
       "result": "alive",
       "http_status": 200,
-      "records": 5
+      "records": 4
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830001",
-      "result": "alive",
-      "http_status": 200,
-      "records": 13
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830003",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830007",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830004",
-      "result": "alive",
-      "http_status": 200,
-      "records": 21
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830009",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830010",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830011",
-      "result": "alive",
-      "http_status": 200,
-      "records": 10
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830013",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830014",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830015",
-      "result": "alive",
-      "http_status": 200,
-      "records": 17
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830016",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830017",
-      "result": "alive",
-      "http_status": 200,
-      "records": 17
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830019",
+      "url": "https://qiuzhaowang.com/jobs/opening-c9349279a58a25f7355ae659",
       "result": "alive",
       "http_status": 200,
       "records": 12
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830020",
+      "url": "https://qiuzhaowang.com/jobs/opening-ce077e903dcc8a28f387f3e8",
       "result": "alive",
       "http_status": 200,
-      "records": 12
+      "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830021",
+      "url": "https://qiuzhaowang.com/jobs/opening-c4bc7f7968c13fed1d646d73",
       "result": "alive",
       "http_status": 200,
-      "records": 11
+      "records": 6
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830022",
+      "url": "https://qiuzhaowang.com/jobs/opening-d10b3672a521e64de1649340",
       "result": "alive",
       "http_status": 200,
-      "records": 9
+      "records": 30
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830024",
-      "result": "alive",
-      "http_status": 200,
-      "records": 10
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830025",
+      "url": "https://qiuzhaowang.com/jobs/opening-cf37f25629d4b967f30dc079",
       "result": "alive",
       "http_status": 200,
       "records": 8
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830028",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830026",
-      "result": "alive",
-      "http_status": 200,
-      "records": 12
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830030",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830031",
-      "result": "alive",
-      "http_status": 200,
-      "records": 18
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830033",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830034",
+      "url": "https://qiuzhaowang.com/jobs/opening-cf2770fd629a2f13ab3f83ae",
       "result": "alive",
       "http_status": 200,
       "records": 8
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830032",
+      "url": "https://qiuzhaowang.com/jobs/opening-d3c05afa5a1f5c5d8b8bab0b",
       "result": "alive",
       "http_status": 200,
-      "records": 11
+      "records": 16
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830037",
+      "url": "https://qiuzhaowang.com/jobs/opening-d267277fe96599d228a6a4c1",
       "result": "alive",
       "http_status": 200,
-      "records": 9
+      "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830035",
+      "url": "https://qiuzhaowang.com/jobs/opening-d49c4311048195870b4d482f",
       "result": "alive",
       "http_status": 200,
-      "records": 14
+      "records": 4
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830040",
+      "url": "https://qiuzhaowang.com/jobs/opening-d4b6da0908ba4340de1ef18b",
       "result": "alive",
       "http_status": 200,
-      "records": 5
+      "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830039",
+      "url": "https://qiuzhaowang.com/jobs/opening-d6c0f926aa3658601bd7b2b8",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 6
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830038",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830041",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830042",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830045",
+      "url": "https://qiuzhaowang.com/jobs/opening-d85470c55747ec6e08c00be6",
       "result": "alive",
       "http_status": 200,
       "records": 9
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830044",
+      "url": "https://qiuzhaowang.com/jobs/opening-d6acab68a1c2f643cf1a2f09",
       "result": "alive",
       "http_status": 200,
-      "records": 5
+      "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830046",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830050",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830051",
+      "url": "https://qiuzhaowang.com/jobs/opening-d8eac48872d1f0f93354d335",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830052",
+      "url": "https://qiuzhaowang.com/jobs/opening-d9506b2bf31110304217135b",
       "result": "alive",
       "http_status": 200,
-      "records": 5
+      "records": 33
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830053",
-      "result": "alive",
-      "http_status": 200,
-      "records": 10
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830055",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830056",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830059",
+      "url": "https://qiuzhaowang.com/jobs/opening-d92b8a83a381a799e3e58706",
       "result": "alive",
       "http_status": 200,
       "records": 32
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830060",
-      "result": "alive",
-      "http_status": 200,
-      "records": 20
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830061",
+      "url": "https://qiuzhaowang.com/jobs/opening-dc62c8ab473b95e33972d0a6",
       "result": "alive",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830068",
+      "url": "https://qiuzhaowang.com/jobs/opening-de7d7ff284e5218ea3953da2",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-e0cce15f13f55b46a94c5574",
+      "result": "alive",
+      "http_status": 200,
+      "records": 25
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-dbfa18bf38c850b35c7726b0",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-e39721ab2d33809a5cb5e31f",
       "result": "alive",
       "http_status": 200,
       "records": 6
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830069",
+      "url": "https://qiuzhaowang.com/jobs/opening-e32431610e0ad94f09452665",
       "result": "alive",
       "http_status": 200,
-      "records": 5
+      "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830070",
+      "url": "https://qiuzhaowang.com/jobs/opening-e3b66690a95cb00c75470431",
       "result": "alive",
       "http_status": 200,
-      "records": 5
+      "records": 9
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830071",
+      "url": "https://qiuzhaowang.com/jobs/opening-e51ef9e8efde854a87e42c5d",
       "result": "alive",
       "http_status": 200,
       "records": 18
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260830074",
+      "url": "https://qiuzhaowang.com/jobs/opening-e59131e907ed3e41e6883ef6",
       "result": "alive",
       "http_status": 200,
-      "records": 3
+      "records": 23
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831001",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831002",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831008",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831004",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831010",
-      "result": "alive",
-      "http_status": 200,
-      "records": 8
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831012",
+      "url": "https://qiuzhaowang.com/jobs/opening-e28f60e7a5cc2b41cc14ac23",
       "result": "alive",
       "http_status": 200,
       "records": 6
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831014",
+      "url": "https://qiuzhaowang.com/jobs/opening-e219f6520fa5ecb9ae5540cc",
       "result": "alive",
       "http_status": 200,
-      "records": 3
+      "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831015",
+      "url": "https://qiuzhaowang.com/jobs/opening-e827d72a09467f37490e04ce",
       "result": "alive",
       "http_status": 200,
-      "records": 7
+      "records": 13
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831017",
+      "url": "https://qiuzhaowang.com/jobs/opening-e657f6f350cddb8df6d210c6",
       "result": "alive",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831013",
+      "url": "https://qiuzhaowang.com/jobs/opening-eb4fdbfd779b223e589ef446",
+      "result": "alive",
+      "http_status": 200,
+      "records": 11
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-ea0cde9297d19766055580ef",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f0fc06da9b037536f7b7149b",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f11e7c0dd37c7bebd7be2a18",
+      "result": "alive",
+      "http_status": 200,
+      "records": 19
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-efcb79dc4c85f1d377c8fb01",
+      "result": "alive",
+      "http_status": 200,
+      "records": 13
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f3000807a49eeb07fefe879e",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f307c96da8f3f6c9e74dc6db",
+      "result": "alive",
+      "http_status": 200,
+      "records": 13
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/oppo-jm华中华东区-管培生等4类岗位-911a53e5e6",
+      "result": "unknown",
+      "http_status": 0,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f326d0c7734f12ed68daf3a0",
+      "result": "alive",
+      "http_status": 200,
+      "records": 26
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f2fbfcc84ac55fc0d663df9d",
+      "result": "alive",
+      "http_status": 200,
+      "records": 7
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f6c7cd03e6f3dfe98ff45769",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f71f2e312dc872a08046b93f",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f89a3620803abf005260b687",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-fd7d20756d47c90f2a566e39",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29893",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29898",
+      "result": "alive",
+      "http_status": 200,
+      "records": 10
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/opening-f5f524e5e90056b9eb98a10b",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29901",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29905",
       "result": "alive",
       "http_status": 200,
       "records": 16
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/jobup-260831019",
+      "url": "https://qiuzhaowang.com/jobs/position-29914",
+      "result": "alive",
+      "http_status": 200,
+      "records": 10
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29919",
       "result": "alive",
       "http_status": 200,
       "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29922",
+      "result": "alive",
+      "http_status": 200,
+      "records": 12
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29929",
+      "result": "alive",
+      "http_status": 200,
+      "records": 13
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29935",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29936",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29944",
+      "result": "alive",
+      "http_status": 200,
+      "records": 13
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29950",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29946",
+      "result": "alive",
+      "http_status": 200,
+      "records": 7
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29961",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29954",
+      "result": "alive",
+      "http_status": 200,
+      "records": 10
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29966",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29958",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29964",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29972",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29974",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29988",
+      "result": "alive",
+      "http_status": 200,
+      "records": 10
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29998",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29994",
+      "result": "alive",
+      "http_status": 200,
+      "records": 8
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29995",
+      "result": "alive",
+      "http_status": 200,
+      "records": 10
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-30004",
+      "result": "alive",
+      "http_status": 200,
+      "records": 12
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-30006",
+      "result": "alive",
+      "http_status": 200,
+      "records": 15
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-30007",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-29999",
+      "result": "alive",
+      "http_status": 200,
+      "records": 7
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-30000",
+      "result": "alive",
+      "http_status": 200,
+      "records": 14
     }
   ]
 }
