@@ -171,7 +171,7 @@ ROLE_TERMS=("AIGC","AI产品","AI应用","视频","影视","创意制作","制�
 def clean_job_title(title, source_id=""):
     """Remove cohort chips, platform metadata and HR-status pollution from titles."""
     t=clean(title)
-    t=re.sub(r"^\s*[【\[（(]\s*(?:20\d{2}|\d{2})\s*届\s*(?:校招|校园招聘|正式批|秋招)?\s*[】\]）)]\s*[-—:：_ ]*", "", t)
+    t=re.sub(r"^\s*[【〖\[（(]\s*(?:20\d{2}|\d{2})\s*届\s*(?:校招|校园招聘|正式批|秋招)?\s*[】〗\]）)]\s*[-—:：_ ]*", "", t)
     t=re.sub(r"^\s*(?:20\d{2}|\d{2})\s*届(?:校招|校园招聘)?\s*[-—:：_ ]*", "", t)
     if source_id=="nowcoder":
         m=re.match(r"^(.+?)_[^_]+?(?:校招|实习|社招)_牛客网$",t)
