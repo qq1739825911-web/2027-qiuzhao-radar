@@ -43,7 +43,8 @@
     ],
     "max_pages": 60,
     "max_candidates": 1500,
-    "listing_page_limit": 15
+    "listing_page_limit": 15,
+    "rotation_seed_batch": 12
   },
   {
     "id": "yingjiesheng",
@@ -69,7 +70,8 @@
     ],
     "max_pages": 100,
     "max_candidates": 4000,
-    "listing_page_limit": 25
+    "listing_page_limit": 25,
+    "rotation_seed_batch": 20
   },
   {
     "id": "51job",
@@ -86,7 +88,8 @@
     ],
     "max_pages": 50,
     "max_candidates": 1400,
-    "listing_page_limit": 20
+    "listing_page_limit": 20,
+    "rotation_seed_batch": 10
   },
   {
     "id": "iguopin",
@@ -105,7 +108,8 @@
     ],
     "max_pages": 45,
     "max_candidates": 1600,
-    "listing_page_limit": 20
+    "listing_page_limit": 20,
+    "rotation_seed_batch": 10
   },
   {
     "id": "mohrss",
@@ -396,7 +400,8 @@
     ],
     "max_pages": 60,
     "max_candidates": 1800,
-    "listing_page_limit": 12
+    "listing_page_limit": 12,
+    "rotation_seed_batch": 12
   },
   {
     "id": "qiuzhaowang",

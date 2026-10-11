@@ -130,7 +130,7 @@ def should_discover_public_url(source_id,url):
     if source_id=="yingjiesheng":
         if not same_host("https://www.yingjiesheng.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
-        if any(x in path for x in ("/login","/register","/member","/vip","/user/","/account","/privacy")): return False
+        if any(x in path for x in ("/login","/register","/member","/vip","/user/","/account","/privacy","/thirdlink","/redirect")): return False
         return (path=="/" or path.startswith(("/major/","/other/","/jobs/","/job/","/joblist/","/xuanjianghui/"))
                 or host.startswith(("zhiwei.","q.","web.","s."))
                 or bool(re.search(r"/jobdetail/\d+",path))
@@ -332,6 +332,49 @@ def is_specific_role_title(title, source_id=""):
     if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","职位精选","职场优选","企业墙","地点：","地点:","校招高薪榜","薪资超","HR刚","HR今日","HR在线","助力简历","投后必反馈","全场景覆盖","数字化运营与服务能力突出")): return False
     stripped=re.sub(r"(?:专业不限|可接受应届生|接受应届生|应届生优先|相关专业)$","",t).strip()
     return len(stripped)>=2 and not stripped.endswith(("类","方向","体系","专业"))
+
+def extract_qiuzhaowang_role_names(text, link_hint=""):
+    """Extract concrete QZW job titles from visible detail text or its public listing card."""
+    text=clean(text or "")
+    candidates=[]
+    patterns=(
+        r"(?:招聘岗位|招聘职位|岗位名称|职位名称)\s*[:：]?\s*(.{1,260}?)(?=\s*(?:工作城市|工作地点|工作地区|面向届次|届次批次|招聘项目|岗位职责|岗位要求|任职要求|职位描述|企业介绍|公司信息|$))",
+        r"(?:招聘岗位|招聘职位)\s*[:：]?\s*(.{1,160}?)(?=\s*$)",
+    )
+    for pattern in patterns:
+        match=re.search(pattern,text)
+        if match:
+            candidates.append(match.group(1))
+            break
+    if not candidates and link_hint:
+        candidates.append(clean(link_hint))
+    result=[]
+    role_starts=("AIGC","AI","FPGA","大数据","算法","研发","软件","应用","嵌入式","人力资源","供应链","销售","财务","项目","产品","技术","工程","质量","管理","采购","市场","运营","数据","机械","电气","材料","设计","法律","法务","审计","教师","研究","客户","生产","工艺","医学","药学","营销","品牌","战略","风险","金融","投资","管培","行政","专员","计算机","通信","网络","硬件","芯片","自动化","控制","系统","测试","运维","服务","助理","顾问","咨询","业务","商务","物流","设备","计划","渠道","会计","客服","机器人","分析","编辑","翻译","内容","直播","动画","影视","剪辑","编导","策划")
+    for raw in candidates:
+        raw=re.sub(r"(?:招聘项目包含.*$|(?:\.\.\.|…)+$)","",raw).strip()
+        parts=[part.strip(" -—:：") for part in re.split(r"\s*[·•｜|丨、；;]\s*",raw) if part.strip()]
+        if len(parts)==1:
+            parts=re.split(r"\s+(?=(?:"+"|".join(map(re.escape,role_starts))+r"))",raw)
+        for part in parts:
+            title=clean_job_title(part,"qiuzhaowang")
+            if 2<len(title)<=45 and is_specific_role_title(title,"qiuzhaowang") and title not in result:
+                result.append(title)
+    return result[:40]
+
+def select_rotation_batch(pool, cursor, limit):
+    """Rotate only through discovered public listing URLs; never invent page URLs."""
+    unique=[]
+    seen=set()
+    for url in pool or []:
+        value=canonical(str(url))
+        if value and value not in seen:
+            unique.append(value); seen.add(value)
+    if not unique or int(limit)<=0:
+        return [],max(0,int(cursor or 0))
+    offset=max(0,int(cursor or 0))
+    start=offset % len(unique)
+    count=min(len(unique),max(1,int(limit)))
+    return [unique[(start+i)%len(unique)] for i in range(count)],offset+count
 
 def extract_section(text, starts, ends, limit=5000):
     start_re="(?:"+"|".join(starts)+r")\s*[:：]?\s*"
@@ -632,8 +675,8 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
     return out
 
 def collect_source(src):
-    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -651,6 +694,11 @@ def collect_source(src):
             diagnostics["last_error"]=f"{type(exc).__name__}: {str(exc)[:140]}"
             continue
         visited.add(cp)
+        source_id=src.get("id","")
+        if source_id in {"yingjiesheng","nowcoder","boss","51job","iguopin"} and should_discover_public_url(source_id,final) and not is_direct_detail_url(final):
+            listing_url=canonical(final)
+            if listing_url not in diagnostics["listing_urls_visited"] and len(diagnostics["listing_urls_visited"])<600:
+                diagnostics["listing_urls_visited"].append(listing_url)
         diagnostics["html_bytes"]+=len(html.encode("utf-8",errors="ignore"))
         p=Parser(); p.feed(html)
         page_text=p.page_text()
@@ -686,6 +734,9 @@ def collect_source(src):
         cohort=explicit_cohort or source_cohort
         cohort_evidence=("page_text" if explicit_cohort else "")
         page_company=company
+        qzw_meta=qzw_detail_metadata.get(canonical(final),{}) if src.get("id")=="qiuzhaowang" else {}
+        if qzw_meta.get("company"): page_company=qzw_meta["company"]
+        qzw_role_hint=qzw_meta.get("title","")
         detail_fields={}
         if src.get("id")=="yingjiesheng" and is_direct_detail_url(final):
             detail_fields=extract_yingjiesheng_fields(raw_page_title,page_text,final)
@@ -717,7 +768,10 @@ def collect_source(src):
             record_source="前程无忧校园招聘公开岗位"
         elif src.get("id")=="qiuzhaowang":
             parts=re.split(r"[|｜]",raw_page_title)
-            if "/jobs/" in urlparse(final).path and parts: page_company=parts[0].strip()
+            if qzw_meta.get("company"):
+                page_company=qzw_meta["company"]
+            elif "/jobs/" in urlparse(final).path and parts and not re.search(r"(?:最新更新|招聘信息|秋招网|校招岗位)",parts[0]):
+                page_company=parts[0].strip()
             record_source="秋招网公开聚合"
         elif src.get("id")=="mianlingai":
             record_source="面灵AI公开聚合"
@@ -730,44 +784,55 @@ def collect_source(src):
             for k,v in extract_detail_fields_generic(page_text,detail_heading or raw_page_title).items():
                 detail_fields.setdefault(k,v)
         if src.get("id")=="qiuzhaowang" and urlparse(final).path=="/latest":
-            page_text=p.page_text()
             seen_groups=set()
-            role_hints=("工程师","研发","算法","产品","经理","销售","财务","设计","运营","管理","技术","教师","审计","法律","采购","管培","分析","工艺","自动化","质量","研究","岗位","方向","PM","AI","硬件","软件","芯片","医学","金融","会计","营销","供应链","商务","专员","服务","项目","研究员","分析师","咨询","物流","教师","顾问","工程技术")
+            role_hints=("工程师","研发","算法","产品","经理","销售","财务","设计","运营","管理","技术","教师","审计","法律","采购","管培","分析","工艺","自动化","质量","研究","岗位","方向","PM","AI","硬件","软件","芯片","医学","金融","会计","营销","供应链","商务","专员","服务","项目","研究员","分析师","咨询","物流","顾问","工程技术")
             for link_index,a in enumerate(p.links):
-                group_title=clean(a["text"])
-                group_href=urljoin(final,a["href"])
+                group_title=clean(a.get("text",""))
+                group_href=urljoin(final,a.get("href",""))
                 if not same_host(final,group_href) or "/jobs/" not in urlparse(group_href).path: continue
-                if len(group_title)<4 or len(group_title)>500: continue
+                if len(group_title)<3 or len(group_title)>500: continue
                 if group_title.startswith(("查看","开通会员","登录")) or group_title in ("岗位发现","我的机会","求职记录","全部岗位"): continue
                 if any(x.lower() in group_title.lower() for x in NAV_BAD): continue
                 if not any(x.lower() in group_title.lower() for x in role_hints): continue
                 group_url=canonical(group_href)
-                if group_url in seen_groups: continue
+                if not is_direct_detail_url(group_url) or group_url in seen_groups: continue
                 seen_groups.add(group_url)
-                # A /latest item is only a link to a specific company/position page.
-                # Queue its detail URL, and do not emit labels from a listing as vacancies.
-                if not is_direct_detail_url(group_url):
-                    continue
+                previous=[]
+                for prev in reversed(p.links[max(0,link_index-4):link_index]):
+                    candidate=clean(prev.get("text",""))
+                    candidate_url=urljoin(final,prev.get("href",""))
+                    if not (2<=len(candidate)<=70) or "/jobs/" in urlparse(candidate_url).path: continue
+                    if candidate in ("秋招网","岗位发现","我的机会","求职记录","校招资料","求职指南","会员权益"): continue
+                    if any(x.lower() in candidate.lower() for x in NAV_BAD) or is_specific_role_title(candidate,"qiuzhaowang"): continue
+                    if re.fullmatch(r"[\d年月日./:：-]+",candidate): continue
+                    previous.append(candidate)
+                company_name=next((x for x in previous if any(mark in x for mark in ("有限公司","股份","集团","公司","科技","银行","证券","研究院","大学","医院","中心"))),"")
+                if not company_name and previous: company_name=previous[0]
+                hint=re.sub(r"\s*(?:工作地点|工作城市|面向届次|届次批次|招聘项目包含).*?$","",group_title).strip()
+                qzw_detail_metadata[group_url]={"company":company_name or company,"title":hint}
                 if group_url not in visited and group_url not in queue and len(queue)<max_pages:
                     queue.append(group_url)
                     diagnostics["discovery_pages_queued"]+=1
                     diagnostics["direct_detail_links_queued"]+=1
-                continue
-        if src.get("id")=="qiuzhaowang" and "/jobs/" in urlparse(final).path:
-            page_text=p.page_text()
-            role_match=re.search(r"招聘岗位\s*(.+?)\s*工作城市",page_text)
+        if src.get("id")=="qiuzhaowang" and is_direct_detail_url(final) and "/jobs/" in urlparse(final).path:
+            qzw_roles=extract_qiuzhaowang_role_names(page_text,qzw_role_hint)
+            if not qzw_roles:
+                for heading in p.headings:
+                    candidate=clean_job_title(heading,"qiuzhaowang")
+                    if is_specific_role_title(candidate,"qiuzhaowang") and candidate not in qzw_roles:
+                        qzw_roles.append(candidate)
             city_match=re.search(r"工作城市\s*(.+?)\s*面向届次",page_text)
-            if role_match:
-                role_text=re.sub(r"招聘项目包含.*$","",role_match.group(1)).strip()
-                role_names=[clean(x) for x in re.split(r"\s*[·•]\s*",role_text) if clean(x)]
-                city_text=clean(city_match.group(1)) if city_match else "全国"
-                for role_name in role_names:
-                    if not (2<len(role_name)<=45): continue
-                    if role_name.startswith(("招聘项目","具体岗位","岗位要求","招聘方向")): continue
-                    item=record(page_company,role_name,final,record_source,cohort,5)
-                    item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
-                    item["city"]=city_text or "全国"; item["confirmed_by"]=[record_source]
-                    rows.append(item)
+            city_text=clean(city_match.group(1)) if city_match else ""
+            for role_name in qzw_roles:
+                item=record(page_company,role_name,final,record_source,cohort,5,cohort_evidence=cohort_evidence)
+                merge_detail_fields(item,detail_fields)
+                item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
+                if city_text: item["city"]=city_text
+                item["confirmed_by"]=[record_source]
+                item["last_collected"]=TODAY; item["last_verified"]=TODAY; item["last_verified_at"]=STAMP
+                item["verification_status"]="link_alive"; item["verification_http_status"]=200
+                item["verification_note"]="公开岗位详情页可读取；届别与有效期仍需独立核验"
+                rows.append(item)
         page_title_ok=is_specific_role_title(page_title,src.get("id","")) if "公开" in record_source else is_concrete_role_title(page_title,src.get("id",""))
         if page_title and page_title_ok:
             sc=score(page_title,final,page_text)
@@ -821,6 +886,10 @@ def collect_source(src):
             if not discovery_url or discovery_url in visited or discovery_url in scheduled: continue
             if not should_discover_public_url(src.get("id",""),discovery_url): continue
             is_detail=is_direct_detail_url(discovery_url)
+            if (not is_detail) and src.get("id") in {"yingjiesheng","nowcoder","boss","51job","iguopin"}:
+                candidates=diagnostics["listing_url_candidates"]
+                if discovery_url not in candidates and len(candidates)<1200:
+                    candidates.append(discovery_url)
             if not is_detail and diagnostics["listing_pages_queued"]>=listing_limit: continue
             if len(queue)>=max_pages: continue
             queue.append(discovery_url); scheduled.add(discovery_url)
@@ -862,7 +931,7 @@ def collect_source(src):
         # If a public official page exposes a 2027 recruitment announcement but no job-level
         # data, retain exactly one clearly-labelled lead instead of mislabelling it as a job.
         # We do not synthesize salary, location, degree, or job descriptions for this lead.
-        if len(rows)==rows_before_page:
+        if len(rows)==rows_before_page and not is_direct_detail_url(final):
             announcement_candidates=[]
             for link in p.links:
                 ann_title=clean(link.get("text",""))
@@ -933,6 +1002,25 @@ def main():
         state=json.loads(STATE_PATH.read_text(encoding="utf-8"))
     except Exception:
         state={"qiuzhaowang_next_page":21}
+    state.setdefault("source_listing_url_pool",{})
+    state.setdefault("source_listing_cursor",{})
+    rotating_sources={"yingjiesheng","nowcoder","boss","51job","iguopin"}
+    rotation_meta={}
+    for source in sources:
+        source_id=source.get("id","")
+        if source_id not in rotating_sources: continue
+        base_seeds=list(source.get("seed_urls") or [source.get("url","")])
+        base_set={canonical(u) for u in base_seeds if u}
+        stored_pool=[]
+        for url in state["source_listing_url_pool"].get(source_id,[]):
+            normalized=canonical(str(url))
+            if normalized and normalized not in base_set and not is_direct_detail_url(normalized) and should_discover_public_url(source_id,normalized) and normalized not in stored_pool:
+                stored_pool.append(normalized)
+        cursor=int(state["source_listing_cursor"].get(source_id,0))
+        batch_size=int(source.get("rotation_seed_batch",12))
+        batch,next_cursor=select_rotation_batch(stored_pool,cursor,batch_size)
+        source["seed_urls"]=list(dict.fromkeys(base_seeds+batch))[:int(source.get("max_pages",80))]
+        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"next_cursor":next_cursor,"batch_size":batch_size}
     rotation_start=int(state.get("qiuzhaowang_next_page",21))
     rotation_pages=[]
     page_num=rotation_start
@@ -960,6 +1048,26 @@ def main():
                       "embedded_json_blocks":0,"role_like_links":0,"sample_title":"","last_error":f"{type(exc).__name__}: {str(exc)[:140]}",
                       "parser_modes":[],"source_status":"access_error"}
             if s.get("id")=="qiuzhaowang": qiuzhaowang_visited=visited
+            source_id=s.get("id","")
+            if source_id in rotation_meta:
+                meta=rotation_meta[source_id]
+                base_set={canonical(u) for u in meta["base_seeds"] if u}
+                pool=list(meta["pool"])
+                for url in diag.get("listing_url_candidates",[]):
+                    normalized=canonical(str(url))
+                    if (normalized and normalized not in base_set and not is_direct_detail_url(normalized)
+                            and should_discover_public_url(source_id,normalized) and normalized not in pool):
+                        pool.append(normalized)
+                state["source_listing_url_pool"][source_id]=pool[-600:]
+                if not meta["pool"] and not meta["batch"]:
+                    visited_listing={canonical(u) for u in diag.get("listing_urls_visited",[])}
+                    positions=[i for i,url in enumerate(pool) if url in visited_listing]
+                    cursor=max(positions)+1 if positions else 0
+                else:
+                    cursor=meta["next_cursor"]
+                state["source_listing_cursor"][source_id]=cursor
+                diag["listing_pool_size"]=len(pool)
+                diag["listing_urls_visited_count"]=len(diag.get("listing_urls_visited",[]))
             all_rows.extend(rows)
             a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
             active+=a; review+=rr
@@ -967,6 +1075,10 @@ def main():
                             "active_candidates":a,"pending_review":rr,
                             "pages_attempted":diag.get("pages_attempted",0),"pages_failed":diag.get("pages_failed",0),
                             "html_bytes":diag.get("html_bytes",0),"links_seen":diag.get("links_seen",0),
+                            "listing_url_candidates":len(diag.get("listing_url_candidates",[])),
+                            "listing_urls_visited":diag.get("listing_urls_visited_count",len(diag.get("listing_urls_visited",[]))),
+                            "listing_pool_size":diag.get("listing_pool_size",0),
+                            "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
                             "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"role_records":diag.get("role_records",0),
@@ -989,8 +1101,12 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.0","enabled_sources":len(enabled),
-     "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page},
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.1","enabled_sources":len(enabled),
+     "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
+                         "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
+                                                         "next_offset":state["source_listing_cursor"].get(sid,0),
+                                                         "batch_size":rotation_meta[sid]["batch_size"]}
+                                                     for sid in rotation_meta}},
      "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
      "policy":"Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
      "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."},

@@ -5,6 +5,7 @@ from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
+    select_rotation_batch, extract_qiuzhaowang_role_names,
 )
 from quality_rules import assess, compact_json, should_publish_record
 
@@ -60,6 +61,29 @@ check("generic official list rejected", not is_direct_detail_url("https://career
 # Public list discovery expands only within allowed recruitment-site domains.
 check("YJS related public category subdomain is allowed",
       same_host("https://www.yingjiesheng.com/major/", "https://zhiwei.yingjiesheng.com/major/"))
+check("51job public recruitment subdomain links are allowed",
+      same_host("https://xy.51job.com/", "https://campus.51job.com/jobs/list.html"))
+check("Guopin public recruitment subdomain links are allowed",
+      same_host("https://job.iguopin.com/", "https://www.iguopin.com/joblist?page=2"))
+check("51job public listing links are discoverable",
+      should_discover_public_url("51job", "https://campus.51job.com/jobs/list.html"))
+check("Guopin public list links are discoverable",
+      should_discover_public_url("iguopin", "https://www.iguopin.com/joblist?page=2"))
+check("YJS external redirect wrappers are rejected",
+      not should_discover_public_url("yingjiesheng", "https://q.yingjiesheng.com/thirdlink?url=https%3A%2F%2Fexample.com%2Fjobs"))
+check("public listing rotation advances through known URLs",
+      select_rotation_batch(["https://www.nowcoder.com/jobs/page/1","https://www.nowcoder.com/jobs/page/2","https://www.nowcoder.com/jobs/page/3"],0,2)
+      == (["https://www.nowcoder.com/jobs/page/1","https://www.nowcoder.com/jobs/page/2"],2))
+check("public listing rotation wraps without generating URLs",
+      select_rotation_batch(["https://www.nowcoder.com/jobs/page/1","https://www.nowcoder.com/jobs/page/2","https://www.nowcoder.com/jobs/page/3"],2,2)
+      == (["https://www.nowcoder.com/jobs/page/3","https://www.nowcoder.com/jobs/page/1"],4))
+check("QZW detail text yields concrete roles",
+      extract_qiuzhaowang_role_names("招聘岗位 销售管培生 · 操作管培生 · 客服管培生专业不限 工作城市 全国 面向届次 2027届")
+      == ["销售管培生","操作管培生","客服管培生专业不限"])
+check("QZW listing hint yields concrete roles",
+      extract_qiuzhaowang_role_names("", "销售管培生 · 操作管培生")
+      == ["销售管培生","操作管培生"])
+
 check("YJS list/category page is discoverable",
       should_discover_public_url("yingjiesheng", "https://www.yingjiesheng.com/major/"))
 check("YJS job-detail page is discoverable",
