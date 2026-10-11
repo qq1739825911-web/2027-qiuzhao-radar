@@ -12,7 +12,7 @@ import json,re,hashlib
 from pathlib import Path
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
-from urllib.parse import urljoin,urlparse,urlunparse,parse_qsl,urlencode
+from urllib.parse import urljoin,urlparse,urlunparse,parse_qsl,urlencode,quote
 from urllib.request import Request,urlopen
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -110,7 +110,10 @@ def canonical(u):
     # Strip only analytics/tracking parameters so paginated pages and distinct jobs do not collapse.
     tracking={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid","property","requestid","policytype","policyid","pagecode","pagesource","isinitiative","issuggest","jobrank","advid"}
     query=sorted((k,v) for k,v in parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
-    return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True),""))
+    # urllib.request requires non-ASCII path characters to be percent-encoded before opening.
+    encoded_path=quote(p.path,safe="/:@!    query=sorted((k,v) for k,v in parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
+    return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True),""))'()*+,;=-._~%")
+    return urlunparse((p.scheme.lower(),p.netloc.lower(),encoded_path.rstrip("/"),"",urlencode(query,doseq=True),""))
 def same_host(a,b):
     """Same host or approved recruitment-site subdomains (public pages only)."""
     ha=urlparse(a).netloc.lower().split(":")[0]
@@ -128,11 +131,11 @@ def should_discover_public_url(source_id,url):
         if not same_host("https://www.yingjiesheng.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         if any(x in path for x in ("/login","/register","/member","/vip","/user/","/account","/privacy")): return False
-        return (path=="/" or "/major/" in path or host.startswith("zhiwei.") or host.startswith("q.")
+        return (path=="/" or path.startswith(("/major/","/other/","/jobs/","/job/","/joblist/","/xuanjianghui/"))
+                or host.startswith(("zhiwei.","q.","web.","s."))
                 or bool(re.search(r"/jobdetail/\d+",path))
                 or bool(re.search(r"/job-[a-z0-9-]+\.html$",path))
                 or bool(re.search(r"/xjh-[a-z0-9-]+\.html$",path))
-                or "/xuanjianghui/" in path or "/jobs/" in path or "/job/" in path
                 or any(k in p.query.lower() for k in ("page=","pageno=","pagenum=","pageindex=")))
     if source_id=="boss":
         if not same_host("https://www.zhipin.com/school/",url): return False
@@ -152,8 +155,8 @@ def discovery_priority(source_id,url):
     """Prefer public list/category/pagination links while retaining direct details."""
     p=urlparse(url); path=p.path.lower(); query=p.query.lower()
     if source_id=="yingjiesheng":
-        if re.search(r"(?:[?&](?:page|pageno|pagenum|pageindex)=\d+|/index[_-]\d+\.html)",query+" "+path): return 0
-        if "/major/" in path or path=="/" or p.netloc.lower().startswith(("zhiwei.","q.")): return 1
+        if re.search(r"(?:[?&](?:page|pageno|pagenum|pageindex)=\d+|/(?:index|joblist|list)[_-]?\d+\.html)",query+" "+path): return 0
+        if "/major/" in path or "/other/" in path or path=="/" or p.netloc.lower().startswith(("zhiwei.","q.","web.","s.")): return 1
         if is_direct_detail_url(url): return 2
         if "/xjh-" in path or "/job-" in path: return 3
         return 4
@@ -239,7 +242,9 @@ def clean_job_title(title, source_id=""):
         t=re.sub(r"\s*招聘(?:信息)?[-_ ]*BOSS直聘.*$","",t,flags=re.I)
     if source_id=="qiuzhaowang":
         t=re.sub(r"\s*[|｜丨]\s*秋招网.*$","",t)
-        t=re.sub(r"^20\d{2}届最新更新校招岗位.*$","",t)
+        # The generic cleaner strips a leading cohort chip first, so this pattern
+        # intentionally works with or without the year prefix.
+        t=re.sub(r"^(?:20\d{2}届)?最新更新校招岗位.*$","",t)
     t=re.sub(r"\s*[_|｜]\s*(?:牛客网|应届生求职网).*$","",t)
     t=re.sub(r"\s*[-—]\s*(?:牛客网|应届生求职网).*$","",t)
     t=re.sub(r"\s*\d+\s*分钟前在线.*$","",t)
@@ -262,7 +267,9 @@ def is_concrete_role_title(title):
         "工商管理","市场营销","人力资源管理","物流管理","法学","新闻学","广告学",
         "视觉传达设计","数字媒体艺术","工业设计","数学与应用数学","统计学",
         "电气工程及其自动化","通信工程","土木工程","建筑学","环境工程","生物工程",
-        "护理学","药学","临床医学","汉语言文学","行政管理","电子商务"
+        "护理学","药学","临床医学","汉语言文学","行政管理","电子商务",
+        "戏剧与影视学","安全科学与工程","电气工程","航空航天工程","生物医学工程",
+        "电子科学与技术","金融工程","新闻传播学","应用数学","信息管理与信息系统"
     }
     base=re.sub(r"[（(](?:专业不限|相关专业|应届生优先|接受应届生)[）)]$","",t)
     base=re.sub(r"(?:专业不限|等相关专业|相关专业)$","",base).strip()
@@ -273,6 +280,7 @@ def is_specific_role_title(title):
     t=clean_job_title(title)
     if not is_concrete_role_title(t): return False
     if re.search(r"(?:最新更新|招聘信息|截止时间|职位列表|岗位列表|职位分类|岗位分类|专业目录)",t): return False
+    if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","企业墙","地点：","地点:")): return False
     stripped=re.sub(r"(?:专业不限|可接受应届生|接受应届生|应届生优先|相关专业)$","",t).strip()
     return len(stripped)>=2 and not stripped.endswith(("类","方向","体系","专业"))
 
@@ -310,8 +318,12 @@ def extract_yingjiesheng_fields(raw_title, text, url):
     fields["title"]=clean_job_title(title,"yingjiesheng")
     fields["company"]=company
     top=(text or "")[:3500]
-    salary=re.search(r"(?<![A-Za-z])\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|每月|月)?",top)
-    if salary: fields["salary"]=re.sub(r"\s+","",salary.group(0))
+    annual_salary=re.search(r"(?:年薪\s*)?\d+(?:\.\d+)?\s*(?:万元|万|元)(?:\s*/\s*年|/年|每年)",top)
+    if annual_salary:
+        fields["salary"]=re.sub(r"\s+","",annual_salary.group(0))
+    else:
+        salary=re.search(r"(?<![A-Za-z])\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|每月|月)?",top)
+        if salary: fields["salary"]=re.sub(r"\s+","",salary.group(0))
     degree=next((d for d in ("博士研究生及以上","硕士研究生及以上","本科及以上","大专及以上","博士及以上","硕士及以上","本科","硕士","博士","大专") if d in top), "")
     if degree: fields["degree"]=degree
     cities=("上海","北京","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨")
@@ -433,7 +445,7 @@ def embedded_records(company,source,parser,cohort,source_label=None,cohort_evide
                         employer_name=val.strip(); break
                 for key in ("positionName","jobName","recruitJobName","postName","title","name"):
                     val=node.get(key)
-                    if isinstance(val,str) and 3<len(val.strip())<90 and any(w.lower() in val.lower() for w in CONCRETE_WORDS):
+                    if isinstance(val,str) and 3<len(val.strip())<90 and (is_specific_role_title(val) if source_label and "公开" in source_label else any(w.lower() in val.lower() for w in CONCRETE_WORDS)):
                         title=val.strip(); break
                 url=""
                 for key in ("positionUrl","jobUrl","detailUrl","url","href","link"):
@@ -464,6 +476,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
         role_cells=row[1:] if source_label and "公开" in source_label else row
         role=next((x for x in role_cells if 2<len(x)<=45
                    and any(w.lower() in x.lower() for w in CONCRETE_WORDS)
+                   and (not source_label or "公开" not in source_label or is_specific_role_title(x))
                    and not x.endswith(("类","方向","相关专业","等相关专业","专业"))
                    and not x.startswith(("具有","负责","熟悉","掌握","参与","岗位","要求","本科","硕士","博士"))),None)
         if not role: continue
@@ -640,7 +653,8 @@ def collect_source(src):
                     item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
                     item["city"]=city_text or "全国"; item["confirmed_by"]=[record_source]
                     rows.append(item)
-        if page_title and is_concrete_role_title(page_title):
+        page_title_ok=is_specific_role_title(page_title) if "公开" in record_source else is_concrete_role_title(page_title)
+        if page_title and page_title_ok:
             sc=score(page_title,final,page_text)
             if sc>=5 and is_direct_detail_url(final):
                 item=record(page_company,page_title,final,record_source,cohort,sc,cohort_evidence=cohort_evidence)
@@ -686,7 +700,8 @@ def collect_source(src):
         for a in p.links:
             title=clean_job_title(a["text"],src.get("id","")); href=canonical(urljoin(final,a["href"]))
             if not title or len(title)<3 or len(title)>100 or not href or href in seen: continue
-            if not is_concrete_role_title(title): continue
+            title_ok=is_specific_role_title(title) if "公开" in record_source else is_concrete_role_title(title)
+            if not title_ok: continue
             if not same_host(final,href): continue
             if any(x.lower() in title.lower() for x in NAV_BAD): continue
             # Generic corporate pages such as financial-market pages must not

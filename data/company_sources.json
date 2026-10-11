@@ -53,18 +53,23 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.5：以公开主页、分类求职目录、职位分类子站和公开详情页为发现入口；跨 yingjiesheng.com/.net 相关子域名发现公开职位列表、分类、分页和详情链接。每轮最多80页并限速；列表链接先进入待核验区，只有实际详情和质量规则通过后才提升可信度；不采集登录后/会员信息，不绕过验证。",
+    "notes": "V1.5：重点抓取公开主页、专业分类、职位搜索站、移动端全职/前程无忧分类列表及公开详情页；允许 yingjiesheng.com 相关公开子域名（web/s/zhiwei/q/m）发现分类、分页和岗位详情。每轮最多100页、限速；对列表词条只作为待核验线索，只有抓取实际详情且标题/毕业届别等证据满足规则才可提高可信度。不访问登录/会员数据，不绕过验证码或访问限制。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
+      "https://web.yingjiesheng.com/",
+      "https://s.yingjiesheng.com/",
+      "https://m.yingjiesheng.com/other/index.html",
+      "https://m.yingjiesheng.com/other/51index.html",
+      "https://m.yingjiesheng.com/other/ptindex.html",
       "https://zhiwei.yingjiesheng.com/",
       "https://q.yingjiesheng.com/",
       "https://m.yingjiesheng.com/jobdetail/170935981",
       "https://m.yingjiesheng.com/jobdetail/173508261"
     ],
-    "max_pages": 80,
-    "max_candidates": 2600,
-    "listing_page_limit": 30
+    "max_pages": 100,
+    "max_candidates": 4000,
+    "listing_page_limit": 25
   },
   {
     "id": "iguopin",

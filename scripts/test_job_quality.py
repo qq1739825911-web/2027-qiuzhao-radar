@@ -4,7 +4,7 @@ from datetime import date
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
-    same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields,
+    same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, canonical,
 )
 from quality_rules import assess, compact_json, should_publish_record
 
@@ -86,6 +86,18 @@ check("non-QZW review leads are not discarded by QZW filter",
       should_publish_record({"source":"应届生求职网公开岗位","title":"商务英语","granularity":"review"}))
 check("QZW platform rollup title is cleaned to empty",
       clean_job_title("2027届最新更新校招岗位｜招聘信息与截止时间｜秋招网","qiuzhaowang")=="")
+check("YJS old-style public job detail route is recognized",
+      is_direct_detail_url("https://m.yingjiesheng.com/job-008-108-543.html"))
+check("YJS mobile public listing path is discoverable",
+      should_discover_public_url("yingjiesheng", "https://m.yingjiesheng.com/other/index.html"))
+check("YJS search subdomain root is discoverable",
+      should_discover_public_url("yingjiesheng", "https://s.yingjiesheng.com/"))
+check("Unicode paths are percent-encoded before requests",
+      "%E5" in canonical("https://m.yingjiesheng.com/地区招聘/index.html"))
+check("common BOSS major-directory cards are excluded",
+      not is_specific_role_title("戏剧与影视学") and not is_specific_role_title("安全科学与工程") and not is_specific_role_title("电气工程"))
+check("BOSS and Nowcoder marketing cards are excluded",
+      not is_specific_role_title("收藏 快手 全球短视频与直播龙头企业，全生态布局，内容与技术能力领先。 27届秋招：2天截止 地点：上海 立即投递"))
 boss_fields=extract_boss_fields(
     "AIGC设计师招聘_上海某某科技有限公司招聘信息-BOSS直聘",
     ["AIGC设计师"], "上海 本科 工作职责：制作AIGC内容。")
@@ -109,6 +121,14 @@ check("YJS company extracted", fields.get("company") == "上海基美影业股�
 check("YJS responsibilities extracted", "生成式AI视频创意" in fields.get("responsibilities", ""))
 check("YJS requirements extracted", "AIGC工具" in fields.get("requirements", ""))
 check("YJS address extracted", fields.get("address") == "上海静安区某路1号")
+annual_fields=extract_yingjiesheng_fields(
+    "苏州艾科瑞思智能装备股份有限公司招聘AIGC开发工程师_苏州校园招聘",
+    "职位：AIGC开发工程师 发布时间：2026-10-09 工作地点：苏州 学历要求：硕士 职位描述：开发AI应用 18万元/年",
+    "https://m.yingjiesheng.com/job-008-108-543.html")
+check("YJS annual salary is not mistaken for monthly salary",
+      annual_fields.get("salary") == "18万元/年")
+check("YJS details keep Suzhou available in city extraction",
+      "苏州" in extract_detail_fields_generic("工作城市：江苏省苏州市苏州工业园区").get("city",""))
 multi_city = extract_detail_fields_generic("2027届 AIGC算法工程师 工作地点：北京市,上海市 本科及以上 任职要求：熟悉多模态生成。")
 check("multi-city detail keeps Shanghai filterable",
       multi_city.get("city") == "北京、上海")
