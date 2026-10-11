@@ -70,6 +70,10 @@ check("YJS company extracted", fields.get("company") == "上海基美影业股�
 check("YJS responsibilities extracted", "生成式AI视频创意" in fields.get("responsibilities", ""))
 check("YJS requirements extracted", "AIGC工具" in fields.get("requirements", ""))
 check("YJS address extracted", fields.get("address") == "上海静安区某路1号")
+multi_city = extract_detail_fields_generic("2027届 AIGC算法工程师 工作地点：北京市,上海市 本科及以上 任职要求：熟悉多模态生成。")
+check("multi-city detail keeps Shanghai filterable",
+      multi_city.get("city") == "北京、上海")
+
 
 base = {
     "id": "fixture-priority",
