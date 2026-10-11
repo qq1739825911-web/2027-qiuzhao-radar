@@ -232,7 +232,9 @@ function formatDetailText(value){
 }
 function render(){
  const all=filtered().slice();
- all.sort((x,y)=>(Number(isPriorityJob(y))-Number(isPriorityJob(x)))||(y.publish_date||"").localeCompare(x.publish_date||"")||x.company.localeCompare(y.company,"zh-CN")||x.title.localeCompare(y.title,"zh-CN"));
+ const searchNeedle=$("q").value.trim().toLocaleLowerCase();
+ const relevance=x=>!searchNeedle?0:(String(x.title||"").toLocaleLowerCase().includes(searchNeedle)?3:([x.keywords,x.category,x.company].join(" ").toLocaleLowerCase().includes(searchNeedle)?2:1));
+ all.sort((x,y)=>(Number(isPriorityJob(y))-Number(isPriorityJob(x)))||(relevance(y)-relevance(x))||(y.publish_date||"").localeCompare(x.publish_date||"")||x.company.localeCompare(y.company,"zh-CN")||x.title.localeCompare(y.title,"zh-CN"));
  const priority=all.filter(isPriorityJob),leads=all.filter(x=>!isPriorityJob(x));
  const hasActiveFilters=Boolean($("q").value.trim()||$("cat").value||$("city").value||$("type").value||$("status").value||favoritesOnly);
  let autoBucketNote="";
@@ -299,7 +301,12 @@ function renderSources(){
   .then(m=>{
    clearTimeout(timeout);
    status.className="notice good";
-   status.textContent="最近采集："+(m.run_date||"未知")+" · 启用信源 "+(m.enabled_sources||0)+" 个 · 本轮发现 "+(m.records_found||0)+" 条 · 可优先核验 "+(m.published_priority_candidates ?? m.active_candidates ?? 0)+" 条 · 待核验线索 "+(m.published_pending_review ?? m.pending_review ?? 0)+" 条。自动任务每 6 小时运行。";
+   const sourceRows=m.results||[];
+   const roleSources=sourceRows.filter(r=>Number(r.role_records||0)>0).length;
+   const noticeOrEntry=sourceRows.filter(r=>Number(r.announcement_records||0)>0||Number(r.portal_entries||0)>0).length;
+   const zeroOutput=sourceRows.filter(r=>r.source_status==="reachable_no_records").length;
+   const accessErrors=sourceRows.filter(r=>r.source_status==="access_error").length;
+   status.textContent="最近采集："+(m.run_date||"未知")+" · 启用信源 "+(m.enabled_sources||0)+" 个 · 本轮发现 "+(m.records_found||0)+" 条 · 可优先核验 "+(m.published_priority_candidates ?? m.active_candidates ?? 0)+" 条 · 待核验线索 "+(m.published_pending_review ?? m.pending_review ?? 0)+" 条。信源拆分：岗位级记录 "+roleSources+" 个、只有公告/入口 "+noticeOrEntry+" 个、可访问但零产出 "+zeroOutput+" 个、访问受限 "+accessErrors+" 个。自动任务每 6 小时运行。";
    const vstatus=$("verificationStatus");
    fetch("./data/verification-manifest.json?ts="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(v=>{vstatus.className="notice "+(v.last_run_at?"good":"");vstatus.textContent=v.last_run_at?"最近自动链接核验："+v.last_run_at+" · 本轮检查 "+v.checked+" 条详情链接 · 可访问 "+v.link_alive+" 条 · 待复查 "+v.missing_needs_recheck+" 条 · 暂无法确认 "+v.unknown+" 条 · 连续两次失效关闭 "+v.closed_after_two_checks+" 条。链接可访问不代表岗位仍在招。":"链接核验器已接入，等待下一次自动任务运行。";}).catch(e=>{vstatus.textContent="链接核验报告暂不可用："+(e.message||"请求失败")});
    const hstatus=$("sourceHealthStatus");
