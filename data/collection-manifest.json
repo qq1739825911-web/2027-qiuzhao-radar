@@ -14,21 +14,21 @@
       8,
       9,
       10,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31,
-      32
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
     ],
-    "qiuzhaowang_next_page": 33
+    "qiuzhaowang_next_page": 43
   },
-  "records_found": 160,
-  "active_candidates": 32,
+  "records_found": 161,
+  "active_candidates": 33,
   "pending_review": 128,
   "results": [
     {
@@ -40,7 +40,7 @@
       "pending_review": 2,
       "pages_attempted": 60,
       "pages_failed": 0,
-      "html_bytes": 3226027,
+      "html_bytes": 3226080,
       "links_seen": 1070,
       "tables_seen": 8,
       "embedded_json_blocks": 668,
@@ -50,6 +50,34 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 47,
+      "detail_redirects": 47,
+      "detail_redirect_samples": [
+        {
+          "requested_path": "/job_detail/79fdd1de987aa11d0nF939q5EVdQ.html",
+          "final_host": "www.zhipin.com",
+          "final_path": "/web/passport/zp/security.html",
+          "page_title": "请稍候 - BOSS直聘"
+        },
+        {
+          "requested_path": "/job_detail/48649f64d7c6dd900nJ73N67E1BS.html",
+          "final_host": "www.zhipin.com",
+          "final_path": "/web/passport/zp/security.html",
+          "page_title": "请稍候 - BOSS直聘"
+        },
+        {
+          "requested_path": "/job_detail/4b3b5532527f0a560nF-29-6EVtY.html",
+          "final_host": "www.zhipin.com",
+          "final_path": "/web/passport/zp/security.html",
+          "page_title": "请稍候 - BOSS直聘"
+        },
+        {
+          "requested_path": "/job_detail/b72af8638df553380nJ-3NW4GVRW.html",
+          "final_host": "www.zhipin.com",
+          "final_path": "/web/passport/zp/security.html",
+          "page_title": "请稍候 - BOSS直聘"
+        }
+      ],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 2,
       "portal_entries": 0,
@@ -62,7 +90,7 @@
         "tables",
         "embedded_json"
       ],
-      "source_status": "announcement_only"
+      "source_status": "detail_access_restricted"
     },
     {
       "id": "citic",
@@ -83,6 +111,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 1,
       "portal_entries": 0,
@@ -115,6 +146,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
@@ -144,13 +178,16 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
       "sample_title": "",
       "role_title_samples": [],
       "role_field_samples": [],
-      "last_error": "URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>",
+      "last_error": "URLError: <urlopen error [Errno 101] Network is unreachable>",
       "parser_modes": [],
       "source_status": "access_error"
     },
@@ -173,6 +210,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -205,6 +245,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -237,6 +280,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 2,
       "portal_entries": 0,
@@ -259,7 +305,7 @@
       "pending_review": 0,
       "pages_attempted": 2,
       "pages_failed": 0,
-      "html_bytes": 7999999,
+      "html_bytes": 8000000,
       "links_seen": 34,
       "tables_seen": 0,
       "embedded_json_blocks": 8,
@@ -269,6 +315,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
@@ -301,6 +350,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -332,6 +384,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
@@ -351,7 +406,7 @@
       "pending_review": 1,
       "pages_attempted": 1,
       "pages_failed": 0,
-      "html_bytes": 916243,
+      "html_bytes": 916361,
       "links_seen": 6,
       "tables_seen": 0,
       "embedded_json_blocks": 8,
@@ -361,6 +416,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -393,6 +451,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 1,
       "portal_entries": 0,
@@ -415,7 +476,7 @@
       "pending_review": 1,
       "pages_attempted": 7,
       "pages_failed": 0,
-      "html_bytes": 1310256,
+      "html_bytes": 1308978,
       "links_seen": 0,
       "tables_seen": 0,
       "embedded_json_blocks": 37,
@@ -425,6 +486,30 @@
       "direct_detail_pages_visited": 6,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 6,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [
+        {
+          "url_path": "/campus/position/7666022623763056938/detail",
+          "page_title": "【27届校招】具身智能AI软件工程师 - 加入小鹏集团",
+          "text_preview": "【27届校招】具身智能AI软件工程师 - 加入小鹏集团"
+        },
+        {
+          "url_path": "/campus/m/position/7662698677748107571/detail",
+          "page_title": "【27届校招】算法工程师（视觉多模态方向） - 加入小鹏集团",
+          "text_preview": "【27届校招】算法工程师（视觉多模态方向） - 加入小鹏集团 iframe#douyinIframe { position: fixed; border: none; top: 44px; right: 0; bottom: 0; left: 0; width: 100%; height: calc(100% - 44px); } .htmlGlobalLoading { position: fixed; top: 50%; left: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: space-around; transform: translate(-50%, -50%); } .htmlGlobalLoading-circle { position: absolute; top: 27px; left: 27px; width: 10px; height: 10px; border-radius: 50%; } .htmlGlobalLoading-first { animation: circle-1 3s infinite; } .htmlGlobalLoading-second { animation: circle-2 3s infinite; }"
+        },
+        {
+          "url_path": "/campus/position/7678640648783022390/detail",
+          "page_title": "【27届校招】具身智能数据硬件产品经理 - 加入小鹏集团",
+          "text_preview": "【27届校招】具身智能数据硬件产品经理 - 加入小鹏集团"
+        },
+        {
+          "url_path": "/campus/position/7681615705750784262/detail",
+          "page_title": "【27届校招】HRBP培训生（研发方向） - 加入小鹏集团",
+          "text_preview": "【27届校招】HRBP培训生（研发方向） - 加入小鹏集团"
+        }
+      ],
       "role_records": 5,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -491,18 +576,42 @@
       "records_found": 40,
       "active_candidates": 7,
       "pending_review": 33,
-      "pages_attempted": 101,
-      "pages_failed": 1,
-      "html_bytes": 4286171,
-      "links_seen": 2639,
-      "tables_seen": 13,
-      "embedded_json_blocks": 462,
+      "pages_attempted": 100,
+      "pages_failed": 0,
+      "html_bytes": 4262060,
+      "links_seen": 2329,
+      "tables_seen": 0,
+      "embedded_json_blocks": 458,
       "role_like_links": 0,
-      "discovery_pages_queued": 190,
+      "discovery_pages_queued": 188,
       "listing_pages_queued": 25,
       "direct_detail_pages_visited": 66,
       "direct_detail_links_queued": 0,
-      "direct_detail_requests_attempted": 67,
+      "direct_detail_requests_attempted": 66,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [
+        {
+          "url_path": "/jobdetail/170935981",
+          "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决创作难题；"
+        },
+        {
+          "url_path": "/jobdetail/173508261",
+          "page_title": "招聘_招聘信息-应届生求职网",
+          "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
+        },
+        {
+          "url_path": "/job-008-111-850.html",
+          "page_title": "珠海市龙图光罩科技有限公司招聘品质工程师_广东校园招聘",
+          "text_preview": "珠海市龙图光罩科技有限公司招聘品质工程师_广东校园招聘 .ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li, .ieundefined .nav_hotcity li{float:none;} .ie11 .back, .ie11 .back2{float:left;} .ieundefined .back, .ieundefined .back2{float:none;} .ie11 #logo{float:left; width:31%;} .ieundefined #logo{float:none; width:120px;} .ie11 .header_r{float:right;} .ieundefined .header_r{float:none;} .ie11 .header_r a{float:right;} .ieundefined .header_r{float:none;} 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广州大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，"
+        },
+        {
+          "url_path": "/job-008-111-849.html",
+          "page_title": "珠海市龙图光罩科技有限公司招聘研发工程师_广东校园招聘",
+          "text_preview": "珠海市龙图光罩科技有限公司招聘研发工程师_广东校园招聘 .ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li, .ieundefined .nav_hotcity li{float:none;} .ie11 .back, .ie11 .back2{float:left;} .ieundefined .back, .ieundefined .back2{float:none;} .ie11 #logo{float:left; width:31%;} .ieundefined #logo{float:none; width:120px;} .ie11 .header_r{float:right;} .ieundefined .header_r{float:none;} .ie11 .header_r a{float:right;} .ieundefined .header_r{float:none;} 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广州大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，"
+        }
+      ],
       "role_records": 34,
       "announcement_records": 6,
       "portal_entries": 0,
@@ -529,23 +638,23 @@
         {
           "title": "品质工程师",
           "company": "[广东]珠海市龙图光罩科技有限公司",
-          "city": "上海",
-          "salary": "",
+          "city": "其它",
+          "salary": "5000～6000元/月",
           "degree": "本科",
           "source_url": "https://m.yingjiesheng.com/job-008-111-850.html"
         },
         {
           "title": "研发工程师",
           "company": "[广东]珠海市龙图光罩科技有限公司",
-          "city": "上海",
-          "salary": "",
+          "city": "其它",
+          "salary": "8000～10000元/月",
           "degree": "本科及以上",
           "source_url": "https://m.yingjiesheng.com/job-008-111-849.html"
         },
         {
           "title": "工程师",
           "company": "[新疆]新疆八一钢铁集团有限公司",
-          "city": "上海",
+          "city": "其它",
           "salary": "7K-7K/月",
           "degree": "本科及以上",
           "source_url": "https://m.yingjiesheng.com/job-008-111-887.html"
@@ -553,16 +662,15 @@
         {
           "title": "机械设计",
           "company": "[河南]凯迈（洛阳）机电有限公司",
-          "city": "上海",
+          "city": "其它",
           "salary": "8K-11K/月",
           "degree": "硕士及以上",
           "source_url": "https://m.yingjiesheng.com/job-008-111-886.html"
         }
       ],
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+      "last_error": "",
       "parser_modes": [
         "links",
-        "tables",
         "embedded_json"
       ],
       "source_status": "ok"
@@ -586,6 +694,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
@@ -615,6 +726,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 1,
       "portal_entries": 0,
@@ -632,12 +746,12 @@
       "id": "nowcoder",
       "company": "牛客",
       "pages_visited": 60,
-      "records_found": 46,
-      "active_candidates": 20,
+      "records_found": 47,
+      "active_candidates": 21,
       "pending_review": 26,
       "pages_attempted": 60,
       "pages_failed": 0,
-      "html_bytes": 5441402,
+      "html_bytes": 5479172,
       "links_seen": 3317,
       "tables_seen": 0,
       "embedded_json_blocks": 240,
@@ -647,7 +761,31 @@
       "direct_detail_pages_visited": 47,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 47,
-      "role_records": 38,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [
+        {
+          "url_path": "/jobs/detail/462572",
+          "page_title": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网",
+          "text_preview": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-PCB工程师 (西安)(J12276) 薪资面议 PCB工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 10分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★我们是谁： 诺瓦星云・硬件部丨PCB 设计团队——诺瓦深耕LED显示控制&视频控制硬件十余年，PCB 设计团队是硬件研发的核心支撑环节，承担公司全产品线 PCB Layout 设计，覆盖高速数字、电源、射频等多种板型，涉及高层数高密板及 HDI 设计；以 Cadence Allegro 为主力设计平台，建有完整的设计规范与评审流程。 ★多元化的PCB业务方向：不限于高速数字板、电源板"
+        },
+        {
+          "url_path": "/jobs/detail/462503",
+          "page_title": "27届校招-算法工程师(西安)(J12268)_诺瓦星云校招_牛客网",
+          "text_preview": "27届校招-算法工程师(西安)(J12268)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-算法工程师(西安)(J12268) 薪资面议 算法工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 10分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★核心定位 诺瓦星云 · 中央研究院 & 算法工程师——算法是诺瓦及全球LED显示控制与视频处理产业链的核心护城河，更是行业竞争的关键壁垒。 诺瓦司算法基因深厚，自2008年创立之初便组建算法研究团队。中央研究院汇聚算法工程师，由行业顶尖专家领衔，硕博人才云集，打通了从算法预研到工程落地的完整闭环。 ★多元化的研究方向：算法研究贯穿视频编解码、图像/视频处理、画质增强、显示驱动控制、LED逐点光"
+        },
+        {
+          "url_path": "/jobs/detail/462504",
+          "page_title": "27届校招-大模型算法工程师(西安)(J12269)_诺瓦星云校招_牛客网",
+          "text_preview": "27届校招-大模型算法工程师(西安)(J12269)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-大模型算法工程师(西安)(J12269) 薪资面议 算法工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 10分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★核心定位： 诺瓦星云 · 中央研究院 & 算法工程师——算法是诺瓦乃至全球LED显示控制与视频处理产业链的核心护城河，更是行业竞争的关键壁垒。 诺瓦算法基因深厚，自2008年创立之初便组建算法研究团队。中央研究院汇聚算法工程师，由行业顶尖专家领衔，硕博人才云集，打通了从算法预研到工程落地的完整闭环。 ★前沿技术方向：该岗位聚焦产业链/工业场景进行探索和落地大模型路线，包含：多模态模"
+        },
+        {
+          "url_path": "/jobs/detail/467982",
+          "page_title": "27届校招-AI产品经理（武汉）_数字政通校招_牛客网",
+          "text_preview": "27届校招-AI产品经理（武汉）_数字政通校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-AI产品经理（武汉） 16-20K * 13薪 产品经理 武汉 硕士 2027届 收藏 立即申请 陈女士 今天在线 对职位感兴趣，投递后开启聊天 北京数字政通科技股份有限公司·HR 反馈率：100% | 反馈时长：2天 岗位关键词 毕业要求：2027届 投递时间：2026年9月17日-2027年1月31日 岗位职责 1、参与产品规划与路线图制定，深入城市治理与政务业务场景，结合用户价值、业务目标、实施成本和交付风险，完成需求分类、优先级判断和版本范围设计； 2、负责用户调研与需求分析，区分用户表达的诉求、实际使用障碍与根本问题，澄清用户角色、业务流程、产品价值、业务规则、功能范围和验收标准； 3、将复杂业务问题转化为可落地的产品方案，输出业务流程、功能结构、交互原型和 PRD，明确数据规则、权限边界、异常处理与验收方式；对适合 AI / Agent 参与的任务，进一步设计任务链、人工确认点"
+        }
+      ],
+      "role_records": 39,
       "announcement_records": 8,
       "portal_entries": 0,
       "sample_title": "应届生求职网站_最新更新校园招聘/实习机会/内推资讯_牛客网",
@@ -719,7 +857,7 @@
       "pending_review": 1,
       "pages_attempted": 8,
       "pages_failed": 0,
-      "html_bytes": 449231,
+      "html_bytes": 454401,
       "links_seen": 28,
       "tables_seen": 0,
       "embedded_json_blocks": 32,
@@ -729,6 +867,30 @@
       "direct_detail_pages_visited": 7,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 7,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [
+        {
+          "url_path": "/jobs/detail/GRADUATE/3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+          "page_title": "百度校园招聘",
+          "text_preview": "百度校园招聘 首页 职位 招聘动态 了解百度 登录 2027AIDU-大模型Infra工程师(J99967) 北京市 AIDU项目 技术 若干 2026-09-24 工作职责： 1. 构建AI异构计算加速引擎，负责底层算子、通信库、编译系统开发与优化； 2. 面向CPU/GPU/FPGA/ASIC等架构进行性能调优； 3. 设计自适应分布式系统，优化大模型训练与推理效率； 4. 探索算法与算力协同优化，降低大模型成本。 职责要求： 1. 计算机、电子等相关专业硕士及以上学历； 2. 精通C++/Python，熟悉计算机体系结构； 3. 有GPU/ARM/MIPS/DSP等异构计算平台开发经验； 4. 熟悉MPI、NCCL、RDMA等通信技术； 5. 有CUDA/OpenCL编程或LLVM经验者优先； 6. 有大规模AI集群或超算系统软件开发经验者优先。 招聘部门：AI计算部、自动驾驶技术部 申请职位 该岗位支持通过内推码推荐，点击“申请职位”后填写内推码即可 使用百度前必读 | 招聘帮助 | 百度校园 | 关于百度"
+        },
+        {
+          "url_path": "/jobs/detail/GRADUATE/d29404bd-55de-4cc1-929b-e67d304abc97",
+          "page_title": "百度校园招聘",
+          "text_preview": "百度校园招聘 2027AIDU-多模态算法工程师(J99956) 北京市,上海市 AIDU项目 技术 若干 2026-09-24 工作职责： 1. 负责多模态大模型的算法研发与迭代，覆盖图文、视频、语音、3D等多模态融合理解与生成； 2. 研究跨模态对齐、对比学习、扩散模型、视频生成、图像编辑、3D生成、风格迁移等前沿技术； 3. 参与多模态数据pipeline建设、评测体系设计与业务落地，推动模型在搜索、推荐、AIGC、健康、自动驾驶、网盘文库、视频理解、解题等核心场景中的应用； 4. 研发方向包括但不限于：视觉感知算法、多模态理解模型、图像/视频生成、模型压缩轻量化、文档多模态等； 5. 建设多模态数据管线，优化模型训练与推理效率，完成算法模型的训练、优化和部署。 职责要求： 1. 博士优先，计算机、模式识别、人工智能、电子工程、数学等相关专业硕士及以上学历； 2. 掌握计算机视觉、图像处理、深度学习等基础理论，在多模态模型训练、文档多模态、开放域目标检测、模型压缩小型化等方向有深入研究； 3. 熟悉扩散模型、多模态大模型（如CLIP、Flamingo、Qwen-VL等），对图像生成、视频生成、3D生成、数字人等方向有浓厚兴趣及项目经验； 4. 熟练掌握Python及PyTorch/PaddlePaddle/TensorFlow等深度学习框架，有较强论文复现能力； 5. 有多模"
+        },
+        {
+          "url_path": "/jobs/detail/GRADUATE/2df21b8d-b533-40e4-ad89-6dea847a44c8",
+          "page_title": "百度校园招聘",
+          "text_preview": "百度校园招聘 首页 职位 招聘动态 了解百度 登录 上海-多模态算法工程师(J100767) 上海市 校招 技术 5人 2026-07-21 工作职责： -从事多模态大模型（视觉-语言、音频-语言、跨模态生成等）的算法研究与工程实现 -探索多模态理解与生成能力的提升方法，包括图文对齐、跨模态检索、多模态推理等 -结合最新多模态大模型进展，推动技术快速迭代 -设计高质量多模态训练数据方案与评估体系 -紧跟多模态前沿研究，将论文成果高效转化为工程实践 职责要求： -本科及以上学历，计算机、人工智能等相关专业优先 -扎实的深度学习基础，熟悉Transformer、ViT、CLIP等多模态模型结构 -熟练掌握Python及深度学习框架（PyTorch/PaddlePaddle） -有多模态学习、计算机视觉或NLP相关研究/项目经历者优先 -在顶级学术会议（CVPR、ECCV、ACL等）发表过论文者优先 申请职位 该岗位支持通过内推码推荐，点击“申请职位”后填写内推码即可 使用百度前必读 | 招聘帮助 | 百度校园 | 关于百度"
+        },
+        {
+          "url_path": "/jobs/detail/GRADUATE/df1e79e6-b6cc-4300-acf2-2e0d0a5a3eaf",
+          "page_title": "百度校园招聘",
+          "text_preview": "百度校园招聘 首页 职位 招聘动态 了解百度 登录 上海-AI Infra工程师(J100732) 上海市 校招 技术 5人 2026-07-21 工作职责： -负责大模型训练/推理基础设施的设计与优化，包括分布式训练框架、推理引擎、模型压缩部署等 -深入优化计算效率，探索混合精度、量化（INT8/FP16）、KV Cache等技术的工程实践 -与算法团队协作，推动大模型在异构硬件（GPU/NPU）上的高效运行 -参与AI系统架构设计，提升训练和推理的吞吐量与稳定性 -关注AI Infra前沿进展，将CUDA/XLA优化、算子融合等技术应用于实际系统 职责要求： -本科及以上学历，计算机、软件工程等相关专业优先 -熟悉分布式系统与并行计算，有CUDA编程或高性能计算经验者优先 -掌握C++/Python，有深度学习框架（PyTorch/PaddlePaddle）使用经验 -理解模型量化、推理优化、显存管理等技术原理 -有大模型训练/推理系统相关项目或实习经历者优先 申请职位 该岗位支持通过内推码推荐，点击“申请职位”后填写内推码即可 使用百度前必读 | 招聘帮助 | 百度校园 | 关于百度"
+        }
+      ],
       "role_records": 0,
       "announcement_records": 1,
       "portal_entries": 0,
@@ -751,7 +913,7 @@
       "pending_review": 50,
       "pages_attempted": 50,
       "pages_failed": 0,
-      "html_bytes": 4938719,
+      "html_bytes": 5024776,
       "links_seen": 4935,
       "tables_seen": 0,
       "embedded_json_blocks": 430,
@@ -761,6 +923,30 @@
       "direct_detail_pages_visited": 30,
       "direct_detail_links_queued": 50,
       "direct_detail_requests_attempted": 30,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [
+        {
+          "url_path": "/jobs/position-32406",
+          "page_title": "AGS艾吉赛2027届秋招｜岗位要求与投递信息｜秋招网",
+          "text_preview": "AGS艾吉赛2027届秋招｜岗位要求与投递信息｜秋招网 秋招网标志 秋招网 反馈与建议 登录 / 注册 找岗位 岗位发现 企业地图 我的求职 我的机会 求职记录 求职准备 求职指南 校招资料 内推码库 简历工具 网申插件 内测 会员权益 直接打开投递入口，记录投递进度和截止提醒 收起侧栏 秋招网标志 秋招网 反馈 登录 工作台 岗位发现 我的机会 求职记录 企业地图 校招资料 求职指南 内推码库 简历工具 网申插件 · 内测中 会员权益 秋小招 反馈与建议 登录 / 注册 关闭菜单 返回岗位列表 AGS艾吉赛 AGS艾吉赛2027届秋招 深圳 2027届 秋招 招满为止 先核对岗位要求、专业与截止时间，再前往招聘方页面完成投递。 登录后加入待投 岗位概览 招聘信息 信息整理自招聘公告或公开招聘汇总；缺失字段标为“本站暂未核实”，不代表招聘方没有要求。 来源列出的方向 销售管培生 · 操作管培生 · 客服管培生专业不限 · 国际贸易 · 物流 · 商务英语 · 外语 汇总摘要可能包含岗位和专业名称，尚未逐项分离核验，不作为完整岗位清单。 工作城市 深圳 面向届次 2027届 招聘批次 秋招 学历要求 本站暂未核实 专业要求 本站暂未核实 笔试情况 本站暂未核实 截止时间 招满为止 信息摘要 招聘简介 根据公开来源整理，不替代完整招聘公告；投递前请核对原文。 来源：求职方舟列表（htt"
+        },
+        {
+          "url_path": "/jobs/position-32428",
+          "page_title": "GIADA2027届秋招｜岗位要求与投递信息｜秋招网",
+          "text_preview": "GIADA2027届秋招｜岗位要求与投递信息｜秋招网 秋招网标志 秋招网 反馈与建议 登录 / 注册 找岗位 岗位发现 企业地图 我的求职 我的机会 求职记录 求职准备 求职指南 校招资料 内推码库 简历工具 网申插件 内测 会员权益 直接打开投递入口，记录投递进度和截止提醒 收起侧栏 秋招网标志 秋招网 反馈 登录 工作台 岗位发现 我的机会 求职记录 企业地图 校招资料 求职指南 内推码库 简历工具 网申插件 · 内测中 会员权益 秋小招 反馈与建议 登录 / 注册 关闭菜单 返回岗位列表 GIADA GIADA2027届秋招 北京、上海、南京、杭州、深圳、成都、沈阳 2027届 秋招 招满为止 先核对岗位要求、专业与截止时间，再前往招聘方页面完成投递。 登录后加入待投 岗位概览 招聘信息 信息整理自招聘公告或公开招聘汇总；缺失字段标为“本站暂未核实”，不代表招聘方没有要求。 来源列出的方向 零售管培精英项目 · 精英管培生专业不限 汇总摘要可能包含岗位和专业名称，尚未逐项分离核验，不作为完整岗位清单。 工作城市 北京、上海、南京、杭州、深圳、成都、沈阳 面向届次 2027届 招聘批次 秋招 学历要求 本站暂未核实 专业要求 本站暂未核实 笔试情况 本站暂未核实 截止时间 招满为止 信息摘要 招聘简介 根据公开来源整理，不替代完整招聘公告；投递前请核对原文。 来源：求职方舟列表"
+        },
+        {
+          "url_path": "/jobs/position-32430",
+          "page_title": "一博科技2027届秋招｜岗位要求与投递信息｜秋招网",
+          "text_preview": "一博科技2027届秋招｜岗位要求与投递信息｜秋招网 秋招网标志 秋招网 反馈与建议 登录 / 注册 找岗位 岗位发现 企业地图 我的求职 我的机会 求职记录 求职准备 求职指南 校招资料 内推码库 简历工具 网申插件 内测 会员权益 直接打开投递入口，记录投递进度和截止提醒 收起侧栏 秋招网标志 秋招网 反馈 登录 工作台 岗位发现 我的机会 求职记录 企业地图 校招资料 求职指南 内推码库 简历工具 网申插件 · 内测中 会员权益 秋小招 反馈与建议 登录 / 注册 关闭菜单 返回岗位列表 一博科技 一博科技2027届秋招 北京、天津、石家庄、上海、南京、苏州、杭州、武汉、广州、深圳、珠海、西安 2027届 秋招 招满为止 先核对岗位要求、专业与截止时间，再前往招聘方页面完成投递。 登录后加入待投 岗位概览 招聘信息 信息整理自招聘公告或公开招聘汇总；缺失字段标为“本站暂未核实”，不代表招聘方没有要求。 来源列出的方向 硬件工程师 -(PCB 设计) · 日语翻译 · SI 仿真工程师 · 采购 · 工程岗 · 工艺研发岗 · 产品研发岗 · 质量管理岗 · 总经办 · 物控岗电子科学与技术 · 电子信息工程 · 通信工程 · 日语专业 · 微电子 · 通信 · 电路与系统 · ...... 汇总摘要可能包含岗位和专业名称，尚未逐项分离核验，不作为完整岗位清单。 工作城市 北京、"
+        },
+        {
+          "url_path": "/jobs/position-32403",
+          "page_title": "不筹量子2027届秋招｜岗位要求与投递信息｜秋招网",
+          "text_preview": "不筹量子2027届秋招｜岗位要求与投递信息｜秋招网 秋招网标志 秋招网 反馈与建议 登录 / 注册 找岗位 岗位发现 企业地图 我的求职 我的机会 求职记录 求职准备 求职指南 校招资料 内推码库 简历工具 网申插件 内测 会员权益 直接打开投递入口，记录投递进度和截止提醒 收起侧栏 秋招网标志 秋招网 反馈 登录 工作台 岗位发现 我的机会 求职记录 企业地图 校招资料 求职指南 内推码库 简历工具 网申插件 · 内测中 会员权益 秋小招 反馈与建议 登录 / 注册 关闭菜单 返回岗位列表 不筹量子 不筹量子2027届秋招 上海 2027届 秋招 招满为止 先核对岗位要求、专业与截止时间，再前往招聘方页面完成投递。 登录后加入待投 岗位概览 招聘信息 信息整理自招聘公告或公开招聘汇总；缺失字段标为“本站暂未核实”，不代表招聘方没有要求。 来源列出的方向 硬件系统 · 冷原子系统 · 光学设计 · 机械设计 · 电子工程 · 测控 · FPGA系统开发 · 异构计算 · 量子体系架构算法 · 量子纠错码与解码 · 容错量子计算架构与资源优化 · 量子化学 · 量子模拟与材料 · 生物医药物理 · 光学 · 测控...... 汇总摘要可能包含岗位和专业名称，尚未逐项分离核验，不作为完整岗位清单。 工作城市 上海 面向届次 2027届 招聘批次 秋招 学历要求 本站暂未核实 专业要求 "
+        }
+      ],
       "role_records": 0,
       "announcement_records": 50,
       "portal_entries": 0,
@@ -793,6 +979,15 @@
       "direct_detail_pages_visited": 1,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 1,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [
+        {
+          "url_path": "/web/position/detail",
+          "page_title": "美团招聘",
+          "text_preview": ".default-loading { display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; } 美团招聘"
+        }
+      ],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 3,
@@ -824,6 +1019,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -853,6 +1051,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -882,6 +1083,9 @@
       "direct_detail_pages_visited": 0,
       "direct_detail_links_queued": 0,
       "direct_detail_requests_attempted": 0,
+      "detail_redirects": 0,
+      "detail_redirect_samples": [],
+      "direct_detail_samples": [],
       "role_records": 0,
       "announcement_records": 0,
       "portal_entries": 1,
@@ -897,11 +1101,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 4019,
+  "published_total_jobs": 4024,
   "published_priority_candidates": 50,
-  "published_pending_review": 3969,
-  "records_added_this_run": 24,
-  "records_updated_this_run": 134,
+  "published_pending_review": 3974,
+  "records_added_this_run": 36,
+  "records_updated_this_run": 120,
   "quality_gate_version": "2.1",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -914,6 +1118,6 @@
       "牛客"
     ]
   },
-  "quality_checked_at": "2026-10-11T13:49:15+00:00",
+  "quality_checked_at": "2026-10-11T14:27:00+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
