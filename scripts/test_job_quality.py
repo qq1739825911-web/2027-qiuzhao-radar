@@ -108,6 +108,8 @@ check("BOSS public campus page is discoverable",
 check("BOSS public school hub is eligible for anonymous category rendering",
       should_render_public_page("boss","https://www.zhipin.com/school/","<html><body><div id='app'>public</div></body></html>")
       and 'sourceId === "boss"' in RENDERER_SOURCE)
+check("51job public tab selector keeps a whitespace-aware regex",
+      "const tabPattern = /^\\s*(校园招聘|招聘岗位|招聘职位|职位列表|岗位列表|职位信息|岗位信息|职位介绍|职位)\\s*$/;" in RENDERER_SOURCE)
 check("BOSS category renderer has bounded role-category labels",
       all(label in RENDERER_SOURCE for label in ("AI","算法","互联网","研发","产品","运营","管培生","国企","银行","教师","外企")))
 check("BOSS generic consumer search is not browser-rendered",

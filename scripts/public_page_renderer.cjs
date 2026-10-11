@@ -140,7 +140,7 @@ async function render(request) {
     // Click only a visible recruitment-navigation label; never click login, delivery, account,
     // or security controls.
     if (sourceId === "51job") {
-      const tabPattern = /^\\s*(校园招聘|招聘岗位|招聘职位|职位列表|岗位列表|职位信息|岗位信息|职位介绍|职位)\\s*$/;
+      const tabPattern = /^\s*(校园招聘|招聘岗位|招聘职位|职位列表|岗位列表|职位信息|岗位信息|职位介绍|职位)\s*$/;
       const tab = page.locator("a,button,[role='tab']").filter({ hasText: tabPattern }).first();
       if (await tab.count().catch(() => 0)) {
         const visible = await tab.isVisible().catch(() => false);
