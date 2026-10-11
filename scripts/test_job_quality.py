@@ -118,6 +118,10 @@ check("common BOSS major-directory cards are excluded",
       not is_specific_role_title("戏剧与影视学") and not is_specific_role_title("安全科学与工程") and not is_specific_role_title("电气工程"))
 check("BOSS and Nowcoder marketing cards are excluded",
       not is_specific_role_title("收藏 快手 全球短视频与直播龙头企业，全生态布局，内容与技术能力领先。 27届秋招：2天截止 地点：上海 立即投递","nowcoder"))
+check("BOSS source title drops year/location/degree metadata",
+      clean_job_title("2027-硬件工程师-北京 北京 在校/应届 本科 通信相关专业 硬件开发经验","boss")=="硬件工程师")
+check("BOSS role with promotional prefix and suffix is cleaned",
+      clean_job_title("校招末班车-产品经理-多赛道发展+高管直带 北京 在校/应届 本科 B端产品","boss")=="产品经理")
 check("Nowcoder salary/HR metadata is removed from title",
       clean_job_title("收藏 Java(校招岗位)（实习） 200-500元/天 助力简历加分 HR刚处理简历 广州 5天/周","nowcoder")=="Java(校招岗位)（实习）")
 check("QZW position URL recognized as direct detail",

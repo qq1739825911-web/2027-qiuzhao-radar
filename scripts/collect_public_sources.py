@@ -162,8 +162,12 @@ def should_discover_public_url(source_id,url):
         if any(x in path for x in ("/login","/register","/resume","/member","/account","/app/")): return False
         host=urlparse(url).netloc.lower()
         if host.startswith("campus."): return True
-        return (host.startswith(("xy.","jobs.","company.")) and
-                (path in {"/","/default-xs.php","/default.php"} or path.startswith(("/jobs/","/job/","/campus/","/company/","/position/","/positions/","/jobdetail/","/job-detail/")) or path.endswith((".html",".php")) or any(k in p.query.lower() for k in ("page=","pageno=","jobid=","positionid=","keyword=","lang=e")))
+        if not host.startswith(("xy.","jobs.","company.")): return False
+        allowed_path=(path in {"/","/default-xs.php","/default.php"}
+                      or path.startswith(("/jobs/","/job/","/campus/","/company/","/position/","/positions/","/jobdetail/","/job-detail/"))
+                      or path.endswith((".html",".php")))
+        allowed_query=any(k in p.query.lower() for k in ("page=","pageno=","jobid=","positionid=","keyword=","lang=e"))
+        return allowed_path or allowed_query
     return False
 
 def discovery_priority(source_id,url):
@@ -274,6 +278,12 @@ def clean_job_title(title, source_id=""):
     if source_id=="boss":
         t=re.sub(r"\s*[-—|｜_]\s*BOSS直聘.*$","",t,flags=re.I)
         t=re.sub(r"\s*招聘(?:信息)?[-_ ]*BOSS直聘.*$","",t,flags=re.I)
+        t=re.sub(r"^(?:20\d{2}[A-Z]{0,6}|20\d{2}|\d{2}届)[-—:：\s]*","",t)
+        t=re.sub(r"^(?:校招末班车|顶尖应届|急招)[-—:：\s]*","",t)
+        t=re.sub(r"[-—](?:多赛道发展|高管直带).*$","",t)
+        t=re.sub(r"\s+(?:在线|在校/应届|应届毕业生|应届生|北京\s+(?:在校/应届|本科|硕士)|上海\s+(?:在校/应届|本科|硕士)|深圳\s+(?:在校/应届|本科|硕士)|广州\s+(?:在校/应届|本科|硕士)|杭州\s+(?:在校/应届|本科|硕士)|南京\s+(?:在校/应届|本科|硕士)|成都\s+(?:在校/应届|本科|硕士)|西安\s+(?:在校/应届|本科|硕士)|本科(?:及以上)?\s+|硕士(?:及以上)?\s+|博士(?:及以上)?\s+|通信相关专业|计算机相关专业|自然语言处理|深度学习|机器学习|算法经验|开发经验|B端产品|大模型训练框架).*$","",t)
+        t=re.sub(r"\s*[-—]\s*(?:北京|上海|深圳|广州|杭州|南京|成都|西安|武汉|苏州|合肥|重庆|天津|青岛|济南|全国|远程)\s*$","",t)
+        t=t.strip(" -—_|｜")
     if source_id=="51job":
         t=re.sub(r"\s*[-—|｜_]\s*(?:前程无忧|51job).*$","",t,flags=re.I)
         t=re.sub(r"\s*[-—|｜_]\s*校园招聘.*$","",t)
@@ -593,7 +603,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -697,6 +707,10 @@ def collect_source(src):
                     break
                 if not company_name: continue
                 seen_groups.add(group_url)
+                if is_direct_detail_url(group_url) and group_url not in visited and group_url not in queue and len(queue)<max_pages:
+                    queue.append(group_url)
+                    diagnostics["discovery_pages_queued"]+=1
+                    diagnostics["direct_detail_links_queued"]+=1
                 position=page_text.find(company_name)
                 chunk=page_text[position:position+1000] if position>=0 else page_text
                 city_match=re.search(r"工作地点\s*(.+?)\s*届次批次",chunk)
@@ -756,14 +770,29 @@ def collect_source(src):
         if src.get("id")!="qiuzhaowang":
             table_rows=table_records(page_company,final,p,cohort,record_source,cohort_evidence)
             embedded_rows=embedded_records(page_company,final,p,cohort,record_source,cohort_evidence)
-            for extracted in table_rows+embedded_rows:
-                if detail_fields: merge_detail_fields(extracted,detail_fields)
-                extracted["last_collected"]=TODAY; extracted["last_verified"]=""
-                extracted["cohort_evidence"]=extracted.get("cohort_evidence") or cohort_evidence or ""
-                extracted["cohort_confirmed"]=bool(extracted.get("cohort_confirmed") or extracted["cohort_evidence"])
-                if not is_direct_detail_url(final) or extracted.get("source_url","")!=final or not extracted["cohort_confirmed"]:
-                    extracted["status"]="pending_review"; extracted["granularity"]="review"; extracted["verification_score"]=min(extracted.get("verification_score",5),5)
-            rows.extend(table_rows); rows.extend(embedded_rows)
+            parsed_rows=table_rows+embedded_rows
+            if "公开" in record_source:
+                # Embedded/listing data only yields discovery URLs. Publish a record only
+                # after that URL's own detail page has been fetched and parsed.
+                scheduled_now={canonical(value) for value in queue}
+                for candidate in parsed_rows:
+                    candidate_url=canonical(candidate.get("source_url",""))
+                    if not candidate_url or candidate_url==canonical(final) or candidate_url in visited or candidate_url in scheduled_now:
+                        continue
+                    if not is_direct_detail_url(candidate_url) or len(queue)>=max_pages:
+                        continue
+                    queue.append(candidate_url); scheduled_now.add(candidate_url)
+                    diagnostics["discovery_pages_queued"]+=1
+                    diagnostics["direct_detail_links_queued"]+=1
+            else:
+                for extracted in parsed_rows:
+                    if detail_fields: merge_detail_fields(extracted,detail_fields)
+                    extracted["last_collected"]=TODAY; extracted["last_verified"]=""
+                    extracted["cohort_evidence"]=extracted.get("cohort_evidence") or cohort_evidence or ""
+                    extracted["cohort_confirmed"]=bool(extracted.get("cohort_confirmed") or extracted["cohort_evidence"])
+                    if not is_direct_detail_url(final) or extracted.get("source_url","")!=final or not extracted["cohort_confirmed"]:
+                        extracted["status"]="pending_review"; extracted["granularity"]="review"; extracted["verification_score"]=min(extracted.get("verification_score",5),5)
+                rows.extend(parsed_rows)
         # Discover public category/list/pagination pages separately from role-title links.
         listing_limit=int(src.get("listing_page_limit",max(6,max_pages//2)))
         scheduled={canonical(value) for value in queue}
@@ -887,8 +916,8 @@ def main():
     for source in sources:
         if source.get("id")=="qiuzhaowang":
             source["seed_urls"]=[f"https://qiuzhaowang.com/latest?page={n}&year=2027" for n in qiuzhaowang_pages]
-            source["max_pages"]=20
-            source["max_candidates"]=3000
+            source["max_pages"]=50
+            source["max_candidates"]=6000
     enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
     all_rows=[]; results=[]; active=review=0; qiuzhaowang_visited=set()
     with ThreadPoolExecutor(max_workers=min(12,len(enabled) or 1)) as pool:
@@ -911,7 +940,7 @@ def main():
                             "html_bytes":diag.get("html_bytes",0),"links_seen":diag.get("links_seen",0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"role_records":diag.get("role_records",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"role_records":diag.get("role_records",0),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
