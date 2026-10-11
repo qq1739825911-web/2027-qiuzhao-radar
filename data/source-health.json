@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-11T06:16:14+00:00",
+  "checked_at": "2026-10-11T11:47:48+00:00",
   "enabled_sources": 20,
   "reachable": 17,
   "warnings": 3,
@@ -21,7 +21,7 @@
     {
       "id": "ccb",
       "name": "中国建设银行",
-      "url": "https://job.ccb.com/",
+      "url": "https://job2.ccb.com/",
       "status": "unavailable",
       "detail": "<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:1010)>"
     },
@@ -64,15 +64,15 @@
       "id": "xiaomi",
       "name": "小米",
       "url": "https://hr.xiaomi.com/website/campus.html",
-      "status": "unavailable",
-      "detail": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "xiaopeng",
       "name": "小鹏汽车",
-      "url": "https://www.xiaopeng.com/join.html",
-      "status": "reachable",
-      "http_status": 200
+      "url": "https://xiaopeng.jobs.feishu.cn/campus/position/list",
+      "status": "unavailable",
+      "http_status": 404
     },
     {
       "id": "yingjiesheng",
@@ -119,7 +119,7 @@
     {
       "id": "meituan",
       "name": "美团",
-      "url": "https://zhaopin.meituan.com/web/campus/schedule",
+      "url": "https://zhaopin.meituan.com/web/campus?bg=BG021&hiringType=1_1",
       "status": "reachable",
       "http_status": 200
     },
