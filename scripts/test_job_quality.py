@@ -203,6 +203,14 @@ check("YJS specific role with direct detail is not caught by QZW-only filter",
       should_publish_record({"source":"应届生求职网公开岗位","title":"算法工程师","source_url":"https://m.yingjiesheng.com/jobdetail/173508261","granularity":"review"}))
 check("BOSS category query is removed from publication",
       not should_publish_record({"source":"BOSS直聘公开校招岗位","title":"后端开发","source_url":"https://www.zhipin.com/web/geek/job?experience=102&query=后端开发","granularity":"review"}))
+check("old BOSS 26-year graduate lead is removed from published database",
+      not should_publish_record({"source":"BOSS直聘公开校招卡片","granularity":"job",
+        "title":"新能源软件产品经理-26年应届生",
+        "source_url":"https://www.zhipin.com/job_detail/abc123.html"}))
+check("current BOSS 2027 graduate lead remains eligible for publication",
+      should_publish_record({"source":"BOSS直聘公开校招卡片","granularity":"job",
+        "title":"2027-硬件工程师-北京 北京 在校/应届 本科",
+        "source_url":"https://www.zhipin.com/job_detail/abc123.html"}))
 check("Nowcoder non-detail company card is removed from publication",
       not should_publish_record({"source":"牛客公开岗位","title":"重庆千里科技股份有限公司 机械制造 100-499人","source_url":"https://www.nowcoder.com/enterprise/30417?channel=npJobTab","granularity":"review"}))
 check("YJS marketing page is removed from publication",

@@ -1,14 +1,14 @@
 """Single source of truth for deciding which job records deserve priority review."""
 import json
 from datetime import date, timedelta
-from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text
+from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text, is_boss_campus_card_relevant
 
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
 COHORT_EVIDENCE_OK = {"page_text", "visible_announcement_title", "job_detail_title", "job_detail_text"}
 
 def should_publish_record(row):
-    """Remove historic QZW category/major-directory junk from the visible job database."""
+    """Remove aggregator category junk, broad titles and stale BOSS hiring cycles from the visible database."""
     source=str(row.get("source",""))
     granularity=str(row.get("granularity",""))
     if granularity in {"announcement","entry"}:
@@ -19,7 +19,13 @@ def should_publish_record(row):
         if not is_direct_detail_url(row.get("source_url","")):
             return False
         title=clean_job_title(row.get("title",""),source_id)
-        return is_specific_role_title(title,source_id)
+        if not is_specific_role_title(title,source_id):
+            return False
+        # Reapply the current cohort-cycle rule to historical records as well as
+        # newly collected BOSS cards, so stale "26年应届" rows don't linger forever.
+        if source_id=="boss" and not is_boss_campus_card_relevant(row.get("title","")):
+            return False
+        return True
     return True
 
 def compact_json(payload):
