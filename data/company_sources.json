@@ -81,7 +81,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "校园招聘公共入口采集实验源；仅遍历匿名可见的校招/分类/分页页面和明确岗位详情，不把热门职位分类当成职位，不绕过登录或访问限制。",
+    "notes": "V1.5.3：匿名访问的校园招聘根页若没有职位详情链接，则尝试普通浏览器渲染当前公开页面；只有页面实际展示岗位详情链接才作为岗位发现线索。不会将分类词直接入库，不登录、不绕过验证码或反爬。",
     "seed_urls": [
       "https://xy.51job.com/",
       "https://xy.51job.com/default-xs.php?lang=e"
@@ -99,7 +99,7 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "启用公开主页和 jobList 招聘列表实验源，优先发现校园招聘/岗位详情与可见公告；若页面只返回 JS 壳，记录为入口可访问、岗位未提取，不请求未公开 API。",
+    "notes": "V1.5.3：公开 jobList/校园招聘页面先读静态HTML；当页面只返回JavaScript外壳时，使用无登录的真实浏览器渲染公开可见内容，再解析页面链接和文字。若渲染落到验证码/安全拦截，明确记录访问受限，不绕过或调用未公开接口。",
     "seed_urls": [
       "https://job.iguopin.com/",
       "https://job.iguopin.com/jobList?channel=campus",

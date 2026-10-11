@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - ".github/workflows/collector-v1-3.yml"
+      - "scripts/public_page_renderer.cjs"
       - "scripts/collect_public_sources.py"
       - "scripts/publish_collected_jobs.py"
       - "scripts/verify_job_links.py"
@@ -34,11 +35,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Install Playwright for public JS-rendered pages
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
       - name: Parser and classification regression tests
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
         run: python scripts/test_frontend.py
-      - name: Collect V5.2 public job listings and details
+      - name: Collect V5.3 public job listings and details
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
         run: python scripts/publish_collected_jobs.py

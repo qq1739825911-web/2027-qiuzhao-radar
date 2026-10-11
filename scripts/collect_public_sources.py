@@ -8,7 +8,7 @@ Rules:
 - score records and only promote high-confidence concrete roles.
 """
 import time
-import json,re,hashlib
+import json,re,hashlib,atexit,subprocess,threading
 from pathlib import Path
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
@@ -73,11 +73,89 @@ class Parser(HTMLParser):
             self.tables.append(self._row); self.table_links.append(self._row_links); self._in_row=False
     def page_text(self): return " ".join(self.text)
 
-def fetch(url):
+_BROWSER_WORKER=None
+_BROWSER_WORKER_LOCK=threading.Lock()
+
+def should_render_public_page(source_id,url,html):
+    """Render only public SPA/list pages whose static HTML has no vacancy-detail links."""
+    if source_id=="iguopin":
+        return should_discover_public_url(source_id,url) and not is_direct_detail_url(url)
+    if source_id=="51job":
+        if not should_discover_public_url(source_id,url):
+            return False
+        parsed=Parser()
+        parsed.feed(html or "")
+        resolved=[canonical(urljoin(url,link.get("href",""))) for link in parsed.links if link.get("href")]
+        if any(is_direct_detail_url(link) for link in resolved):
+            return False
+        return True
+    return False
+
+def render_public_page(url,source_id):
+    """Ask a persistent anonymous Playwright worker to render a public page."""
+    global _BROWSER_WORKER
+    with _BROWSER_WORKER_LOCK:
+        try:
+            if _BROWSER_WORKER is None or _BROWSER_WORKER.poll() is not None:
+                _BROWSER_WORKER=subprocess.Popen(
+                    ["node",str(ROOT/"scripts/public_page_renderer.cjs")],
+                    cwd=str(ROOT),stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,
+                    text=True,encoding="utf-8",errors="replace",bufsize=1
+                )
+            request={"url":url,"source_id":source_id}
+            _BROWSER_WORKER.stdin.write(json.dumps(request,ensure_ascii=False)+"\n")
+            _BROWSER_WORKER.stdin.flush()
+            line=_BROWSER_WORKER.stdout.readline()
+            if not line:
+                return {"ok":False,"error":"browser renderer exited without a response"}
+            result=json.loads(line)
+            return result if isinstance(result,dict) else {"ok":False,"error":"invalid renderer response"}
+        except Exception as exc:
+            return {"ok":False,"error":f"{type(exc).__name__}: {str(exc)[:120]}"}
+
+def _shutdown_browser_worker():
+    global _BROWSER_WORKER
+    worker=_BROWSER_WORKER
+    _BROWSER_WORKER=None
+    if worker is None:
+        return
+    try:
+        if worker.stdin:
+            worker.stdin.close()
+    except Exception:
+        pass
+    try:
+        worker.terminate()
+        worker.wait(timeout=3)
+    except Exception:
+        try: worker.kill()
+        except Exception: pass
+
+atexit.register(_shutdown_browser_worker)
+
+def fetch(url,source_id=""):
     req=Request(url,headers=HEADERS)
     with urlopen(req,timeout=10) as r:
         raw=r.read(4_000_000); enc=r.headers.get_content_charset() or "utf-8"; final=r.geturl()
-    return raw.decode(enc,errors="ignore"),final
+    static_html=raw.decode(enc,errors="ignore")
+    meta={"mode":"static","browser_attempted":False,"browser_success":False,
+          "browser_blocked":False,"browser_body_chars":0,"browser_links":0,"browser_http_status":0,
+          "browser_error":""}
+    if should_render_public_page(source_id,url,static_html):
+        meta["browser_attempted"]=True
+        result=render_public_page(url,source_id)
+        if result.get("ok") and isinstance(result.get("html"),str) and result.get("html"):
+            meta["mode"]="playwright"
+            meta["browser_success"]=True
+            meta["browser_blocked"]=bool(result.get("security_interstitial"))
+            meta["browser_body_chars"]=int(result.get("body_chars") or 0)
+            meta["browser_links"]=int(result.get("link_count") or 0)
+            meta["browser_http_status"]=int(result.get("http_status") or 0)
+            rendered_url=str(result.get("final_url") or final)
+            # A security wall is reported and skipped, never solved or bypassed.
+            return str(result["html"]),rendered_url,meta
+        meta["browser_error"]=str(result.get("error") or "browser render failed")[:180]
+    return static_html,final,meta
 
 def clean(s): return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",s or "")).strip()
 
@@ -747,7 +825,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -759,12 +837,22 @@ def collect_source(src):
         diagnostics["pages_attempted"]+=1
         if is_direct_detail_url(page):
             diagnostics["direct_detail_requests_attempted"]+=1
-        try: html,final=fetch(page)
+        try: html,final,fetch_meta=fetch(page,src.get("id",""))
         except Exception as exc:
             diagnostics["pages_failed"]+=1
             diagnostics["last_error"]=f"{type(exc).__name__}: {str(exc)[:140]}"
             continue
         visited.add(cp)
+        if fetch_meta.get("browser_attempted"): diagnostics["browser_render_attempts"]+=1
+        if fetch_meta.get("browser_success"): diagnostics["browser_render_successes"]+=1
+        if fetch_meta.get("browser_blocked"): diagnostics["browser_render_blocked"]+=1
+        diagnostics["browser_rendered_body_chars"]+=int(fetch_meta.get("browser_body_chars") or 0)
+        diagnostics["browser_rendered_links"]+=int(fetch_meta.get("browser_links") or 0)
+        if fetch_meta.get("browser_attempted") and not fetch_meta.get("browser_success") and fetch_meta.get("browser_error"):
+            diagnostics["last_error"]="Browser-render fallback unavailable: "+str(fetch_meta["browser_error"])[:140]
+        if fetch_meta.get("browser_blocked"):
+            diagnostics["last_error"]="Public page displayed a security/CAPTCHA interstitial; not bypassed"
+            continue
         source_id=src.get("id","")
         if source_id in {"yingjiesheng","nowcoder","boss","51job","iguopin"} and should_discover_public_url(source_id,final) and not is_direct_detail_url(final):
             listing_url=canonical(final)
@@ -1201,7 +1289,9 @@ def main():
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"role_records":diag.get("role_records",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
+                            "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
+                            "browser_rendered_links":diag.get("browser_rendered_links",0),"role_records":diag.get("role_records",0),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
@@ -1222,7 +1312,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.2","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.3","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

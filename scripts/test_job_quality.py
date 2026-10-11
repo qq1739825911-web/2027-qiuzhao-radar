@@ -7,7 +7,7 @@ from collect_public_sources import (
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
-    extract_boss_card_fields, extract_boss_card_company,
+    extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
@@ -133,6 +133,20 @@ check("51job numeric vacancy detail is recognized",
       is_direct_detail_url("https://jobs.51job.com/shanghai-pdx/160193763.html"))
 check("51job category root is not a detail",
       not is_direct_detail_url("https://xy.51job.com/"))
+check("Guopin public SPA route uses anonymous browser rendering",
+      should_render_public_page("iguopin","https://job.iguopin.com/jobList?channel=campus","<html><body><div id='app'></div></body></html>"))
+check("51job root with no public detail links uses render fallback",
+      should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))
+check("51job page with real detail link skips redundant rendering",
+      not should_render_public_page("51job","https://xy.51job.com/","<a href='https://jobs.51job.com/shanghai-pdx/160193763.html'>软件工程师</a>"))
+check("YJS uses static parsing rather than unnecessary browser rendering",
+      not should_render_public_page("yingjiesheng","https://m.yingjiesheng.com/other/index.html","<html><body>岗位列表</body></html>"))
+check("Guopin login route is not browser-rendered",
+      not should_render_public_page("iguopin","https://job.iguopin.com/login","<html></html>"))
+RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
+check("browser worker has explicit public host allow-list and no CAPTCHA bypass",
+      "security_interstitial: security" in RENDERER_SOURCE and "allowPublicUrl" in RENDERER_SOURCE and "captcha.solve" not in RENDERER_SOURCE)
+
 check("Nowcoder public listing route is discoverable",
       should_discover_public_url("nowcoder", "https://www.nowcoder.com/jobs/recommend/campus"))
 check("broad major-only strings are not concrete roles",
