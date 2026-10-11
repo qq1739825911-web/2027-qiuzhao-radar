@@ -15,16 +15,25 @@ on:
       - "scripts/e2e_smoke.cjs"
       - ".github/workflows/browser-smoke.yml"
   workflow_dispatch:
+  workflow_run:
+    workflows: ["public-source-collector"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   browser-smoke:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          # A collector workflow_run refers to the collector's triggering commit;
+          # the browser must test the latest published main data after collection.
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
