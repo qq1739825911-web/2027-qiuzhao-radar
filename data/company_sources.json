@@ -41,10 +41,10 @@
       "https://www.nowcoder.com/jobs/detail/469521",
       "https://www.nowcoder.com/jobs/detail/464800"
     ],
-    "max_pages": 60,
-    "max_candidates": 1500,
-    "listing_page_limit": 15,
-    "rotation_seed_batch": 12
+    "max_pages": 70,
+    "max_candidates": 2000,
+    "listing_page_limit": 18,
+    "rotation_seed_batch": 15
   },
   {
     "id": "yingjiesheng",
@@ -54,7 +54,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.5：重点抓取公开主页、专业分类、职位搜索站、移动端全职/前程无忧分类列表及公开详情页；允许 yingjiesheng.com 相关公开子域名（web/s/zhiwei/q/m）发现分类、分页和岗位详情。每轮最多100页、限速；对列表词条只作为待核验线索，只有抓取实际详情且标题/毕业届别等证据满足规则才可提高可信度。不访问登录/会员数据，不绕过验证码或访问限制。",
+    "notes": "V1.5.2：重点扩展公开主页、专业分类、职位分类和分页 URL 的轮转发现；每轮上限120页并限速，优先抓取岗位级详情。列表/企业入口只能进待核验线索，不得因可访问就当成正式职位；不访问登录/会员数据，不绕过验证码或访问限制。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
@@ -68,10 +68,10 @@
       "https://m.yingjiesheng.com/jobdetail/170935981",
       "https://m.yingjiesheng.com/jobdetail/173508261"
     ],
-    "max_pages": 100,
-    "max_candidates": 4000,
-    "listing_page_limit": 25,
-    "rotation_seed_batch": 20
+    "max_pages": 120,
+    "max_candidates": 5000,
+    "listing_page_limit": 35,
+    "rotation_seed_batch": 15
   },
   {
     "id": "51job",
@@ -393,15 +393,15 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "公开校园招聘列表采集源：只抓取匿名访问可见的校招列表、分页和职位详情；不登录、不调用私有接口、不绕过验证码/反爬。若公开页面返回访问限制则记录失败并保留官网入口，不声称覆盖全部平台岗位。",
+    "notes": "V1.5.2：仅遍历公开校园招聘页面和真实 /job_detail/ 岗位详情；明确拒绝 /web/geek/job 通用搜索/分类页，防止将搜索词误当岗位。仅匿名可见页面，不登录、不调用未公开接口、不绕过验证码/反爬；详情访问受限则放待核验或报告零产出。",
     "seed_urls": [
       "https://www.zhipin.com/school/",
       "https://www.zhipin.com/xiaoyuan/renshebu/zywl/brqw/"
     ],
-    "max_pages": 60,
-    "max_candidates": 1800,
-    "listing_page_limit": 12,
-    "rotation_seed_batch": 12
+    "max_pages": 80,
+    "max_candidates": 2400,
+    "listing_page_limit": 18,
+    "rotation_seed_batch": 18
   },
   {
     "id": "qiuzhaowang",

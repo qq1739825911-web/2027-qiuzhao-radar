@@ -141,10 +141,12 @@ def should_discover_public_url(source_id,url):
         if not same_host("https://www.zhipin.com/school/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         if any(x in path for x in ("/login","/register","/user/","/account","/vip","/app/")): return False
-        return (path.rstrip("/") in ("/school","/xiaoyuan","/web/geek/job")
+        # Do not treat /web/geek/job?query=... as a vacancy or campus list.
+        # That route is a general consumer search/category page and produced
+        # misleading rows such as "后端开发" with the company set to BOSS itself.
+        return (path.rstrip("/") in {"/school","/xiaoyuan"}
                 or path.startswith("/school/") or path.startswith("/xiaoyuan/")
-                or path.startswith("/job_detail/") or path.startswith("/web/geek/job")
-                or any(k in p.query.lower() for k in ("page=","pageindex=","city=","query=")))
+                or path.startswith("/job_detail/"))
     if source_id=="nowcoder":
         if not same_host("https://www.nowcoder.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
@@ -193,7 +195,7 @@ def discovery_priority(source_id,url):
         if "/xjh-" in path or "/job-" in path: return 3
         return 4
     if source_id=="boss":
-        if path.rstrip("/") in ("/school","/xiaoyuan","/web/geek/job") or path.startswith("/school/") or path.startswith("/xiaoyuan/"): return 0
+        if path.rstrip("/") in ("/school","/xiaoyuan") or path.startswith("/school/") or path.startswith("/xiaoyuan/"): return 0
         if is_direct_detail_url(url): return 2
         return 4
     if source_id=="nowcoder":
@@ -925,6 +927,8 @@ def collect_source(src):
                 item["verification_note"]="公开岗位详情页可读取；届别与有效期仍需独立核验"
                 rows.append(item)
         page_title_ok=is_specific_role_title(page_title,src.get("id","")) if "公开" in record_source else is_concrete_role_title(page_title,src.get("id",""))
+        if src.get("id")=="boss" and not (detail_fields.get("company") or (page_company and page_company not in {company,"BOSS直聘"})):
+            page_title_ok=False
         if page_title and page_title_ok:
             sc=score(page_title,final,page_text)
             if sc>=5 and is_direct_detail_url(final):
@@ -987,16 +991,19 @@ def collect_source(src):
             diagnostics["discovery_pages_queued"]+=1
             if not is_detail: diagnostics["listing_pages_queued"]+=1
         queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
-        for a in p.links:
+        for link_index,a in enumerate(p.links):
             title=clean_job_title(a["text"],src.get("id","")); href=canonical(urljoin(final,a["href"]))
             if not title or len(title)<3 or len(title)>100 or not href or href in seen: continue
             title_ok=is_specific_role_title(title) if "公开" in record_source else is_concrete_role_title(title)
             if not title_ok: continue
             if not same_host(final,href): continue
             if "公开" in record_source:
-                # Public BOSS job cards themselves are useful leads when the direct detail page is
-                # protected by a platform security interstitial. Save only specific role titles with
-                # a real /job_detail/ URL and an adjacent company name; never call them verified.
+                # BOSS role cards may be retained only from an allowed public campus listing page.
+                # Never reinterpret general consumer search results as campus recruitment.
+                if src.get("id")=="boss" and (not should_discover_public_url("boss",final) or is_direct_detail_url(final)):
+                    continue
+                # Public BOSS job cards can be leads if their real detail URL exists and
+                # company/title are visible; the detail fetch itself may still be blocked.
                 if src.get("id")=="boss" and is_direct_detail_url(href):
                     card=extract_boss_card_fields(a["text"],p.links,link_index,final)
                     if card:
@@ -1215,7 +1222,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.1","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.2","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

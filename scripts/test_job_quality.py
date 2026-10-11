@@ -11,6 +11,8 @@ from collect_public_sources import (
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
 
+COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
+
 def check(name, condition):
     if not condition:
         raise AssertionError(f"FAILED: {name}")
@@ -96,16 +98,28 @@ check("YJS unrelated host is rejected",
       not should_discover_public_url("yingjiesheng", "https://example.com/jobdetail/173508261"))
 check("BOSS public campus page is discoverable",
       should_discover_public_url("boss", "https://www.zhipin.com/school/"))
+check("BOSS consumer search page is not treated as a campus listing",
+      not should_discover_public_url("boss", "https://www.zhipin.com/web/geek/job?query=后端开发"))
+check("BOSS consumer category query is not a direct vacancy",
+      not is_direct_detail_url("https://www.zhipin.com/web/geek/job?experience=102&query=后端开发"))
+check("BOSS public detail URL remains discoverable",
+      should_discover_public_url("boss", "https://www.zhipin.com/job_detail/abc123.html"))
 check("diagnostic prioritizes direct BOSS vacancy URLs over category searches",
       diagnostic_link_priority("boss","https://www.zhipin.com/job_detail/abc123.html","后端开发")
       < diagnostic_link_priority("boss","https://www.zhipin.com/web/geek/job?query=后端开发","后端开发"))
 check("diagnostic drops ordinary navigation links",
       diagnostic_link_priority("boss","https://www.zhipin.com/about/","关于我们")>=9)
+check("BOSS category search routes rank as non-list leads",
+      diagnostic_link_priority("boss","https://www.zhipin.com/web/geek/job?query=后端开发","后端开发")>=2)
 check("diagnostic keeps allowed public listing routes",
       diagnostic_link_priority("51job","https://campus.51job.com/jobs/list.html","校园招聘职位列表")<9)
 
 check("BOSS public detail route is recognized",
       is_direct_detail_url("https://www.zhipin.com/job_detail/abc123.html"))
+check("BOSS link parser enumerates links before using role index",
+      'for link_index,a in enumerate(p.links):\n            title=clean_job_title(a["text"],src.get("id",""))' in COLLECTOR_SOURCE)
+check("BOSS source no longer queues its generic /web/geek/job search route",
+      'path.startswith("/web/geek/job")' not in COLLECTOR_SOURCE)
 check("Guopin public campus list is discoverable",
       should_discover_public_url("iguopin","https://job.iguopin.com/jobList?channel=campus"))
 check("Guopin jobList is not a direct vacancy",
