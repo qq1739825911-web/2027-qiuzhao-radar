@@ -166,6 +166,22 @@ check("YJS old mobile title yields the company",
       legacy_yjs.get("company")=="珠海市龙图光罩科技有限公司")
 check("YJS old mobile title's date is only a publication date",
       legacy_yjs.get("publish_date")=="2026-10-10" and legacy_yjs.get("cohort","")=="")
+check("YJS explicit Other work location is not inferred as Shanghai",
+      extract_yingjiesheng_fields(
+        "[广东]珠海市龙图光罩科技有限公司 品质工程师 2026-10-10",
+        "工作地点：其它 信息来源：广州大学 职位类型：全职 上海北京广州导航",
+        "https://m.yingjiesheng.com/job-008-111-850.html").get("city")=="其它")
+check("YJS explicit work city overrides site-navigation cities",
+      extract_yingjiesheng_fields(
+        "[广东]珠海市龙图光罩科技有限公司 品质工程师 2026-10-10",
+        "工作地点：珠海市 信息来源：广州大学 职位类型：全职 上海北京导航",
+        "https://m.yingjiesheng.com/job-008-111-850.html").get("city")=="珠海")
+check("YJS salary parser reads RMB monthly ranges",
+      extract_yingjiesheng_fields(
+        "品质工程师招聘_企业招聘信息",
+        "职位：品质工程师 发布时间：2026-10-10 工作地点：其它 5000～6000元/月",
+        "https://m.yingjiesheng.com/jobdetail/170935981").get("salary")=="5000～6000元/月")
+
 
 annual_fields=extract_yingjiesheng_fields(
     "苏州艾科瑞思智能装备股份有限公司招聘AIGC开发工程师_苏州校园招聘",

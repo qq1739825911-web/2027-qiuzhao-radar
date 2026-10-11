@@ -375,7 +375,7 @@ def extract_yingjiesheng_fields(raw_title, text, url):
         m=re.search(r"职位\s*[:：]\s*(.+?)\s+发布时间",text or "")
         if m: title=m.group(1).strip() or title
         m=re.search(r"\[(?:全国|北京|上海|广州|深圳|杭州|南京|成都|武汉|西安)[^\]]*\]\s*(.+?)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
-        if m: company=m.group(1).strip()
+        if m and not company: company=m.group(1).strip()
         if not company:
             m=re.search(r"(?:^|\s)([^\s]{2,40}有限公司)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
             if m: company=m.group(1).strip()
@@ -386,13 +386,28 @@ def extract_yingjiesheng_fields(raw_title, text, url):
     if annual_salary:
         fields["salary"]=re.sub(r"\s+","",annual_salary.group(0))
     else:
-        salary=re.search(r"(?<![A-Za-z])\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|每月|月)?",top)
-        if salary: fields["salary"]=re.sub(r"\s+","",salary.group(0))
+        rmb_salary=re.search(r"\d[\d,]*(?:\s*[-—~～至到]\s*\d[\d,]*)?\s*元\s*/\s*(?:月|天|年)",top)
+        if rmb_salary:
+            fields["salary"]=re.sub(r"\s+","",rmb_salary.group(0))
+        else:
+            salary=re.search(r"(?<![A-Za-z])\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|每月|月)?",top)
+            if salary: fields["salary"]=re.sub(r"\s+","",salary.group(0))
     degree=next((d for d in ("博士研究生及以上","硕士研究生及以上","本科及以上","大专及以上","博士及以上","硕士及以上","本科","硕士","博士","大专") if d in top), "")
     if degree: fields["degree"]=degree
-    cities=("上海","北京","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨")
-    city=next((name for name in cities if re.search(name+r"(?:[-·区市]|\s)",top[:1800])), "")
-    if city: fields["city"]=city
+    # City names in site navigation/related cards are not reliable work locations.
+    # Extract only the explicit location label from this job detail.
+    cities=("上海","北京","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","珠海","乌鲁木齐","洛阳","保定","廊坊","中山","佛山","温州","嘉兴","金华","常州","徐州","大连","沈阳","长春","石家庄","太原","南宁","贵阳","昆明","兰州","西宁","银川","呼和浩特","海口","三亚","泉州","汕头","惠州","江门","肇庆","清远","芜湖","扬州","南通","镇江","泰州","烟台","潍坊","淄博","临沂","济宁","日照","威海","唐山","秦皇岛","邯郸","开封","新乡","安阳","许昌","南阳","宜昌","襄阳","荆州","株洲","湘潭","衡阳","岳阳","绵阳","德阳","宜宾","泸州","乐山","遵义","大庆","齐齐哈尔","包头","鄂尔多斯","克拉玛依","喀什","阿克苏","伊犁","拉萨","林芝")
+    location_match=re.search(r"(?:工作地点|工作城市|工作地区|工作地址)\s*[:：]?\s*(.{1,80}?)(?=\s*(?:信息来源|职位类型|专业标签|招聘岗位|学历要求|学历|职位描述|岗位职责|职位诱惑|公司信息|企业信息|$))",top,re.I)
+    if location_match:
+        location_text=location_match.group(1).strip()
+        if location_text in ("其它","其他"):
+            fields["city"]="其它"
+        elif location_text in ("全国","全国各地","不限"):
+            fields["city"]="全国"
+        else:
+            found=[name for name in cities if re.search(re.escape(name)+r"(?:市|区|\b|$)",location_text)]
+            if found:
+                fields["city"]="、".join(dict.fromkeys(found))
     pub=re.search(r"发布时间\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",top)
     if pub: fields["publish_date"]=f"{pub.group(1)}-{int(pub.group(2)):02d}-{int(pub.group(3)):02d}"
     deadline=re.search(r"(?:截止时间|报名截止|投递截止|截止日期)\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",text or "")
@@ -618,7 +633,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -643,8 +658,23 @@ def collect_source(src):
         if not diagnostics["sample_title"]: diagnostics["sample_title"]=raw_page_title[:140]
         diagnostics["links_seen"]+=len(p.links); diagnostics["tables_seen"]+=len(p.tables); diagnostics["embedded_json_blocks"]+=len(p.scripts)
         detail_heading=""
+        if is_direct_detail_url(page) and not is_direct_detail_url(final):
+            diagnostics["detail_redirects"]+=1
+            if len(diagnostics["detail_redirect_samples"])<4:
+                diagnostics["detail_redirect_samples"].append({
+                    "requested_path":urlparse(page).path,
+                    "final_host":urlparse(final).netloc.lower(),
+                    "final_path":urlparse(final).path,
+                    "page_title":raw_page_title[:120]
+                })
         if is_direct_detail_url(final):
             diagnostics["direct_detail_pages_visited"]+=1
+            if len(diagnostics["direct_detail_samples"])<4:
+                diagnostics["direct_detail_samples"].append({
+                    "url_path":urlparse(final).path,
+                    "page_title":raw_page_title[:160],
+                    "text_preview":page_text[:600]
+                })
             detail_heading=next((clean_job_title(head,src.get("id","")) for head in p.headings
                                  if (is_specific_role_title(clean_job_title(head,src.get("id","")),src.get("id",""))
                                      if src.get("id") in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}
@@ -887,7 +917,12 @@ def collect_source(src):
     diagnostics["role_records"]=len(role_rows)
     diagnostics["announcement_records"]=len(announcement_rows)
     diagnostics["portal_entries"]=len(entry_rows)
-    diagnostics["source_status"]="ok" if role_rows else ("announcement_only" if announcement_rows else ("entry_only" if entry_rows else ("listing_only_no_job_details" if diagnostics["listing_pages_queued"] and visited else ("reachable_no_records" if visited else "access_error"))))
+    diagnostics["source_status"]=("ok" if role_rows else
+        ("detail_access_restricted" if diagnostics.get("direct_detail_requests_attempted",0)>0 and diagnostics.get("direct_detail_pages_visited",0)==0 and diagnostics.get("detail_redirects",0)>0 else
+         ("announcement_only" if announcement_rows else
+          ("entry_only" if entry_rows else
+           ("listing_only_no_job_details" if diagnostics["listing_pages_queued"] and visited else
+            ("reachable_no_records" if visited else "access_error"))))))
     diagnostics["parser_modes"]=[name for name,count in (("links",diagnostics["links_seen"]),("tables",diagnostics["tables_seen"]),("embedded_json",diagnostics["embedded_json_blocks"])) if count]
     return best_rows,visited,diagnostics
 
@@ -934,7 +969,7 @@ def main():
                             "html_bytes":diag.get("html_bytes",0),"links_seen":diag.get("links_seen",0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"role_records":diag.get("role_records",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"role_records":diag.get("role_records",0),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
