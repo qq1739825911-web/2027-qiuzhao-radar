@@ -60,6 +60,7 @@ const clean = sanitizeDetailField(dirty);
 assert.equal(clean, "岗位职责：完成测试并整理报告。\n3. 跟踪结果。");
 assert.equal(sanitizeDetailField("{\"jobCity\":\"北京\",\"careerJobId\":11025}"), "");
 assert.equal(cleanUiTitle("【27届校招】测试工程师(A54426)"), "测试工程师");
+assert.equal(cleanUiTitle("〖27届校招〗具身智能AI软件工程师"), "具身智能AI软件工程师");
 assert.equal(usesOfficialRecruitmentFlow({company:"中国建设银行",type:"银行"}), true);
 assert.equal(usesOfficialRecruitmentFlow({company:"上海基美影业股份有限公司",type:"民营"}), false);
 console.log("PASS: sanitizer, title cleanup and employer route helpers");
