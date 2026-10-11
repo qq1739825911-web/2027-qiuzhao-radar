@@ -190,7 +190,8 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
     let xiaopengRoleObserved=false;
     await page.locator("#reset").click();
     await page.locator("#q").fill("具身智能AI软件工程师");
-    await page.locator("#city").selectOption("上海");
+    // Xpeng's currently published public detail rows do not have trustworthy
+    // city evidence; do not assert a city that the collector could not verify.
     await page.waitForTimeout(350);
     for (const bucket of ["priority","lead"]) {
       await page.locator('[data-bucket="'+bucket+'"]').click();
@@ -215,7 +216,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
     assert.ok(aigcDetail.degree.includes("本科"), "public AIGC degree should be extracted from the detail page: " + JSON.stringify(aigcDetail));
     assert.ok(aigcDetail.city.includes("上海"), "AIGC role should remain filterable in Shanghai: " + JSON.stringify(aigcDetail));
     assert.ok(aigcDetail.responsibilityChars > 40 && aigcDetail.requirementsChars > 40, "detail modal should include the public job duties and requirements: " + JSON.stringify(aigcDetail));
-    assert.ok(xiaopengRoleObserved, "Xpeng 27th-cohort AI software role should be available in Shanghai after collection");
+    assert.ok(xiaopengRoleObserved, "Xpeng 27th-cohort AI software role should be available after collection and have a clean title");
 
     await page.locator("#reset").click();
     assert.equal(await page.locator("#q").inputValue(), "", "reset clears search");
