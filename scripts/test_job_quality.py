@@ -105,6 +105,13 @@ check("YJS unrelated host is rejected",
       not should_discover_public_url("yingjiesheng", "https://example.com/jobdetail/173508261"))
 check("BOSS public campus page is discoverable",
       should_discover_public_url("boss", "https://www.zhipin.com/school/"))
+check("BOSS public school hub is eligible for anonymous category rendering",
+      should_render_public_page("boss","https://www.zhipin.com/school/","<html><body><div id='app'>public</div></body></html>")
+      and 'sourceId === "boss"' in RENDERER_SOURCE)
+check("BOSS category renderer has bounded role-category labels",
+      all(label in RENDERER_SOURCE for label in ("AI","算法","互联网","研发","产品","运营","管培生","国企","银行","教师","外企")))
+check("BOSS generic consumer search is not browser-rendered",
+      not should_render_public_page("boss","https://www.zhipin.com/web/geek/job?query=后端开发","<html><body>搜索</body></html>"))
 check("BOSS consumer search page is not treated as a campus listing",
       not should_discover_public_url("boss", "https://www.zhipin.com/web/geek/job?query=后端开发"))
 check("BOSS consumer category query is not a direct vacancy",
