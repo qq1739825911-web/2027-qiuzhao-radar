@@ -362,7 +362,7 @@ def extract_detail_fields_generic(text, raw_title=""):
     # "北京市,上海市" must remain discoverable when users filter Shanghai.
     found_cities=[]
     for name in cities:
-        pattern=r"(?:^|[\s,，、/|·\-:：])"+re.escape(name)+r"(?:$|[\s,，、/|·\-:：区市])"
+        pattern=r"(?:^|[\s,，、/|·\-:：省])"+re.escape(name)+r"(?:$|[\s,，、/|·\-:：区市省])"
         if re.search(pattern,top[:1800]) and name not in found_cities:
             found_cities.append(name)
     if found_cities: fields["city"]="、".join(found_cities)
