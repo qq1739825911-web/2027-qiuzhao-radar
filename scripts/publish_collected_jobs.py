@@ -174,9 +174,10 @@ try:
     manifest["records_updated_this_run"]=updated
     manifest["quality_gate_version"]="2.1"
     manifest["source_quality_filters"]={
-        "qiuzhaowang_non_role_titles_removed":quality_filter_removed,
-        "policy":"从展示岗位库移除秋招网中不像具体岗位名称的历史/新增条目；公告与官方入口线索如有则保留。",
-        "collector_title_rule":"is_specific_role_title"
+        "aggregator_non_detail_or_non_role_records_removed":quality_filter_removed,
+        "policy":"聚合来源仅保留岗位级详情链接及明确岗位名；搜索、分类、企业介绍、宣传卡片不作为岗位。公告与官方入口线索单独保留。",
+        "collector_title_rule":"is_specific_role_title",
+        "sources":["秋招网","应届生求职网","BOSS直聘","牛客"]
     }
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 except Exception as exc:

@@ -11,12 +11,16 @@ def should_publish_record(row):
     """Remove historic QZW category/major-directory junk from the visible job database."""
     source=str(row.get("source",""))
     granularity=str(row.get("granularity",""))
-    if "秋招网" not in source:
-        return True
     if granularity in {"announcement","entry"}:
         return True
-    title=clean_job_title(row.get("title",""),"qiuzhaowang")
-    return is_specific_role_title(title)
+    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else "")))
+    if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang"}:
+        # Aggregator search/category cards are not vacancies. Require a role-level detail link.
+        if not is_direct_detail_url(row.get("source_url","")):
+            return False
+        title=clean_job_title(row.get("title",""),source_id)
+        return is_specific_role_title(title,source_id)
+    return True
 
 def compact_json(payload):
     """Serialize the published job database without indentation to reduce page load size."""

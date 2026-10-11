@@ -4,7 +4,7 @@ from datetime import date
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
-    same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, canonical,
+    same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
 )
 from quality_rules import assess, compact_json, should_publish_record
 
@@ -84,6 +84,14 @@ check("official recruitment entry leads are retained separately",
       should_publish_record({"source":"秋招网公开聚合","title":"2027届秋招网官方招聘入口线索","granularity":"entry"}))
 check("non-QZW review leads are not discarded by QZW filter",
       should_publish_record({"source":"应届生求职网公开岗位","title":"商务英语","granularity":"review"}))
+check("BOSS category query is removed from publication",
+      not should_publish_record({"source":"BOSS直聘公开校招岗位","title":"后端开发","source_url":"https://www.zhipin.com/web/geek/job?experience=102&query=后端开发","granularity":"review"}))
+check("Nowcoder non-detail company card is removed from publication",
+      not should_publish_record({"source":"牛客公开岗位","title":"重庆千里科技股份有限公司 机械制造 100-499人","source_url":"https://www.nowcoder.com/enterprise/30417?channel=npJobTab","granularity":"review"}))
+check("YJS marketing page is removed from publication",
+      not should_publish_record({"source":"应届生求职网公开岗位","title":"做开发工程师 ，挑战高年薪","source_url":"https://q.yingjiesheng.com/jobs/search/开发","granularity":"review"}))
+check("QZW actual position detail can pass URL gate",
+      should_publish_record({"source":"秋招网公开聚合","title":"销售管培生","source_url":"https://qiuzhaowang.com/jobs/position-32406","granularity":"review"}))
 check("QZW platform rollup title is cleaned to empty",
       clean_job_title("2027届最新更新校招岗位｜招聘信息与截止时间｜秋招网","qiuzhaowang")=="")
 check("YJS old-style public job detail route is recognized",
@@ -97,7 +105,18 @@ check("Unicode paths are percent-encoded before requests",
 check("common BOSS major-directory cards are excluded",
       not is_specific_role_title("戏剧与影视学") and not is_specific_role_title("安全科学与工程") and not is_specific_role_title("电气工程"))
 check("BOSS and Nowcoder marketing cards are excluded",
-      not is_specific_role_title("收藏 快手 全球短视频与直播龙头企业，全生态布局，内容与技术能力领先。 27届秋招：2天截止 地点：上海 立即投递"))
+      not is_specific_role_title("收藏 快手 全球短视频与直播龙头企业，全生态布局，内容与技术能力领先。 27届秋招：2天截止 地点：上海 立即投递","nowcoder"))
+check("Nowcoder salary/HR metadata is removed from title",
+      clean_job_title("收藏 Java(校招岗位)（实习） 200-500元/天 助力简历加分 HR刚处理简历 广州 5天/周","nowcoder")=="Java(校招岗位)（实习）")
+check("QZW position URL recognized as direct detail",
+      is_direct_detail_url("https://qiuzhaowang.com/jobs/position-32406"))
+nc_fields=extract_nowcoder_fields(
+    "算法工程师(西安)_诺瓦星云校招_牛客网", ["算法工程师(西安)"],
+    "公司名称：诺瓦星云 工作地点：西安 本科 2027届校招")
+check("Nowcoder detail company extracted", nc_fields.get("company")=="诺瓦星云")
+check("Nowcoder detail title stays clean", nc_fields.get("title")=="算法工程师(西安)")
+check("BOSS search-category path is not a direct vacancy",
+      not is_direct_detail_url("https://www.zhipin.com/web/geek/job?experience=102&query=后端开发"))
 boss_fields=extract_boss_fields(
     "AIGC设计师招聘_上海某某科技有限公司招聘信息-BOSS直聘",
     ["AIGC设计师"], "上海 本科 工作职责：制作AIGC内容。")

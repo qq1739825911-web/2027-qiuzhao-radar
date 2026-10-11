@@ -221,6 +221,8 @@ def is_direct_detail_url(url):
     if re.search(r"/job/position/\d+",path): return True
     if re.search(r"/job-\d{3}-\d{3}-\d+\.html$",path): return True
     if re.search(r"/job_detail/[^/]+(?:\.html)?$",path): return True
+    # Qiuzhaowang's specific position page, not the shared category listing.
+    if re.search(r"/jobs/position-\d+(?:/|$)",path): return True
     return False
 
 TITLE_NOISE = re.compile(r"(?:\d+\s*分钟前在线|HR\s*反馈率|反馈率\s*[:：]?|反馈时长\s*[:：]?|招聘经理|人事经理|招聘专员|今日活跃|刚刚活跃)",re.I)
@@ -232,9 +234,14 @@ def clean_job_title(title, source_id=""):
     t=re.sub(r"^\s*[【〖\[（(]\s*(?:20\d{2}|\d{2})\s*届\s*(?:校招|校园招聘|正式批|秋招)?\s*[】〗\]）)]\s*[-—:：_ ]*", "", t)
     t=re.sub(r"^\s*(?:20\d{2}|\d{2})\s*届(?:校招|校园招聘)?\s*[-—:：_ ]*", "", t)
     if source_id=="nowcoder":
-        m=re.match(r"^(.+?)_[^_]+?(?:校招|实习|社招)_牛客网$",t)
+        m=re.match(r"^(.+?)_([^_]+?)(?:校招|实习|社招)_牛客网$",t)
         if m: t=m.group(1)
         t=re.sub(r"^(?:20\d{2}|\d{2})届(?:校招)?[-—_\s]*","",t)
+        t=re.sub(r"^\s*(?:收藏|已收藏)\s*","",t)
+        # Remove card-only labels and HR/salary metadata from visible title text.
+        t=re.split(r"\s+(?=(?:\d{2,4}(?:[-—~至]\d{2,4})?元/天|薪资(?:超|面议|[:：])|HR(?:刚|今日|今天|在线)|助力简历|直达官网|投后必反馈|校招高薪榜|最少\d+个月|\d+天/周|地点[：:]|\d{2,5}[-–]\d{2,5}人|有转正|企业服务|全场景覆盖|数字化运营))",t,maxsplit=1)[0]
+        if re.search(r"(?:有限公司|股份|集团|科技|研究院|大学|银行).{0,24}\s+(?:互联网|机械制造|电商|金融|教育|企业服务|游戏|电子商务)\s*$",t):
+            t=""
     if source_id=="yingjiesheng" and "招聘_" in t:
         t=t.split("招聘_",1)[0].strip()
     if source_id=="boss":
@@ -257,8 +264,8 @@ def clean_job_title(title, source_id=""):
     t=re.sub(r"\s+"," ",t).strip(" -—_|｜")
     return t
 
-def is_concrete_role_title(title):
-    t=clean_job_title(title)
+def is_concrete_role_title(title, source_id=""):
+    t=clean_job_title(title,source_id)
     if len(t)<2 or len(t)>90 or TITLE_NOISE.search(t): return False
     if any(w in t for w in ("招聘公告","招聘简章","招聘计划","校园招聘会","招聘宣讲","专业目录","需求专业","岗位要求","任职要求","职位描述","职位亮点","公司信息","查看更多","点击查看","招聘信息","福利待遇","工作环境","员工评价","职位搜索","职位列表","岗位列表","招聘官网","校园招聘官网","加入我们","最新更新","分类求职","岗位汇总","岗位清单","职位分类","岗位分类","招聘岗位与截止时间","校招职位")): return False
     major_only = {
@@ -276,11 +283,11 @@ def is_concrete_role_title(title):
     if base in major_only: return False
     return any(w.lower() in t.lower() for w in ROLE_TERMS)
 
-def is_specific_role_title(title):
-    t=clean_job_title(title)
-    if not is_concrete_role_title(t): return False
+def is_specific_role_title(title, source_id=""):
+    t=clean_job_title(title,source_id)
+    if not is_concrete_role_title(t,source_id): return False
     if re.search(r"(?:最新更新|招聘信息|截止时间|职位列表|岗位列表|职位分类|岗位分类|专业目录)",t): return False
-    if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","企业墙","地点：","地点:")): return False
+    if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","职位精选","职场优选","企业墙","地点：","地点:","校招高薪榜","薪资超","HR刚","HR今日","HR在线","助力简历","投后必反馈","全场景覆盖","数字化运营与服务能力突出")): return False
     stripped=re.sub(r"(?:专业不限|可接受应届生|接受应届生|应届生优先|相关专业)$","",t).strip()
     return len(stripped)>=2 and not stripped.endswith(("类","方向","体系","专业"))
 
@@ -405,6 +412,33 @@ def extract_boss_fields(raw_title, headings, text):
     fields.update({k:v for k,v in extract_detail_fields_generic(text,title or raw).items() if v not in ("",None)})
     return fields
 
+def extract_nowcoder_fields(raw_title, headings, text):
+    """Parse a public Nowcoder detail page without folding card badges into the role name."""
+    fields={}
+    title=""
+    company=""
+    raw=clean(raw_title)
+    for heading in headings:
+        candidate=clean_job_title(heading,"nowcoder")
+        if is_specific_role_title(candidate,"nowcoder"):
+            title=candidate
+            break
+    m=re.match(r"^(.+?)_([^_]+?)(?:校招|实习|社招)_牛客网$",raw)
+    if m:
+        if not title: title=clean_job_title(m.group(1),"nowcoder")
+        company=m.group(2).strip()
+    visible=(text or "")[:5000]
+    if not company:
+        m=re.search(r"(?:公司名称|企业名称|招聘企业|公司信息|企业信息)\s*[:：]?\s*([^\s|｜]{2,60}(?:有限公司|集团|公司|大学|研究院|银行|证券|科技|股份))",visible)
+        if m: company=m.group(1).strip()
+    if not title:
+        candidate=clean_job_title(raw,"nowcoder")
+        if is_specific_role_title(candidate,"nowcoder"): title=candidate
+    if title: fields["title"]=title
+    if company: fields["company"]=company
+    fields.update({k:v for k,v in extract_detail_fields_generic(text,title or raw).items() if v not in ("",None)})
+    return fields
+
 def merge_detail_fields(row, fields):
     for key,value in fields.items():
         if value not in (None,"",[],{}): row[key]=value
@@ -453,6 +487,8 @@ def embedded_records(company,source,parser,cohort,source_label=None,cohort_evide
                     if isinstance(val,str) and val.startswith(("http://","https://","/")):
                         url=canonical(urljoin(source,val)); break
                 if title and url and urlparse(url).netloc.lower()==host:
+                    if source_label and "公开" in source_label and not is_direct_detail_url(url):
+                        continue
                     sc=score(title,url,"")
                     if sc>=7 and any(x.lower() in url.lower() for x in ROLE_HREF):
                         item=record(employer_name or company,title,url,source_label or company+"官方招聘",cohort,sc,cohort_evidence=cohort_evidence)
@@ -507,6 +543,8 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
             full=urljoin(source,href)
             if urlparse(full).scheme in ("http","https") and any(x.lower() in full.lower() for x in ROLE_HREF):
                 role_url=canonical(full); break
+        if source_label and "公开" in source_label and not is_direct_detail_url(role_url):
+            continue
         score_value=5 if source_label and "公开" in source_label else 8
         r=record(employer,role,role_url,source_label or company+"官方招聘",cohort,score_value,cohort_evidence=cohort_evidence)
         if source_label and "公开" in source_label:
@@ -549,7 +587,9 @@ def collect_source(src):
         if is_direct_detail_url(final):
             diagnostics["direct_detail_pages_visited"]+=1
             detail_heading=next((clean_job_title(head,src.get("id","")) for head in p.headings
-                                 if is_concrete_role_title(clean_job_title(head,src.get("id","")))), "")
+                                 if (is_specific_role_title(clean_job_title(head,src.get("id","")),src.get("id",""))
+                                     if src.get("id") in {"nowcoder","yingjiesheng","boss","qiuzhaowang"}
+                                     else is_concrete_role_title(clean_job_title(head,src.get("id","")),src.get("id","")))), "")
         explicit_cohort=year(raw_page_title+" "+page_text+" "+" ".join(p.headings))
         source_cohort=src.get("cohort","") if src.get("type")=="official_campus" else ""
         if src.get("id")=="qiuzhaowang" and re.search(r"(?:[?&])year=2027(?:&|$)",page):
@@ -558,8 +598,12 @@ def collect_source(src):
         cohort_evidence=("page_text" if explicit_cohort else "")
         page_company=company
         detail_fields={}
-        if src.get("id")=="yingjiesheng":
+        if src.get("id")=="yingjiesheng" and is_direct_detail_url(final):
             detail_fields=extract_yingjiesheng_fields(raw_page_title,page_text,final)
+            if detail_fields.get("title"): raw_page_title=detail_fields["title"]
+            if detail_fields.get("company"): page_company=detail_fields["company"]
+        elif src.get("id")=="nowcoder" and is_direct_detail_url(final):
+            detail_fields=extract_nowcoder_fields(raw_page_title,p.headings,page_text)
             if detail_fields.get("title"): raw_page_title=detail_fields["title"]
             if detail_fields.get("company"): page_company=detail_fields["company"]
         elif src.get("id")=="boss" and is_direct_detail_url(final):
@@ -568,9 +612,10 @@ def collect_source(src):
             if detail_fields.get("company"): page_company=detail_fields["company"]
         record_source=company+"官方招聘"
         if src.get("id")=="nowcoder":
-            # Job detail title pattern: role_title_company校招_牛客网
+            # The company must come from a visible detail title/field, not the source-site label.
             m=re.search(r"_([^_]+?)(?:校招|实习|社招)_牛客网", raw_page_title)
             if m: page_company=m.group(1).strip()
+            if detail_fields.get("company"): page_company=detail_fields["company"]
             record_source="牛客公开岗位"
         elif src.get("id")=="yingjiesheng":
             # Company/title were extracted from visible fields above where available.
@@ -653,7 +698,7 @@ def collect_source(src):
                     item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
                     item["city"]=city_text or "全国"; item["confirmed_by"]=[record_source]
                     rows.append(item)
-        page_title_ok=is_specific_role_title(page_title) if "公开" in record_source else is_concrete_role_title(page_title)
+        page_title_ok=is_specific_role_title(page_title,src.get("id","")) if "公开" in record_source else is_concrete_role_title(page_title,src.get("id",""))
         if page_title and page_title_ok:
             sc=score(page_title,final,page_text)
             if sc>=5 and is_direct_detail_url(final):
@@ -703,6 +748,9 @@ def collect_source(src):
             title_ok=is_specific_role_title(title) if "公开" in record_source else is_concrete_role_title(title)
             if not title_ok: continue
             if not same_host(final,href): continue
+            if "公开" in record_source and not is_direct_detail_url(href):
+                # Public aggregator search/category links are discovery-only, never job records.
+                continue
             if any(x.lower() in title.lower() for x in NAV_BAD): continue
             # Generic corporate pages such as financial-market pages must not
             # become false job leads merely because their titles contain "市场".
@@ -780,7 +828,7 @@ def collect_source(src):
     diagnostics["role_records"]=len(role_rows)
     diagnostics["announcement_records"]=len(announcement_rows)
     diagnostics["portal_entries"]=len(entry_rows)
-    diagnostics["source_status"]="ok" if role_rows else ("announcement_only" if announcement_rows else ("entry_only" if entry_rows else ("reachable_no_records" if visited else "access_error")))
+    diagnostics["source_status"]="ok" if role_rows else ("announcement_only" if announcement_rows else ("entry_only" if entry_rows else ("listing_only_no_job_details" if diagnostics["listing_pages_queued"] and visited else ("reachable_no_records" if visited else "access_error"))))
     diagnostics["parser_modes"]=[name for name,count in (("links",diagnostics["links_seen"]),("tables",diagnostics["tables_seen"]),("embedded_json",diagnostics["embedded_json_blocks"])) if count]
     return best_rows,visited,diagnostics
 
