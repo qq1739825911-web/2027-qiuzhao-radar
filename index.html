@@ -150,7 +150,7 @@ function sanitizeDetailField(value,maxLength=6500){
 }
 function cleanUiTitle(value){
  let t=String(value||"").trim();
- t=t.replace(/^\s*[【\[（(]\s*(?:20\d{2}|\d{2})\s*届\s*(?:校招|校园招聘|正式批|秋招)?\s*[】\]）)]\s*[-—:：_ ]*/,"");
+ t=t.replace(/^\s*[【〖\[（(]\s*(?:20\d{2}|\d{2})\s*届\s*(?:校招|校园招聘|正式批|秋招)?\s*[】〗\]）)]\s*[-—:：_ ]*/,"");
  t=t.replace(/^(?:20\d{2}|\d{2})届(?:校招|校园招聘)?[-—_\s]*/,"");
  t=t.replace(/\s*[（(]\s*[A-Z]{1,4}\d{4,}\s*[）)]\s*$/i,"");
  t=t.replace(/\s*[_|｜-]\s*(?:牛客网|应届生求职网).*$/,"");
