@@ -1,9 +1,16 @@
 {
-  "checked_at": "2026-10-11T12:03:36+00:00",
-  "enabled_sources": 20,
-  "reachable": 17,
+  "checked_at": "2026-10-11T13:04:09+00:00",
+  "enabled_sources": 21,
+  "reachable": 18,
   "warnings": 3,
   "results": [
+    {
+      "id": "boss",
+      "name": "BOSS直聘",
+      "url": "https://www.zhipin.com/school/",
+      "status": "reachable",
+      "http_status": 200
+    },
     {
       "id": "citic",
       "name": "中信银行",
@@ -77,7 +84,7 @@
     {
       "id": "yingjiesheng",
       "name": "应届生求职网",
-      "url": "https://m.yingjiesheng.com/xuanjianghui/xjh_6268864",
+      "url": "https://www.yingjiesheng.com/",
       "status": "reachable",
       "http_status": 200
     },
