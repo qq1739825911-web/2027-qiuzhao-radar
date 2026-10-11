@@ -156,6 +156,17 @@ check("YJS company extracted", fields.get("company") == "上海基美影业股�
 check("YJS responsibilities extracted", "生成式AI视频创意" in fields.get("responsibilities", ""))
 check("YJS requirements extracted", "AIGC工具" in fields.get("requirements", ""))
 check("YJS address extracted", fields.get("address") == "上海静安区某路1号")
+legacy_yjs=extract_yingjiesheng_fields(
+    "[广东]珠海市龙图光罩科技有限公司 品质工程师 2026-10-10",
+    "工作地点：珠海市 招聘岗位：品质工程师 职位描述：质量检验与分析。学历要求：本科",
+    "https://m.yingjiesheng.com/job-008-111-850.html")
+check("YJS old mobile title yields a clean role name",
+      legacy_yjs.get("title")=="品质工程师")
+check("YJS old mobile title yields the company",
+      legacy_yjs.get("company")=="珠海市龙图光罩科技有限公司")
+check("YJS old mobile title's date is only a publication date",
+      legacy_yjs.get("publish_date")=="2026-10-10" and legacy_yjs.get("cohort","")=="")
+
 annual_fields=extract_yingjiesheng_fields(
     "苏州艾科瑞思智能装备股份有限公司招聘AIGC开发工程师_苏州校园招聘",
     "职位：AIGC开发工程师 发布时间：2026-10-09 工作地点：苏州 学历要求：硕士 职位描述：开发AI应用 18万元/年",

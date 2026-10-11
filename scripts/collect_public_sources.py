@@ -357,8 +357,23 @@ def extract_yingjiesheng_fields(raw_title, text, url):
         else:
             title=raw_title.split("_",1)[0].strip()
     else:
+        # Older Yingjiesheng mobile detail pages often put province/company/role/date
+        # directly in the HTML title instead of exposing the same structured fields.
+        old_title=re.match(r"^\[([^\]]{1,24})\]\s*(.+?)\s+(20\d{2}-\d{1,2}-\d{1,2})$",clean(raw_title))
+        if old_title:
+            entry=old_title.group(2).strip()
+            fields["publish_date"]=old_title.group(3)
+            company_role=re.match(
+                r"^(.+?(?:股份有限公司|集团有限公司|有限公司|集团|研究院|研究所|大学|银行|医院|中心|公司))\s+(.+)$",
+                entry
+            )
+            if company_role:
+                company=company_role.group(1).strip()
+                title=company_role.group(2).strip()
+            else:
+                title=entry
         m=re.search(r"职位\s*[:：]\s*(.+?)\s+发布时间",text or "")
-        if m: title=m.group(1).strip()
+        if m: title=m.group(1).strip() or title
         m=re.search(r"\[(?:全国|北京|上海|广州|深圳|杭州|南京|成都|武汉|西安)[^\]]*\]\s*(.+?)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
         if m: company=m.group(1).strip()
         if not company:
@@ -603,7 +618,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -613,6 +628,8 @@ def collect_source(src):
         if src.get("id")=="qiuzhaowang" and diagnostics["pages_attempted"]: time.sleep(0.5)
         elif src.get("id") in {"yingjiesheng","boss","nowcoder"} and diagnostics["pages_attempted"]: time.sleep(0.35)
         diagnostics["pages_attempted"]+=1
+        if is_direct_detail_url(page):
+            diagnostics["direct_detail_requests_attempted"]+=1
         try: html,final=fetch(page)
         except Exception as exc:
             diagnostics["pages_failed"]+=1
@@ -696,43 +713,16 @@ def collect_source(src):
                 if not any(x.lower() in group_title.lower() for x in role_hints): continue
                 group_url=canonical(group_href)
                 if group_url in seen_groups: continue
-                company_name=""
-                for previous in reversed(p.links[max(0,link_index-3):link_index]):
-                    candidate=clean(previous["text"])
-                    candidate_url=urljoin(final,previous["href"])
-                    if len(candidate)<2 or len(candidate)>60 or "/jobs/" in urlparse(candidate_url).path: continue
-                    if candidate in ("秋招网","岗位发现","我的机会","求职记录","校招资料","求职指南","会员权益"): continue
-                    if any(x.lower() in candidate.lower() for x in NAV_BAD): continue
-                    company_name=candidate
-                    break
-                if not company_name: continue
                 seen_groups.add(group_url)
-                if is_direct_detail_url(group_url) and group_url not in visited and group_url not in queue and len(queue)<max_pages:
+                # A /latest item is only a link to a specific company/position page.
+                # Queue its detail URL, and do not emit labels from a listing as vacancies.
+                if not is_direct_detail_url(group_url):
+                    continue
+                if group_url not in visited and group_url not in queue and len(queue)<max_pages:
                     queue.append(group_url)
                     diagnostics["discovery_pages_queued"]+=1
                     diagnostics["direct_detail_links_queued"]+=1
-                position=page_text.find(company_name)
-                chunk=page_text[position:position+1000] if position>=0 else page_text
-                city_match=re.search(r"工作地点\s*(.+?)\s*届次批次",chunk)
-                city=clean(city_match.group(1)) if city_match else "全国"
-                cohort=year(chunk) or ("2027届" if "year=2027" in page else "")
-                role_text=re.sub(r"(?:\.\.\.|…)+$","",group_title).replace("//"," · ")
-                if "·" in role_text or "•" in role_text:
-                    role_names=re.split(r"\s*[·•]\s*",role_text)
-                else:
-                    role_names=re.split(r"\s+(?=(?:AI|FPGA|大数据|算法|研发|软件|应用|嵌入式|人力资源|供应链|销售|财务|项目|产品|技术|工程|质量|管理|采购|市场|运营|数据|机械|电气|材料|设计|法律|法务|审计|教师|研究|客户|生产|工艺|医学|药学|营销|品牌|战略|风险|金融|投资|管培|行政|专员|计算机|通信|网络|硬件|芯片|自动化|控制|系统|测试|运维|服务|助理|顾问|咨询|业务|商务|物流|设备|计划|渠道|会计|客服|机器人|研究员|分析师))",role_text)
-                for role_name in role_names:
-                    role_name=clean_job_title(role_name,"qiuzhaowang")
-                    if len(role_name)<2 or len(role_name)>45: continue
-                    if not is_specific_role_title(role_name): continue
-                    if role_name.endswith(("类","方向","体系","专业")): continue
-                    if role_name in ("工程热物理","热能工程","能源与动力工程","发电厂及电力系统","电气工程及其自动化","计算机科学与技术","软件工程","机械工程","材料科学与工程","化学工程与工艺","高电压与绝缘技术","电力系统及其自动化","电子与通信","工程力学","土木工程","地质工程","建筑学","计算机系统结构","计算机软件与理论","计算机应用技术","网络空间安全","控制科学与工程","信息与通信工程","电机与电器","电力电子与电力传动","安全科学与工程","环境科学与工程","数学与应用数学","冶金工程","矿业工程"): continue
-                    if role_name.startswith(("招聘项目","具体岗位","岗位要求","招聘方向","需求专业","工作地点","届次批次")): continue
-                    if not is_specific_role_title(role_name): continue
-                    item=record(company_name,role_name,group_url,record_source,cohort,5)
-                    item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
-                    item["city"]=city or "全国"; item["confirmed_by"]=[record_source]
-                    rows.append(item)
+                continue
         if src.get("id")=="qiuzhaowang" and "/jobs/" in urlparse(final).path:
             page_text=p.page_text()
             role_match=re.search(r"招聘岗位\s*(.+?)\s*工作城市",page_text)
@@ -813,8 +803,12 @@ def collect_source(src):
             title_ok=is_specific_role_title(title) if "公开" in record_source else is_concrete_role_title(title)
             if not title_ok: continue
             if not same_host(final,href): continue
-            if "公开" in record_source and not is_direct_detail_url(href):
-                # Public aggregator search/category links are discovery-only, never job records.
+            if "公开" in record_source:
+                # Never save an aggregator anchor as a job; fetch that detail page first.
+                if is_direct_detail_url(href) and href not in visited and href not in queue and len(queue)<max_pages:
+                    queue.append(href)
+                    diagnostics["discovery_pages_queued"]+=1
+                    diagnostics["direct_detail_links_queued"]+=1
                 continue
             if any(x.lower() in title.lower() for x in NAV_BAD): continue
             # Generic corporate pages such as financial-market pages must not
@@ -940,7 +934,7 @@ def main():
                             "html_bytes":diag.get("html_bytes",0),"links_seen":diag.get("links_seen",0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"role_records":diag.get("role_records",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"role_records":diag.get("role_records",0),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
