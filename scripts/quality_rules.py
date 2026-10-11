@@ -1,5 +1,6 @@
 """Single source of truth for deciding which job records deserve priority review."""
 import json
+import re
 from datetime import date, timedelta
 from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text, is_boss_campus_card_relevant
 
@@ -23,8 +24,15 @@ def should_publish_record(row):
             return False
         # Reapply the current cohort-cycle rule to historical records as well as
         # newly collected BOSS cards, so stale "26年应届" rows don't linger forever.
-        if source_id=="boss" and not is_boss_campus_card_relevant(row.get("title","")):
-            return False
+        if source_id=="boss":
+            cohort=str(row.get("cohort","") or "")
+            # A legacy record may have had its title cleaned already while its
+            # cohort field still identifies the old graduating class.
+            cohort_year=re.search(r"(?<!\d)(?:19|20)\d{2}\s*届",cohort)
+            if cohort_year and not cohort_year.group(0).startswith("2027"):
+                return False
+            if not is_boss_campus_card_relevant(row.get("title","")):
+                return False
         return True
     return True
 

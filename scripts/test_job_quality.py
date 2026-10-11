@@ -211,6 +211,10 @@ check("old BOSS 26-year graduate lead is removed from published database",
       not should_publish_record({"source":"BOSS直聘公开校招卡片","granularity":"job",
         "title":"新能源软件产品经理-26年应届生",
         "source_url":"https://www.zhipin.com/job_detail/abc123.html"}))
+check("already-cleaned BOSS title with old 2026 cohort is removed",
+      not should_publish_record({"source":"BOSS直聘公开校招卡片","granularity":"job",
+        "title":"新能源软件产品经理","cohort":"2026届",
+        "source_url":"https://www.zhipin.com/job_detail/abc123.html"}))
 check("current BOSS 2027 graduate lead remains eligible for publication",
       should_publish_record({"source":"BOSS直聘公开校招卡片","granularity":"job",
         "title":"2027-硬件工程师-北京 北京 在校/应届 本科",
