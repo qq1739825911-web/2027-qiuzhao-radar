@@ -18,6 +18,7 @@ const { chromium } = require("playwright");
     // Search AIGC in Shanghai; if priority matches are absent, the UI should
     // clearly switch to the separate "pending review" bucket, never mix rows.
     await page.locator("#q").fill("AIGC");
+    await page.locator("#heroSearch").click();
     await page.locator("#city").selectOption("上海");
     await page.waitForFunction(() => {
       const title = document.querySelector("#jobs .listing-heading h3")?.textContent || "";
@@ -54,7 +55,12 @@ const { chromium } = require("playwright");
     const closeBox = await close.boundingBox();
     const titleBox = await page.locator("#jobDetailContent .detail-title-wrap").boundingBox();
     assert.ok(closeBox && titleBox && closeBox.x > titleBox.x, "modal close button must align at the title's right side");
+    assert.ok(Math.abs(closeBox.y - titleBox.y) <= 6, "modal close button must align vertically with the title row");
     await close.click();
+    await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
+    await page.locator("#jobs .role-row .role-title-button").first().evaluate(el => el.click());
+    await page.waitForFunction(() => document.querySelector("#jobDetailModal")?.classList.contains("show"));
+    await page.keyboard.press("Escape");
     await page.waitForFunction(() => !document.querySelector("#jobDetailModal")?.classList.contains("show"));
 
     // Favorites, delivery status, profile, source monitor, and reset interactions.
@@ -79,7 +85,9 @@ const { chromium } = require("playwright");
     await page.locator('#workbench .tab[data-tab="sources"]').click();
     await page.locator("#collectorStatus").waitFor({ state: "visible" });
     await page.waitForTimeout(500);
-    assert.ok((await page.locator("#collectorStatus").innerText()).length > 0, "collector monitoring panel should render");
+    const collectorText = await page.locator("#collectorStatus").innerText();
+    assert.ok(collectorText.length > 0, "collector monitoring panel should render");
+    assert.ok(collectorText.includes("岗位级记录") && collectorText.includes("只有公告/入口") && collectorText.includes("可访问但零产出"), "source monitor must distinguish role-level sources from portals and zero-output sources");
 
     await page.locator('#workbench .tab[data-tab="jobs"]').click();
     await page.locator("#reset").click();
@@ -94,6 +102,9 @@ const { chromium } = require("playwright");
       detailModal: "pass",
       metadataLeak: "none",
       closeAlignment: "pass",
+      escapeToClose: "pass",
+      heroSearchButton: "pass",
+      sourceProductivityBreakdown: "pass",
       favoritesAndDeliveryBoard: "pass",
       profileSave: "pass",
       sourceMonitor: "pass",
