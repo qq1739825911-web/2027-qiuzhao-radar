@@ -141,7 +141,7 @@ check("BOSS company extracted from public title", boss_fields.get("company")=="�
 
 # Parse visible fields on a public YJS detail-page fixture; never invent absent values.
 fixture_title = "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网"
-fixture_text = ("AIGC影视创意制作（校招） 8千-1.5万 本科 全职 上海-静安区 "
+fixture_text = ("AIGC影视创意制作（校招） 8千-1.5万 本科 全职 工作地点：上海-静安区 "
                 "职位描述 岗位职责：生成式AI视频创意。岗位要求：熟悉AIGC工具。"
                 "公司信息 上海基美影业股份有限公司 公司地址：上海静安区某路1号")
 fields = extract_yingjiesheng_fields(
