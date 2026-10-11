@@ -135,6 +135,18 @@ check("51job category root is not a detail",
       not is_direct_detail_url("https://xy.51job.com/"))
 check("Guopin public SPA route uses anonymous browser rendering",
       should_render_public_page("iguopin","https://job.iguopin.com/jobList?channel=campus","<html><body><div id='app'></div></body></html>"))
+check("Guopin detailed campus list parameters remain public-renderable",
+      should_render_public_page("iguopin","https://job.iguopin.com/jobList?campus_nature=&channel=campus&nature_cn=","<html><body><div id='app'></div></body></html>"))
+check("51job renderer upgrades only allow-listed internal HTTP URLs before browser launch",
+      'if source_id=="51job" and urlparse(url).scheme.lower()=="http" and same_host("https://xy.51job.com/",url)' in COLLECTOR_SOURCE)
+check("QZW partial-read fallback is implemented",
+      "except IncompleteRead as exc" in COLLECTOR_SOURCE)
+check("renderer reports visible body preview and safe campus navigation",
+      "body_preview" in RENDERER_SOURCE and "招聘岗位|招聘职位|职位列表" in RENDERER_SOURCE)
+constReg=json.loads((Path(__file__).resolve().parents[1]/"data/company_sources.json").read_text(encoding="utf-8"))
+check("Guopin public campus listing query configured",
+      any("campus_nature=&channel=campus&nature_cn=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))
 check("51job page with real detail link skips redundant rendering",
@@ -144,6 +156,7 @@ check("YJS uses static parsing rather than unnecessary browser rendering",
 check("Guopin login route is not browser-rendered",
       not should_render_public_page("iguopin","https://job.iguopin.com/login","<html></html>"))
 RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
+COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
 check("browser worker has explicit public host allow-list and no CAPTCHA bypass",
       "security_interstitial: security" in RENDERER_SOURCE and "allowPublicUrl" in RENDERER_SOURCE and "captcha.solve" not in RENDERER_SOURCE)
 

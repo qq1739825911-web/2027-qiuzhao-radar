@@ -55,7 +55,39 @@ async function render(request) {
     page.setDefaultTimeout(6000);
     const response = await page.goto(requestedUrl, { waitUntil: "domcontentloaded", timeout: 18000 }).catch(() => null);
     await page.waitForLoadState("networkidle", { timeout: 2500 }).catch(() => {});
-    await page.waitForTimeout(900);
+    await page.waitForFunction(() => {
+      if (!document.body) return false;
+      const text = (document.body.innerText || "").trim();
+      return text.length > 180 || document.querySelectorAll("a[href]").length > 8;
+    }, { timeout: 4500 }).catch(() => {});
+    await page.waitForTimeout(700);
+
+    // Some 51job public campus microsites use visible JS tabs (including javascript: links)
+    // instead of real URLs. Click only a visible recruitment-navigation label; never click
+    // login, delivery, account, or security controls.
+    if (sourceId === "51job") {
+      const tabPattern = /^\s*(校园招聘|招聘岗位|招聘职位|职位列表|岗位列表|职位信息|岗位信息|职位介绍|职位)\s*$/;
+      const tab = page.locator("a,button,[role='tab']").filter({ hasText: tabPattern }).first();
+      if (await tab.count().catch(() => 0)) {
+        const visible = await tab.isVisible().catch(() => false);
+        if (visible) {
+          await tab.click({ timeout: 1200 }).catch(() => {});
+          await page.waitForLoadState("networkidle", { timeout: 1800 }).catch(() => {});
+          await page.waitForFunction(() => document.body && ((document.body.innerText || "").trim().length > 180 || document.querySelectorAll("a[href]").length > 8), { timeout: 3000 }).catch(() => {});
+          await page.waitForTimeout(500);
+        }
+      }
+    }
+
+    const currentUrl = page.url();
+    if (!allowPublicUrl(sourceId, currentUrl)) {
+      return {
+        ok: true, html: "<!doctype html><html><head><title>Public page redirected outside allow-list</title></head><body></body></html>",
+        final_url: currentUrl, title: await page.title().catch(() => ""),
+        body_chars: 0, link_count: 0, body_preview: "", http_status: 0,
+        security_interstitial: true, access_limited: true
+      };
+    }
     const observed = await page.evaluate(() => {
       const title = document.title || "";
       const bodyText = document.body ? (document.body.innerText || "").slice(0, 18000) : "";
@@ -63,14 +95,14 @@ async function render(request) {
       const clone = document.documentElement.cloneNode(true);
       clone.querySelectorAll("script,style,noscript,iframe,svg").forEach(el => el.remove());
       clone.querySelectorAll("[hidden],[aria-hidden='true']").forEach(el => el.remove());
-      return { title, bodyText, linkCount, html: "<!doctype html>" + clone.outerHTML };
+      return { title, bodyText, bodyPreview: bodyText.slice(0, 350), linkCount, html: "<!doctype html>" + clone.outerHTML };
     });
     const finalUrl = page.url();
     const security = hasSecurityInterstitial(finalUrl, observed.title, observed.bodyText);
     return {
       ok: true, html: observed.html, final_url: finalUrl, title: observed.title,
-      body_chars: observed.bodyText.length, link_count: observed.linkCount,
-      http_status: response ? response.status() : 0, security_interstitial: security
+      body_chars: observed.bodyText.length, body_preview: observed.bodyPreview, link_count: observed.linkCount,
+      http_status: response ? response.status() : 0, security_interstitial: security, access_limited: false
     };
   } catch (error) {
     return { ok: false, error: String(error && error.message || error).slice(0, 220) };

@@ -14,6 +14,7 @@ from datetime import date, datetime, timezone
 from html.parser import HTMLParser
 from urllib.parse import urljoin,urlparse,urlunparse,parse_qsl,urlencode,quote
 from urllib.request import Request,urlopen
+from http.client import IncompleteRead
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -102,7 +103,11 @@ def render_public_page(url,source_id):
                     cwd=str(ROOT),stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,
                     text=True,encoding="utf-8",errors="replace",bufsize=1
                 )
-            request={"url":url,"source_id":source_id}
+            render_url=url
+            if source_id=="51job" and urlparse(url).scheme.lower()=="http" and same_host("https://xy.51job.com/",url):
+                p=urlparse(url)
+                render_url=urlunparse(("https",p.netloc,p.path,p.params,p.query,p.fragment))
+            request={"url":render_url,"source_id":source_id}
             _BROWSER_WORKER.stdin.write(json.dumps(request,ensure_ascii=False)+"\n")
             _BROWSER_WORKER.stdin.flush()
             line=_BROWSER_WORKER.stdout.readline()
@@ -136,10 +141,17 @@ atexit.register(_shutdown_browser_worker)
 def fetch(url,source_id=""):
     req=Request(url,headers=HEADERS)
     with urlopen(req,timeout=10) as r:
-        raw=r.read(4_000_000); enc=r.headers.get_content_charset() or "utf-8"; final=r.geturl()
+        try:
+            raw=r.read(4_000_000)
+        except IncompleteRead as exc:
+            raw=exc.partial or b""
+            if not raw:
+                raise
+        enc=r.headers.get_content_charset() or "utf-8"; final=r.geturl()
     static_html=raw.decode(enc,errors="ignore")
     meta={"mode":"static","browser_attempted":False,"browser_success":False,
           "browser_blocked":False,"browser_body_chars":0,"browser_links":0,"browser_http_status":0,
+          "browser_title":"","browser_final_url":"","browser_body_preview":"","browser_access_limited":False,
           "browser_error":""}
     if should_render_public_page(source_id,url,static_html):
         meta["browser_attempted"]=True
@@ -147,10 +159,14 @@ def fetch(url,source_id=""):
         if result.get("ok") and isinstance(result.get("html"),str) and result.get("html"):
             meta["mode"]="playwright"
             meta["browser_success"]=True
-            meta["browser_blocked"]=bool(result.get("security_interstitial"))
+            meta["browser_access_limited"]=bool(result.get("access_limited"))
+            meta["browser_blocked"]=bool(result.get("security_interstitial") or result.get("access_limited"))
             meta["browser_body_chars"]=int(result.get("body_chars") or 0)
             meta["browser_links"]=int(result.get("link_count") or 0)
             meta["browser_http_status"]=int(result.get("http_status") or 0)
+            meta["browser_title"]=str(result.get("title") or "")[:160]
+            meta["browser_final_url"]=str(result.get("final_url") or final)[:300]
+            meta["browser_body_preview"]=str(result.get("body_preview") or "")[:350]
             rendered_url=str(result.get("final_url") or final)
             # A security wall is reported and skipped, never solved or bypassed.
             return str(result["html"]),rendered_url,meta
@@ -825,7 +841,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -848,10 +864,19 @@ def collect_source(src):
         if fetch_meta.get("browser_blocked"): diagnostics["browser_render_blocked"]+=1
         diagnostics["browser_rendered_body_chars"]+=int(fetch_meta.get("browser_body_chars") or 0)
         diagnostics["browser_rendered_links"]+=int(fetch_meta.get("browser_links") or 0)
+        if fetch_meta.get("browser_attempted") and len(diagnostics["browser_render_samples"])<8:
+            diagnostics["browser_render_samples"].append({
+                "requested_url":canonical(page),"mode":fetch_meta.get("mode","static"),
+                "final_url":fetch_meta.get("browser_final_url",""),"title":fetch_meta.get("browser_title",""),
+                "http_status":fetch_meta.get("browser_http_status",0),"body_chars":fetch_meta.get("browser_body_chars",0),
+                "link_count":fetch_meta.get("browser_links",0),"body_preview":fetch_meta.get("browser_body_preview",""),
+                "access_limited":bool(fetch_meta.get("browser_access_limited")),
+                "error":fetch_meta.get("browser_error","")
+            })
         if fetch_meta.get("browser_attempted") and not fetch_meta.get("browser_success") and fetch_meta.get("browser_error"):
             diagnostics["last_error"]="Browser-render fallback unavailable: "+str(fetch_meta["browser_error"])[:140]
         if fetch_meta.get("browser_blocked"):
-            diagnostics["last_error"]="Public page displayed a security/CAPTCHA interstitial; not bypassed"
+            diagnostics["last_error"]="Public browser rendering reached a security/CAPTCHA wall or left the source allow-list; not bypassed"
             continue
         source_id=src.get("id","")
         if source_id in {"yingjiesheng","nowcoder","boss","51job","iguopin"} and should_discover_public_url(source_id,final) and not is_direct_detail_url(final):
@@ -1291,7 +1316,8 @@ def main():
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
                             "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
-                            "browser_rendered_links":diag.get("browser_rendered_links",0),"role_records":diag.get("role_records",0),
+                            "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
+                            "role_records":diag.get("role_records",0),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
@@ -1312,7 +1338,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.3","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.4","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
