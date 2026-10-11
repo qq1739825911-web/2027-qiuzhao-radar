@@ -119,18 +119,21 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
         const filteredRows = filtered();
         return {
           loadedCount: DATA.length, query: q, city,
-          rowMappings: rows.map(x => ({title:x.title,company:x.company,city:x.city,searchText:x.searchText,searchHit:String(x.searchText||"").includes(q),cityHit:String(x.city||"").toLocaleLowerCase().includes(city),status:x.status,bucket:isPriorityJob(x)?"priority":"lead",salary:x.salary,degree:x.degree,responsibilityChars:String(x.responsibilities||"").length,requirementsChars:String(x.requirements||"").length})),
-          filteredTargetRows: filteredRows.filter(x => /AIGC影视创意制作|基美影业/.test(String(x.title||"")+" "+String(x.company||""))).map(x=>({title:x.title,company:x.company,city:x.city,searchText:x.searchText}))
+          rowMappings: rows.map(x => ({title:x.title,company:x.company,city:x.city,searchHit:String(x.searchText||"").includes(q),cityHit:String(x.city||"").toLocaleLowerCase().includes(city),status:x.status,bucket:isPriorityJob(x)?"priority":"lead",salary:x.salary,degree:x.degree,responsibilityChars:String(x.responsibilities||"").length,requirementsChars:String(x.requirements||"").length})),
+          filteredTargetRows: filteredRows.filter(x => /AIGC影视创意制作|基美影业/.test(String(x.title||"")+" "+String(x.company||""))).map(x=>({title:x.title,company:x.company,city:x.city}))
         };
       } catch (error) { return {error:String(error)}; }
     });
     console.log("FRONTEND_AIGC_FILTER_PROBE " + JSON.stringify(runtimeAigcProbe));
+    assert.ok(runtimeAigcProbe.rowMappings?.some(x => x.searchHit && x.cityHit), "normalized AIGC row should match both keyword and Shanghai filters: " + JSON.stringify(runtimeAigcProbe));
+    assert.ok(runtimeAigcProbe.filteredTargetRows?.length > 0, "actual frontend filtered() output must contain the AIGC Shanghai job: " + JSON.stringify(runtimeAigcProbe));
     for (const bucket of ["priority","lead"]) {
       await page.locator('[data-bucket="'+bucket+'"]').click();
       const yjsGroups = page.locator("#jobs .company-group");
       for (let gi=0; gi<await yjsGroups.count(); gi++) {
         const group=yjsGroups.nth(gi);
         await group.locator("summary").click();
+        await group.locator('.company-body[data-loaded="true"]').waitFor({ state: 'attached', timeout: 5000 });
         const role=group.locator(".role-row").filter({hasText:"AIGC影视创意制作"}).first();
         if (await role.count() > 0) {
           const visibleTitle=(await role.locator(".role-title-button").innerText()).trim();
@@ -161,6 +164,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
         for (let gi=0; gi<await groupsNoCity.count(); gi++) {
           const group=groupsNoCity.nth(gi);
           await group.locator("summary").click();
+          await group.locator('.company-body[data-loaded="true"]').waitFor({ state: 'attached', timeout: 5000 });
           const role=group.locator(".role-row").filter({hasText:"AIGC影视创意制作"}).first();
           if (await role.count()>0) {
             const visibleTitle=(await role.locator(".role-title-button").innerText()).trim();
@@ -194,6 +198,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
       for (let gi=0; gi<await xpGroups.count(); gi++) {
         const group=xpGroups.nth(gi);
         await group.locator("summary").click();
+        await group.locator('.company-body[data-loaded="true"]').waitFor({ state: 'attached', timeout: 5000 });
         const role=group.locator(".role-row").filter({hasText:"具身智能AI软件工程师"}).first();
         if (await role.count() > 0) {
           const visibleTitle=(await role.locator(".role-title-button").innerText()).trim();
