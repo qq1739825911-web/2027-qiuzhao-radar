@@ -313,7 +313,7 @@ document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>switchTab(t.dataset.t
 document.querySelectorAll("[data-search]").forEach(b=>b.onclick=()=>{$("q").value=b.dataset.search;favoritesOnly=false;currentPage=1;syncFavoriteButton();render();$("workbench").scrollIntoView({behavior:"smooth",block:"start"})});
 $("heroSearch").onclick=()=>{$("workbench").scrollIntoView({behavior:"smooth",block:"start"});render()};
 let searchDebounce=null;
-["q","cat","city","type","status"].forEach(id=>$(id).addEventListener("input",()=>{currentPage=1;favoritesOnly=false;syncFavoriteButton();if(id==="q"){clearTimeout(searchDebounce);searchDebounce=setTimeout(render,140)}else render()}));
+["q","cat","city","type","status"].forEach(id=>$(id).addEventListener("input",()=>{currentPage=1;favoritesOnly=false;syncFavoriteButton();if(id==="q"){clearTimeout(searchDebounce);searchDebounce=setTimeout(render,140)}else{clearTimeout(searchDebounce);searchDebounce=null;render()}}));
 $("reset").onclick=()=>{clearTimeout(searchDebounce);["q","cat","city","type","status"].forEach(id=>$(id).value="");favoritesOnly=false;currentPage=1;syncFavoriteButton();render()};
 loadData().then(()=>{setup();render();syncFavoriteButton();setInterval(()=>{if(document.visibilityState==="visible")loadData().then(()=>{setup();render();syncFavoriteButton()}).catch(()=>{})},900000)}).catch(e=>{$("dataNotice").textContent="岗位数据加载失败，请检查 data/jobs.json；"+e.message;$("dataNotice").className="notice"});
 setInterval(()=>{if($("sources")&&$("sources").style.display!=="none")renderSources()},300000);
