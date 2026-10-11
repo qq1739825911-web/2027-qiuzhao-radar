@@ -151,6 +151,9 @@ check("Guopin current public campus listing configured",
       any("https://www.iguopin.com/job?channel=campus" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
 check("Guopin public keyword category sources configured",
       any("/job/list?keyword=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin keyword-category SPA routes are browser-renderable",
+      should_render_public_page("iguopin","https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88","<html><body><div id='app'></div></body></html>")
+      and "job\\/list" in RENDERER_SOURCE and "keyword=" in RENDERER_SOURCE)
 
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))
