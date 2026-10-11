@@ -123,13 +123,16 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "百度官方2027届校招职位列表与公开详情页；已加入岗位详情样本，用于提取职位名称、城市、学历、职责和任职要求。详情页能打开仍不等于招聘开放，截止/届别信息以页面为准。",
+    "notes": "按官方2027校招职位列表刷新岗位详情样本：包含上海多模态算法、上海AI Infra、AIDU多模态/大模型岗位。尝试提取实际可见的城市、学历、职责和任职要求；详情页能打开不等于招聘仍开放，缺少明确信息的记录仍进待核验线索。",
     "seed_urls": [
       "https://talent.baidu.com/jobs/list?projectType=3&recruitType=GRADUATE",
-      "https://talent.baidu.com/jobs/detail/GRADUATE/33f41590-5770-4a91-9395-3c05e7ed1571",
-      "https://talent.baidu.com/jobs/detail/GRADUATE/4a24a509-42b0-42fe-989d-bc24e863ce7b",
-      "https://talent.baidu.com/jobs/detail/GRADUATE/a20dfb76-4c9d-4814-bd74-7561616e2773",
-      "https://talent.baidu.com/jobs/detail/GRADUATE/ab5ec82f-a8be-4b4a-8e6f-5debc34ea804"
+      "https://talent.baidu.com/jobs/detail/GRADUATE/3fbd2b8c-43a6-4fa6-a71c-784bfe2ec4cd",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/d29404bd-55de-4cc1-929b-e67d304abc97",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/2df21b8d-b533-40e4-ad89-6dea847a44c8",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/df1e79e6-b6cc-4300-acf2-2e0d0a5a3eaf",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/ab5ec82f-a8be-4b4a-8e6f-5debc34ea804",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/8d528038-983d-4165-b6f0-1fea77e3097a",
+      "https://talent.baidu.com/jobs/detail/GRADUATE/fe876a65-1a6c-499a-9506-2169009a02a1"
     ],
     "max_pages": 8,
     "max_candidates": 200
@@ -139,16 +142,18 @@
     "company": "美团",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://zhaopin.meituan.com/web/campus/schedule",
+    "url": "https://zhaopin.meituan.com/web/campus?bg=BG021&hiringType=1_1",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "美团官方校招入口加公开职位详情样本；详情页标题优先从可见h1/h2/h3提取，薪资、地点、学历、岗位职责只采集页面实际可见字段。",
+    "notes": "改用美团官方2027校招职位页作为主入口，保留详情样本、行程和校招FAQ。先从公开职位卡片/详情解析岗位；若仅能取得动态页面壳，则只保留官方入口线索，不拼造岗位。",
     "seed_urls": [
       "https://zhaopin.meituan.com/web/position/detail?highlightType=campus&jobShareType=1&jobUnionId=4683995941",
-      "https://zhaopin.meituan.com/web/campus/schedule"
+      "https://zhaopin.meituan.com/web/campus?bg=BG021&hiringType=1_1",
+      "https://zhaopin.meituan.com/web/campus/schedule",
+      "https://zhaopin.meituan.com/web/question/campus"
     ],
-    "max_pages": 6,
+    "max_pages": 8,
     "max_candidates": 150
   },
   {
@@ -210,11 +215,15 @@
     "company": "小鹏汽车",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://www.xiaopeng.com/join.html",
+    "url": "https://xiaopeng.jobs.feishu.cn/campus/position/list",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "官方招聘入口；后续细分校招职位"
+    "notes": "从小鹏校园招聘的官方飞书招聘页获取公开入口。若页面为动态渲染导致未解析到职位详情，则清楚显示为官方招聘入口线索，并不把公司招聘主页当作具体岗位。",
+    "seed_urls": [
+      "https://xiaopeng.jobs.feishu.cn/campus/position/list"
+    ],
+    "max_pages": 4
   },
   {
     "id": "boc",
@@ -232,20 +241,20 @@
     "company": "中国建设银行",
     "type": "official_campus",
     "cohort": "2027届",
-    "url": "https://job.ccb.com/",
+    "url": "https://job2.ccb.com/",
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "已切换到建行官方招聘平台 job.ccb.com 作为旧域名 job2.ccb.com 的兼容性备选，并核验总行/境内分支/建银咨询/综合化子公司/建信金科/远程智能银行中心公告与岗位搜索入口。若新旧域名仍受运行器TLS/动态渲染限制，将报告为访问故障或reachable_no_records，不把公告当成具体岗位。",
+    "notes": "使用中国建设银行当前官方招聘平台 job2.ccb.com 的2027校园招聘公告与公告列表。银行职位按用户需求主要保留官网核对入口/公告线索；如果运行器TLS/动态渲染失败，会记录访问错误，不绕过证书验证，也不把公告冒充职位。",
     "seed_urls": [
-      "https://job.ccb.com/cn/job/announcement.html?annoId=20260903163254718082",
-      "https://job.ccb.com/cn/job/announcement.html?annoId=20260901194840667699&planType=XY",
-      "https://job.ccb.com/cn/job/announcement.html?annoId=20260903150357717853",
-      "https://job.ccb.com/cn/job/announcement.html?annoId=20260904115022720661&isImpAnno=1&planType=XY",
-      "https://job.ccb.com/cn/job/announcement.html?annoId=20260903100124717047&isImpAnno=1",
-      "https://job.ccb.com/cn/job/announcement.html?annoId=20260903110323717139&isImpAnno=1&planType=XY",
-      "https://job.ccb.com/cn/job/plan_index.html?planType=XY",
-      "https://job.ccb.com/cn/job/index.html"
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260901194840667699&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903145558718023&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260904115022720661&isImpAnno=1&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903103843717226&isImpAnno=1",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903110323717139&isImpAnno=1&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903150125718024&orgId=2005978&planType=XY",
+      "https://job2.ccb.com/cn/job/announcement.html?annoId=20260903144455718976&planType=XY",
+      "https://job2.ccb.com/chn/job/anno_list.html"
     ],
     "max_pages": 8,
     "max_candidates": 500
