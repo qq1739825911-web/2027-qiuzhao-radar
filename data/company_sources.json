@@ -219,10 +219,10 @@
     "access": "public",
     "trust": "high",
     "enabled": true,
-    "notes": "已改用小鹏集团官方飞书校园招聘入口，并加入近期公开的27届岗位详情样本（具身智能AI软件、多模态算法、AI研发、产品经理、HRBP和VR设计）。只采集可公开访问的详情字段，清理〖27届校招〗等标题前缀；岗位能打开仍不代表企业确认在招。",
+    "notes": "以标准浏览器请求头抓取公开页面；已验证小鹏官方飞书校园岗位详情可解析。包含具身智能AI软件、多模态算法、AI研发、产品经理等公开详情；保留页面实际提供的城市/学历/职责，不把官网入口当作具体岗位。",
     "seed_urls": [
       "https://xiaopeng.jobs.feishu.cn/campus/position/7666022623763056938/detail",
-      "https://xiaopeng.jobs.feishu.cn/campus/position/7662698677748107571/detail",
+      "https://xiaopeng.jobs.feishu.cn/campus/m/position/7662698677748107571/detail",
       "https://xiaopeng.jobs.feishu.cn/campus/position/7678640648783022390/detail",
       "https://xiaopeng.jobs.feishu.cn/campus/position/7681615705750784262/detail",
       "https://xiaopeng.jobs.feishu.cn/campus/m/position/7658239801044797746/detail",
