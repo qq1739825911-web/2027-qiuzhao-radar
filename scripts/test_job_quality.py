@@ -78,8 +78,8 @@ check("specific role with qualification suffix remains a role",
       is_specific_role_title("销售管培生专业不限"))
 check("QZW generic majors excluded from published jobs",
       not should_publish_record({"source":"秋招网公开聚合","title":"商务英语","granularity":"review"}))
-check("QZW real role title remains publishable",
-      should_publish_record({"source":"秋招网公开聚合","title":"销售管培生专业不限","granularity":"review"}))
+check("QZW real role title remains publishable when detail URL is present",
+      should_publish_record({"source":"秋招网公开聚合","title":"销售管培生专业不限","source_url":"https://qiuzhaowang.com/jobs/position-32406","granularity":"review"}))
 check("official recruitment entry leads are retained separately",
       should_publish_record({"source":"秋招网公开聚合","title":"2027届秋招网官方招聘入口线索","granularity":"entry"}))
 check("non-QZW review leads are not discarded by QZW filter",
