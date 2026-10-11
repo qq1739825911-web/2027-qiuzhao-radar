@@ -13,8 +13,8 @@ def should_publish_record(row):
     granularity=str(row.get("granularity",""))
     if granularity in {"announcement","entry"}:
         return True
-    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else "")))
-    if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang"}:
+    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else ("iguopin" if "国聘" in source else ("51job" if "前程无忧" in source or "51job" in source.lower() else "")))))
+    if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}:
         # Aggregator search/category cards are not vacancies. Require a role-level detail link.
         if not is_direct_detail_url(row.get("source_url","")):
             return False
@@ -36,7 +36,7 @@ def cohort_is_confirmed(row):
 def assess(row, today=None):
     today = today or date.today()
     source = str(row.get("source", ""))
-    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else "")))
+    source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else ("iguopin" if "国聘" in source else ("51job" if "前程无忧" in source or "51job" in source.lower() else "")))))
     title = clean_job_title(row.get("title", ""), source_id)
     if title:
         row["title"] = title

@@ -72,14 +72,40 @@
     "listing_page_limit": 25
   },
   {
+    "id": "51job",
+    "company": "前程无忧51job",
+    "type": "public_job_aggregator",
+    "url": "https://xy.51job.com/",
+    "access": "public",
+    "trust": "medium",
+    "enabled": true,
+    "notes": "校园招聘公共入口采集实验源；仅遍历匿名可见的校招/分类/分页页面和明确岗位详情，不把热门职位分类当成职位，不绕过登录或访问限制。",
+    "seed_urls": [
+      "https://xy.51job.com/",
+      "https://xy.51job.com/default-xs.php?lang=e"
+    ],
+    "max_pages": 50,
+    "max_candidates": 1400,
+    "listing_page_limit": 20
+  },
+  {
     "id": "iguopin",
     "company": "国聘",
-    "type": "official_portal",
-    "url": "https://www.iguopin.com/",
-    "access": "public_entry",
+    "type": "public_job_aggregator",
+    "url": "https://job.iguopin.com/",
+    "access": "public",
     "trust": "high",
-    "enabled": false,
-    "notes": "后续研究公开数据接口/页面"
+    "enabled": true,
+    "notes": "启用公开主页和 jobList 招聘列表实验源，优先发现校园招聘/岗位详情与可见公告；若页面只返回 JS 壳，记录为入口可访问、岗位未提取，不请求未公开 API。",
+    "seed_urls": [
+      "https://job.iguopin.com/",
+      "https://job.iguopin.com/jobList?channel=campus",
+      "https://job.iguopin.com/jobList?channel=social",
+      "https://www2.iguopin.com/"
+    ],
+    "max_pages": 45,
+    "max_candidates": 1600,
+    "listing_page_limit": 20
   },
   {
     "id": "mohrss",

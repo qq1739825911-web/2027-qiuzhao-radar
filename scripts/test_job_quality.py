@@ -70,6 +70,18 @@ check("BOSS public campus page is discoverable",
       should_discover_public_url("boss", "https://www.zhipin.com/school/"))
 check("BOSS public detail route is recognized",
       is_direct_detail_url("https://www.zhipin.com/job_detail/abc123.html"))
+check("Guopin public campus list is discoverable",
+      should_discover_public_url("iguopin","https://job.iguopin.com/jobList?channel=campus"))
+check("Guopin jobList is not a direct vacancy",
+      not is_direct_detail_url("https://job.iguopin.com/jobList?channel=campus"))
+check("Guopin detail needs a job id",
+      is_direct_detail_url("https://job.iguopin.com/jobDetail?jobId=78321"))
+check("51job campus homepage is discoverable",
+      should_discover_public_url("51job","https://xy.51job.com/"))
+check("51job numeric vacancy detail is recognized",
+      is_direct_detail_url("https://jobs.51job.com/shanghai-pdx/160193763.html"))
+check("51job category root is not a detail",
+      not is_direct_detail_url("https://xy.51job.com/"))
 check("Nowcoder public listing route is discoverable",
       should_discover_public_url("nowcoder", "https://www.nowcoder.com/jobs/recommend/campus"))
 check("broad major-only strings are not concrete roles",

@@ -20,6 +20,8 @@ def title_source_id(row):
     if "应届生求职网" in source: return "yingjiesheng"
     if "秋招网" in source: return "qiuzhaowang"
     if "BOSS直聘" in source: return "boss"
+    if "国聘" in source: return "iguopin"
+    if "前程无忧" in source or "51job" in source.lower(): return "51job"
     return ""
 
 TRACKING={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid","property","requestid","policytype","policyid","pagecode","pagesource","isinitiative","issuggest","jobrank","advid"}

@@ -119,7 +119,7 @@ def same_host(a,b):
     ha=urlparse(a).netloc.lower().split(":")[0]
     hb=urlparse(b).netloc.lower().split(":")[0]
     if ha==hb: return True
-    roots=("yingjiesheng.com","yingjiesheng.net","zhipin.com","nowcoder.com")
+    roots=("yingjiesheng.com","yingjiesheng.net","zhipin.com","nowcoder.com","iguopin.com","51job.com")
     root_a=next((root for root in roots if ha==root or ha.endswith("."+root)), "")
     root_b=next((root for root in roots if hb==root or hb.endswith("."+root)), "")
     return bool(root_a and root_a==root_b)
@@ -149,6 +149,21 @@ def should_discover_public_url(source_id,url):
         if not same_host("https://www.nowcoder.com/",url): return False
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         return path.startswith("/jobs/") or path.startswith("/job/") or any(k in p.query.lower() for k in ("page=","pageindex="))
+    if source_id=="iguopin":
+        if not same_host("https://job.iguopin.com/",url): return False
+        if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
+        if any(x in path for x in ("/login","/register","/resume","/member","/account","/app")): return False
+        return (path in {"/","/joblist","/jobdetail","/job-detail","/job/detail"}
+                or path.startswith(("/joblist/","/jobdetail/","/job-detail/","/position/","/positions/","/campus/","/article/","/news/"))
+                or any(k in p.query.lower() for k in ("channel=campus","channel=social","page=","pageindex=","jobid=","positionid=")))
+    if source_id=="51job":
+        if not same_host("https://xy.51job.com/",url): return False
+        if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
+        if any(x in path for x in ("/login","/register","/resume","/member","/account","/app/")): return False
+        host=urlparse(url).netloc.lower()
+        if host.startswith("campus."): return True
+        return (host.startswith(("xy.","jobs.","company.")) and
+                (path in {"/","/default-xs.php","/default.php"} or path.startswith(("/jobs/","/job/","/campus/","/company/","/position/","/positions/","/jobdetail/","/job-detail/")) or path.endswith((".html",".php")) or any(k in p.query.lower() for k in ("page=","pageno=","jobid=","positionid=","keyword=","lang=e")))
     return False
 
 def discovery_priority(source_id,url):
@@ -167,6 +182,14 @@ def discovery_priority(source_id,url):
     if source_id=="nowcoder":
         if is_direct_detail_url(url): return 2
         return 0
+    if source_id=="iguopin":
+        if re.search(r"(?:[?&](?:page|pageindex|pageno)=\d+)",query): return 0
+        if is_direct_detail_url(url): return 2
+        return 1 if path in {"/","/joblist"} else 4
+    if source_id=="51job":
+        if re.search(r"(?:[?&](?:page|pageno)=\d+)",query): return 0
+        if is_direct_detail_url(url): return 2
+        return 1 if path in {"/","/default-xs.php","/default.php"} else 4
     return 5
 
 def year(s):
@@ -221,7 +244,11 @@ def is_direct_detail_url(url):
     if re.search(r"/job/position/\d+",path): return True
     if re.search(r"/job-\d{3}-\d{3}-\d+\.html$",path): return True
     if re.search(r"/job_detail/[^/]+(?:\.html)?$",path): return True
-    # Qiuzhaowang's specific position page, not the shared category listing.
+    # Guopin detail pages require an explicit identity; jobList is not a vacancy.
+    if path in {"/jobdetail","/job-detail","/job/detail"} and re.search(r"(?:^|&)(?:jobid|positionid|id)=\w+",p.query.lower()): return True
+    if re.search(r"/(?:jobdetail|job-detail|positions?)/[^/]+(?:\.html)?$",path): return True
+    # Legacy 51job detail URLs use a numeric vacancy id in the filename.
+    if p.netloc.lower().endswith("51job.com") and re.search(r"/\d{6,}\.html$",path): return True
     if re.search(r"/jobs/position-\d+(?:/|$)",path): return True
     return False
 
@@ -247,6 +274,11 @@ def clean_job_title(title, source_id=""):
     if source_id=="boss":
         t=re.sub(r"\s*[-—|｜_]\s*BOSS直聘.*$","",t,flags=re.I)
         t=re.sub(r"\s*招聘(?:信息)?[-_ ]*BOSS直聘.*$","",t,flags=re.I)
+    if source_id=="51job":
+        t=re.sub(r"\s*[-—|｜_]\s*(?:前程无忧|51job).*$","",t,flags=re.I)
+        t=re.sub(r"\s*[-—|｜_]\s*校园招聘.*$","",t)
+    if source_id=="iguopin":
+        t=re.sub(r"\s*[-—|｜_]\s*国聘.*$","",t)
     if source_id=="qiuzhaowang":
         t=re.sub(r"\s*[|｜丨]\s*秋招网.*$","",t)
         # The generic cleaner strips a leading cohort chip first, so this pattern
@@ -588,7 +620,7 @@ def collect_source(src):
             diagnostics["direct_detail_pages_visited"]+=1
             detail_heading=next((clean_job_title(head,src.get("id","")) for head in p.headings
                                  if (is_specific_role_title(clean_job_title(head,src.get("id","")),src.get("id",""))
-                                     if src.get("id") in {"nowcoder","yingjiesheng","boss","qiuzhaowang"}
+                                     if src.get("id") in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}
                                      else is_concrete_role_title(clean_job_title(head,src.get("id","")),src.get("id","")))), "")
         explicit_cohort=year(raw_page_title+" "+page_text+" "+" ".join(p.headings))
         source_cohort=src.get("cohort","") if src.get("type")=="official_campus" else ""
@@ -622,6 +654,10 @@ def collect_source(src):
             record_source="应届生求职网公开岗位"
         elif src.get("id")=="boss":
             record_source="BOSS直聘公开校招岗位"
+        elif src.get("id")=="iguopin":
+            record_source="国聘公开招聘"
+        elif src.get("id")=="51job":
+            record_source="前程无忧校园招聘公开岗位"
         elif src.get("id")=="qiuzhaowang":
             parts=re.split(r"[|｜]",raw_page_title)
             if "/jobs/" in urlparse(final).path and parts: page_company=parts[0].strip()
