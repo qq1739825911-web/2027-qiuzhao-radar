@@ -39,6 +39,8 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
+      - name: Validate Node renderer syntax
+        run: node --check scripts/public_page_renderer.cjs
       - name: Parser and classification regression tests
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
