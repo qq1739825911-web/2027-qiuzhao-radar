@@ -267,8 +267,14 @@ def extract_detail_fields_generic(text, raw_title=""):
     if not salary: salary=re.search(r"\b(\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|月)?)",top)
     if salary: fields["salary"]=re.sub(r"\s+","",salary.group(1))
     cities=("北京","上海","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外")
-    city=next((name for name in cities if re.search(r"(?:^|\s|[-·])"+name+r"(?:$|\s|[-·区市])",top[:1800])), "")
-    if city: fields["city"]=city
+    # Preserve every city shown on a role detail page. A multi-city job like
+    # "北京市,上海市" must remain discoverable when users filter Shanghai.
+    found_cities=[]
+    for name in cities:
+        pattern=r"(?:^|[\s,，、/|·\-])"+re.escape(name)+r"(?:$|[\s,，、/|·\-区市])"
+        if re.search(pattern,top[:1800]) and name not in found_cities:
+            found_cities.append(name)
+    if found_cities: fields["city"]="、".join(found_cities)
     cohort=year(raw_title+" "+top)
     if cohort:
         fields["cohort"]=cohort; fields["cohort_evidence"]="page_text"; fields["cohort_confirmed"]=True
