@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-11T13:04:09+00:00",
-  "enabled_sources": 21,
-  "reachable": 18,
+  "checked_at": "2026-10-11T13:42:46+00:00",
+  "enabled_sources": 23,
+  "reachable": 20,
   "warnings": 3,
   "results": [
     {
@@ -54,9 +54,23 @@
       "http_status": 200
     },
     {
+      "id": "51job",
+      "name": "前程无忧51job",
+      "url": "https://xy.51job.com/",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
       "id": "huawei",
       "name": "华为",
       "url": "https://career.huawei.com/cn/campus-recruitment-job-list",
+      "status": "reachable",
+      "http_status": 200
+    },
+    {
+      "id": "iguopin",
+      "name": "国聘",
+      "url": "https://job.iguopin.com/",
       "status": "reachable",
       "http_status": 200
     },
