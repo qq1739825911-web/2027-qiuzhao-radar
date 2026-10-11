@@ -13,6 +13,7 @@ from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
 
 COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
+RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
 
 def check(name, condition):
     if not condition:
@@ -155,8 +156,6 @@ check("YJS uses static parsing rather than unnecessary browser rendering",
       not should_render_public_page("yingjiesheng","https://m.yingjiesheng.com/other/index.html","<html><body>岗位列表</body></html>"))
 check("Guopin login route is not browser-rendered",
       not should_render_public_page("iguopin","https://job.iguopin.com/login","<html></html>"))
-RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
-COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
 check("browser worker has explicit public host allow-list and no CAPTCHA bypass",
       "security_interstitial: security" in RENDERER_SOURCE and "allowPublicUrl" in RENDERER_SOURCE and "captcha.solve" not in RENDERER_SOURCE)
 
