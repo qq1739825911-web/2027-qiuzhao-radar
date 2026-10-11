@@ -107,13 +107,13 @@ def sanitize_extracted_text(value, max_length=6500):
 def canonical(u):
     p=urlparse(u)
     # Preserve meaningful query parameters such as page=2 and jobId=123.
-    # Strip only analytics/tracking parameters so paginated pages and distinct jobs do not collapse.
+    # Strip analytics/tracking parameters but keep pagination and job identity.
     tracking={"utm_source","utm_medium","utm_campaign","utm_term","utm_content","spm","from","referrer","trackingid","property","requestid","policytype","policyid","pagecode","pagesource","isinitiative","issuggest","jobrank","advid"}
     query=sorted((k,v) for k,v in parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
-    # urllib.request requires non-ASCII path characters to be percent-encoded before opening.
-    encoded_path=quote(p.path,safe="/:@!    query=sorted((k,v) for k,v in parse_qsl(p.query,keep_blank_values=True) if k.lower() not in tracking)
-    return urlunparse((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True),""))'()*+,;=-._~%")
+    # urllib.request rejects raw Chinese characters in URL paths; percent-encode them.
+    encoded_path=quote(p.path,safe="/:@()*+,;=-._~%")
     return urlunparse((p.scheme.lower(),p.netloc.lower(),encoded_path.rstrip("/"),"",urlencode(query,doseq=True),""))
+
 def same_host(a,b):
     """Same host or approved recruitment-site subdomains (public pages only)."""
     ha=urlparse(a).netloc.lower().split(":")[0]
