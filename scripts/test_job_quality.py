@@ -77,6 +77,8 @@ check("public listing rotation advances through known URLs",
 check("public listing rotation wraps without generating URLs",
       select_rotation_batch(["https://www.nowcoder.com/jobs/page/1","https://www.nowcoder.com/jobs/page/2","https://www.nowcoder.com/jobs/page/3"],2,2)
       == (["https://www.nowcoder.com/jobs/page/3","https://www.nowcoder.com/jobs/page/1"],4))
+check("source diagnostics capture public link allowlist decisions",
+      '"link_samples"' in open(__file__.replace("test_job_quality.py", "collect_public_sources.py"), encoding="utf-8").read())
 check("QZW detail text yields concrete roles",
       extract_qiuzhaowang_role_names("招聘岗位 销售管培生 · 操作管培生 · 客服管培生专业不限 工作城市 全国 面向届次 2027届")
       == ["销售管培生","操作管培生","客服管培生专业不限"])
