@@ -10,6 +10,7 @@ from collect_public_sources import (
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
     normalize_source_url, clean_yingjiesheng_company_name, split_role_title_candidates,
     is_boss_campus_card_relevant, should_queue_detail, extract_visible_public_role_leads,
+    is_public_role_lead_title, public_lead_dedupe_key,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
@@ -177,6 +178,29 @@ check("Guopin visible role cards become pending leads, not priority jobs",
         (lambda r: len(r)==1 and r[0].get("title")=="互联网运营" and r[0].get("company")=="中国移动通信有限公司在线营销服务中心"
           and r[0].get("granularity")=="lead" and r[0].get("status")=="pending_review"
           and should_publish_record(r[0]) and not assess(dict(r[0])))(extract_visible_public_role_leads("iguopin",p,"https://www.iguopin.com/job/list?keyword=AI","国聘公开招聘",p.page_title))))(Parser()))
+check("public-list lead title filter rejects company names, industry headers and contact text",
+      all(not is_public_role_lead_title(title,source_id) for title,source_id in [
+        ("我是亚亚，欢迎咨询","51job"),
+        ("专用设备制造业","iguopin"),
+        ("上海电力设计院有限公司","iguopin"),
+        ("企业管理咨询","iguopin"),
+        ("AI工程师","51job"),
+        ("教师","iguopin")
+      ]))
+check("public-list lead title filter retains specific roles",
+      is_public_role_lead_title("AI大模型开发工程师","51job")
+      and is_public_role_lead_title("行政专员/助理","iguopin")
+      and is_public_role_lead_title("AI触点运营","51job"))
+check("public-list leads dedupe across query URLs but preserve city distinction",
+      public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=行政"})
+      == public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=运营"})
+      and public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"北京"})
+      != public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海"}))
+check("contact/title noise cannot be published as a list lead",
+      not should_publish_record({"source":"前程无忧校园招聘公开岗位","granularity":"lead","lead_evidence":"visible_public_job_card",
+        "status":"pending_review","company":"亚信科技有限公司","title":"我是亚亚，欢迎咨询",
+        "source_url":"https://campus.51job.com/asiainfo/jobs.html","source_card_text":"我是亚亚，欢迎咨询",
+        "source_page_title":"亚信2027届校园招聘"}))
 check("old-cycle Guopin lead cannot enter the public pending database",
       not should_publish_record({"source":"国聘公开招聘","granularity":"lead","lead_evidence":"visible_public_job_card",
         "status":"pending_review","company":"某科技有限公司","title":"软件开发工程师",

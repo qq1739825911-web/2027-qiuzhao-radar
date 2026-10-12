@@ -2,7 +2,7 @@
 import json
 import re
 from datetime import date, timedelta
-from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text, is_boss_campus_card_relevant
+from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text, is_boss_campus_card_relevant, is_public_role_lead_title
 
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
@@ -18,6 +18,8 @@ def should_publish_record(row):
     if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}:
         title=clean_job_title(row.get("title",""),source_id)
         if not is_specific_role_title(title,source_id):
+            return False
+        if granularity=="lead" and row.get("lead_evidence")=="visible_public_job_card" and not is_public_role_lead_title(title,source_id):
             return False
         if not is_direct_detail_url(row.get("source_url","")):
             # A narrow exception for clearly identified job cards on public Guopin/51job

@@ -1,4 +1,4 @@
-"""V5.7 public recruitment collector.
+"""V5.8 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -723,6 +723,39 @@ def extract_detail_fields_generic(text, raw_title=""):
     elif "实习" in top: fields["job_type"]="实习"
     return fields
 
+def is_public_role_lead_title(title, source_id=""):
+    """Reject contact text, company names, industry labels and overly broad headings from public role lists."""
+    t=clean_job_title(title,source_id).strip(" -—_|｜")
+    if not is_specific_role_title(t,source_id):
+        return False
+    if re.search(r"(?:我是.{0,24}|欢迎咨询|咨询我|在线咨询|联系我们|联系我|立即沟通|查看更多岗位|查看更多职位|招聘咨询|加微信|扫码关注|投递简历)",t,re.I):
+        return False
+    if re.search(r"(?:有限公司|股份有限公司|集团|研究院|研究所|设计院|大学|学院|医院|银行|证券|公司|中心|工作室|产业园|工业园)$",t):
+        return False
+    if re.search(r"(?:制造业|服务业|行业|产业)$",t):
+        return False
+    generic={"教师","咨询","设计","销售","运营","研发","算法","产品","管理","行政","财务","会计","人事","技术","数据",
+             "工程师","设计师","分析师","研究员","专员","助理","经理","顾问","文案","编辑","翻译","品牌","客服","市场",
+             "银行","金融","制造","实习生","应届生","企业管理咨询","专用设备制造业"}
+    if t in generic:
+        return False
+    bare=re.sub(r"^(?:AI|人工智能|互联网|信息技术|计算机|软件|硬件|自动化|机器人|大数据|数字化|智能化|智能|网络)\s*","",t,flags=re.I)
+    if bare in generic:
+        return False
+    if t.endswith("咨询") and not re.search(r"(?:顾问|经理|专员|分析师|研究员|工程师|开发|销售|咨询师)",t):
+        return False
+    return True
+
+def public_lead_dedupe_key(row):
+    """Stable identity across different keyword-list URLs, retaining company and city differences."""
+    return (
+        str(row.get("source","")).strip().lower(),
+        str(row.get("company","")).strip().lower(),
+        str(row.get("title","")).strip().lower(),
+        str(row.get("city","")).strip().lower(),
+    )
+
+
 def extract_visible_public_role_leads(source_id, parser, source_url, record_source, page_title):
     """Return explicitly low-confidence leads from public vacancy lists when no role URL is exposed.
 
@@ -746,7 +779,7 @@ def extract_visible_public_role_leads(source_id, parser, source_url, record_sour
             brand=match.group(1).strip("【】[]（）() -—_|｜")
             page_company=brand
             for candidate in nodes[:80]:
-                if brand and brand in candidate and len(candidate)<=80 and re.search(r"(?:科技|集团|公司|股份|中心|大学|研究院)",candidate) and not is_specific_role_title(candidate,source_id):
+                if brand and brand in candidate and len(candidate)<=80 and re.search(r"(?:科技|集团|公司|股份|中心|大学|研究院)",candidate) and not is_public_role_lead_title(candidate,source_id):
                     page_company=candidate
                     break
         if not page_company or page_company.lower() in {"前程无忧","前程无忧51job","51job"}:
@@ -774,7 +807,7 @@ def extract_visible_public_role_leads(source_id, parser, source_url, record_sour
             continue
         if any(noise in title for noise in ("申请职位","收藏","立即投递","查看更多","招聘公告","招聘信息","招聘计划","校招公告","登录/注册")):
             continue
-        if not is_specific_role_title(title,source_id):
+        if not is_public_role_lead_title(title,source_id):
             continue
         if re.fullmatch(r"[\d年月日./:：-]+",title):
             continue
@@ -793,7 +826,7 @@ def extract_visible_public_role_leads(source_id, parser, source_url, record_sour
                 candidate=clean(candidate)
                 if candidate==title or not (4<=len(candidate)<=90):
                     continue
-                if is_specific_role_title(candidate,source_id):
+                if is_public_role_lead_title(candidate,source_id):
                     continue
                 if any(noise in candidate for noise in ("校招","社招","应届生","在校生","本科","硕士","博士","经验不限","面议","职位类型","全部","收藏","申请职位","30000人以上","10000-30000人")):
                     continue
@@ -949,7 +982,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.7","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.8","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1431,11 +1464,23 @@ def collect_source(src):
                 ann["announcement_only"]=not portal_candidate
                 ann["entry_only"]=portal_candidate
                 rows.append(ann)
-    # de-dupe within source, preferring higher confidence
+    # De-duplicate list-only leads across keyword/pagination URLs.
     best={}
     for r in rows:
-        k=(r["company"],r["title"],r["source_url"])
-        if k not in best or r["verification_score"]>best[k]["verification_score"]: best[k]=r
+        if r.get("lead_evidence")=="visible_public_job_card":
+            k=("public-list-lead",)+public_lead_dedupe_key(r)
+        else:
+            k=("record",r["company"],r["title"],r["source_url"])
+        rank=(int(r.get("verification_score",0)),bool(r.get("cohort_evidence")),
+              bool(r.get("salary") or r.get("degree")),len(str(r.get("source_card_text",""))))
+        prior=best.get(k)
+        if prior is None:
+            best[k]=r
+        else:
+            prior_rank=(int(prior.get("verification_score",0)),bool(prior.get("cohort_evidence")),
+                        bool(prior.get("salary") or prior.get("degree")),len(str(prior.get("source_card_text",""))))
+            if rank>prior_rank:
+                best[k]=r
     best_rows=list(best.values())
     role_rows=[r for r in best_rows if r.get("granularity") not in {"announcement","entry"}]
     announcement_rows=[r for r in best_rows if r.get("granularity")=="announcement"]
@@ -1445,6 +1490,8 @@ def collect_source(src):
     diagnostics["portal_entries"]=len(entry_rows)
     if src.get("id")=="boss" and role_rows and diagnostics["direct_detail_links_skipped_access_limit"]>0 and diagnostics["direct_detail_pages_visited"]==0:
         diagnostics["source_status"]="public_card_leads_only"
+    elif src.get("id") in {"iguopin","51job"} and role_rows and all(r.get("lead_evidence")=="visible_public_job_card" for r in role_rows):
+        diagnostics["source_status"]="public_list_leads_only"
     else:
         diagnostics["source_status"]=("ok" if role_rows else
             ("detail_access_restricted" if diagnostics.get("direct_detail_requests_attempted",0)>0 and diagnostics.get("direct_detail_pages_visited",0)==0 and diagnostics.get("detail_redirects",0)>0 else
@@ -1546,6 +1593,8 @@ def main():
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
                             "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
                             "role_records":diag.get("role_records",0),
+                            "public_list_leads":sum(1 for row in rows if row.get("lead_evidence")=="visible_public_job_card"),
+                            "direct_detail_role_records":sum(1 for row in rows if row.get("lead_evidence")!="visible_public_job_card" and row.get("granularity") not in {"announcement","entry"} and is_direct_detail_url(row.get("source_url",""))),
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
@@ -1566,7 +1615,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.7","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.8","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

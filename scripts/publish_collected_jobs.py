@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import date
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
-from collect_public_sources import clean_job_title, is_direct_detail_url
+from collect_public_sources import clean_job_title, is_direct_detail_url, public_lead_dedupe_key
 from quality_rules import assess, should_publish_record
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -33,7 +33,10 @@ def norm_url(url):
     return urlunsplit((p.scheme.lower(),p.netloc.lower(),p.path.rstrip("/"),"",urlencode(query,doseq=True)))
 
 def role_key(x):
-    return (str(x.get("company","")).strip().lower(),
+    if x.get("lead_evidence")=="visible_public_job_card":
+        return ("public-list-lead",)+public_lead_dedupe_key(x)
+    return ("role",
+            str(x.get("company","")).strip().lower(),
             str(x.get("title","")).strip().lower(),
             str(x.get("city","")).strip().lower(),
             str(x.get("cohort","")).strip().lower(),
@@ -80,7 +83,7 @@ for row in incoming:
                       "last_verified","last_verified_at","verification_status","verification_http_status","verification_note",
                       "lead_evidence","source_page_title","source_card_text")
         # When a direct detail page is revisited, refresh actual visible fields.
-        if row.get("source_url") and (row.get("source")=="牛客公开岗位" or is_direct_detail_url(row.get("source_url",""))):
+        if row.get("source_url") and (row.get("source")=="牛客公开岗位" or is_direct_detail_url(row.get("source_url","")) or row.get("lead_evidence")=="visible_public_job_card"):
             for field in merge_fields:
                 value=row.get(field)
                 if value not in (None,"",[],{}): old[field]=value
@@ -102,9 +105,14 @@ for row in incoming:
         if url_key: by_url.setdefault(url_key,[]).append(row)
         by_role[(str(row["company"]).strip().lower(),str(row["title"]).strip().lower(),str(row.get("cohort","")).strip().lower())]=row
 
-# Clean old records from the polluted V3 title pattern and prevent the old implicit cohort default being trusted.
-for row in idx.values():
+# Clean old records from the polluted V3 title pattern and purge rejected list-only false positives.
+removed_public_list_leads=0
+for key,row in list(idx.items()):
     row["title"]=clean_job_title(row.get("title",""),title_source_id(row))
+    if row.get("lead_evidence")=="visible_public_job_card" and not should_publish_record(row):
+        del idx[key]
+        removed_public_list_leads+=1
+        continue
     if not row.get("last_seen"): row["last_seen"]=row.get("last_collected") or row.get("last_verified","") or ""
     if not row.get("last_collected"): row["last_collected"]=row.get("last_seen","")
     if row.get("collector")=="public-html-v3" and not row.get("last_verified_at"):
