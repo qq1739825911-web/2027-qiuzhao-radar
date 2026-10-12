@@ -741,8 +741,13 @@ def is_public_role_lead_title(title, source_id=""):
         return False
     if re.search(r"岗[\u4e00-\u9fff]{1,10}(?:岗|管培生|工程师|专员|经理|顾问|设计师)",t):
         return False
-    if re.search(r"\s",t) and not re.search(r"(?:工程师|开发|研发|算法|管培生|运营|设计|销售|营销|市场|顾问|分析师|研究员|专员|助理|经理|测试|运维|采购|财务|法务|审计|行政|人事|客户经理|客户成功|品牌|内容|视频|影视|编辑|翻译|客服|教师|医生|护士|会计|风险|风控|投资|证券|保险|精算|质量|制造|工艺|技术支持|项目管理|投标|产品|策划)$",t):
-        return False
+    role_suffix_pattern=r"(?:工程师|开发|研发|算法|管培生|运营|设计|销售|营销|市场|顾问|分析师|研究员|专员|助理|经理|测试|运维|采购|财务|法务|审计|行政|人事|客户经理|客户成功|品牌|内容|视频|影视|编辑|翻译|客服|教师|医生|护士|会计|风险|风控|投资|证券|保险|精算|质量|制造|工艺|技术支持|项目管理|投标|产品|策划)$"
+    if re.search(r"\s",t) and not re.search(role_suffix_pattern,t):
+        # Allow a concrete role followed by a trailing specialization in parentheses,
+        # e.g. "硬件工程师 -(PCB 设计)", without admitting a second title after whitespace.
+        base=re.sub(r"\s*[-—–]?\s*[（(][^（）()]*[）)]\s*$","",t).strip(" -—–")
+        if not re.search(role_suffix_pattern,base):
+            return False
     if re.search(r"(?:我是.{0,24}|欢迎咨询|咨询我|在线咨询|联系我们|联系我|立即沟通|查看更多岗位|查看更多职位|招聘咨询|加微信|扫码关注|投递简历)",t,re.I):
         return False
     # Recruitment plans, talent programmes, and industry taxonomy are not role-level vacancies.
