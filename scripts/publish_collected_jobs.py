@@ -77,7 +77,8 @@ for row in incoming:
                       "source","source_url","cohort","cohort_evidence","cohort_confirmed","program","granularity","status",
                       "verification_score","confirmed_by","description","responsibilities","requirements","benefits",
                       "company_info","address","work_time","experience","job_type","headcount","keywords",
-                      "last_verified","last_verified_at","verification_status","verification_http_status","verification_note")
+                      "last_verified","last_verified_at","verification_status","verification_http_status","verification_note",
+                      "lead_evidence","source_page_title","source_card_text")
         # When a direct detail page is revisited, refresh actual visible fields.
         if row.get("source_url") and (row.get("source")=="牛客公开岗位" or is_direct_detail_url(row.get("source_url",""))):
             for field in merge_fields:

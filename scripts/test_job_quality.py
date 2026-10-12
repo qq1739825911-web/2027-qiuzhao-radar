@@ -9,7 +9,7 @@ from collect_public_sources import (
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
     normalize_source_url, clean_yingjiesheng_company_name, split_role_title_candidates,
-    is_boss_campus_card_relevant, should_queue_detail,
+    is_boss_campus_card_relevant, should_queue_detail, extract_visible_public_role_leads,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
@@ -172,6 +172,15 @@ check("Guopin base job list route is browser-renderable",
       should_render_public_page("iguopin","https://www.iguopin.com/job/","<html><body><div id='app'></div></body></html>"))
 check("Guopin job detail route with an id query is recognized",
       is_direct_detail_url("https://www.iguopin.com/job/detail?id=208162873677972376"))
+check("Guopin visible role cards become pending leads, not priority jobs",
+      (lambda p: (p.feed('<html><title>招聘信息-国聘</title><body><span>互联网运营</span><span>西安-未央区</span><span>面议校招经验不限本科</span><span>不限</span><span>中国移动通信有限公司在线营销服务中心</span><span>国企</span></body></html>'),
+        (lambda r: len(r)==1 and r[0].get("title")=="互联网运营" and r[0].get("company")=="中国移动通信有限公司在线营销服务中心"
+          and r[0].get("granularity")=="lead" and r[0].get("status")=="pending_review"
+          and not should_publish_record({**r[0],"source_url":"https://www.iguopin.com/job/detail?id=208162873677972376"}))(extract_visible_public_role_leads("iguopin",p,"https://www.iguopin.com/job/list?keyword=AI","国聘公开招聘",p.page_title))))(Parser()))
+check("51job public 2027 campus role list can yield a clearly tagged review lead",
+      (lambda p: (p.feed('<html><title>亚信2027届校园招聘</title><body><span>职位名称</span><span>AI大模型开发工程师</span><span>北京</span><span>应届生本科</span><span>亚信科技有限公司</span></body></html>'),
+        (lambda r: len(r)==1 and r[0].get("company")=="亚信科技有限公司" and r[0].get("cohort")=="2027届"
+          and r[0].get("granularity")=="lead" and should_publish_record(r[0]) and not assess(dict(r[0])))(extract_visible_public_role_leads("51job",p,"https://campus.51job.com/asiainfo/jobs.html","前程无忧校园招聘公开岗位",p.page_title))))(Parser()))
 
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))

@@ -9,19 +9,48 @@ from collect_public_sources import clean_job_title, is_concrete_role_title, is_s
 COHORT_EVIDENCE_OK = {"page_text", "visible_announcement_title", "job_detail_title", "job_detail_text"}
 
 def should_publish_record(row):
-    """Remove aggregator category junk, broad titles and stale BOSS hiring cycles from the visible database."""
+    """Remove aggregator category junk and stale BOSS cycles; allow only clearly tagged public list leads to remain pending."""
     source=str(row.get("source",""))
     granularity=str(row.get("granularity",""))
     if granularity in {"announcement","entry"}:
         return True
     source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else ("iguopin" if "国聘" in source else ("51job" if "前程无忧" in source or "51job" in source.lower() else "")))))
     if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}:
-        # Aggregator search/category cards are not vacancies. Require a role-level detail link.
-        if not is_direct_detail_url(row.get("source_url","")):
-            return False
         title=clean_job_title(row.get("title",""),source_id)
         if not is_specific_role_title(title,source_id):
             return False
+        if not is_direct_detail_url(row.get("source_url","")):
+            # A narrow exception for clearly identified job cards on public Guopin/51job
+            # vacancy lists. These rows are explicitly low-confidence leads and cannot
+            # become priority because they lack a per-role detail URL and link verification.
+            if granularity!="lead" or row.get("lead_evidence")!="visible_public_job_card" or str(row.get("status",""))=="active":
+                return False
+            company=str(row.get("company","")).strip()
+            if not company or company in {"国聘","前程无忧51job","前程无忧","BOSS直聘"}:
+                return False
+            card=str(row.get("source_card_text",""))
+            page_title=str(row.get("source_page_title",""))
+            if source_id=="iguopin":
+                from urllib.parse import urlparse
+                parsed=urlparse(str(row.get("source_url","")))
+                host=parsed.netloc.lower()
+                if not (host=="www.iguopin.com" or host.endswith(".iguopin.com")):
+                    return False
+                if parsed.path.rstrip("/")!="/job" and not parsed.path.startswith("/job/list"):
+                    return False
+                if not re.search(r"(?:校招|应届生|应届|在校生|2027\\s*届|27\\s*届)",card):
+                    return False
+                if re.search(r"(?<!\\d)(?:202[0-6]|2[0-6])\\s*(?:届|年应届|年校招|年校园招聘)",card) and not re.search(r"(?<!\\d)2027\\s*(?:届|年)?\\s*(?:校招|校园招聘|应届)|(?<!\\d)27\\s*届",card):
+                    return False
+            elif source_id=="51job":
+                from urllib.parse import urlparse
+                parsed=urlparse(str(row.get("source_url","")))
+                host=parsed.netloc.lower()
+                if not host.endswith(".51job.com") or not host.startswith("campus."):
+                    return False
+                if not re.search(r"2027.*(?:校园招聘|校招)|(?:校园招聘|校招).*2027",page_title):
+                    return False
+            return True
         # Reapply the current cohort-cycle rule to historical records as well as
         # newly collected BOSS cards, so stale "26年应届" rows don't linger forever.
         if source_id=="boss":

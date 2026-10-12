@@ -1,4 +1,4 @@
-"""V5.5 public recruitment collector.
+"""V5.7 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -723,6 +723,119 @@ def extract_detail_fields_generic(text, raw_title=""):
     elif "实习" in top: fields["job_type"]="实习"
     return fields
 
+def extract_visible_public_role_leads(source_id, parser, source_url, record_source, page_title):
+    """Return explicitly low-confidence leads from public vacancy lists when no role URL is exposed.
+
+    These rows can only live in the pending-review bucket. They retain the list URL and
+    card text as evidence; neither this function nor the publisher treats them as active
+    or as having a verified per-role detail URL.
+    """
+    if source_id not in {"iguopin","51job"} or is_direct_detail_url(source_url):
+        return []
+    nodes=[clean(value) for value in (getattr(parser,"text",[]) or []) if clean(value)]
+    text_all=parser.page_text()
+    title_text=clean(page_title or "")
+    page_context=title_text+" "+text_all
+    page_cohort=year(page_context)
+    page_company=""
+    if source_id=="51job":
+        if not page_cohort.startswith("2027") or not re.search(r"(?:校园招聘|校招)",page_context):
+            return []
+        match=re.search(r"^\s*(.{2,50}?)(?=20\d{2}\s*(?:届|年)?[^|｜]{0,32}(?:校园招聘|校招))",title_text)
+        if match:
+            brand=match.group(1).strip("【】[]（）() -—_|｜")
+            page_company=brand
+            for candidate in nodes[:80]:
+                if brand and brand in candidate and len(candidate)<=80 and re.search(r"(?:科技|集团|公司|股份|中心|大学|研究院)",candidate) and not is_specific_role_title(candidate,source_id):
+                    page_company=candidate
+                    break
+        if not page_company or page_company.lower() in {"前程无忧","前程无忧51job","51job"}:
+            return []
+    result=[]
+    seen=set()
+    blocked_exact={"职位名称","岗位名称","招聘岗位","招聘职位","招聘岗位名称","全部","详情","查看详情","查看详情+",
+                   "职位类别","工作地点","发布时间","工资","福利","公司介绍","招聘岗位","校招","实习","社招",
+                   "国企","央企","民营企业","本科","硕士","博士","在校生","应届生","面议","职位类型","热门岗位"}
+    # On 51job job tables, prefer text after the actual "职位名称" column; other 2027
+    # employer pages (for example chip/design companies) use the "招聘岗位" section.
+    node_start=0
+    if source_id=="51job":
+        marker_indices=[i for i,value in enumerate(nodes) if value in {"职位名称","岗位名称"}]
+        if marker_indices:
+            node_start=marker_indices[-1]+1
+        else:
+            marker_indices=[i for i,value in enumerate(nodes) if value=="招聘岗位"]
+            if marker_indices:
+                node_start=marker_indices[-1]+1
+    for i in range(node_start,len(nodes)):
+        raw_title=nodes[i]
+        title=clean_job_title(raw_title,source_id)
+        if title in blocked_exact or not (3<=len(title)<=55):
+            continue
+        if any(noise in title for noise in ("申请职位","收藏","立即投递","查看更多","招聘公告","招聘信息","招聘计划","校招公告","登录/注册")):
+            continue
+        if not is_specific_role_title(title,source_id):
+            continue
+        if re.fullmatch(r"[\d年月日./:：-]+",title):
+            continue
+        context=clean(" ".join(nodes[max(0,i-2):min(len(nodes),i+11)]))[:900]
+        context_year=year(context)
+        if source_id=="iguopin":
+            # Do not surface general social vacancies as graduate-role leads.
+            if not re.search(r"(?:校招|应届生|应届|在校生|2027\s*届|27\s*届)",context):
+                continue
+            if re.search(r"(?<!\d)(?:202[0-6]|2[0-6])\s*(?:届|年应届|年校招|年校园招聘)",context) and not re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|应届)|(?<!\d)27\s*届",context):
+                continue
+            company=""
+            # Public list cards render the title followed by location/pay/degree and the
+            # employer name. Only accept a nearby company-like text node; never guess it.
+            for candidate in nodes[i+1:min(len(nodes),i+16)]:
+                candidate=clean(candidate)
+                if candidate==title or not (4<=len(candidate)<=90):
+                    continue
+                if is_specific_role_title(candidate,source_id):
+                    continue
+                if any(noise in candidate for noise in ("校招","社招","应届生","在校生","本科","硕士","博士","经验不限","面议","职位类型","全部","收藏","申请职位","30000人以上","10000-30000人")):
+                    continue
+                if re.search(r"(?:有限公司|股份|集团|银行|大学|研究院|研究所|科技|中心|医院|公司|通信|产业园)",candidate):
+                    company=candidate
+                    break
+            if not company:
+                continue
+            cohort=context_year if context_year.startswith("2027") else ""
+            evidence="page_text" if cohort else ""
+        else:
+            # The page title establishes this as a current 2027 campus recruitment microsite.
+            company=page_company
+            cohort=page_cohort if page_cohort.startswith("2027") else ""
+            evidence="page_text" if cohort else ""
+        key=(company.lower(),title.lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        item=record(company,title,source_url,record_source,cohort,2,cohort_evidence=evidence)
+        item["status"]="pending_review"
+        item["granularity"]="lead"
+        item["verification_score"]=2
+        item["verification_status"]="unknown"
+        item["verification_note"]="公开校招/应届岗位列表中识别到具体岗位名称；原页面未提供可识别的独立岗位详情链接，需人工核验，本条不进入优先核验"
+        item["lead_evidence"]="visible_public_job_card"
+        item["source_page_title"]=title_text[:240]
+        item["source_card_text"]=context[:700]
+        item["program"]="公开列表岗位线索（未取得独立详情链接）"
+        fields=extract_detail_fields_generic(context,title)
+        merge_detail_fields(item,fields)
+        item["cohort"]=cohort
+        item["cohort_evidence"]=evidence
+        item["cohort_confirmed"]=bool(evidence)
+        item["last_verified"]=""
+        item["last_verified_at"]=""
+        item["last_collected"]=TODAY
+        result.append(item)
+        if len(result)>=35:
+            break
+    return result
+
 def extract_boss_card_company(links, role_index, page_url=""):
     """Infer a company name from adjacent visible BOSS card links, without guessing from role text."""
     company_tags=("计算机软件","智能硬件","电子商务","互联网","企业服务","人力资源服务","医疗健康","金融","教育培训","通信/网络设备","机器人","工业自动化","软件和信息技术服务业","信息安全","已上市","不需要融资","A轮","B轮","C轮","D轮","天使轮","人以上")
@@ -836,7 +949,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.6","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.7","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1084,6 +1197,8 @@ def collect_source(src):
         elif src.get("id")=="91bangtu":
             record_source="91邦途公开聚合"
         page_title=clean_job_title(detail_fields.get("title") or detail_heading or raw_page_title,src.get("id",""))
+        if source_id in {"iguopin","51job"} and not is_direct_detail_url(final):
+            rows.extend(extract_visible_public_role_leads(source_id,p,final,record_source,raw_page_title))
         detail_role_titles=list(detail_fields.get("role_titles") or []) if src.get("id")=="yingjiesheng" else []
         detail_fields_for_merge={k:v for k,v in detail_fields.items() if k not in {"title","role_titles","company"}}
         if src.get("id")=="nowcoder":
@@ -1451,7 +1566,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.6","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.7","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
