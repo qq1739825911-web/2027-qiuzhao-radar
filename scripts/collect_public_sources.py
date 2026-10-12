@@ -700,7 +700,9 @@ def extract_detail_fields_generic(text, raw_title=""):
     def cities_in(segment):
         hits=[]
         for name in cities:
-            pattern=r"(?:^|[\s,，、/|·\-:：省])"+re.escape(name)+r"(?:$|[\s,，、/|·\-:：区市省])"
+            # Accept district/zone suffixes such as 成都高新区、上海浦东新区 and 北京朝阳区,
+            # but not arbitrary organization names such as 南京工业大学.
+            pattern=r"(?:^|[\s,，、/|·\-:：省])"+re.escape(name)+r"(?:$|[\s,，、/|·\-:：区市省]|[\u4e00-\u9fff]{1,5}(?:区|县|市|州))"
             match=re.search(pattern,segment or "")
             if match:
                 hits.append((match.start(),name))
