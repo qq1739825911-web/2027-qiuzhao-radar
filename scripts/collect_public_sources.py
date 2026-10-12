@@ -1,4 +1,4 @@
-"""V5.13 public recruitment collector.
+"""V5.14 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -697,14 +697,52 @@ def extract_detail_fields_generic(text, raw_title=""):
     if not salary: salary=re.search(r"\b(\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|月)?)",top)
     if salary: fields["salary"]=re.sub(r"\s+","",salary.group(1))
     cities=("北京","上海","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外")
-    # Preserve every city shown on a role detail page. A multi-city job like
-    # "北京市,上海市" must remain discoverable when users filter Shanghai.
-    found_cities=[]
-    for name in cities:
-        pattern=r"(?:^|[\s,，、/|·\-:：省])"+re.escape(name)+r"(?:$|[\s,，、/|·\-:：区市省])"
-        if re.search(pattern,top[:1800]) and name not in found_cities:
-            found_cities.append(name)
-    if found_cities: fields["city"]="、".join(found_cities)
+    def cities_in(segment):
+        hits=[]
+        for name in cities:
+            pattern=r"(?:^|[\s,，、/|·\-:：省])"+re.escape(name)+r"(?:$|[\s,，、/|·\-:：区市省])"
+            match=re.search(pattern,segment or "")
+            if match:
+                hits.append((match.start(),name))
+        found=[]
+        for _,name in sorted(hits):
+            if name not in found: found.append(name)
+        return found
+
+    # Navigation headers often contain "全国 北京 上海 广州 深圳 ..." before the role.
+    # Prefer an explicitly-labelled location field and stop before the next metadata section.
+    location_match=re.search(
+        r"(?:工作地点|工作城市|工作地区|办公地点|职位所在地|招聘城市|工作区域|工作地址)\s*[:：]?\s*(.{1,100}?)(?=\s*(?:信息来源|职位类型|专业标签|招聘岗位|学历要求|学历|职位描述|岗位职责|工作职责|工作内容|任职要求|岗位要求|职位亮点|职位诱惑|公司信息|公司介绍|上一条|下一条|Top|$))",
+        top,re.I
+    )
+    location_text=location_match.group(1).strip() if location_match else ""
+    if location_text:
+        if re.match(r"^(?:全国|全国各地|不限)(?:$|[\s、,，])",location_text):
+            fields["city"]="全国"
+        elif re.match(r"^(?:其它|其他)(?:$|[\s、,，])",location_text):
+            fields["city"]="其它"
+        else:
+            found_cities=cities_in(location_text)
+            if found_cities: fields["city"]="、".join(found_cities)
+    else:
+        # When no location label exists, use only the compact role metadata immediately
+        # after the pay/degree/title anchor. Never scan the whole page for arbitrary city names.
+        band=""
+        if salary:
+            band=top[salary.end():min(len(top),salary.end()+500)]
+        elif degree:
+            degree_pos=top.find(degree)
+            if degree_pos>=0: band=top[degree_pos:degree_pos+500]
+        elif raw_title:
+            title_pos=top.find(str(raw_title).strip())
+            if title_pos>=0: band=top[title_pos+len(str(raw_title).strip()):title_pos+len(str(raw_title).strip())+500]
+        section_end=re.search(r"(?:岗位职责|工作职责|工作内容|任职要求|岗位要求|职位描述|职位亮点|职位诱惑|公司信息|公司介绍|公司地址|工作地址|经验要求|工作经验|专业要求|工作时间|投递说明|投递简历)",band)
+        if section_end: band=band[:section_end.start()]
+        if re.search(r"(?:^|[\s,，、|:：])全国(?:$|[\s,，、|区市])",band):
+            fields["city"]="全国"
+        else:
+            found_cities=cities_in(band)
+            if found_cities: fields["city"]="、".join(found_cities)
     cohort=year(raw_title+" "+top)
     if cohort:
         fields["cohort"]=cohort; fields["cohort_evidence"]="page_text"; fields["cohort_confirmed"]=True
@@ -1054,7 +1092,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.13","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.14","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1690,7 +1728,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.13","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.14","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

@@ -45,7 +45,7 @@ jobs:
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
         run: python scripts/test_frontend.py
-      - name: Collect V5.13 QZW duplicate-role and department-category filtering
+      - name: Collect V5.14 city extraction prioritizes role metadata over site navigation
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
         run: python scripts/publish_collected_jobs.py

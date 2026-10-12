@@ -451,6 +451,25 @@ check("YJS details keep Suzhou available in city extraction",
 multi_city = extract_detail_fields_generic("2027届 AIGC算法工程师 工作地点：北京市,上海市 本科及以上 任职要求：熟悉多模态生成。")
 check("multi-city detail keeps Shanghai filterable",
       multi_city.get("city") == "北京、上海")
+inline_yjs = extract_detail_fields_generic(
+    "全国[切换]首页 职位 公司 校招 北京 上海 广州 深圳 AIGC影视创意制作（校招） "
+    "8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·刚刚活跃 职位亮点 年终奖金",
+    "AIGC影视创意制作（校招）")
+check("generic detail city ignores navigation and reads inline job metadata",
+      inline_yjs.get("city") == "上海")
+labelled_city = extract_detail_fields_generic(
+    "全国[切换]首页 北京 上海 广州 职位名称：后端开发工程师 "
+    "工作地点：成都高新区 信息来源：北京 上海 导航信息 学历要求：本科")
+check("labelled work location overrides every navigation city",
+      labelled_city.get("city") == "成都")
+national_city = extract_detail_fields_generic(
+    "AI产品经理 15K 本科 全职 工作地点：全国 职位描述：服务多个城市")
+check("explicit nationwide location is retained",
+      national_city.get("city") == "全国")
+description_only_city = extract_detail_fields_generic(
+    "AI算法工程师 20K 本科 全职 岗位职责：负责上海、北京客户项目；岗位要求：熟悉模型开发。")
+check("cities mentioned only in responsibilities are not treated as work locations",
+      "city" not in description_only_city)
 
 
 base = {
