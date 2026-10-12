@@ -21,7 +21,7 @@ checks = {
     "reset control exists": 'id="reset"' in source,
     "fast filters cancel a pending keyword render": 'else{clearTimeout(searchDebounce);searchDebounce=null;render()}' in source,
     "exact-title search results rank ahead of description matches": "const searchNeedle=" in source and "relevance(y)-relevance(x)" in source,
-    "source productivity is reported separately from reachability": "岗位级记录 " in source and "只有公告/入口 " in source and "可访问但零产出 " in source,
+    "source monitor explicitly labels source counts rather than job counts": "信源产出（按信源个数统计）：" in source and "独立详情岗位信源 " in source and "公开列表线索信源 " in source and "可访问但零产出信源 " in source,
     "BOSS public-card leads are not labelled as failed sources": "public_card_leads_only" in source and "公开卡片线索，详情访问受限" in source and "BOSS公开卡片线索" in source,
     "search input is wired to a debounced renderer": 'setTimeout(render,140)' in source and 'addEventListener("input"' in source,
     "filter reset button has a handler": '$("reset").onclick=' in source,
