@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-10-11",
+  "run_date": "2026-10-12",
   "collector_version": "5.6",
   "enabled_sources": 23,
   "pagination_state": {
@@ -14,65 +14,65 @@
       8,
       9,
       10,
-      153,
-      154,
-      155,
-      156,
-      157,
-      158,
-      159,
-      160,
-      161,
-      162
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172
     ],
-    "qiuzhaowang_next_page": 163,
+    "qiuzhaowang_next_page": 173,
     "source_listing_rotation": {
       "nowcoder": {
         "known_public_list_urls": 10,
-        "next_offset": 118,
+        "next_offset": 128,
         "batch_size": 15
       },
       "yingjiesheng": {
         "known_public_list_urls": 1000,
-        "next_offset": 254,
+        "next_offset": 278,
         "batch_size": 24
       },
       "51job": {
-        "known_public_list_urls": 168,
-        "next_offset": 126,
+        "known_public_list_urls": 169,
+        "next_offset": 144,
         "batch_size": 18
       },
       "iguopin": {
-        "known_public_list_urls": 8,
-        "next_offset": 27,
-        "batch_size": 12
+        "known_public_list_urls": 5,
+        "next_offset": 32,
+        "batch_size": 20
       },
       "boss": {
         "known_public_list_urls": 9,
-        "next_offset": 115,
+        "next_offset": 124,
         "batch_size": 24
       }
     }
   },
-  "records_found": 376,
+  "records_found": 362,
   "active_candidates": 39,
-  "pending_review": 337,
+  "pending_review": 323,
   "results": [
     {
       "id": "boss",
       "company": "BOSS直聘",
       "pages_visited": 11,
-      "records_found": 67,
+      "records_found": 66,
       "active_candidates": 0,
-      "pending_review": 67,
+      "pending_review": 66,
       "pages_attempted": 11,
       "pages_failed": 0,
-      "html_bytes": 3615007,
-      "links_seen": 3796,
+      "html_bytes": 3462843,
+      "links_seen": 2698,
       "listing_url_candidates": 0,
       "listing_urls_visited": 11,
       "listing_pool_size": 9,
-      "listing_cursor_next": 115,
+      "listing_cursor_next": 124,
       "tables_seen": 8,
       "embedded_json_blocks": 80,
       "role_like_links": 0,
@@ -88,8 +88,8 @@
       "browser_render_attempts": 1,
       "browser_render_successes": 1,
       "browser_render_blocked": 0,
-      "browser_rendered_body_chars": 2854,
-      "browser_rendered_links": 1468,
+      "browser_rendered_body_chars": 2925,
+      "browser_rendered_links": 370,
       "browser_render_samples": [
         {
           "requested_url": "https://www.zhipin.com/school",
@@ -97,14 +97,14 @@
           "final_url": "https://www.zhipin.com/school",
           "title": "2026校园招聘_应届生校园招聘信息-BOSS直聘",
           "http_status": 200,
-          "body_chars": 2854,
-          "link_count": 1468,
-          "body_preview": "全国[切换]\n\n首页\n \n职位\n \n公司\n \n校园\n  \n海归\n \nAPP\n \n有了\n \n海外\n \n无障碍专区\n我要招聘 我要找工作 登录/注册\n校招\n实习\n社招\n兼职\n职位类型\n搜索\n按专业筛选\n按职类筛选\n农学\n医学\n教育学\n文学\n艺术学\n工学\n法学\n历史学\n哲学\n理学\n经济学\n管理学\n\n\n\n\n\t\n\n\n\t\n\t\n\n\n\t\n瞰荐\n了解企业服务\n甘肃农商2027校园招聘\n86个职位\n陇南、临夏回族自治州、甘南藏族自治州 ...\n优必选2027届校园招聘\n70个职位\n深圳\n上海华测导航2027届校园招聘\n56个职位\n上海、武汉\n永升服务2027校园招聘\n49个职位\n长沙、武汉、济南 ...\n广期科技2026年秋季校园招聘\n2个职位\n广州\n热门校招\n综合\n管培生\n教师\n银行\n国企\n外企\n（27届秋招",
+          "body_chars": 2925,
+          "link_count": 370,
+          "body_preview": "全国[切换]\n\n首页\n \n职位\n \n公司\n \n校园\n  \n海归\n \nAPP\n \n有了\n \n海外\n \n无障碍专区\n我要招聘 我要找工作 登录/注册\n校招\n实习\n社招\n兼职\n职位类型\n搜索\n按专业筛选\n按职类筛选\n农学\n医学\n教育学\n文学\n艺术学\n工学\n法学\n历史学\n哲学\n理学\n经济学\n管理学\n\n\n\n\n\t\n\n\n\t\n\t\n\n\n\t\n瞰荐\n了解企业服务\n甘肃农商2027校园招聘\n86个职位\n陇南、临夏回族自治州、甘南藏族自治州 ...\n优必选2027届校园招聘\n70个职位\n深圳\n上海华测导航2027届校园招聘\n56个职位\n上海、武汉\n永升服务2027校园招聘\n49个职位\n长沙、武汉、济南 ...\n康比特2027届校园招聘\n13个职位\n北京、廊坊\n广期科技2026年秋季校园招聘\n2个职位\n广州\n热门校招\n",
           "access_limited": false,
           "error": ""
         }
       ],
-      "role_records": 61,
+      "role_records": 60,
       "announcement_records": 6,
       "portal_entries": 0,
       "sample_title": "2026校园招聘_应届生校园招聘信息-BOSS直聘",
@@ -204,21 +204,21 @@
           "direct_detail": true
         },
         {
-          "text": "后端开发工程师（抖音服务架构）-抖音研发 北京 在校/应届 本科",
+          "text": "后端开发工程师（抖音服务架构）-抖音研发 在线 北京 在校/应届 本科",
           "url": "https://www.zhipin.com/job_detail/12e66de1dddf6ac60nJ52NW6FFZV.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "服务策略产品经理（接受应届生） 北京 1年以内 本科 不接受居家办公 业务模式/运营策略优化",
+          "text": "服务策略产品经理（接受应届生） 在线 北京 1年以内 本科 不接受居家办公 业务模式/运营策略优化",
           "url": "https://www.zhipin.com/job_detail/159869d90897d9300nF-29m-GVtW.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "兼职坐班动画剪辑 北京 1-3年 本科 现场办公 周末双休",
+          "text": "兼职坐班动画剪辑 在线 北京 1-3年 本科 现场办公 周末双休",
           "url": "https://www.zhipin.com/job_detail/189f4f20c2c937d10nFy2ty1FlpT.html",
           "same_site": true,
           "allowed": true,
@@ -267,6 +267,13 @@
           "direct_detail": true
         },
         {
+          "text": "游戏运营 200-250元/天 北京 在校/应届 学历不限",
+          "url": "https://www.zhipin.com/job_detail/2da70181c20762670nF_2Nq6GVJR.html",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": true
+        },
+        {
           "text": "AI管培生-战略运营方向（27届可转正） 300-350元/天 北京 在校/应届 本科",
           "url": "https://www.zhipin.com/job_detail/2ec78b16bcc4af9b0nFz3Ny0FFBV.html",
           "same_site": true,
@@ -302,14 +309,14 @@
           "direct_detail": true
         },
         {
-          "text": "安全研究员（博士） 北京 1年以内 博士 安全大模型 大模型应用技术研究",
+          "text": "安全研究员（博士） 在线 北京 1年以内 博士 安全大模型 大模型应用技术研究",
           "url": "https://www.zhipin.com/job_detail/34c802e09fa14fe81Hx92t26FltV.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "2027届校招-北京-大模型算法工程师 北京 在校/应届 本科",
+          "text": "2027届校招-北京-大模型算法工程师 在线 北京 在校/应届 本科",
           "url": "https://www.zhipin.com/job_detail/36e1c54d3a2f9d7a0nJ_29W4EFZX.html",
           "same_site": true,
           "allowed": true,
@@ -351,21 +358,21 @@
           "direct_detail": true
         },
         {
-          "text": "学而思自播直播间-直播运营 (MJ049650) 北京 1-3年 大专 接受居家办公 有直播运营经验",
+          "text": "学而思自播直播间-直播运营 (MJ049650) 在线 北京 1-3年 大专 接受居家办公 有直播运营经验",
           "url": "https://www.zhipin.com/job_detail/42a51e8e75d0774c0nJ53dq1E1NQ.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "智能信号检测与识别算法工程师/助理研究员 北京 1年以内 硕士 语音/图像识别 Python",
+          "text": "智能信号检测与识别算法工程师/助理研究员 在线 北京 1年以内 硕士 语音/图像识别 Python",
           "url": "https://www.zhipin.com/job_detail/44b31997fbc5b4ef1Xx929W7EFVS.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "UI设计师（兼职） 北京 1-3年 本科 现场办公 交互设计经验",
+          "text": "UI设计师（兼职） 在线 北京 1-3年 本科 现场办公 交互设计经验",
           "url": "https://www.zhipin.com/job_detail/4631af91fbd8611e03190ti5F1BQ.html",
           "same_site": true,
           "allowed": true,
@@ -379,7 +386,7 @@
           "direct_detail": true
         },
         {
-          "text": "2027校园招聘-北京-后端开发工程师 北京 在校/应届 本科 Golang JVM",
+          "text": "2027校园招聘-北京-后端开发工程师 在线 北京 在校/应届 本科 Golang JVM",
           "url": "https://www.zhipin.com/job_detail/48649f64d7c6dd900nJ73N67E1BS.html",
           "same_site": true,
           "allowed": true,
@@ -400,8 +407,15 @@
           "direct_detail": true
         },
         {
-          "text": "27 校招-SLAM算法 北京 在校/应届 本科 slam 建图",
+          "text": "27 校招-SLAM算法 在线 北京 在校/应届 本科 slam 建图",
           "url": "https://www.zhipin.com/job_detail/4b78b7f0cee60f590nF93Nu_GFpQ.html",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": true
+        },
+        {
+          "text": "网络工程师（兼职） 在线 北京 经验不限 大专 运维 兼职",
+          "url": "https://www.zhipin.com/job_detail/4b7b2ef860bc3cec1XJ53926E1FV.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
@@ -449,14 +463,7 @@
           "direct_detail": true
         },
         {
-          "text": "产品/需求分析实习生 200-260元/天 北京 在校/应届 本科",
-          "url": "https://www.zhipin.com/job_detail/5caab5e1aa7bd2e91HB42t-1EFJS.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "兼职插画师 北京 经验不限 学历不限",
+          "text": "兼职插画师 在线 北京 经验不限 学历不限",
           "url": "https://www.zhipin.com/job_detail/5d75d063ef445d1f0nR83NS0GFBW.html",
           "same_site": true,
           "allowed": true,
@@ -470,7 +477,7 @@
           "direct_detail": true
         },
         {
-          "text": "TGT-大模型应用工程师（AI Coding） 北京 1年以内 本科 深度学习 机器学习",
+          "text": "TGT-大模型应用工程师（AI Coding） 在线 北京 1年以内 本科 深度学习 机器学习",
           "url": "https://www.zhipin.com/job_detail/60640dbbe6b02c700ndy29W_GVtS.html",
           "same_site": true,
           "allowed": true,
@@ -484,7 +491,7 @@
           "direct_detail": true
         },
         {
-          "text": "招商银行外出审核岗（六险一金-可转编） 北京 1年以内 本科 审核标准优化 不接受居家办公",
+          "text": "招商银行外出审核岗（六险一金-可转编） 在线 北京 1年以内 本科 审核标准优化 不接受居家办公",
           "url": "https://www.zhipin.com/job_detail/66b4b6bcd4bfc6e90ndz3Nq5EFtU.html",
           "same_site": true,
           "allowed": true,
@@ -505,7 +512,7 @@
           "direct_detail": true
         },
         {
-          "text": "AI项目研究员 北京 经验不限 本科 AI训练 标书",
+          "text": "AI项目研究员 在线 北京 经验不限 本科 AI训练 标书",
           "url": "https://www.zhipin.com/job_detail/6de877698bc3f5390nV-2dS8E1pQ.html",
           "same_site": true,
           "allowed": true,
@@ -540,21 +547,21 @@
           "direct_detail": true
         },
         {
-          "text": "今日头条搜索产品运营（电商大促方向） 北京 1年以内 本科 有国内电商运营经验 不接受居家办公",
+          "text": "今日头条搜索产品运营（电商大促方向） 在线 北京 1年以内 本科 有国内电商运营经验 不接受居家办公",
           "url": "https://www.zhipin.com/job_detail/7e8c7454ca7751440nJ53961GVJU.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "AI Agent策略工程师 - 豆包爱学 北京 在校/应届 本科 Java Python",
+          "text": "AI Agent策略工程师 - 豆包爱学 在线 北京 在校/应届 本科 Java Python",
           "url": "https://www.zhipin.com/job_detail/82118f9b5691f6370nJ409q_EFRT.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "社群运营居家办公兼职岗 北京 1-3年 大专 社群运营 接受居家办公",
+          "text": "社群运营居家办公兼职岗 在线 北京 1-3年 大专 社群运营 接受居家办公",
           "url": "https://www.zhipin.com/job_detail/846f1165098acaf40nF93Nm0EFtU.html",
           "same_site": true,
           "allowed": true,
@@ -617,7 +624,7 @@
           "direct_detail": true
         },
         {
-          "text": "视觉感知算法工程师 北京 1年以内 硕士 深度学习 机器学习",
+          "text": "视觉感知算法工程师 在线 北京 1年以内 硕士 深度学习 机器学习",
           "url": "https://www.zhipin.com/job_detail/a034d327c6373d3703d50t67FVFS.html",
           "same_site": true,
           "allowed": true,
@@ -631,14 +638,14 @@
           "direct_detail": true
         },
         {
-          "text": "Agent开发工程师 - 豆包 北京 在校/应届 本科",
+          "text": "Agent开发工程师 - 豆包 在线 北京 在校/应届 本科",
           "url": "https://www.zhipin.com/job_detail/b107b6260c5c320d0nJ409W9FVFR.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
         },
         {
-          "text": "抖音图文内容运营(线上) 北京 经验不限 学历不限",
+          "text": "抖音图文内容运营(线上) 在线 北京 经验不限 学历不限",
           "url": "https://www.zhipin.com/job_detail/b5d038a4578586970nBz2N2-EVtR.html",
           "same_site": true,
           "allowed": true,
@@ -654,13 +661,6 @@
         {
           "text": "装置艺术家 北京 5-10年 本科 展厅 熟悉施工工艺",
           "url": "https://www.zhipin.com/job_detail/bc545c99db9922fa0nFz29u0ElBQ.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "抖音图文内容运营（线上） 北京 经验不限 学历不限",
-          "url": "https://www.zhipin.com/job_detail/c661672e778831bd0nd73Nu8FFZV.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
@@ -687,7 +687,7 @@
           "direct_detail": true
         },
         {
-          "text": "入职六险一金 社群销售 稳定项目 免费打车 北京 1年以内 大专 教育培训 销售经验",
+          "text": "入职六险一金 社群销售 稳定项目 免费打车 在线 北京 1年以内 大专 教育培训 销售经验",
           "url": "https://www.zhipin.com/job_detail/c9dc9d9f8b2895a60nd_3t-1FFJY.html",
           "same_site": true,
           "allowed": true,
@@ -696,6 +696,13 @@
         {
           "text": "班主任/学管师-六险一金-外加口语行业top 北京 朝阳区 朝阳公园 经验不限 大专",
           "url": "https://www.zhipin.com/job_detail/cb06bca12226ac7a0nZ_0ti5EVNZ.html",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": true
+        },
+        {
+          "text": "通用软件开发工程师 北京 在校/应届 本科 C++ 嵌入式软件经验",
+          "url": "https://www.zhipin.com/job_detail/cd87c1c6ab33b8d803J929-1F1tX.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
@@ -710,13 +717,6 @@
         {
           "text": "人事行政实习生 5天/周 2个月 本科 时光屿",
           "url": "https://www.zhipin.com/job_detail/cfef90dfd727d5650nB40t-1FVBZ.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "产品经理（上市公司+不限经验+2轮直通） 北京 1年以内 本科 B端产品",
-          "url": "https://www.zhipin.com/job_detail/d5ace0388a89bf200nF40t20FlVR.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": true
@@ -1010,55 +1010,55 @@
       "id": "51job",
       "company": "前程无忧51job",
       "pages_visited": 55,
-      "records_found": 20,
+      "records_found": 22,
       "active_candidates": 0,
-      "pending_review": 20,
+      "pending_review": 22,
       "pages_attempted": 55,
       "pages_failed": 0,
-      "html_bytes": 10176585,
-      "links_seen": 1643,
-      "listing_url_candidates": 90,
-      "listing_urls_visited": 37,
-      "listing_pool_size": 168,
-      "listing_cursor_next": 126,
-      "tables_seen": 281,
-      "embedded_json_blocks": 30,
+      "html_bytes": 10177810,
+      "links_seen": 1654,
+      "listing_url_candidates": 88,
+      "listing_urls_visited": 46,
+      "listing_pool_size": 169,
+      "listing_cursor_next": 144,
+      "tables_seen": 42,
+      "embedded_json_blocks": 55,
       "role_like_links": 0,
-      "discovery_pages_queued": 43,
+      "discovery_pages_queued": 34,
       "listing_pages_queued": 28,
-      "direct_detail_pages_visited": 15,
+      "direct_detail_pages_visited": 6,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 15,
+      "direct_detail_requests_attempted": 6,
       "detail_redirects": 0,
       "detail_redirect_samples": [],
       "direct_detail_samples": [
         {
-          "url_path": "/nanjing-lsq/172728293.html",
-          "page_title": "Verification",
-          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-11 22:28:07 TraceID: ac11000117917576873031488e00c8 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"d0e6337e3e8564924571fe02778fcece\",\"traceid\":\"ac11000117917576873031488e00c8\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
-        },
-        {
           "url_path": "/all/170133580.html",
           "page_title": "Verification",
-          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-11 22:30:44 TraceID: ac11000117917578442786638e00d7 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"8ea56dc39b64c1cc1119b0d58b4a50d7\",\"traceid\":\"ac11000117917578442786638e00d7\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
+          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-12 03:53:00 TraceID: ac11000117917771806674093e00a5 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"1b4032ac81ccf2882fa6e4748487bea9\",\"traceid\":\"ac11000117917771806674093e00a5\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
         },
         {
           "url_path": "/all/170134329.html",
           "page_title": "Verification",
-          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-11 22:30:49 TraceID: ac11000117917578490701076e00a4 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"8fb4505e7e6f1d790b60f4ee41ae97a7\",\"traceid\":\"ac11000117917578490701076e00a4\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
+          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-12 03:53:11 TraceID: ac11000117917771912898026e00c8 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"03a6d1d8990a1f7719c2ea32fc4739ff\",\"traceid\":\"ac11000117917771912898026e00c8\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
         },
         {
           "url_path": "/all/170783119.html",
           "page_title": "Verification",
-          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-11 22:30:53 TraceID: ac11000117917578539341329e00a4 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"7d726b6f1db593bd3b8de45f461e5863\",\"traceid\":\"ac11000117917578539341329e00a4\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
+          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-12 03:53:21 TraceID: ac11000117917772018094889e00d9 appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"62a6895913aae302aaf5078e16f0bae9\",\"traceid\":\"ac11000117917772018094889e00d9\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
+        },
+        {
+          "url_path": "/all/172956054.html",
+          "page_title": "Verification",
+          "text_preview": "Verification Access Verification For better experience, please slide to complete the verification process before accessing the web page. Please slide to verify For better experience, please complete the verification process. TIME: 2026-10-12 03:54:18 TraceID: ac11000117917772588536130e00bc appkey: \"CF_APP_WAF\", // 应用标识var AC_Opt = {userUserId: requestInfo.userUserId var requestInfo = {\"data\":\"\",\"region\":\"cn\",\"sceneId\":\"19x5u7lo\",\"token\":\"583fead359a33e6fe0873846dfa1100a\",\"traceid\":\"ac11000117917772588536130e00bc\",\"type\":\"GET\",\"userId\":\"HpadJlQnz2zSKcSmjXBaqQvjYUvP4jMJIk/ZwGNDNiM=\",\"userUserId\""
         }
       ],
       "browser_render_attempts": 54,
-      "browser_render_successes": 46,
+      "browser_render_successes": 45,
       "browser_render_blocked": 0,
-      "browser_rendered_body_chars": 25442,
-      "browser_rendered_links": 1506,
+      "browser_rendered_body_chars": 35250,
+      "browser_rendered_links": 1486,
       "browser_render_samples": [
         {
           "requested_url": "https://xy.51job.com/default-xs.php?lang=e",
@@ -1066,21 +1066,9 @@
           "final_url": "https://xy.51job.com/default-xs.php?lang=e",
           "title": "校园招聘|应届生求职|大学生实习-前程无忧",
           "http_status": 200,
-          "body_chars": 2716,
+          "body_chars": 2731,
           "link_count": 367,
           "body_preview": "首页搜索校园招聘测培商城典范雇主职场资讯企业培训\n...\nAPP下载\n我要招人应届生账号登录\n搜索\n搜索发现：国企管培生事业单位银行教师/老师校招\n校园招聘\n校园宣讲会\n实习频道\n好职位推荐\n论坛\n管培生\n管理培训生\n \n销售/客服\n销售专员\n客户代表\n销售工程师\n大客户销售\n电话销售\n互联网技术\n软件工程师\njava\nC/C++\nC#\n.NET\n人事/行政\nHRBP\n人事专员\n财务/税务/法务\n财务顾问\n财务专员\n财务分析员\n统计员\n成本管理员\n运营\n运营助理\n运营专员\n网站运营\n网络推广\n用户运营\n \n市场/公关\n品牌专员\n市场企划专员\n市场助理\n设计\n平面设计师\n包装设计\nUI设计师\n交互设计师\n视觉设计师\n产品\n产品专员\n产品助理\n需求工程师\n电商产品经理\n项目经理/管理\n机械项目管",
-          "access_limited": false,
-          "error": ""
-        },
-        {
-          "requested_url": "https://jobs.51job.com/nanjing-lsq/172728293.html",
-          "mode": "playwright",
-          "final_url": "https://jobs.51job.com/nanjing-lsq/172728293.html",
-          "title": "Verification",
-          "http_status": 200,
-          "body_chars": 214,
-          "link_count": 0,
-          "body_preview": "Access Verification\n\nFor better experience, please slide to complete the verification process before accessing the web page.\n\nPlease slide to verify\nTIME: 2026-10-11 22:28:07\nTraceID: ac11000117917576873031488e00c8",
           "access_limited": false,
           "error": ""
         },
@@ -1145,20 +1133,32 @@
           "error": ""
         },
         {
-          "requested_url": "https://campus.51job.com/220110New/job.html?coid=115",
+          "requested_url": "https://campus.51job.com/220110New/cmDetail.html?coid=0",
           "mode": "playwright",
-          "final_url": "https://campus.51job.com/220110New/job.html?coid=115",
+          "final_url": "https://campus.51job.com/220110New/cmDetail.html?coid=0",
           "title": "【中粮集团招聘，求职】中粮集团 前程无忧官方招聘网站",
           "http_status": 200,
-          "body_chars": 389,
-          "link_count": 66,
-          "body_preview": "首页\n感受中粮\n成员企业\n招聘职位\n?\n中粮粮谷\n?\n中粮生物科技\n?\n中粮国际\n?\n中粮信科\n?\n中国纺织\n?\n中粮营养健康研究院\n?\n中粮福临门\n?\n中粮粮谷\n?\n中粮油脂\n?\n中粮饲料\n?\n中粮集团\n?\n我买网\n?\n中国茶叶\n?\n中粮包装\n?\n中粮家佳康\n?\n中粮糖业\n?\n大悦城控股\n?\n中粮贸易\n?\n集团本部\nweb\n--选择成员企业名称--\n--选择职位类别--\n--请选择工作地点--\n中粮工业\n\n暂无职位~\n\n\t中粮粮谷\n\t中粮生物科技\n\t中粮国际\n\t中粮信科\n\t中国纺织\n\t中粮营养健康研究院\n\t中粮福临门\n\t中粮粮谷\n\t中粮油脂\n\t中粮饲料\n\t中粮集团\n\t我买网\n\t中国茶叶\n\t中粮包装\n\t中粮家佳康\n\t中粮糖业\n\t大悦城控股\n\t中粮贸易\n\t集团本部\n未经51job.com 同意",
+          "body_chars": 696,
+          "link_count": 47,
+          "body_preview": "首页\n感受中粮\n成员企业\n招聘职位\n?\n中粮粮谷\n?\n中粮生物科技\n?\n中粮国际\n?\n中粮信科\n?\n中国纺织\n?\n中粮营养健康研究院\n?\n中粮福临门\n?\n中粮粮谷\n?\n中粮油脂\n?\n中粮饲料\n?\n中粮集团\n?\n我买网\n?\n中国茶叶\n?\n中粮包装\n?\n中粮家佳康\n?\n中粮糖业\n?\n大悦城控股\n?\n中粮贸易\n?\n集团本部\nweb\n--选择成员企业名称--\n--选择职位类别--\n--请选择工作地点--\n中粮国际\n\n中粮国际是中粮集团农粮业务的唯一海外统一采购、调配、投资和发展平台。\n\n中粮国际拥有成熟的大宗农产品经营模式和较强的贸易、资产管理能力，资产布局深入南北美洲、欧洲和大洋洲等产区腹地，并在巴西桑托斯、阿根廷罗萨里奥、美国圣路易斯、乌克兰尼古拉耶夫和罗马尼亚康斯坦察等全球重要粮食出口和内陆物",
+          "access_limited": false,
+          "error": ""
+        },
+        {
+          "requested_url": "https://campus.51job.com/220110New/cmDetail.html?coid=1",
+          "mode": "playwright",
+          "final_url": "https://campus.51job.com/220110New/cmDetail.html?coid=1",
+          "title": "【中粮集团招聘，求职】中粮集团 前程无忧官方招聘网站",
+          "http_status": 200,
+          "body_chars": 893,
+          "link_count": 47,
+          "body_preview": "首页\n感受中粮\n成员企业\n招聘职位\n?\n中粮粮谷\n?\n中粮生物科技\n?\n中粮国际\n?\n中粮信科\n?\n中国纺织\n?\n中粮营养健康研究院\n?\n中粮福临门\n?\n中粮粮谷\n?\n中粮油脂\n?\n中粮饲料\n?\n中粮集团\n?\n我买网\n?\n中国茶叶\n?\n中粮包装\n?\n中粮家佳康\n?\n中粮糖业\n?\n大悦城控股\n?\n中粮贸易\n?\n集团本部\nweb\n--选择成员企业名称--\n--选择职位类别--\n--请选择工作地点--\n中粮贸易\n\n中粮贸易有限公司是中粮集团有限公司所属，中国粮食市场设施体系完善、经营实力雄厚的市场化流通企业。2022年末，资产总额521.22亿元。\n\n我们是小麦、玉米等重要农产品进出口的执行主体；是维护国家粮食安全、服务国家宏观调控的骨干力量；是统筹国际国内两个市场的主力军；是中粮集团全产业链战略",
           "access_limited": false,
           "error": ""
         }
       ],
       "role_records": 0,
-      "announcement_records": 20,
+      "announcement_records": 22,
       "portal_entries": 0,
       "sample_title": "校园招聘|应届生求职|大学生实习-前程无忧",
       "role_title_samples": [],
@@ -1200,62 +1200,6 @@
           "direct_detail": true
         },
         {
-          "text": "中粮油脂体系数字化部人工智能技术工程师",
-          "url": "https://jobs.51job.com/all/173048689.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂体系数字化部数据治理工程师",
-          "url": "https://jobs.51job.com/all/173048794.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂财务部财务专员岗位",
-          "url": "https://jobs.51job.com/all/173048844.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂餐饮事业部品牌传播岗",
-          "url": "https://jobs.51job.com/all/173048908.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂营销公司销售管理总监岗",
-          "url": "https://jobs.51job.com/all/173048947.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂营销公司市场总监岗",
-          "url": "https://jobs.51job.com/all/173048986.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂营销公司公关媒介总监岗",
-          "url": "https://jobs.51job.com/all/173049052.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "中粮油脂特种油事业部特种油脂研发工程师岗位",
-          "url": "https://jobs.51job.com/all/173049273.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
           "text": "采购管理岗",
           "url": "https://jobs.51job.com/all/173216285.html",
           "same_site": true,
@@ -1263,22 +1207,8 @@
           "direct_detail": true
         },
         {
-          "text": "南京沃尔斯克汽车零部件有限公司",
-          "url": "https://jobs.51job.com/nanjing-lsq/172728293.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": true
-        },
-        {
-          "text": "销售经理 1-2万 1年及以上 本科 化学 英语 旭创新材料（上海） 上海 黄浦区",
-          "url": "https://q.yingjiesheng.com/jobdetail/138687297.html",
-          "same_site": false,
-          "allowed": false,
-          "direct_detail": true
-        },
-        {
-          "text": "销售顾问（一汽丰田） 6千-1.2万 1年 大专 上海话 汽车销售 上海万兴丰田汽车销售服务 上海 杨浦区",
-          "url": "https://q.yingjiesheng.com/jobdetail/145139565.html",
+          "text": "普工（厂家直招） 5.7-9千 1年 初中及以下 普工、操作工 生日礼金 邦凯控股集团 上海 金山区",
+          "url": "https://q.yingjiesheng.com/jobdetail/126465962.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
@@ -1291,13 +1221,6 @@
           "direct_detail": true
         },
         {
-          "text": "销售人员(国际物流) 8-16万/年 无需经验 大专 物流管理 英语 销售 长荣国际物流（上海） 上海 浦东新区",
-          "url": "https://q.yingjiesheng.com/jobdetail/153720703.html",
-          "same_site": false,
-          "allowed": false,
-          "direct_detail": true
-        },
-        {
           "text": "出口操作客服-海外 — Exports CSR & OPS 9千-1万·13薪 1年及以上 大专 英语 上海美凰国际物流 上海",
           "url": "https://q.yingjiesheng.com/jobdetail/161800536.html",
           "same_site": false,
@@ -1305,15 +1228,22 @@
           "direct_detail": true
         },
         {
-          "text": "夜间巡检 4-5千 无需经验 管理 应急处置 防护 帅测（上海）检测技术 上海 奉贤区",
-          "url": "https://q.yingjiesheng.com/jobdetail/172701874.html",
+          "text": "上海软件销售/设计软件/二维/三维 1.2-2万·13薪 1年及以上 大专 工业软件 设计软件 鸣意信息科技（上海） 上海 闵行区",
+          "url": "https://q.yingjiesheng.com/jobdetail/169404038.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
         },
         {
-          "text": "磁性器件设计 7千-1万 无需经验 硕士 电气类 电子 自动化 陕西长岭迈腾电子 宝鸡",
-          "url": "https://q.yingjiesheng.com/jobdetail/173210835.html",
+          "text": "728金牌实习生夏令营 180元/天 在校生/应届生 硕士 上海核工程研究设计院 上海 徐汇区",
+          "url": "https://q.yingjiesheng.com/jobdetail/172431775.html",
+          "same_site": false,
+          "allowed": false,
+          "direct_detail": true
+        },
+        {
+          "text": "08-SH-系统建模与性能分析工程师 2-3万·15薪 在校生/应届生 硕士 上海兆芯集成电路 上海",
+          "url": "https://q.yingjiesheng.com/jobdetail/173106976.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
@@ -1326,29 +1256,29 @@
           "direct_detail": true
         },
         {
-          "text": "见习工程师（全国各地） 2.5-3.5千 在校生/应届生 大专 土木、水利与交通工程 上海建科工程咨询 上海",
-          "url": "https://q.yingjiesheng.com/jobdetail/173439063.html",
+          "text": "电话外呼专员 8千-1.6万 无需经验 高中 普通话 电销 五险一金 上海今财通商务服务 上海 浦东新区",
+          "url": "https://q.yingjiesheng.com/jobdetail/173236009.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
         },
         {
-          "text": "大众燃气技能岗（2027届） 10-12万/年 在校生/应届生 本科 上海大众燃气 上海",
-          "url": "https://q.yingjiesheng.com/jobdetail/173515554.html",
+          "text": "申能燃料调运管理（2027届） 14-21万/年 在校生/应届生 本科 上海申能燃料 上海",
+          "url": "https://q.yingjiesheng.com/jobdetail/173515931.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
         },
         {
-          "text": "2027届校园招聘 10-18万/年 在校生/应届生 本科 建筑环境与能源工程 上海建工一建集团 上海 浦东新区",
-          "url": "https://q.yingjiesheng.com/jobdetail/173548938.html",
+          "text": "采购需求管理人员 6千-1万 1年及以上 本科 采购 数据整理 中国航空工业集团公司上海航空测控技术研究所 上海",
+          "url": "https://q.yingjiesheng.com/jobdetail/173569349.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
         },
         {
-          "text": "总图设计岗(J10670) 1.6-3万 在校生/应届生 硕士 上海核工程研究设计院 上海",
-          "url": "https://q.yingjiesheng.com/jobdetail/173648315.html",
+          "text": "主系统设计岗(J10154) 1.6-3万 在校生/应届生 硕士 上海核工程研究设计院 上海",
+          "url": "https://q.yingjiesheng.com/jobdetail/173625396.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
@@ -1361,15 +1291,22 @@
           "direct_detail": true
         },
         {
-          "text": "研发物料管理员(A35173) 5-8千·14薪 1年及以上 大专 医疗器械 erp 上海近观科技 上海 宝山区",
-          "url": "https://q.yingjiesheng.com/jobdetail/173730527.html",
+          "text": "一二次技术融合工程师 17-25万/年 在校生/应届生 本科 电气工程及自动化 上海置信电气科技 上海 青浦区",
+          "url": "https://q.yingjiesheng.com/jobdetail/173835459.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
         },
         {
-          "text": "上海同济城市规划设计研究院有限公司2027届校招 8.5千-1.5万 在校生/应届生 硕士 管道运输管理 上海同济城市规划设计研究院 上海 杨浦区",
-          "url": "https://q.yingjiesheng.com/jobdetail/173833310.html",
+          "text": "国企正编-土建施工员 1-1.3万 1年及以上 大专 土木工程 办公软件 前锦网络信息技术（上海） 上海 浦东新区",
+          "url": "https://q.yingjiesheng.com/jobdetail/173874533.html",
+          "same_site": false,
+          "allowed": false,
+          "direct_detail": true
+        },
+        {
+          "text": "校招-定向培养生（业务方向）（上海） 在校生/应届生 本科 法学 统计类 华融金融租赁 上海 浦东新区",
+          "url": "https://q.yingjiesheng.com/jobdetail/173875657.html",
           "same_site": false,
           "allowed": false,
           "direct_detail": true
@@ -1377,34 +1314,6 @@
         {
           "text": "星斗工程2027年硕博人才选拔 长沙新奥燃气有限公司 广告",
           "url": "http://campus.51job.com/csxarq",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "走进国泰君安｜国泰君安官方网站 - 关于国泰君安 (gtja.com)",
-          "url": "http://campus.51job.com/gtjahubei2024",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "了解我们",
-          "url": "http://campus.51job.com/gtjahubei2024/index.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "校招岗位",
-          "url": "http://campus.51job.com/gtjahubei2024/jobs.html",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "薪酬福利",
-          "url": "http://campus.51job.com/gtjahubei2024/salary.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": false
@@ -1711,15 +1620,106 @@
           "direct_detail": false
         },
         {
-          "text": ">>more",
-          "url": "https://campus.51job.com/220110New/coinfo.html",
+          "text": "首页",
+          "url": "https://campus.51job.com/220110New/index.html",
           "same_site": true,
           "allowed": true,
           "direct_detail": false
         },
         {
-          "text": "首页",
-          "url": "https://campus.51job.com/220110New/index.html",
+          "text": "? 中粮国际",
+          "url": "https://campus.51job.com/220110New/job.html?coid=111",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮生物科技",
+          "url": "https://campus.51job.com/220110New/job.html?coid=112",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮糖业",
+          "url": "https://campus.51job.com/220110New/job.html?coid=113",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮工科",
+          "url": "https://campus.51job.com/220110New/job.html?coid=115",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮可口可乐",
+          "url": "https://campus.51job.com/220110New/job.html?coid=116",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 蒙牛乳业",
+          "url": "https://campus.51job.com/220110New/job.html?coid=117",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮资本",
+          "url": "https://campus.51job.com/220110New/job.html?coid=118",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 集团本部",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310302",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮酒业",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310317",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮贸易",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310326",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 大悦城控股",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310335",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮糖业",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310347",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮家佳康",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310348",
+          "same_site": true,
+          "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "? 中粮包装",
+          "url": "https://campus.51job.com/220110New/job.html?coid=3310363",
           "same_site": true,
           "allowed": true,
           "direct_detail": false
@@ -1782,18 +1782,18 @@
     {
       "id": "iguopin",
       "company": "国聘",
-      "pages_visited": 14,
+      "pages_visited": 21,
       "records_found": 1,
       "active_candidates": 0,
       "pending_review": 1,
-      "pages_attempted": 14,
+      "pages_attempted": 21,
       "pages_failed": 0,
-      "html_bytes": 2258244,
-      "links_seen": 575,
+      "html_bytes": 4384659,
+      "links_seen": 690,
       "listing_url_candidates": 0,
-      "listing_urls_visited": 9,
-      "listing_pool_size": 8,
-      "listing_cursor_next": 27,
+      "listing_urls_visited": 21,
+      "listing_pool_size": 5,
+      "listing_cursor_next": 32,
       "tables_seen": 0,
       "embedded_json_blocks": 0,
       "role_like_links": 0,
@@ -1806,105 +1806,105 @@
       "detail_redirects": 0,
       "detail_redirect_samples": [],
       "direct_detail_samples": [],
-      "browser_render_attempts": 13,
-      "browser_render_successes": 12,
+      "browser_render_attempts": 21,
+      "browser_render_successes": 21,
       "browser_render_blocked": 0,
-      "browser_rendered_body_chars": 20177,
-      "browser_rendered_links": 526,
+      "browser_rendered_body_chars": 23283,
+      "browser_rendered_links": 634,
       "browser_render_samples": [
         {
-          "requested_url": "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=&nature_cn=",
+          "requested_url": "https://www.iguopin.com/job",
           "mode": "playwright",
-          "final_url": "https://www.iguopin.com/",
+          "final_url": "https://www.iguopin.com/job",
           "title": "国聘",
           "http_status": 200,
-          "body_chars": 854,
-          "link_count": 45,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n热门岗位：\n金融\nIT/互联网\n工程师\n管培生\n医疗\n数据开发\n全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n更多\n国有企业一线扩岗增招专项行动邀您参与\n北京海开控股（集团）股份有限公司2027年校园招聘\n安徽邮政2027年度秋季校园招聘宣讲行程全揭秘\n金穗向阳，逐梦农商 | 广州农商银行2027届校园招聘\n中国旅游集团2027年校园招聘正式启动\n国检测试控股集团雄安有限公司公开招聘公告\n现代汽车研发中心2027届秋季校园招聘正式启动！\n北京",
+          "body_chars": 259,
+          "link_count": 20,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n\n加载中...\n在线笔试平台\n在线测评平台\n在线学习平台\n人力资源综合管理平台\n频道链接\n宣讲会\n国聘快招\n实习专区\n关于我们\n联系我们\n人力资源服务许可证\n营业执照\n产品服务\n使用与帮助\n法律协议\n常见问题\n防骗指南\n在线客服\n010-88006655\nservice@iguopin.com\n© 2026 iguopin 版权所有  京ICP备18011856号京公网安备 11010702002893号",
           "access_limited": false,
           "error": ""
         },
         {
-          "requested_url": "https://job.iguopin.com/jobList?campus_nature=&channel=social&key_word=&nature_cn=",
+          "requested_url": "https://www.iguopin.com/job/list?keyword=AI",
           "mode": "playwright",
-          "final_url": "https://www.iguopin.com/",
-          "title": "国聘",
-          "http_status": 200,
-          "body_chars": 1053,
-          "link_count": 45,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n热门岗位：\n金融\nIT/互联网\n工程师\n管培生\n医疗\n数据开发\n全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n更多\n国有企业一线扩岗增招专项行动邀您参与\n北京海开控股（集团）股份有限公司2027年校园招聘\n安徽邮政2027年度秋季校园招聘宣讲行程全揭秘\n金穗向阳，逐梦农商 | 广州农商银行2027届校园招聘\n中国旅游集团2027年校园招聘正式启动\n国检测试控股集团雄安有限公司公开招聘公告\n现代汽车研发中心2027届秋季校园招聘正式启动！\n北京",
-          "access_limited": false,
-          "error": ""
-        },
-        {
-          "requested_url": "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=IT%2F%E4%BA%92%E8%81%94%E7%BD%91&nature_cn=",
-          "mode": "playwright",
-          "final_url": "https://www.iguopin.com/",
-          "title": "国聘",
-          "http_status": 200,
-          "body_chars": 934,
-          "link_count": 45,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n热门岗位：\n金融\nIT/互联网\n工程师\n管培生\n医疗\n数据开发\n全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n更多\n国有企业一线扩岗增招专项行动邀您参与\n北京海开控股（集团）股份有限公司2027年校园招聘\n安徽邮政2027年度秋季校园招聘宣讲行程全揭秘\n金穗向阳，逐梦农商 | 广州农商银行2027届校园招聘\n中国旅游集团2027年校园招聘正式启动\n国检测试控股集团雄安有限公司公开招聘公告\n现代汽车研发中心2027届秋季校园招聘正式启动！\n北京",
-          "access_limited": false,
-          "error": ""
-        },
-        {
-          "requested_url": "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=%E5%B7%A5%E7%A8%8B%E5%B8%88&nature_cn=",
-          "mode": "playwright",
-          "final_url": "https://www.iguopin.com/",
-          "title": "国聘",
-          "http_status": 200,
-          "body_chars": 1125,
-          "link_count": 45,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n热门岗位：\n金融\nIT/互联网\n工程师\n管培生\n医疗\n数据开发\n全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n更多\n国有企业一线扩岗增招专项行动邀您参与\n北京海开控股（集团）股份有限公司2027年校园招聘\n安徽邮政2027年度秋季校园招聘宣讲行程全揭秘\n金穗向阳，逐梦农商 | 广州农商银行2027届校园招聘\n中国旅游集团2027年校园招聘正式启动\n国检测试控股集团雄安有限公司公开招聘公告\n现代汽车研发中心2027届秋季校园招聘正式启动！\n北京",
-          "access_limited": false,
-          "error": ""
-        },
-        {
-          "requested_url": "https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91&nature_cn=",
-          "mode": "playwright",
-          "final_url": "https://www.iguopin.com/",
-          "title": "国聘",
-          "http_status": 200,
-          "body_chars": 1125,
-          "link_count": 45,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n热门岗位：\n金融\nIT/互联网\n工程师\n管培生\n医疗\n数据开发\n全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n职位类型\n搜索\n下载APP\n关注公众号\n更多\n国有企业一线扩岗增招专项行动邀您参与\n北京海开控股（集团）股份有限公司2027年校园招聘\n安徽邮政2027年度秋季校园招聘宣讲行程全揭秘\n金穗向阳，逐梦农商 | 广州农商银行2027届校园招聘\n中国旅游集团2027年校园招聘正式启动\n国检测试控股集团雄安有限公司公开招聘公告\n现代汽车研发中心2027届秋季校园招聘正式启动！\n北京",
-          "access_limited": false,
-          "error": ""
-        },
-        {
-          "requested_url": "https://www.iguopin.com/job/list?keyword=IT%2F%E4%BA%92%E8%81%94%E7%BD%91",
-          "mode": "playwright",
-          "final_url": "https://www.iguopin.com/job/list?keyword=IT%2F%E4%BA%92%E8%81%94%E7%BD%91",
+          "final_url": "https://www.iguopin.com/job/list?keyword=AI",
           "title": "招聘信息-国聘",
           "http_status": 200,
-          "body_chars": 2452,
-          "link_count": 43,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部在校生应届生经验不限1年以内1-3年1-5年3-5年5-10年10-15年15-20年20年以上\n性质\n全部社招校招公职类实习见习兼职\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n互联网运营\n「西安-未央区」\n面议校招经验不限本科\n不限\n中国移动通信有限公司在线营销服务中心\n陕西分中心\n国企\n30000人以上\n软件和信息技术服务业\n",
+          "body_chars": 470,
+          "link_count": 23,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部\n性质\n全部\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n对不起，没有找到符合您条件的职位！\n放宽您的查找条件也许有更多合适您的职位哦~\n1\n2\n3\n登录/注册\n意见反馈\n在线客服\n在线笔试平台\n在线测评平台\n在线学习平台\n人力资源综合管理平台\n频道链接\n宣讲会\n国聘快招\n实习专区\n关于我们\n联系我们\n人力资源服务许可证\n营业执照\n",
           "access_limited": false,
           "error": ""
         },
         {
-          "requested_url": "https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88",
+          "requested_url": "https://www.iguopin.com/job/list?keyword=%E7%AE%97%E6%B3%95",
           "mode": "playwright",
-          "final_url": "https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88",
+          "final_url": "https://www.iguopin.com/job/list?keyword=%E7%AE%97%E6%B3%95",
           "title": "招聘信息-国聘",
           "http_status": 200,
-          "body_chars": 2178,
-          "link_count": 43,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部在校生应届生经验不限1年以内1-3年1-5年3-5年5-10年10-15年15-20年20年以上\n性质\n全部社招校招公职类实习见习兼职\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n工程师\n「鸡西」\n面议校招应届生硕士\n中建材黑龙江石墨新材料有限公司\n中建材黑龙江石墨新材料有限公司\n国企\n100-300人\n非金属矿物制品业\n工程师\n「",
+          "body_chars": 470,
+          "link_count": 23,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部\n性质\n全部\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n对不起，没有找到符合您条件的职位！\n放宽您的查找条件也许有更多合适您的职位哦~\n1\n2\n3\n登录/注册\n意见反馈\n在线客服\n在线笔试平台\n在线测评平台\n在线学习平台\n人力资源综合管理平台\n频道链接\n宣讲会\n国聘快招\n实习专区\n关于我们\n联系我们\n人力资源服务许可证\n营业执照\n",
           "access_limited": false,
           "error": ""
         },
         {
-          "requested_url": "https://www.iguopin.com/job/list?keyword=%E7%AE%A1%E5%9F%B9%E7%94%9F",
+          "requested_url": "https://www.iguopin.com/job/list?keyword=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
           "mode": "playwright",
-          "final_url": "https://www.iguopin.com/job/list?keyword=%E7%AE%A1%E5%9F%B9%E7%94%9F",
+          "final_url": "https://www.iguopin.com/job/list?keyword=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
           "title": "招聘信息-国聘",
           "http_status": 200,
-          "body_chars": 2019,
+          "body_chars": 531,
+          "link_count": 23,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部在校生应届生经验不限1年以内1-3年1-5年3-5年5-10年10-15年15-20年20年以上\n性质\n全部社招校招公职类实习见习兼职\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n对不起，没有找到符合您条件的职位！\n放宽您的查找条件也许有更多合适您的职位哦~\n1\n2\n3\n登录/注册\n意见反馈\n在线客服\n在线笔试平台\n在线测评平台\n在",
+          "access_limited": false,
+          "error": ""
+        },
+        {
+          "requested_url": "https://www.iguopin.com/job/list?keyword=AIGC",
+          "mode": "playwright",
+          "final_url": "https://www.iguopin.com/job/list?keyword=AIGC",
+          "title": "招聘信息-国聘",
+          "http_status": 200,
+          "body_chars": 2259,
           "link_count": 43,
-          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部在校生应届生经验不限1年以内1-3年1-5年3-5年5-10年10-15年15-20年20年以上\n性质\n全部社招校招公职类实习见习兼职\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n管培生\n校招本科\n招聘专员/助理智能汽车制造产业链专项引才计划\n智能汽车制造产业链专项引才计划\n其他\n100-300人\n汽车制造业\n管培生\n「香港-湾仔区",
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部在校生应届生经验不限1年以内1-3年1-5年3-5年5-10年10-15年15-20年20年以上\n性质\n全部社招校招公职类实习见习兼职\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\nAIGC-助理\n「三亚-吉阳区」\n8~12K社招1年以内大专\nAI训练师AI内容生成\n雾隐潮汐三亚影视制作有限公司\n雾隐潮汐三亚影视制作有限公司\n民营企业",
+          "access_limited": false,
+          "error": ""
+        },
+        {
+          "requested_url": "https://www.iguopin.com/job/list?keyword=%E8%AE%BE%E8%AE%A1",
+          "mode": "playwright",
+          "final_url": "https://www.iguopin.com/job/list?keyword=%E8%AE%BE%E8%AE%A1",
+          "title": "国聘",
+          "http_status": 200,
+          "body_chars": 259,
+          "link_count": 20,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n\n加载中...\n在线笔试平台\n在线测评平台\n在线学习平台\n人力资源综合管理平台\n频道链接\n宣讲会\n国聘快招\n实习专区\n关于我们\n联系我们\n人力资源服务许可证\n营业执照\n产品服务\n使用与帮助\n法律协议\n常见问题\n防骗指南\n在线客服\n010-88006655\nservice@iguopin.com\n© 2026 iguopin 版权所有  京ICP备18011856号京公网安备 11010702002893号",
+          "access_limited": false,
+          "error": ""
+        },
+        {
+          "requested_url": "https://www.iguopin.com/job/list?keyword=%E6%96%B0%E5%AA%92%E4%BD%93%E8%BF%90%E8%90%A5",
+          "mode": "playwright",
+          "final_url": "https://www.iguopin.com/job/list?keyword=%E6%96%B0%E5%AA%92%E4%BD%93%E8%BF%90%E8%90%A5",
+          "title": "招聘信息-国聘",
+          "http_status": 200,
+          "body_chars": 464,
+          "link_count": 23,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部\n性质\n全部\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n对不起，没有找到符合您条件的职位！\n放宽您的查找条件也许有更多合适您的职位哦~\n登录/注册\n意见反馈\n在线客服\n在线笔试平台\n在线测评平台\n在线学习平台\n人力资源综合管理平台\n频道链接\n宣讲会\n国聘快招\n实习专区\n关于我们\n联系我们\n人力资源服务许可证\n营业执照\n产品服务\n使",
+          "access_limited": false,
+          "error": ""
+        },
+        {
+          "requested_url": "https://www.iguopin.com/job/list?keyword=%E8%BF%90%E8%90%A5",
+          "mode": "playwright",
+          "final_url": "https://www.iguopin.com/job/list?keyword=%E8%BF%90%E8%90%A5",
+          "title": "招聘信息-国聘",
+          "http_status": 200,
+          "body_chars": 464,
+          "link_count": 23,
+          "body_preview": "全国站[切换]\n首页国聘行动\n友好企业求职服务\n社会招聘校园招聘国聘高端招聘会高校专区\n我要招人\n登录/注册\n搜 索\n国聘官方\n知行订阅\n城市\n全部北京上海天津重庆广州深圳苏州南京杭州大连成都武汉西安全部地区 >\n薪资\n全部5K以下5K-10K10K-20K20K-40K40K-60K60K以上自定义\n经验\n全部\n性质\n全部\n更多\n学历要求\n专业要求\n单位性质\n单位规模\n融资阶段\n行业领域\n职位类别\n更新时间\n高端职位\n对不起，没有找到符合您条件的职位！\n放宽您的查找条件也许有更多合适您的职位哦~\n登录/注册\n意见反馈\n在线客服\n在线笔试平台\n在线测评平台\n在线学习平台\n人力资源综合管理平台\n频道链接\n宣讲会\n国聘快招\n实习专区\n关于我们\n联系我们\n人力资源服务许可证\n营业执照\n产品服务\n使",
           "access_limited": false,
           "error": ""
         }
@@ -1917,48 +1917,6 @@
       "role_field_samples": [],
       "link_samples": [
         {
-          "text": "医疗",
-          "url": "https://www.iguopin.com/job/list?keyword=%E5%8C%BB%E7%96%97",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "工程师",
-          "url": "https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "数据开发",
-          "url": "https://www.iguopin.com/job/list?keyword=%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "管培生",
-          "url": "https://www.iguopin.com/job/list?keyword=%E7%AE%A1%E5%9F%B9%E7%94%9F",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "金融",
-          "url": "https://www.iguopin.com/job/list?keyword=%E9%87%91%E8%9E%8D",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
-          "text": "IT/互联网",
-          "url": "https://www.iguopin.com/job/list?keyword=IT%2F%E4%BA%92%E8%81%94%E7%BD%91",
-          "same_site": true,
-          "allowed": true,
-          "direct_detail": false
-        },
-        {
           "text": "社会招聘",
           "url": "https://www.iguopin.com/job?channel=social",
           "same_site": true,
@@ -1970,6 +1928,27 @@
           "url": "https://www.iguopin.com/job?om=1168Qucp&om_cn=%E4%BB%85%E7%9C%8B%E9%AB%98%E7%AB%AF",
           "same_site": true,
           "allowed": true,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD&user_type=company",
+          "same_site": true,
+          "allowed": false,
           "direct_detail": false
         },
         {
@@ -2002,6 +1981,20 @@
         },
         {
           "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E5%25B8%2582%25E5%259C%25BA",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E5%25B8%2582%25E5%259C%25BA&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
           "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E6%2595%25B0%25E6%258D%25AE%25E5%25BC%2580%25E5%258F%2591",
           "same_site": true,
           "allowed": false,
@@ -2010,6 +2003,48 @@
         {
           "text": "我要招人",
           "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E6%2595%25B0%25E6%258D%25AE%25E5%25BC%2580%25E5%258F%2591&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E6%2596%25B0%25E5%25AA%2592%25E4%25BD%2593%25E8%25BF%2590%25E8%2590%25A5",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E6%2596%25B0%25E5%25AA%2592%25E4%25BD%2593%25E8%25BF%2590%25E8%2590%25A5&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E6%25A0%25A1%25E6%258B%259B",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E6%25A0%25A1%25E6%258B%259B&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E7%25AE%2597%25E6%25B3%2595",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E7%25AE%2597%25E6%25B3%2595&user_type=company",
           "same_site": true,
           "allowed": false,
           "direct_detail": false
@@ -2030,6 +2065,62 @@
         },
         {
           "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25A1%258C%25E6%2594%25BF",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25A1%258C%25E6%2594%25BF&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25AE%25BE%25E8%25AE%25A1",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25AE%25BE%25E8%25AE%25A1&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25B4%25A2%25E5%258A%25A1",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25B4%25A2%25E5%258A%25A1&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25BF%2590%25E8%2590%25A5",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E8%25BF%2590%25E8%2590%25A5&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
           "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E9%2587%2591%25E8%259E%258D",
           "same_site": true,
           "allowed": false,
@@ -2038,6 +2129,48 @@
         {
           "text": "我要招人",
           "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E9%2587%2591%25E8%259E%258D&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E9%2594%2580%25E5%2594%25AE",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3D%25E9%2594%2580%25E5%2594%25AE&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3DAI",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3DAI&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3DAIGC",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%2Flist%3Fkeyword%3DAIGC&user_type=company",
           "same_site": true,
           "allowed": false,
           "direct_detail": false
@@ -2071,6 +2204,27 @@
           "direct_detail": false
         },
         {
+          "text": "登录/注册",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%3Fom%3D1168Qucp%26om_cn%3D%25E4%25BB%2585%25E7%259C%258B%25E9%25AB%2598%25E7%25AB%25AF",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob%3Fom%3D1168Qucp%26om_cn%3D%25E4%25BB%2585%25E7%259C%258B%25E9%25AB%2598%25E7%25AB%25AF&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
+          "text": "我要招人",
+          "url": "https://www.iguopin.com/login?redirect=https%3A%2F%2Fwww.iguopin.com%2Fjob&user_type=company",
+          "same_site": true,
+          "allowed": false,
+          "direct_detail": false
+        },
+        {
           "text": "校园招聘",
           "url": "https://xiaoyuan.iguopin.com",
           "same_site": true,
@@ -2085,7 +2239,7 @@
           "direct_detail": false
         }
       ],
-      "last_error": "Browser-render fallback unavailable: URL is outside the anonymous public-page allow-list",
+      "last_error": "",
       "parser_modes": [
         "links"
       ],
@@ -2100,7 +2254,7 @@
       "pending_review": 1,
       "pages_attempted": 1,
       "pages_failed": 0,
-      "html_bytes": 916390,
+      "html_bytes": 916139,
       "links_seen": 6,
       "listing_url_candidates": 0,
       "listing_urls_visited": 0,
@@ -2194,7 +2348,7 @@
       "pending_review": 1,
       "pages_attempted": 7,
       "pages_failed": 0,
-      "html_bytes": 1309282,
+      "html_bytes": 1309379,
       "links_seen": 0,
       "listing_url_candidates": 0,
       "listing_urls_visited": 0,
@@ -2303,33 +2457,33 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 160,
-      "records_found": 64,
-      "active_candidates": 15,
-      "pending_review": 49,
+      "records_found": 50,
+      "active_candidates": 12,
+      "pending_review": 38,
       "pages_attempted": 160,
       "pages_failed": 0,
-      "html_bytes": 5072788,
-      "links_seen": 3762,
-      "listing_url_candidates": 28,
-      "listing_urls_visited": 35,
+      "html_bytes": 5340817,
+      "links_seen": 3312,
+      "listing_url_candidates": 31,
+      "listing_urls_visited": 38,
       "listing_pool_size": 1000,
-      "listing_cursor_next": 254,
+      "listing_cursor_next": 278,
       "tables_seen": 0,
-      "embedded_json_blocks": 768,
+      "embedded_json_blocks": 728,
       "role_like_links": 0,
-      "discovery_pages_queued": 283,
-      "listing_pages_queued": 28,
-      "direct_detail_pages_visited": 125,
+      "discovery_pages_queued": 284,
+      "listing_pages_queued": 31,
+      "direct_detail_pages_visited": 122,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 125,
+      "direct_detail_requests_attempted": 122,
       "detail_redirects": 0,
       "detail_redirect_samples": [],
       "direct_detail_samples": [
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决创作难题；"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -2337,14 +2491,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-111-850.html",
-          "page_title": "珠海市龙图光罩科技有限公司招聘品质工程师_广东校园招聘",
-          "text_preview": "珠海市龙图光罩科技有限公司招聘品质工程师_广东校园招聘 .ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li, .ieundefined .nav_hotcity li{float:none;} .ie11 .back, .ie11 .back2{float:left;} .ieundefined .back, .ieundefined .back2{float:none;} .ie11 #logo{float:left; width:31%;} .ieundefined #logo{float:none; width:120px;} .ie11 .header_r{float:right;} .ieundefined .header_r{float:none;} .ie11 .header_r a{float:right;} .ieundefined .header_r{float:none;} 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广州大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，"
+          "url_path": "/job-008-113-054.html",
+          "page_title": "广东海大集团股份有限公司招聘服务营销管培生_辽宁河南贵州内蒙古其它校园招聘",
+          "text_preview": "广东海大集团股份有限公司招聘服务营销管培生_辽宁河南贵州内蒙古其它校园招聘 .ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li, .ieundefined .nav_hotcity li{float:none;} .ie11 .back, .ie11 .back2{float:left;} .ieundefined .back, .ieundefined .back2{float:none;} .ie11 #logo{float:left; width:31%;} .ieundefined #logo{float:none; width:120px;} .ie11 .header_r{float:right;} .ieundefined .header_r{float:none;} .ie11 .header_r a{float:right;} .ieundefined .header_r{float:none;} 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 甘肃农业大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。"
         },
         {
-          "url_path": "/job-008-111-849.html",
-          "page_title": "珠海市龙图光罩科技有限公司招聘研发工程师_广东校园招聘",
-          "text_preview": "珠海市龙图光罩科技有限公司招聘研发工程师_广东校园招聘 .ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li, .ieundefined .nav_hotcity li{float:none;} .ie11 .back, .ie11 .back2{float:left;} .ieundefined .back, .ieundefined .back2{float:none;} .ie11 #logo{float:left; width:31%;} .ieundefined #logo{float:none; width:120px;} .ie11 .header_r{float:right;} .ieundefined .header_r{float:none;} .ie11 .header_r a{float:right;} .ieundefined .header_r{float:none;} 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广州大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，"
+          "url_path": "/job-008-113-033.html",
+          "page_title": "北京慧联电子有限公司招聘人力专员_成都校园招聘",
+          "text_preview": "北京慧联电子有限公司招聘人力专员_成都校园招聘 .ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li, .ieundefined .nav_hotcity li{float:none;} .ie11 .back, .ie11 .back2{float:left;} .ieundefined .back, .ieundefined .back2{float:none;} .ie11 #logo{float:left; width:31%;} .ieundefined #logo{float:none; width:120px;} .ie11 .header_r{float:right;} .ieundefined .header_r{float:none;} .ie11 .header_r a{float:right;} .ieundefined .header_r{float:none;} 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 成都 全职 > 职位详细 说明： 此信息由 成都职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，"
         }
       ],
       "browser_render_attempts": 0,
@@ -2353,19 +2507,19 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 62,
-      "announcement_records": 2,
+      "role_records": 49,
+      "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "品质工程师",
-        "研发工程师",
-        "机械设计",
-        "电气设计",
-        "vivo营销管培生",
-        "小天才营销管培生",
-        "采购助理专员"
+        "服务营销管培生",
+        "采购专员",
+        "数据安全工程师",
+        "小学数学教师",
+        "物流管培生",
+        "渗透测试工程师",
+        "初高数学教师"
       ],
       "role_field_samples": [
         {
@@ -2377,36 +2531,36 @@
           "source_url": "https://m.yingjiesheng.com/jobdetail/170935981"
         },
         {
-          "title": "品质工程师",
-          "company": "珠海市龙图光罩科技有限公司",
+          "title": "服务营销管培生",
+          "company": "广东海大集团股份有限公司",
           "city": "其它",
-          "salary": "5000～6000元/月",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-111-850.html"
-        },
-        {
-          "title": "研发工程师",
-          "company": "珠海市龙图光罩科技有限公司",
-          "city": "其它",
-          "salary": "8000～10000元/月",
+          "salary": "7K-10K/月",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-111-849.html"
+          "source_url": "https://m.yingjiesheng.com/job-008-113-054.html"
         },
         {
-          "title": "机械设计",
-          "company": "凯迈（洛阳）机电有限公司",
-          "city": "其它",
-          "salary": "8K-11K/月",
-          "degree": "硕士及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-111-886.html"
+          "title": "采购专员",
+          "company": "北京慧联电子有限公司",
+          "city": "北京",
+          "salary": "6K-6K/月",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-113-032.html"
         },
         {
-          "title": "电气设计",
-          "company": "凯迈（洛阳）机电有限公司",
+          "title": "数据安全工程师",
+          "company": "甘肃海丰信息科技有限公司",
           "city": "其它",
-          "salary": "8K-11K/月",
-          "degree": "硕士及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-111-885.html"
+          "salary": "4K-8K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-113-049.html"
+        },
+        {
+          "title": "小学数学教师",
+          "company": "广州书育成才自研文化传播有限公司",
+          "city": "其它",
+          "salary": "8K-12K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-113-059.html"
         }
       ],
       "link_samples": [],
@@ -2512,21 +2666,21 @@
       "id": "nowcoder",
       "company": "牛客",
       "pages_visited": 70,
-      "records_found": 55,
-      "active_candidates": 19,
-      "pending_review": 36,
+      "records_found": 54,
+      "active_candidates": 22,
+      "pending_review": 32,
       "pages_attempted": 70,
       "pages_failed": 0,
-      "html_bytes": 5866924,
-      "links_seen": 3808,
+      "html_bytes": 5765543,
+      "links_seen": 3710,
       "listing_url_candidates": 0,
       "listing_urls_visited": 10,
       "listing_pool_size": 10,
-      "listing_cursor_next": 118,
+      "listing_cursor_next": 128,
       "tables_seen": 0,
-      "embedded_json_blocks": 280,
+      "embedded_json_blocks": 278,
       "role_like_links": 0,
-      "discovery_pages_queued": 89,
+      "discovery_pages_queued": 87,
       "listing_pages_queued": 0,
       "direct_detail_pages_visited": 57,
       "direct_detail_links_queued": 0,
@@ -2538,22 +2692,22 @@
         {
           "url_path": "/jobs/detail/462572",
           "page_title": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网",
-          "text_preview": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-PCB工程师 (西安)(J12276) 薪资面议 PCB工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 18分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★我们是谁： 诺瓦星云・硬件部丨PCB 设计团队——诺瓦深耕LED显示控制&视频控制硬件十余年，PCB 设计团队是硬件研发的核心支撑环节，承担公司全产品线 PCB Layout 设计，覆盖高速数字、电源、射频等多种板型，涉及高层数高密板及 HDI 设计；以 Cadence Allegro 为主力设计平台，建有完整的设计规范与评审流程。 ★多元化的PCB业务方向：不限于高速数字板、电源板"
+          "text_preview": "27届校招-PCB工程师 (西安)(J12276)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-PCB工程师 (西安)(J12276) 薪资面议 PCB工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 4分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★我们是谁： 诺瓦星云・硬件部丨PCB 设计团队——诺瓦深耕LED显示控制&视频控制硬件十余年，PCB 设计团队是硬件研发的核心支撑环节，承担公司全产品线 PCB Layout 设计，覆盖高速数字、电源、射频等多种板型，涉及高层数高密板及 HDI 设计；以 Cadence Allegro 为主力设计平台，建有完整的设计规范与评审流程。 ★多元化的PCB业务方向：不限于高速数字板、电源板、"
         },
         {
           "url_path": "/jobs/detail/462503",
           "page_title": "27届校招-算法工程师(西安)(J12268)_诺瓦星云校招_牛客网",
-          "text_preview": "27届校招-算法工程师(西安)(J12268)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-算法工程师(西安)(J12268) 薪资面议 算法工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 18分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★核心定位 诺瓦星云 · 中央研究院 & 算法工程师——算法是诺瓦及全球LED显示控制与视频处理产业链的核心护城河，更是行业竞争的关键壁垒。 诺瓦司算法基因深厚，自2008年创立之初便组建算法研究团队。中央研究院汇聚算法工程师，由行业顶尖专家领衔，硕博人才云集，打通了从算法预研到工程落地的完整闭环。 ★多元化的研究方向：算法研究贯穿视频编解码、图像/视频处理、画质增强、显示驱动控制、LED逐点光"
+          "text_preview": "27届校招-算法工程师(西安)(J12268)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-算法工程师(西安)(J12268) 薪资面议 算法工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 4分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★核心定位 诺瓦星云 · 中央研究院 & 算法工程师——算法是诺瓦及全球LED显示控制与视频处理产业链的核心护城河，更是行业竞争的关键壁垒。 诺瓦司算法基因深厚，自2008年创立之初便组建算法研究团队。中央研究院汇聚算法工程师，由行业顶尖专家领衔，硕博人才云集，打通了从算法预研到工程落地的完整闭环。 ★多元化的研究方向：算法研究贯穿视频编解码、图像/视频处理、画质增强、显示驱动控制、LED逐点光学"
         },
         {
           "url_path": "/jobs/detail/462504",
           "page_title": "27届校招-大模型算法工程师(西安)(J12269)_诺瓦星云校招_牛客网",
-          "text_preview": "27届校招-大模型算法工程师(西安)(J12269)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-大模型算法工程师(西安)(J12269) 薪资面议 算法工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 18分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★核心定位： 诺瓦星云 · 中央研究院 & 算法工程师——算法是诺瓦乃至全球LED显示控制与视频处理产业链的核心护城河，更是行业竞争的关键壁垒。 诺瓦算法基因深厚，自2008年创立之初便组建算法研究团队。中央研究院汇聚算法工程师，由行业顶尖专家领衔，硕博人才云集，打通了从算法预研到工程落地的完整闭环。 ★前沿技术方向：该岗位聚焦产业链/工业场景进行探索和落地大模型路线，包含：多模态模"
+          "text_preview": "27届校招-大模型算法工程师(西安)(J12269)_诺瓦星云校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-大模型算法工程师(西安)(J12269) 薪资面议 算法工程师 西安 本科 2027届 收藏 立即申请 诺瓦星云 4分钟前在线 西安诺瓦星云科技股份有限公司·HR 反馈率：30% | 反馈时长：4天 优 我公司正在参加 2027届校招·数字化专场 活动，更多适合你的职位内容，点击前往 活动大厅 查看-> 毕业要求：2027届 投递时间：2026年8月21日-2029年8月21日 岗位职责 ★核心定位： 诺瓦星云 · 中央研究院 & 算法工程师——算法是诺瓦乃至全球LED显示控制与视频处理产业链的核心护城河，更是行业竞争的关键壁垒。 诺瓦算法基因深厚，自2008年创立之初便组建算法研究团队。中央研究院汇聚算法工程师，由行业顶尖专家领衔，硕博人才云集，打通了从算法预研到工程落地的完整闭环。 ★前沿技术方向：该岗位聚焦产业链/工业场景进行探索和落地大模型路线，包含：多模态模型"
         },
         {
           "url_path": "/jobs/detail/467982",
           "page_title": "27届校招-AI产品经理（武汉）_数字政通校招_牛客网",
-          "text_preview": "27届校招-AI产品经理（武汉）_数字政通校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-AI产品经理（武汉） 16-20K * 13薪 产品经理 武汉 硕士 2027届 收藏 立即申请 陈女士 昨日在线 对职位感兴趣，投递后开启聊天 北京数字政通科技股份有限公司·HR 反馈率：100% | 反馈时长：2天 岗位关键词 毕业要求：2027届 投递时间：2026年9月17日-2027年1月31日 岗位职责 1、参与产品规划与路线图制定，深入城市治理与政务业务场景，结合用户价值、业务目标、实施成本和交付风险，完成需求分类、优先级判断和版本范围设计； 2、负责用户调研与需求分析，区分用户表达的诉求、实际使用障碍与根本问题，澄清用户角色、业务流程、产品价值、业务规则、功能范围和验收标准； 3、将复杂业务问题转化为可落地的产品方案，输出业务流程、功能结构、交互原型和 PRD，明确数据规则、权限边界、异常处理与验收方式；对适合 AI / Agent 参与的任务，进一步设计任务链、人工确认点"
+          "text_preview": "27届校招-AI产品经理（武汉）_数字政通校招_牛客网 logo 首页 题库 公司真题 专项练习 面试题库 在线编程 面试 面试经验 AI 模拟面试 简历 求职 学习 基础学习课 实战项目课 求职辅导课 专栏&文章 竞赛 搜索 我要招人 发布职位 发布职位、邀约牛人 更多企业解决方案 AI面试、笔试、校招、雇品 HR免费试用AI面试 最新面试提效必备 登录 / 注册 校招 职位详情页 27届校招-AI产品经理（武汉） 16-20K * 13薪 产品经理 武汉 硕士 2027届 收藏 立即申请 陈女士 昨日在线 对职位感兴趣，投递后开启聊天 北京数字政通科技股份有限公司·HR 反馈率：94% | 反馈时长：2天 岗位关键词 毕业要求：2027届 投递时间：2026年9月17日-2027年1月31日 岗位职责 1、参与产品规划与路线图制定，深入城市治理与政务业务场景，结合用户价值、业务目标、实施成本和交付风险，完成需求分类、优先级判断和版本范围设计； 2、负责用户调研与需求分析，区分用户表达的诉求、实际使用障碍与根本问题，澄清用户角色、业务流程、产品价值、业务规则、功能范围和验收标准； 3、将复杂业务问题转化为可落地的产品方案，输出业务流程、功能结构、交互原型和 PRD，明确数据规则、权限边界、异常处理与验收方式；对适合 AI / Agent 参与的任务，进一步设计任务链、人工确认点和"
         }
       ],
       "browser_render_attempts": 0,
@@ -2562,7 +2716,7 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 48,
+      "role_records": 47,
       "announcement_records": 7,
       "portal_entries": 0,
       "sample_title": "应届生求职网站_最新更新校园招聘/实习机会/内推资讯_牛客网",
@@ -2635,7 +2789,7 @@
       "pending_review": 1,
       "pages_attempted": 8,
       "pages_failed": 0,
-      "html_bytes": 457910,
+      "html_bytes": 383910,
       "links_seen": 28,
       "listing_url_candidates": 0,
       "listing_urls_visited": 0,
@@ -2703,7 +2857,7 @@
       "pending_review": 147,
       "pages_attempted": 50,
       "pages_failed": 0,
-      "html_bytes": 5182865,
+      "html_bytes": 5173117,
       "links_seen": 4935,
       "listing_url_candidates": 0,
       "listing_urls_visited": 0,
@@ -3001,11 +3155,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 4185,
-  "published_priority_candidates": 67,
-  "published_pending_review": 4118,
-  "records_added_this_run": 94,
-  "records_updated_this_run": 276,
+  "published_total_jobs": 4259,
+  "published_priority_candidates": 71,
+  "published_pending_review": 4188,
+  "records_added_this_run": 100,
+  "records_updated_this_run": 252,
   "quality_gate_version": "2.1",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3018,6 +3172,6 @@
       "牛客"
     ]
   },
-  "quality_checked_at": "2026-10-11T22:33:22+00:00",
+  "quality_checked_at": "2026-10-12T03:57:34+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }

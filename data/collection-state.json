@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 163,
+  "qiuzhaowang_next_page": 173,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    153,
-    154,
-    155,
-    156,
-    157,
-    158,
-    159,
-    160,
-    161,
-    162
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -28,10 +28,7 @@
       "https://www.iguopin.com/job?channel=social",
       "https://www.iguopin.com/job/list?keyword=%E9%87%91%E8%9E%8D",
       "https://www.iguopin.com/job/list?keyword=IT%2F%E4%BA%92%E8%81%94%E7%BD%91",
-      "https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88",
-      "https://www.iguopin.com/job/list?keyword=%E7%AE%A1%E5%9F%B9%E7%94%9F",
-      "https://www.iguopin.com/job/list?keyword=%E5%8C%BB%E7%96%97",
-      "https://www.iguopin.com/job/list?keyword=%E6%95%B0%E6%8D%AE%E5%BC%80%E5%8F%91"
+      "https://www.iguopin.com/job/list?keyword=%E5%8C%BB%E7%96%97"
     ],
     "51job": [
       "https://campus.51job.com/wtmec2027",
@@ -201,7 +198,8 @@
       "https://campus.51job.com/220110New/cm6.html",
       "https://campus.51job.com/220110New/job.html?coid=3310310",
       "https://campus.51job.com/220110New/job.html?coid=3310374",
-      "https://campus.51job.com/220110New/coinfo.html"
+      "https://campus.51job.com/220110New/coinfo.html",
+      "https://campus.51job.com/SONY2027"
     ],
     "boss": [
       "https://www.zhipin.com/school/shixi",
@@ -227,9 +225,6 @@
       "https://nowpick.nowcoder.com/jobs/fulltime/center"
     ],
     "yingjiesheng": [
-      "https://zhiwei.yingjiesheng.com/baoxian",
-      "https://zhiwei.yingjiesheng.com/ceshi",
-      "https://zhiwei.yingjiesheng.com/huizhan",
       "https://zhiwei.yingjiesheng.com/shejiyuan",
       "https://zhiwei.yingjiesheng.com/dianzishangwu",
       "https://zhiwei.yingjiesheng.com/renshi",
@@ -1226,14 +1221,17 @@
       "https://q.yingjiesheng.com/jobs/search/%E5%9B%BD%E4%BC%81?keyword=%E5%9B%BD%E4%BC%81",
       "https://q.yingjiesheng.com/jobs/search/%E9%87%91%E8%9E%8D?industry=03%2C42%2C43%2C62&saltype=06%2C07%2C08%2C09",
       "https://q.yingjiesheng.com/pc/explain?type=4",
-      "https://q.yingjiesheng.com/download"
+      "https://q.yingjiesheng.com/download",
+      "https://q.yingjiesheng.com/jobs/search/%E5%BC%80%E5%8F%91?keyword=%E5%BC%80%E5%8F%91&saltype=07%2C08%2C09",
+      "https://q.yingjiesheng.com/jobs/search/%E4%BC%9A%E8%AE%A1?saltype=06%2C07%2C08%2C09",
+      "https://q.yingjiesheng.com/jobs/search/%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D?keyword=%E4%BA%8B%E4%B8%9A%E5%8D%95%E4%BD%8D"
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 27,
-    "51job": 126,
-    "boss": 115,
-    "nowcoder": 118,
-    "yingjiesheng": 254
+    "iguopin": 32,
+    "51job": 144,
+    "boss": 124,
+    "nowcoder": 128,
+    "yingjiesheng": 278
   }
 }
