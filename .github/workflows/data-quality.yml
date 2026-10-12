@@ -1,16 +1,14 @@
 name: V1.2 Data Quality
 
 on:
+  # Keep this maintenance workflow's push triggers disjoint from the collector workflow.
+  # The collector already runs the same parser, quality, dedupe, expiry and source checks.
   push:
     branches: [main]
     paths:
       - "scripts/check_sources.py"
-      - "scripts/quality_rules.py"
-      - "scripts/finalize_job_quality.py"
       - "scripts/dedupe_jobs.py"
       - "scripts/expire_jobs.py"
-      - "scripts/test_job_quality.py"
-      - "data/company_sources.json"
       - ".github/workflows/data-quality.yml"
   workflow_dispatch:
   schedule:
