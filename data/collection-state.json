@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 173,
+  "qiuzhaowang_next_page": 183,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    163,
-    164,
-    165,
-    166,
-    167,
-    168,
-    169,
-    170,
-    171,
-    172
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -199,7 +199,32 @@
       "https://campus.51job.com/220110New/job.html?coid=3310310",
       "https://campus.51job.com/220110New/job.html?coid=3310374",
       "https://campus.51job.com/220110New/coinfo.html",
-      "https://campus.51job.com/SONY2027"
+      "https://campus.51job.com/SONY2027",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=172956054",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173023965",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173216285",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=170133580",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=170134329",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=170783119",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173048689",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173048794",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173048844",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173048908",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173048947",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173048986",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173049052",
+      "https://campus.51job.com/220110New/jobdetail.html?jobid=173049273",
+      "https://campus.51job.com/hmntechnologies/about.html",
+      "https://campus.51job.com/hmntechnologies/achievement.html",
+      "https://campus.51job.com/hmntechnologies/welfare.html",
+      "https://campus.51job.com/hmntechnologies/growth.html",
+      "https://campus.51job.com/hmntechnologies/life.html",
+      "https://campus.51job.com/hmntechnologies/job.html",
+      "https://campus.51job.com/hmntechnologies/process.html",
+      "https://campus.51job.com/rongming/index.html",
+      "https://campus.51job.com/rongming/job.html",
+      "https://campus.51job.com/rongming/salary.html",
+      "https://campus.51job.com/rongming/qa.html"
     ],
     "boss": [
       "https://www.zhipin.com/school/shixi",
@@ -1228,10 +1253,10 @@
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 32,
-    "51job": 144,
-    "boss": 124,
-    "nowcoder": 128,
-    "yingjiesheng": 278
+    "iguopin": 37,
+    "51job": 162,
+    "boss": 133,
+    "nowcoder": 138,
+    "yingjiesheng": 302
   }
 }
