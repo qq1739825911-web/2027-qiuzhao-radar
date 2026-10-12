@@ -26,6 +26,14 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
         document.querySelector("#city") && document.querySelector("#city").options.length > 2;
     }, { timeout: 90000 });
 
+    const sourceUrlRules = await page.evaluate(() => ({
+      guopinDetail: hasJobDetailUrl("https://www.iguopin.com/job/detail?id=208162873677972376"),
+      guopinList: hasJobDetailUrl("https://www.iguopin.com/job/list?keyword=AI")
+    }));
+    assert.equal(sourceUrlRules.guopinDetail, true, "Guopin job/detail?id=... must be recognized as a single-role detail URL");
+    assert.equal(sourceUrlRules.guopinList, false, "Guopin category/list URLs must not count as single-role detail URLs");
+    console.log("GUOPIN_URL_RULES " + JSON.stringify(sourceUrlRules));
+
     // Search AIGC in Shanghai; if priority matches are absent, the UI should
     // clearly switch to the separate "pending review" bucket, never mix rows.
     await page.locator("#q").fill("AIGC");
