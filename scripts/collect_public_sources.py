@@ -761,6 +761,8 @@ def is_public_role_lead_title(title, source_id=""):
     role_fragments=re.findall(r"(?:工程师|研究员|分析师|设计师|专员|助理|经理|顾问|管培生|开发岗|研发岗|算法岗|产品经理|产品专员|运营岗|销售岗|财务岗|测试岗|运维岗|客户成功岗|技术支持)",t)
     if len(role_fragments)>=3 and len(t)>17:
         return False
+    if len(re.findall(r"岗",t))>=3 and len(t)>14:
+        return False
     if t.endswith("咨询") and not re.search(r"(?:顾问|经理|专员|分析师|研究员|工程师|开发|销售|咨询师)",t):
         return False
     return True
