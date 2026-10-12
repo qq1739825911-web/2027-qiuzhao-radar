@@ -1,4 +1,4 @@
-"""V5.14 public recruitment collector.
+"""V5.15 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -1082,6 +1082,21 @@ def merge_detail_fields(row, fields):
         if value not in (None,"",[],{}): row[key]=value
     return row
 
+def merge_generic_detail_fallback(primary, fallback):
+    """Fill missing fields; let a precise city replace a vague 全国/其它 placeholder."""
+    result=dict(primary or {})
+    vague_locations={"全国","其它","其他"}
+    for key,value in (fallback or {}).items():
+        if value in (None,"",[],{}):
+            continue
+        current=result.get(key)
+        if not current:
+            result[key]=value
+        elif key=="city" and isinstance(current,str) and isinstance(value,str):
+            if current.strip() in vague_locations and value.strip() not in vague_locations:
+                result[key]=value
+    return result
+
 def record(company,title,url,source,cohort,confidence,program="",cohort_evidence=""):
     title=clean_job_title(title)
     direct=is_direct_detail_url(url)
@@ -1094,7 +1109,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.14","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.15","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1349,8 +1364,8 @@ def collect_source(src):
         if src.get("id")=="nowcoder":
             page_title=clean_job_title(detail_heading or p.page_title,"nowcoder")
         if is_direct_detail_url(final):
-            for k,v in extract_detail_fields_generic(page_text,detail_heading or raw_page_title).items():
-                detail_fields.setdefault(k,v)
+            generic_fallback=extract_detail_fields_generic(page_text,detail_heading or raw_page_title)
+            detail_fields=merge_generic_detail_fallback(detail_fields,generic_fallback)
         if src.get("id")=="qiuzhaowang" and urlparse(final).path=="/latest":
             seen_groups=set()
             role_hints=("工程师","研发","算法","产品","经理","销售","财务","设计","运营","管理","技术","教师","审计","法律","采购","管培","分析","工艺","自动化","质量","研究","岗位","方向","PM","AI","硬件","软件","芯片","医学","金融","会计","营销","供应链","商务","专员","服务","项目","研究员","分析师","咨询","物流","顾问","工程技术")
@@ -1730,7 +1745,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.14","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.15","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

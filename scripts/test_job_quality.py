@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, extract_detail_fields_generic, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_detail_fields_generic, merge_generic_detail_fallback, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
@@ -470,6 +470,16 @@ description_only_city = extract_detail_fields_generic(
     "AI算法工程师 20K 本科 全职 岗位职责：负责上海、北京客户项目；岗位要求：熟悉模型开发。")
 check("cities mentioned only in responsibilities are not treated as work locations",
       "city" not in description_only_city)
+fallback_city=extract_detail_fields_generic(
+    "AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管 职位亮点 年终奖金",
+    "AIGC影视创意制作（校招）")
+merged_vague_city=merge_generic_detail_fallback({"city":"全国","title":"AIGC影视创意制作（校招）"},fallback_city)
+check("specific city from role metadata replaces generic nationwide placeholder",
+      fallback_city.get("city")=="上海" and merged_vague_city.get("city")=="上海")
+check("specific primary city is never overwritten by generic fallback",
+      merge_generic_detail_fallback({"city":"上海"},{"city":"北京"})["city"]=="上海")
+check("generic nationwide fallback does not overwrite an existing Other location",
+      merge_generic_detail_fallback({"city":"其它"},{"city":"全国"})["city"]=="其它")
 
 
 base = {
