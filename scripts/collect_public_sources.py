@@ -1,4 +1,4 @@
-"""V5.10 public recruitment collector.
+"""V5.11 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -572,7 +572,7 @@ def extract_qiuzhaowang_role_names(text, link_hint=""):
             parts=re.split(r"\s+(?=(?:"+"|".join(map(re.escape,role_starts))+r"))",raw)
         for part in parts:
             title=clean_job_title(part,"qiuzhaowang")
-            if 2<len(title)<=45 and is_specific_role_title(title,"qiuzhaowang") and title not in result:
+            if 2<len(title)<=45 and is_specific_role_title(title,"qiuzhaowang") and is_public_role_lead_title(title,"qiuzhaowang") and title not in result:
                 result.append(title)
     return result[:40]
 
@@ -737,6 +737,12 @@ def is_public_role_lead_title(title, source_id=""):
         return False
     if len(t)>32:
         return False
+    if "类" in t or t.endswith(("岗位","职位","计划","类别","行业")):
+        return False
+    if re.search(r"岗[\u4e00-\u9fff]{1,10}(?:岗|管培生|工程师|专员|经理|顾问|设计师)",t):
+        return False
+    if re.search(r"\s",t) and not re.search(r"(?:工程师|开发|研发|算法|管培生|运营|设计|销售|营销|市场|顾问|分析师|研究员|专员|助理|经理|测试|运维|采购|财务|法务|审计|行政|人事|客户经理|客户成功|品牌|内容|视频|影视|编辑|翻译|客服|教师|医生|护士|会计|风险|风控|投资|证券|保险|精算|质量|制造|工艺|技术支持|项目管理|投标|产品|策划)$",t):
+        return False
     if re.search(r"(?:我是.{0,24}|欢迎咨询|咨询我|在线咨询|联系我们|联系我|立即沟通|查看更多岗位|查看更多职位|招聘咨询|加微信|扫码关注|投递简历)",t,re.I):
         return False
     # Recruitment plans, talent programmes, and industry taxonomy are not role-level vacancies.
@@ -761,7 +767,7 @@ def is_public_role_lead_title(title, source_id=""):
     role_fragments=re.findall(r"(?:工程师|研究员|分析师|设计师|专员|助理|经理|顾问|管培生|开发岗|研发岗|算法岗|产品经理|产品专员|运营岗|销售岗|财务岗|测试岗|运维岗|客户成功岗|技术支持)",t)
     if len(role_fragments)>=3 and len(t)>17:
         return False
-    if len(re.findall(r"岗",t))>=3 and len(t)>14:
+    if len(re.findall(r"岗",t))>=3 and len(t)>=14:
         return False
     if t.endswith("咨询") and not re.search(r"(?:顾问|经理|专员|分析师|研究员|工程师|开发|销售|咨询师)",t):
         return False
@@ -1021,7 +1027,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.10","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.11","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1657,7 +1663,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.10","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.11","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

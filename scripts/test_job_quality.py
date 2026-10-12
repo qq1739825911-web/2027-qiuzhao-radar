@@ -92,6 +92,19 @@ check("source diagnostics capture public link allowlist decisions",
 check("QZW detail text yields concrete roles",
       extract_qiuzhaowang_role_names("招聘岗位 销售管培生 · 操作管培生 · 客服管培生专业不限 工作城市 全国 面向届次 2027届")
       == ["销售管培生","操作管培生","客服管培生专业不限"])
+check("QZW mixed-role card titles are rejected as a single vacancy",
+      all(not is_public_role_lead_title(title,"qiuzhaowang") for title in [
+        "AI战略顾问AI应用工程师 消费者营销顾问",
+        "投标岗客户管理岗投资岗采购岗",
+        "供应链运营岗食安岗",
+        "财务岗人力资源岗政岗经营支持岗营运管理岗客户成功岗",
+        "市场营销类物理管培类物流运营类海外管培生",
+        "品牌营销 社交媒体",
+        "研发岗位 开发岗位"
+      ]))
+check("QZW role extractor drops concatenated taxonomy titles",
+      extract_qiuzhaowang_role_names("招聘岗位 投标岗客户管理岗投资岗采购岗 工作城市 全国 面向届次 2027届")==[]
+      and extract_qiuzhaowang_role_names("招聘岗位 市场营销类物理管培类物流运营类海外管培生 工作城市 全国 面向届次 2027届")==[])
 check("QZW listing hint yields concrete roles",
       extract_qiuzhaowang_role_names("", "销售管培生 · 操作管培生")
       == ["销售管培生","操作管培生"])
