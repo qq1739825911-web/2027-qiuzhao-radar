@@ -1,4 +1,4 @@
-"""V5.8 public recruitment collector.
+"""V5.9 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -724,23 +724,42 @@ def extract_detail_fields_generic(text, raw_title=""):
     return fields
 
 def is_public_role_lead_title(title, source_id=""):
-    """Reject contact text, company names, industry labels and overly broad headings from public role lists."""
+    """Reject contact copy, industry/category headings, employer names and descriptions masquerading as roles."""
     t=clean_job_title(title,source_id).strip(" -—_|｜")
-    if not is_specific_role_title(t,source_id):
+    if not t or not is_specific_role_title(t,source_id):
+        return False
+    # Description bullets and metadata labels must never become vacancy titles.
+    if re.match(r"^\s*(?:\d{1,2}|[一二三四五六七八九十])[、.．)）]",t):
+        return False
+    if re.match(r"^\s*(?:工作内容|岗位职责|任职要求|任职资格|岗位要求|职位描述|工作职责|岗位介绍|职位要求|工作地点|薪资待遇|职位亮点|工作说明|项目介绍|岗位说明|职位名称|岗位名称)\s*[:：]",t):
+        return False
+    if re.search(r"[，,。；;！？!?\n\r]",t):
+        return False
+    if len(t)>32:
         return False
     if re.search(r"(?:我是.{0,24}|欢迎咨询|咨询我|在线咨询|联系我们|联系我|立即沟通|查看更多岗位|查看更多职位|招聘咨询|加微信|扫码关注|投递简历)",t,re.I):
         return False
-    if re.search(r"(?:有限公司|股份有限公司|集团|研究院|研究所|设计院|大学|学院|医院|银行|证券|公司|中心|工作室|产业园|工业园)$",t):
-        return False
-    if re.search(r"(?:制造业|服务业|行业|产业)$",t):
+    # Recruitment plans, talent programmes, and industry taxonomy are not role-level vacancies.
+    if re.search(r"(?:专项引才|引才计划|招聘计划|岗位计划|产业链|产业园|制作业|制造业|服务业|批发业|零售业|行业分类|职位类别|岗位类别|专业目录|人才计划|人才项目)",t):
         return False
     generic={"教师","咨询","设计","销售","运营","研发","算法","产品","管理","行政","财务","会计","人事","技术","数据",
              "工程师","设计师","分析师","研究员","专员","助理","经理","顾问","文案","编辑","翻译","品牌","客服","市场",
-             "银行","金融","制造","实习生","应届生","企业管理咨询","专用设备制造业"}
+             "银行","金融","制造","实习生","应届生","企业管理咨询","专用设备制造业","IC设计","应用测试","物理管培类",
+             "研发岗位","开发岗位","市场营销类","物流运营类","财务岗人力资源岗政岗","客户成功岗营运管理岗"}
     if t in generic:
         return False
     bare=re.sub(r"^(?:AI|人工智能|互联网|信息技术|计算机|软件|硬件|自动化|机器人|大数据|数字化|智能化|智能|网络)\s*","",t,flags=re.I)
     if bare in generic:
+        return False
+    # Employer/site names sometimes appear in the same text column as role names. Accept them
+    # only when a specific role descriptor follows the organization suffix.
+    entity=re.search(r"(?:股份有限公司|有限公司|集团|研究院|研究所|设计院|大学|学院|医院|银行|证券公司|公司|中心|工作室|旅游区)",t)
+    role_after=re.search(r"(?:工程师|设计师|开发岗|研发岗|算法岗|产品经理|产品专员|运营岗|销售岗|财务岗|测试岗|运维岗|管培生|顾问|分析师|研究员|专员|助理|经理|教师|护士|医生|策划师|技术支持|编辑|翻译)",t[entity.end():]) if entity else None
+    if entity and not role_after:
+        return False
+    # A row concatenating several roles or sentence fragments isn't a single vacancy title.
+    role_fragments=re.findall(r"(?:工程师|研究员|分析师|设计师|专员|助理|经理|顾问|管培生|开发岗|研发岗|算法岗|产品经理|产品专员|运营岗|销售岗|财务岗|测试岗|运维岗|客户成功岗|技术支持)",t)
+    if len(role_fragments)>=3 and len(t)>17:
         return False
     if t.endswith("咨询") and not re.search(r"(?:顾问|经理|专员|分析师|研究员|工程师|开发|销售|咨询师)",t):
         return False
@@ -982,7 +1001,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.8","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.9","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1615,7 +1634,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.8","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.9","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

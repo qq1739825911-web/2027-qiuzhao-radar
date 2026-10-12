@@ -45,7 +45,7 @@ jobs:
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
         run: python scripts/test_frontend.py
-      - name: Collect V5.8 de-noised, deduplicated public leads and detail pages
+      - name: Collect V5.9 noise-filtered public leads and detail pages
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
         run: python scripts/publish_collected_jobs.py

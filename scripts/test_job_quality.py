@@ -178,19 +178,27 @@ check("Guopin visible role cards become pending leads, not priority jobs",
         (lambda r: len(r)==1 and r[0].get("title")=="互联网运营" and r[0].get("company")=="中国移动通信有限公司在线营销服务中心"
           and r[0].get("granularity")=="lead" and r[0].get("status")=="pending_review"
           and should_publish_record(r[0]) and not assess(dict(r[0])))(extract_visible_public_role_leads("iguopin",p,"https://www.iguopin.com/job/list?keyword=AI","国聘公开招聘",p.page_title))))(Parser()))
-check("public-list lead title filter rejects company names, industry headers and contact text",
+check("public-list lead title filter rejects job-description labels, numbered bullets and industry taxonomy",
       all(not is_public_role_lead_title(title,source_id) for title,source_id in [
-        ("我是亚亚，欢迎咨询","51job"),
-        ("专用设备制造业","iguopin"),
-        ("上海电力设计院有限公司","iguopin"),
-        ("企业管理咨询","iguopin"),
-        ("AI工程师","51job"),
-        ("教师","iguopin")
+        ("工作内容：","51job"),
+        ("1、根据需求，制定模块的spec，完成前端设计和相关调试工作。","51job"),
+        ("3、负责电路设计spec及设计文档撰写，电路分析与仿真验证，电路模型支持，测试与debug分析；","51job"),
+        ("广播、电视、电影和录音制作业","iguopin"),
+        ("智能汽车制造产业链专项引才计划","iguopin"),
+        ("海南蜈支洲旅游开发股份有限公司三亚蜈支洲岛旅游区","iguopin"),
+        ("财务岗人力资源岗政岗经营支持岗营运管理岗客户成功岗","qiuzhaowang"),
+        ("IC设计","51job"),
+        ("我是亚亚，欢迎咨询","51job")
       ]))
-check("public-list lead title filter retains specific roles",
-      is_public_role_lead_title("AI大模型开发工程师","51job")
-      and is_public_role_lead_title("行政专员/助理","iguopin")
-      and is_public_role_lead_title("AI触点运营","51job"))
+check("public-list lead title filter retains concrete role names",
+      all(is_public_role_lead_title(title,source_id) for title,source_id in [
+        ("AI大模型开发工程师","51job"),
+        ("行政专员/助理","iguopin"),
+        ("AI触点运营","51job"),
+        ("AI开发岗（AI应用）-金种子（深圳）","iguopin"),
+        ("软件产品经理","iguopin"),
+        ("混合信号设计工程师","51job")
+      ]))
 check("public-list leads dedupe across query URLs but preserve city distinction",
       public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=行政"})
       == public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=运营"})
