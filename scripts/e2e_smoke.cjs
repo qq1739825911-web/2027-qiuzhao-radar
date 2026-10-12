@@ -106,7 +106,7 @@ console.log("PUBLISHED_AIGC_DATA_PROBE " + JSON.stringify({
     await page.waitForTimeout(500);
     const collectorText = await page.locator("#collectorStatus").innerText();
     assert.ok(collectorText.length > 0, "collector monitoring panel should render");
-    assert.ok(collectorText.includes("岗位级记录") && collectorText.includes("只有公告/入口") && collectorText.includes("可访问但零产出"), "source monitor must distinguish role-level sources from portals and zero-output sources");
+    assert.ok(collectorText.includes("信源产出（按信源个数统计）") && collectorText.includes("独立详情岗位信源") && collectorText.includes("公告/入口信源") && collectorText.includes("可访问但零产出信源"), "source monitor must state source counts separately from job counts and distinguish details, portals, and zero-output sources");
 
     await page.locator('#workbench .tab[data-tab="jobs"]').click();
     await page.locator("#reset").click();
