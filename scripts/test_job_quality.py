@@ -176,7 +176,7 @@ check("Guopin visible role cards become pending leads, not priority jobs",
       (lambda p: (p.feed('<html><title>招聘信息-国聘</title><body><span>互联网运营</span><span>西安-未央区</span><span>面议校招经验不限本科</span><span>不限</span><span>中国移动通信有限公司在线营销服务中心</span><span>国企</span></body></html>'),
         (lambda r: len(r)==1 and r[0].get("title")=="互联网运营" and r[0].get("company")=="中国移动通信有限公司在线营销服务中心"
           and r[0].get("granularity")=="lead" and r[0].get("status")=="pending_review"
-          and not should_publish_record({**r[0],"source_url":"https://www.iguopin.com/job/detail?id=208162873677972376"}))(extract_visible_public_role_leads("iguopin",p,"https://www.iguopin.com/job/list?keyword=AI","国聘公开招聘",p.page_title))))(Parser()))
+          and should_publish_record(r[0]) and not assess(dict(r[0])))(extract_visible_public_role_leads("iguopin",p,"https://www.iguopin.com/job/list?keyword=AI","国聘公开招聘",p.page_title))))(Parser()))
 check("51job public 2027 campus role list can yield a clearly tagged review lead",
       (lambda p: (p.feed('<html><title>亚信2027届校园招聘</title><body><span>职位名称</span><span>AI大模型开发工程师</span><span>北京</span><span>应届生本科</span><span>亚信科技有限公司</span></body></html>'),
         (lambda r: len(r)==1 and r[0].get("company")=="亚信科技有限公司" and r[0].get("cohort")=="2027届"
