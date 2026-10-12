@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 183,
+  "qiuzhaowang_next_page": 11,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    173,
-    174,
-    175,
-    176,
-    177,
-    178,
-    179,
-    180,
-    181,
-    182
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -224,7 +224,8 @@
       "https://campus.51job.com/rongming/index.html",
       "https://campus.51job.com/rongming/job.html",
       "https://campus.51job.com/rongming/salary.html",
-      "https://campus.51job.com/rongming/qa.html"
+      "https://campus.51job.com/rongming/qa.html",
+      "https://campus.51job.com/220110New/job.html"
     ],
     "boss": [
       "https://www.zhipin.com/school/shixi",
@@ -1253,10 +1254,10 @@
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 37,
-    "51job": 162,
-    "boss": 133,
-    "nowcoder": 138,
-    "yingjiesheng": 302
+    "iguopin": 42,
+    "51job": 180,
+    "boss": 142,
+    "nowcoder": 148,
+    "yingjiesheng": 326
   }
 }
