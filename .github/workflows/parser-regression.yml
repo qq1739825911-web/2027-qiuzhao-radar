@@ -1,0 +1,40 @@
+name: Parser and Job Quality Regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/collect_public_sources.py"
+      - "scripts/quality_rules.py"
+      - "scripts/test_job_quality.py"
+      - "scripts/verify_job_links.py"
+      - "scripts/public_page_renderer.cjs"
+      - ".github/workflows/parser-regression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: parser-regression-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate renderer syntax
+        run: node --check scripts/public_page_renderer.cjs
+      - name: Run parser and job-quality regression tests
+        run: python scripts/test_job_quality.py
