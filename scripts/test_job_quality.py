@@ -233,7 +233,8 @@ check("public-list lead title filter retains concrete role names",
         ("AI触点运营","51job"),
         ("AI开发岗（AI应用）-金种子（深圳）","iguopin"),
         ("软件产品经理","iguopin"),
-        ("混合信号设计工程师","51job")
+        ("混合信号设计工程师","51job"),
+        ("硬件工程师 -(PCB 设计)","qiuzhaowang")
       ]))
 check("public-list leads dedupe across query URLs but preserve city distinction",
       public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=行政"})
