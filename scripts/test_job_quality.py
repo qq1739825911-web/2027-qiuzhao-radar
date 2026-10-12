@@ -11,6 +11,7 @@ from collect_public_sources import (
     normalize_source_url, clean_yingjiesheng_company_name, split_role_title_candidates,
     is_boss_campus_card_relevant, should_queue_detail, extract_visible_public_role_leads,
     is_public_role_lead_title, public_lead_dedupe_key,
+    should_purge_qzw_noise_record,
     source_role_metrics,
 )
 from quality_rules import assess, compact_json, should_publish_record
@@ -92,6 +93,18 @@ check("source diagnostics capture public link allowlist decisions",
 check("QZW detail text yields concrete roles",
       extract_qiuzhaowang_role_names("招聘岗位 销售管培生 · 操作管培生 · 客服管培生专业不限 工作城市 全国 面向届次 2027届")
       == ["销售管培生","操作管培生","客服管培生专业不限"])
+check("historical QZW composite role rows are purged while announcements survive",
+      all(should_purge_qzw_noise_record({"source":"秋招网公开聚合","granularity":"review","title":title}) for title in [
+        "AI战略顾问AI应用工程师 消费者营销顾问",
+        "投标岗客户管理岗投资岗采购岗",
+        "供应链运营岗食安岗",
+        "财务岗人力资源岗政岗经营支持岗营运管理岗客户成功岗",
+        "市场营销类物理管培类物流运营类海外管培生",
+        "品牌营销 社交媒体",
+        "研发岗位 开发岗位"
+      ])
+      and not should_purge_qzw_noise_record({"source":"秋招网公开聚合","granularity":"review","title":"销售管培生专业不限"})
+      and not should_purge_qzw_noise_record({"source":"秋招网公开聚合","granularity":"announcement","title":"2027届秋季招聘公告"}))
 check("QZW mixed-role card titles are rejected as a single vacancy",
       all(not is_public_role_lead_title(title,"qiuzhaowang") for title in [
         "AI战略顾问AI应用工程师 消费者营销顾问",

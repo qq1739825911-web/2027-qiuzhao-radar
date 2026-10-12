@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import date
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
-from collect_public_sources import clean_job_title, is_direct_detail_url, public_lead_dedupe_key
+from collect_public_sources import clean_job_title, is_direct_detail_url, public_lead_dedupe_key, should_purge_qzw_noise_record
 from quality_rules import assess, should_publish_record
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -105,13 +105,18 @@ for row in incoming:
         if url_key: by_url.setdefault(url_key,[]).append(row)
         by_role[(str(row["company"]).strip().lower(),str(row["title"]).strip().lower(),str(row.get("cohort","")).strip().lower())]=row
 
-# Clean old records from the polluted V3 title pattern and purge rejected list-only false positives.
+# Clean old records from the polluted V3 title pattern, rejected list-only leads, and legacy QZW title noise.
 removed_public_list_leads=0
+removed_qzw_title_noise=0
 for key,row in list(idx.items()):
     row["title"]=clean_job_title(row.get("title",""),title_source_id(row))
     if row.get("lead_evidence")=="visible_public_job_card" and not should_publish_record(row):
         del idx[key]
         removed_public_list_leads+=1
+        continue
+    if should_purge_qzw_noise_record(row):
+        del idx[key]
+        removed_qzw_title_noise+=1
         continue
     if not row.get("last_seen"): row["last_seen"]=row.get("last_collected") or row.get("last_verified","") or ""
     if not row.get("last_collected"): row["last_collected"]=row.get("last_seen","")
@@ -193,4 +198,4 @@ try:
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 except Exception as exc:
     raise RuntimeError(f"Unable to update collection manifest: {exc}") from exc
-print(f"incoming={len(incoming)} added={added} updated={updated} total={len(published)} priority={counts['priority']} leads={counts['lead']}")
+print(f"incoming={len(incoming)} added={added} updated={updated} removed_public_list_leads={removed_public_list_leads} removed_qzw_title_noise={removed_qzw_title_noise} total={len(published)} priority={counts['priority']} leads={counts['lead']}")

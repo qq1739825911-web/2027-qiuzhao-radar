@@ -1,4 +1,4 @@
-"""V5.11 public recruitment collector.
+"""V5.12 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -773,6 +773,21 @@ def is_public_role_lead_title(title, source_id=""):
         return False
     return True
 
+def should_purge_qzw_noise_record(row):
+    """Identify stale 秋招网 records rejected by the latest role-title policy.
+
+    Explicit announcement/entry records are not jobs and are intentionally preserved
+    in their own trust bucket. Concrete single-role titles remain in the database.
+    """
+    source=str(row.get("source",""))
+    if "秋招网" not in source:
+        return False
+    if str(row.get("granularity","")) in {"announcement","entry"}:
+        return False
+    title=clean_job_title(row.get("title",""),"qiuzhaowang")
+    return not is_public_role_lead_title(title,"qiuzhaowang")
+
+
 def public_lead_dedupe_key(row):
     """Stable identity across different keyword-list URLs, retaining company and city differences."""
     return (
@@ -1027,7 +1042,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.11","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.12","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1663,7 +1678,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.11","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.12","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
