@@ -1,4 +1,4 @@
-"""V5.15 public recruitment collector.
+"""V5.16 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -1097,6 +1097,10 @@ def merge_generic_detail_fallback(primary, fallback):
                 result[key]=value
     return result
 
+def fields_for_job_record(fields):
+    """Drop parser-only identity fields after all dedicated and generic extraction is finished."""
+    return {key:value for key,value in (fields or {}).items() if key not in {"title","role_titles","company"}}
+
 def record(company,title,url,source,cohort,confidence,program="",cohort_evidence=""):
     title=clean_job_title(title)
     direct=is_direct_detail_url(url)
@@ -1109,7 +1113,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.15","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.16","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1360,12 +1364,13 @@ def collect_source(src):
         if source_id in {"iguopin","51job"} and not is_direct_detail_url(final):
             rows.extend(extract_visible_public_role_leads(source_id,p,final,record_source,raw_page_title))
         detail_role_titles=list(detail_fields.get("role_titles") or []) if src.get("id")=="yingjiesheng" else []
-        detail_fields_for_merge={k:v for k,v in detail_fields.items() if k not in {"title","role_titles","company"}}
         if src.get("id")=="nowcoder":
             page_title=clean_job_title(detail_heading or p.page_title,"nowcoder")
         if is_direct_detail_url(final):
             generic_fallback=extract_detail_fields_generic(page_text,detail_heading or raw_page_title)
             detail_fields=merge_generic_detail_fallback(detail_fields,generic_fallback)
+        # Build the publishable snapshot only after generic fallback values have been merged.
+        detail_fields_for_merge=fields_for_job_record(detail_fields)
         if src.get("id")=="qiuzhaowang" and urlparse(final).path=="/latest":
             seen_groups=set()
             role_hints=("工程师","研发","算法","产品","经理","销售","财务","设计","运营","管理","技术","教师","审计","法律","采购","管培","分析","工艺","自动化","质量","研究","岗位","方向","PM","AI","硬件","软件","芯片","医学","金融","会计","营销","供应链","商务","专员","服务","项目","研究员","分析师","咨询","物流","顾问","工程技术")
@@ -1745,7 +1750,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.15","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.16","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

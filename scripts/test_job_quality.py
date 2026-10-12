@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, extract_detail_fields_generic, merge_generic_detail_fallback, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
@@ -480,6 +480,18 @@ check("specific primary city is never overwritten by generic fallback",
       merge_generic_detail_fallback({"city":"上海"},{"city":"北京"})["city"]=="上海")
 check("generic nationwide fallback does not overwrite an existing Other location",
       merge_generic_detail_fallback({"city":"其它"},{"city":"全国"})["city"]=="其它")
+yjs_primary=extract_yingjiesheng_fields(
+    "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
+    "AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管 职位亮点 年终奖金",
+    "https://m.yingjiesheng.com/jobdetail/170935981")
+yjs_generic=extract_detail_fields_generic(
+    "AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管 职位亮点 年终奖金",
+    "AIGC影视创意制作（校招）")
+yjs_merged=merge_generic_detail_fallback(yjs_primary,yjs_generic)
+yjs_publish_fields=fields_for_job_record(yjs_merged)
+check("specific fallback city survives in final fields merged to the job record",
+      yjs_generic.get("city")=="上海" and yjs_publish_fields.get("city")=="上海" and
+      yjs_publish_fields.get("city") not in {"全国","其它","其他"})
 
 
 base = {

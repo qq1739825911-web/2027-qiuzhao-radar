@@ -45,7 +45,7 @@ jobs:
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
         run: python scripts/test_frontend.py
-      - name: Collect V5.15 city extraction fixes vague-location fallback merging
+      - name: Collect V5.16 city extraction merges before snapshotting job fields
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
         run: python scripts/publish_collected_jobs.py
