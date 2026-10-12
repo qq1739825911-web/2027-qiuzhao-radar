@@ -11,6 +11,7 @@ from collect_public_sources import (
     normalize_source_url, clean_yingjiesheng_company_name, split_role_title_candidates,
     is_boss_campus_card_relevant, should_queue_detail, extract_visible_public_role_leads,
     is_public_role_lead_title, public_lead_dedupe_key,
+    source_role_metrics,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
@@ -205,6 +206,20 @@ check("public-list leads dedupe across query URLs but preserve city distinction"
       == public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=运营"})
       and public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"北京"})
       != public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海"}))
+check("source metrics distinguish verified details from list/card leads",
+      source_role_metrics([
+        {"source_url":"https://www.zhipin.com/job_detail/abc123.html","verification_status":"unknown",
+         "granularity":"review","public_card_lead":True},
+        {"source_url":"https://www.iguopin.com/job/list?keyword=AI","verification_status":"unknown",
+         "granularity":"lead","lead_evidence":"visible_public_job_card"},
+        {"source_url":"https://www.nowcoder.com/jobs/detail/462503","verification_status":"link_alive",
+         "granularity":"job"}
+      ])=={"public_list_leads":1,"public_card_leads":1,"direct_detail_role_records":1})
+check("BOSS public card is not counted as parsed detail even if a link check passes",
+      source_role_metrics([
+        {"source_url":"https://www.zhipin.com/job_detail/abc123.html","verification_status":"link_alive",
+         "granularity":"review","public_card_lead":True}
+      ])["direct_detail_role_records"]==0)
 check("contact/title noise cannot be published as a list lead",
       not should_publish_record({"source":"前程无忧校园招聘公开岗位","granularity":"lead","lead_evidence":"visible_public_job_card",
         "status":"pending_review","company":"亚信科技有限公司","title":"我是亚亚，欢迎咨询",

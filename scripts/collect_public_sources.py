@@ -1,4 +1,4 @@
-"""V5.9 public recruitment collector.
+"""V5.10 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -777,6 +777,24 @@ def public_lead_dedupe_key(row):
     )
 
 
+def source_role_metrics(rows):
+    """Separate records parsed from accessible single-role detail pages from public card/list leads."""
+    public_list_leads=sum(1 for row in rows if row.get("lead_evidence")=="visible_public_job_card")
+    public_card_leads=sum(1 for row in rows if bool(row.get("public_card_lead")))
+    direct_detail_role_records=sum(
+        1 for row in rows
+        if row.get("lead_evidence")!="visible_public_job_card"
+        and not row.get("public_card_lead")
+        and row.get("granularity") not in {"announcement","entry"}
+        and row.get("verification_status")=="link_alive"
+        and is_direct_detail_url(row.get("source_url",""))
+    )
+    return {
+        "public_list_leads":public_list_leads,
+        "public_card_leads":public_card_leads,
+        "direct_detail_role_records":direct_detail_role_records,
+    }
+
 def extract_visible_public_role_leads(source_id, parser, source_url, record_source, page_title):
     """Return explicitly low-confidence leads from public vacancy lists when no role URL is exposed.
 
@@ -1003,7 +1021,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.9","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.10","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1408,6 +1426,7 @@ def collect_source(src):
                         item["status"]="pending_review"; item["granularity"]="review"; item["verification_score"]=5
                         item["verification_status"]="unknown"
                         item["verification_note"]="BOSS公开校招卡片可见且有岗位级详情链接；详情访问可能受平台安全验证限制，本条未标记为核验成功"
+                        item["public_card_lead"]=True
                         item["last_collected"]=TODAY; item["last_verified"]=""
                         item["confirmed_by"]=[record_source]
                         rows.append(item)
@@ -1600,6 +1619,7 @@ def main():
             all_rows.extend(rows)
             a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
             active+=a; review+=rr
+            source_metrics=source_role_metrics(rows)
             results.append({"id":s["id"],"company":s["company"],"pages_visited":len(visited),"records_found":len(rows),
                             "active_candidates":a,"pending_review":rr,
                             "pages_attempted":diag.get("pages_attempted",0),"pages_failed":diag.get("pages_failed",0),
@@ -1614,8 +1634,9 @@ def main():
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
                             "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
                             "role_records":diag.get("role_records",0),
-                            "public_list_leads":sum(1 for row in rows if row.get("lead_evidence")=="visible_public_job_card"),
-                            "direct_detail_role_records":sum(1 for row in rows if row.get("lead_evidence")!="visible_public_job_card" and row.get("granularity") not in {"announcement","entry"} and is_direct_detail_url(row.get("source_url",""))),
+                            "public_list_leads":source_metrics["public_list_leads"],
+                            "public_card_leads":source_metrics["public_card_leads"],
+                            "direct_detail_role_records":source_metrics["direct_detail_role_records"],
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
@@ -1636,7 +1657,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.9","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.10","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
