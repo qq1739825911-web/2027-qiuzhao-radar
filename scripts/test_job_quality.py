@@ -187,6 +187,7 @@ check("public-list lead title filter rejects job-description labels, numbered bu
         ("智能汽车制造产业链专项引才计划","iguopin"),
         ("海南蜈支洲旅游开发股份有限公司三亚蜈支洲岛旅游区","iguopin"),
         ("财务岗人力资源岗政岗经营支持岗营运管理岗客户成功岗","qiuzhaowang"),
+        ("研发岗算法岗产品岗运营岗位技术岗","qiuzhaowang"),
         ("IC设计","51job"),
         ("我是亚亚，欢迎咨询","51job")
       ]))
