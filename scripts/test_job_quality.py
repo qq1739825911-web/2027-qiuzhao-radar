@@ -101,7 +101,10 @@ check("historical QZW composite role rows are purged while announcements survive
         "财务岗人力资源岗政岗经营支持岗营运管理岗客户成功岗",
         "市场营销类物理管培类物流运营类海外管培生",
         "品牌营销 社交媒体",
-        "研发岗位 开发岗位"
+        "研发岗位 开发岗位",
+        "算法工程师硬件工程师",
+        "软件工程师AI应用工程师 国际营销",
+        "研发生产职能市场推广"
       ])
       and not should_purge_qzw_noise_record({"source":"秋招网公开聚合","granularity":"review","title":"销售管培生专业不限"})
       and not should_purge_qzw_noise_record({"source":"秋招网公开聚合","granularity":"announcement","title":"2027届秋季招聘公告"}))
@@ -115,9 +118,11 @@ check("QZW mixed-role card titles are rejected as a single vacancy",
         "品牌营销 社交媒体",
         "研发岗位 开发岗位"
       ]))
-check("QZW role extractor drops concatenated taxonomy titles",
+check("QZW role extractor drops concatenated taxonomy and duplicate-ending titles",
       extract_qiuzhaowang_role_names("招聘岗位 投标岗客户管理岗投资岗采购岗 工作城市 全国 面向届次 2027届")==[]
-      and extract_qiuzhaowang_role_names("招聘岗位 市场营销类物理管培类物流运营类海外管培生 工作城市 全国 面向届次 2027届")==[])
+      and extract_qiuzhaowang_role_names("招聘岗位 市场营销类物理管培类物流运营类海外管培生 工作城市 全国 面向届次 2027届")==[]
+      and extract_qiuzhaowang_role_names("招聘岗位 算法工程师硬件工程师 工作城市 全国 面向届次 2027届")==[]
+      and extract_qiuzhaowang_role_names("招聘岗位 研发生产职能市场推广 工作城市 全国 面向届次 2027届")==[])
 check("QZW listing hint yields concrete roles",
       extract_qiuzhaowang_role_names("", "销售管培生 · 操作管培生")
       == ["销售管培生","操作管培生"])
@@ -215,6 +220,9 @@ check("public-list lead title filter rejects job-description labels, numbered bu
         ("海南蜈支洲旅游开发股份有限公司三亚蜈支洲岛旅游区","iguopin"),
         ("财务岗人力资源岗政岗经营支持岗营运管理岗客户成功岗","qiuzhaowang"),
         ("研发岗算法岗产品岗运营岗位技术岗","qiuzhaowang"),
+        ("算法工程师硬件工程师","qiuzhaowang"),
+        ("软件工程师AI应用工程师 国际营销","qiuzhaowang"),
+        ("研发生产职能市场推广","qiuzhaowang"),
         ("IC设计","51job"),
         ("我是亚亚，欢迎咨询","51job")
       ]))
