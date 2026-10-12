@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 61,
+  "qiuzhaowang_next_page": 71,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    51,
-    52,
-    53,
-    54,
-    55,
-    56,
-    57,
-    58,
-    59,
-    60
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -1254,10 +1254,10 @@
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 67,
-    "51job": 270,
-    "boss": 187,
-    "nowcoder": 198,
-    "yingjiesheng": 446
+    "iguopin": 72,
+    "51job": 288,
+    "boss": 196,
+    "nowcoder": 208,
+    "yingjiesheng": 470
   }
 }
