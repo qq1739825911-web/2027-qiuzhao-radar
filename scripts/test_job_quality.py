@@ -161,13 +161,17 @@ check("QZW partial-read fallback is implemented",
 check("renderer reports visible body preview and safe campus navigation",
       "body_preview" in RENDERER_SOURCE and "招聘岗位|招聘职位|职位列表" in RENDERER_SOURCE)
 constReg=json.loads((Path(__file__).resolve().parents[1]/"data/company_sources.json").read_text(encoding="utf-8"))
-check("Guopin current public campus jobList route configured",
-      any("https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
-check("Guopin public keyword category sources configured with current key_word parameter",
-      any("key_word=%E5%B7%A5%E7%A8%8B%E5%B8%88" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
-check("Guopin current jobList SPA routes are browser-renderable",
-      should_render_public_page("iguopin","https://job.iguopin.com/jobList?campus_nature=&channel=campus&key_word=%E5%B7%A5%E7%A8%8B%E5%B8%88&nature_cn=","<html><body><div id='app'></div></body></html>")
-      and "job\\/list" in RENDERER_SOURCE and "joblist" in RENDERER_SOURCE)
+check("Guopin current public www job-list route configured",
+      any("https://www.iguopin.com/job/" == str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin public keyword category sources configured on live list route",
+      any("/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88" in str(u) for src in constReg if src.get("id")=="iguopin" for u in src.get("seed_urls",[])))
+check("Guopin public job-list SPA routes are browser-renderable",
+      should_render_public_page("iguopin","https://www.iguopin.com/job/list?keyword=%E5%B7%A5%E7%A8%8B%E5%B8%88","<html><body><div id='app'></div></body></html>")
+      and "job\\/list" in RENDERER_SOURCE and "job(?:\\/|$)" in RENDERER_SOURCE)
+check("Guopin base job list route is browser-renderable",
+      should_render_public_page("iguopin","https://www.iguopin.com/job/","<html><body><div id='app'></div></body></html>"))
+check("Guopin job detail route with an id query is recognized",
+      is_direct_detail_url("https://www.iguopin.com/job/detail?id=208162873677972376"))
 
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))

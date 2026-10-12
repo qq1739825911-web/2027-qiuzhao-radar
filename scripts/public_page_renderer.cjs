@@ -14,7 +14,7 @@ function allowPublicUrl(sourceId, value) {
     if (!(host === "iguopin.com" || host.endsWith(".iguopin.com"))) return false;
     if (/\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)/i.test(path)) return false;
     if (/\/(?:login|register|resume|member|account|passport|captcha)(?:\/|$)/i.test(path)) return false;
-    return path === "/" || /(?:joblist|job\/list|jobdetail|job-detail|job\/detail|position|positions|campus|article|news)/i.test(path)
+    return path === "/" || /(?:job(?:\/|$)|joblist|job\/list|jobdetail|job-detail|job\/detail|position|positions|campus|article|news)/i.test(path)
       || /(?:channel=campus|channel=social|page=|pageindex=|jobid=|positionid=|keyword=)/i.test(url.search);
   }
   if (sourceId === "boss") {
