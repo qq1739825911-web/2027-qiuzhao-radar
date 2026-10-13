@@ -347,6 +347,12 @@ check("Guopin login route is not browser-rendered",
 check("browser worker has explicit public host allow-list and no CAPTCHA bypass",
       "security_interstitial: security" in RENDERER_SOURCE and "allowPublicUrl" in RENDERER_SOURCE and "captcha.solve" not in RENDERER_SOURCE)
 
+check("51job renderer enforces HTTPS, host, asset and account-route guards",
+      'if (url.protocol !== "https:") return false;' in RENDERER_SOURCE
+      and 'if (!(host === "51job.com" || host.endsWith(".51job.com"))) return false;' in RENDERER_SOURCE
+      and 'if (/\\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\\?)/i.test(path)) return false;' in RENDERER_SOURCE
+      and 'if (/\\/(?:login|register|resume|member|account|passport|captcha)(?:\\/|$)/i.test(path)) return false;' in RENDERER_SOURCE)
+
 check("Nowcoder public listing route is discoverable",
       should_discover_public_url("nowcoder", "https://www.nowcoder.com/jobs/recommend/campus"))
 check("broad major-only strings are not concrete roles",
