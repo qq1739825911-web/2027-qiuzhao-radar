@@ -8,7 +8,7 @@ Rules:
 - score records and only promote high-confidence concrete roles.
 """
 import time
-import json,re,hashlib,atexit,subprocess,threading
+import os,json,re,hashlib,atexit,subprocess,threading
 from pathlib import Path
 from datetime import date, datetime, timezone
 from html.parser import HTMLParser
@@ -1752,8 +1752,27 @@ def collect_source(src):
     diagnostics["parser_modes"]=[name for name,count in (("links",diagnostics["links_seen"]),("tables",diagnostics["tables_seen"]),("embedded_json",diagnostics["embedded_json_blocks"])) if count]
     return best_rows,visited,diagnostics
 
+def parse_source_ids(value):
+    """Parse an optional comma/space-delimited source allow-list for focused collection."""
+    return {part.strip().lower() for part in re.split(r"[,;\s]+", str(value or "")) if part.strip()}
+
+def select_enabled_sources(sources, requested_ids=None):
+    """Choose enabled public sources; reject unknown/disabled IDs rather than silently running nothing."""
+    all_enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
+    requested={str(value).strip().lower() for value in (requested_ids or set()) if str(value).strip()}
+    known={str(s.get("id","")).strip().lower() for s in sources}
+    unknown=requested-known
+    if unknown:
+        raise ValueError("Unknown source IDs requested: "+", ".join(sorted(unknown)))
+    selected=[s for s in all_enabled if str(s.get("id","")).strip().lower() in requested] if requested else all_enabled
+    unavailable=requested-{str(s.get("id","")).strip().lower() for s in selected}
+    if unavailable:
+        raise ValueError("Requested sources are not enabled public sources: "+", ".join(sorted(unavailable)))
+    return all_enabled,selected
+
 def main():
     sources=json.loads(REGISTRY.read_text(encoding="utf-8"))
+    requested_source_ids=parse_source_ids(os.environ.get("QIUZHAO_SOURCE_IDS",""))
     STATE_PATH=ROOT/"data/collection-state.json"
     try:
         state=json.loads(STATE_PATH.read_text(encoding="utf-8"))
@@ -1765,6 +1784,7 @@ def main():
     rotation_meta={}
     for source in sources:
         source_id=source.get("id","")
+        if requested_source_ids and source_id not in requested_source_ids: continue
         if source_id not in rotating_sources: continue
         base_seeds=[normalize_source_url(source_id,u) for u in (source.get("seed_urls") or [source.get("url","")])]
         base_set={normalize_source_url(source_id,u) for u in base_seeds if u}
@@ -1790,11 +1810,11 @@ def main():
         page_num+=1
     qiuzhaowang_pages=list(range(1,11))+rotation_pages
     for source in sources:
-        if source.get("id")=="qiuzhaowang":
+        if source.get("id")=="qiuzhaowang" and (not requested_source_ids or "qiuzhaowang" in requested_source_ids):
             source["seed_urls"]=[f"https://qiuzhaowang.com/latest?page={n}&year=2027" for n in qiuzhaowang_pages]
             source["max_pages"]=50
             source["max_candidates"]=6000
-    enabled=[s for s in sources if s.get("enabled") and s.get("access") in {"public","public_api"}]
+    all_enabled,enabled=select_enabled_sources(sources,requested_source_ids)
     all_rows=[]; results=[]; active=review=0; qiuzhaowang_visited=set()
     with ThreadPoolExecutor(max_workers=min(12,len(enabled) or 1)) as pool:
         futures={pool.submit(collect_source,s):s for s in enabled}
@@ -1856,7 +1876,7 @@ def main():
                             "role_field_samples":[{"title":r.get("title",""),"company":r.get("company",""),"city":r.get("city",""),"salary":r.get("salary",""),"degree":r.get("degree",""),"source_url":r.get("source_url",""),"field_lengths":{field:len(str(r.get(field,"") or "")) for field in ("description","responsibilities","requirements","benefits")} } for r in rows if r.get("granularity") not in {"announcement","entry"}][:5],
                             "link_samples":[{k:v for k,v in item.items() if k!="_priority"} for item in diag.get("link_samples",[])],
                             "last_error":diag.get("last_error",""),"parser_modes":diag.get("parser_modes",[]),
-                            "source_status":diag.get("source_status","access_error")})
+                            "source_status":diag.get("source_status","access_error"),"last_run_at":STAMP,"run_scope":("source_subset" if requested_source_ids else "all_enabled_sources")})
     results.sort(key=lambda x:x["company"])
     rot_seen=set()
     for visited_url in qiuzhaowang_visited:
@@ -1866,21 +1886,54 @@ def main():
     while next_page in rot_seen:
         next_page+=1
         if next_page>192: next_page=11
-    state["qiuzhaowang_next_page"]=next_page
-    state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
+    if not requested_source_ids or "qiuzhaowang" in requested_source_ids:
+        state["qiuzhaowang_next_page"]=next_page
+        state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.21","enabled_sources":len(enabled),
-     "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
-                         "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
-                                                         "next_offset":state["source_listing_cursor"].get(sid,0),
-                                                         "batch_size":rotation_meta[sid]["batch_size"]}
-                                                     for sid in rotation_meta}},
-     "records_found":len(all_rows),"active_candidates":active,"pending_review":review,"results":results,
+    prior_manifest={}
+    prior_results=[]
+    if requested_source_ids:
+        try:
+            prior_manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+            prior_results=prior_manifest.get("results",[]) or []
+        except Exception:
+            prior_manifest={}; prior_results=[]
+    manifest_payload=prior_manifest.copy() if requested_source_ids else {}
+    previous_pagination=prior_manifest.get("pagination_state",{}) if requested_source_ids else {}
+    rotation_payload=dict(previous_pagination.get("source_listing_rotation",{}) or {})
+    rotation_payload.update({sid:{
+        "known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
+        "next_offset":state["source_listing_cursor"].get(sid,0),
+        "batch_size":rotation_meta[sid]["batch_size"]
+    } for sid in rotation_meta})
+    pagination_payload={
+        "qiuzhaowang_pages":(qiuzhaowang_pages if (not requested_source_ids or "qiuzhaowang" in requested_source_ids) else previous_pagination.get("qiuzhaowang_pages",qiuzhaowang_pages)),
+        "qiuzhaowang_next_page":(next_page if (not requested_source_ids or "qiuzhaowang" in requested_source_ids) else previous_pagination.get("qiuzhaowang_next_page",next_page)),
+        "source_listing_rotation":rotation_payload
+    }
+    manifest_payload.update({
+     "run_date":TODAY,
+     "collector_version":"5.21",
+     "enabled_sources":len(all_enabled),
+     "collected_sources":len(enabled),
+     "run_scope":"source_subset" if requested_source_ids else "all_enabled_sources",
+     "run_scope_source_ids":sorted(requested_source_ids) if requested_source_ids else sorted(s.get("id","") for s in enabled),
+     "pagination_state":pagination_payload,
+     "records_found":len(all_rows),
+     "records_found_this_run":len(all_rows),
+     "active_candidates":active,
+     "pending_review":review,
+     "results":results,
      "policy":"Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
-     "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."},
-     ensure_ascii=False,indent=2),encoding="utf-8")
-    print(f"sources={len(enabled)} records={len(all_rows)} active_candidates={active} pending_review={review}")
+     "granularity":"Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review."
+    })
+    if requested_source_ids:
+        merged_results={row.get("id"):row for row in prior_results if row.get("id") not in requested_source_ids}
+        merged_results.update({row.get("id"):row for row in results})
+        manifest_payload["results"]=sorted(merged_results.values(),key=lambda row:row.get("company",""))
+    MANIFEST.write_text(json.dumps(manifest_payload,ensure_ascii=False,indent=2),encoding="utf-8")
+    print(f"sources={len(enabled)}/{len(all_enabled)} scope={manifest_payload.get('run_scope')} records={len(all_rows)} active_candidates={active} pending_review={review}")
     
 
 if __name__ == "__main__":
