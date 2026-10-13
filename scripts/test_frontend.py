@@ -16,7 +16,7 @@ checks = {
     "AIGC and visual-design search aliases exist": "function expandSearchTerms(query)" in source and '"aigc":["生成式人工智能","ai生成内容","内容生成","ai视频","视频生成","图生视频","文生视频","漫剧","ai短剧"]' in source,
     "public-card review metadata survives normalization": "public_card_lead:!!x.public_card_lead,lead_evidence:x.lead_evidence||\"\"" in source,
     "job detail text sanitization exists": "function sanitizeDetailField" in source,
-    "detail sanitizer covers escaped JSON, CSS and footer tails": "const hasSerializedTail" in source and "版权所有" in source and "ieundefined" in source,
+    "detail sanitizer covers escaped JSON, CSS and footer tails": "const hasSerializedTail" in source and "版权所有" in source and "ie(?:11|undefined)" in source,
     "lazy rendering of company groups exists": 'data-loaded="false"' in source and 'data-company-index="' in source,
     "review bucket fallback exists": 'const emptyBox=$("jobs").querySelector(".empty")' in source,
     "official recruitment route is distinguished": "function usesOfficialRecruitmentFlow" in source,
