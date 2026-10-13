@@ -93,6 +93,14 @@ detail_tail_dirty = "岗位职责：负责内容创作，按计划交付，兼�
 detail_tail_clean = sanitize_extracted_text(detail_tail_dirty)
 check("detail sanitizer removes contact/application/navigation tail but preserves earlier punctuation",
       detail_tail_clean=="岗位职责：负责内容创作，按计划交付，兼顾质量。")
+
+yjs_page_chrome = "白鲸航线科技有限公司 电气系统适航 10K-17K/月 本科及以上 模拟面试 职位诱惑：绩效奖金 发布时间：2026年10月13日 职位描述 岗位职责：负责适航规划与符合性核查。岗位要求：本科及以上学历，了解适航法规。联系方式：王老师"
+yjs_page_chrome_clean = sanitize_extracted_text(yjs_page_chrome)
+check("YJS sanitizer strips pre-body UI chrome without cutting the real job body",
+      "岗位职责：负责适航规划与符合性核查。" in yjs_page_chrome_clean
+      and "岗位要求：本科及以上学历" in yjs_page_chrome_clean
+      and "模拟面试" not in yjs_page_chrome_clean
+      and "联系方式" not in yjs_page_chrome_clean)
 check("YJS collection allocates detail-page cap separately from total budget",
       int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_direct_detail_pages",0)) <= int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_pages",0)))
 requested_yjs = parse_source_ids(" yingjiesheng ")
@@ -625,6 +633,21 @@ check("YJS detail parser does not infer a salary from a stray 439万 token",
       extract_yingjiesheng_fields("FinTech方向管理培训生 - 应届生求职网",
         "FinTech方向管理培训生 编号439万 本科及以上 工作地点：其它",
         "https://m.yingjiesheng.com/job-008-115-342.html").get("salary","")=="")
+legacy_truncated_yjs = {
+    "source":"应届生求职网公开岗位","company":"江苏示例科技有限公司","title":"采购执行员",
+    "source_url":"https://m.yingjiesheng.com/job-008-115-342.html","cohort":"2027届",
+    "cohort_evidence":"page_text","status":"pending_review","verification_status":"link_alive",
+    "last_verified":"2026-10-13","last_seen":"2026-10-13","last_collected":"2026-10-13",
+    "description":"江苏示例科技有限公司 采购执行员 本科及以上",
+    "responsibilities":"负责供应商询价、采购订单跟进、交期协调、采购数据整理与异常反馈，协助完成采购流程文件及台账管理。",
+    "requirements":"本科及以上学历，物流管理、采购管理等相关专业优先；具备沟通协调能力，熟练使用办公软件。"
+}
+assess(legacy_truncated_yjs,today=date(2026,10,13))
+check("short historic YJS description is rebuilt from retained responsibility and requirement fields",
+      legacy_truncated_yjs.get("description_recovered_from_sections") is True
+      and "采购订单跟进" in legacy_truncated_yjs.get("description","")
+      and "采购管理等相关专业" in legacy_truncated_yjs.get("description",""))
+
 check("YJS website name cannot pass as an employer for a specific vacancy",
       not should_publish_record({"source":"应届生求职网公开岗位","company":"应届生求职网","title":"FinTech方向管理培训生",
         "source_url":"https://m.yingjiesheng.com/job-008-115-342.html","granularity":"review"}))

@@ -100,10 +100,27 @@ def assess(row, today=None):
     # would leave already-published JSON fragments visible in the detail modal.
     field_limits = {"description": 6500, "responsibilities": 4500, "requirements": 4500,
                     "benefits": 2000, "company_info": 2000, "address": 240, "work_time": 500}
+    raw_description = str(row.get("description", "") or "")
     for field, limit in field_limits.items():
         value = row.get(field)
         if isinstance(value, str) and value:
             row[field] = sanitize_extracted_text(value, limit)
+    # Earlier sanitizer versions could cut a page-header-first description at the
+    # pre-body "模拟面试" button. Recover useful details from the saved section fields.
+    if source_id == "yingjiesheng":
+        description = str(row.get("description", "") or "").strip()
+        responsibilities = str(row.get("responsibilities", "") or "").strip()
+        requirements = str(row.get("requirements", "") or "").strip()
+        if len(description) < 120 and len(responsibilities) + len(requirements) >= 100:
+            rebuilt = []
+            if responsibilities:
+                rebuilt.append("岗位职责：" + responsibilities)
+            if requirements:
+                rebuilt.append("岗位要求：" + requirements)
+            recovered = "\n".join(rebuilt).strip()
+            if len(recovered) > len(description) and len(recovered) >= 120:
+                row["description"] = recovered[:6500]
+                row["description_recovered_from_sections"] = True
     reasons = []
     if not title or not is_concrete_role_title(title):
         reasons.append("职位名称不够明确或混有平台/招聘文案")
