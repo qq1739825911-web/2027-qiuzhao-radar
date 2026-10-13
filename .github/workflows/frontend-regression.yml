@@ -1,4 +1,4 @@
-name: Frontend Regression
+name: Frontend and Parser Regression
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
     paths:
       - "index.html"
       - "scripts/test_frontend.py"
+      - "scripts/collect_public_sources.py"
+      - "scripts/test_job_quality.py"
       - ".github/workflows/frontend-regression.yml"
   workflow_dispatch:
 
@@ -30,5 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Run parser and source-quality regression tests
+        run: python scripts/test_job_quality.py
       - name: Run frontend smoke and helper regression tests
         run: python scripts/test_frontend.py
