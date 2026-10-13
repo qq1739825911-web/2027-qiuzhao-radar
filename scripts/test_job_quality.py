@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, make_yingjiesheng_bulletin_role_lead, table_records, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, make_yingjiesheng_bulletin_role_lead, table_records, should_accept_yingjiesheng_detail, should_rotate_listing_url, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
@@ -89,6 +89,10 @@ styled = Parser()
 styled.feed('<html><head><style>.ie11 .nav_ul li{float:left;}</style><noscript>关闭脚本</noscript></head><body><p>岗位职责：完成测试并整理报告。</p></body></html>')
 check("Parser ignores style and noscript text in visible page fields",
       ".ie11" not in styled.page_text() and "关闭脚本" not in styled.page_text() and "岗位职责" in styled.page_text())
+detail_tail_dirty = "岗位职责：负责内容创作，按计划交付，兼顾质量。 联系方式：王老师 简历接收邮箱：hr@example.com 模拟面试 查看其他岗位"
+detail_tail_clean = sanitize_extracted_text(detail_tail_dirty)
+check("detail sanitizer removes contact/application/navigation tail but preserves earlier punctuation",
+      detail_tail_clean=="岗位职责：负责内容创作，按计划交付，兼顾质量。")
 check("YJS collection allocates detail-page cap separately from total budget",
       int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_direct_detail_pages",0)) <= int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_pages",0)))
 requested_yjs = parse_source_ids(" yingjiesheng ")
@@ -529,6 +533,19 @@ yjs_card_no_employer = extract_yingjiesheng_card_fields(
     "https://m.yingjiesheng.com/other/index.html")
 check("YJS public listing card is rejected when employer is not visible",
       yjs_card_no_employer=={})
+
+check("YJS score gate accepts substantive detail for an otherwise concrete role",
+      should_accept_yingjiesheng_detail("采购执行员","江苏示例科技有限公司",
+          {"responsibilities":"负责供应商询价、采购订单跟进、交期协调、采购数据整理与异常反馈，协助完成采购流程文件及台账管理。"},
+          "采购执行员 本科 工作地点：南京 岗位职责 负责供应商询价及采购订单跟进。"))
+check("YJS score gate rejects generic pages without substantive job detail",
+      not should_accept_yingjiesheng_detail("招聘信息","应届生求职网",{}, "职位描述 公司信息 登录"))
+check("YJS rotation excludes utility pages but preserves public role-city listing pages",
+      not should_rotate_listing_url("yingjiesheng","https://zhiwei.yingjiesheng.com/404.htm")
+      and not should_rotate_listing_url("yingjiesheng","https://q.yingjiesheng.com/pc/searchintention")
+      and should_rotate_listing_url("yingjiesheng","https://www.yingjiesheng.com/major/tongxin/beijing")
+      and should_rotate_listing_url("yingjiesheng","https://www.yingjiesheng.com/zhuanye/guanlixue/tianjin")
+      and should_rotate_listing_url("yingjiesheng","https://q.yingjiesheng.com/jobs/search?keyword=设计"))
 
 # Recruitment bulletin pages often list several concrete roles while sharing one article URL.
 yjs_bulletin_parser = Parser()

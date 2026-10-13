@@ -268,6 +268,12 @@ def sanitize_extracted_text(value, max_length=6500):
         text=cleaned
     text=re.sub(r"[ \t]{2,}", " ", text).strip()
 
+    # Contact/application controls and site navigation are not part of a role description.
+    tail_noise_pattern=r"\s*(?:联系方式|联系人|联系电话|联系邮箱|邮件联系|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|模拟面试|立即投递|投递说明|招聘流程|公司介绍|公司简介|上一条|下一条|上一篇|下一篇|上一页|下一页|返回顶部|登录/注册|收藏职位|职位收藏|信息来源|查看原发布网址|版权所有|备案号)\s*[:：]?"
+    tail_noise=re.search(tail_noise_pattern,text,re.I)
+    if tail_noise:
+        text=text[:tail_noise.start()].rstrip(" :-—,;")
+
     keys = r"(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)"
     field_pattern = r'''(?:\\?["'])?''' + keys + r'''(?:\\?["'])?\s*:'''
 
@@ -401,6 +407,29 @@ def should_discover_public_url(source_id,url):
         allowed_query=any(k in p.query.lower() for k in ("page=","pageno=","jobid=","positionid=","keyword=","lang=e"))
         return allowed_path or allowed_query
     return False
+
+def should_rotate_listing_url(source_id,url):
+    """Exclude utility/error pages from rotation while preserving public job category/pagination pages."""
+    if not should_discover_public_url(source_id,url):
+        return False
+    if source_id!="yingjiesheng":
+        return True
+    parsed=urlparse(str(url or ""))
+    host=parsed.netloc.lower()
+    path=(parsed.path or "/").lower().rstrip("/") or "/"
+    if path in {"/404.htm","/404.html","/notfound","/download","/download/"} or path.startswith("/404/"):
+        return False
+    if host.startswith("q."):
+        # Old PC intention/explanation pages are site utilities, not vacancy listings.
+        if path.startswith("/pc/") or path in {"/download","/explain"}:
+            return False
+        return path=="/jobs/search" or path.startswith("/jobs/search/")
+    if host.startswith(("web.","s.")):
+        return path in {"/","/jobs","/search"} or path.startswith(("/jobs/","/job/","/search/"))
+    if path.startswith("/xuanjianghui/"):
+        return bool(re.search(r"/xjh-[a-z0-9-]+\.html$",path))
+    # Keep profession/city and role/city job listing pages. Filter only utility/error routes above.
+    return True
 
 def diagnostic_link_priority(source_id,url,title=""):
     """Rank diagnostic links: vacancy detail first, allowed recruitment routes next, navigation last."""
@@ -689,7 +718,7 @@ def extract_section(text, starts, ends, limit=5000):
         hit=re.search(r"\s*(?:"+end+r")\s*[:：]?\s*",tail,re.I)
         if hit: positions.append(hit.start())
     # Common footer/navigation labels must not become the final paragraph of a job field.
-    footer_re=r"\s*(?:上一条|下一条|上一篇|下一篇|上一页|下一页|查看其他岗位|返回顶部|登录/注册|收藏职位|职位收藏|信息来源|应届生求职网)\s*"
+    footer_re=r"\s*(?:上一条|下一条|上一篇|下一篇|上一页|下一页|查看其他岗位|查看更多职位|返回顶部|登录/注册|收藏职位|职位收藏|信息来源|应届生求职网|联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递方式|投递邮箱|模拟面试|立即投递|投递说明|招聘流程|公司介绍|公司简介|查看原发布网址|版权所有|备案号)\s*[:：]?"
     footer=re.search(footer_re,tail,re.I)
     if footer: positions.append(footer.start())
     if positions: tail=tail[:min(positions)]
@@ -1010,6 +1039,21 @@ def public_lead_dedupe_key(row):
         str(row.get("city","")).strip().lower(),
     )
 
+
+def should_accept_yingjiesheng_detail(title, company, fields, page_text):
+    """Accept a concrete role with a real employer and substantive public detail text."""
+    cleaned_title=clean_job_title(title,"yingjiesheng")
+    if not is_specific_role_title(cleaned_title,"yingjiesheng"):
+        return False
+    cleaned_company=clean_yingjiesheng_company_name(company)
+    if cleaned_company.lower() in {"","应届生求职网","应届生求职","www.yingjiesheng.com","招聘信息","未知","待核验","待确认"}:
+        return False
+    fields=fields or {}
+    for name in ("description","responsibilities","requirements"):
+        value=sanitize_extracted_text(str(fields.get(name,"") or ""))
+        if len(value.strip())>=45:
+            return True
+    return bool(fields.get("salary") and fields.get("degree") and len(clean(page_text or ""))>=180)
 
 def source_role_metrics(rows):
     """Separate records parsed from accessible single-role detail pages from public card/list leads."""
@@ -1466,7 +1510,7 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
 
 def collect_source(src):
     company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); max_direct_detail_pages=int(src.get("max_direct_detail_pages",max_pages)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}; shared_bulletin_seen=set()
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"detail_access_limited":0,"detail_access_limited_samples":[],"public_detail_leads":0,"shared_bulletin_role_leads":0,"direct_detail_links_deferred_by_budget":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"direct_detail_title_candidates":0,"direct_detail_title_rejected":0,"direct_detail_score_gate_recovered":0,"direct_detail_score_gate_skipped":0,"direct_detail_role_rows_emitted":0,"detail_access_limited":0,"detail_access_limited_samples":[],"public_detail_leads":0,"shared_bulletin_role_leads":0,"direct_detail_links_deferred_by_budget":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -1694,13 +1738,26 @@ def collect_source(src):
         candidate_page_titles=detail_role_titles or ([page_title] if page_title else [])
         for candidate_page_title in candidate_page_titles:
             candidate_page_title=clean_job_title(candidate_page_title,src.get("id",""))
+            is_yjs_direct=(src.get("id")=="yingjiesheng" and is_direct_detail_url(final))
+            if is_yjs_direct:
+                diagnostics["direct_detail_title_candidates"]+=1
             page_title_ok=is_specific_role_title(candidate_page_title,src.get("id","")) if "公开" in record_source else is_concrete_role_title(candidate_page_title,src.get("id",""))
             if src.get("id")=="boss" and not (detail_fields.get("company") or (page_company and page_company not in {company,"BOSS直聘"})):
                 page_title_ok=False
             if not candidate_page_title or not page_title_ok:
+                if is_yjs_direct:
+                    diagnostics["direct_detail_title_rejected"]+=1
                 continue
             sc=score(candidate_page_title,final,page_text)
+            if is_yjs_direct and sc<5:
+                if should_accept_yingjiesheng_detail(candidate_page_title,page_company,detail_fields,page_text):
+                    sc=5
+                    diagnostics["direct_detail_score_gate_recovered"]+=1
+                else:
+                    diagnostics["direct_detail_score_gate_skipped"]+=1
             if sc>=5 and is_direct_detail_url(final):
+                if is_yjs_direct:
+                    diagnostics["direct_detail_role_rows_emitted"]+=1
                 item=record(page_company,candidate_page_title,final,record_source,cohort,sc,cohort_evidence=cohort_evidence)
                 merge_detail_fields(item,detail_fields_for_merge)
                 item["cohort"]=item.get("cohort") or cohort or ""
@@ -1796,6 +1853,7 @@ def collect_source(src):
             discovery_url=canonical(urljoin(final,link.get("href","")))
             if not discovery_url or discovery_url in visited or discovery_url in scheduled: continue
             if not should_discover_public_url(src.get("id",""),discovery_url): continue
+            if src.get("id")=="yingjiesheng" and not should_rotate_listing_url(source_id,discovery_url): continue
             is_detail=is_direct_detail_url(discovery_url)
             if source_id=="boss" and is_detail:
                 # BOSS vacancy links consistently redirect to a security interstitial;
@@ -1804,7 +1862,9 @@ def collect_source(src):
                 continue
             if (not is_detail) and src.get("id") in {"yingjiesheng","nowcoder","boss","51job","iguopin"}:
                 candidates=diagnostics["listing_url_candidates"]
-                if discovery_url not in candidates and len(candidates)<int(src.get("listing_pool_limit",1200)):
+                if (should_rotate_listing_url(source_id,discovery_url)
+                        and discovery_url not in candidates
+                        and len(candidates)<int(src.get("listing_pool_limit",1200))):
                     candidates.append(discovery_url)
             if not is_detail and diagnostics["listing_pages_queued"]>=listing_limit: continue
             if len(queue)>=max_pages: continue
@@ -2023,7 +2083,7 @@ def main():
         stale_cycle_urls_pruned=sum(1 for url in state["source_listing_url_pool"].get(source_id,[]) if source_id=="51job" and is_stale_51job_cycle_url(url))
         for url in state["source_listing_url_pool"].get(source_id,[]):
             normalized=normalize_source_url(source_id,str(url))
-            if normalized and normalized not in base_set and not is_direct_detail_url(normalized) and should_discover_public_url(source_id,normalized) and normalized not in stored_pool:
+            if normalized and normalized not in base_set and not is_direct_detail_url(normalized) and should_rotate_listing_url(source_id,normalized) and normalized not in stored_pool:
                 stored_pool.append(normalized)
         cursor=int(state["source_listing_cursor"].get(source_id,0))
         batch_size=int(source.get("rotation_seed_batch",12))
@@ -2066,7 +2126,7 @@ def main():
                 for url in diag.get("listing_url_candidates",[]):
                     normalized=normalize_source_url(source_id,str(url))
                     if (normalized and normalized not in base_set and not is_direct_detail_url(normalized)
-                            and should_discover_public_url(source_id,normalized) and normalized not in pool):
+                            and should_rotate_listing_url(source_id,normalized) and normalized not in pool):
                         pool.append(normalized)
                 state["source_listing_url_pool"][source_id]=pool[-meta["pool_limit"]:]
                 if not meta["pool"] and not meta["batch"]:
@@ -2094,7 +2154,7 @@ def main():
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_access_limited":diag.get("detail_access_limited",0),"detail_access_limited_samples":diag.get("detail_access_limited_samples",[]),"public_detail_leads":diag.get("public_detail_leads",0),"shared_bulletin_role_leads":diag.get("shared_bulletin_role_leads",0),"direct_detail_links_deferred_by_budget":diag.get("direct_detail_links_deferred_by_budget",0),"direct_detail_page_budget":int(s.get("max_direct_detail_pages",s.get("max_pages",0))),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"direct_detail_title_candidates":diag.get("direct_detail_title_candidates",0),"direct_detail_title_rejected":diag.get("direct_detail_title_rejected",0),"direct_detail_score_gate_recovered":diag.get("direct_detail_score_gate_recovered",0),"direct_detail_score_gate_skipped":diag.get("direct_detail_score_gate_skipped",0),"direct_detail_role_rows_emitted":diag.get("direct_detail_role_rows_emitted",0),"detail_access_limited":diag.get("detail_access_limited",0),"detail_access_limited_samples":diag.get("detail_access_limited_samples",[]),"public_detail_leads":diag.get("public_detail_leads",0),"shared_bulletin_role_leads":diag.get("shared_bulletin_role_leads",0),"direct_detail_links_deferred_by_budget":diag.get("direct_detail_links_deferred_by_budget",0),"direct_detail_page_budget":int(s.get("max_direct_detail_pages",s.get("max_pages",0))),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
                             "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
                             "role_records":diag.get("role_records",0),
