@@ -34,7 +34,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2000,
-        "next_offset": 1566,
+        "next_offset": 1706,
         "batch_size": 140
       },
       "51job": {
@@ -54,9 +54,9 @@
       }
     }
   },
-  "records_found": 2,
-  "active_candidates": 0,
-  "pending_review": 2,
+  "records_found": 28,
+  "active_candidates": 4,
+  "pending_review": 24,
   "results": [
     {
       "id": "boss",
@@ -2755,32 +2755,32 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 420,
-      "records_found": 2,
-      "active_candidates": 0,
-      "pending_review": 2,
+      "records_found": 28,
+      "active_candidates": 4,
+      "pending_review": 24,
       "pages_attempted": 420,
       "pages_failed": 0,
-      "html_bytes": 14462172,
-      "links_seen": 58764,
+      "html_bytes": 15987213,
+      "links_seen": 63709,
       "listing_url_candidates": 2000,
-      "listing_urls_visited": 307,
+      "listing_urls_visited": 269,
       "listing_pool_size": 2000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 1566,
-      "tables_seen": 17008,
-      "embedded_json_blocks": 1132,
+      "listing_cursor_next": 1706,
+      "tables_seen": 15432,
+      "embedded_json_blocks": 1295,
       "role_like_links": 0,
-      "discovery_pages_queued": 575,
+      "discovery_pages_queued": 617,
       "listing_pages_queued": 160,
       "direct_detail_pages_visited": 113,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
       "direct_detail_requests_attempted": 113,
-      "direct_detail_title_candidates": 1,
-      "direct_detail_title_rejected": 0,
+      "direct_detail_title_candidates": 41,
+      "direct_detail_title_rejected": 14,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 1,
+      "direct_detail_role_rows_emitted": 27,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2801,14 +2801,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-074-437.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5de3c1f048a3e3c05689e23da8067d1ffb937750fc69445999';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-116-609.html",
+          "page_title": "东莞奥古服饰有限公司招聘外贸业务员_广东校园招聘",
+          "text_preview": "东莞奥古服饰有限公司招聘外贸业务员_广东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 湛江科技学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 湛江科技学院 核实，并请同时联系本站处理该转载信息。 [广东]东莞奥古服饰有限公司 职位： 外贸业务员 发布时间： 2026-10-13 工作地点： 其它 信息来源： 湛江科技学院 职位类型： 全职 专业标签： 外国文学 经济与贸易 职位描述 东莞奥古服饰有限公司 外贸业务员（虎门） 4K-8K/月 东莞市 本科及以上 模拟面试 职位诱惑：岗前培训 年度旅游 岗位晋升 包吃包住 薪酬福利：五险 发布时间：2026年10月12日 职位描述 岗位职责： 岗位职责 1、通过邮件、WhatsApp、LinkedIn等渠道开发海外新客户，跟进意向客户并促成订单； 2、处理报价、PI制作、合同谈判、订单确认、确保按时交货等全流程外贸业务； 3、具备良好的服务意识，负责客户的拓展与维护工作； 4、负责收汇跟进、客户投诉处理及售后维护，推动客户复购； 5、及时了解市场信息，客户需求，与客户保持共赢的合作关系； 6、完成上级安排的其他工作。 岗"
         },
         {
-          "url_path": "/job-008-071-530.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5de3c1f27c4d4cb778c8e157aa6cd5ecd19391a50d4a1d798d';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-116-606.html",
+          "page_title": "东莞奥古服饰有限公司招聘服装纸样助理_广东校园招聘",
+          "text_preview": "东莞奥古服饰有限公司招聘服装纸样助理_广东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 湛江科技学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 湛江科技学院 核实，并请同时联系本站处理该转载信息。 [广东]东莞奥古服饰有限公司 职位： 服装纸样助理 发布时间： 2026-10-13 工作地点： 其它 信息来源： 湛江科技学院 职位类型： 全职 专业标签： 纺织类 职位描述 东莞奥古服饰有限公司 服装纸样助理 5K-7K/月 东莞市 本科及以上 模拟面试 职位诱惑：单休 包吃包住 岗位晋升 房补 发布时间：2026年10月12日 职位描述 岗位职责： 岗位职责： 协助纸样师根据设计稿、工艺单制作和修改纸样（ET/CAD软件操作）； 负责纸样的分类、编号、归档及电子版/纸质版的管理； 跟进打版、车板环节，记录样衣修改意见并反馈给纸样师； 协助完成放码、排料、算料等基础技术工作； 整理面辅料用量表、尺寸表、工艺说明等技术资料； 协助处理大货生产前的纸样确认及产前样跟进； 完成上级安排的其他工作。 岗位要求： 任职要求： 本科及以上学历，服装设计与工程、服装制版等相关专业优"
         }
       ],
       "browser_render_attempts": 0,
@@ -2817,15 +2817,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 1,
+      "role_records": 27,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 1,
+      "direct_detail_role_records": 27,
       "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "ԺƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
-        "AIGC影视创意制作（校招）"
+        "AIGC影视创意制作（校招）",
+        "服装纸样助理",
+        "总经理助理",
+        "质量保证员",
+        "电气系统适航",
+        "安全性",
+        "机械系统",
+        "设计助理"
       ],
       "role_field_samples": [
         {
@@ -2841,6 +2848,62 @@
             "requirements": 311,
             "benefits": 14
           }
+        },
+        {
+          "title": "服装纸样助理",
+          "company": "东莞奥古服饰有限公司",
+          "city": "其它",
+          "salary": "5K-7K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-116-606.html",
+          "field_lengths": {
+            "description": 35,
+            "responsibilities": 173,
+            "requirements": 142,
+            "benefits": 32
+          }
+        },
+        {
+          "title": "总经理助理",
+          "company": "东莞奥古服饰有限公司",
+          "city": "其它",
+          "salary": "5K-8K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-116-605.html",
+          "field_lengths": {
+            "description": 34,
+            "responsibilities": 104,
+            "requirements": 111,
+            "benefits": 29
+          }
+        },
+        {
+          "title": "质量保证员",
+          "company": "广东双林生物制药有限公司",
+          "city": "其它",
+          "salary": "面议",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-116-604.html",
+          "field_lengths": {
+            "description": 36,
+            "responsibilities": 66,
+            "requirements": 69,
+            "benefits": 51
+          }
+        },
+        {
+          "title": "电气系统适航",
+          "company": "白鲸航线（北京）科技有限公司",
+          "city": "上海、北京",
+          "salary": "10K-17K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-116-614.html",
+          "field_lengths": {
+            "description": 59,
+            "responsibilities": 199,
+            "requirements": 154,
+            "benefits": 49
+          }
         }
       ],
       "link_samples": [],
@@ -2851,7 +2914,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-13T11:33:46+00:00",
+      "last_run_at": "2026-10-13T11:58:10+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3556,7 +3619,7 @@
   "published_priority_candidates": 172,
   "published_pending_review": 5141,
   "records_added_this_run": 0,
-  "records_updated_this_run": 2,
+  "records_updated_this_run": 28,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3594,12 +3657,12 @@
     "tail_noise_remaining": 0,
     "samples": []
   },
-  "quality_checked_at": "2026-10-13T11:57:47+00:00",
+  "quality_checked_at": "2026-10-13T12:19:22+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。",
   "collected_sources": 1,
   "run_scope": "source_subset",
   "run_scope_source_ids": [
     "yingjiesheng"
   ],
-  "records_found_this_run": 2
+  "records_found_this_run": 28
 }
