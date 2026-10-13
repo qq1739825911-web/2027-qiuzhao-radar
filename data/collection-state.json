@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 101,
+  "qiuzhaowang_next_page": 111,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    91,
-    92,
-    93,
-    94,
-    95,
-    96,
-    97,
-    98,
-    99,
-    100
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -251,9 +251,6 @@
       "https://nowpick.nowcoder.com/jobs/fulltime/center"
     ],
     "yingjiesheng": [
-      "https://zhiwei.yingjiesheng.com/chanpin",
-      "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan",
-      "https://zhiwei.yingjiesheng.com/news",
       "https://zhiwei.yingjiesheng.com/yisheng",
       "https://zhiwei.yingjiesheng.com/tushuguan",
       "https://zhiwei.yingjiesheng.com/cehua",
@@ -1250,14 +1247,17 @@
       "https://m.yingjiesheng.com/other/joblist_4.html",
       "https://m.yingjiesheng.com/other/joblist_5.html",
       "https://m.yingjiesheng.com/other/joblist_6.html",
-      "https://m.yingjiesheng.com/other/joblist_7.html"
+      "https://m.yingjiesheng.com/other/joblist_7.html",
+      "https://q.yingjiesheng.com/jobs/search/%E6%B8%B8%E6%88%8F?industry=40",
+      "https://q.yingjiesheng.com/jobs/search/%E6%9C%BA%E6%A2%B0?industry=14",
+      "https://q.yingjiesheng.com/jobs/search/%E9%80%9A%E4%BF%A1?industry=31%2C02"
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 87,
-    "51job": 342,
-    "boss": 223,
-    "nowcoder": 238,
-    "yingjiesheng": 542
+    "iguopin": 92,
+    "51job": 360,
+    "boss": 232,
+    "nowcoder": 248,
+    "yingjiesheng": 566
   }
 }
