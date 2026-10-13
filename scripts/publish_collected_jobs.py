@@ -191,7 +191,7 @@ try:
     manifest["quality_gate_version"]="2.1"
     manifest["source_quality_filters"]={
         "aggregator_non_detail_or_non_role_records_removed":quality_filter_removed,
-        "policy":"聚合来源仅保留岗位级详情链接及明确岗位名；搜索、分类、企业介绍、宣传卡片不作为岗位。公告与官方入口线索单独保留。",
+        "policy":"聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。",
         "collector_title_rule":"is_specific_role_title",
         "sources":["秋招网","应届生求职网","BOSS直聘","牛客"]
     }

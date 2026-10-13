@@ -12,7 +12,7 @@ from collect_public_sources import (
     is_boss_campus_card_relevant, should_queue_detail, extract_visible_public_role_leads,
     is_public_role_lead_title, public_lead_dedupe_key,
     should_purge_qzw_noise_record,
-    source_role_metrics,
+    source_role_metrics, extract_salary_text,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
@@ -431,6 +431,31 @@ fields = extract_yingjiesheng_fields(
     fixture_title, fixture_text, "https://m.yingjiesheng.com/jobdetail/170935981"
 )
 check("AIGC title accepted as a concrete role", is_concrete_role_title("AIGC影视创意制作"))
+check("salary extraction preserves a real graduate range without a label",
+      extract_salary_text("AIGC影视创意制作 8千-1.5万 本科 全职")=="8千-1.5万")
+check("salary extraction supports 4-9K shorthand",
+      extract_salary_text("岗位 4-9K 本科")=="4-9K")
+check("salary extraction accepts an explicitly labelled annual salary",
+      extract_salary_text("年薪：30万元/年 本科")=="30万元/年")
+check("salary extraction rejects stray numbers with a currency suffix",
+      extract_salary_text("工作内容编号439万 本科及以上 职位描述")=="")
+check("generic detail fallback does not turn a stray number into salary",
+      extract_detail_fields_generic("职位描述编号439万 本科及以上","FinTech方向管理培训生").get("salary","")=="")
+check("YJS detail parser extracts an explicitly labelled employer",
+      extract_yingjiesheng_fields("FinTech方向管理培训生 - 应届生求职网",
+        "招聘单位：江苏示例科技有限公司 职位：FinTech方向管理培训生 工作地点：南京 本科",
+        "https://m.yingjiesheng.com/job-008-115-342.html").get("company")=="江苏示例科技有限公司")
+check("YJS detail parser does not infer a salary from a stray 439万 token",
+      extract_yingjiesheng_fields("FinTech方向管理培训生 - 应届生求职网",
+        "FinTech方向管理培训生 编号439万 本科及以上 工作地点：其它",
+        "https://m.yingjiesheng.com/job-008-115-342.html").get("salary","")=="")
+check("YJS website name cannot pass as an employer for a specific vacancy",
+      not should_publish_record({"source":"应届生求职网公开岗位","company":"应届生求职网","title":"FinTech方向管理培训生",
+        "source_url":"https://m.yingjiesheng.com/job-008-115-342.html","granularity":"review"}))
+check("YJS expanding list rotation budget is configured",
+      any(src.get("id")=="yingjiesheng" and src.get("max_pages",0)>=200 and src.get("rotation_seed_batch",0)>=40
+          for src in constReg))
+
 check("YJS detail role title extracted", fields.get("title") == "AIGC影视创意制作（校招）")
 check("YJS salary extracted", fields.get("salary") == "8千-1.5万")
 check("YJS degree extracted", fields.get("degree") == "本科")

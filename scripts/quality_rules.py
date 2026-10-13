@@ -15,6 +15,11 @@ def should_publish_record(row):
     if granularity in {"announcement","entry"}:
         return True
     source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else ("iguopin" if "国聘" in source else ("51job" if "前程无忧" in source or "51job" in source.lower() else "")))))
+    if source_id=="yingjiesheng":
+        employer=re.sub(r"\s+","",str(row.get("company","") or "")).strip().lower()
+        if employer in {"","应届生求职网","应届生求职","www.yingjiesheng.com","yingjiesheng","招聘信息","未知","待核验","待确认"}:
+            return False
+
     if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}:
         title=clean_job_title(row.get("title",""),source_id)
         if not is_specific_role_title(title,source_id):
