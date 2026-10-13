@@ -5789,7 +5789,55 @@
     "auto-32e07b79626b3f30": 0,
     "auto-e075a4695a7146a0": 0,
     "auto-ec9dfa7fadbecbea": 0,
-    "auto-33d35bf151e59a3e": 0
+    "auto-33d35bf151e59a3e": 0,
+    "auto-7738a5eece5dc1e3": 0,
+    "auto-3f8daa1742b6edef": 0,
+    "auto-44fb620b48d71a2a": 0,
+    "auto-c6c991d8bab3caa9": 0,
+    "auto-9c55ff1996572d13": 0,
+    "auto-8f58b2116e2475ab": 0,
+    "auto-65ccf5e5da27fe0d": 0,
+    "auto-9b45f901b2261f9b": 0,
+    "auto-9ec3c5a88d004512": 0,
+    "auto-3eea90d1bf92587b": 0,
+    "auto-3fdc487c55f5dd30": 0,
+    "auto-f3105c05897676fc": 0,
+    "auto-44ef498e210f807f": 0,
+    "auto-617e155bd59b7030": 0,
+    "auto-cf9ff99b2dce4b96": 0,
+    "auto-c648630aae21227c": 0,
+    "auto-62eb9b2b22024037": 0,
+    "auto-d3ffc4433359514a": 0,
+    "auto-973eb3094ef5cb54": 0,
+    "auto-5bdd055285c0e787": 0,
+    "auto-aafc2dd467e8ebc7": 0,
+    "auto-2472b8c0ff1620ee": 0,
+    "auto-5dfb451ec58fd983": 0,
+    "auto-79ae2fc723977fa7": 0,
+    "auto-7e17a45f6d8232bd": 0,
+    "auto-4ec45aacb7044e3d": 0,
+    "auto-a4956ef42be8a0f7": 0,
+    "auto-ab01d9d46c316e22": 0,
+    "auto-d86ca4ed0d238bd6": 0,
+    "auto-814e0a7d4500c36f": 0,
+    "auto-e1ca6140977b75e8": 0,
+    "auto-556fac748d9cd370": 0,
+    "auto-9de55249e97895c9": 0,
+    "auto-a54b3ba42ccec1df": 0,
+    "auto-1adc6b6425889640": 0,
+    "auto-0e006e2c03be29c6": 0,
+    "auto-4332ea0344ec5c3b": 0,
+    "auto-54c7ef2f75ab0f46": 0,
+    "auto-c7233ed59ebd3cee": 0,
+    "auto-e19f2eded249b1da": 0,
+    "auto-6f32cd35d65d6baa": 0,
+    "auto-cf3e0bfef184b92a": 0,
+    "auto-a23e6749be753fe2": 0,
+    "auto-0670278d7bca090c": 0,
+    "auto-6d8772446eaad46b": 0,
+    "auto-5c3c0b7615d5707a": 0,
+    "auto-8a69284dd00b7cd4": 0,
+    "auto-1f884dd21d4ee5a0": 0
   },
   "last_run_at": "2026-10-13T09:35:32+00:00",
   "last_batch_size": 120,
@@ -5800,13 +5848,13 @@
     "xiaomi-2027-ai-infra-7671295378604607754": "2026-10-12T04:22:50+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-13T10:15:29+00:00"
+    "yingjiesheng": "2026-10-13T20:53:50+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 180
+    "yingjiesheng": 360
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 453
+    "yingjiesheng": 516
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
