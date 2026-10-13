@@ -1,0 +1,98 @@
+name: Yingjiesheng Focused Collector
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/collect_public_sources.py"
+      - "scripts/verify_job_links.py"
+      - "scripts/publish_collected_jobs.py"
+      - "scripts/quality_rules.py"
+      - "scripts/finalize_job_quality.py"
+      - "data/company_sources.json"
+      - ".github/workflows/yingjiesheng-collector.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "15 3,9,15,21 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: job-data-maintenance-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      QIUZHAO_SOURCE_IDS: yingjiesheng
+      QIUZHAO_LINK_VERIFY_BATCH_SIZE: "180"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync with latest main before collecting
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate browser renderer syntax
+        run: node --check scripts/public_page_renderer.cjs
+      - name: Parser and source-quality regression tests
+        run: python scripts/test_job_quality.py
+      - name: Frontend detail and search regression tests
+        run: python scripts/test_frontend.py
+      - name: Collect Yingjiesheng public categories, pagination and direct details
+        run: python scripts/collect_public_sources.py
+      - name: Merge collected records into the existing job database
+        run: python scripts/publish_collected_jobs.py
+      - name: Validate normalized job data
+        run: python scripts/validate_jobs.py
+      - name: Deduplicate merged records
+        run: python scripts/dedupe_jobs.py
+      - name: Verify rotating batch of Yingjiesheng direct details
+        run: python scripts/verify_job_links.py
+      - name: Recalculate review buckets and audit detail-text tails
+        run: python scripts/finalize_job_quality.py
+      - name: Report Yingjiesheng collection and cleanup metrics
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("data/collection-manifest.json",encoding="utf-8"))
+          y=next((x for x in d.get("results",[]) if x.get("id")=="yingjiesheng"),{})
+          v=json.load(open("data/verification-manifest.json",encoding="utf-8"))
+          print("YINGJIESHENG RUN:",json.dumps({
+            "run_scope":d.get("run_scope"),
+            "records_found_this_run":d.get("records_found_this_run"),
+            "published_total_jobs":d.get("published_total_jobs"),
+            "published_priority_candidates":d.get("published_priority_candidates"),
+            "published_pending_review":d.get("published_pending_review"),
+            "pages_visited":y.get("pages_visited"),
+            "pages_failed":y.get("pages_failed"),
+            "listing_urls_visited":y.get("listing_urls_visited"),
+            "listing_pool_size":y.get("listing_pool_size"),
+            "direct_detail_pages_visited":y.get("direct_detail_pages_visited"),
+            "direct_detail_links_deferred_by_budget":y.get("direct_detail_links_deferred_by_budget"),
+            "records_found":y.get("records_found"),
+            "direct_detail_role_records":y.get("direct_detail_role_records"),
+            "text_cleanup":d.get("yingjiesheng_text_cleanup"),
+            "verification_scope":v.get("scope"),
+            "verification_checked":v.get("checked"),
+            "verification_alive":v.get("link_alive"),
+            "verification_unknown":v.get("unknown")
+          },ensure_ascii=False))
+          PY
+      - name: Commit collected data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/jobs.inbox.json data/jobs.json data/collection-manifest.json data/collection-state.json data/verification-state.json data/verification-manifest.json
+          git diff --cached --quiet || git commit -m "chore: collect Yingjiesheng public campus jobs"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
