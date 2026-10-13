@@ -117,12 +117,12 @@ async function loadData(){
   salary:x.salary||"",program:x.program||"",cohort:x.cohort||"",cohort_evidence:x.cohort_evidence||"",cohort_confirmed:!!x.cohort_confirmed,
   verification_status:x.verification_status||"",verification_note:x.verification_note||"",verification_http_status:x.verification_http_status||0,
   last_verified_at:x.last_verified_at||"",last_collected:x.last_collected||"",last_seen:x.last_seen||x.last_collected||"",collector:x.collector||"",granularity:x.granularity||"",
-  review_bucket:x.review_bucket||"",review_reasons:Array.isArray(x.review_reasons)?x.review_reasons:[],
+  review_bucket:x.review_bucket||"",review_reasons:Array.isArray(x.review_reasons)?x.review_reasons:[],public_card_lead:!!x.public_card_lead,lead_evidence:x.lead_evidence||"",source_card_text:sanitizeDetailField(x.source_card_text||"",1200),source_page_title:sanitizeDetailField(x.source_page_title||"",240),
   description:sanitizeDetailField(x.description||x.job_description||x.jd||"",6500),responsibilities:sanitizeDetailField(x.responsibilities||"",4500),requirements:sanitizeDetailField(x.requirements||"",4500),
   benefits:sanitizeDetailField(x.benefits||"",2000),company_info:sanitizeDetailField(x.company_info||"",2000),address:sanitizeDetailField(x.address||"",240),work_time:sanitizeDetailField(x.work_time||"",500),
   experience:x.experience||"",job_type:x.job_type||"",headcount:x.headcount||"",enterprise_type:x.enterprise_type||x.company_type||""
  }));
- DATA=DATA.map(row=>({...row,searchText:[row.company,row.title,row.keywords,row.category,row.city,row.type,row.degree,row.program,row.cohort,row.salary,row.address,row.description,row.requirements,row.responsibilities,row.benefits,row.company_info].join(" ").toLocaleLowerCase()}));
+ DATA=DATA.map(row=>({...row,searchText:[row.company,row.title,row.keywords,row.category,row.city,row.type,row.degree,row.program,row.cohort,row.salary,row.address,row.description,row.requirements,row.responsibilities,row.benefits,row.company_info,row.job_type,row.experience].join(" ").toLocaleLowerCase()}));
  if(usedFallback){
   $("dataNotice").className="notice";
   $("dataNotice").textContent="在线数据源暂不可用，已启用内置兜底："+DATA.length+" 条。诊断："+errors.join("；");
@@ -219,9 +219,21 @@ function isPriorityJob(x){
  return true;
 }
 function syncFavoriteButton(){const b=$("favOnly");if(!b)return;b.classList.toggle("on",favoritesOnly);b.textContent=favoritesOnly?"★ 正在查看收藏":"☆ 只看收藏";}
+function expandSearchTerms(query){
+ const q=String(query||"").trim().toLocaleLowerCase();if(!q)return [];
+ const aliases={
+  "aigc":["生成式人工智能","ai生成内容","内容生成","ai视频","视频生成","图生视频","文生视频","漫剧","ai短剧"],
+  "漫剧":["aigc","ai短剧","漫画视频","图生视频","文生视频","视频生成"],
+  "ai视频":["aigc","图生视频","文生视频","视频生成","漫剧","ai短剧"],
+  "新媒体运营":["内容运营","短视频运营","社媒运营","社交媒体","小红书运营","抖音运营"],
+  "视觉传达":["视觉设计","平面设计","品牌设计","包装设计","ui设计","广告设计"]
+ };
+ const terms=[q];for(const [key,values] of Object.entries(aliases)){if(q===key||q.includes(key)){terms.push(...values);}}
+ return [...new Set(terms.filter(Boolean))];
+}
 function filtered(){
- const q=$("q").value.trim().toLocaleLowerCase(),c=$("cat").value,ci=$("city").value,t=$("type").value,s=$("status").value;
- return DATA.filter(x=>(!q||(x.searchText||[x.company,x.title,x.keywords,x.category,x.city,x.type,x.degree,x.program,x.cohort,x.salary,x.address].join(" ").toLocaleLowerCase()).includes(q))
+ const q=$("q").value.trim().toLocaleLowerCase(),terms=expandSearchTerms(q),c=$("cat").value,ci=$("city").value,t=$("type").value,s=$("status").value;
+ return DATA.filter(x=>(!q||terms.some(term=>(x.searchText||[x.company,x.title,x.keywords,x.category,x.city,x.type,x.degree,x.program,x.cohort,x.salary,x.address,x.description,x.requirements,x.responsibilities,x.benefits,x.company_info,x.job_type,x.experience].join(" ").toLocaleLowerCase()).includes(term)))
  &&(!c||x.category===c)&&(!ci||String(x.city||"").toLowerCase().includes(ci.toLowerCase()))&&(!t||x.type===t)
  &&(!s||(s==="urgent"&&x.deadline&&days(x.deadline)>=0&&days(x.deadline)<=7))
  &&(!favoritesOnly||fav.includes(x.id)));
