@@ -1,4 +1,4 @@
-"""V5.20 public recruitment collector.
+"""V5.21 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -957,15 +957,12 @@ def extract_visible_public_role_leads(source_id, parser, source_url, record_sour
         context=clean(" ".join(nodes[max(0,i-2):min(len(nodes),i+11)]))[:900]
         context_year=year(context)
         if source_id=="iguopin":
-            # Do not surface general social vacancies as graduate-role leads.
-            if not re.search(r"(?:校招|应届生|应届|在校生|2027\s*届|27\s*届)",context):
-                continue
-            if re.search(r"(?<!\d)(?:202[0-6]|2[0-6])\s*(?:届|年应届|年校招|年校园招聘)",context) and not re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|应届)|(?<!\d)27\s*届",context):
-                continue
+            # Find the employer first, then bound the text evidence to this role card.
+            # A broad lookahead can leak the next vacancy's 2027-campus marker onto
+            # a neighbouring social job in the same flat list of visible text nodes.
             company=""
-            # Public list cards render the title followed by location/pay/degree and the
-            # employer name. Only accept a nearby company-like text node; never guess it.
-            for candidate in nodes[i+1:min(len(nodes),i+16)]:
+            company_index=-1
+            for j,candidate in enumerate(nodes[i+1:min(len(nodes),i+16)],start=i+1):
                 candidate=clean(candidate)
                 if candidate==title or not (4<=len(candidate)<=90):
                     continue
@@ -975,8 +972,21 @@ def extract_visible_public_role_leads(source_id, parser, source_url, record_sour
                     continue
                 if re.search(r"(?:有限公司|股份|集团|银行|大学|研究院|研究所|科技|中心|医院|公司|通信|产业园)",candidate):
                     company=candidate
+                    company_index=j
                     break
-            if not company:
+            if not company or company_index<0:
+                continue
+            context=clean(" ".join(nodes[i:company_index+1]))[:900]
+            context_year=year(context)
+            # Explicit social recruiting or work-experience requirements override
+            # generic page banners or the next card's campus-cohort marker.
+            if re.search(r"(?:社招|社会招聘)",context):
+                continue
+            if re.search(r"(?:\d+\s*[-—至]\s*\d+\s*年(?:经验)?|\d+\s*年以上经验)",context):
+                continue
+            if not re.search(r"(?:校招|应届生|应届|在校生|2027\s*届|27\s*届)",context):
+                continue
+            if re.search(r"(?<!\d)(?:202[0-6]|2[0-6])\s*(?:届|年应届|年校招|年校园招聘)",context) and not re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|应届)|(?<!\d)27\s*届",context):
                 continue
             cohort=context_year if context_year.startswith("2027") else ""
             evidence="page_text" if cohort else ""
@@ -1144,7 +1154,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.20","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.21","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1784,7 +1794,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.20","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.21","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

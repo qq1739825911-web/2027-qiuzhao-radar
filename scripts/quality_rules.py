@@ -45,6 +45,12 @@ def should_publish_record(row):
                     return False
                 if parsed.path.rstrip("/")!="/job" and not parsed.path.startswith("/job/list"):
                     return False
+                # Use the stored local card as evidence; a generic source-page banner
+                # cannot turn an explicit social-recruiting job into a campus lead.
+                if re.search(r"(?:社招|社会招聘)",card):
+                    return False
+                if re.search(r"(?:\d+\s*[-—至]\s*\d+\s*年(?:经验)?|\d+\s*年以上经验)",card):
+                    return False
                 if not re.search(r"(?:校招|应届生|应届|在校生|2027\s*届|27\s*届)",card):
                     return False
                 if re.search(r"(?<!\d)(?:202[0-6]|2[0-6])\s*(?:届|年应届|年校招|年校园招聘)",card) and not re.search(r"(?<!\d)2027\s*(?:届|年)?\s*(?:校招|校园招聘|应届)|(?<!\d)27\s*届",card):

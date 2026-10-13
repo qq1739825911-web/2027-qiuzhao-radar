@@ -293,6 +293,23 @@ check("contact/title noise cannot be published as a list lead",
         "status":"pending_review","company":"亚信科技有限公司","title":"我是亚亚，欢迎咨询",
         "source_url":"https://campus.51job.com/asiainfo/jobs.html","source_card_text":"我是亚亚，欢迎咨询",
         "source_page_title":"亚信2027届校园招聘"}))
+check("Guopin list extraction isolates mixed social and current-campus cards",
+      (lambda p: (
+        p.feed('<html><title>招聘信息-国聘</title><body><h1>校园招聘</h1>'
+          '<div><span>AI剪辑</span><span>陵水</span><span>4~8K社招1-3年本科</span><span>剪辑师AI内容生成</span><span>笙橙数智科技（海南）有限公司</span></div>'
+          '<div><span>大模型算法工程师</span><span>南京</span><span>面议2027届校招应届生硕士</span><span>中材国际智能科技有限公司</span></div>'
+          '</body></html>'),
+        (lambda rows: len(rows)==1 and rows[0].get("title")=="大模型算法工程师"
+          and rows[0].get("company")=="中材国际智能科技有限公司" and rows[0].get("cohort")=="2027届"
+          and "社招" not in rows[0].get("source_card_text",""))(
+            extract_visible_public_role_leads("iguopin",p,"https://www.iguopin.com/job/list?keyword=算法","国聘公开招聘",p.page_title))
+      ))(Parser()))
+check("Guopin historical social lead remains rejected despite a neighboring 2027 marker",
+      not should_publish_record({"source":"国聘公开招聘","granularity":"lead","lead_evidence":"visible_public_job_card",
+        "status":"pending_review","company":"笙橙数智科技（海南）有限公司","title":"AI剪辑",
+        "source_url":"https://www.iguopin.com/job/list?keyword=AI",
+        "source_card_text":"AI剪辑 陵水 4~8K社招1-3年本科 2027届校招应届生 中材国际智能科技有限公司",
+        "source_page_title":"招聘信息-国聘","cohort":"2027届","cohort_evidence":"page_text"}))
 check("old-cycle Guopin lead cannot enter the public pending database",
       not should_publish_record({"source":"国聘公开招聘","granularity":"lead","lead_evidence":"visible_public_job_card",
         "status":"pending_review","company":"某科技有限公司","title":"软件开发工程师",
