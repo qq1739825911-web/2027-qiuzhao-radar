@@ -2,7 +2,7 @@
 Only public HTTP(S) pages are checked. No login, private APIs, CAPTCHA or anti-bot bypass.
 A link is marked closed only after two 404/410 or explicit closed-marker checks separated by >=5h45m.
 """
-import json, re, time
+import json, re, time, os
 from pathlib import Path
 from datetime import datetime, timezone, date, timedelta
 from urllib.request import Request, urlopen
@@ -28,6 +28,19 @@ CLOSED_MARKERS=("职位已下线","岗位已下线","职位不存在","岗位不
 ACCESS_RESTRICTED_MARKERS=("请完成安全验证","访问过于频繁","行为验证")
 GAP=timedelta(hours=5,minutes=45)
 
+def parse_source_ids(value):
+    return {part.strip().lower() for part in re.split(r"[,;\s]+", str(value or "")) if part.strip()}
+
+def source_id_for_job(job):
+    source=str(job.get("source","") or "").lower()
+    if "应届生求职网" in source: return "yingjiesheng"
+    if "牛客" in source or "nowcoder" in source: return "nowcoder"
+    if "boss直聘" in source or "zhipin" in source: return "boss"
+    if "国聘" in source or "iguopin" in source: return "iguopin"
+    if "前程无忧" in source or "51job" in source: return "51job"
+    if "秋招网" in source or "qiuzhaowang" in source: return "qiuzhaowang"
+    return ""
+
 def is_security_interstitial_url(url):
     return urlparse(str(url or "")).path.rstrip("/").lower()=="/web/passport/zp/security.html"
 
@@ -43,10 +56,15 @@ def main():
     jobs=json.loads(JOBS.read_text(encoding="utf-8"))
     try: state=json.loads(STATE.read_text(encoding="utf-8"))
     except Exception: state={"cursor":0,"failures":{}}
-    previous=state.get("last_run_at")
+    scope_ids=parse_source_ids(os.environ.get("QIUZHAO_SOURCE_IDS",""))
+    scope_key=",".join(sorted(scope_ids)) if scope_ids else "__all__"
+    scope_last_runs=state.setdefault("scope_last_run_at",{})
+    scope_cursors=state.setdefault("scope_cursors",{})
+    previous=scope_last_runs.get(scope_key) if scope_ids else state.get("last_run_at")
+    selected_jobs=[job for job in jobs if not scope_ids or source_id_for_job(job) in scope_ids]
     failures=state.setdefault("failures",{}); last_missing=state.setdefault("last_missing_at",{})
     now_dt=datetime.now(timezone.utc); repaired=0
-    for job in jobs:
+    for job in selected_jobs:
         jid=str(job.get("id",""))
         if job.get("status")=="closed" and "连续两次核验确认链接失效" in job.get("verification_note",""):
             prior=last_missing.get(jid) or previous
@@ -77,14 +95,15 @@ def main():
     # Group multiple role rows that share one listing/detail URL. Check each unique URL once,
     # then propagate the result to every role tied to that URL.
     by_url={}
-    for job in jobs:
+    for job in selected_jobs:
         url=job.get("source_url","")
         if job.get("demo") or not url.startswith("https://") or not is_direct_detail(url): continue
         by_url.setdefault(url,[]).append(job)
     eligible_urls=sorted(by_url,key=lambda u:(min((j.get("last_verified","") for j in by_url[u]),default=""),u))
-    batch_size=120
+    batch_size=max(1,int(os.environ.get("QIUZHAO_LINK_VERIFY_BATCH_SIZE","120")))
+    cursor_value=scope_cursors.get(scope_key,0) if scope_ids else state.get("cursor",0)
     if eligible_urls:
-        start=int(state.get("cursor",0))%len(eligible_urls)
+        start=int(cursor_value)%len(eligible_urls)
         batch_urls=(eligible_urls+eligible_urls)[start:start+min(batch_size,len(eligible_urls))]
     else: start=0; batch_urls=[]
     alive=missing=unknown=closed=records_touched=0; checked=[]
@@ -132,7 +151,7 @@ def main():
             time.sleep(0.03)
 
     cutoff=(date.today()-timedelta(days=7)).isoformat()
-    for job in jobs:
+    for job in selected_jobs:
         if job.get("demo") or job.get("status")=="closed" or job.get("verification_status")=="missing_recheck": continue
         last=job.get("last_verified","")
         if not last or last<cutoff:
@@ -140,9 +159,27 @@ def main():
             job["verification_note"]="最近一次核验超过7天或缺少核验日期；需重新核对，未据此关闭岗位"
         elif job.get("verification_status")=="stale":
             job["verification_status"]="not_checked"; job.pop("verification_note",None)
-    state.update({"cursor":(start+len(batch_urls))%max(1,len(eligible_urls)),"last_run_at":STAMP,"last_batch_size":len(batch_urls),"eligible_count":len(eligible_urls)})
+    next_cursor=(start+len(batch_urls))%max(1,len(eligible_urls))
+    if scope_ids:
+        scope_cursors[scope_key]=next_cursor
+        scope_last_runs[scope_key]=STAMP
+        state.setdefault("scope_eligible_counts",{})[scope_key]=len(eligible_urls)
+        state.setdefault("scope_batch_sizes",{})[scope_key]=len(batch_urls)
+    else:
+        state.update({"cursor":next_cursor,"last_run_at":STAMP,"last_batch_size":len(batch_urls),"eligible_count":len(eligible_urls)})
     STATE.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"last_run_at":STAMP,"checked":len(batch_urls),"records_touched":records_touched,"eligible_direct_links":len(eligible_urls),"link_alive":alive,"missing_needs_recheck":missing,"unknown":unknown,"closed_after_two_checks":closed,"batch_size":batch_size,"note":"链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。","checked_items":checked},ensure_ascii=False,indent=2),encoding="utf-8")
+    run_report={"last_run_at":STAMP,"scope":scope_key,"scope_source_ids":sorted(scope_ids),"checked":len(batch_urls),"records_touched":records_touched,"eligible_direct_links":len(eligible_urls),"link_alive":alive,"missing_needs_recheck":missing,"unknown":unknown,"closed_after_two_checks":closed,"batch_size":batch_size,"note":"链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。","checked_items":checked}
+    try: prior_report=json.loads(MANIFEST.read_text(encoding="utf-8"))
+    except Exception: prior_report={}
+    scope_runs=prior_report.get("scope_runs",{}) or {}
+    scope_runs[scope_key]=run_report
+    if scope_ids:
+        prior_report.update(run_report)
+        prior_report["scope_runs"]=scope_runs
+        MANIFEST.write_text(json.dumps(prior_report,ensure_ascii=False,indent=2),encoding="utf-8")
+    else:
+        run_report["scope_runs"]=scope_runs
+        MANIFEST.write_text(json.dumps(run_report,ensure_ascii=False,indent=2),encoding="utf-8")
     JOBS.write_text(json.dumps(jobs,ensure_ascii=False,indent=2),encoding="utf-8")
     print(f"LINK VERIFICATION: checked_unique_urls={len(batch_urls)} eligible_unique_urls={len(eligible_urls)} records_touched={records_touched} alive={alive} missing_records={missing} unknown_urls={unknown} closed_after_two_checks={closed}")
 if __name__=="__main__": main()
