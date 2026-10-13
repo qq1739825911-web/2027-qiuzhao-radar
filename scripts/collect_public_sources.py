@@ -747,7 +747,9 @@ def extract_detail_fields_generic(text, raw_title=""):
         # after the pay/degree/title anchor. Never scan the whole page for arbitrary city names.
         band=""
         if salary:
-            band=top[salary.end():min(len(top),salary.end()+500)]
+            salary_pos=top.find(str(salary))
+            if salary_pos>=0:
+                band=top[salary_pos+len(str(salary)):min(len(top),salary_pos+len(str(salary))+500)]
         elif degree:
             degree_pos=top.find(degree)
             if degree_pos>=0: band=top[degree_pos:degree_pos+500]
