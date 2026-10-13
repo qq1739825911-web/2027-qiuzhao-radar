@@ -80,4 +80,30 @@ try:
 finally:
     helper_path.unlink(missing_ok=True)
 
-print(f"FRONTEND SMOKE TESTS PASSED: {len(checks) + 2} checks")
+search_start = scripts[0].find("function expandSearchTerms(query)")
+search_end = scripts[0].find("function filtered(){", search_start)
+if search_start < 0 or search_end < 0:
+    raise AssertionError("Could not isolate search alias helper")
+search_code = scripts[0][search_start:search_end]
+search_test = r'''
+const assert = require("node:assert/strict");
+''' + search_code + r'''
+assert.ok(expandSearchTerms("AIGC").includes("漫剧"));
+assert.ok(expandSearchTerms("AIGC").includes("图生视频"));
+assert.ok(expandSearchTerms("AI视频").includes("文生视频"));
+assert.ok(expandSearchTerms("视觉传达").includes("平面设计"));
+assert.ok(expandSearchTerms("新媒体运营").includes("小红书运营"));
+console.log("PASS: AIGC, AI-video, visual-design and new-media search aliases");
+'''
+with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".js", delete=False) as handle:
+    handle.write(search_test)
+    search_path = Path(handle.name)
+try:
+    result = subprocess.run(["node", str(search_path)], text=True, capture_output=True)
+    if result.returncode:
+        raise AssertionError("Search alias runtime tests failed:\\n" + result.stdout + result.stderr)
+    print(result.stdout.strip())
+finally:
+    search_path.unlink(missing_ok=True)
+
+print(f"FRONTEND SMOKE TESTS PASSED: {len(checks) + 3} checks")
