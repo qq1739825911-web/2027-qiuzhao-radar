@@ -502,8 +502,8 @@ def is_specific_role_title(title, source_id=""):
     if not is_concrete_role_title(t,source_id): return False
     # The repository is aimed at the 2027 graduate cycle. Detect stale cycle
     # markers on the raw title because clean_job_title can strip leading cohort chips.
-    old_cycle=re.search(r"(?<!\\d)(?:202[0-6]\\s*(?:届|年\\s*(?:校招|校园招聘|应届)?|校招|校园招聘)|2[0-6]\\s*(?:届|校招|校园招聘))",raw)
-    current_cycle=re.search(r"(?<!\\d)(?:2027\\s*(?:届|年\\s*(?:校招|校园招聘|应届)?|校招|校园招聘)|27\\s*(?:届|校招|校园招聘))",raw)
+    old_cycle=re.search(r"(?<!\d)(?:202[0-6]\s*(?:届|年\s*(?:校招|校园招聘|应届)?|校招|校园招聘)|2[0-6]\s*(?:届|校招|校园招聘))",raw)
+    current_cycle=re.search(r"(?<!\d)(?:2027\s*(?:届|年\s*(?:校招|校园招聘|应届)?|校招|校园招聘)|27\s*(?:届|校招|校园招聘))",raw)
     if old_cycle and not current_cycle: return False
     if re.search(r"(?:最新更新|招聘信息|截止时间|职位列表|岗位列表|职位分类|岗位分类|专业目录)",t): return False
     if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","职位精选","职场优选","企业墙","地点：","地点:","校招高薪榜","薪资超","HR刚","HR今日","HR在线","助力简历","投后必反馈","全场景覆盖","数字化运营与服务能力突出")): return False
