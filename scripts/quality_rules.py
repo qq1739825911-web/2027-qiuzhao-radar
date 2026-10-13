@@ -118,7 +118,7 @@ def assess(row, today=None):
             if requirements:
                 rebuilt.append("岗位要求：" + requirements)
             recovered = "\n".join(rebuilt).strip()
-            if len(recovered) > len(description) and len(recovered) >= 120:
+            if len(recovered) > len(description) and len(recovered) >= 80:
                 row["description"] = recovered[:6500]
                 row["description_recovered_from_sections"] = True
     reasons = []
