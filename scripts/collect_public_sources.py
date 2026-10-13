@@ -1,4 +1,4 @@
-"""V5.18 public recruitment collector.
+"""V5.19 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -267,6 +267,19 @@ def same_host(a,b):
     root_b=next((root for root in roots if hb==root or hb.endswith("."+root)), "")
     return bool(root_a and root_a==root_b)
 
+def is_stale_51job_cycle_url(url):
+    """Reject explicitly year-tagged 51job campus microsites from non-2027 cycles."""
+    parsed=urlparse(str(url or ""))
+    host=parsed.netloc.lower()
+    if not (host=="51job.com" or host.endswith(".51job.com")):
+        return False
+    probe=(parsed.path+" "+parsed.query).lower()
+    years=re.findall(r"(?<!\d)20\d{2}(?!\d)",probe)
+    if any(value!="2027" for value in years):
+        return True
+    # Legacy microsites sometimes abbreviate the cohort in slugs such as coach26/.
+    return bool(re.search(r"(?:^|[a-z_-])2[0-6](?:届|校招|[./_-]|$)",parsed.path.lower()))
+
 def should_discover_public_url(source_id,url):
     """Allow-list public listing/detail paths; never visit account, payment, or private areas."""
     p=urlparse(url); path=p.path.lower(); host=p.netloc.lower()
@@ -306,11 +319,9 @@ def should_discover_public_url(source_id,url):
         if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path): return False
         if any(x in path for x in ("/login","/register","/resume","/member","/account","/app/")): return False
         host=urlparse(url).netloc.lower()
-        # Public employer microsites often link company-profile pages ending in
-        # .html. They are not vacancies and used to pollute the rotating pool.
-        # Keep campus microsites for listing discovery, and only accept true
-        # numeric job-detail pages under jobs./company. hosts.
-        if host.startswith("campus."): return True
+        # Keep public campus microsites, but reject URLs explicitly pinned to
+        # a non-2027 cycle before they enter or rotate through the listing pool.
+        if host.startswith("campus."): return not is_stale_51job_cycle_url(url)
         if host.startswith(("jobs.","company.")): return is_direct_detail_url(url)
         if not host.startswith("xy."): return False
         allowed_path=(path in {"/","/default-xs.php","/default.php"}
@@ -1131,7 +1142,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.18","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.19","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1670,6 +1681,7 @@ def main():
         base_seeds=[normalize_source_url(source_id,u) for u in (source.get("seed_urls") or [source.get("url","")])]
         base_set={normalize_source_url(source_id,u) for u in base_seeds if u}
         stored_pool=[]
+        stale_cycle_urls_pruned=sum(1 for url in state["source_listing_url_pool"].get(source_id,[]) if source_id=="51job" and is_stale_51job_cycle_url(url))
         for url in state["source_listing_url_pool"].get(source_id,[]):
             normalized=normalize_source_url(source_id,str(url))
             if normalized and normalized not in base_set and not is_direct_detail_url(normalized) and should_discover_public_url(source_id,normalized) and normalized not in stored_pool:
@@ -1679,7 +1691,7 @@ def main():
         pool_limit=int(source.get("listing_pool_limit",600))
         batch,next_cursor=select_rotation_batch(stored_pool,cursor,batch_size)
         source["seed_urls"]=list(dict.fromkeys(base_seeds+batch))[:int(source.get("max_pages",80))]
-        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"next_cursor":next_cursor,"batch_size":batch_size,"pool_limit":pool_limit}
+        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"next_cursor":next_cursor,"batch_size":batch_size,"pool_limit":pool_limit,"stale_cycle_urls_pruned":stale_cycle_urls_pruned}
     rotation_start=int(state.get("qiuzhaowang_next_page",21))
     rotation_pages=[]
     page_num=rotation_start
@@ -1726,6 +1738,7 @@ def main():
                     cursor=meta["next_cursor"]
                 state["source_listing_cursor"][source_id]=cursor
                 diag["listing_pool_size"]=len(state["source_listing_url_pool"][source_id])
+                diag["stale_cycle_urls_pruned"]=meta.get("stale_cycle_urls_pruned",0)
                 diag["listing_urls_visited_count"]=len(diag.get("listing_urls_visited",[]))
             all_rows.extend(rows)
             a=sum(r["status"]=="active" for r in rows); rr=sum(r["status"]!="active" for r in rows)
@@ -1738,6 +1751,7 @@ def main():
                             "listing_url_candidates":len(diag.get("listing_url_candidates",[])),
                             "listing_urls_visited":diag.get("listing_urls_visited_count",len(diag.get("listing_urls_visited",[]))),
                             "listing_pool_size":diag.get("listing_pool_size",0),
+                            "stale_cycle_urls_pruned":diag.get("stale_cycle_urls_pruned",0),
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
@@ -1768,7 +1782,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.18","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.19","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),

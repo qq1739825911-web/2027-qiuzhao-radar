@@ -11,6 +11,7 @@ from collect_public_sources import (
     normalize_source_url, clean_yingjiesheng_company_name, split_role_title_candidates,
     is_boss_campus_card_relevant, should_queue_detail, extract_visible_public_role_leads,
     is_public_role_lead_title, public_lead_dedupe_key,
+    is_stale_51job_cycle_url,
     should_purge_qzw_noise_record,
     source_role_metrics, extract_salary_text,
 )
@@ -379,6 +380,16 @@ check("51job company profile pages are rejected as listing candidates",
       not should_discover_public_url("51job","https://jobs.51job.com/all/co114386.html"))
 check("51job employer campus microsites remain discoverable",
       should_discover_public_url("51job","https://campus.51job.com/coach2027/index.html"))
+check("51job old employer campus cycles are rejected from the rotation pool",
+      is_stale_51job_cycle_url("https://campus.51job.com/mindray2019/index.html")
+      and is_stale_51job_cycle_url("https://campus.51job.com/allnex2022/si.html")
+      and is_stale_51job_cycle_url("https://campus.51job.com/coach26/index.html")
+      and not should_discover_public_url("51job","https://campus.51job.com/mindray2019/index.html"))
+check("51job current 2027 campus pages remain discoverable",
+      not is_stale_51job_cycle_url("https://campus.51job.com/coach2027/index.html")
+      and should_discover_public_url("51job","https://campus.51job.com/coach2027/index.html"))
+check("51job stale URL count is exposed in collection diagnostics",
+      '"stale_cycle_urls_pruned":diag.get("stale_cycle_urls_pruned",0)' in COLLECTOR_SOURCE)
 check("Unicode paths are percent-encoded before requests",
       "%E5" in canonical("https://m.yingjiesheng.com/地区招聘/index.html"))
 check("common BOSS major-directory cards are excluded",
@@ -457,6 +468,9 @@ check("YJS expanding list rotation budget is configured",
           for src in constReg))
 
 check("YJS detail role title extracted", fields.get("title") == "AIGC影视创意制作（校招）")
+check("generic salary anchor preserves city extraction without Match methods",
+      (lambda f: f.get("salary") and f.get("city")=="上海")(
+        extract_detail_fields_generic("职位：AI产品运营\n薪资：8K-12K\n工作地点：上海\n本科及以上", "AI产品运营")))
 check("YJS salary extracted", fields.get("salary") == "8千-1.5万")
 check("YJS degree extracted", fields.get("degree") == "本科")
 check("YJS city extracted", fields.get("city") == "上海")
