@@ -45,7 +45,7 @@ jobs:
         run: python scripts/test_job_quality.py
       - name: Frontend syntax and interaction smoke tests
         run: python scripts/test_frontend.py
-      - name: Collect V5.18 expanded YJS listing rotation and salary/employer quality gate
+      - name: Collect V5.19 stale-cycle URL pruning and salary-safe city fallback
         run: python scripts/collect_public_sources.py
       - name: Merge collected records
         run: python scripts/publish_collected_jobs.py

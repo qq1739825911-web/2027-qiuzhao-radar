@@ -188,12 +188,15 @@ try:
     manifest["published_pending_review"]=counts["lead"]
     manifest["records_added_this_run"]=added
     manifest["records_updated_this_run"]=updated
-    manifest["quality_gate_version"]="2.1"
+    manifest["quality_gate_version"]="2.2"
     manifest["source_quality_filters"]={
         "aggregator_non_detail_or_non_role_records_removed":quality_filter_removed,
-        "policy":"聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。",
+        "policy":"聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
         "collector_title_rule":"is_specific_role_title",
-        "sources":["秋招网","应届生求职网","BOSS直聘","牛客"]
+        "sources":["秋招网","应届生求职网","BOSS直聘","牛客","国聘","前程无忧51job"],
+        "list_only_lead_sources":["国聘","前程无忧51job"],
+        "public_card_only_sources":["BOSS直聘"],
+        "stale_cycle_url_pruning":["前程无忧校园招聘微站明确标记非2027届的页面不进入轮转池"]
     }
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
 except Exception as exc:

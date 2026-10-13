@@ -83,7 +83,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.6.1：以公开的企业校园招聘职位列表作种子（亚信科技、紫光同创、中集、万向等），优先解析岗位表与数字ID详情；允许同站 campus/xy 子域HTTP入口先升级HTTPS，企业介绍页和无岗位链接页面不当作岗位。",
+    "notes": "V1.7.9：轮转池会自动剔除URL明确标记为非2027届的旧校招站点（如mindray2019、allnex2022、coach26）；优先保留2027届及无年份但匿名可访问的企业校园招聘页。无独立详情的岗位只作为待核验列表线索，详情页触发安全验证时不绕过。",
     "seed_urls": [
       "https://xy.51job.com/",
       "https://xy.51job.com/default-xs.php?lang=e",
