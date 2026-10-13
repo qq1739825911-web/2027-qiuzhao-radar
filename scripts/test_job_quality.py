@@ -72,6 +72,25 @@ check("historical description sanitizer removes trailing serialization quotes",
 check("JSON-only embedded fragment is not shown as job description",
       sanitize_extracted_text(r'{"jobCity":"北京","careerJobId":11025}') == "")
 
+dirty_without_comma = '岗位职责：第一项保留英文逗号, 第二项仍需保留。\n "jobCity":"北京","salaryMax":9999999'
+clean_without_comma = sanitize_extracted_text(dirty_without_comma)
+check("sanitizer finds escaped JSON on a new line without truncating earlier commas",
+      "英文逗号, 第二项仍需保留。" in clean_without_comma and "jobCity" not in clean_without_comma and "salaryMax" not in clean_without_comma)
+dirty_braced = '完整职责，包含逗号。 {"jobCity":"北京","careerJobId":11025}'
+clean_braced = sanitize_extracted_text(dirty_braced)
+check("sanitizer cuts at the actual JSON object boundary",
+      clean_braced == "完整职责，包含逗号。")
+css_dirty = '.ie11 .nav_ul li, .ie11 .nav_hotcity li{float:left;} .ieundefined .nav_ul li{float:none;} 岗位职责：按要求完成任务。'
+css_clean = sanitize_extracted_text(css_dirty)
+check("sanitizer removes leaked legacy IE CSS while preserving role text",
+      ".ie11" not in css_clean and ".ieundefined" not in css_clean and "岗位职责" in css_clean)
+styled = Parser()
+styled.feed('<html><head><style>.ie11 .nav_ul li{float:left;}</style><noscript>关闭脚本</noscript></head><body><p>岗位职责：完成测试并整理报告。</p></body></html>')
+check("Parser ignores style and noscript text in visible page fields",
+      ".ie11" not in styled.page_text() and "关闭脚本" not in styled.page_text() and "岗位职责" in styled.page_text())
+check("YJS collection allocates detail-page cap separately from total budget",
+      int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_direct_detail_pages",0)) <= int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_pages",0)))
+
 
 
 # Direct URLs only; aggregator/search/list pages are not job details.

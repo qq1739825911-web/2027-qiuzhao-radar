@@ -34,9 +34,12 @@ COHORT_EVIDENCE_OK={"page_text","visible_announcement_title","job_detail_title",
 
 class Parser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.table_links=[]; self._row_links=[]; self._in_row=False; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]; self.headings=[]; self._heading_buf=None; self._heading_tag=None
+        super().__init__(); self.links=[]; self.text=[]; self.tables=[]; self.table_links=[]; self._row_links=[]; self._in_row=False; self.scripts=[]; self.page_title=""; self._in_title=False; self._script_buf=None; self._a=None; self._td=None; self._row=[]; self.headings=[]; self._heading_buf=None; self._heading_tag=None; self._style_depth=0; self._noscript_depth=0; self._template_depth=0
     def handle_starttag(self,tag,attrs):
         d=dict(attrs); tag=tag.lower()
+        if tag=="style": self._style_depth+=1
+        if tag=="noscript": self._noscript_depth+=1
+        if tag=="template": self._template_depth+=1
         if tag=="img" and d.get("alt"):
             alt=re.sub(r"\s+"," ",d.get("alt","")).strip()
             if alt: self.text.append(alt)
@@ -51,12 +54,14 @@ class Parser(HTMLParser):
         if tag=="script": self._script_buf=[]
     def handle_data(self,data):
         s=re.sub(r"\s+"," ",data).strip()
-        if s and self._script_buf is None: self.text.append(s)
-        if self._a is not None: self._a["text"]+=(" "+s if s else "")
+        visible=(self._script_buf is None and not self._style_depth and not self._noscript_depth and not self._template_depth)
+        if s and visible: self.text.append(s)
+        if visible:
+            if self._a is not None: self._a["text"]+=(" "+s if s else "")
+            if self._in_title: self.page_title+=data
+            if self._heading_buf is not None: self._heading_buf.append(data)
+            if self._td is not None: self._td+=(" "+s if s else "")
         if self._script_buf is not None: self._script_buf.append(data)
-        if self._in_title: self.page_title+=data
-        if self._heading_buf is not None: self._heading_buf.append(data)
-        if self._td is not None: self._td+=(" "+s if s else "")
     def handle_endtag(self,tag):
         tag=tag.lower()
         if tag=="a" and self._a is not None: self.links.append(self._a); self._a=None
@@ -73,6 +78,9 @@ class Parser(HTMLParser):
             self._row.append(self._td.strip()); self._td=None
         if tag=="tr" and self._row:
             self.tables.append(self._row); self.table_links.append(self._row_links); self._in_row=False
+        if tag=="style": self._style_depth=max(0,self._style_depth-1)
+        if tag=="noscript": self._noscript_depth=max(0,self._noscript_depth-1)
+        if tag=="template": self._template_depth=max(0,self._template_depth-1)
     def page_text(self): return " ".join(self.text)
 
 _BROWSER_WORKER=None
@@ -245,31 +253,61 @@ def clean(s): return re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",s or "")).strip()
 DETAIL_JSON_KEYS=("jobCity","careerJobId","deliverBegin","deliverEnd","refreshBegin","latestProcessTime","graduationYear","salaryType","salaryMin","salaryMax","jobKeys","companyId","companyName","positionId","positionName","recruitJobName","jobName","jobOffer","eduLevel")
 
 def sanitize_extracted_text(value, max_length=6500):
-    """Remove embedded job-card JSON accidentally joined to visible detail text."""
+    """Strip serialized card JSON / legacy CSS pollution from visible job text safely."""
     if not isinstance(value, str):
         return value
     text=value.replace("\\r\\n", "\n").replace("\\n", "\n").replace("\\t", " ")
     text=text.replace("\\u002F", "/").replace("\\u002f", "/")
     text=re.sub(r"[ \t]+", " ", text).strip()
+
+    # Older Yingjiesheng pages accidentally exposed legacy IE CSS rules as visible text.
+    for _ in range(30):
+        cleaned=re.sub(r"(?:^|\s)\.ie(?:11|undefined)\b[^{}]*\{[^{}]*\}", " ", text, flags=re.I)
+        if cleaned==text:
+            break
+        text=cleaned
+    text=re.sub(r"[ \t]{2,}", " ", text).strip()
+
     keys = r"(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)"
-    if re.match(r'''^\s*[\{\[]\s*(?:\?["'])?''' + keys + r'''(?:\?["'])?\s*:''', text, re.I):
+    field_pattern = r'''(?:\\?["'])?''' + keys + r'''(?:\\?["'])?\s*:'''
+
+    # A field-only JSON object/array is not a human-readable job description.
+    if re.match(r'^\s*[\{\[]\s*(?:\{\s*)?' + field_pattern, text, re.I):
         return ""
-    property_key = re.compile(
-        keys + r'''\\?["']?\s*:''',
-        re.I,
-    )
-    match=property_key.search(text)
-    if match:
-        # Serialized job-card JSON may contain escaped quotes around keys.
-        # Locate the preceding field separator instead of depending on one exact
-        # escape sequence; the first recognized JSON field marks the cutoff.
-        cut=max(text.rfind(",",0,match.start()),text.rfind(";",0,match.start()))
-        if cut < 0 and re.match(r"^\s*[\{\[]",text):
-            return ""
-        if cut >= 0:
-            text=text[:cut].rstrip(" \t,;\\")
-        while text.endswith(('"', "'", "}", "]")):
-            text=text[:-1].rstrip(" \t,;\\")
+
+    # The strongest boundary is an object opener immediately followed by a known field.
+    object_match=re.search(r'\{\s*' + field_pattern, text, re.I)
+    cut=object_match.start() if object_match else None
+
+    def has_serialized_tail(match):
+        suffix=text[match.end():match.end()+2200]
+        next_field=re.search(field_pattern, suffix, re.I)
+        if next_field and next_field.start()<1800:
+            return True
+        return bool(re.search(r'[}\]]\s*["\']?\s*$', suffix))
+
+    if cut is None:
+        # Handle flat/escaped JSON glued to visible text without truncating an earlier comma.
+        separator_pattern=re.compile(r'[,;]\s*' + field_pattern, re.I)
+        separator=next((m for m in separator_pattern.finditer(text) if has_serialized_tail(m)),None)
+        if separator:
+            cut=separator.start()
+
+    if cut is None:
+        # Some pages concatenate the JSON fragment on a new line without a comma.
+        newline_pattern=re.compile(r'\n[ \t]*' + field_pattern, re.I)
+        newline=next((m for m in newline_pattern.finditer(text) if has_serialized_tail(m)),None)
+        if newline:
+            cut=newline.start()
+
+    if cut is None:
+        # Last resort: if multiple known properties form a compact suffix, cut at its first key.
+        first_field=re.search(field_pattern, text, re.I)
+        if first_field and has_serialized_tail(first_field):
+            cut=first_field.start()
+
+    if cut is not None:
+        text=text[:cut].rstrip(" \t,;\\\"'")
     return text[:max_length].strip()
 
 def canonical(u):
@@ -650,6 +688,10 @@ def extract_section(text, starts, ends, limit=5000):
     for end in ends:
         hit=re.search(r"\s*(?:"+end+r")\s*[:：]?\s*",tail,re.I)
         if hit: positions.append(hit.start())
+    # Common footer/navigation labels must not become the final paragraph of a job field.
+    footer_re=r"\s*(?:上一条|下一条|上一篇|下一篇|上一页|下一页|查看其他岗位|返回顶部|登录/注册|收藏职位|职位收藏|信息来源|应届生求职网)\s*"
+    footer=re.search(footer_re,tail,re.I)
+    if footer: positions.append(footer.start())
     if positions: tail=tail[:min(positions)]
     return re.sub(r"\s+"," ",tail).strip(" :-—")[:limit].strip()
 
@@ -1289,13 +1331,16 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
     return out
 
 def collect_source(src):
-    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); max_direct_detail_pages=int(src.get("max_direct_detail_pages",max_pages)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"direct_detail_links_deferred_by_budget":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
         page=queue.pop(0)
         cp=(page.split("#",1)[0] if src.get("id")=="qiuzhaowang" else canonical(page))
+        if src.get("id")=="yingjiesheng" and is_direct_detail_url(page) and diagnostics["direct_detail_requests_attempted"]>=max_direct_detail_pages:
+            diagnostics["direct_detail_links_deferred_by_budget"]+=1
+            continue
         if cp in visited: continue
         if src.get("id")=="qiuzhaowang" and diagnostics["pages_attempted"]: time.sleep(0.5)
         elif src.get("id") in {"yingjiesheng","boss","nowcoder"} and diagnostics["pages_attempted"]: time.sleep(0.35)
@@ -1559,7 +1604,7 @@ def collect_source(src):
                 continue
             if (not is_detail) and src.get("id") in {"yingjiesheng","nowcoder","boss","51job","iguopin"}:
                 candidates=diagnostics["listing_url_candidates"]
-                if discovery_url not in candidates and len(candidates)<1200:
+                if discovery_url not in candidates and len(candidates)<int(src.get("listing_pool_limit",1200)):
                     candidates.append(discovery_url)
             if not is_detail and diagnostics["listing_pages_queued"]>=listing_limit: continue
             if len(queue)>=max_pages: continue
@@ -1798,7 +1843,7 @@ def main():
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"direct_detail_links_deferred_by_budget":diag.get("direct_detail_links_deferred_by_budget",0),"direct_detail_page_budget":int(s.get("max_direct_detail_pages",s.get("max_pages",0))),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
                             "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
                             "role_records":diag.get("role_records",0),
@@ -1808,7 +1853,7 @@ def main():
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),
                             "sample_title":diag.get("sample_title",""),
                             "role_title_samples":[r.get("title","") for r in rows if r.get("granularity") not in {"announcement","entry"}][:8],
-                            "role_field_samples":[{"title":r.get("title",""),"company":r.get("company",""),"city":r.get("city",""),"salary":r.get("salary",""),"degree":r.get("degree",""),"source_url":r.get("source_url","")} for r in rows if r.get("granularity") not in {"announcement","entry"}][:5],
+                            "role_field_samples":[{"title":r.get("title",""),"company":r.get("company",""),"city":r.get("city",""),"salary":r.get("salary",""),"degree":r.get("degree",""),"source_url":r.get("source_url",""),"field_lengths":{field:len(str(r.get(field,"") or "")) for field in ("description","responsibilities","requirements","benefits")} } for r in rows if r.get("granularity") not in {"announcement","entry"}][:5],
                             "link_samples":[{k:v for k,v in item.items() if k!="_priority"} for item in diag.get("link_samples",[])],
                             "last_error":diag.get("last_error",""),"parser_modes":diag.get("parser_modes",[]),
                             "source_status":diag.get("source_status","access_error")})
