@@ -240,14 +240,21 @@ def sanitize_extracted_text(value, max_length=6500):
     if re.match(r'''^\s*[\{\[]\s*(?:\?["'])?''' + keys + r'''(?:\?["'])?\s*:''', text, re.I):
         return ""
     property_key = re.compile(
-        r'''[,;]\s*(?:\?["'])?''' + keys + r'''(?:\?["'])?\s*:''',
+        keys + r'''\\\\?["']?\\s*:''',
         re.I,
     )
     match=property_key.search(text)
     if match:
-        text=text[:match.start()].rstrip(" \t,;\\")
+        # Serialized job-card JSON may contain escaped quotes around keys.
+        # Locate the preceding field separator instead of depending on one exact
+        # escape sequence; the first recognized JSON field marks the cutoff.
+        cut=max(text.rfind(",",0,match.start()),text.rfind(";",0,match.start()))
+        if cut < 0 and re.match(r"^\\s*[\\{\\[]",text):
+            return ""
+        if cut >= 0:
+            text=text[:cut].rstrip(" \\t,;\\\\")
         while text.endswith(('"', "'", "}", "]")):
-            text=text[:-1].rstrip(" \t,;\\")
+            text=text[:-1].rstrip(" \\t,;\\\\")
     return text[:max_length].strip()
 
 def canonical(u):
