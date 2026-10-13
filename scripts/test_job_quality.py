@@ -22,11 +22,18 @@ COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").r
 RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
 PUBLISHER_SOURCE=(Path(__file__).resolve().parent/"publish_collected_jobs.py").read_text(encoding="utf-8")
 QUALITY_FINALIZER_SOURCE=(Path(__file__).resolve().parent/"finalize_job_quality.py").read_text(encoding="utf-8")
+WORKFLOW_SOURCE=(Path(__file__).resolve().parents[1]/".github/workflows/frontend-regression.yml").read_text(encoding="utf-8")
 
 def check(name, condition):
     if not condition:
         raise AssertionError(f"FAILED: {name}")
     print(f"PASS: {name}")
+
+check("regression workflow watches core renderer and quality-pipeline files",
+      all(f'"{path}"' in WORKFLOW_SOURCE for path in (
+          "scripts/public_page_renderer.cjs", "scripts/quality_rules.py",
+          "scripts/publish_collected_jobs.py", "scripts/finalize_job_quality.py",
+          "scripts/verify_job_links.py", "data/company_sources.json")))
 
 check("publisher and finalizer use the same quality-gate version",
       'manifest["quality_gate_version"]="2.3"' in PUBLISHER_SOURCE
