@@ -302,6 +302,8 @@ check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))
 check("51job page with real detail link skips redundant rendering",
       not should_render_public_page("51job","https://xy.51job.com/","<a href='https://jobs.51job.com/shanghai-pdx/160193763.html'>软件工程师</a>"))
+check("51job single-role detail URL never enters list-only browser renderer",
+      not should_render_public_page("51job","https://jobs.51job.com/shanghai-pdx/160193763.html","<html><body>AI工程师</body></html>"))
 check("YJS uses static parsing rather than unnecessary browser rendering",
       not should_render_public_page("yingjiesheng","https://m.yingjiesheng.com/other/index.html","<html><body>岗位列表</body></html>"))
 check("Guopin login route is not browser-rendered",

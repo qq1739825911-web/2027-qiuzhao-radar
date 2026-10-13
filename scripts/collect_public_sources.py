@@ -1,4 +1,4 @@
-"""V5.19 public recruitment collector.
+"""V5.20 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -93,7 +93,9 @@ def should_render_public_page(source_id,url,html):
         resolved=[canonical(urljoin(url,link.get("href",""))) for link in parsed.links if link.get("href")]
         return path.startswith(("/school/","/xiaoyuan/")) and not any(is_direct_detail_url(link) for link in resolved)
     if source_id=="51job":
-        if not should_discover_public_url(source_id,url):
+        # Detail pages are handled by the static parser / URL verifier.
+        # The browser renderer is allow-listed for anonymous public lists only.
+        if not should_discover_public_url(source_id,url) or is_direct_detail_url(url):
             return False
         parsed=Parser()
         parsed.feed(html or "")
@@ -1142,7 +1144,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.19","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.20","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1782,7 +1784,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.19","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.20","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
