@@ -29,8 +29,8 @@ def check(name, condition):
     print(f"PASS: {name}")
 
 check("publisher and finalizer use the same quality-gate version",
-      'manifest["quality_gate_version"]="2.2"' in PUBLISHER_SOURCE
-      and 'manifest["quality_gate_version"]="2.2"' in QUALITY_FINALIZER_SOURCE)
+      'manifest["quality_gate_version"]="2.3"' in PUBLISHER_SOURCE
+      and 'manifest["quality_gate_version"]="2.3"' in QUALITY_FINALIZER_SOURCE)
 
 # Cohort must not be silently guessed as 2027.
 check("publication date is not a cohort", year("发布时间：2026-09-28") == "")
