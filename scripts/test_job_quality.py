@@ -236,6 +236,32 @@ check("public-list lead title filter retains concrete role names",
         ("混合信号设计工程师","51job"),
         ("硬件工程师 -(PCB 设计)","qiuzhaowang")
       ]))
+check("bare discipline labels do not pass as job titles",
+      all(not is_specific_role_title(title,source_id) for title,source_id in [
+        ("质量","yingjiesheng"),
+        ("机器视觉","iguopin"),
+        ("导航算法","iguopin"),
+        ("图像算法","iguopin"),
+        ("感知算法","iguopin"),
+        ("算法设计","iguopin")
+      ]))
+check("specific roles under those disciplines remain valid",
+      all(is_specific_role_title(title,source_id) for title,source_id in [
+        ("质量管培生","yingjiesheng"),
+        ("质量工程师","yingjiesheng"),
+        ("机器视觉算法工程师","iguopin"),
+        ("导航算法工程师","iguopin"),
+        ("图像算法工程师","iguopin")
+      ]))
+check("explicit old campus cycles are rejected even when title cleaning strips cohort chips",
+      all(not is_specific_role_title(title,source_id) for title,source_id in [
+        ("26校招-NLP算法工程师","51job"),
+        ("2026届算法工程师","51job"),
+        ("2026校招产品经理","iguopin")
+      ]))
+check("current 2027 cohort titles remain eligible",
+      is_specific_role_title("27届算法工程师","51job")
+      and is_specific_role_title("2027届算法工程师","iguopin"))
 check("public-list leads dedupe across query URLs but preserve city distinction",
       public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=行政"})
       == public_lead_dedupe_key({"source":"国聘公开招聘","company":"某科技有限公司","title":"行政专员","city":"上海","source_url":"https://www.iguopin.com/job/list?keyword=运营"})

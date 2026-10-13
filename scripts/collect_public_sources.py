@@ -1,4 +1,4 @@
-"""V5.16 public recruitment collector.
+"""V5.17 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -497,8 +497,14 @@ def is_concrete_role_title(title, source_id=""):
     return any(w.lower() in t.lower() for w in ROLE_TERMS)
 
 def is_specific_role_title(title, source_id=""):
-    t=clean_job_title(title,source_id)
+    raw=clean(title)
+    t=clean_job_title(raw,source_id)
     if not is_concrete_role_title(t,source_id): return False
+    # The repository is aimed at the 2027 graduate cycle. Detect stale cycle
+    # markers on the raw title because clean_job_title can strip leading cohort chips.
+    old_cycle=re.search(r"(?<!\\d)(?:202[0-6]\\s*(?:届|年\\s*(?:校招|校园招聘|应届)?|校招|校园招聘)|2[0-6]\\s*(?:届|校招|校园招聘))",raw)
+    current_cycle=re.search(r"(?<!\\d)(?:2027\\s*(?:届|年\\s*(?:校招|校园招聘|应届)?|校招|校园招聘)|27\\s*(?:届|校招|校园招聘))",raw)
+    if old_cycle and not current_cycle: return False
     if re.search(r"(?:最新更新|招聘信息|截止时间|职位列表|岗位列表|职位分类|岗位分类|专业目录)",t): return False
     if any(noise in t for noise in ("收藏","立即投递","官网投递","天截止","届秋招","全生态布局","龙头企业","内容与技术能力领先","职位推荐","职位精选","职场优选","企业墙","地点：","地点:","校招高薪榜","薪资超","HR刚","HR今日","HR在线","助力简历","投后必反馈","全场景覆盖","数字化运营与服务能力突出")): return False
     stripped=re.sub(r"(?:专业不限|可接受应届生|接受应届生|应届生优先|相关专业)$","",t).strip()
@@ -506,7 +512,7 @@ def is_specific_role_title(title, source_id=""):
     bare=re.sub(r"(?:校招|校园招聘|实习生?|应届生?)$","",bare).strip()
     # A role should be granular enough to distinguish the actual job from a
     # major/discipline heading. Do not publish bare category words as vacancy names.
-    generic_only={"工程师","设计师","设计","销售","研发","开发","算法","数据","产品","运营","财务","市场","客服","行政","人事","专员","助理","管培生","管理培训生","经理","分析师","咨询","研究员","翻译","编辑","机械","电气","物流","技术","工程","管理","培训生"}
+    generic_only={"工程师","设计师","设计","销售","研发","开发","算法","数据","产品","运营","财务","市场","客服","行政","人事","专员","助理","管培生","管理培训生","经理","分析师","咨询","研究员","翻译","编辑","机械","电气","物流","技术","工程","管理","培训生","质量","机器视觉","导航算法","图像算法","感知算法","算法设计"}
     return len(stripped)>=2 and bare not in generic_only and not stripped.endswith(("类","方向","体系","专业"))
 
 def clean_yingjiesheng_company_name(value):
@@ -795,7 +801,7 @@ def is_public_role_lead_title(title, source_id=""):
         return False
     generic={"教师","咨询","设计","销售","运营","研发","算法","产品","管理","行政","财务","会计","人事","技术","数据",
              "工程师","设计师","分析师","研究员","专员","助理","经理","顾问","文案","编辑","翻译","品牌","客服","市场",
-             "银行","金融","制造","实习生","应届生","企业管理咨询","专用设备制造业","IC设计","应用测试","物理管培类",
+             "银行","金融","制造","实习生","应届生","企业管理咨询","专用设备制造业","IC设计","应用测试","物理管培类","质量","机器视觉","导航算法","图像算法","感知算法","算法设计",
              "研发岗位","开发岗位","市场营销类","物流运营类","财务岗人力资源岗政岗","客户成功岗营运管理岗"}
     if t in generic:
         return False
@@ -1750,7 +1756,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.16","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.17","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
