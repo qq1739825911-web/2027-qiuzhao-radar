@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
@@ -16,7 +16,7 @@ from collect_public_sources import (
     source_role_metrics, extract_salary_text, parse_source_ids, select_enabled_sources,
 )
 from quality_rules import assess, compact_json, should_publish_record
-from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url, source_id_for_job as verifier_source_id_for_job, parse_source_ids as parse_verifier_source_ids
+from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url, is_access_verification_payload as verifier_is_access_verification_payload, source_id_for_job as verifier_source_id_for_job, parse_source_ids as parse_verifier_source_ids
 
 COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
 RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
@@ -510,6 +510,25 @@ check("BOSS job_detail route is directly verifiable as a URL type",
       verifier_is_direct_detail("https://www.zhipin.com/job_detail/0f452ccba3890a940nF92NW0E1dW.html"))
 check("BOSS security interstitial URL is not a verified vacancy",
       is_security_interstitial_url("https://www.zhipin.com/web/passport/zp/security.html?callbackUrl=/job_detail/demo.html"))
+
+challenge_payload = '{"l1":"var arg1=\\'token\\';","l2":"GET"}'
+check("YJS raw security verification payload is recognized as access-limited",
+      verifier_is_access_verification_payload(challenge_payload))
+check("Readable HTML job detail is not mistaken for a raw verification payload",
+      not verifier_is_access_verification_payload('<html><head><title>研发工程师招聘</title></head><body>岗位职责</body></html>'))
+yjs_card_links = [
+    {"href":"/job-008-115-772.html","text":"研发工程师"},
+    {"href":"/company/123.html","text":"某某科技有限公司"},
+]
+yjs_card = extract_yingjiesheng_card_fields(
+    yjs_card_links[0]["text"], yjs_card_links, 0, "https://m.yingjiesheng.com/other/index.html")
+check("YJS public listing card preserves a concrete role with visible real employer",
+      yjs_card.get("title")=="研发工程师" and yjs_card.get("company")=="某某科技有限公司")
+yjs_card_no_employer = extract_yingjiesheng_card_fields(
+    "研发工程师", [{"href":"/job-008-115-772.html","text":"研发工程师"}], 0,
+    "https://m.yingjiesheng.com/other/index.html")
+check("YJS public listing card is rejected when employer is not visible",
+      yjs_card_no_employer=={})
 
 
 # Parse visible fields on a public YJS detail-page fixture; never invent absent values.

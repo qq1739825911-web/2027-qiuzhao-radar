@@ -44,6 +44,16 @@ def source_id_for_job(job):
 def is_security_interstitial_url(url):
     return urlparse(str(url or "")).path.rstrip("/").lower()=="/web/passport/zp/security.html"
 
+def is_access_verification_payload(body):
+    """Detect a raw access-verification challenge returned instead of a readable vacancy page."""
+    value=str(body or "")
+    challenge=(
+        bool(re.search(r'''["']l1["']\s*:\s*["']var\s+arg1\s*=''',value,re.I))
+        and bool(re.search(r'''["']l2["']\s*:\s*["']GET["']''',value,re.I))
+        and not bool(re.search(r"<(?:!doctype\s+html|html|body|title|h1)\b",value,re.I))
+    )
+    return challenge
+
 def fetch(url):
     req=Request(url,headers=HEADERS)
     try:
@@ -109,7 +119,7 @@ def main():
     alive=missing=unknown=closed=records_touched=0; checked=[]
     def check_url(url):
         status,body,final_url=fetch(url)
-        if is_security_interstitial_url(final_url) or any(marker in body for marker in ACCESS_RESTRICTED_MARKERS):
+        if is_security_interstitial_url(final_url) or is_access_verification_payload(body) or any(marker in body for marker in ACCESS_RESTRICTED_MARKERS):
             return "unknown",status
         if status in (404,410) or (status==200 and any(m in body for m in CLOSED_MARKERS)): return "missing",status
         if 200<=status<400: return "alive",status
