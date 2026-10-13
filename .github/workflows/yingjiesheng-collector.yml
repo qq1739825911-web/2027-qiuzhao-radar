@@ -9,6 +9,7 @@ on:
       - "scripts/publish_collected_jobs.py"
       - "scripts/quality_rules.py"
       - "scripts/finalize_job_quality.py"
+      - "scripts/test_job_quality.py"
       - "data/company_sources.json"
       - ".github/workflows/yingjiesheng-collector.yml"
   workflow_dispatch:
