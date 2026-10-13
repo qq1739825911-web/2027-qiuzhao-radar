@@ -54,7 +54,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.6.1：扩展公开专业分类目录 /zhuanye/，继续按游标轮转公开首页、专业/职位分类、分页和详情链接；每轮160页封顶，旧HTTP链接先试HTTPS。",
+    "notes": "V1.7.8：应届生求职网每轮上限提高至200页，按游标每轮轮转40条已发现的公开列表/分类URL（专业目录、分页、职位分类优先），保留独立详情读取预算。薪资提取不再把无标签的孤立数字当作工资；缺少真实雇主名的详情不会进入发布岗位库。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
@@ -69,10 +69,10 @@
       "https://m.yingjiesheng.com/jobdetail/173508261",
       "https://www.yingjiesheng.com/zhuanye/"
     ],
-    "max_pages": 160,
+    "max_pages": 200,
     "max_candidates": 10000,
-    "listing_page_limit": 50,
-    "rotation_seed_batch": 24,
+    "listing_page_limit": 60,
+    "rotation_seed_batch": 40,
     "listing_pool_limit": 1000
   },
   {
