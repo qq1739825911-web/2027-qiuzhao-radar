@@ -7,7 +7,7 @@
 - 仓库：https://github.com/qq1739825911-web/2027-qiuzhao-radar
 - 发布网址：https://qq1739825911-web.github.io/2027-qiuzhao-radar/
 - 主分支：`main`
-- README 当前产品版本：`V1.8.4`（信源扩量与采集不中断）
+- README 当前产品版本：`V1.8.7`（应届生求职网专项自动采集与详情尾部清洗）
 - `scripts/collect_public_sources.py` 采集器：`V5.21`
 - 岗位质量门：`2.3`
 - 当前已部署数据：5,039 条岗位记录，其中 161 条可优先核验、4,878 条待核验线索。
@@ -114,3 +114,15 @@
 ## 新对话续接方式
 
 先访问这个文件与 README，再检查仓库 Actions 最近运行。按“下一阶段待办”首项继续，不要回到旧截图版本，不要重复修复 sanitizer、51job allow-list 或 collector cancellation；这些已经完成并经过真实 CI/采集/部署验证。
+
+
+## 续接追加：V1.8.7 应届生求职网专项自动化（2026-10-13）
+
+- 已提交 source-scoped collector：QIUZHAO_SOURCE_IDS=yingjiesheng 只采集应届生求职网；专项采集会把该来源最新报告合并进原有信源报告，不清掉其他来源状态。
+- 已提交 scoped link verifier：QIUZHAO_SOURCE_IDS=yingjiesheng 仅核验该来源，使用独立游标和独立六小时运行保护；专项核验批次配置为180个唯一详情 URL。
+- 新增 .github/workflows/yingjiesheng-collector.yml，计划按 15 3,9,15,21 UTC 自动轮转，且支持手动启动。工作流和完整测试通过后，才能确认它的首轮自动采集是否实际成功。
+- 全站采集仍每六小时运行，但已移除代码配置提交对全站采集的自动触发，避免每次小修改都排队跑23个来源。
+- 应届生求职网配置总页420、分类/分页轮转批次140、动态列表预算160、详情请求220、列表 URL 池2000。配置值不代表已经得到等量有效岗位。
+- 详情弹窗清洗补强了 JSON 无逗号/换行残片、旧 IE CSS 与常见导航尾巴。前端运行时用例已经加上；后续必须检查对应 Actions 运行通过，不能只因代码已提交就说清洗验证完成。
+- 本轮全站采集运行 38377664105 在开始核对时处于进行中，且使用改动前的采集代码。必须查看最终状态和最新 manifest；不要把它当作 V1.8.7 专项任务的验证结果。
+- 专项工作流结束后检查 listing_urls_visited、direct_detail_pages_visited、records_found、direct_detail_role_records、records_added_this_run、records_updated_this_run、yingjiesheng_text_cleanup，以及 verification-manifest.scope_runs 中对应应届生求职网的核验指标。
