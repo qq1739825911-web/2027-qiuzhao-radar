@@ -80,6 +80,8 @@ jobs:
             "direct_detail_links_deferred_by_budget":y.get("direct_detail_links_deferred_by_budget"),
             "records_found":y.get("records_found"),
             "direct_detail_role_records":y.get("direct_detail_role_records"),
+            "public_detail_leads":y.get("public_detail_leads"),
+            "shared_bulletin_role_leads":y.get("shared_bulletin_role_leads"),
             "text_cleanup":d.get("yingjiesheng_text_cleanup"),
             "verification_scope":v.get("scope"),
             "verification_checked":v.get("checked"),

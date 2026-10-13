@@ -4,7 +4,7 @@ from datetime import date
 from pathlib import Path
 from collect_public_sources import (
     year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, make_yingjiesheng_bulletin_role_lead, table_records, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
@@ -529,6 +529,56 @@ yjs_card_no_employer = extract_yingjiesheng_card_fields(
     "https://m.yingjiesheng.com/other/index.html")
 check("YJS public listing card is rejected when employer is not visible",
       yjs_card_no_employer=={})
+
+# Recruitment bulletin pages often list several concrete roles while sharing one article URL.
+yjs_bulletin_parser = Parser()
+yjs_bulletin_parser.feed(
+    '<html><head><title>某某科技有限公司2027校园招聘_应届生求职网</title></head><body>'
+    '<table><tr><td>研发类</td><td>软件工程师</td><td>本科</td><td>计算机</td></tr>'
+    '<tr><td>设计类</td><td>平面设计师</td><td>本科</td><td>视觉传达</td></tr></table>'
+    '</body></html>'
+)
+yjs_bulletin_url = "https://m.yingjiesheng.com/job-008-117-001.html"
+yjs_bulletin_rows = table_records(
+    "某某科技有限公司",yjs_bulletin_url,yjs_bulletin_parser,"2027届",
+    "应届生求职网公开岗位","page_text"
+)
+check("YJS generic 2027 bulletin keeps concrete role rows without requiring repeated employer cells",
+      {r.get("title") for r in yjs_bulletin_rows} >= {"软件工程师","平面设计师"}
+      and all(r.get("company")=="某某科技有限公司" for r in yjs_bulletin_rows))
+shared_bulletin_candidate=next((r for r in yjs_bulletin_rows if r.get("title")=="软件工程师"),{})
+shared_bulletin_lead=make_yingjiesheng_bulletin_role_lead(
+    shared_bulletin_candidate,yjs_bulletin_url,yjs_bulletin_parser.page_title,
+    "应届生求职网公开岗位","2027届","page_text"
+)
+check("YJS shared-bulletin role becomes a clearly marked low-confidence lead",
+      shared_bulletin_lead.get("title")=="软件工程师"
+      and shared_bulletin_lead.get("granularity")=="lead"
+      and shared_bulletin_lead.get("lead_evidence")=="yingjiesheng_bulletin_role"
+      and shared_bulletin_lead.get("status")=="pending_review"
+      and should_publish_record(shared_bulletin_lead))
+check("YJS shared-bulletin roles do not count as independent detail pages",
+      source_role_metrics([dict(shared_bulletin_lead,verification_status="link_alive")])["direct_detail_role_records"]==0
+      and source_role_metrics([shared_bulletin_lead])["shared_bulletin_role_leads"]==1)
+old_bulletin_candidate=dict(shared_bulletin_candidate,cohort="2026届",cohort_evidence="page_text")
+old_bulletin_lead=make_yingjiesheng_bulletin_role_lead(
+    old_bulletin_candidate,yjs_bulletin_url,yjs_bulletin_parser.page_title,
+    "应届生求职网公开岗位","2026届","page_text"
+)
+check("YJS shared-bulletin extractor rejects non-2027 cohort evidence",old_bulletin_lead=={})
+specific_heading_lead=make_yingjiesheng_bulletin_role_lead(
+    shared_bulletin_candidate,yjs_bulletin_url,"软件工程师招聘_某某科技有限公司",
+    "应届生求职网公开岗位","2027届","page_text"
+)
+check("YJS shared-bulletin extractor does not duplicate a single-role detail page",specific_heading_lead=={})
+fake_promoted_bulletin=dict(
+    shared_bulletin_lead,status="active",verification_status="link_alive",
+    last_verified="2026-10-13",last_seen="2026-10-13",last_collected="2026-10-13"
+)
+check("YJS shared-bulletin lead cannot auto-promote even when article URL is alive",
+      not assess(fake_promoted_bulletin,today=date(2026,10,13))
+      and fake_promoted_bulletin.get("review_bucket")=="lead"
+      and any("共享招聘简章链接" in x for x in fake_promoted_bulletin.get("review_reasons",[])))
 
 
 # Parse visible fields on a public YJS detail-page fixture; never invent absent values.

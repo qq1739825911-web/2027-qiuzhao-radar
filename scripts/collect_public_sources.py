@@ -791,6 +791,63 @@ def extract_yingjiesheng_fields(raw_title, text, url):
     if headcount: fields["headcount"]=headcount.group(1)
     return fields
 
+def make_yingjiesheng_bulletin_role_lead(candidate, source_url, source_page_title,
+                                                source_label, cohort, cohort_evidence=""):
+    """Keep a concrete role from a 2027 YJS recruitment bulletin as a pending lead.
+
+    The bulletin URL is shared by several positions, so it is not independent vacancy-detail
+    evidence and this record must never be auto-promoted to the priority bucket.
+    """
+    if source_label != "应届生求职网公开岗位" or not is_direct_detail_url(source_url):
+        return {}
+    parsed=urlparse(source_url)
+    host=(parsed.hostname or "").lower()
+    if not (host=="m.yingjiesheng.com" or host.endswith(".yingjiesheng.com")):
+        return {}
+    heading=clean(source_page_title or "")
+    if not heading or is_specific_role_title(clean_job_title(heading,"yingjiesheng"),"yingjiesheng"):
+        return {}
+    title=clean_job_title(candidate.get("title",""),"yingjiesheng")
+    company=clean_yingjiesheng_company_name(candidate.get("company",""))
+    if not is_specific_role_title(title,"yingjiesheng"):
+        return {}
+    if company.lower() in {"","应届生求职网","应届生求职","www.yingjiesheng.com","招聘信息","未知","待核验","待确认"}:
+        return {}
+    page_cohort=str(cohort or "").strip()
+    if page_cohort and not page_cohort.startswith("2027"):
+        return {}
+    if candidate.get("cohort") and not str(candidate.get("cohort")).startswith("2027"):
+        return {}
+    candidate_cohort=str(candidate.get("cohort") or page_cohort).strip()
+    if not candidate_cohort.startswith("2027"):
+        return {}
+    evidence=str(candidate.get("cohort_evidence") or cohort_evidence or "").strip()
+    if not evidence:
+        return {}
+    item=record(company,title,canonical(source_url),source_label,candidate_cohort,3,cohort_evidence=evidence)
+    item.update({
+        "status":"pending_review",
+        "granularity":"lead",
+        "verification_score":3,
+        "lead_evidence":"yingjiesheng_bulletin_role",
+        "verification_status":"unknown",
+        "verification_note":"岗位名称从2027届公开招聘简章的岗位表/结构化职位信息中识别；多个岗位共用简章链接，尚无独立岗位详情，不进入优先核验区",
+        "last_verified":"",
+        "last_verified_at":"",
+        "last_collected":TODAY,
+        "cohort":candidate_cohort,
+        "cohort_evidence":evidence,
+        "cohort_confirmed":True,
+        "program":"招聘简章内识别的具体岗位线索（共享简章链接）",
+        "source_page_title":heading[:220],
+        "source_card_text":str(candidate.get("source_card_text") or (company+" | "+title))[:900],
+    })
+    for field in ("salary","degree","city","address","experience","job_type","headcount","deadline","publish_date"):
+        value=candidate.get(field)
+        if value not in (None,"","全国","待核验","待确认","未知"):
+            item[field]=value
+    return item
+
 def extract_detail_fields_generic(text, raw_title=""):
     fields={}
     top=(text or "")[:4500]
@@ -956,11 +1013,12 @@ def public_lead_dedupe_key(row):
 
 def source_role_metrics(rows):
     """Separate records parsed from accessible single-role detail pages from public card/list leads."""
-    public_list_leads=sum(1 for row in rows if row.get("lead_evidence") in {"visible_public_job_card","yingjiesheng_public_listing"})
+    public_list_leads=sum(1 for row in rows if row.get("lead_evidence") in {"visible_public_job_card","yingjiesheng_public_listing","yingjiesheng_bulletin_role"})
+    shared_bulletin_role_leads=sum(1 for row in rows if row.get("lead_evidence")=="yingjiesheng_bulletin_role")
     public_card_leads=sum(1 for row in rows if bool(row.get("public_card_lead")))
     direct_detail_role_records=sum(
         1 for row in rows
-        if row.get("lead_evidence") not in {"visible_public_job_card","yingjiesheng_public_listing"}
+        if row.get("lead_evidence") not in {"visible_public_job_card","yingjiesheng_public_listing","yingjiesheng_bulletin_role"}
         and not row.get("public_card_lead")
         and row.get("granularity") not in {"announcement","entry"}
         and row.get("verification_status")=="link_alive"
@@ -968,6 +1026,7 @@ def source_role_metrics(rows):
     )
     return {
         "public_list_leads":public_list_leads,
+        "shared_bulletin_role_leads":shared_bulletin_role_leads,
         "public_card_leads":public_card_leads,
         "direct_detail_role_records":direct_detail_role_records,
     }
@@ -1335,6 +1394,16 @@ def embedded_records(company,source,parser,cohort,source_label=None,cohort_evide
 
 def table_records(company,source,parser,cohort,source_label=None,cohort_evidence=""):
     out=[]
+    page_heading=clean(getattr(parser,"page_title",""))
+    yjs_bulletin_company=clean_yingjiesheng_company_name(company)
+    yjs_shared_bulletin=(
+        source_label=="应届生求职网公开岗位"
+        and is_direct_detail_url(source)
+        and str(cohort or "").startswith("2027")
+        and bool(cohort_evidence)
+        and not is_specific_role_title(clean_job_title(page_heading,"yingjiesheng"),"yingjiesheng")
+        and yjs_bulletin_company.lower() not in {"","应届生求职网","应届生求职","招聘信息","未知","待核验","待确认"}
+    )
     cities=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外","全国")
     degree_words=("博士","硕士","本科","大专")
     for row_index,row in enumerate(parser.tables):
@@ -1365,11 +1434,11 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
                 if i>role_idx and any(w.lower() in candidate.lower() for w in CONCRETE_WORDS): continue
                 if re.fullmatch(r"[\d年月日./:-]+",candidate): continue
                 candidates.append(candidate)
-            if candidates:
+            if candidates and not yjs_shared_bulletin:
                 employer=candidates[0]
                 employer=re.split(r"\s+(?:金融|互联网/科技/AI|中国大陆|香港|美国|英国|新加坡|其他|金融/银行/证券|生产制造/工业|汽车/新能源|物流/供应链|快消/零售|生物医药/制药|教育/培训|房地产/建筑|咨询/四大|外企/合资|私企/民企|央国企/事业单位)\b",employer,1)[0].strip()
                 employer=re.sub(r"(世界500强|知名互联网|独角兽|半导体大厂|头部外企|新势力车企|大模型公司|行业领先|上市公司|福利完善|成长空间大|团队氛围好).*$","",employer).strip(" ·-_")
-            if not employer or employer==company: continue
+            if not employer or (employer==company and not yjs_shared_bulletin): continue
         role_url=source
         row_links=parser.table_links[row_index] if row_index<len(getattr(parser,"table_links",[])) else []
         for href in row_links:
@@ -1389,12 +1458,15 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
         if found_cities: r["city"]="、".join(found_cities)
         degree=next((x for x in row if any(d in x for d in degree_words) and len(x)<=35),None)
         if degree: r["degree"]=degree
+        if yjs_shared_bulletin:
+            r["source_card_text"]=joined[:900]
+            r["program"]="招聘简章内岗位表（共享简章链接）"
         out.append(r)
     return out
 
 def collect_source(src):
-    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); max_direct_detail_pages=int(src.get("max_direct_detail_pages",max_pages)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}
-    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"detail_access_limited":0,"detail_access_limited_samples":[],"public_detail_leads":0,"direct_detail_links_deferred_by_budget":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
+    company,root=src["company"],src["url"]; max_pages=int(src.get("max_pages",6)); max_candidates=int(src.get("max_candidates",500)); max_direct_detail_pages=int(src.get("max_direct_detail_pages",max_pages)); queue=list(src.get("seed_urls") or [root])[:max_pages]; visited=set(); seen=set(); rows=[]; qzw_detail_metadata={}; shared_bulletin_seen=set()
+    diagnostics={"pages_attempted":0,"pages_failed":0,"html_bytes":0,"links_seen":0,"tables_seen":0,"embedded_json_blocks":0,"role_like_links":0,"discovery_pages_queued":0,"listing_pages_queued":0,"listing_url_candidates":[],"listing_urls_visited":[],"link_samples":[],"link_sample_urls":set(),"direct_detail_pages_visited":0,"direct_detail_links_queued":0,"direct_detail_links_skipped_access_limit":0,"direct_detail_requests_attempted":0,"detail_access_limited":0,"detail_access_limited_samples":[],"public_detail_leads":0,"shared_bulletin_role_leads":0,"direct_detail_links_deferred_by_budget":0,"detail_redirects":0,"detail_redirect_samples":[],"direct_detail_samples":[],"browser_render_attempts":0,"browser_render_successes":0,"browser_render_blocked":0,"browser_rendered_body_chars":0,"browser_rendered_links":0,"browser_render_samples":[],"sample_title":"","last_error":"","parser_modes":[]}
     queue.sort(key=lambda value:discovery_priority(src.get("id",""),value))
     while queue and len(visited)<max_pages and len(rows)<max_candidates:
         rows_before_page=len(rows)
@@ -1483,6 +1555,7 @@ def collect_source(src):
             diagnostics["link_sample_urls"]={item["url"] for item in diagnostics["link_samples"]}
         page_text=p.page_text()
         raw_page_title=clean(p.page_title)
+        original_page_title=raw_page_title
         if not diagnostics["sample_title"]: diagnostics["sample_title"]=raw_page_title[:140]
         diagnostics["links_seen"]+=len(p.links); diagnostics["tables_seen"]+=len(p.tables); diagnostics["embedded_json_blocks"]+=len(p.scripts)
         detail_heading=""
@@ -1653,7 +1726,25 @@ def collect_source(src):
                 scheduled_now={canonical(value) for value in queue}
                 for candidate in parsed_rows:
                     candidate_url=canonical(candidate.get("source_url",""))
-                    if not candidate_url or candidate_url==canonical(final) or not is_direct_detail_url(candidate_url):
+                    if not candidate_url:
+                        continue
+                    if candidate_url==canonical(final):
+                        if source_id=="yingjiesheng":
+                            lead=make_yingjiesheng_bulletin_role_lead(
+                                candidate,final,original_page_title,record_source,cohort,cohort_evidence
+                            )
+                            if lead:
+                                dedupe_key=(str(lead.get("company","")).strip().lower(),
+                                            str(lead.get("title","")).strip().lower(),
+                                            str(lead.get("city","")).strip().lower(),
+                                            str(lead.get("cohort","")).strip().lower())
+                                if dedupe_key not in shared_bulletin_seen:
+                                    shared_bulletin_seen.add(dedupe_key)
+                                    rows.append(lead)
+                                    diagnostics["public_detail_leads"]+=1
+                                    diagnostics["shared_bulletin_role_leads"]+=1
+                        continue
+                    if not is_direct_detail_url(candidate_url):
                         continue
                     if source_id=="yingjiesheng":
                         candidate_title=clean_job_title(candidate.get("title",""),"yingjiesheng")
@@ -1855,6 +1946,8 @@ def collect_source(src):
     for r in rows:
         if r.get("lead_evidence")=="visible_public_job_card":
             k=("public-list-lead",)+public_lead_dedupe_key(r)
+        elif r.get("lead_evidence")=="yingjiesheng_bulletin_role":
+            k=("yingjiesheng-bulletin-lead",)+public_lead_dedupe_key(r)+(str(r.get("cohort","")).strip().lower(),)
         else:
             k=("record",r["company"],r["title"],r["source_url"])
         rank=(int(r.get("verification_score",0)),bool(r.get("cohort_evidence")),
@@ -1874,7 +1967,7 @@ def collect_source(src):
     diagnostics["role_records"]=len(role_rows)
     diagnostics["announcement_records"]=len(announcement_rows)
     diagnostics["portal_entries"]=len(entry_rows)
-    if src.get("id")=="yingjiesheng" and diagnostics.get("detail_access_limited",0)>0 and any(r.get("lead_evidence")=="yingjiesheng_public_listing" for r in role_rows):
+    if src.get("id")=="yingjiesheng" and diagnostics.get("detail_access_limited",0)>0 and any(r.get("lead_evidence") in {"yingjiesheng_public_listing","yingjiesheng_bulletin_role"} for r in role_rows):
         diagnostics["source_status"]="public_list_leads_detail_restricted"
     elif src.get("id")=="boss" and role_rows and diagnostics["direct_detail_links_skipped_access_limit"]>0 and diagnostics["direct_detail_pages_visited"]==0:
         diagnostics["source_status"]="public_card_leads_only"
@@ -2001,11 +2094,12 @@ def main():
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
-                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_access_limited":diag.get("detail_access_limited",0),"detail_access_limited_samples":diag.get("detail_access_limited_samples",[]),"public_detail_leads":diag.get("public_detail_leads",0),"direct_detail_links_deferred_by_budget":diag.get("direct_detail_links_deferred_by_budget",0),"direct_detail_page_budget":int(s.get("max_direct_detail_pages",s.get("max_pages",0))),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
+                            "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"detail_access_limited":diag.get("detail_access_limited",0),"detail_access_limited_samples":diag.get("detail_access_limited_samples",[]),"public_detail_leads":diag.get("public_detail_leads",0),"shared_bulletin_role_leads":diag.get("shared_bulletin_role_leads",0),"direct_detail_links_deferred_by_budget":diag.get("direct_detail_links_deferred_by_budget",0),"direct_detail_page_budget":int(s.get("max_direct_detail_pages",s.get("max_pages",0))),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
                             "browser_render_blocked":diag.get("browser_render_blocked",0),"browser_rendered_body_chars":diag.get("browser_rendered_body_chars",0),
                             "browser_rendered_links":diag.get("browser_rendered_links",0),"browser_render_samples":diag.get("browser_render_samples",[]),
                             "role_records":diag.get("role_records",0),
                             "public_list_leads":source_metrics["public_list_leads"],
+                            "shared_bulletin_role_leads":source_metrics["shared_bulletin_role_leads"],
                             "public_card_leads":source_metrics["public_card_leads"],
                             "direct_detail_role_records":source_metrics["direct_detail_role_records"],
                             "announcement_records":diag.get("announcement_records",0),"portal_entries":diag.get("portal_entries",0),

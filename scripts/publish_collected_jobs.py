@@ -35,6 +35,8 @@ def norm_url(url):
 def role_key(x):
     if x.get("lead_evidence")=="visible_public_job_card":
         return ("public-list-lead",)+public_lead_dedupe_key(x)
+    if x.get("lead_evidence")=="yingjiesheng_bulletin_role":
+        return ("yingjiesheng-bulletin-lead",)+public_lead_dedupe_key(x)+(str(x.get("cohort","")).strip().lower(),)
     return ("role",
             str(x.get("company","")).strip().lower(),
             str(x.get("title","")).strip().lower(),

@@ -111,6 +111,8 @@ def assess(row, today=None):
         reasons.append("缺少岗位级详情链接")
     if not cohort_is_confirmed(row):
         reasons.append("未能从公开页面证据确认2027届招聘批次")
+    if row.get("lead_evidence")=="yingjiesheng_bulletin_role":
+        reasons.append("岗位来自共享招聘简章链接，尚无独立岗位详情，需人工核验")
 
     status = row.get("status", "pending_review")
     if status in {"closed", "expired", "withdrawn", "cancelled"}:
