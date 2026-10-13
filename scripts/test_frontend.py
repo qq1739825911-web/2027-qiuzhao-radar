@@ -16,6 +16,7 @@ checks = {
     "AIGC and visual-design search aliases exist": "function expandSearchTerms(query)" in source and '"aigc":["生成式人工智能","ai生成内容","内容生成","ai视频","视频生成","图生视频","文生视频","漫剧","ai短剧"]' in source,
     "public-card review metadata survives normalization": "public_card_lead:!!x.public_card_lead,lead_evidence:x.lead_evidence||\"\"" in source,
     "job detail text sanitization exists": "function sanitizeDetailField" in source,
+    "detail sanitizer covers escaped JSON, CSS and footer tails": "const hasSerializedTail" in source and "版权所有" in source and "ieundefined" in source,
     "lazy rendering of company groups exists": 'data-loaded="false"' in source and 'data-company-index="' in source,
     "review bucket fallback exists": 'const emptyBox=$("jobs").querySelector(".empty")' in source,
     "official recruitment route is distinguished": "function usesOfficialRecruitmentFlow" in source,
@@ -63,6 +64,13 @@ const dirty = "岗位职责：完成测试并整理报告。\n3. 跟踪结果。
 const clean = sanitizeDetailField(dirty);
 assert.equal(clean, "岗位职责：完成测试并整理报告。\n3. 跟踪结果。");
 assert.equal(sanitizeDetailField("{\"jobCity\":\"北京\",\"careerJobId\":11025}"), "");
+const noComma = sanitizeDetailField('岗位职责：第一项保留英文逗号, 第二项仍需保留。\n "jobCity":"北京","salaryMax":9999999');
+assert.equal(noComma, "岗位职责：第一项保留英文逗号, 第二项仍需保留。");
+assert.equal(sanitizeDetailField('完整职责，包含逗号。 {"jobCity":"北京","careerJobId":11025}'), "完整职责，包含逗号。");
+const cssTail = sanitizeDetailField('.ie11 .nav_ul li{float:left;} .ieundefined .nav_ul li{float:none;} 岗位职责：按要求完成任务。');
+assert.ok(!cssTail.includes(".ie11") && !cssTail.includes(".ieundefined"));
+assert.ok(cssTail.includes("岗位职责：按要求完成任务。"));
+assert.equal(sanitizeDetailField("岗位职责：完成测试。 上一条 下一条 返回顶部"), "岗位职责：完成测试。");
 assert.equal(cleanUiTitle("【27届校招】测试工程师(A54426)"), "测试工程师");
 assert.equal(cleanUiTitle("〖27届校招〗具身智能AI软件工程师"), "具身智能AI软件工程师");
 assert.equal(usesOfficialRecruitmentFlow({company:"中国建设银行",type:"银行"}), true);
