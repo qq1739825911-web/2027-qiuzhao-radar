@@ -93,9 +93,18 @@ def should_render_public_page(source_id,url,html):
         resolved=[canonical(urljoin(url,link.get("href",""))) for link in parsed.links if link.get("href")]
         return path.startswith(("/school/","/xiaoyuan/")) and not any(is_direct_detail_url(link) for link in resolved)
     if source_id=="51job":
-        # Detail pages are handled by the static parser / URL verifier.
-        # The browser renderer is allow-listed for anonymous public lists only.
+        # Match the renderer's host/path boundary before asking it to render.
+        # This avoids noisy "outside allow-list" failures for discovered off-host URLs.
         if not should_discover_public_url(source_id,url) or is_direct_detail_url(url):
+            return False
+        parsed_url=urlparse(url)
+        host=parsed_url.hostname.lower() if parsed_url.hostname else ""
+        path=parsed_url.path.lower()
+        if not (host=="51job.com" or host.endswith(".51job.com")):
+            return False
+        if re.search(r"\\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\\?)",path,re.I):
+            return False
+        if re.search(r"/(?:login|register|resume|member|account|passport|captcha)(?:/|$)",path,re.I):
             return False
         parsed=Parser()
         parsed.feed(html or "")
