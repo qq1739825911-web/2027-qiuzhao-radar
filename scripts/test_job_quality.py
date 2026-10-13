@@ -20,11 +20,17 @@ from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_s
 
 COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
 RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
+PUBLISHER_SOURCE=(Path(__file__).resolve().parent/"publish_collected_jobs.py").read_text(encoding="utf-8")
+QUALITY_FINALIZER_SOURCE=(Path(__file__).resolve().parent/"finalize_job_quality.py").read_text(encoding="utf-8")
 
 def check(name, condition):
     if not condition:
         raise AssertionError(f"FAILED: {name}")
     print(f"PASS: {name}")
+
+check("publisher and finalizer use the same quality-gate version",
+      'manifest["quality_gate_version"]="2.2"' in PUBLISHER_SOURCE
+      and 'manifest["quality_gate_version"]="2.2"' in QUALITY_FINALIZER_SOURCE)
 
 # Cohort must not be silently guessed as 2027.
 check("publication date is not a cohort", year("发布时间：2026-09-28") == "")

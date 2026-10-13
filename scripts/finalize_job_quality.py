@@ -21,7 +21,7 @@ try:
     manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
 except Exception:
     manifest={}
-manifest["quality_gate_version"]="2.1"
+manifest["quality_gate_version"]="2.2"
 manifest["quality_checked_at"]=STAMP
 manifest["published_total_jobs"]=len(jobs)
 manifest["published_priority_candidates"]=priority
