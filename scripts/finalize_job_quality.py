@@ -1,5 +1,6 @@
 """Recalculate review buckets after URL verification and deduplication."""
 import json
+import re
 from pathlib import Path
 from datetime import datetime, timezone
 
