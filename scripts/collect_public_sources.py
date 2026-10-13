@@ -956,11 +956,11 @@ def public_lead_dedupe_key(row):
 
 def source_role_metrics(rows):
     """Separate records parsed from accessible single-role detail pages from public card/list leads."""
-    public_list_leads=sum(1 for row in rows if row.get("lead_evidence")=="visible_public_job_card")
+    public_list_leads=sum(1 for row in rows if row.get("lead_evidence") in {"visible_public_job_card","yingjiesheng_public_listing"})
     public_card_leads=sum(1 for row in rows if bool(row.get("public_card_lead")))
     direct_detail_role_records=sum(
         1 for row in rows
-        if row.get("lead_evidence")!="visible_public_job_card"
+        if row.get("lead_evidence") not in {"visible_public_job_card","yingjiesheng_public_listing"}
         and not row.get("public_card_lead")
         and row.get("granularity") not in {"announcement","entry"}
         and row.get("verification_status")=="link_alive"
@@ -1172,6 +1172,8 @@ def extract_yingjiesheng_card_fields(raw_title, links, role_index, page_url="", 
         return {}
     fields={"title":title,"company":company,"source_card_text":card_text[:900]}
     cohort=year(raw_title+" "+card_text)
+    if cohort and not cohort.startswith("2027"):
+        return {}
     if cohort:
         fields["cohort"]=cohort
         fields["cohort_evidence"]="page_text"
@@ -1656,6 +1658,9 @@ def collect_source(src):
                     if source_id=="yingjiesheng":
                         candidate_title=clean_job_title(candidate.get("title",""),"yingjiesheng")
                         candidate_company=clean_yingjiesheng_company_name(candidate.get("company",""))
+                        candidate_cohort=str(candidate.get("cohort") or cohort or "")
+                        if candidate_cohort and not candidate_cohort.startswith("2027"):
+                            continue
                         host=urlparse(candidate_url).netloc.lower()
                         if (is_specific_role_title(candidate_title,"yingjiesheng")
                                 and candidate_company not in {"","应届生求职网","招聘信息","未知","待确认"}
@@ -1869,7 +1874,9 @@ def collect_source(src):
     diagnostics["role_records"]=len(role_rows)
     diagnostics["announcement_records"]=len(announcement_rows)
     diagnostics["portal_entries"]=len(entry_rows)
-    if src.get("id")=="boss" and role_rows and diagnostics["direct_detail_links_skipped_access_limit"]>0 and diagnostics["direct_detail_pages_visited"]==0:
+    if src.get("id")=="yingjiesheng" and diagnostics.get("detail_access_limited",0)>0 and any(r.get("lead_evidence")=="yingjiesheng_public_listing" for r in role_rows):
+        diagnostics["source_status"]="public_list_leads_detail_restricted"
+    elif src.get("id")=="boss" and role_rows and diagnostics["direct_detail_links_skipped_access_limit"]>0 and diagnostics["direct_detail_pages_visited"]==0:
         diagnostics["source_status"]="public_card_leads_only"
     elif src.get("id") in {"iguopin","51job"} and role_rows and all(r.get("lead_evidence")=="visible_public_job_card" for r in role_rows):
         diagnostics["source_status"]="public_list_leads_only"
