@@ -13,10 +13,10 @@ from collect_public_sources import (
     is_public_role_lead_title, public_lead_dedupe_key,
     is_stale_51job_cycle_url,
     should_purge_qzw_noise_record,
-    source_role_metrics, extract_salary_text,
+    source_role_metrics, extract_salary_text, parse_source_ids, select_enabled_sources,
 )
 from quality_rules import assess, compact_json, should_publish_record
-from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url
+from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url, source_id_for_job as verifier_source_id_for_job, parse_source_ids as parse_verifier_source_ids
 
 COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
 RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
@@ -91,6 +91,13 @@ check("Parser ignores style and noscript text in visible page fields",
       ".ie11" not in styled.page_text() and "关闭脚本" not in styled.page_text() and "岗位职责" in styled.page_text())
 check("YJS collection allocates detail-page cap separately from total budget",
       int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_direct_detail_pages",0)) <= int(next(x for x in constReg if x.get("id")=="yingjiesheng").get("max_pages",0)))
+requested_yjs = parse_source_ids(" yingjiesheng ")
+all_enabled_sources, yjs_only_sources = select_enabled_sources(constReg, requested_yjs)
+check("YJS-focused runs select only the requested public source",
+      len(yjs_only_sources)==1 and yjs_only_sources[0].get("id")=="yingjiesheng" and len(all_enabled_sources)>1)
+check("YJS verifier scope maps the aggregator source label",
+      verifier_source_id_for_job({"source":"应届生求职网公开岗位"})=="yingjiesheng"
+      and parse_verifier_source_ids("yingjiesheng")=={"yingjiesheng"})
 
 
 
