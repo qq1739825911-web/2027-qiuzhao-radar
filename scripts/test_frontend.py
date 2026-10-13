@@ -11,8 +11,10 @@ source = HTML.read_text(encoding="utf-8")
 checks = {
     "job detail modal exists": 'id="jobDetailModal"' in source,
     "job title opens the in-site detail modal": 'data-detail-id="' in source and "openJobDetail(" in source,
-    "search index is built from current normalized job fields": 'DATA=DATA.map(row=>({...row,searchText:[row.company,row.title,row.keywords,row.category,row.city,row.type,row.degree,row.program,row.cohort,row.salary,row.address,row.description,row.requirements,row.responsibilities,row.benefits,row.company_info].join(" ").toLocaleLowerCase()}));' in source,
-    "keyword filter retains a fallback over visible job fields": 'x.searchText||[x.company,x.title,x.keywords,x.category,x.city,x.type,x.degree,x.program,x.cohort,x.salary,x.address].join(" ").toLocaleLowerCase()' in source,
+    "search index is built from current normalized job fields": 'DATA=DATA.map(row=>({...row,searchText:[row.company,row.title,row.keywords,row.category,row.city,row.type,row.degree,row.program,row.cohort,row.salary,row.address,row.description,row.requirements,row.responsibilities,row.benefits,row.company_info,row.job_type,row.experience].join(" ").toLocaleLowerCase()}));' in source,
+    "keyword filter searches all normalized fields and synonym terms": 'terms.some(term=>(x.searchText||[x.company,x.title,x.keywords,x.category,x.city,x.type,x.degree,x.program,x.cohort,x.salary,x.address,x.description,x.requirements,x.responsibilities,x.benefits,x.company_info,x.job_type,x.experience].join(" ").toLocaleLowerCase()).includes(term))' in source,
+    "AIGC and visual-design search aliases exist": "function expandSearchTerms(query)" in source and '"aigc":["生成式人工智能","ai生成内容","内容生成","ai视频","视频生成","图生视频","文生视频","漫剧","ai短剧"]' in source,
+    "public-card review metadata survives normalization": "public_card_lead:!!x.public_card_lead,lead_evidence:x.lead_evidence||\"\"" in source,
     "job detail text sanitization exists": "function sanitizeDetailField" in source,
     "lazy rendering of company groups exists": 'data-loaded="false"' in source and 'data-company-index="' in source,
     "review bucket fallback exists": 'const emptyBox=$("jobs").querySelector(".empty")' in source,
