@@ -34,7 +34,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2000,
-        "next_offset": 1146,
+        "next_offset": 1286,
         "batch_size": 140
       },
       "51job": {
@@ -54,9 +54,9 @@
       }
     }
   },
-  "records_found": 10,
-  "active_candidates": 2,
-  "pending_review": 8,
+  "records_found": 28,
+  "active_candidates": 4,
+  "pending_review": 24,
   "results": [
     {
       "id": "boss",
@@ -2755,28 +2755,31 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 420,
-      "records_found": 10,
-      "active_candidates": 2,
-      "pending_review": 8,
+      "records_found": 28,
+      "active_candidates": 4,
+      "pending_review": 24,
       "pages_attempted": 420,
       "pages_failed": 0,
-      "html_bytes": 16746886,
-      "links_seen": 53755,
+      "html_bytes": 16378780,
+      "links_seen": 43936,
       "listing_url_candidates": 2000,
-      "listing_urls_visited": 306,
+      "listing_urls_visited": 180,
       "listing_pool_size": 2000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 1146,
-      "tables_seen": 14479,
-      "embedded_json_blocks": 1098,
+      "listing_cursor_next": 1286,
+      "tables_seen": 12681,
+      "embedded_json_blocks": 1203,
       "role_like_links": 0,
-      "discovery_pages_queued": 597,
+      "discovery_pages_queued": 1164,
       "listing_pages_queued": 160,
-      "direct_detail_pages_visited": 113,
+      "direct_detail_pages_visited": 220,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 113,
-      "direct_detail_links_deferred_by_budget": 0,
+      "direct_detail_requests_attempted": 220,
+      "detail_access_limited": 0,
+      "detail_access_limited_samples": [],
+      "public_detail_leads": 0,
+      "direct_detail_links_deferred_by_budget": 738,
       "direct_detail_page_budget": 220,
       "detail_redirects": 0,
       "detail_redirect_samples": [],
@@ -2808,10 +2811,10 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 9,
+      "role_records": 27,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 9,
+      "direct_detail_role_records": 27,
       "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
@@ -2905,7 +2908,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-13T09:59:31+00:00",
+      "last_run_at": "2026-10-13T10:16:17+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3606,11 +3609,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 5295,
-  "published_priority_candidates": 170,
-  "published_pending_review": 5125,
-  "records_added_this_run": 8,
-  "records_updated_this_run": 2,
+  "published_total_jobs": 5313,
+  "published_priority_candidates": 172,
+  "published_pending_review": 5141,
+  "records_added_this_run": 18,
+  "records_updated_this_run": 10,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3636,8 +3639,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 522,
-    "fields_checked": 3654,
+    "rows": 540,
+    "fields_checked": 3780,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3646,12 +3649,12 @@
     "css_markers_remaining": 0,
     "samples": []
   },
-  "quality_checked_at": "2026-10-13T10:15:57+00:00",
+  "quality_checked_at": "2026-10-13T10:30:25+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。",
   "collected_sources": 1,
   "run_scope": "source_subset",
   "run_scope_source_ids": [
     "yingjiesheng"
   ],
-  "records_found_this_run": 10
+  "records_found_this_run": 28
 }
