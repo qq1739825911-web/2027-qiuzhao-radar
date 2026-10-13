@@ -23,6 +23,7 @@ RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").rea
 PUBLISHER_SOURCE=(Path(__file__).resolve().parent/"publish_collected_jobs.py").read_text(encoding="utf-8")
 QUALITY_FINALIZER_SOURCE=(Path(__file__).resolve().parent/"finalize_job_quality.py").read_text(encoding="utf-8")
 WORKFLOW_SOURCE=(Path(__file__).resolve().parents[1]/".github/workflows/frontend-regression.yml").read_text(encoding="utf-8")
+constReg=json.loads((Path(__file__).resolve().parents[1]/"data/company_sources.json").read_text(encoding="utf-8"))
 
 def check(name, condition):
     if not condition:
