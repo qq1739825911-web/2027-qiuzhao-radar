@@ -1685,7 +1685,6 @@ def collect_source(src):
                     diagnostics["discovery_pages_queued"]+=1
                     diagnostics["direct_detail_links_queued"]+=1
             else:
-            else:
                 for extracted in parsed_rows:
                     if detail_fields: merge_detail_fields(extracted,detail_fields)
                     extracted["last_collected"]=TODAY; extracted["last_verified"]=""
