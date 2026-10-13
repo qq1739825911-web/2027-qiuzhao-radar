@@ -102,7 +102,7 @@ def should_render_public_page(source_id,url,html):
         path=parsed_url.path.lower()
         if not (host=="51job.com" or host.endswith(".51job.com")):
             return False
-        if re.search(r"\\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\\?)",path,re.I):
+        if re.search(r"\.(?:jpg|jpeg|png|gif|webp|svg|css|js|ico|woff2?)(?:$|\?)",path,re.I):
             return False
         if re.search(r"/(?:login|register|resume|member|account|passport|captcha)(?:/|$)",path,re.I):
             return False
@@ -237,10 +237,10 @@ def sanitize_extracted_text(value, max_length=6500):
     text=text.replace("\\u002F", "/").replace("\\u002f", "/")
     text=re.sub(r"[ \t]+", " ", text).strip()
     keys = r"(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)"
-    if re.match(r'''^\s*[\{\[]\s*(?:\\?["'])?''' + keys + r'''(?:\\?["'])?\s*:''', text, re.I):
+    if re.match(r'''^\s*[\{\[]\s*(?:\?["'])?''' + keys + r'''(?:\?["'])?\s*:''', text, re.I):
         return ""
     property_key = re.compile(
-        r'''[,;]\s*(?:\\?["'])?''' + keys + r'''(?:\\?["'])?\s*:''',
+        r'''[,;]\s*(?:\?["'])?''' + keys + r'''(?:\?["'])?\s*:''',
         re.I,
     )
     match=property_key.search(text)
