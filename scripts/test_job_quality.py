@@ -330,6 +330,14 @@ check("51job public 2027 campus role list can yield a clearly tagged review lead
 
 check("51job root with no public detail links uses render fallback",
       should_render_public_page("51job","https://xy.51job.com/","<html><body><a href='javascript:;'>校园招聘</a></body></html>"))
+check("51job bare company slug is rejected before renderer allow-list",
+      not should_render_public_page("51job","https://campus.51job.com/asiainfo","<html><body>亚信校园招聘</body></html>"))
+check("51job plain public HTML pages remain eligible for anonymous rendering",
+      should_render_public_page("51job","https://campus.51job.com/asiainfo/jobs.html","<html><body>亚信2027届校园招聘</body></html>"))
+check("51job Python eligibility mirrors the browser path allow-list",
+      "public_route = (" in COLLECTOR_SOURCE
+      and "path + parsed_url.query, re.I" in COLLECTOR_SOURCE
+      and "path.endsWith(\".html\")" in RENDERER_SOURCE)
 check("51job page with real detail link skips redundant rendering",
       not should_render_public_page("51job","https://xy.51job.com/","<a href='https://jobs.51job.com/shanghai-pdx/160193763.html'>软件工程师</a>"))
 check("51job single-role detail URL never enters list-only browser renderer",
