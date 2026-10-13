@@ -316,7 +316,7 @@ check("source metrics distinguish verified details from list/card leads",
          "granularity":"lead","lead_evidence":"visible_public_job_card"},
         {"source_url":"https://www.nowcoder.com/jobs/detail/462503","verification_status":"link_alive",
          "granularity":"job"}
-      ])=={"public_list_leads":1,"public_card_leads":1,"direct_detail_role_records":1})
+      ])=={"public_list_leads":1,"shared_bulletin_role_leads":0,"public_card_leads":1,"direct_detail_role_records":1})
 check("BOSS public card is not counted as parsed detail even if a link check passes",
       source_role_metrics([
         {"source_url":"https://www.zhipin.com/job_detail/abc123.html","verification_status":"link_alive",
