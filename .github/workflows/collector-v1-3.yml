@@ -2,15 +2,12 @@ name: public-source-collector
 on:
   push:
     paths:
-      - ".github/workflows/collector-v1-3.yml"
       - "scripts/public_page_renderer.cjs"
       - "scripts/collect_public_sources.py"
       - "scripts/publish_collected_jobs.py"
       - "scripts/verify_job_links.py"
       - "scripts/quality_rules.py"
       - "scripts/finalize_job_quality.py"
-      - "scripts/test_job_quality.py"
-      - "scripts/test_frontend.py"
       - "data/company_sources.json"
   workflow_dispatch:
   schedule:
@@ -19,8 +16,9 @@ permissions:
   contents: write
 concurrency:
   group: job-data-maintenance-${{ github.ref }}
-  # A new commit must be able to supersede a hung collector; each run also has a 30-minute job timeout.
-  cancel-in-progress: true
+  # Let the current collection/verification/commit pipeline finish. The job already has a
+  # 30-minute timeout; cancel-in-progress previously discarded valid in-flight collection runs.
+  cancel-in-progress: false
 jobs:
   collect:
     runs-on: ubuntu-latest
