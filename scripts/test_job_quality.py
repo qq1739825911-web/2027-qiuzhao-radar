@@ -331,7 +331,7 @@ check("51job renderer rejects URLs outside the anonymous host allow-list",
       'if not (host=="51job.com" or host.endswith(".51job.com"))' in COLLECTOR_SOURCE
       and not should_render_public_page("51job","https://jobs.example.org/jobs/list.html","<html><body>职位列表</body></html>"))
 check("51job renderer skips static assets and account routes",
-      'woff2?)(?:$|\\\\?)' in COLLECTOR_SOURCE
+      'woff2?)(?:$|\\?)' in COLLECTOR_SOURCE
       and not should_render_public_page("51job","https://campus.51job.com/coach2027/assets/site.js","<html></html>"))
 check("YJS uses static parsing rather than unnecessary browser rendering",
       not should_render_public_page("yingjiesheng","https://m.yingjiesheng.com/other/index.html","<html><body>岗位列表</body></html>"))
