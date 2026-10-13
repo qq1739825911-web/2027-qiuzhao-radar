@@ -111,7 +111,7 @@ def assess(row, today=None):
         description = str(row.get("description", "") or "").strip()
         responsibilities = str(row.get("responsibilities", "") or "").strip()
         requirements = str(row.get("requirements", "") or "").strip()
-        if len(description) < 120 and len(responsibilities) + len(requirements) >= 100:
+        if len(description) < 120 and len(responsibilities) + len(requirements) >= 80:
             rebuilt = []
             if responsibilities:
                 rebuilt.append("岗位职责：" + responsibilities)
