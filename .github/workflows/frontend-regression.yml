@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "scripts/public_page_renderer.cjs"
+      - "scripts/quality_rules.py"
+      - "scripts/publish_collected_jobs.py"
+      - "scripts/finalize_job_quality.py"
+      - "scripts/verify_job_links.py"
+      - "data/company_sources.json"
       - "scripts/test_frontend.py"
       - "scripts/collect_public_sources.py"
       - "scripts/test_job_quality.py"
