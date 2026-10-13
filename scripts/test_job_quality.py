@@ -511,7 +511,7 @@ check("BOSS job_detail route is directly verifiable as a URL type",
 check("BOSS security interstitial URL is not a verified vacancy",
       is_security_interstitial_url("https://www.zhipin.com/web/passport/zp/security.html?callbackUrl=/job_detail/demo.html"))
 
-challenge_payload = '{"l1":"var arg1=\\'token\\';","l2":"GET"}'
+challenge_payload = r"""{"l1":"var arg1='token';","l2":"GET"}"""
 check("YJS raw security verification payload is recognized as access-limited",
       verifier_is_access_verification_payload(challenge_payload))
 check("Readable HTML job detail is not mistaken for a raw verification payload",
