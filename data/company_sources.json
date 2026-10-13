@@ -54,7 +54,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.7.8：应届生求职网每轮上限提高至200页，按游标每轮轮转40条已发现的公开列表/分类URL（专业目录、分页、职位分类优先），保留独立详情读取预算。薪资提取不再把无标签的孤立数字当作工资；缺少真实雇主名的详情不会进入发布岗位库。",
+    "notes": "V1.8.4：应届生求职网作为重点公开招聘信源，每轮页面预算提升至240页，轮转批次提升至60条，分类/分页候选池上限扩展至1500；继续优先公开专业/职位分类、分页和岗位详情链接。岗位名称、真实雇主、2027届证据、链接核验仍按质量门分层，不以采集页数替代有效岗位数。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
@@ -69,11 +69,11 @@
       "https://m.yingjiesheng.com/jobdetail/173508261",
       "https://www.yingjiesheng.com/zhuanye/"
     ],
-    "max_pages": 200,
-    "max_candidates": 10000,
-    "listing_page_limit": 60,
-    "rotation_seed_batch": 40,
-    "listing_pool_limit": 1000
+    "max_pages": 240,
+    "max_candidates": 12000,
+    "listing_page_limit": 80,
+    "rotation_seed_batch": 60,
+    "listing_pool_limit": 1500
   },
   {
     "id": "51job",
@@ -83,7 +83,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.8.0：轮转池自动剔除URL明确标记为非2027届的旧校招站点（如mindray2019、allnex2022、coach26）；岗位详情页走静态解析/独立链接核验，不交给仅允许匿名公开列表页的浏览器渲染器。无独立详情的岗位仍只作为待核验列表线索，详情页触发安全验证时不绕过。",
+    "notes": "V1.8.4：扩展公开2027校园招聘微站轮转覆盖；浏览器渲染与 Python 预筛选使用一致的匿名公开路径白名单。岗位详情受安全验证限制时不绕过；无岗位级详情的明确岗位卡片只能作为待核验线索。",
     "seed_urls": [
       "https://xy.51job.com/",
       "https://xy.51job.com/default-xs.php?lang=e",
@@ -93,11 +93,11 @@
       "https://campus.51job.com/cimc/m/post.html",
       "https://campus.51job.com/wxxz2027/about2.html"
     ],
-    "max_pages": 55,
-    "max_candidates": 2200,
-    "listing_page_limit": 28,
-    "rotation_seed_batch": 18,
-    "listing_pool_limit": 260
+    "max_pages": 70,
+    "max_candidates": 2800,
+    "listing_page_limit": 36,
+    "rotation_seed_batch": 24,
+    "listing_pool_limit": 320
   },
   {
     "id": "iguopin",
