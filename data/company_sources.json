@@ -54,7 +54,7 @@
     "access": "public",
     "trust": "medium",
     "enabled": true,
-    "notes": "V1.8.6：应届生求职网专项平衡采集。每轮最多访问340页，公开分类/分页轮转批次100条、列表页预算120，独立详情请求上限200；URL池上限1500。确保先扩展公开专业/职位分类和分页覆盖，再解析更多岗位详情；历史详情清洗与整库JSON/CSS残留审计、质量分层、轮转链接核验必须全部通过。不绕过登录、安全验证或访问限制。",
+    "notes": "V1.8.7：应届生求职网专项自动采集。总页预算420、公开分类/分页轮转批次140、动态列表发现预算160、独立详情请求上限220、公开列表URL池上限2000。列表和详情按不同指标审计；详情尾部执行JSON/CSS/导航残留清洗与回归测试，岗位继续经过届别、详情链接核验和可信度分层。不绕过登录、安全验证或访问限制。",
     "seed_urls": [
       "https://www.yingjiesheng.com/",
       "https://www.yingjiesheng.com/major/",
@@ -69,12 +69,12 @@
       "https://m.yingjiesheng.com/jobdetail/173508261",
       "https://www.yingjiesheng.com/zhuanye/"
     ],
-    "max_pages": 340,
-    "max_candidates": 18000,
-    "listing_page_limit": 120,
-    "rotation_seed_batch": 100,
-    "listing_pool_limit": 1500,
-    "max_direct_detail_pages": 200
+    "max_pages": 420,
+    "max_candidates": 20000,
+    "listing_page_limit": 160,
+    "rotation_seed_batch": 140,
+    "listing_pool_limit": 2000,
+    "max_direct_detail_pages": 220
   },
   {
     "id": "51job",
