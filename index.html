@@ -136,16 +136,42 @@ const storageGet=(k,d)=>{try{return localStorage.getItem(k)||d}catch{return d}},
 const $=id=>document.getElementById(id),today=new Date(),days=x=>Math.ceil((new Date(x)-new Date(today.toDateString()))/86400000);
 function sanitizeDetailField(value,maxLength=6500){
  let text=String(value??"").split("\\r\\n").join("\n").split("\\n").join("\n").split("\\t").join(" ");
- text=text.split("\\u002F").join("/").split("\\u002f").join("/").replace(/&quot;/gi,'"').replace(/&#39;/gi,"'");
- const keys=["jobCity","careerJobId","deliverBegin","deliverEnd","refreshBegin","latestProcessTime","graduationYear","salaryType","salaryMin","salaryMax","jobKeys","companyId","companyName","positionId","positionName","recruitJobName","jobName","jobOffer","eduLevel"];
- const leading=text.trimStart();
- const keyPattern=/(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)/i;
- if((leading.startsWith("{")||leading.startsWith("["))&&keyPattern.test(leading.slice(0,120)))return "";
- const metadata=/(?:[,;]\s*)(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/i.exec(text);
- if(metadata){
-  text=text.slice(0,metadata.index).replace(/[ \t,;\\]+$/,"");
-  while(/["'}\]]$/.test(text))text=text.slice(0,-1).replace(/[ \t,;\\]+$/,"");
+ text=text.split("\\u002F").join("/").split("\\u002f").join("/").replace(/&quot;/gi,'"').replace(/&#39;/gi,"'").replace(/\uFFFD/g,"");
+ for(let i=0;i<20;i++){
+  const clean=text.replace(/(?:^|\s)\.ie(?:11|undefined)\b[^{}]*\{[^{}]*\}/gi," ");
+  if(clean===text)break;
+  text=clean;
  }
+ text=text.replace(/[ \t]{2,}/g," ").trim();
+ const field=/(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/i;
+ const opening=/\{\s*(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/i.exec(text);
+ let cut=opening?opening.index:-1;
+ const hasSerializedTail=end=>{
+  const suffix=text.slice(end,end+2200);
+  const next=field.exec(suffix);
+  return Boolean((next&&next.index<1800)||/[}\]]\s*(?:\\?["'])?\s*$/.test(suffix));
+ };
+ if(cut<0){
+  const patterns=[
+   /[,;]\s*(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/ig,
+   /\n[ \t]*(?:\\?["'])?(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)(?:\\?["'])?\s*:/ig
+  ];
+  for(const pattern of patterns){
+   let match;
+   while((match=pattern.exec(text))!==null){
+    if(hasSerializedTail(match.index+match[0].length)){cut=match.index;break;}
+   }
+   if(cut>=0)break;
+  }
+ }
+ if(cut<0){
+  const first=field.exec(text);
+  if(first&&hasSerializedTail(first.index+first[0].length))cut=first.index;
+ }
+ if(cut>=0)text=text.slice(0,cut).replace(/[ \t,;\\\"']+$/,"");
+ const footer=/(?:\s*(?:上一条|下一条|上一篇|下一篇|上一页|下一页|查看其他岗位|返回顶部|登录\/注册|收藏职位|职位收藏|信息来源|应届生求职网|版权所有)\s*){2,}$/i.exec(text);
+ if(footer)text=text.slice(0,footer.index);
+ else text=text.replace(/\s+(?:上一条|下一条|上一页|下一页|返回顶部|登录\/注册)\s*$/i,"");
  return text.replace(/\n[ \t]*\n[ \t]*\n+/g,"\n\n").trim().slice(0,maxLength);
 }
 function cleanUiTitle(value){
