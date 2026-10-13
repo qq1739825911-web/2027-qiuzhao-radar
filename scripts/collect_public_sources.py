@@ -106,6 +106,21 @@ def should_render_public_page(source_id,url,html):
             return False
         if re.search(r"/(?:login|register|resume|member|account|passport|captcha)(?:/|$)",path,re.I):
             return False
+        # Keep eligibility identical to public_page_renderer.cjs. The source
+        # registry may discover a campus microsite root such as /asiainfo, but
+        # the browser worker intentionally renders only a root, a real HTML/PHP
+        # page, or a URL whose path/query clearly denotes recruitment navigation.
+        # Reject it here so we don't emit a false "outside allow-list" error.
+        public_route = (
+            path == "/"
+            or path.endswith((".html", ".php"))
+            or bool(re.search(
+                r"(?:jobs?|jobdetail|job-detail|position|positions|campus|company|page|pageno|jobid|positionid)",
+                path + parsed_url.query, re.I
+            ))
+        )
+        if not public_route:
+            return False
         parsed=Parser()
         parsed.feed(html or "")
         resolved=[canonical(urljoin(url,link.get("href",""))) for link in parsed.links if link.get("href")]
