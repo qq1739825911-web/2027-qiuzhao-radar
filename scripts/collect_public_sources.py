@@ -1,4 +1,4 @@
-"""V5.17 public recruitment collector.
+"""V5.18 public recruitment collector.
 
 Rules:
 - public official pages only; no login/CAPTCHA/private API/anti-bot bypass.
@@ -609,6 +609,20 @@ def extract_section(text, starts, ends, limit=5000):
     if positions: tail=tail[:min(positions)]
     return re.sub(r"\s+"," ",tail).strip(" :-—")[:limit].strip()
 
+def extract_salary_text(text):
+    """Extract salary only from a labelled field, explicit pay period, or real range."""
+    top=(text or "")[:4500]
+    n=r"\d+(?:\.\d+)?"; u=r"(?:万元|元|K|k|千|万)"
+    period=r"(?:\s*/\s*(?:月|年|天)|每月|每年|每天)"
+    value=rf"(?:面议|{n}\s*(?:{u}\s*)?[-—~～至到]\s*{n}\s*{u}(?:{period})?|{n}\s*{u}(?:{period})?)"
+    m=re.search(rf"(?:薪资待遇|薪资|薪酬|工资|月薪|年薪|薪酬待遇|待遇)\s*[:：]?\s*({value})",top,re.I)
+    if m: return re.sub(r"\s+","",m.group(1))
+    m=re.search(rf"(?<![\dA-Za-z])({n}\s*(?:{u}\s*)?[-—~～至到]\s*{n}\s*{u}(?:{period})?)(?![\dA-Za-z])",top,re.I)
+    if m: return re.sub(r"\s+","",m.group(1))
+    m=re.search(rf"(?<![\dA-Za-z])({n}\s*{u}\s*{period})(?![\dA-Za-z])",top,re.I)
+    return re.sub(r"\s+","",m.group(1)) if m else ""
+
+
 def extract_yingjiesheng_fields(raw_title, text, url):
     """Extract visible fields from public Yingjiesheng job-detail pages."""
     fields={}; title=""; company=""
@@ -641,23 +655,20 @@ def extract_yingjiesheng_fields(raw_title, text, url):
         m=re.search(r"\[(?:全国|北京|上海|广州|深圳|杭州|南京|成都|武汉|西安)[^\]]*\]\s*(.+?)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
         if m and not company: company=m.group(1).strip()
         if not company:
-            m=re.search(r"(?:^|\s)([^\s]{2,40}有限公司)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
+            cm=re.search(r"(?:招聘单位|用人单位|单位名称|公司名称|企业名称|招聘企业)\s*[:：]?\s*(.{2,80}?)(?=\s*(?:职位\s*[:：]|招聘岗位|职位描述|岗位职责|发布时间|工作地点|学历要求|投递说明|公司信息|单位简介|$))",text or "",re.I)
+            if cm:
+                candidate=clean_yingjiesheng_company_name(cm.group(1))
+                if candidate and candidate.lower() not in {"应届生求职网","招聘信息","未知","待核验"}: company=candidate
+        if not company:
+            m=re.search(r"(?:^|\s)([^\s]{2,40}(?:有限公司|股份有限公司|集团|研究院|研究所|大学|银行|医院|中心|公司))\s+(?:职位\s*[:：]|招聘岗位)",text or "")
             if m: company=m.group(1).strip()
     role_titles=split_role_title_candidates(title,"yingjiesheng")
     fields["role_titles"]=role_titles
     fields["title"]=role_titles[0] if role_titles else clean_job_title(title,"yingjiesheng")
     fields["company"]=clean_yingjiesheng_company_name(company)
     top=(text or "")[:3500]
-    annual_salary=re.search(r"(?:年薪\s*)?\d+(?:\.\d+)?\s*(?:万元|万|元)(?:\s*/\s*年|/年|每年)",top)
-    if annual_salary:
-        fields["salary"]=re.sub(r"\s+","",annual_salary.group(0))
-    else:
-        rmb_salary=re.search(r"\d[\d,]*(?:\s*[-—~～至到]\s*\d[\d,]*)?\s*元\s*/\s*(?:月|天|年)",top)
-        if rmb_salary:
-            fields["salary"]=re.sub(r"\s+","",rmb_salary.group(0))
-        else:
-            salary=re.search(r"(?<![A-Za-z])\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|每月|月)?",top)
-            if salary: fields["salary"]=re.sub(r"\s+","",salary.group(0))
+    salary=extract_salary_text(top)
+    if salary: fields["salary"]=salary
     degree=next((d for d in ("博士研究生及以上","硕士研究生及以上","本科及以上","大专及以上","博士及以上","硕士及以上","本科","硕士","博士","大专") if d in top), "")
     if degree: fields["degree"]=degree
     # City names in site navigation/related cards are not reliable work locations.
@@ -699,9 +710,8 @@ def extract_detail_fields_generic(text, raw_title=""):
     top=(text or "")[:4500]
     degree=next((d for d in ("博士研究生及以上","硕士研究生及以上","本科及以上","大专及以上","博士及以上","硕士及以上","本科","硕士","博士","大专") if d in top), "")
     if degree: fields["degree"]=degree
-    salary=re.search(r"(?:薪资|月薪)\s*[:：]?\s*(\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|月)?|薪资面议)",top)
-    if not salary: salary=re.search(r"\b(\d+(?:\.\d+)?\s*(?:K|k|千|万)(?:\s*[-—~至]\s*\d+(?:\.\d+)?\s*(?:K|k|千|万))?(?:\s*/\s*月|/月|月)?)",top)
-    if salary: fields["salary"]=re.sub(r"\s+","",salary.group(1))
+    salary=extract_salary_text(top)
+    if salary: fields["salary"]=salary
     cities=("北京","上海","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外")
     def cities_in(segment):
         hits=[]
@@ -1119,7 +1129,7 @@ def record(company,title,url,source,cohort,confidence,program="",cohort_evidence
       "source_url":url,"keywords":re.findall(r"[A-Za-z0-9+#.-]{2,}|[\u4e00-\u9fff]{2,8}",title)[:14],
       "status":status,"demo":False,"confirmed_by":[source],"cohort":cohort or "",
       "cohort_evidence":cohort_evidence or "","cohort_confirmed":bool(cohort_evidence),
-      "program":program,"collector":"public-html-v5.16","granularity":"job" if status=="active" else "review",
+      "program":program,"collector":"public-html-v5.18","granularity":"job" if status=="active" else "review",
       "verification_score":confidence,"description":"","responsibilities":"","requirements":"","benefits":"",
       "company_info":"","address":"","work_time":"","experience":"","job_type":"","headcount":""}
 
@@ -1756,7 +1766,7 @@ def main():
     state["qiuzhaowang_last_pages"]=qiuzhaowang_pages
     STATE_PATH.write_text(json.dumps(state,ensure_ascii=False,indent=2),encoding="utf-8")
     INBOX.write_text(json.dumps(all_rows,ensure_ascii=False,indent=2),encoding="utf-8")
-    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.17","enabled_sources":len(enabled),
+    MANIFEST.write_text(json.dumps({"run_date":TODAY,"collector_version":"5.18","enabled_sources":len(enabled),
      "pagination_state":{"qiuzhaowang_pages":qiuzhaowang_pages,"qiuzhaowang_next_page":next_page,
                          "source_listing_rotation":{sid:{"known_public_list_urls":len(state["source_listing_url_pool"].get(sid,[])),
                                                          "next_offset":state["source_listing_cursor"].get(sid,0),
