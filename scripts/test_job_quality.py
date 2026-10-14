@@ -13,7 +13,7 @@ from collect_public_sources import (
     is_public_role_lead_title, public_lead_dedupe_key,
     is_stale_51job_cycle_url,
     should_purge_qzw_noise_record,
-    source_role_metrics, extract_salary_text, parse_source_ids, select_enabled_sources,
+    source_role_metrics, extract_salary_text, parse_source_ids, select_enabled_sources, listing_rotation_group,
 )
 from quality_rules import assess, compact_json, should_publish_record
 from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url, is_access_verification_payload as verifier_is_access_verification_payload, source_id_for_job as verifier_source_id_for_job, parse_source_ids as parse_verifier_source_ids
@@ -141,6 +141,32 @@ check("public listing rotation advances through known URLs",
 check("public listing rotation wraps without generating URLs",
       select_rotation_batch(["https://www.nowcoder.com/jobs/page/1","https://www.nowcoder.com/jobs/page/2","https://www.nowcoder.com/jobs/page/3"],2,2)
       == (["https://www.nowcoder.com/jobs/page/3","https://www.nowcoder.com/jobs/page/1"],4))
+yjs_rotation_fixture=(
+    [
+      "https://www.yingjiesheng.com/major/engineering/shanghai",
+      "https://www.yingjiesheng.com/major/engineering/beijing",
+      "https://www.yingjiesheng.com/major/engineering/guangzhou",
+      "https://www.yingjiesheng.com/major/engineering/shenzhen",
+      "https://www.yingjiesheng.com/major/engineering/chengdu",
+      "https://www.yingjiesheng.com/major/engineering/nanjing",
+      "https://www.yingjiesheng.com/major/engineering/wuhan",
+      "https://www.yingjiesheng.com/major/engineering/other",
+    ]
+    + ["https://www.yingjiesheng.com/zhuanye/guanlixue/list_2.html", "https://www.yingjiesheng.com/zhuanye/guanlixue/list_3.html"]
+    + ["https://zhiwei.yingjiesheng.com/marketing/shanghai", "https://zhiwei.yingjiesheng.com/finance/beijing"]
+    + ["https://q.yingjiesheng.com/jobs/search?keyword=设计", "https://q.yingjiesheng.com/jobs/search?keyword=运营"]
+    + ["https://m.yingjiesheng.com/other/index.html"]
+)
+yjs_rotation_batch,_=select_rotation_batch(yjs_rotation_fixture,0,10)
+check("YJS rotation interleaves major, pagination, role-city, search and mobile listing groups",
+      any("/major/" in u for u in yjs_rotation_batch)
+      and any("/zhuanye/" in u for u in yjs_rotation_batch)
+      and any("zhiwei.yingjiesheng.com" in u for u in yjs_rotation_batch)
+      and any("q.yingjiesheng.com" in u for u in yjs_rotation_batch)
+      and any("m.yingjiesheng.com" in u for u in yjs_rotation_batch))
+check("YJS URL rotation groups distinguish search and pagination routes",
+      listing_rotation_group("https://q.yingjiesheng.com/jobs/search?keyword=设计")=="yjs-search"
+      and listing_rotation_group("https://www.yingjiesheng.com/zhuanye/guanlixue/list_2.html")=="yjs-major-pagination")
 check("source diagnostics capture public link allowlist decisions",
       '"link_samples"' in open(__file__.replace("test_job_quality.py", "collect_public_sources.py"), encoding="utf-8").read())
 check("QZW detail text yields concrete roles",
@@ -651,8 +677,13 @@ check("short historic YJS description is rebuilt from retained responsibility an
 check("YJS website name cannot pass as an employer for a specific vacancy",
       not should_publish_record({"source":"应届生求职网公开岗位","company":"应届生求职网","title":"FinTech方向管理培训生",
         "source_url":"https://m.yingjiesheng.com/job-008-115-342.html","granularity":"review"}))
-check("YJS expanding list rotation budget is configured",
-      any(src.get("id")=="yingjiesheng" and src.get("max_pages",0)>=200 and src.get("rotation_seed_batch",0)>=40
+check("YJS focused collector has sufficient page, detail and rotating-list budgets",
+      any(src.get("id")=="yingjiesheng"
+          and src.get("max_pages",0)>=500
+          and src.get("listing_page_limit",0)>=190
+          and src.get("rotation_seed_batch",0)>=160
+          and src.get("listing_pool_limit",0)>=2500
+          and src.get("max_direct_detail_pages",0)>=260
           for src in constReg))
 
 check("YJS detail role title extracted", fields.get("title") == "AIGC影视创意制作（校招）")
@@ -663,6 +694,10 @@ check("YJS salary extracted", fields.get("salary") == "8千-1.5万")
 check("YJS degree extracted", fields.get("degree") == "本科")
 check("YJS city extracted", fields.get("city") == "上海")
 check("YJS company extracted", fields.get("company") == "上海基美影业股份有限公司")
+check("YJS company name strips appended job-category metadata",
+      clean_yingjiesheng_company_name("合肥智方传迈智能科技有限公司 职位类别：电气工程师/技术员")=="合肥智方传迈智能科技有限公司")
+check("YJS title strips a leading year-campus-recruiting banner",
+      clean_job_title("2027校园招聘高速光模块制造方向生产储备干部","yingjiesheng")=="高速光模块制造方向生产储备干部")
 check("YJS responsibilities extracted", "生成式AI视频创意" in fields.get("responsibilities", ""))
 check("YJS requirements extracted", "AIGC工具" in fields.get("requirements", ""))
 check("YJS address extracted", fields.get("address") == "上海静安区某路1号")
@@ -686,6 +721,11 @@ check("YJS explicit work city overrides site-navigation cities",
         "[广东]珠海市龙图光罩科技有限公司 品质工程师 2026-10-10",
         "工作地点：珠海市 信息来源：广州大学 职位类型：全职 上海北京导航",
         "https://m.yingjiesheng.com/job-008-111-850.html").get("city")=="珠海")
+check("YJS concrete work city beats an earlier vague Other placeholder",
+      extract_yingjiesheng_fields(
+        "[江西]某某科技有限公司 嵌入式软件工程师 2026-10-14",
+        "工作地点：其它 信息来源：高校 职位类型：全职 职位描述：工程开发。工作城市：江西省南昌市红谷滩区 招聘人数：2 学历要求：硕士",
+        "https://m.yingjiesheng.com/job-008-118-439.html").get("city")=="南昌")
 check("YJS salary parser reads RMB monthly ranges",
       extract_yingjiesheng_fields(
         "品质工程师招聘_企业招聘信息",

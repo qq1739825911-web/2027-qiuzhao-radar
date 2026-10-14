@@ -2,7 +2,7 @@
 import json
 import re
 from datetime import date, timedelta
-from collect_public_sources import clean_job_title, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text, is_boss_campus_card_relevant, is_public_role_lead_title
+from collect_public_sources import clean_job_title, clean_yingjiesheng_company_name, is_concrete_role_title, is_specific_role_title, is_direct_detail_url, sanitize_extracted_text, is_boss_campus_card_relevant, is_public_role_lead_title
 
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
@@ -16,6 +16,7 @@ def should_publish_record(row):
         return True
     source_id = "nowcoder" if source == "牛客公开岗位" else ("yingjiesheng" if "应届生求职网" in source else ("qiuzhaowang" if "秋招网" in source else ("boss" if "BOSS直聘" in source else ("iguopin" if "国聘" in source else ("51job" if "前程无忧" in source or "51job" in source.lower() else "")))))
     if source_id=="yingjiesheng":
+        row["company"]=clean_yingjiesheng_company_name(row.get("company",""))
         employer=re.sub(r"\s+","",str(row.get("company","") or "")).strip().lower()
         if employer in {"","应届生求职网","应届生求职","www.yingjiesheng.com","yingjiesheng","招聘信息","未知","待核验","待确认"}:
             return False
@@ -96,6 +97,8 @@ def assess(row, today=None):
     title = clean_job_title(row.get("title", ""), source_id)
     if title:
         row["title"] = title
+    if source_id=="yingjiesheng":
+        row["company"]=clean_yingjiesheng_company_name(row.get("company",""))
     # Clean existing historical records too; otherwise the fixed collector
     # would leave already-published JSON fragments visible in the detail modal.
     field_limits = {"description": 6500, "responsibilities": 4500, "requirements": 4500,

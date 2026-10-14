@@ -17,17 +17,26 @@ text_fields=("description","responsibilities","requirements","benefits","company
 known_json_key=re.compile(r"\b(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)\s*:",re.I)
 legacy_css=re.compile(r"\.ie(?:11|undefined)\b",re.I)
 tail_noise=re.compile(r"(?:联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|上一条|下一条|上一篇|下一篇|返回顶部|查看原发布网址)",re.I)
+company_noise=re.compile(r"(?:职位类别|职位分类|岗位类别|岗位分类|专业标签|招聘人数|工作地点|工作城市|工作地区|学历要求|职位描述|岗位职责|岗位要求|任职要求|职位类型|投递说明|联系方式)\s*[:：]?",re.I)
+title_prefix=re.compile(r"^\s*(?:20\d{2}|2\d)\s*(?:届\s*)?(?:校园招聘|校招|招聘)")
 cleanup={
     "rows":0,"fields_checked":0,"fields_changed":0,"records_changed":0,
     "json_markers_before":0,"json_markers_remaining":0,
     "css_markers_before":0,"css_markers_remaining":0,
-    "tail_noise_before":0,"tail_noise_remaining":0,"samples":[]
+    "tail_noise_before":0,"tail_noise_remaining":0,"samples":[],
+    "company_fields_checked":0,"company_fields_changed":0,"company_metadata_before":0,"company_metadata_remaining":0,
+    "title_prefix_before":0,"title_prefix_remaining":0
 }
 for row in jobs:
     is_yjs="应届生求职网" in str(row.get("source",""))
     before={field:str(row.get(field,"") or "") for field in text_fields} if is_yjs else {}
+    company_before=str(row.get("company","") or "") if is_yjs else ""
+    title_before=str(row.get("title","") or "") if is_yjs else ""
     if is_yjs:
         cleanup["rows"]+=1
+        cleanup["company_fields_checked"]+=1
+        if company_noise.search(company_before): cleanup["company_metadata_before"]+=1
+        if title_prefix.search(title_before): cleanup["title_prefix_before"]+=1
         for value in before.values():
             cleanup["fields_checked"]+=1
             if known_json_key.search(value): cleanup["json_markers_before"]+=1
@@ -37,6 +46,11 @@ for row in jobs:
     if ok: priority+=1
     else: lead+=1
     if is_yjs:
+        company_after=str(row.get("company","") or "")
+        title_after=str(row.get("title","") or "")
+        if company_after!=company_before: cleanup["company_fields_changed"]+=1
+        if company_noise.search(company_after): cleanup["company_metadata_remaining"]+=1
+        if title_prefix.search(title_after): cleanup["title_prefix_remaining"]+=1
         changed_fields=[field for field,value in before.items() if str(row.get(field,"") or "")!=value]
         cleanup["fields_changed"]+=len(changed_fields)
         if changed_fields:

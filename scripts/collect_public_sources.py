@@ -555,8 +555,10 @@ def clean_job_title(title, source_id=""):
         t=re.split(r"\s+(?=(?:\d{2,4}(?:[-—~至]\d{2,4})?元/天|薪资(?:超|面议|[:：])|HR(?:刚|今日|今天|在线)|助力简历|直达官网|投后必反馈|校招高薪榜|最少\d+个月|\d+天/周|地点[：:]|\d{2,5}[-–]\d{2,5}人|有转正|企业服务|全场景覆盖|数字化运营))",t,maxsplit=1)[0]
         if re.search(r"(?:有限公司|股份|集团|科技|研究院|大学|银行).{0,24}\s+(?:互联网|机械制造|电商|金融|教育|企业服务|游戏|电子商务)\s*$",t):
             t=""
-    if source_id=="yingjiesheng" and "招聘_" in t:
-        t=t.split("招聘_",1)[0].strip()
+    if source_id=="yingjiesheng":
+        t=re.sub(r"^\s*(?:20\d{2}|2\d)\s*(?:届\s*)?(?:校园招聘|校招|招聘)\s*[-—:：_ ]*","",t)
+        if "招聘_" in t:
+            t=t.split("招聘_",1)[0].strip()
     if source_id=="boss":
         t=re.sub(r"\s*[-—|｜_]\s*BOSS直聘.*$","",t,flags=re.I)
         t=re.sub(r"\s*招聘(?:信息)?[-_ ]*BOSS直聘.*$","",t,flags=re.I)
@@ -635,10 +637,18 @@ def is_specific_role_title(title, source_id=""):
     return len(stripped)>=2 and bare not in generic_only and not stripped.endswith(("类","方向","体系","专业"))
 
 def clean_yingjiesheng_company_name(value):
+    """Return the visible employer name, excluding appended vacancy-field labels."""
     company=clean(value or "")
     company=re.sub(r"^\s*[\[【（(][^\]】）)]{1,15}[\]】）)]\s*","",company)
+    company=re.split(
+        r"\s*(?:职位类别|职位分类|岗位类别|岗位分类|专业标签|招聘人数|招聘人数上限|"
+        r"工作地点|工作城市|工作地区|工作地址|学历要求|职位描述|岗位职责|工作职责|"
+        r"职位要求|岗位要求|任职要求|任职资格|职位类型|薪资待遇|薪酬福利|"
+        r"发布时间|投递说明|联系方式|公司地址)\s*[:：]?",
+        company,maxsplit=1,flags=re.I
+    )[0]
     company=re.sub(r"\s*(?:招聘信息|校园招聘|招聘启事)$","",company)
-    return company.strip(" -—_|｜")
+    return re.sub(r"\s{2,}"," ",company).strip(" -—_|｜")
 
 def split_role_title_candidates(value,source_id=""):
     """Split multi-role detail headings into separate role-level records."""
@@ -701,20 +711,68 @@ def extract_qiuzhaowang_role_names(text, link_hint=""):
                 result.append(title)
     return result[:40]
 
+def listing_rotation_group(url):
+    """Classify a discovered URL so one large category cannot monopolize every batch."""
+    parsed=urlparse(canonical(str(url or "")))
+    host=parsed.netloc.lower()
+    path=(parsed.path or "/").lower()
+    if host.endswith("yingjiesheng.com"):
+        if host.startswith("q."):
+            return "yjs-search"
+        if host.startswith("zhiwei."):
+            return "yjs-role-city"
+        if host.startswith("m."):
+            return "yjs-mobile"
+        if path.startswith("/major/"):
+            return "yjs-major-city"
+        if path.startswith("/zhuanye/"):
+            return "yjs-major-pagination" if re.search(r"/list[_-]?\d+\.html$",path) else "yjs-subject-city"
+        if path.startswith("/zhiwei/"):
+            return "yjs-role-city"
+        if path.startswith("/xuanjianghui/"):
+            return "yjs-campus-talk"
+        return "yjs-other"
+    first_segment=next((part for part in path.split("/") if part),"root")
+    return (host or "unknown-host")+"/"+first_segment
+
 def select_rotation_batch(pool, cursor, limit):
-    """Rotate only through discovered public listing URLs; never invent page URLs."""
+    """Round-robin through known URL groups while preserving order within each group."""
     unique=[]
     seen=set()
     for url in pool or []:
         value=canonical(str(url))
         if value and value not in seen:
-            unique.append(value); seen.add(value)
+            unique.append(value)
+            seen.add(value)
     if not unique or int(limit)<=0:
         return [],max(0,int(cursor or 0))
     offset=max(0,int(cursor or 0))
     start=offset % len(unique)
-    count=min(len(unique),max(1,int(limit)))
-    return [unique[(start+i)%len(unique)] for i in range(count)],offset+count
+    rotated=unique[start:]+unique[:start]
+    count=min(len(rotated),max(1,int(limit)))
+    groups={}
+    group_order=[]
+    for url in rotated:
+        key=listing_rotation_group(url)
+        if key not in groups:
+            groups[key]=[]
+            group_order.append(key)
+        groups[key].append(url)
+    if len(group_order)==1:
+        return rotated[:count],offset+count
+    batch=[]
+    positions={key:0 for key in group_order}
+    while len(batch)<count:
+        progressed=False
+        for key in group_order:
+            pos=positions[key]
+            if pos<len(groups[key]) and len(batch)<count:
+                batch.append(groups[key][pos])
+                positions[key]=pos+1
+                progressed=True
+        if not progressed:
+            break
+    return batch,offset+len(batch)
 
 def extract_section(text, starts, ends, limit=5000):
     start_re="(?:"+"|".join(starts)+r")\s*[:：]?\s*"
@@ -797,17 +855,29 @@ def extract_yingjiesheng_fields(raw_title, text, url):
     # City names in site navigation/related cards are not reliable work locations.
     # Extract only the explicit location label from this job detail.
     cities=("上海","北京","深圳","广州","杭州","南京","成都","武汉","西安","苏州","合肥","重庆","天津","青岛","长沙","济南","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","珠海","乌鲁木齐","洛阳","保定","廊坊","中山","佛山","温州","嘉兴","金华","常州","徐州","大连","沈阳","长春","石家庄","太原","南宁","贵阳","昆明","兰州","西宁","银川","呼和浩特","海口","三亚","泉州","汕头","惠州","江门","肇庆","清远","芜湖","扬州","南通","镇江","泰州","烟台","潍坊","淄博","临沂","济宁","日照","威海","唐山","秦皇岛","邯郸","开封","新乡","安阳","许昌","南阳","宜昌","襄阳","荆州","株洲","湘潭","衡阳","岳阳","绵阳","德阳","宜宾","泸州","乐山","遵义","大庆","齐齐哈尔","包头","鄂尔多斯","克拉玛依","喀什","阿克苏","伊犁","拉萨","林芝")
-    location_match=re.search(r"(?:工作地点|工作城市|工作地区|工作地址)\s*[:：]?\s*(.{1,80}?)(?=\s*(?:信息来源|职位类型|专业标签|招聘岗位|学历要求|学历|职位描述|岗位职责|职位诱惑|公司信息|企业信息|$))",top,re.I)
-    if location_match:
-        location_text=location_match.group(1).strip()
+    location_pattern=(
+        r"(?:工作地点|工作城市|工作地区|工作地址)\s*[:：]?\s*(.{1,100}?)"
+        r"(?=\s*(?:信息来源|职位类型|专业标签|招聘岗位|学历要求|学历|"
+        r"职位描述|岗位职责|工作职责|工作内容|职位诱惑|职位亮点|公司信息|企业信息|"
+        r"工作地点|工作城市|工作地区|招聘人数|发布时间|投递说明|$))"
+    )
+    location_values=[m.group(1).strip() for m in re.finditer(location_pattern,top,re.I)]
+    concrete_locations=[]
+    vague_locations=[]
+    for location_text in location_values:
         if location_text in ("其它","其他"):
-            fields["city"]="其它"
-        elif location_text in ("全国","全国各地","不限"):
-            fields["city"]="全国"
-        else:
-            found=[name for name in cities if re.search(re.escape(name)+r"(?:市|区|\b|$)",location_text)]
-            if found:
-                fields["city"]="、".join(dict.fromkeys(found))
+            vague_locations.append("其它")
+            continue
+        if location_text in ("全国","全国各地","不限"):
+            vague_locations.append("全国")
+            continue
+        found=[name for name in cities if re.search(re.escape(name)+r"(?:市|区|\b|$)",location_text)]
+        if found:
+            concrete_locations.append("、".join(dict.fromkeys(found)))
+    if concrete_locations:
+        fields["city"]=concrete_locations[0]
+    elif vague_locations:
+        fields["city"]=vague_locations[0]
     pub=re.search(r"发布时间\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",top)
     if pub: fields["publish_date"]=f"{pub.group(1)}-{int(pub.group(2)):02d}-{int(pub.group(3)):02d}"
     deadline=re.search(r"(?:截止时间|报名截止|投递截止|截止日期)\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",text or "")
@@ -2098,7 +2168,11 @@ def main():
         pool_limit=int(source.get("listing_pool_limit",600))
         batch,next_cursor=select_rotation_batch(stored_pool,cursor,batch_size)
         source["seed_urls"]=list(dict.fromkeys(base_seeds+batch))[:int(source.get("max_pages",80))]
-        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"next_cursor":next_cursor,"batch_size":batch_size,"pool_limit":pool_limit,"stale_cycle_urls_pruned":stale_cycle_urls_pruned}
+        batch_groups={}
+        for batch_url in batch:
+            group=listing_rotation_group(batch_url)
+            batch_groups[group]=batch_groups.get(group,0)+1
+        rotation_meta[source_id]={"base_seeds":base_seeds,"pool":stored_pool,"cursor":cursor,"batch":batch,"batch_groups":batch_groups,"next_cursor":next_cursor,"batch_size":batch_size,"pool_limit":pool_limit,"stale_cycle_urls_pruned":stale_cycle_urls_pruned}
     rotation_start=int(state.get("qiuzhaowang_next_page",21))
     rotation_pages=[]
     page_num=rotation_start
@@ -2160,6 +2234,7 @@ def main():
                             "listing_pool_size":diag.get("listing_pool_size",0),
                             "stale_cycle_urls_pruned":diag.get("stale_cycle_urls_pruned",0),
                             "listing_cursor_next":state.get("source_listing_cursor",{}).get(s.get("id",""),0),
+                            "listing_rotation_groups":rotation_meta.get(s.get("id",""),{}).get("batch_groups",{}),
                             "tables_seen":diag.get("tables_seen",0),"embedded_json_blocks":diag.get("embedded_json_blocks",0),
                             "role_like_links":diag.get("role_like_links",0),"discovery_pages_queued":diag.get("discovery_pages_queued",0),
                             "listing_pages_queued":diag.get("listing_pages_queued",0),"direct_detail_pages_visited":diag.get("direct_detail_pages_visited",0),"direct_detail_links_queued":diag.get("direct_detail_links_queued",0),"direct_detail_links_skipped_access_limit":diag.get("direct_detail_links_skipped_access_limit",0),"direct_detail_requests_attempted":diag.get("direct_detail_requests_attempted",0),"direct_detail_title_candidates":diag.get("direct_detail_title_candidates",0),"direct_detail_title_rejected":diag.get("direct_detail_title_rejected",0),"direct_detail_score_gate_recovered":diag.get("direct_detail_score_gate_recovered",0),"direct_detail_score_gate_skipped":diag.get("direct_detail_score_gate_skipped",0),"direct_detail_role_rows_emitted":diag.get("direct_detail_role_rows_emitted",0),"detail_access_limited":diag.get("detail_access_limited",0),"detail_access_limited_samples":diag.get("detail_access_limited_samples",[]),"public_detail_leads":diag.get("public_detail_leads",0),"shared_bulletin_role_leads":diag.get("shared_bulletin_role_leads",0),"direct_detail_links_deferred_by_budget":diag.get("direct_detail_links_deferred_by_budget",0),"direct_detail_page_budget":int(s.get("max_direct_detail_pages",s.get("max_pages",0))),"detail_redirects":diag.get("detail_redirects",0),"detail_redirect_samples":diag.get("detail_redirect_samples",[]),"direct_detail_samples":diag.get("direct_detail_samples",[]),"browser_render_attempts":diag.get("browser_render_attempts",0),"browser_render_successes":diag.get("browser_render_successes",0),
