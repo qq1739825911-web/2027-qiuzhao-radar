@@ -38,9 +38,9 @@
         "batch_size": 15
       },
       "yingjiesheng": {
-        "known_public_list_urls": 2000,
-        "next_offset": 2266,
-        "batch_size": 140
+        "known_public_list_urls": 2500,
+        "next_offset": 2426,
+        "batch_size": 160
       },
       "51job": {
         "known_public_list_urls": 149,
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 99,
-  "records_found_this_run": 99,
-  "active_candidates": 41,
-  "pending_review": 58,
+  "records_found": 33,
+  "records_found_this_run": 33,
+  "active_candidates": 21,
+  "pending_review": 12,
   "results": [
     {
       "id": "boss",
@@ -2903,46 +2903,55 @@
     {
       "id": "yingjiesheng",
       "company": "应届生求职网",
-      "pages_visited": 420,
-      "records_found": 99,
-      "active_candidates": 41,
-      "pending_review": 58,
-      "pages_attempted": 420,
+      "pages_visited": 500,
+      "records_found": 33,
+      "active_candidates": 21,
+      "pending_review": 12,
+      "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 16089036,
-      "links_seen": 80337,
-      "listing_url_candidates": 1195,
-      "listing_urls_visited": 199,
-      "listing_pool_size": 2000,
+      "html_bytes": 19801833,
+      "links_seen": 61612,
+      "listing_url_candidates": 2446,
+      "listing_urls_visited": 246,
+      "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 2266,
-      "tables_seen": 5287,
-      "embedded_json_blocks": 1889,
+      "listing_cursor_next": 2426,
+      "listing_rotation_groups": {
+        "yjs-subject-city": 38,
+        "yjs-mobile": 4,
+        "yjs-other": 1,
+        "yjs-search": 23,
+        "yjs-role-city": 37,
+        "yjs-major-pagination": 37,
+        "yjs-major-city": 20
+      },
+      "tables_seen": 21681,
+      "embedded_json_blocks": 1388,
       "role_like_links": 0,
-      "discovery_pages_queued": 5809,
-      "listing_pages_queued": 160,
-      "direct_detail_pages_visited": 220,
+      "discovery_pages_queued": 688,
+      "listing_pages_queued": 190,
+      "direct_detail_pages_visited": 182,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 220,
-      "direct_detail_title_candidates": 169,
-      "direct_detail_title_rejected": 73,
-      "direct_detail_score_gate_recovered": 6,
+      "direct_detail_requests_attempted": 182,
+      "direct_detail_title_candidates": 47,
+      "direct_detail_title_rejected": 18,
+      "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 96,
+      "direct_detail_role_rows_emitted": 29,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
       "shared_bulletin_role_leads": 0,
-      "direct_detail_links_deferred_by_budget": 5381,
-      "direct_detail_page_budget": 220,
+      "direct_detail_links_deferred_by_budget": 0,
+      "direct_detail_page_budget": 260,
       "detail_redirects": 0,
       "detail_redirect_samples": [],
       "direct_detail_samples": [
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -2950,14 +2959,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-118-439.html",
-          "page_title": "铭剑电子(南昌)有限公司招聘嵌入式软件工程师_南昌校园招聘",
-          "text_preview": "铭剑电子(南昌)有限公司招聘嵌入式软件工程师_南昌校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 盐城师范学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 盐城师范学院 核实，并请同时联系本站处理该转载信息。 [南昌]铭剑电子(南昌)有限公司 职位： 嵌入式软件工程师 发布时间： 2026-10-14 工作地点： 其它 信息来源： 盐城师范学院 职位类型： 全职 专业标签： 计算机 电子信息 自动化 职位描述 嵌入式软件工程师（南昌） 20万元/年 2026-10-14 14:32:53发布 职位要求： 职位性质：全职 工作城市：江西省南昌市红谷滩区 招聘人数：2 学历要求：硕士 职位类别：其他专业技术人员 需求专业：电子信息类,计算机类,通信类,集成电路类 职位描述： 岗位职责 1、负责单片机等系列芯片程序开发、调试、移植、维护； 2、负责通信协议分析编写、软件需求分析、整理设计文档、编写程序代码及调试电路； 3、负责公司射频产品的单片机软件设计，如对锁相环的频率控制、数控衰减控制、开关控制等； 4、与硬件工程师协同工作，为硬件工程师提供硬件相关的改进意见； 5、完成"
+          "url_path": "/job-008-118-470.html",
+          "page_title": "福耀科技大学公共关系部招聘文字专员_福建校园招聘",
+          "text_preview": "福耀科技大学公共关系部招聘文字专员_福建校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [福建]福耀科技大学公共关系部 职位： 文字专员 发布时间： 2026-10-14 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 新闻传播 汉语 职位描述 福耀科技大学公共关系部-文字专员（全职&实习）招聘公告 共计2个岗位，招 若干人 提供校内教师公寓租住 子女入园入学 实习津贴 基本信息 发布时间：2026-10-14 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 新闻传播学 , 中国语言文学 展开 公告详情 一、学校简介 福耀科技大学是由福耀集团创始人曹德旺发起，河仁慈善基金会捐资、福州市人民政府公助、教育部批准建设、福建省和国家重点支持的一所新型研究型大学。学校性质为民办公助、非营利、公益性全日制普通高校，办学层次为本科和研究生教育。学校办学定位为“高起点、小而精、研究型、国际化”，紧紧围绕国家战略和经济社会发展需求，突出理工"
         },
         {
-          "url_path": "/job-008-118-440.html",
-          "page_title": "江苏巨能机械有限公司2027招聘焊接技工_江苏校园招聘",
-          "text_preview": "江苏巨能机械有限公司2027招聘焊接技工_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 无锡职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 无锡职业技术学院 核实，并请同时联系本站处理该转载信息。 [江苏]江苏巨能机械有限公司 职位： 2027招聘焊接技工 发布时间： 2026-10-14 工作地点： 其它 信息来源： 无锡职业技术学院 职位类型： 全职 专业标签： 建筑学 职位描述 焊接技工 6万元/年 2026-10-14 15:27:22发布 职位要求： 职位性质：全职 工作城市：江苏省无锡市宜兴市 招聘人数：10 学历要求：专科 职位类别：工程技术人员 需求专业：机械设计制造类 职位描述： 岗位职责 负责公司产品设备的焊接工作 任职资格 大专学历，身体健康， 薪资福利 带薪年假，节日福利，工作稳定，定期体检，缴纳社保，专业培训 联系方式： 联系人：周** 简历接收邮箱：9********@ 公司介绍： 江苏巨能机械有限公司，创建于1989年，是在宜兴市工业泵厂基础上扩建而成，原厂名为宜兴市工业泵厂， 1993年企业改制，改名为宜兴市过滤设备厂，2"
+          "url_path": "/job-008-118-471.html",
+          "page_title": "华南师范大学国际商学院|雷恩数智商学院招聘实验室工作人员_广东校园招聘",
+          "text_preview": "华南师范大学国际商学院|雷恩数智商学院招聘实验室工作人员_广东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [广东]华南师范大学国际商学院|雷恩数智商学院 职位： 实验室工作人员 发布时间： 2026-10-14 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 计算机 职位描述 华南师范大学国际商学院、雷恩数智商学院2026年非事业编制人员招聘公告 共计1个岗位，招 1人 基本信息 发布时间：2026-10-14 截止日期：详见正文 学历要求：硕士研究生及以上 需求学科（供参考）： 计算机科学与技术 , 人工智能 展开 公告详情 华南师范大学国际商学院立足粤港澳大湾区发展需求，以”数智融合＋全球视野”为核心理念，打造“数智 商科 国际”三维融合的国际化商科人才培养体系，致力于培养适应全球数字经济发展的复合型人才。学院聚焦数字经济领域，现拥有广东省中外（内地与港澳）合作办学研究中心、跨境教育质量保障研究中心、数字经济研究中心、人机交互创新实"
         }
       ],
       "browser_render_attempts": 0,
@@ -2966,22 +2975,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 96,
+      "role_records": 29,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 96,
-      "announcement_records": 3,
+      "direct_detail_role_records": 29,
+      "announcement_records": 4,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
+        "专任教师",
+        "专职教师",
         "嵌入式软件工程师",
         "投资研究岗",
         "PLC助理工程师",
         "SMT设备操作管培生",
-        "质量检验管培生",
-        "设备技术管培生",
-        "2027校园招聘高速光模块制造方向生产储备干部"
+        "质量检验管培生"
       ],
       "role_field_samples": [
         {
@@ -2999,9 +3008,37 @@
           }
         },
         {
+          "title": "专任教师",
+          "company": "应届生求职网",
+          "city": "其它",
+          "salary": "12-20万元/年",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-469.html",
+          "field_lengths": {
+            "description": 668,
+            "responsibilities": 0,
+            "requirements": 75,
+            "benefits": 656
+          }
+        },
+        {
+          "title": "专职教师",
+          "company": "应届生求职网",
+          "city": "其它",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-468.html",
+          "field_lengths": {
+            "description": 1565,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 431
+          }
+        },
+        {
           "title": "嵌入式软件工程师",
           "company": "铭剑电子(南昌)有限公司",
-          "city": "其它",
+          "city": "南昌",
           "salary": "20万元/年",
           "degree": "本科及以上",
           "source_url": "https://m.yingjiesheng.com/job-008-118-439.html",
@@ -3025,34 +3062,6 @@
             "requirements": 544,
             "benefits": 0
           }
-        },
-        {
-          "title": "PLC助理工程师",
-          "company": "合肥智方传迈智能科技有限公司 职位类别：电气工程师/技术员",
-          "city": "其它",
-          "salary": "3k-5k",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-441.html",
-          "field_lengths": {
-            "description": 792,
-            "responsibilities": 135,
-            "requirements": 477,
-            "benefits": 340
-          }
-        },
-        {
-          "title": "SMT设备操作管培生",
-          "company": "合肥宸阳光电科技有限公司",
-          "city": "其它",
-          "salary": "5000-7000元",
-          "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-447.html",
-          "field_lengths": {
-            "description": 1130,
-            "responsibilities": 163,
-            "requirements": 711,
-            "benefits": 545
-          }
         }
       ],
       "link_samples": [],
@@ -3063,7 +3072,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-14T08:40:51+00:00",
+      "last_run_at": "2026-10-14T12:40:06+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3863,14 +3872,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 5519,
-  "published_priority_candidates": 215,
-  "published_pending_review": 5304,
-  "records_added_this_run": 94,
-  "records_updated_this_run": 5,
+  "published_total_jobs": 5496,
+  "published_priority_candidates": 211,
+  "published_pending_review": 5285,
+  "records_added_this_run": 17,
+  "records_updated_this_run": 16,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 3,
+    "aggregator_non_detail_or_non_role_records_removed": 5,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3893,8 +3902,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 678,
-    "fields_checked": 4746,
+    "rows": 655,
+    "fields_checked": 4585,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3903,8 +3912,14 @@
     "css_markers_remaining": 0,
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
-    "samples": []
+    "samples": [],
+    "company_fields_checked": 655,
+    "company_fields_changed": 0,
+    "company_metadata_before": 0,
+    "company_metadata_remaining": 0,
+    "title_prefix_before": 0,
+    "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-14T08:58:40+00:00",
+  "quality_checked_at": "2026-10-14T13:06:30+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
