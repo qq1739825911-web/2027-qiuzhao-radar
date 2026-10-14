@@ -17,7 +17,7 @@ text_fields=("description","responsibilities","requirements","benefits","company
 known_json_key=re.compile(r"\b(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)\s*:",re.I)
 legacy_css=re.compile(r"\.ie(?:11|undefined)\b",re.I)
 tail_noise=re.compile(r"(?:联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|上一条|下一条|上一篇|下一篇|返回顶部|查看原发布网址)",re.I)
-company_noise=re.compile(r"(?:职位类别|职位分类|岗位类别|岗位分类|专业标签|招聘人数|工作地点|工作城市|工作地区|学历要求|职位描述|岗位职责|岗位要求|任职要求|职位类型|投递说明|联系方式)\s*[:：]?",re.I)
+company_noise=re.compile(r"(?:职位类别|职位分类|岗位类别|岗位分类|专业标签|招聘人数|工作类型|岗位性质|职位性质|工作地点|工作城市|工作地区|学历要求|职位描述|岗位职责|岗位要求|任职要求|职位类型|投递说明|联系方式)\s*[:：]?",re.I)
 title_prefix=re.compile(r"^\s*(?:20\d{2}|2\d)\s*(?:届\s*)?(?:校园招聘|校招|招聘)")
 cleanup={
     "rows":0,"fields_checked":0,"fields_changed":0,"records_changed":0,

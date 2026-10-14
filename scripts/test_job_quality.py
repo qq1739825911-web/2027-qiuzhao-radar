@@ -696,6 +696,8 @@ check("YJS city extracted", fields.get("city") == "上海")
 check("YJS company extracted", fields.get("company") == "上海基美影业股份有限公司")
 check("YJS company name strips appended job-category metadata",
       clean_yingjiesheng_company_name("合肥智方传迈智能科技有限公司 职位类别：电气工程师/技术员")=="合肥智方传迈智能科技有限公司")
+check("YJS company name strips work-type metadata before job-category labels",
+      clean_yingjiesheng_company_name("江苏吉安矿业科技股份有限公司 工作类型：全职 职位类别：安全技术员")=="江苏吉安矿业科技股份有限公司")
 check("YJS title strips a leading year-campus-recruiting banner",
       clean_job_title("2027校园招聘高速光模块制造方向生产储备干部","yingjiesheng")=="高速光模块制造方向生产储备干部")
 check("YJS responsibilities extracted", "生成式AI视频创意" in fields.get("responsibilities", ""))
