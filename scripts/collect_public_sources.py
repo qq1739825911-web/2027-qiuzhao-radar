@@ -277,7 +277,7 @@ def sanitize_extracted_text(value, max_length=6500):
             text=text[section_heading.start():].lstrip(" :-—")
 
     # Remove contact/application/company/navigation tails, but not buttons that appear above the body.
-    tail_noise_pattern=r"\s*(?:联系方式|联系人|联系电话|联系邮箱|邮件联系|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|上一条|下一条|上一篇|下一篇|上一页|下一页|返回顶部|登录/注册|收藏职位|职位收藏|信息来源|查看原发布网址|版权所有|备案号)\s*[:：]?"
+    tail_noise_pattern=r"(?:^|[\s|｜·])(?:联系方式|联系人|联系电话|联系邮箱|邮件联系|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|企业简介|单位简介|上一条|下一条|上一篇|下一篇|上一页|下一页|返回顶部|登录(?:\s*(?:/|或)\s*注册)?|打开\s*APP|查看全部|展开全文|复制链接|手机客户端查看|立即登录|注册后查看|收藏职位|职位收藏|信息来源|查看原发布网址|版权所有|备案号)\s*[:：]?"
     tail_noise=re.search(tail_noise_pattern,text,re.I)
     if tail_noise:
         text=text[:tail_noise.start()].rstrip(" :-—,;")
@@ -491,6 +491,33 @@ def year(s):
     m=re.search(r"(?<!\d)(20\d{2})\s*年(?:应届|毕业)",text)
     if m: return m.group(1)+"届"
     return ""
+
+def detect_page_cohort(raw_title, text, headings=()):
+    """Use the recruiting title/role text, not old company-history text, as cohort evidence."""
+    title_cohort=year(raw_title or "")
+    body=str(text or "")
+    company_boundary=re.search(r"(?:公司信息|公司介绍|公司简介|企业简介|单位简介|公司概况)",body,re.I)
+    job_body=body[:company_boundary.start()] if company_boundary else body
+    if title_cohort:
+        requirements=extract_section(
+            job_body,("岗位要求","任职要求","任职资格"),
+            ("薪资待遇","薪酬待遇","福利待遇","职业发展","申请方式","应聘方式",
+             "报名方式","应聘材料","投递说明","联系方式","公司信息","公司介绍","公司简介"),
+            2400
+        )
+        requirement_years=re.findall(
+            r"(?<!\d)(20\d{2})\s*(?:届(?:毕业生?)?|年应届|年毕业)",
+            requirements,re.I
+        )
+        has_2027_requirement=bool(re.search(
+            r"(?<!\d)2027\s*(?:届(?:毕业生?)?|年应届|年毕业)",requirements,re.I
+        ))
+        conflicting=next((value for value in requirement_years if value!="2027"),"")
+        if title_cohort.startswith("2027") and conflicting and not has_2027_requirement:
+            return conflicting+"届","page_text"
+        return title_cohort,"page_text"
+    visible_cohort=year(job_body+" "+" ".join(str(h) for h in (headings or [])))
+    return visible_cohort,("page_text" if visible_cohort else "")
 def category(t):
     t=t.lower()
     if any(x in t for x in ("ai","算法","大模型","机器学习","软件","开发","工程师","数据","技术","研发","嵌入式")): return "AI / 算法 / 技术"
@@ -784,7 +811,7 @@ def extract_section(text, starts, ends, limit=5000):
         hit=re.search(r"\s*(?:"+end+r")\s*[:：]?\s*",tail,re.I)
         if hit: positions.append(hit.start())
     # Common footer/navigation labels must not become the final paragraph of a job field.
-    footer_re=r"\s*(?:上一条|下一条|上一篇|下一篇|上一页|下一页|查看其他岗位|查看更多职位|返回顶部|登录/注册|收藏职位|职位收藏|信息来源|应届生求职网|联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递方式|投递邮箱|模拟面试|立即投递|投递说明|招聘流程|公司介绍|公司简介|查看原发布网址|版权所有|备案号)\s*[:：]?"
+    footer_re=r"\s*(?:上一条|下一条|上一篇|下一篇|上一页|下一页|查看其他岗位|查看更多职位|返回顶部|登录(?:\s*(?:/|或)\s*注册)?|打开\s*APP|查看全部|展开全文|复制链接|手机客户端查看|立即登录|注册后查看|收藏职位|职位收藏|信息来源|应届生求职网|联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递方式|投递邮箱|模拟面试|立即投递|投递说明|招聘流程|公司介绍|公司简介|企业简介|单位简介|查看原发布网址|版权所有|备案号)\s*[:：]?"
     footer=re.search(footer_re,tail,re.I)
     if footer: positions.append(footer.start())
     if positions: tail=tail[:min(positions)]
@@ -883,11 +910,11 @@ def extract_yingjiesheng_fields(raw_title, text, url):
     deadline=re.search(r"(?:截止时间|报名截止|投递截止|截止日期)\s*[:：]?\s*(20\d{2})[-年](\d{1,2})[-月](\d{1,2})日?",text or "")
     if deadline: fields["deadline"]=f"{deadline.group(1)}-{int(deadline.group(2)):02d}-{int(deadline.group(3)):02d}"
     fields["benefits"]=extract_section(text,("职位亮点","职位诱惑","福利待遇","薪酬福利"),("职位描述","岗位职责","工作职责","职位要求","任职要求","岗位要求","公司信息","单位简介"),1600)
-    fields["responsibilities"]=extract_section(text,("岗位职责","工作职责","工作内容"),("岗位要求","任职要求","任职资格","加分项","职位亮点","职位诱惑","工作时间","公司信息","单位简介"),3500)
-    fields["requirements"]=extract_section(text,("岗位要求","任职要求","任职资格"),("加分项","职位亮点","职位诱惑","工作时间","工作地址","公司地址","公司信息","单位简介","投递说明","上一条","下一条"),3500)
-    fields["description"]=extract_section(text,("职位描述","招聘岗位"),("公司信息","单位简介","上一条","下一条","Top"),7000)
-    fields["company_info"]=extract_section(text,("公司信息","单位简介"),("上一条","下一条","登录","Top"),1800)
-    addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|单位简介|上一条|下一条|Top|$))",text or "",re.I)
+    fields["responsibilities"]=extract_section(text,("岗位职责","工作职责","工作内容"),("岗位要求","任职要求","任职资格","加分项","职位亮点","职位诱惑","工作时间","薪资待遇","薪酬待遇","福利待遇","职业发展","申请方式","应聘方式","报名方式","应聘材料","投递说明","联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","简历投递","投递邮箱","招聘流程","公司信息","公司介绍","公司简介","单位简介","上一条","下一条","上一页","下一页","查看其他岗位","查看更多职位","打开APP","查看全部"),3500)
+    fields["requirements"]=extract_section(text,("岗位要求","任职要求","任职资格"),("加分项","职位亮点","职位诱惑","工作时间","薪资待遇","薪酬待遇","福利待遇","职业发展","申请方式","应聘方式","报名方式","应聘材料","投递说明","联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","简历投递","投递邮箱","招聘流程","工作地址","公司地址","公司信息","公司介绍","公司简介","单位简介","上一条","下一条","上一页","下一页","查看其他岗位","查看更多职位","打开APP","查看全部"),3500)
+    fields["description"]=extract_section(text,("职位描述","招聘岗位"),("公司信息","公司介绍","公司简介","企业简介","单位简介","联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","简历投递","投递方式","投递邮箱","投递说明","招聘流程","查看原发布网址","上一条","下一条","上一页","下一页","Top","打开APP","查看全部","登录"),7000)
+    fields["company_info"]=extract_section(text,("公司信息","单位简介"),("联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","简历投递","投递方式","投递邮箱","上一条","下一条","上一页","下一页","返回顶部","查看原发布网址","Top","打开APP","查看全部","登录"),1800)
+    addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|公司介绍|公司简介|单位简介|联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递邮箱|上一条|下一条|上一页|下一页|返回顶部|打开\s*APP|查看全部|登录|Top|$))",text or "",re.I)
     if addr: fields["address"]=addr.group(1).strip()
     for label in ("实习","全职","兼职","校招"):
         if label in top:
@@ -912,11 +939,14 @@ def make_yingjiesheng_bulletin_role_lead(candidate, source_url, source_page_titl
     if not (host=="m.yingjiesheng.com" or host.endswith(".yingjiesheng.com")):
         return {}
     heading=clean(source_page_title or "")
-    if not heading or is_specific_role_title(clean_job_title(heading,"yingjiesheng"),"yingjiesheng"):
-        return {}
     title=clean_job_title(candidate.get("title",""),"yingjiesheng")
     company=clean_yingjiesheng_company_name(candidate.get("company",""))
-    if not is_specific_role_title(title,"yingjiesheng"):
+    if not heading or not is_specific_role_title(title,"yingjiesheng"):
+        return {}
+    page_role=clean_job_title(heading,"yingjiesheng")
+    # If the article title is itself this role, its URL is the actual vacancy detail;
+    # only other concrete roles can be represented as shared-bulletin leads.
+    if is_specific_role_title(page_role,"yingjiesheng") and page_role.casefold()==title.casefold():
         return {}
     if company.lower() in {"","应届生求职网","应届生求职","www.yingjiesheng.com","招聘信息","未知","待核验","待确认"}:
         return {}
@@ -1013,17 +1043,17 @@ def extract_detail_fields_generic(text, raw_title=""):
         else:
             found_cities=cities_in(band)
             if found_cities: fields["city"]="、".join(found_cities)
-    cohort=year(raw_title+" "+top)
+    cohort,cohort_evidence=detect_page_cohort(raw_title,text)
     if cohort:
-        fields["cohort"]=cohort; fields["cohort_evidence"]="page_text"; fields["cohort_confirmed"]=True
+        fields["cohort"]=cohort; fields["cohort_evidence"]=cohort_evidence; fields["cohort_confirmed"]=True
     dr=re.search(r"投递时间\s*[:：]?\s*(20\d{2})年(\d{1,2})月(\d{1,2})日\s*[-—至到]\s*(20\d{2})年(\d{1,2})月(\d{1,2})日",text or "")
     if dr: fields["deadline"]=f"{dr.group(4)}-{int(dr.group(5)):02d}-{int(dr.group(6)):02d}"
-    fields["responsibilities"]=extract_section(text,("岗位职责","工作职责","工作内容"),("岗位要求","任职要求","职位亮点","职位描述","公司信息","上一条","下一条"),3500)
-    fields["requirements"]=extract_section(text,("岗位要求","任职要求","任职资格"),("加分项","职位亮点","工作时间","公司信息","上一条","下一条"),3500)
-    fields["benefits"]=extract_section(text,("职位亮点","职位诱惑","福利待遇"),("岗位职责","工作职责","职位描述","公司信息","上一条","下一条"),1800)
-    fields["description"]=extract_section(text,("职位描述","岗位职责"),("公司信息","上一条","下一条","Top"),6500)
-    fields["company_info"]=extract_section(text,("公司信息","公司介绍"),("查看其他","上一条","下一条","Top"),1800)
-    addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|上一条|下一条|Top|$))",text or "",re.I)
+    fields["responsibilities"]=extract_section(text,("岗位职责","工作职责","工作内容"),("岗位要求","任职要求","职位亮点","职位描述","薪资待遇","薪酬待遇","福利待遇","职业发展","申请方式","应聘方式","报名方式","应聘材料","投递说明","联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","投递方式","投递邮箱","公司信息","公司介绍","公司简介","单位简介","上一条","下一条","上一页","下一页","查看其他岗位","查看更多职位","打开APP","查看全部"),3500)
+    fields["requirements"]=extract_section(text,("岗位要求","任职要求","任职资格"),("加分项","职位亮点","工作时间","薪资待遇","薪酬待遇","福利待遇","职业发展","申请方式","应聘方式","报名方式","应聘材料","投递说明","联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","投递方式","投递邮箱","公司信息","公司介绍","公司简介","单位简介","上一条","下一条","上一页","下一页","打开APP","查看全部"),3500)
+    fields["benefits"]=extract_section(text,("职位亮点","职位诱惑","福利待遇"),("岗位职责","工作职责","职位描述","公司信息","公司介绍","公司简介","联系方式","联系人","联系邮箱","投递说明","上一条","下一条","打开APP","查看全部"),1800)
+    fields["description"]=extract_section(text,("职位描述","岗位职责"),("公司信息","公司介绍","公司简介","企业简介","单位简介","联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","投递说明","招聘流程","查看原发布网址","上一条","下一条","上一页","下一页","Top","打开APP","查看全部","登录"),6500)
+    fields["company_info"]=extract_section(text,("公司信息","公司介绍"),("联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","投递说明","上一条","下一条","上一页","下一页","Top","打开APP","查看全部","登录"),1800)
+    addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|公司介绍|公司简介|单位简介|联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|投递说明|上一条|下一条|上一页|下一页|Top|打开\s*APP|查看全部|登录|$))",text or "",re.I)
     if addr: fields["address"]=addr.group(1).strip()
     exp=re.search(r"(?:工作经验|经验要求|经验)\s*[:：]?\s*(不限|无经验|\d+[-—至]\d+年|\d+年以上|应届毕业生)",top)
     if exp: fields["experience"]=exp.group(1)
@@ -1517,13 +1547,13 @@ def embedded_records(company,source,parser,cohort,source_label=None,cohort_evide
 def table_records(company,source,parser,cohort,source_label=None,cohort_evidence=""):
     out=[]
     page_heading=clean(getattr(parser,"page_title",""))
+    page_role=clean_job_title(page_heading,"yingjiesheng")
     yjs_bulletin_company=clean_yingjiesheng_company_name(company)
-    yjs_shared_bulletin=(
+    yjs_shared_bulletin_page=(
         source_label=="应届生求职网公开岗位"
         and is_direct_detail_url(source)
         and str(cohort or "").startswith("2027")
         and bool(cohort_evidence)
-        and not is_specific_role_title(clean_job_title(page_heading,"yingjiesheng"),"yingjiesheng")
         and yjs_bulletin_company.lower() not in {"","应届生求职网","应届生求职","招聘信息","未知","待核验","待确认"}
     )
     cities=("北京","上海","深圳","广州","杭州","南京","苏州","成都","西安","武汉","长沙","重庆","天津","合肥","济南","青岛","烟台","东莞","厦门","福州","郑州","宁波","无锡","南昌","哈尔滨","海外","全国")
@@ -1542,6 +1572,10 @@ def table_records(company,source,parser,cohort,source_label=None,cohort_evidence
         if not role: continue
         role=re.sub(r"\s*更新[:：]?\s*.*$","",role).strip()
         if not role: continue
+        yjs_shared_bulletin=yjs_shared_bulletin_page and not (
+            is_specific_role_title(page_role,"yingjiesheng")
+            and page_role.casefold()==clean_job_title(role,"yingjiesheng").casefold()
+        )
         employer=company
         if source_label and "公开" in source_label:
             role_idx=next((i for i,x in enumerate(row) if x==role),-1)
@@ -1702,12 +1736,15 @@ def collect_source(src):
                                  if (is_specific_role_title(clean_job_title(head,src.get("id","")),src.get("id",""))
                                      if src.get("id") in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}
                                      else is_concrete_role_title(clean_job_title(head,src.get("id","")),src.get("id","")))), "")
-        explicit_cohort=year(raw_page_title+" "+page_text+" "+" ".join(p.headings))
-        source_cohort=src.get("cohort","") if src.get("type")=="official_campus" else ""
-        if src.get("id")=="qiuzhaowang" and re.search(r"(?:[?&])year=2027(?:&|$)",page):
-            source_cohort="2027届"
-        cohort=explicit_cohort or source_cohort
-        cohort_evidence=("page_text" if explicit_cohort else "")
+        if src.get("id")=="yingjiesheng":
+            cohort,cohort_evidence=detect_page_cohort(original_page_title,page_text,p.headings)
+        else:
+            explicit_cohort=year(raw_page_title+" "+page_text+" "+" ".join(p.headings))
+            source_cohort=src.get("cohort","") if src.get("type")=="official_campus" else ""
+            if src.get("id")=="qiuzhaowang" and re.search(r"(?:[?&])year=2027(?:&|$)",page):
+                source_cohort="2027届"
+            cohort=explicit_cohort or source_cohort
+            cohort_evidence=("page_text" if explicit_cohort else "")
         page_company=company
         qzw_meta=qzw_detail_metadata.get(canonical(final),{}) if src.get("id")=="qiuzhaowang" else {}
         if qzw_meta.get("company"): page_company=qzw_meta["company"]
@@ -1759,7 +1796,8 @@ def collect_source(src):
         if src.get("id")=="nowcoder":
             page_title=clean_job_title(detail_heading or p.page_title,"nowcoder")
         if is_direct_detail_url(final):
-            generic_fallback=extract_detail_fields_generic(page_text,detail_heading or raw_page_title)
+            generic_title=(original_page_title if src.get("id")=="yingjiesheng" else (detail_heading or raw_page_title))
+            generic_fallback=extract_detail_fields_generic(page_text,generic_title)
             detail_fields=merge_generic_detail_fallback(detail_fields,generic_fallback)
         # Build the publishable snapshot only after generic fallback values have been merged.
         detail_fields_for_merge=fields_for_job_record(detail_fields)

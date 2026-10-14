@@ -16,7 +16,7 @@ priority=lead=0
 text_fields=("description","responsibilities","requirements","benefits","company_info","address","work_time")
 known_json_key=re.compile(r"\b(?:jobCity|careerJobId|deliverBegin|deliverEnd|refreshBegin|latestProcessTime|graduationYear|salaryType|salaryMin|salaryMax|jobKeys|companyId|companyName|positionId|positionName|recruitJobName|jobName|jobOffer|eduLevel)\s*:",re.I)
 legacy_css=re.compile(r"\.ie(?:11|undefined)\b",re.I)
-tail_noise=re.compile(r"(?:联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|上一条|下一条|上一篇|下一篇|返回顶部|查看原发布网址)",re.I)
+tail_noise=re.compile(r"(?:^|[\s|｜·])(?:联系方式|联系人|联系电话|联系邮箱|邮件联系|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|企业简介|单位简介|上一条|下一条|上一篇|下一篇|上一页|下一页|返回顶部|登录(?:\s*(?:/|或)\s*注册)?|打开\s*APP|查看全部|展开全文|复制链接|手机客户端查看|立即登录|注册后查看|查看原发布网址|版权所有|备案号)",re.I)
 company_noise=re.compile(r"(?:职位类别|职位分类|岗位类别|岗位分类|专业标签|招聘人数|工作类型|岗位性质|职位性质|工作地点|工作城市|工作地区|学历要求|职位描述|岗位职责|岗位要求|任职要求|职位类型|投递说明|联系方式)\s*[:：]?",re.I)
 title_prefix=re.compile(r"^\s*(?:20\d{2}|2\d)\s*(?:届\s*)?(?:校园招聘|校招|招聘)")
 cleanup={

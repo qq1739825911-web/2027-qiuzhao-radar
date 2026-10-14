@@ -1,9 +1,10 @@
 """Offline regression tests for public job parsing and quality buckets."""
 import json
+import re
 from datetime import date
 from pathlib import Path
 from collect_public_sources import (
-    year, clean_job_title, is_direct_detail_url, is_concrete_role_title,
+    year, detect_page_cohort, clean_job_title, is_direct_detail_url, is_concrete_role_title,
     extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, make_yingjiesheng_bulletin_role_lead, table_records, should_accept_yingjiesheng_detail, should_rotate_listing_url, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
@@ -45,6 +46,15 @@ check("publication date is not a cohort", year("发布时间：2026-09-28") == "
 check("two-digit cohort is normalized", year("27届校招岗位") == "2027届")
 check("explicit 2027 cohort is detected", year("岗位面向2027届毕业生") == "2027届")
 check("2027 campus announcement is treated as cohort evidence", year("兴业银行2027校园招聘公告") == "2027届")
+check("page title cohort is not replaced by old year in company history",
+      detect_page_cohort("松下电器（中国）有限公司2027校园招聘_上海校园招聘",
+          "招聘岗位：市场专员。公司介绍：公司成立于2018年，2026年完成业务调整。")[0]=="2027届")
+check("explicit old cohort in role requirements overrides a generic 2027 announcement title",
+      detect_page_cohort("某公司2027校园招聘",
+          "岗位职责：负责日常工作。岗位要求：2026届本科毕业生，专业不限。")[0]=="2026届")
+check("page cohort detection ignores old-year company background when title is current",
+      extract_detail_fields_generic("公司介绍：成立于2018年，2026年完成业务调整。岗位职责：负责工作。",
+          "某公司2027校园招聘").get("cohort")=="2027届")
 
 # Platform/HR metadata must not pollute the stored role title.
 clean_title = clean_job_title(
@@ -93,6 +103,19 @@ detail_tail_dirty = "岗位职责：负责内容创作，按计划交付，兼�
 detail_tail_clean = sanitize_extracted_text(detail_tail_dirty)
 check("detail sanitizer removes contact/application/navigation tail but preserves earlier punctuation",
       detail_tail_clean=="岗位职责：负责内容创作，按计划交付，兼顾质量。")
+cta_tail_dirty="公司地址：山东省青岛市莱西市姜山镇南环路南华山路东 登录 或 打开APP 查看全部"
+check("YJS sanitizer removes the exact login/open-app/view-all tail found in published records",
+      sanitize_extracted_text(cta_tail_dirty)=="公司地址：山东省青岛市莱西市姜山镇南环路南华山路东")
+historical_cta_record={
+    "source":"应届生求职网公开岗位","company":"某某科技有限公司","title":"测试工程师",
+    "source_url":"https://m.yingjiesheng.com/job-008-117-001.html","status":"pending_review",
+    "address":"山东省青岛市莱西市姜山镇南环路南华山路东 登录 或 打开APP 查看全部"
+}
+assess(historical_cta_record,today=date(2026,10,13))
+check("quality gate cleans CTA residue from historical address fields",
+      historical_cta_record.get("address")=="山东省青岛市莱西市姜山镇南环路南华山路东")
+check("finalizer audit detects the exact CTA tail markers",
+      all(token in QUALITY_FINALIZER_SOURCE for token in ("打开", "查看全部", "tail_noise_remaining")))
 
 yjs_page_chrome = "白鲸航线科技有限公司 电气系统适航 10K-17K/月 本科及以上 模拟面试 职位诱惑：绩效奖金 发布时间：2026年10月13日 职位描述 岗位职责：负责适航规划与符合性核查。岗位要求：本科及以上学历，了解适航法规。联系方式：王老师"
 yjs_page_chrome_clean = sanitize_extracted_text(yjs_page_chrome)
@@ -633,6 +656,14 @@ specific_heading_lead=make_yingjiesheng_bulletin_role_lead(
     "应届生求职网公开岗位","2027届","page_text"
 )
 check("YJS shared-bulletin extractor does not duplicate a single-role detail page",specific_heading_lead=={})
+other_role_heading_lead=make_yingjiesheng_bulletin_role_lead(
+    dict(shared_bulletin_candidate,title="平面设计师"),
+    yjs_bulletin_url,"软件工程师招聘_某某科技有限公司",
+    "应届生求职网公开岗位","2027届","page_text"
+)
+check("YJS shared-bulletin keeps another explicit role even when article heading names one role",
+      other_role_heading_lead.get("title")=="平面设计师"
+      and other_role_heading_lead.get("lead_evidence")=="yingjiesheng_bulletin_role")
 fake_promoted_bulletin=dict(
     shared_bulletin_lead,status="active",verification_status="link_alive",
     last_verified="2026-10-13",last_seen="2026-10-13",last_collected="2026-10-13"
