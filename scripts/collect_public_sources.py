@@ -271,13 +271,13 @@ def sanitize_extracted_text(value, max_length=6500):
     # Some YJS pages place job-search buttons (e.g. 模拟面试) before the real body.
     # Strip leading page chrome only when a substantive job-section heading follows it.
     section_heading=re.search(r"(?:职位描述|招聘岗位|岗位职责|工作职责|工作内容|岗位要求|任职要求|任职资格)\s*[:：]?",text,re.I)
-    if section_heading and section_heading.start()>=24:
+    if section_heading and section_heading.start()>0:
         prefix=text[:section_heading.start()]
         if re.search(r"(?:模拟面试|职位诱惑|岗位亮点|薪酬福利|工作地点|学历要求|招聘信息|发布时间|职位类型|职位类别|需求专业|公司信息|申请职位)",prefix,re.I):
             text=text[section_heading.start():].lstrip(" :-—")
 
     # Remove contact/application/company/navigation tails, but not buttons that appear above the body.
-    tail_noise_pattern=r"(?:^|[\s|｜·])(?:联系方式|联系人|联系电话|联系邮箱|邮件联系|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|企业简介|单位简介|上一条|下一条|上一篇|下一篇|上一页|下一页|返回顶部|登录(?:\s*(?:/|或)\s*注册)?|打开\s*APP|查看全部|展开全文|复制链接|手机客户端查看|立即登录|注册后查看|收藏职位|职位收藏|信息来源|查看原发布网址|版权所有|备案号)\s*[:：]?"
+    tail_noise_pattern=r"(?:^|[\s|｜·。；;])(?:联系方式|联系人|联系电话|联系邮箱|邮件联系|简历接收邮箱|简历投递|投递方式|投递邮箱|查看其他岗位|查看更多职位|投递说明|招聘流程|公司介绍|公司简介|企业简介|单位简介|上一条|下一条|上一篇|下一篇|上一页|下一页|返回顶部|登录(?:\s*(?:/|或)\s*注册)?|打开\s*APP|查看全部|展开全文|复制链接|手机客户端查看|立即登录|注册后查看|收藏职位|职位收藏|信息来源|查看原发布网址|版权所有|备案号)\s*[:：]?"
     tail_noise=re.search(tail_noise_pattern,text,re.I)
     if tail_noise:
         text=text[:tail_noise.start()].rstrip(" :-—,;")
