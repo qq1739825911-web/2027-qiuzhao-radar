@@ -5,7 +5,7 @@ from datetime import date
 from pathlib import Path
 from collect_public_sources import (
     year, detect_page_cohort, clean_job_title, is_direct_detail_url, is_concrete_role_title,
-    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, make_yingjiesheng_bulletin_role_lead, table_records, should_accept_yingjiesheng_detail, should_rotate_listing_url, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
+    extract_yingjiesheng_fields, extract_yingjiesheng_card_fields, extract_job_type, make_yingjiesheng_bulletin_role_lead, table_records, should_accept_yingjiesheng_detail, should_rotate_listing_url, extract_detail_fields_generic, merge_generic_detail_fallback, fields_for_job_record, Parser, sanitize_extracted_text,
     same_host, should_discover_public_url, is_specific_role_title, extract_boss_fields, extract_nowcoder_fields, canonical,
     select_rotation_batch, extract_qiuzhaowang_role_names, diagnostic_link_priority,
     extract_boss_card_fields, extract_boss_card_company, should_render_public_page,
@@ -693,6 +693,19 @@ check("salary extraction rejects stray numbers with a currency suffix",
       extract_salary_text("工作内容编号439万 本科及以上 职位描述")=="")
 check("generic detail fallback does not turn a stray number into salary",
       extract_detail_fields_generic("职位描述编号439万 本科及以上","FinTech方向管理培训生").get("salary","")=="")
+yjs_fulltime_nav="应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 职位类型：全职 职位亮点 年终奖金"
+yjs_fulltime_fields=extract_yingjiesheng_fields(
+    "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
+    yjs_fulltime_nav,"https://m.yingjiesheng.com/jobdetail/170935981")
+check("YJS job type ignores earlier site navigation that advertises internships",
+      yjs_fulltime_fields.get("job_type")=="全职")
+yjs_internship_nav="应届生求职网 全职推荐 兼职实习 宣讲会 AI产品运营 8K-12K 本科 实习 内容运营 职位描述：参与内容日常维护。"
+check("generic job type uses the specific role metadata band rather than site navigation",
+      extract_detail_fields_generic(yjs_internship_nav,"AI产品运营").get("job_type")=="实习")
+check("explicit role type wins when navigation and role metadata disagree",
+      extract_job_type("首页 全职推荐 兼职实习 AI产品运营 8K-12K 本科 实习 职位类型：全职 职位描述：工作。","AI产品运营")=="全职")
+check("job type is not guessed from navigation when the role has no type marker",
+      extract_job_type("首页 全职推荐 兼职实习 AI产品运营 职位描述：参与内容日常维护。","AI产品运营")=="")
 check("YJS detail parser extracts an explicitly labelled employer",
       extract_yingjiesheng_fields("FinTech方向管理培训生 - 应届生求职网",
         "招聘单位：江苏示例科技有限公司 职位：FinTech方向管理培训生 工作地点：南京 本科",

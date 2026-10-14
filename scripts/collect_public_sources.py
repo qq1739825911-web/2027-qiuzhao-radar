@@ -830,6 +830,49 @@ def extract_salary_text(text):
     m=re.search(rf"(?<![\dA-Za-z])({n}\s*{u}\s*{period})(?![\dA-Za-z])",top,re.I)
     return re.sub(r"\s+","",m.group(1)) if m else ""
 
+def extract_job_type(text, raw_title=""):
+    """Extract full-time/internship only from a labelled field or the role's own metadata band."""
+    body=str(text or "")
+    company_boundary=re.search(r"(?:公司信息|公司介绍|公司简介|企业简介|单位简介|公司概况)",body,re.I)
+    job_body=body[:company_boundary.start()] if company_boundary else body
+    # An explicit role field beats both site navigation and nearby category text.
+    labelled=re.search(
+        r"(?:职位类型|工作类型|用工类型|工作性质|岗位性质|岗位属性|招聘类型)\s*[:：]?\s*(全职|实习(?:生)?|兼职)(?![\u4e00-\u9fff])",
+        job_body,re.I
+    )
+    if labelled:
+        value=labelled.group(1)
+        return "实习" if value=="实习生" else value
+
+    # Navigation menus often contain both "全职推荐" and "兼职实习".
+    # Start at the actual title so the site-wide menu is not used as role evidence.
+    anchor=-1
+    title=str(raw_title or "").strip()
+    if title:
+        anchor=job_body.find(title)
+    if anchor<0:
+        salary=extract_salary_text(job_body)
+        if salary:
+            salary_pos=job_body.find(salary)
+            if salary_pos>=0:
+                anchor=salary_pos
+    if anchor<0:
+        degree_match=re.search(r"(?:博士研究生及以上|硕士研究生及以上|本科及以上|大专及以上|博士及以上|硕士及以上|本科|硕士|博士|大专)",job_body)
+        if degree_match:
+            anchor=degree_match.start()
+    if anchor<0:
+        return ""
+    band=job_body[anchor:min(len(job_body),anchor+900)]
+    stop=re.search(r"(?:职位亮点|职位诱惑|职位描述|岗位职责|工作职责|工作内容|岗位要求|任职要求|任职资格|公司信息|公司介绍|公司简介|单位简介)",band,re.I)
+    if stop:
+        band=band[:stop.start()]
+    match=re.search(r"(?:^|[\s,，、|｜])(?:全职|实习生?|兼职)(?=$|[\s,，、|｜])",band,re.I)
+    if not match:
+        return ""
+    value=match.group(0).strip()
+    return "实习" if value=="实习生" else value
+
+
 
 def extract_yingjiesheng_fields(raw_title, text, url):
     """Extract visible fields from public Yingjiesheng job-detail pages."""
@@ -916,9 +959,8 @@ def extract_yingjiesheng_fields(raw_title, text, url):
     fields["company_info"]=extract_section(text,("公司信息","单位简介"),("联系方式","联系人","联系电话","联系邮箱","简历接收邮箱","简历投递","投递方式","投递邮箱","上一条","下一条","上一页","下一页","返回顶部","查看原发布网址","Top","打开APP","查看全部","登录"),1800)
     addr=re.search(r"(?:公司地址|工作地址|地址)\s*[:：]?\s*(.{4,120}?)(?=\s*(?:投递简历|职位亮点|职位描述|公司信息|公司介绍|公司简介|单位简介|联系方式|联系人|联系电话|联系邮箱|简历接收邮箱|简历投递|投递邮箱|上一条|下一条|上一页|下一页|返回顶部|打开\s*APP|查看全部|登录|Top|$))",text or "",re.I)
     if addr: fields["address"]=addr.group(1).strip()
-    for label in ("实习","全职","兼职","校招"):
-        if label in top:
-            fields["job_type"]=label; break
+    job_type=extract_job_type(text,fields.get("title") or title or raw_title)
+    if job_type: fields["job_type"]=job_type
     exp=re.search(r"(?:工作经验|经验要求|经验)\s*[:：]?\s*(不限|无经验|\d+[-—至]\d+年|\d+年以上|应届毕业生)",top)
     if exp: fields["experience"]=exp.group(1)
     headcount=re.search(r"(?:招|招聘人数\s*[:：]?)\s*(\d+)\s*人",top)
@@ -1057,8 +1099,8 @@ def extract_detail_fields_generic(text, raw_title=""):
     if addr: fields["address"]=addr.group(1).strip()
     exp=re.search(r"(?:工作经验|经验要求|经验)\s*[:：]?\s*(不限|无经验|\d+[-—至]\d+年|\d+年以上|应届毕业生)",top)
     if exp: fields["experience"]=exp.group(1)
-    if "全职" in top: fields["job_type"]="全职"
-    elif "实习" in top: fields["job_type"]="实习"
+    job_type=extract_job_type(text,raw_title)
+    if job_type: fields["job_type"]=job_type
     return fields
 
 def is_public_role_lead_title(title, source_id=""):
