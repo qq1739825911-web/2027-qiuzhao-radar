@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-10-13",
+  "run_date": "2026-10-14",
   "collector_version": "5.21",
   "enabled_sources": 23,
   "collected_sources": 1,
@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2000,
-        "next_offset": 1986,
+        "next_offset": 2126,
         "batch_size": 140
       },
       "51job": {
@@ -2909,17 +2909,17 @@
       "pending_review": 85,
       "pages_attempted": 420,
       "pages_failed": 0,
-      "html_bytes": 12904093,
-      "links_seen": 41938,
-      "listing_url_candidates": 956,
+      "html_bytes": 12097832,
+      "links_seen": 23730,
+      "listing_url_candidates": 2000,
       "listing_urls_visited": 199,
       "listing_pool_size": 2000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 1986,
-      "tables_seen": 5534,
-      "embedded_json_blocks": 1603,
+      "listing_cursor_next": 2126,
+      "tables_seen": 3152,
+      "embedded_json_blocks": 1699,
       "role_like_links": 0,
-      "discovery_pages_queued": 2575,
+      "discovery_pages_queued": 993,
       "listing_pages_queued": 160,
       "direct_detail_pages_visited": 220,
       "direct_detail_links_queued": 0,
@@ -2934,7 +2934,7 @@
       "detail_access_limited_samples": [],
       "public_detail_leads": 2,
       "shared_bulletin_role_leads": 0,
-      "direct_detail_links_deferred_by_budget": 2147,
+      "direct_detail_links_deferred_by_budget": 615,
       "direct_detail_page_budget": 220,
       "detail_redirects": 0,
       "detail_redirect_samples": [],
@@ -3063,7 +3063,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-13T20:40:39+00:00",
+      "last_run_at": "2026-10-14T00:16:57+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3905,6 +3905,6 @@
     "tail_noise_remaining": 0,
     "samples": []
   },
-  "quality_checked_at": "2026-10-13T20:54:13+00:00",
+  "quality_checked_at": "2026-10-14T00:30:48+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
