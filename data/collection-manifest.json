@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 2426,
+        "next_offset": 2586,
         "batch_size": 160
       },
       "51job": {
@@ -2909,31 +2909,28 @@
       "pending_review": 12,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 19801833,
-      "links_seen": 61612,
-      "listing_url_candidates": 2446,
-      "listing_urls_visited": 246,
+      "html_bytes": 17913942,
+      "links_seen": 51847,
+      "listing_url_candidates": 2224,
+      "listing_urls_visited": 257,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 2426,
+      "listing_cursor_next": 2586,
       "listing_rotation_groups": {
-        "yjs-subject-city": 38,
-        "yjs-mobile": 4,
-        "yjs-other": 1,
-        "yjs-search": 23,
-        "yjs-role-city": 37,
-        "yjs-major-pagination": 37,
-        "yjs-major-city": 20
+        "yjs-role-city": 40,
+        "yjs-subject-city": 40,
+        "yjs-major-pagination": 40,
+        "yjs-major-city": 40
       },
-      "tables_seen": 21681,
-      "embedded_json_blocks": 1388,
+      "tables_seen": 16744,
+      "embedded_json_blocks": 1426,
       "role_like_links": 0,
-      "discovery_pages_queued": 688,
+      "discovery_pages_queued": 687,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 182,
+      "direct_detail_pages_visited": 183,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 182,
+      "direct_detail_requests_attempted": 183,
       "direct_detail_title_candidates": 47,
       "direct_detail_title_rejected": 18,
       "direct_detail_score_gate_recovered": 1,
@@ -2959,14 +2956,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-118-470.html",
-          "page_title": "福耀科技大学公共关系部招聘文字专员_福建校园招聘",
-          "text_preview": "福耀科技大学公共关系部招聘文字专员_福建校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [福建]福耀科技大学公共关系部 职位： 文字专员 发布时间： 2026-10-14 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 新闻传播 汉语 职位描述 福耀科技大学公共关系部-文字专员（全职&实习）招聘公告 共计2个岗位，招 若干人 提供校内教师公寓租住 子女入园入学 实习津贴 基本信息 发布时间：2026-10-14 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 新闻传播学 , 中国语言文学 展开 公告详情 一、学校简介 福耀科技大学是由福耀集团创始人曹德旺发起，河仁慈善基金会捐资、福州市人民政府公助、教育部批准建设、福建省和国家重点支持的一所新型研究型大学。学校性质为民办公助、非营利、公益性全日制普通高校，办学层次为本科和研究生教育。学校办学定位为“高起点、小而精、研究型、国际化”，紧紧围绕国家战略和经济社会发展需求，突出理工"
+          "url_path": "/job-008-118-477.html",
+          "page_title": "松下电器（中国）有限公司2027校园招聘_北京上海广东辽宁江苏校园招聘",
+          "text_preview": "松下电器（中国）有限公司2027校园招聘_北京上海广东辽宁江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 上海 其它 全职 > 职位详细 说明： 此信息由 广州城市理工学院机械工程学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广州城市理工学院机械工程学院 核实，并请同时联系本站处理该转载信息。 [北京上海广东辽宁江苏]松下电器（中国）有限公司 职位： 2027校园招聘 发布时间： 2026-10-14 工作地点： 北京 上海 其它 信息来源： 广州城市理工学院机械工程学院 职位类型： 全职 专业标签： 物流管理与工程 化学 仪器仪表 外国文学 机械类 材料类 电气类 自动化 计算机 职位描述 松下电器（中国）有限公司招聘信息 松下集团创始于1918年，一直以为提高人类生活水平和发展世界文化为己任不断创新，追求卓越。松下集团于2019年4月成立了集研发、销售、制造于一体的中国东北亚公司，开展的事业涵盖家电、住宅、冷链、零部件、汽车电子、互联解决方案等多个领域，致力于为中国消费者带来更加健康美好的生***验。 全球事业:事业规模4300亿元，关联公司数量532家，员工数24万名 中国事业:事业规模110"
         },
         {
-          "url_path": "/job-008-118-471.html",
-          "page_title": "华南师范大学国际商学院|雷恩数智商学院招聘实验室工作人员_广东校园招聘",
-          "text_preview": "华南师范大学国际商学院|雷恩数智商学院招聘实验室工作人员_广东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [广东]华南师范大学国际商学院|雷恩数智商学院 职位： 实验室工作人员 发布时间： 2026-10-14 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 计算机 职位描述 华南师范大学国际商学院、雷恩数智商学院2026年非事业编制人员招聘公告 共计1个岗位，招 1人 基本信息 发布时间：2026-10-14 截止日期：详见正文 学历要求：硕士研究生及以上 需求学科（供参考）： 计算机科学与技术 , 人工智能 展开 公告详情 华南师范大学国际商学院立足粤港澳大湾区发展需求，以”数智融合＋全球视野”为核心理念，打造“数智 商科 国际”三维融合的国际化商科人才培养体系，致力于培养适应全球数字经济发展的复合型人才。学院聚焦数字经济领域，现拥有广东省中外（内地与港澳）合作办学研究中心、跨境教育质量保障研究中心、数字经济研究中心、人机交互创新实"
+          "url_path": "/job-008-118-475.html",
+          "page_title": "中国科学技术大学苏州高等研究院王东方课题组招聘超分辨方向博士后_苏州校园招聘",
+          "text_preview": "中国科学技术大学苏州高等研究院王东方课题组招聘超分辨方向博士后_苏州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [苏州]中国科学技术大学苏州高等研究院王东方课题组 职位： 超分辨方向博士后 发布时间： 2026-10-14 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 物理学 职位描述 中国科学技术大学苏州高等研究院王东方课题组2026年招聘超分辨方向博士后 共计2个岗位，招 若干人 发布时间：2026-10-14 截止时间：详见正文 工作地点：苏州 绩效奖金 研究团队简介： 王东方，中国科学技术大学特任研究员，课题组独立PI。中科院率先引才计划入选者。于2014年从中国科学院大学上海应用物理研究所获得博士学位，先后在德国布伦瑞克工业大学和美国Emory大学从事博士后研究。主要研究方向是DNA纳米技术以及单分子荧光技术。已在JACS, Nano Letters, Nature Communications等杂志发表多篇论文。课题组网页"
         }
       ],
       "browser_render_attempts": 0,
@@ -2984,13 +2981,13 @@
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "专任教师",
-        "专职教师",
-        "嵌入式软件工程师",
-        "投资研究岗",
-        "PLC助理工程师",
-        "SMT设备操作管培生",
-        "质量检验管培生"
+        "电气系统开发工程师",
+        "区域经理管培生",
+        "研究助理",
+        "国际销售工程师",
+        "国内销售工程师",
+        "科研助理",
+        "电商管培生"
       ],
       "role_field_samples": [
         {
@@ -3008,59 +3005,59 @@
           }
         },
         {
-          "title": "专任教师",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "12-20万元/年",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-469.html",
+          "title": "电气系统开发工程师",
+          "company": "二一二越野车有限公司",
+          "city": "合肥",
+          "salary": "面议",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-482.html",
           "field_lengths": {
-            "description": 668,
-            "responsibilities": 0,
-            "requirements": 75,
-            "benefits": 656
+            "description": 285,
+            "responsibilities": 26,
+            "requirements": 115,
+            "benefits": 61
           }
         },
         {
-          "title": "专职教师",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-468.html",
+          "title": "区域经理管培生",
+          "company": "东方雨虹民用建材有限责任公司",
+          "city": "上海、北京、广州、南京、成都",
+          "salary": "面议",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-481.html",
           "field_lengths": {
-            "description": 1565,
+            "description": 486,
+            "responsibilities": 172,
+            "requirements": 147,
+            "benefits": 84
+          }
+        },
+        {
+          "title": "研究助理",
+          "company": "上海交通大学基础医学院上海市生殖医学重点实验室",
+          "city": "上海",
+          "salary": "面议",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-480.html",
+          "field_lengths": {
+            "description": 1250,
+            "responsibilities": 244,
+            "requirements": 677,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "国际销售工程师",
+          "company": "湖北安琪生物集团有限公司",
+          "city": "其它",
+          "salary": "10-20万元",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-478.html",
+          "field_lengths": {
+            "description": 37,
             "responsibilities": 0,
             "requirements": 0,
-            "benefits": 431
-          }
-        },
-        {
-          "title": "嵌入式软件工程师",
-          "company": "铭剑电子(南昌)有限公司",
-          "city": "南昌",
-          "salary": "20万元/年",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-439.html",
-          "field_lengths": {
-            "description": 507,
-            "responsibilities": 157,
-            "requirements": 206,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "投资研究岗",
-          "company": "华鑫国际信托有限公司",
-          "city": "北京",
-          "salary": "",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-442.html",
-          "field_lengths": {
-            "description": 87,
-            "responsibilities": 0,
-            "requirements": 544,
-            "benefits": 0
+            "benefits": 242
           }
         }
       ],
@@ -3072,7 +3069,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-14T12:40:06+00:00",
+      "last_run_at": "2026-10-14T14:30:29+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3873,13 +3870,13 @@
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
   "published_total_jobs": 5496,
-  "published_priority_candidates": 211,
-  "published_pending_review": 5285,
-  "records_added_this_run": 17,
-  "records_updated_this_run": 16,
+  "published_priority_candidates": 213,
+  "published_pending_review": 5283,
+  "records_added_this_run": 5,
+  "records_updated_this_run": 28,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 5,
+    "aggregator_non_detail_or_non_role_records_removed": 4,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3920,6 +3917,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-14T13:06:30+00:00",
+  "quality_checked_at": "2026-10-14T14:47:35+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
