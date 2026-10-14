@@ -768,6 +768,19 @@ check("YJS old mobile title yields the company",
       legacy_yjs.get("company")=="珠海市龙图光罩科技有限公司")
 check("YJS old mobile title's date is only a publication date",
       legacy_yjs.get("publish_date")=="2026-10-10" and legacy_yjs.get("cohort","")=="")
+legacy_college=extract_yingjiesheng_fields(
+    "[北京]北京某某职业技术学院 专任教师 2026-10-13",
+    "招聘单位：北京某某职业技术学院 职位：专任教师 发布时间：2026-10-13 岗位职责：负责教学与科研。",
+    "https://m.yingjiesheng.com/job-008-118-469.html")
+check("YJS legacy title parser retains the full vocational-college employer",
+      legacy_college.get("company")=="北京某某职业技术学院"
+      and legacy_college.get("title")=="专任教师")
+legacy_hospital=extract_yingjiesheng_fields(
+    "[上海]上海某某大学附属医院 专任教师 2026-10-13",
+    "招聘单位：上海某某大学附属医院 职位：专任教师 发布时间：2026-10-13 岗位职责：负责教学。",
+    "https://m.yingjiesheng.com/job-008-118-470.html")
+check("YJS employer parser does not truncate an affiliated hospital name at the embedded university suffix",
+      legacy_hospital.get("company")=="上海某某大学附属医院")
 check("YJS explicit Other work location is not inferred as Shanghai",
       extract_yingjiesheng_fields(
         "[广东]珠海市龙图光罩科技有限公司 品质工程师 2026-10-10",

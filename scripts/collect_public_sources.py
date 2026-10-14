@@ -892,8 +892,10 @@ def extract_yingjiesheng_fields(raw_title, text, url):
         if old_title:
             entry=old_title.group(2).strip()
             fields["publish_date"]=old_title.group(3)
+            # Greedily include full institution names such as "大学附属医院"
+            # and colleges, rather than stopping at the first suffix inside a name.
             company_role=re.match(
-                r"^(.+?(?:股份有限公司|集团有限公司|有限公司|集团|研究院|研究所|大学|银行|医院|中心|公司))\s+(.+)$",
+                r"^(.+(?:股份有限公司|有限责任公司|集团有限公司|有限公司|控股集团|职业技术学院|高等专科学校|师范学院|职业学院|职业学校|大学|学院|学校|研究院|研究所|研究中心|银行|证券公司|医院|中心|集团|公司))\s+(.+)$",
                 entry
             )
             if company_role:
@@ -906,12 +908,23 @@ def extract_yingjiesheng_fields(raw_title, text, url):
         m=re.search(r"\[(?:全国|北京|上海|广州|深圳|杭州|南京|成都|武汉|西安)[^\]]*\]\s*(.+?)\s+(?:职位\s*[:：]|招聘岗位)",text or "")
         if m and not company: company=m.group(1).strip()
         if not company:
-            cm=re.search(r"(?:招聘单位|用人单位|单位名称|公司名称|企业名称|招聘企业)\s*[:：]?\s*(.{2,80}?)(?=\s*(?:职位\s*[:：]|招聘岗位|职位描述|岗位职责|发布时间|工作地点|学历要求|投递说明|公司信息|单位简介|$))",text or "",re.I)
+            cm=re.search(
+                r"(?:招聘单位|用人单位|招录单位|单位名称|单位全称|公司名称|企业名称|招聘企业|招聘院校|招聘学校)"
+                r"\s*[:：]?\s*(.{2,80}?)"
+                r"(?=\s*(?:职位\s*[:：]|职位名称|岗位名称|招聘岗位|岗位职责|工作职责|职位描述|"
+                r"发布时间|工作地点|工作城市|工作地区|工作地址|学历要求|招聘人数|需求专业|投递说明|"
+                r"职位类型|工作类型|职位类别|岗位类别|联系方式|公司信息|公司介绍|单位简介|$))",
+                text or "",re.I
+            )
             if cm:
                 candidate=clean_yingjiesheng_company_name(cm.group(1))
                 if candidate and candidate.lower() not in {"应届生求职网","招聘信息","未知","待核验"}: company=candidate
         if not company:
-            m=re.search(r"(?:^|\s)([^\s]{2,40}(?:有限公司|股份有限公司|集团|研究院|研究所|大学|银行|医院|中心|公司))\s+(?:职位\s*[:：]|招聘岗位)",text or "")
+            m=re.search(
+                r"(?:^|\s)([^\s]{2,60}(?:股份有限公司|有限责任公司|集团有限公司|有限公司|职业技术学院|高等专科学校|师范学院|职业学院|职业学校|大学|学院|学校|研究院|研究所|研究中心|银行|证券公司|医院|中心|集团|公司))"
+                r"\s+(?:职位\s*[:：]|职位名称|岗位名称|招聘岗位)",
+                text or ""
+            )
             if m: company=m.group(1).strip()
     role_titles=split_role_title_candidates(title,"yingjiesheng")
     fields["role_titles"]=role_titles
