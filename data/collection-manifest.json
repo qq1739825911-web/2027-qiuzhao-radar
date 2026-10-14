@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 2746,
+        "next_offset": 2906,
         "batch_size": 160
       },
       "51job": {
@@ -2909,13 +2909,13 @@
       "pending_review": 18,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 17834565,
-      "links_seen": 50110,
-      "listing_url_candidates": 1467,
-      "listing_urls_visited": 249,
+      "html_bytes": 18412034,
+      "links_seen": 52210,
+      "listing_url_candidates": 1692,
+      "listing_urls_visited": 252,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 2746,
+      "listing_cursor_next": 2906,
       "listing_rotation_groups": {
         "yjs-subject-city": 44,
         "yjs-role-city": 44,
@@ -2924,8 +2924,8 @@
         "yjs-other": 1,
         "yjs-search": 23
       },
-      "tables_seen": 16385,
-      "embedded_json_blocks": 1424,
+      "tables_seen": 17989,
+      "embedded_json_blocks": 1430,
       "role_like_links": 0,
       "discovery_pages_queued": 683,
       "listing_pages_queued": 190,
@@ -3071,7 +3071,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-14T15:07:28+00:00",
+      "last_run_at": "2026-10-14T15:29:24+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3919,6 +3919,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-14T15:29:02+00:00",
+  "quality_checked_at": "2026-10-14T15:54:55+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
