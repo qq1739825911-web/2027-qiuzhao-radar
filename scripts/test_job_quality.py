@@ -16,7 +16,7 @@ from collect_public_sources import (
     source_role_metrics, extract_salary_text, parse_source_ids, select_enabled_sources, listing_rotation_group,
 )
 from quality_rules import assess, compact_json, should_publish_record
-from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url, is_access_verification_payload as verifier_is_access_verification_payload, source_id_for_job as verifier_source_id_for_job, parse_source_ids as parse_verifier_source_ids
+from verify_job_links import is_direct_detail as verifier_is_direct_detail, is_security_interstitial_url, is_access_verification_payload as verifier_is_access_verification_payload, source_id_for_job as verifier_source_id_for_job, parse_source_ids as parse_verifier_source_ids, build_verification_manifest
 
 COLLECTOR_SOURCE=(Path(__file__).resolve().parent/"collect_public_sources.py").read_text(encoding="utf-8")
 RENDERER_SOURCE=(Path(__file__).resolve().parent/"public_page_renderer.cjs").read_text(encoding="utf-8")
@@ -110,6 +110,17 @@ check("YJS-focused runs select only the requested public source",
 check("YJS verifier scope maps the aggregator source label",
       verifier_source_id_for_job({"source":"应届生求职网公开岗位"})=="yingjiesheng"
       and parse_verifier_source_ids("yingjiesheng")=={"yingjiesheng"})
+
+full_verification_report={"last_run_at":"2026-10-14T12:00:00+00:00","scope":"__all__","scope_source_ids":[],"checked":3,"checked_items":[{"url":"https://m.yingjiesheng.com/job-008-118-439.html","result":"alive"}]}
+full_verification_manifest=build_verification_manifest({},full_verification_report,False)
+check("full verification manifest serializes scope_runs without circular references",
+      json.loads(json.dumps(full_verification_manifest,ensure_ascii=False))["scope_runs"]["__all__"]["checked"]==3)
+prior_scoped_manifest={"scope":"__all__","checked":30,"scope_runs":{"__all__":{"checked":30,"scope":"__all__"}}}
+scoped_verification_report={"last_run_at":"2026-10-14T12:05:00+00:00","scope":"yingjiesheng","scope_source_ids":["yingjiesheng"],"checked":2,"checked_items":[]}
+scoped_verification_manifest=build_verification_manifest(prior_scoped_manifest,scoped_verification_report,True)
+check("scoped verification manifest preserves prior scope and serializes the new scope safely",
+      json.loads(json.dumps(scoped_verification_manifest,ensure_ascii=False))["scope_runs"]["__all__"]["checked"]==30
+      and json.loads(json.dumps(scoped_verification_manifest,ensure_ascii=False))["scope_runs"]["yingjiesheng"]["checked"]==2)
 
 
 

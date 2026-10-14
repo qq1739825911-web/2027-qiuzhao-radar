@@ -62,6 +62,22 @@ def fetch(url):
             return r.status,body,r.geturl()
     except HTTPError as e: return e.code,"",e.geturl()
     except (URLError,TimeoutError,ValueError): return 0,"",""
+def build_verification_manifest(prior_report, run_report, scoped):
+    """Merge a run report without creating a self-referential scope_runs tree."""
+    prior=dict(prior_report or {})
+    report=dict(run_report or {})
+    stored_scopes=prior.get("scope_runs",{})
+    scope_runs=dict(stored_scopes) if isinstance(stored_scopes,dict) else {}
+    scope_key=str(report.get("scope") or "__all__")
+    # Store a detached snapshot, not the mutable root report object.
+    scope_runs[scope_key]=dict(report)
+    if scoped:
+        prior.update(report)
+        prior["scope_runs"]=scope_runs
+        return prior
+    report["scope_runs"]=scope_runs
+    return report
+
 def main():
     jobs=json.loads(JOBS.read_text(encoding="utf-8"))
     try: state=json.loads(STATE.read_text(encoding="utf-8"))
@@ -181,15 +197,8 @@ def main():
     run_report={"last_run_at":STAMP,"scope":scope_key,"scope_source_ids":sorted(scope_ids),"checked":len(batch_urls),"records_touched":records_touched,"eligible_direct_links":len(eligible_urls),"link_alive":alive,"missing_needs_recheck":missing,"unknown":unknown,"closed_after_two_checks":closed,"batch_size":batch_size,"note":"链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。","checked_items":checked}
     try: prior_report=json.loads(MANIFEST.read_text(encoding="utf-8"))
     except Exception: prior_report={}
-    scope_runs=prior_report.get("scope_runs",{}) or {}
-    scope_runs[scope_key]=run_report
-    if scope_ids:
-        prior_report.update(run_report)
-        prior_report["scope_runs"]=scope_runs
-        MANIFEST.write_text(json.dumps(prior_report,ensure_ascii=False,indent=2),encoding="utf-8")
-    else:
-        run_report["scope_runs"]=scope_runs
-        MANIFEST.write_text(json.dumps(run_report,ensure_ascii=False,indent=2),encoding="utf-8")
+    manifest_out=build_verification_manifest(prior_report,run_report,bool(scope_ids))
+    MANIFEST.write_text(json.dumps(manifest_out,ensure_ascii=False,indent=2),encoding="utf-8")
     JOBS.write_text(json.dumps(jobs,ensure_ascii=False,indent=2),encoding="utf-8")
     print(f"LINK VERIFICATION: checked_unique_urls={len(batch_urls)} eligible_unique_urls={len(eligible_urls)} records_touched={records_touched} alive={alive} missing_records={missing} unknown_urls={unknown} closed_after_two_checks={closed}")
 if __name__=="__main__": main()
