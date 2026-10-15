@@ -2,31 +2,9 @@
   "run_date": "2026-10-15",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 3866,
+        "next_offset": 4026,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 459,
-  "records_found_this_run": 459,
-  "active_candidates": 28,
-  "pending_review": 431,
+  "records_found": 12,
+  "records_found_this_run": 12,
+  "active_candidates": 2,
+  "pending_review": 10,
   "results": [
     {
       "id": "boss",
@@ -2980,40 +2958,39 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 19,
-      "active_candidates": 3,
-      "pending_review": 16,
+      "records_found": 12,
+      "active_candidates": 2,
+      "pending_review": 10,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 20166333,
-      "links_seen": 63287,
-      "listing_url_candidates": 2500,
-      "listing_urls_visited": 212,
+      "html_bytes": 17376585,
+      "links_seen": 46874,
+      "listing_url_candidates": 1560,
+      "listing_urls_visited": 298,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 3866,
+      "listing_cursor_next": 4026,
       "listing_rotation_groups": {
-        "yjs-major-city": 45,
-        "yjs-role-city": 44,
-        "yjs-mobile": 4,
-        "yjs-search": 22,
-        "yjs-subject-city": 44,
-        "yjs-other": 1
+        "yjs-subject-city": 46,
+        "yjs-role-city": 46,
+        "yjs-major-city": 46,
+        "yjs-mobile": 2,
+        "yjs-search": 20
       },
-      "tables_seen": 22121,
-      "embedded_json_blocks": 1423,
+      "tables_seen": 15097,
+      "embedded_json_blocks": 1309,
       "role_like_links": 0,
-      "discovery_pages_queued": 637,
+      "discovery_pages_queued": 676,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 233,
+      "direct_detail_pages_visited": 189,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 233,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 25,
+      "direct_detail_requests_attempted": 189,
+      "direct_detail_title_candidates": 22,
+      "direct_detail_title_rejected": 11,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 16,
+      "direct_detail_role_rows_emitted": 11,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3026,7 +3003,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -3034,14 +3011,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-119-187.html",
-          "page_title": "建平县红十字会医院招聘影像科医师_辽宁校园招聘",
-          "text_preview": "建平县红十字会医院招聘影像科医师_辽宁校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 大连医科大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 大连医科大学 核实，并请同时联系本站处理该转载信息。 [辽宁]建平县红十字会医院 职位： 影像科医师 发布时间： 2026-10-15 工作地点： 其它 信息来源： 大连医科大学 职位类型： 全职 职位描述 建平县红十字会医院 影像科医师 6K-10K/月 朝阳市 本科及以上 模拟面试 职位诱惑：绩效奖金 岗位晋升 房补 餐补 健康体检 薪酬福利：五险 发布时间：2026年10月14日 职位描述 岗位职责： 1.在科主任上级医师的领导下，负责患者的日常治疗与处理 岗位要求： 1.专业知识过硬，基础扎实，实践能力强 2.具有良好的医患沟通能力 3.协作能力强，有责任心和亲和力 投递说明： 1）网上报名邮箱地址：jphszhyy@ 2）电话（微信)报名联系人： 王老师 18742125110 3）现场报名：辽宁省朝阳市建平县红十字会医院十楼综合办公室1011室 其他描述： 1.薪酬丰厚：提供行业内极具竞争力的薪酬体系，基本工资+绩效"
+          "url_path": "/job-008-063-865.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5dfd53ab1e77f38d4e77b2b650159c99404e88bf3373607f62';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-119-207.html",
-          "page_title": "浙江省国际商会招聘贸易投资促进翻译岗位_浙江校园招聘",
-          "text_preview": "浙江省国际商会招聘贸易投资促进翻译岗位_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [浙江]浙江省国际商会 职位： 贸易投资促进翻译岗位 发布时间： 2026-10-15 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 职位描述 浙江省国际商会2026年公开招聘1名工作人员公告 共计1个岗位，招 1人 五险一金 绩效奖金 年终奖金 定期/免费体检 节日福利 周末双休 餐饮补贴 加班补贴 基本信息 发布时间：2026-10-14 截止日期：2026-10-31 学历要求：硕士研究生及以上 需求学科（供参考）： 翻译 展开 公告详情 浙江省国际商会，1996年在浙江省民政厅注册登记成立，业务主管单位为浙江省贸促会，是由本省从事国际经贸、投资合作等相关业务的企业、事业单位、社会团体和其他组织自愿结成的联合性的非营利社会组织，先后获评\"5A级社会组织\"\"浙江省品牌社会组织\"。根据商会发展需要，面向社会公开招聘优秀从业人员，现将有关事项公告如下： 一、招"
+          "url_path": "/job-008-058-718.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5dfd5354d5a64a84210aee91de78dd0165b6dd9f79ae3294a7';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3050,22 +3027,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 16,
+      "role_records": 11,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 16,
-      "announcement_records": 3,
+      "direct_detail_role_records": 11,
+      "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ɶƸϢ|ѧְ|ɶҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "贸易投资促进翻译岗位",
-        "会计",
-        "控制算法工程师",
-        "外科临床医生",
-        "针灸推拿医生",
-        "立山院区神经内科医生",
-        "立山院区呼吸内科医生"
+        "专任教师",
+        "会计助理",
+        "会计储备人员",
+        "安全工程师",
+        "锦星管培生",
+        "软件销售经理",
+        "生物医药研究员"
       ],
       "role_field_samples": [
         {
@@ -3083,59 +3060,59 @@
           }
         },
         {
-          "title": "贸易投资促进翻译岗位",
-          "company": "构成岗位回避关系的人员，以及法律法规规定不得聘用的其他情形的人员，不得报名应聘。 （三）岗位待遇",
+          "title": "专任教师",
+          "company": "江苏师范大学",
           "city": "其它",
           "salary": "",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-119-207.html",
+          "degree": "博士",
+          "source_url": "https://m.yingjiesheng.com/job-008-120-096.html",
           "field_lengths": {
-            "description": 992,
-            "responsibilities": 0,
-            "requirements": 445,
-            "benefits": 105
-          }
-        },
-        {
-          "title": "会计",
-          "company": "云南省西双版纳和实科技有限公司",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-119-204.html",
-          "field_lengths": {
-            "description": 1722,
-            "responsibilities": 1296,
-            "requirements": 0,
+            "description": 3428,
+            "responsibilities": 131,
+            "requirements": 3170,
             "benefits": 0
           }
         },
         {
-          "title": "控制算法工程师",
-          "company": "苏州海格电控股份有限公司",
+          "title": "会计助理",
+          "company": "广西实隆农牧集团有限公司",
           "city": "其它",
-          "salary": "",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-119-205.html",
+          "salary": "3K-4K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-120-069.html",
           "field_lengths": {
-            "description": 1196,
-            "responsibilities": 444,
-            "requirements": 155,
-            "benefits": 0
+            "description": 383,
+            "responsibilities": 191,
+            "requirements": 85,
+            "benefits": 21
           }
         },
         {
-          "title": "外科临床医生",
-          "company": "建平县红十字会医院",
+          "title": "会计储备人员",
+          "company": "广西实隆农牧集团有限公司",
           "city": "其它",
-          "salary": "6K-10K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-119-180.html",
+          "salary": "5K-7K/月",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-120-068.html",
           "field_lengths": {
-            "description": 40,
-            "responsibilities": 39,
-            "requirements": 50,
-            "benefits": 47
+            "description": 286,
+            "responsibilities": 11,
+            "requirements": 146,
+            "benefits": 44
+          }
+        },
+        {
+          "title": "安全工程师",
+          "company": "中建四局贵州投资建设有限公司",
+          "city": "重庆",
+          "salary": "5K-8K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-120-071.html",
+          "field_lengths": {
+            "description": 269,
+            "responsibilities": 1,
+            "requirements": 116,
+            "benefits": 51
           }
         }
       ],
@@ -3147,8 +3124,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-15T05:09:17+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-15T08:15:37+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3959,11 +3936,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 5695,
-  "published_priority_candidates": 221,
-  "published_pending_review": 5474,
-  "records_added_this_run": 71,
-  "records_updated_this_run": 376,
+  "published_total_jobs": 5705,
+  "published_priority_candidates": 223,
+  "published_pending_review": 5482,
+  "records_added_this_run": 10,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3989,8 +3966,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 672,
-    "fields_checked": 4704,
+    "rows": 682,
+    "fields_checked": 4774,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -4000,13 +3977,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 672,
+    "company_fields_checked": 682,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-15T05:28:01+00:00",
+  "quality_checked_at": "2026-10-15T08:32:16+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }

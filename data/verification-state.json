@@ -6072,7 +6072,10 @@
     "auto-9f282f1cc7d94eed": 0,
     "auto-c4fc8d5fb2c03461": 0,
     "auto-f708900aeb5798b9": 0,
-    "auto-04919b612c4f20d7": 0
+    "auto-04919b612c4f20d7": 0,
+    "auto-e096ec165f99ae57": 0,
+    "auto-029c483fa3f5aeff": 0,
+    "auto-e7e75657588001b2": 0
   },
   "last_run_at": "2026-10-15T05:27:41+00:00",
   "last_batch_size": 120,
@@ -6083,13 +6086,13 @@
     "xiaomi-2027-ai-infra-7671295378604607754": "2026-10-12T04:22:50+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-15T00:12:22+00:00"
+    "yingjiesheng": "2026-10-15T08:31:52+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 292
+    "yingjiesheng": 472
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 610
+    "yingjiesheng": 634
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
