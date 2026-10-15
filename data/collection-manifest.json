@@ -2,31 +2,9 @@
   "run_date": "2026-10-14",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 3546,
+        "next_offset": 3706,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 432,
-  "records_found_this_run": 432,
-  "active_candidates": 40,
-  "pending_review": 392,
+  "records_found": 33,
+  "records_found_this_run": 33,
+  "active_candidates": 15,
+  "pending_review": 18,
   "results": [
     {
       "id": "boss",
@@ -2973,30 +2951,30 @@
       "pending_review": 18,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 16829934,
-      "links_seen": 48249,
-      "listing_url_candidates": 1517,
-      "listing_urls_visited": 300,
+      "html_bytes": 18337286,
+      "links_seen": 57727,
+      "listing_url_candidates": 2500,
+      "listing_urls_visited": 266,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 3546,
+      "listing_cursor_next": 3706,
       "listing_rotation_groups": {
         "yjs-major-city": 45,
         "yjs-role-city": 44,
         "yjs-mobile": 4,
-        "yjs-other": 1,
         "yjs-search": 22,
-        "yjs-subject-city": 44
+        "yjs-subject-city": 44,
+        "yjs-other": 1
       },
-      "tables_seen": 13605,
-      "embedded_json_blocks": 1427,
+      "tables_seen": 16931,
+      "embedded_json_blocks": 1405,
       "role_like_links": 0,
-      "discovery_pages_queued": 720,
+      "discovery_pages_queued": 638,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 187,
+      "direct_detail_pages_visited": 232,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 187,
+      "direct_detail_requests_attempted": 232,
       "direct_detail_title_candidates": 47,
       "direct_detail_title_rejected": 18,
       "direct_detail_score_gate_recovered": 1,
@@ -3022,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-087-650.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5de222c21f3987e7cf8d4a4a033f7580e98fa78df2db083e96';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-118-477.html",
+          "page_title": "松下电器（中国）有限公司2027校园招聘_北京上海广东辽宁江苏校园招聘",
+          "text_preview": "松下电器（中国）有限公司2027校园招聘_北京上海广东辽宁江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 上海 其它 全职 > 职位详细 说明： 此信息由 广州城市理工学院机械工程学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广州城市理工学院机械工程学院 核实，并请同时联系本站处理该转载信息。 [北京上海广东辽宁江苏]松下电器（中国）有限公司 职位： 2027校园招聘 发布时间： 2026-10-14 工作地点： 北京 上海 其它 信息来源： 广州城市理工学院机械工程学院 职位类型： 全职 专业标签： 物流管理与工程 化学 仪器仪表 外国文学 机械类 材料类 电气类 自动化 计算机 职位描述 松下电器（中国）有限公司招聘信息 松下集团创始于1918年，一直以为提高人类生活水平和发展世界文化为己任不断创新，追求卓越。松下集团于2019年4月成立了集研发、销售、制造于一体的中国东北亚公司，开展的事业涵盖家电、住宅、冷链、零部件、汽车电子、互联解决方案等多个领域，致力于为中国消费者带来更加健康美好的生***验。 全球事业:事业规模4300亿元，关联公司数量532家，员工数24万名 中国事业:事业规模110"
         },
         {
-          "url_path": "/job-008-087-802.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5de222cc94a00ddb636415a28b55d9a170f4c4706f331d2d11';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-118-475.html",
+          "page_title": "中国科学技术大学苏州高等研究院王东方课题组招聘超分辨方向博士后_苏州校园招聘",
+          "text_preview": "中国科学技术大学苏州高等研究院王东方课题组招聘超分辨方向博士后_苏州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [苏州]中国科学技术大学苏州高等研究院王东方课题组 职位： 超分辨方向博士后 发布时间： 2026-10-14 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 物理学 职位描述 中国科学技术大学苏州高等研究院王东方课题组2026年招聘超分辨方向博士后 共计2个岗位，招 若干人 发布时间：2026-10-14 截止时间：详见正文 工作地点：苏州 绩效奖金 研究团队简介： 王东方，中国科学技术大学特任研究员，课题组独立PI。中科院率先引才计划入选者。于2014年从中国科学院大学上海应用物理研究所获得博士学位，先后在德国布伦瑞克工业大学和美国Emory大学从事博士后研究。主要研究方向是DNA纳米技术以及单分子荧光技术。已在JACS, Nano Letters, Nature Communications等杂志发表多篇论文。课题组网页"
         }
       ],
       "browser_render_attempts": 0,
@@ -3044,16 +3022,16 @@
       "direct_detail_role_records": 29,
       "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "ɶóƸϢ|ѧְ|ɶҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "专任教师",
-        "专职教师",
-        "嵌入式软件工程师",
-        "投资研究岗",
-        "PLC助理工程师",
-        "SMT设备操作管培生",
-        "质量检验管培生"
+        "电气系统开发工程师",
+        "区域经理管培生",
+        "研究助理",
+        "国际销售工程师",
+        "国内销售工程师",
+        "科研助理",
+        "电商管培生"
       ],
       "role_field_samples": [
         {
@@ -3071,59 +3049,59 @@
           }
         },
         {
-          "title": "专任教师",
-          "company": "湛江科技学院",
-          "city": "其它",
-          "salary": "12-20万元/年",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-469.html",
+          "title": "电气系统开发工程师",
+          "company": "二一二越野车有限公司",
+          "city": "合肥",
+          "salary": "面议",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-482.html",
           "field_lengths": {
-            "description": 668,
-            "responsibilities": 0,
-            "requirements": 75,
-            "benefits": 656
+            "description": 285,
+            "responsibilities": 26,
+            "requirements": 48,
+            "benefits": 61
           }
         },
         {
-          "title": "专职教师",
-          "company": "内蒙古能源职业学院",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-468.html",
+          "title": "区域经理管培生",
+          "company": "东方雨虹民用建材有限责任公司",
+          "city": "上海、北京、广州、南京、成都",
+          "salary": "面议",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-481.html",
           "field_lengths": {
-            "description": 1565,
+            "description": 486,
+            "responsibilities": 172,
+            "requirements": 57,
+            "benefits": 84
+          }
+        },
+        {
+          "title": "研究助理",
+          "company": "上海交通大学基础医学院上海市生殖医学重点实验室",
+          "city": "上海",
+          "salary": "面议",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-480.html",
+          "field_lengths": {
+            "description": 1234,
+            "responsibilities": 181,
+            "requirements": 409,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "国际销售工程师",
+          "company": "湖北安琪生物集团有限公司",
+          "city": "其它",
+          "salary": "10-20万元",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-118-478.html",
+          "field_lengths": {
+            "description": 37,
             "responsibilities": 0,
             "requirements": 0,
-            "benefits": 415
-          }
-        },
-        {
-          "title": "嵌入式软件工程师",
-          "company": "铭剑电子(南昌)有限公司",
-          "city": "南昌",
-          "salary": "20万元/年",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-439.html",
-          "field_lengths": {
-            "description": 507,
-            "responsibilities": 157,
-            "requirements": 206,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "投资研究岗",
-          "company": "华鑫国际信托有限公司",
-          "city": "北京",
-          "salary": "",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-118-442.html",
-          "field_lengths": {
-            "description": 87,
-            "responsibilities": 0,
-            "requirements": 544,
-            "benefits": 0
+            "benefits": 242
           }
         }
       ],
@@ -3135,8 +3113,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-14T21:56:23+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-14T23:54:39+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3950,8 +3928,8 @@
   "published_total_jobs": 5656,
   "published_priority_candidates": 217,
   "published_pending_review": 5439,
-  "records_added_this_run": 74,
-  "records_updated_this_run": 348,
+  "records_added_this_run": 9,
+  "records_updated_this_run": 24,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 2,
@@ -3995,6 +3973,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-14T22:20:45+00:00",
+  "quality_checked_at": "2026-10-15T00:12:41+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
