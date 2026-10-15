@@ -2,31 +2,9 @@
   "run_date": "2026-10-15",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 4186,
+        "next_offset": 4346,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 485,
-  "records_found_this_run": 485,
-  "active_candidates": 33,
-  "pending_review": 452,
+  "records_found": 26,
+  "records_found_this_run": 26,
+  "active_candidates": 10,
+  "pending_review": 16,
   "results": [
     {
       "id": "boss",
@@ -2968,32 +2946,32 @@
       "records_found": 26,
       "active_candidates": 10,
       "pending_review": 16,
-      "pages_attempted": 501,
-      "pages_failed": 1,
-      "html_bytes": 17886085,
-      "links_seen": 51703,
-      "listing_url_candidates": 1795,
-      "listing_urls_visited": 311,
+      "pages_attempted": 500,
+      "pages_failed": 0,
+      "html_bytes": 18304596,
+      "links_seen": 65118,
+      "listing_url_candidates": 2426,
+      "listing_urls_visited": 233,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 4186,
+      "listing_cursor_next": 4346,
       "listing_rotation_groups": {
-        "yjs-subject-city": 45,
-        "yjs-major-city": 44,
-        "yjs-role-city": 44,
-        "yjs-mobile": 4,
+        "yjs-role-city": 52,
+        "yjs-major-city": 52,
+        "yjs-subject-city": 51,
+        "yjs-mobile": 2,
         "yjs-other": 1,
-        "yjs-search": 22
+        "yjs-search": 2
       },
-      "tables_seen": 16329,
-      "embedded_json_blocks": 1438,
+      "tables_seen": 17364,
+      "embedded_json_blocks": 1454,
       "role_like_links": 0,
-      "discovery_pages_queued": 682,
+      "discovery_pages_queued": 676,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 189,
+      "direct_detail_pages_visited": 194,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 189,
+      "direct_detail_requests_attempted": 194,
       "direct_detail_title_candidates": 41,
       "direct_detail_title_rejected": 17,
       "direct_detail_score_gate_recovered": 1,
@@ -3125,15 +3103,15 @@
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-15T12:05:46+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-15T14:09:52+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3947,8 +3925,8 @@
   "published_total_jobs": 5773,
   "published_priority_candidates": 233,
   "published_pending_review": 5540,
-  "records_added_this_run": 114,
-  "records_updated_this_run": 361,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 26,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3992,6 +3970,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-15T12:25:44+00:00",
+  "quality_checked_at": "2026-10-15T14:28:02+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
