@@ -2,31 +2,9 @@
   "run_date": "2026-10-16",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 5786,
+        "next_offset": 5946,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 567,
-  "records_found_this_run": 567,
-  "active_candidates": 27,
-  "pending_review": 540,
+  "records_found": 26,
+  "records_found_this_run": 26,
+  "active_candidates": 6,
+  "pending_review": 20,
   "results": [
     {
       "id": "boss",
@@ -2965,40 +2943,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 19,
-      "active_candidates": 3,
-      "pending_review": 16,
+      "records_found": 26,
+      "active_candidates": 6,
+      "pending_review": 20,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 16243006,
-      "links_seen": 48177,
-      "listing_url_candidates": 1561,
-      "listing_urls_visited": 291,
+      "html_bytes": 17767593,
+      "links_seen": 50829,
+      "listing_url_candidates": 1715,
+      "listing_urls_visited": 302,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 5786,
+      "listing_cursor_next": 5946,
       "listing_rotation_groups": {
-        "yjs-subject-city": 51,
-        "yjs-role-city": 51,
-        "yjs-major-city": 51,
-        "yjs-mobile": 2,
+        "yjs-major-city": 45,
+        "yjs-role-city": 44,
+        "yjs-subject-city": 44,
+        "yjs-mobile": 4,
         "yjs-other": 1,
-        "yjs-search": 4
+        "yjs-search": 22
       },
-      "tables_seen": 14985,
-      "embedded_json_blocks": 1323,
+      "tables_seen": 16310,
+      "embedded_json_blocks": 1430,
       "role_like_links": 0,
-      "discovery_pages_queued": 676,
+      "discovery_pages_queued": 720,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 194,
+      "direct_detail_pages_visited": 187,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 194,
-      "direct_detail_title_candidates": 26,
-      "direct_detail_title_rejected": 9,
+      "direct_detail_requests_attempted": 187,
+      "direct_detail_title_candidates": 46,
+      "direct_detail_title_rejected": 22,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 17,
+      "direct_detail_role_rows_emitted": 24,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3019,14 +2997,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-098-377.html",
+          "url_path": "/job-008-089-399.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5dff86c04757d04b70259d5b3c28da74b0983c0623adb4a70f';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5dffa8bc460505e2a4e5e7594ff403a3b4e7f9480009edc38a';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-098-278.html",
+          "url_path": "/job-008-090-127.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5dff86c144a6404a0d6aa004a6f0bdcf3c03b56dd27d0897e2';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5dffa8be9ae93112ea4ce4228ecdb87e96f30f2176a38a4d28';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3035,13 +3013,13 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 17,
+      "role_records": 24,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 17,
+      "direct_detail_role_records": 24,
       "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "ɶƸϢ|ѧְ|ɶҹ_Ӧְ",
+      "sample_title": "ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
         "研发助理",
@@ -3132,8 +3110,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-16T16:56:31+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-16T18:48:30+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3947,8 +3925,8 @@
   "published_total_jobs": 6263,
   "published_priority_candidates": 248,
   "published_pending_review": 6015,
-  "records_added_this_run": 259,
-  "records_updated_this_run": 299,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 26,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3992,6 +3970,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-16T17:17:33+00:00",
+  "quality_checked_at": "2026-10-16T19:09:20+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
