@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 109,
+  "qiuzhaowang_next_page": 119,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    99,
-    100,
-    101,
-    102,
-    103,
-    104,
-    105,
-    106,
-    107,
-    108
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -215,15 +215,6 @@
       "https://nowpick.nowcoder.com/jobs/fulltime/center"
     ],
     "yingjiesheng": [
-      "https://zhiwei.yingjiesheng.com/zhuli/other/list_8.html",
-      "https://zhiwei.yingjiesheng.com/zhuli/other/list_9.html",
-      "https://zhiwei.yingjiesheng.com/zhuli/other/list_10.html",
-      "https://zhiwei.yingjiesheng.com/kuaijishi/tianjin/list_2.html",
-      "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/beijing",
-      "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/shanghai",
-      "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/guangzhou",
-      "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/shenzhen",
-      "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/wuhan",
       "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/nanjing",
       "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/tianjin",
       "https://zhiwei.yingjiesheng.com/chanpinzhuanyuan/chengdu",
@@ -2714,14 +2705,23 @@
       "https://zhiwei.yingjiesheng.com/xingzguanli/nanjing",
       "https://zhiwei.yingjiesheng.com/xingzguanli/tianjin",
       "https://zhiwei.yingjiesheng.com/xingzguanli/chengdu",
-      "https://zhiwei.yingjiesheng.com/xingzguanli/other"
+      "https://zhiwei.yingjiesheng.com/xingzguanli/other",
+      "https://zhiwei.yingjiesheng.com/yanjiuyuan/chengdu/list_1.html",
+      "https://zhiwei.yingjiesheng.com/yanjiuyuan/chengdu/list_7.html",
+      "https://zhiwei.yingjiesheng.com/yanjiuyuan/other/list_1.html",
+      "https://zhiwei.yingjiesheng.com/meiti/beijing/list_1.html",
+      "https://zhiwei.yingjiesheng.com/meiti/shanghai/list_1.html",
+      "https://zhiwei.yingjiesheng.com/meiti/guangzhou/list_1.html",
+      "https://zhiwei.yingjiesheng.com/meiti/shenzhen/list_1.html",
+      "https://zhiwei.yingjiesheng.com/yanjiuyuan/shanghai/list_1.html",
+      "https://zhiwei.yingjiesheng.com/yanjiuyuan/guangzhou/list_1.html"
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 182,
-    "51job": 762,
-    "boss": 394,
-    "nowcoder": 428,
-    "yingjiesheng": 5946
+    "iguopin": 187,
+    "51job": 786,
+    "boss": 403,
+    "nowcoder": 438,
+    "yingjiesheng": 6106
   }
 }
