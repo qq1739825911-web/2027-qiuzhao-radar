@@ -6270,13 +6270,13 @@
     "xiaomi-2027-ai-infra-7671295378604607754": "2026-10-12T04:22:50+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-15T23:58:43+00:00"
+    "yingjiesheng": "2026-10-16T08:27:20+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 169
+    "yingjiesheng": 349
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 663
+    "yingjiesheng": 693
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
