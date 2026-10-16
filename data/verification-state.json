@@ -6281,7 +6281,13 @@
     "auto-45ca7516874965a6": 0,
     "auto-1bc6896cdcfef84b": 0,
     "auto-f20c7b44a2a14fee": 0,
-    "auto-9344924ce73a03cd": 0
+    "auto-9344924ce73a03cd": 0,
+    "auto-2b4ef0e6a5f7b6f1": 0,
+    "auto-d69f27a773dc69f0": 0,
+    "auto-02a7cbb8efe92816": 0,
+    "auto-9f51638db7763530": 0,
+    "auto-22b2c15b5ce46218": 0,
+    "auto-447144606ca14640": 0
   },
   "last_run_at": "2026-10-16T12:18:28+00:00",
   "last_batch_size": 120,
@@ -6292,13 +6298,13 @@
     "xiaomi-2027-ai-infra-7671295378604607754": "2026-10-12T04:22:50+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-16T08:27:20+00:00"
+    "yingjiesheng": "2026-10-16T14:19:52+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 349
+    "yingjiesheng": 529
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 693
+    "yingjiesheng": 700
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
