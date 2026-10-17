@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T04:52:05+00:00",
+  "checked_at": "2026-10-17T04:53:21+00:00",
   "enabled_sources": 23,
   "reachable": 19,
   "warnings": 4,
@@ -50,8 +50,8 @@
       "id": "cib",
       "name": "兴业银行",
       "url": "https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/",
-      "status": "restricted",
-      "http_status": 403
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "51job",
@@ -85,8 +85,8 @@
       "id": "xiaomi",
       "name": "小米",
       "url": "https://hr.xiaomi.com/website/campus.html",
-      "status": "reachable",
-      "http_status": 200
+      "status": "unavailable",
+      "detail": "<urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     {
       "id": "xiaopeng",
