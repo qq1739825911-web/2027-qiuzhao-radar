@@ -2,31 +2,9 @@
   "run_date": "2026-10-18",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 7546,
+        "next_offset": 7706,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 509,
-  "records_found_this_run": 509,
-  "active_candidates": 32,
-  "pending_review": 477,
+  "records_found": 19,
+  "records_found_this_run": 19,
+  "active_candidates": 3,
+  "pending_review": 16,
   "results": [
     {
       "id": "boss",
@@ -2968,40 +2946,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 26,
-      "active_candidates": 6,
-      "pending_review": 20,
-      "pages_attempted": 502,
-      "pages_failed": 2,
-      "html_bytes": 17746040,
-      "links_seen": 61571,
-      "listing_url_candidates": 2500,
-      "listing_urls_visited": 287,
+      "records_found": 19,
+      "active_candidates": 3,
+      "pending_review": 16,
+      "pages_attempted": 500,
+      "pages_failed": 0,
+      "html_bytes": 15612428,
+      "links_seen": 44170,
+      "listing_url_candidates": 1571,
+      "listing_urls_visited": 293,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 7546,
+      "listing_cursor_next": 7706,
       "listing_rotation_groups": {
-        "yjs-major-city": 44,
-        "yjs-role-city": 44,
-        "yjs-subject-city": 43,
-        "yjs-mobile": 6,
-        "yjs-search": 22,
-        "yjs-other": 1
+        "yjs-subject-city": 52,
+        "yjs-major-city": 52,
+        "yjs-role-city": 51,
+        "yjs-mobile": 2,
+        "yjs-other": 1,
+        "yjs-search": 2
       },
-      "tables_seen": 16024,
-      "embedded_json_blocks": 1449,
+      "tables_seen": 14182,
+      "embedded_json_blocks": 1284,
       "role_like_links": 0,
-      "discovery_pages_queued": 684,
+      "discovery_pages_queued": 679,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 188,
+      "direct_detail_pages_visited": 195,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 188,
-      "direct_detail_title_candidates": 46,
-      "direct_detail_title_rejected": 22,
+      "direct_detail_requests_attempted": 195,
+      "direct_detail_title_candidates": 26,
+      "direct_detail_title_rejected": 9,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 24,
+      "direct_detail_role_rows_emitted": 17,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3022,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-122-288.html",
-          "page_title": "润加物业服务(深圳)有限公司东莞分公司招聘万悦生_东莞校园招聘",
-          "text_preview": "润加物业服务(深圳)有限公司东莞分公司招聘万悦生_东莞校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 仲恺农业工程学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 仲恺农业工程学院 核实，并请同时联系本站处理该转载信息。 [东莞]润加物业服务(深圳)有限公司东莞分公司 职位： 万悦生 发布时间： 2026-10-16 工作地点： 其它 信息来源： 仲恺农业工程学院 职位类型： 全职 专业标签： 工商管理 职位描述 万悦生 不限 本科生 1年以下 8000～10000元/月 职位诱惑：五险一金,年终奖,车贴,朝九晚五,有年假,管理规范,晋升快 职位描述 Description 岗位职责: 1、日常对客服务与接待工作，以及处理客户报单、投诉等问题，提高服务满意度； 2、项目内客户类活动组织策划与实施落地，维系项目与客户对接与沟通； 3、完善客户画像、了解客户需求，推进客户服务标准化落地。 ? 岗位要求: 1、本科及以上学历，男女不限； 2、具备较强的服务导向，性格开朗、工作积极主动，有责任心，抗压能力强； 3、英语四级及以上水平 4、熟练掌握WORD、EXCEL、POWER"
+          "url_path": "/job-008-020-046.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df9a248baf6b96e7404900623cd772d3fb143680063e839ca';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-122-279.html",
-          "page_title": "大连理工大学医学部基础医学院心血管团队招聘博士后研究人员_辽宁校园招聘",
-          "text_preview": "大连理工大学医学部基础医学院心血管团队招聘博士后研究人员_辽宁校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [辽宁]大连理工大学医学部基础医学院心血管团队 职位： 博士后研究人员 发布时间： 2026-10-16 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 职位描述 大连理工大学医学部基础医学院心血管团队2026年诚招博士后（心血管及代谢性疾病的发病机制与转化研究） 共计1个岗位，招 2人 定期/免费体检 餐饮补贴 基本信息 发布时间：2026-10-16 截止日期：详见正文 学历要求：博士研究生 需求学科（供参考）： 药学 , 生物学 , 公共卫生与预防医学 , 临床医学 , 基础医学 展开 公告详情 一、团队简介： 大连理工大学医学部心血管团队由医学部部长、临床医学院院长、附属中心医院心血管首席专家曲鹏教授领衔，基础医学院姜允奇副教授主要负责。 团队聚焦动脉粥样硬化、高血压、心力衰竭、心脏重塑、缺血性心脏病等心血管疾病，以及肥胖、糖尿病、脂肪"
+          "url_path": "/job-008-019-787.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df9a249ceef522285472d1b127c5ac7c04d658cd9b543da62';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3038,22 +3016,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 24,
+      "role_records": 17,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 24,
+      "direct_detail_role_records": 17,
       "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ԱƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "教育咨询师",
-        "小初高语数外教师",
-        "风电运维岗",
-        "电机研发工程师",
-        "C++开发",
-        "综合行政执法协管员",
-        "行政助理"
+        "研发助理",
+        "化妆品研发员",
+        "电气设计工程师",
+        "结构工程师",
+        "固定收益研究员",
+        "行业研究员",
+        "行业研究员"
       ],
       "role_field_samples": [
         {
@@ -3071,72 +3049,72 @@
           }
         },
         {
-          "title": "教育咨询师",
-          "company": "南京海豚教育咨询有限公司",
-          "city": "南京",
-          "salary": "20k",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-122-290.html",
-          "field_lengths": {
-            "description": 441,
-            "responsibilities": 80,
-            "requirements": 82,
-            "benefits": 125
-          }
-        },
-        {
-          "title": "小初高语数外教师",
-          "company": "南京海豚教育咨询有限公司",
-          "city": "南京",
-          "salary": "20k",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-122-291.html",
-          "field_lengths": {
-            "description": 548,
-            "responsibilities": 201,
-            "requirements": 51,
-            "benefits": 133
-          }
-        },
-        {
-          "title": "风电运维岗",
-          "company": "华能河南中原燃气发电有限公司",
+          "title": "研发助理",
+          "company": "双阳化工淮安有限公司",
           "city": "其它",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-122-272.html",
+          "salary": "10万元/年",
+          "degree": "硕士",
+          "source_url": "https://m.yingjiesheng.com/job-008-122-243.html",
           "field_lengths": {
-            "description": 642,
-            "responsibilities": 165,
-            "requirements": 0,
+            "description": 244,
+            "responsibilities": 8,
+            "requirements": 109,
             "benefits": 0
           }
         },
         {
-          "title": "电机研发工程师",
-          "company": "苏州伟创电气科技股份有限公司",
-          "city": "苏州",
-          "salary": "20万元/年",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-122-266.html",
+          "title": "化妆品研发员",
+          "company": "科玛化妆品（无锡）有限公司",
+          "city": "无锡",
+          "salary": "8.4万元/年",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-122-249.html",
           "field_lengths": {
-            "description": 381,
-            "responsibilities": 127,
-            "requirements": 127,
+            "description": 410,
+            "responsibilities": 169,
+            "requirements": 106,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "电气设计工程师",
+          "company": "无锡力丰电气有限公司",
+          "city": "无锡",
+          "salary": "10万元/年",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-122-250.html",
+          "field_lengths": {
+            "description": 681,
+            "responsibilities": 500,
+            "requirements": 51,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "结构工程师",
+          "company": "无锡力丰电气有限公司",
+          "city": "无锡",
+          "salary": "10万元/年",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-122-251.html",
+          "field_lengths": {
+            "description": 271,
+            "responsibilities": 72,
+            "requirements": 70,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-18T05:06:58+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-18T07:59:45+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3950,8 +3928,8 @@
   "published_total_jobs": 6657,
   "published_priority_candidates": 254,
   "published_pending_review": 6403,
-  "records_added_this_run": 185,
-  "records_updated_this_run": 309,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 19,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3995,6 +3973,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-18T05:28:35+00:00",
+  "quality_checked_at": "2026-10-18T08:18:24+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
