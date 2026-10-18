@@ -2,31 +2,9 @@
   "run_date": "2026-10-18",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 7866,
+        "next_offset": 8026,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 548,
-  "records_found_this_run": 548,
-  "active_candidates": 31,
-  "pending_review": 517,
+  "records_found": 10,
+  "records_found_this_run": 10,
+  "active_candidates": 3,
+  "pending_review": 7,
   "results": [
     {
       "id": "boss",
@@ -2968,40 +2946,39 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 26,
-      "active_candidates": 6,
-      "pending_review": 20,
-      "pages_attempted": 500,
-      "pages_failed": 0,
-      "html_bytes": 18038684,
-      "links_seen": 50989,
-      "listing_url_candidates": 1588,
-      "listing_urls_visited": 284,
+      "records_found": 10,
+      "active_candidates": 3,
+      "pending_review": 7,
+      "pages_attempted": 503,
+      "pages_failed": 3,
+      "html_bytes": 17978225,
+      "links_seen": 49877,
+      "listing_url_candidates": 1368,
+      "listing_urls_visited": 247,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 7866,
+      "listing_cursor_next": 8026,
       "listing_rotation_groups": {
-        "yjs-subject-city": 44,
-        "yjs-major-city": 44,
-        "yjs-role-city": 44,
-        "yjs-mobile": 5,
-        "yjs-search": 22,
-        "yjs-other": 1
+        "yjs-subject-city": 46,
+        "yjs-major-city": 46,
+        "yjs-role-city": 45,
+        "yjs-mobile": 3,
+        "yjs-search": 20
       },
-      "tables_seen": 17295,
-      "embedded_json_blocks": 1416,
+      "tables_seen": 17017,
+      "embedded_json_blocks": 1324,
       "role_like_links": 0,
-      "discovery_pages_queued": 734,
+      "discovery_pages_queued": 681,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 187,
+      "direct_detail_pages_visited": 192,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 187,
-      "direct_detail_title_candidates": 46,
-      "direct_detail_title_rejected": 22,
+      "direct_detail_requests_attempted": 192,
+      "direct_detail_title_candidates": 21,
+      "direct_detail_title_rejected": 13,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 24,
+      "direct_detail_role_rows_emitted": 8,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3024,12 +3001,12 @@
         {
           "url_path": "/job-008-120-053.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df9694ed46c2291f14eeda277963d00de62925d510c08ed88';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5df916a21351b43456c0870ef87970629d8b65ac674576cb44';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
           "url_path": "/job-008-120-193.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df9694fdf11725e9f1c225f29454b8d2cce9230c3c6539e0e';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5df916a3e3e998f7a2b3cdbe1feb63243f06524ef6a00dab17';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3038,10 +3015,10 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 24,
+      "role_records": 8,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 24,
+      "direct_detail_role_records": 8,
       "announcement_records": 2,
       "portal_entries": 0,
       "sample_title": "ݴѧƸϢ|ѧְ|ҹ_Ӧְ",
@@ -3128,15 +3105,15 @@
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "TimeoutError: timed out",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-18T11:41:48+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-18T13:15:34+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3950,8 +3927,8 @@
   "published_total_jobs": 6674,
   "published_priority_candidates": 254,
   "published_pending_review": 6420,
-  "records_added_this_run": 81,
-  "records_updated_this_run": 455,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 10,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3995,6 +3972,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-18T12:03:54+00:00",
+  "quality_checked_at": "2026-10-18T13:42:24+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
