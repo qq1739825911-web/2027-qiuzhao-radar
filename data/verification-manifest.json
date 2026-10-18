@@ -1,736 +1,736 @@
 {
-  "last_run_at": "2026-10-17T21:15:04+00:00",
+  "last_run_at": "2026-10-18T05:28:21+00:00",
   "scope": "__all__",
   "scope_source_ids": [],
   "checked": 120,
-  "records_touched": 567,
-  "eligible_direct_links": 2407,
-  "link_alive": 120,
+  "records_touched": 185,
+  "eligible_direct_links": 2430,
+  "link_alive": 0,
   "missing_needs_recheck": 0,
-  "unknown": 0,
+  "unknown": 120,
   "closed_after_two_checks": 0,
   "batch_size": 120,
   "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
   "checked_items": [
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31679",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31686",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31690",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31691",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31692",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/106b8acf6f6750d70nF939u9F1RY.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31683",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/0a29221473f4c61e03J82N67FVJU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/0e9bcb19508ee65403x53ty7GFRR.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 4
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31677",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31680",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31699",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31707",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31704",
-      "result": "alive",
-      "http_status": 200,
-      "records": 14
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31708",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31717",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31719",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31700",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31723",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/101faccbda49f2f903N-2Ni7FlJS.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31703",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/11243b5a715ee16203F909-7F1RY.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 5
+      "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31725",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/0f62f30271b3f007031629-7FlVY.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 11
+      "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31696",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/0c82a41a5323a6dd0nF63ti4GFNU.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 3
+      "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31727",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31729",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/0f8afe44891031380nJ_29u9EFZQ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31735",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/11d24ef8b62199b10nJ-2t66GFNU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/142bd2808b76d1960nJ-3N67GFZW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1414a31b2c6fda410nB50t--FVVU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1473305f7bf6a7f40nR72du7EVtY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/12e66de1dddf6ac60nJ52NW6FFZV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/13fca181bad1076a0nJ73Nm1EVVX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1255887fb414d7b40nB83dq0GFtX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/152b10c8599987110nJ70tS_FldR.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/159869d90897d9300nF-29m-GVtW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/160c8fef23d2396b03d-29i-F1pW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/16200e4f36d3df9e0nd-396_GVNV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1822bfbdf6bb08320nF82Nu-E1dW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/17660cba2ecac9320nFz3Nq8FVtZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1936184cbabd7dbb0nd53tS-FVNQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/199590d13c0758de031-2tS7F1ZV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/19fbe2b47b98bd560nJ739u6FlNW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1a041f88f2aac6fa03190tq_GVVU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1dd27ed319942b570nF_2Nm0ElVZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1b9b7493af16f56a0nB529i_FlBY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1f3b9116ed3505800nF429S7F1FX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/1c57045ba358a5a103d-3Ni6E1RY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/232280457d2e206e0nR43d25ElVV.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 4
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31738",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/25894fdedcd67be803193tW5FldQ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31739",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/26c32e02433a0cfa031_3NW4FlFS.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/2475dfbc8ef6899103N83N29GFpR.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/2a246a4ede646c8c0nJ83Nu6FlRQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/279b930c5092e3280nV509m-E1pW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/279a4a788784fde60nJ73t--EltU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/2da70181c20762670nF_2Nq6GVJR.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31741",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/2ec78b16bcc4af9b0nFz3Ny0FFBV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/2f41e40f33ecbd7f0nJ6096_FFZY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/2f5f8fd7b6d80f870nZ83tu8GFZY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/2fab2c4bbe54c56e1Hx43NW7GVdV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/30146151747655ad0nVz3dS4EFVQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3037d08d1408dc960nV-29W6GFFQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/32298b14e4a597520nJ-2dW-FFNY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/33198f69ea3269ed0nF529S8FFBY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/34b530ef488efdf30nJ_296_EVdY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/33ef3ab67d7336961Hdy3N-0ElFU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/34c802e09fa14fe81Hx92t26FltV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3565cc561831a7780nJ-0ty-GFBZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/36bb015d36041aa30nF93t-7EVRQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/36e1c54d3a2f9d7a0nJ_29W4EFZX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/357400706005321703V42dS0FFtY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/389c314b44356a380nFy39q7F1tV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/38c30564d951f2271Hx52Ni-GVRR.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/392541869591ad5e0nRz39q-E1pZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3997af00ca4140fb0nF_396_GVNR.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3af6c4e8a33e583e0nJ-0t2-GVJX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3ad64ee4933dec130nJ72Nq7E1RT.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3b7e117b759a523d03Bz2966FlRU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3b7e667859697b5f0nJ82921EFBT.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3b9be5116031d1481Hx83N--EVNW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3d1b9ed3a08adb6503J_39--EFJU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3fbc9105281d187003x62Nu0FFZY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3c5b1a1091988ab90nF_3tq_E1tX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/3da5f7e659741bee0nZ42N-_FFZU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/41f43190718e91b00nJ43dS0FlJV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/41dbc40aec306b0f0nJ-0964GFFS.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/429774ed391293890nJ43tm5F1JQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/422e1265568956bb0nJ43d65E1tZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/42a51e8e75d0774c0nJ53dq1E1NQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/42d240586fbd010b0nFz3N21F1RX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/44b31997fbc5b4ef1Xx929W7EFVS.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 8
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31740",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31742",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31733",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31744",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31749",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/46664b796ab8523c0nZ63Nu7ElVS.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31751",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/4597fff2f980a5f10nFy29i7GVNV.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 11
+      "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31752",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/464bfa3e9d4415e60nF_3dm0EVRT.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/467bc61a75fd38d503190tu4FFFR.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/46f0c35d47f1f5a40nJ509S5EFJQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/484b3c3555ee4deb0nJ-2tS5FVdS.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31754",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/4852903dbe03375e0nFy2t-4GVZY.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 4
+      "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31755",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/48649f64d7c6dd900nJ73N67E1BS.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/49882a5afe1966f20nB80ti9F1dX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/4a854d5d97bf6ba40nV60t65EVJZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/4b3b5532527f0a560nF-29-6EVtY.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-31756",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31753",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31757",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31745",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31748",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31759",
-      "result": "alive",
-      "http_status": 200,
-      "records": 15
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31762",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31760",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31763",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31767",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31773",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31770",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31769",
-      "result": "alive",
-      "http_status": 200,
-      "records": 12
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31774",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31775",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-31777",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32133",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32132",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32136",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32134",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32139",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32147",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32152",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32151",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32158",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32159",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32154",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32160",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32146",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32161",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/4b78b7f0cee60f590nF93Nu_GFpQ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32162",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32166",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/4bdd4afb4c45e3470nF_3Ny5GVdX.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32165",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32164",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32167",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32168",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32171",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32172",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32177",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/4c318776727e60b603R42t64EFpY.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32192",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/4d2593e99e5984ba03d42di1EVFZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/511b9be41f0a3423031-2ti8EVdU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/4f523e40c2a9407f0nRz2d2-F1NU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5151da653bad719f03190tq8GFRS.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/4c36f61591c2dddd1Hx83N-6GVdZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/53502112243d94b60nF72dm9E1dX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/51566a72c91146dc03193d28FVNZ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32193",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/5373cc3d484dd03d03Z43Ni0EVpT.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 5
+      "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32180",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32196",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32195",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32198",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32206",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32208",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32217",
-      "result": "alive",
-      "http_status": 200,
-      "records": 13
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32214",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32218",
-      "result": "alive",
-      "http_status": 200,
-      "records": 16
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32220",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/5391c59d8839fc160nJ53Nu_GVFQ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32223",
-      "result": "alive",
-      "http_status": 200,
-      "records": 14
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32227",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32222",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32226",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32229",
-      "result": "alive",
-      "http_status": 200,
-      "records": 11
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32225",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32224",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32230",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/552159928e1aae2f0nB60tu1EVFU.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32233",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/56c273265187d7f80nJ_29q0EFZR.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32232",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/590f335ed34d05d10nZ439q-EVRX.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5832b97feefb1cc80nF429q7FFtW.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5a9da4b6ffe292430nJ52tW6F1VT.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5c2452ee42d0371e0nJ52Nm1FFFU.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5cc358fbffb6d7e70nB50926EVBY.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5cc8db0eb953dda50nJ43ty1GVZR.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5e5a0fdf6a78c69c0nB_2Ny_EFJV.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5d61cb3ecd6359bc0nF62ty5E1pZ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5dd485e481b720590nJ_3d20FVtT.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/5eeea00a0356d9e80nB82dS6GFNZ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 4
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32235",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/5ef2740144adc4730nB42Nu_EVNW.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32219",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32234",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/5ef8f9de7a5be94b03d52ty_F1NQ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 2
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32237",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/60640dbbe6b02c700ndy29W_GVtS.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/60e39885a86d31641HF72d60EFtT.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/64fc02c1c37a8a1803J63Nu1E1JY.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 4
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32238",
-      "result": "alive",
-      "http_status": 200,
-      "records": 10
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32231",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32240",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32241",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32251",
-      "result": "alive",
-      "http_status": 200,
-      "records": 5
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32247",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32252",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32253",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32254",
-      "result": "alive",
-      "http_status": 200,
-      "records": 6
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32257",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/6632d3485ecae11603Z-09i8GFpS.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32244",
-      "result": "alive",
-      "http_status": 200,
-      "records": 12
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32259",
-      "result": "alive",
-      "http_status": 200,
-      "records": 7
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32258",
-      "result": "alive",
-      "http_status": 200,
-      "records": 9
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32260",
-      "result": "alive",
-      "http_status": 200,
-      "records": 8
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32266",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://qiuzhaowang.com/jobs/position-32267",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/6140d063be68b7e30nZ63N67GFVT.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32271",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/683e9f2a1c44bc4e0nJ_2tW-GFZZ.html",
+      "result": "unknown",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32272",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/61ba6443831514aa0nF93Nm8EFdU.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 2
+      "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32268",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/694481dde84816270nRy2di0GFNR.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 5
+      "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32264",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/6ac84ae9cf19c0b90nV62tq7ElE~.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 4
+      "records": 1
     },
     {
-      "url": "https://qiuzhaowang.com/jobs/position-32265",
-      "result": "alive",
+      "url": "https://www.zhipin.com/job_detail/6d3011917a34c7dc0nJ52Nu8GFdV.html",
+      "result": "unknown",
       "http_status": 200,
-      "records": 6
+      "records": 1
+    },
+    {
+      "url": "https://www.zhipin.com/job_detail/6de877698bc3f5390nV-2dS8E1pQ.html",
+      "result": "unknown",
+      "http_status": 200,
+      "records": 1
     }
   ],
   "scope_runs": {
@@ -1833,738 +1833,738 @@
       ]
     },
     "__all__": {
-      "last_run_at": "2026-10-17T21:15:04+00:00",
+      "last_run_at": "2026-10-18T05:28:21+00:00",
       "scope": "__all__",
       "scope_source_ids": [],
       "checked": 120,
-      "records_touched": 567,
-      "eligible_direct_links": 2407,
-      "link_alive": 120,
+      "records_touched": 185,
+      "eligible_direct_links": 2430,
+      "link_alive": 0,
       "missing_needs_recheck": 0,
-      "unknown": 0,
+      "unknown": 120,
       "closed_after_two_checks": 0,
       "batch_size": 120,
       "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
       "checked_items": [
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31679",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31686",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31690",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31691",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31692",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/106b8acf6f6750d70nF939u9F1RY.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31683",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/0a29221473f4c61e03J82N67FVJU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/0e9bcb19508ee65403x53ty7GFRR.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 4
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31677",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31680",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31699",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31707",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31704",
-          "result": "alive",
-          "http_status": 200,
-          "records": 14
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31708",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31717",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31719",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31700",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31723",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/101faccbda49f2f903N-2Ni7FlJS.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31703",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/11243b5a715ee16203F909-7F1RY.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 5
+          "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31725",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/0f62f30271b3f007031629-7FlVY.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 11
+          "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31696",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/0c82a41a5323a6dd0nF63ti4GFNU.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 3
+          "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31727",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31729",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/0f8afe44891031380nJ_29u9EFZQ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31735",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/11d24ef8b62199b10nJ-2t66GFNU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/142bd2808b76d1960nJ-3N67GFZW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1414a31b2c6fda410nB50t--FVVU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1473305f7bf6a7f40nR72du7EVtY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/12e66de1dddf6ac60nJ52NW6FFZV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/13fca181bad1076a0nJ73Nm1EVVX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1255887fb414d7b40nB83dq0GFtX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/152b10c8599987110nJ70tS_FldR.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/159869d90897d9300nF-29m-GVtW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/160c8fef23d2396b03d-29i-F1pW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/16200e4f36d3df9e0nd-396_GVNV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1822bfbdf6bb08320nF82Nu-E1dW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/17660cba2ecac9320nFz3Nq8FVtZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1936184cbabd7dbb0nd53tS-FVNQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/199590d13c0758de031-2tS7F1ZV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/19fbe2b47b98bd560nJ739u6FlNW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1a041f88f2aac6fa03190tq_GVVU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1dd27ed319942b570nF_2Nm0ElVZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1b9b7493af16f56a0nB529i_FlBY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1f3b9116ed3505800nF429S7F1FX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/1c57045ba358a5a103d-3Ni6E1RY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/232280457d2e206e0nR43d25ElVV.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 4
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31738",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/25894fdedcd67be803193tW5FldQ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31739",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/26c32e02433a0cfa031_3NW4FlFS.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/2475dfbc8ef6899103N83N29GFpR.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/2a246a4ede646c8c0nJ83Nu6FlRQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/279b930c5092e3280nV509m-E1pW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/279a4a788784fde60nJ73t--EltU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/2da70181c20762670nF_2Nq6GVJR.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31741",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/2ec78b16bcc4af9b0nFz3Ny0FFBV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/2f41e40f33ecbd7f0nJ6096_FFZY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/2f5f8fd7b6d80f870nZ83tu8GFZY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/2fab2c4bbe54c56e1Hx43NW7GVdV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/30146151747655ad0nVz3dS4EFVQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3037d08d1408dc960nV-29W6GFFQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 4
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/32298b14e4a597520nJ-2dW-FFNY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/33198f69ea3269ed0nF529S8FFBY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/34b530ef488efdf30nJ_296_EVdY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/33ef3ab67d7336961Hdy3N-0ElFU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/34c802e09fa14fe81Hx92t26FltV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3565cc561831a7780nJ-0ty-GFBZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/36bb015d36041aa30nF93t-7EVRQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/36e1c54d3a2f9d7a0nJ_29W4EFZX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/357400706005321703V42dS0FFtY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/389c314b44356a380nFy39q7F1tV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/38c30564d951f2271Hx52Ni-GVRR.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/392541869591ad5e0nRz39q-E1pZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3997af00ca4140fb0nF_396_GVNR.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3af6c4e8a33e583e0nJ-0t2-GVJX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3ad64ee4933dec130nJ72Nq7E1RT.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3b7e117b759a523d03Bz2966FlRU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3b7e667859697b5f0nJ82921EFBT.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3b9be5116031d1481Hx83N--EVNW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3d1b9ed3a08adb6503J_39--EFJU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3fbc9105281d187003x62Nu0FFZY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3c5b1a1091988ab90nF_3tq_E1tX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/3da5f7e659741bee0nZ42N-_FFZU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/41f43190718e91b00nJ43dS0FlJV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/41dbc40aec306b0f0nJ-0964GFFS.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/429774ed391293890nJ43tm5F1JQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/422e1265568956bb0nJ43d65E1tZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/42a51e8e75d0774c0nJ53dq1E1NQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/42d240586fbd010b0nFz3N21F1RX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/44b31997fbc5b4ef1Xx929W7EFVS.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 8
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31740",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31742",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31733",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31744",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31749",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/46664b796ab8523c0nZ63Nu7ElVS.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31751",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/4597fff2f980a5f10nFy29i7GVNV.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 11
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31752",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/464bfa3e9d4415e60nF_3dm0EVRT.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/467bc61a75fd38d503190tu4FFFR.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/46f0c35d47f1f5a40nJ509S5EFJQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/484b3c3555ee4deb0nJ-2tS5FVdS.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31754",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/4852903dbe03375e0nFy2t-4GVZY.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 4
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31755",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/48649f64d7c6dd900nJ73N67E1BS.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/49882a5afe1966f20nB80ti9F1dX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/4a854d5d97bf6ba40nV60t65EVJZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/4b3b5532527f0a560nF-29-6EVtY.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-31756",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31753",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31757",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31745",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31748",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31759",
-          "result": "alive",
-          "http_status": 200,
-          "records": 15
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31762",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31760",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31763",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31767",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31773",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31770",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31769",
-          "result": "alive",
-          "http_status": 200,
-          "records": 12
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31774",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31775",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-31777",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32133",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32132",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32136",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32134",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32139",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32147",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32152",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32151",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32158",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32159",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32154",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32160",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32146",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32161",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/4b78b7f0cee60f590nF93Nu_GFpQ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32162",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32166",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/4bdd4afb4c45e3470nF_3Ny5GVdX.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32165",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32164",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32167",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32168",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32171",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32172",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32177",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/4c318776727e60b603R42t64EFpY.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32192",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/4d2593e99e5984ba03d42di1EVFZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/511b9be41f0a3423031-2ti8EVdU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/4f523e40c2a9407f0nRz2d2-F1NU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5151da653bad719f03190tq8GFRS.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/4c36f61591c2dddd1Hx83N-6GVdZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/53502112243d94b60nF72dm9E1dX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/51566a72c91146dc03193d28FVNZ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32193",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/5373cc3d484dd03d03Z43Ni0EVpT.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 5
+          "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32180",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32196",
-          "result": "alive",
-          "http_status": 200,
-          "records": 11
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32195",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32198",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32206",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32208",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32217",
-          "result": "alive",
-          "http_status": 200,
-          "records": 13
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32214",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32218",
-          "result": "alive",
-          "http_status": 200,
-          "records": 16
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32220",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/5391c59d8839fc160nJ53Nu_GVFQ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32223",
-          "result": "alive",
-          "http_status": 200,
-          "records": 14
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32227",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32222",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32226",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32229",
-          "result": "alive",
-          "http_status": 200,
-          "records": 11
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32225",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32224",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32230",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/552159928e1aae2f0nB60tu1EVFU.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32233",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/56c273265187d7f80nJ_29q0EFZR.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32232",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/590f335ed34d05d10nZ439q-EVRX.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5832b97feefb1cc80nF429q7FFtW.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5a9da4b6ffe292430nJ52tW6F1VT.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5c2452ee42d0371e0nJ52Nm1FFFU.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5cc358fbffb6d7e70nB50926EVBY.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5cc8db0eb953dda50nJ43ty1GVZR.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5e5a0fdf6a78c69c0nB_2Ny_EFJV.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5d61cb3ecd6359bc0nF62ty5E1pZ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5dd485e481b720590nJ_3d20FVtT.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/5eeea00a0356d9e80nB82dS6GFNZ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 4
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32235",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/5ef2740144adc4730nB42Nu_EVNW.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32219",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32234",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/5ef8f9de7a5be94b03d52ty_F1NQ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 2
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32237",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/60640dbbe6b02c700ndy29W_GVtS.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/60e39885a86d31641HF72d60EFtT.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/64fc02c1c37a8a1803J63Nu1E1JY.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 4
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32238",
-          "result": "alive",
-          "http_status": 200,
-          "records": 10
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32231",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32240",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32241",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32251",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32247",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32252",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32253",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32254",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32257",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/6632d3485ecae11603Z-09i8GFpS.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32244",
-          "result": "alive",
-          "http_status": 200,
-          "records": 12
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32259",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32258",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32260",
-          "result": "alive",
-          "http_status": 200,
-          "records": 8
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32266",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32267",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/6140d063be68b7e30nZ63N67GFVT.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32271",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/683e9f2a1c44bc4e0nJ_2tW-GFZZ.html",
+          "result": "unknown",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32272",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/61ba6443831514aa0nF93Nm8EFdU.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 2
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32268",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/694481dde84816270nRy2di0GFNR.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 5
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32264",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/6ac84ae9cf19c0b90nV62tq7ElE~.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 4
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32265",
-          "result": "alive",
+          "url": "https://www.zhipin.com/job_detail/6d3011917a34c7dc0nJ52Nu8GFdV.html",
+          "result": "unknown",
           "http_status": 200,
-          "records": 6
+          "records": 1
+        },
+        {
+          "url": "https://www.zhipin.com/job_detail/6de877698bc3f5390nV-2dS8E1pQ.html",
+          "result": "unknown",
+          "http_status": 200,
+          "records": 1
         }
       ]
     }
