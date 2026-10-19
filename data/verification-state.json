@@ -8042,7 +8042,50 @@
     "auto-28ae119a14c3fcff": 0,
     "auto-4a13494722712bdc": 0,
     "auto-89f6a970f2a5810b": 0,
-    "auto-466e25b4c40130cb": 0
+    "auto-466e25b4c40130cb": 0,
+    "auto-e748145a85a5fab6": 0,
+    "auto-bd1e80e696fd1ef1": 0,
+    "auto-5c88c5ab5cf276c6": 0,
+    "auto-26c072a4f76c0517": 0,
+    "auto-79d9ffa089cc8380": 0,
+    "auto-1c572f5a333cf985": 0,
+    "auto-69f6006244610712": 0,
+    "auto-71d6d5b06a06b19b": 0,
+    "auto-a8ce18b82048dca3": 0,
+    "auto-e1df27682ce6e028": 0,
+    "auto-baa832333d0ff064": 0,
+    "auto-b2183d9179602471": 0,
+    "auto-55d4ba07b3a353a2": 0,
+    "auto-363172e1f1d4f775": 0,
+    "auto-c0c31b84ff1eb9d5": 0,
+    "auto-190b0d1aefd44c98": 0,
+    "auto-831c5b4a77af625f": 0,
+    "auto-821e9023d623c99e": 0,
+    "auto-187c664466702866": 0,
+    "auto-593f5061aef1a210": 0,
+    "auto-0156798f38f0068b": 0,
+    "auto-995e46f9180c4b3a": 0,
+    "auto-fd3337ba85484d54": 0,
+    "auto-e23c501517a9783b": 0,
+    "auto-95379a075f97c911": 0,
+    "auto-442d4ce4f2bd60a1": 0,
+    "auto-0e55fd4b909dd7ee": 0,
+    "auto-451826abba40c345": 0,
+    "auto-b5d596e8752c8b54": 0,
+    "auto-59c663ad65295ee2": 0,
+    "auto-648f3ad2f544c20d": 0,
+    "auto-426c03d7e8271479": 0,
+    "auto-2b5b91625555c398": 0,
+    "auto-0b335fdeacf70840": 0,
+    "auto-9dfb444580c7bd7e": 0,
+    "auto-d0cff222a390b398": 0,
+    "auto-6ae9b30845853f38": 0,
+    "auto-6faeed2f0be2d17a": 0,
+    "auto-aaf99f658736093a": 0,
+    "auto-41ef32c505601bd7": 0,
+    "auto-21594ce63f422f58": 0,
+    "auto-ffc4431a7742443d": 0,
+    "auto-8e7c2f2ccb6fd9d6": 0
   },
   "last_run_at": "2026-10-19T05:39:07+00:00",
   "last_batch_size": 120,
@@ -8058,13 +8101,13 @@
     "auto-762e72155af54703": "2026-10-16T22:05:01+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-18T18:22:39+00:00"
+    "yingjiesheng": "2026-10-19T09:12:35+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 718
+    "yingjiesheng": 120
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 749
+    "yingjiesheng": 778
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180

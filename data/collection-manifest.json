@@ -2,31 +2,9 @@
   "run_date": "2026-10-19",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 8826,
+        "next_offset": 8986,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 541,
-  "records_found_this_run": 541,
-  "active_candidates": 25,
-  "pending_review": 516,
+  "records_found": 16,
+  "records_found_this_run": 16,
+  "active_candidates": 5,
+  "pending_review": 11,
   "results": [
     {
       "id": "boss",
@@ -2969,18 +2947,18 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 21,
-      "active_candidates": 2,
-      "pending_review": 19,
-      "pages_attempted": 500,
-      "pages_failed": 0,
-      "html_bytes": 18334241,
-      "links_seen": 64156,
-      "listing_url_candidates": 2500,
-      "listing_urls_visited": 292,
+      "records_found": 16,
+      "active_candidates": 5,
+      "pending_review": 11,
+      "pages_attempted": 511,
+      "pages_failed": 11,
+      "html_bytes": 18903842,
+      "links_seen": 63573,
+      "listing_url_candidates": 2497,
+      "listing_urls_visited": 234,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 8826,
+      "listing_cursor_next": 8986,
       "listing_rotation_groups": {
         "yjs-role-city": 44,
         "yjs-major-city": 44,
@@ -2989,20 +2967,20 @@
         "yjs-search": 23,
         "yjs-other": 1
       },
-      "tables_seen": 17683,
-      "embedded_json_blocks": 1462,
+      "tables_seen": 18190,
+      "embedded_json_blocks": 1347,
       "role_like_links": 0,
-      "discovery_pages_queued": 683,
+      "discovery_pages_queued": 663,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 187,
+      "direct_detail_pages_visited": 198,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 187,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 21,
+      "direct_detail_requests_attempted": 198,
+      "direct_detail_title_candidates": 23,
+      "direct_detail_title_rejected": 10,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 20,
+      "direct_detail_role_rows_emitted": 13,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3015,7 +2993,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-123-592.html",
-          "page_title": "安徽海螺创业投资有限责任公司招聘酒店管理_安徽山东校园招聘",
-          "text_preview": "安徽海螺创业投资有限责任公司招聘酒店管理_安徽山东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 安徽省大中专毕业生就业指导中心 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 安徽省大中专毕业生就业指导中心 核实，并请同时联系本站处理该转载信息。 [安徽山东]安徽海螺创业投资有限责任公司 职位： 酒店管理 发布时间： 2026-10-19 工作地点： 其它 信息来源： 安徽省大中专毕业生就业指导中心 职位类型： 全职 职位描述 酒店管理 招聘单位：安徽海螺创业投资有限责任公司 工作类型：全职 职位类别：酒店/宾馆经理 工作地点：芜湖市,宣城市,烟台市 薪资待遇：5k-8k 发布日期：2026-10-19 专业：工商管理类,旅游管理(酒店方向),酒店管理 岗位职责：根据酒店工作要求，协助做好酒店餐饮、房务等专业管理工作，发挥所学特长，协助建立健全酒店管理体系、提升酒店服务质量和经营效益。 任职要求：1.全日制本科及以上学历。2.服从公司工作岗位安排和内部工作调动、愿意多岗锻炼。3.身体健康、沟通能力良好，专业基础知识扎实。4.学习成绩优异，学生会担任重要职务，党员可优先考虑"
+          "url_path": "/job-008-124-629.html",
+          "page_title": "西南交通大学希望学院会计学院招聘专职教师_成都校园招聘",
+          "text_preview": "西南交通大学希望学院会计学院招聘专职教师_成都校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 成都 全职 > 职位详细 说明： 此信息由 西南交通大学希望学院人事处 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 西南交通大学希望学院人事处 核实，并请同时联系本站处理该转载信息。 [成都]西南交通大学希望学院会计学院 职位： 专职教师 发布时间： 2026-10-19 工作地点： 成都 信息来源： 西南交通大学希望学院人事处 职位类型： 全职 专业标签： 工商管理 职位描述 西南交通大学希望学院是经国家教育部批准、由首批进入“双一流”建设的百年名校 西南交通大学按照高标准、高起点的要求创办、以轨道交通特色立校的一所全日制工科类普通本科高等院校。学院坚持“立足西部，面向全国，以市场需求为导向，建设应用技术型大学，打造国内一流的独立本科院校”的发展定位，弘扬“明德励志、务实创新、竢实扬华、自强不息”的精神，坚持“以人为本、学生第一”的办学理念，坚持“以学生为中心，把每个学生培养成才”的办学宗旨，坚持“质量立校、特色强校、人才兴校”的办学战略，不断提高教育教学水平，是四川省首批应用型转型和三全育人改革试点院校，现有在校学生"
         },
         {
-          "url_path": "/job-008-123-593.html",
-          "page_title": "蚌埠华阳新材料有限公司招聘国际业务专员_安徽校园招聘",
-          "text_preview": "蚌埠华阳新材料有限公司招聘国际业务专员_安徽校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 安徽省大中专毕业生就业指导中心 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 安徽省大中专毕业生就业指导中心 核实，并请同时联系本站处理该转载信息。 [安徽]蚌埠华阳新材料有限公司 职位： 国际业务专员 发布时间： 2026-10-19 工作地点： 其它 信息来源： 安徽省大中专毕业生就业指导中心 职位类型： 全职 专业标签： 纺织类 经济与贸易 职位描述 国际业务专员 招聘单位：蚌埠华阳新材料有限公司 工作类型：全职 职位类别：贸易/外贸专员/助理 工作地点：蚌埠市 薪资待遇：面议 发布日期：2026-10-19 专业：纺织工程,纺织化学与染整工程,国际经济与贸易,英语(国际贸易),现代纺织技术,染整技术,国际经济与贸易,应用英语 岗位职责：1、主要负责客户订单的跟踪，与客户及工厂协调。2、正确翻译国外客户工艺单；通过网站及展会开发客户、开发成衣样品，跟进打样进度，将客人意见翻译给工厂生产人员；3、掌控大货及推销样交期，解决大货生产中的问题，并安排QC按照客人要求检验面辅料大货；"
+          "url_path": "/job-008-124-630.html",
+          "page_title": "北京市大兴区瀛海镇人民政府招聘交通协管员_北京校园招聘",
+          "text_preview": "北京市大兴区瀛海镇人民政府招聘交通协管员_北京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 全职 > 职位详细 说明： 此信息由 北京市大兴区人民政府 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 北京市大兴区人民政府 核实，并请同时联系本站处理该转载信息。 [北京]北京市大兴区瀛海镇人民政府 职位： 交通协管员 发布时间： 2026-10-19 工作地点： 北京 信息来源： 北京市大兴区人民政府 职位类型： 全职 专业标签： 教育学 职位描述 北京瀛海太和劳动服务有限责任公司面向社会公开招聘劳务派遣人员公告 来源：瀛海镇 日期：2026-10-19 15:34 分享: X 根据工作需要，北京瀛海太和劳动服务有限责任公司现面向社会公开招聘劳务派遣人员，具体事项公告如下： 一、用工单位及招聘岗位 （一）用工单位 北京市大兴区瀛海镇人民政府 （二）招聘岗位 招聘岗位共2个，具体岗位见《招聘岗位一览表》。 二、招聘条件 （一）具有中华人民共和国国籍，拥护中国共产党领导，遵守宪法和法律，具有良好的政治素质和道德品行。 （二）身心健康，具有正常履行职责的身体条件和心理素质。 （三）符合回避制度的有关要求。 （四）招聘"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 20,
+      "role_records": 13,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 20,
-      "announcement_records": 1,
+      "direct_detail_role_records": 13,
+      "announcement_records": 3,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "国际业务助理",
-        "电气储配",
-        "拍摄剪辑专员",
-        "工艺装备技术研发",
-        "质量检验",
-        "国内业务助理",
-        "科研助理"
+        "专职教师",
+        "人事代理工作人员",
+        "技术助理",
+        "总经理助理",
+        "商品运营",
+        "会员运营",
+        "直播管理"
       ],
       "role_field_samples": [
         {
@@ -3072,72 +3050,72 @@
           }
         },
         {
-          "title": "国际业务助理",
-          "company": "蚌埠华阳新材料有限公司",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "大专",
-          "source_url": "https://m.yingjiesheng.com/job-008-123-594.html",
+          "title": "专职教师",
+          "company": "西南交通大学希望学院会计学院",
+          "city": "成都",
+          "salary": "",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-629.html",
           "field_lengths": {
-            "description": 547,
-            "responsibilities": 122,
-            "requirements": 81,
-            "benefits": 198
-          }
-        },
-        {
-          "title": "电气储配",
-          "company": "深圳市泰昂能源科技股份有限公司绩溪分公司",
-          "city": "其它",
-          "salary": "5k-8k",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-123-554.html",
-          "field_lengths": {
-            "description": 668,
-            "responsibilities": 98,
-            "requirements": 30,
-            "benefits": 407
-          }
-        },
-        {
-          "title": "拍摄剪辑专员",
-          "company": "佛山市璨维传媒科技有限公司",
-          "city": "深圳",
-          "salary": "3K-5K/月",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-123-560.html",
-          "field_lengths": {
-            "description": 214,
-            "responsibilities": 42,
-            "requirements": 10,
+            "description": 646,
+            "responsibilities": 0,
+            "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "工艺装备技术研发",
-          "company": "广西建华机械有限公司",
+          "title": "人事代理工作人员",
+          "company": "将对体检合格者的思想政治表现、道德品质、业务能力、工作实绩等情况进行详细考核。考核不合格者淘汰。 因体检或考核不合格出现",
           "city": "其它",
-          "salary": "5K-6K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-123-561.html",
+          "salary": "",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-631.html",
           "field_lengths": {
-            "description": 144,
-            "responsibilities": 8,
-            "requirements": 9,
-            "benefits": 46
+            "description": 145,
+            "responsibilities": 0,
+            "requirements": 1159,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "技术助理",
+          "company": "江苏力速达液压有限公司",
+          "city": "常州",
+          "salary": "12万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-586.html",
+          "field_lengths": {
+            "description": 612,
+            "responsibilities": 211,
+            "requirements": 257,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "总经理助理",
+          "company": "云水之间（常州）新材料有限公司",
+          "city": "常州",
+          "salary": "5K-8K",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-587.html",
+          "field_lengths": {
+            "description": 319,
+            "responsibilities": 32,
+            "requirements": 160,
+            "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "TimeoutError: timed out",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-19T05:18:07+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-19T08:49:15+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3948,11 +3926,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 6763,
-  "published_priority_candidates": 248,
-  "published_pending_review": 6515,
-  "records_added_this_run": 101,
-  "records_updated_this_run": 420,
+  "published_total_jobs": 6775,
+  "published_priority_candidates": 253,
+  "published_pending_review": 6522,
+  "records_added_this_run": 12,
+  "records_updated_this_run": 4,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3978,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 824,
-    "fields_checked": 5768,
+    "rows": 836,
+    "fields_checked": 5852,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3989,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 824,
+    "company_fields_checked": 836,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-19T05:39:25+00:00",
+  "quality_checked_at": "2026-10-19T09:12:58+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
