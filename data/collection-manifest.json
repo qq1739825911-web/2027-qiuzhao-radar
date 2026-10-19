@@ -3926,8 +3926,8 @@
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
   "published_total_jobs": 6723,
-  "published_priority_candidates": 253,
-  "published_pending_review": 6470,
+  "published_priority_candidates": 247,
+  "published_pending_review": 6476,
   "records_added_this_run": 0,
   "records_updated_this_run": 26,
   "quality_gate_version": "2.3",
@@ -3973,6 +3973,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-18T23:30:40+00:00",
+  "quality_checked_at": "2026-10-19T05:08:05+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
