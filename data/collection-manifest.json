@@ -2,31 +2,9 @@
   "run_date": "2026-10-19",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 9146,
+        "next_offset": 9306,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 528,
-  "records_found_this_run": 528,
-  "active_candidates": 34,
-  "pending_review": 494,
+  "records_found": 15,
+  "records_found_this_run": 15,
+  "active_candidates": 0,
+  "pending_review": 15,
   "results": [
     {
       "id": "boss",
@@ -2969,40 +2947,39 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 30,
-      "active_candidates": 7,
-      "pending_review": 23,
+      "records_found": 15,
+      "active_candidates": 0,
+      "pending_review": 15,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 17822524,
-      "links_seen": 53253,
-      "listing_url_candidates": 2462,
-      "listing_urls_visited": 249,
+      "html_bytes": 17724683,
+      "links_seen": 49609,
+      "listing_url_candidates": 2403,
+      "listing_urls_visited": 301,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 9146,
+      "listing_cursor_next": 9306,
       "listing_rotation_groups": {
-        "yjs-role-city": 52,
-        "yjs-major-city": 51,
-        "yjs-subject-city": 51,
+        "yjs-role-city": 46,
+        "yjs-major-city": 46,
+        "yjs-subject-city": 46,
         "yjs-mobile": 2,
-        "yjs-other": 1,
-        "yjs-search": 3
+        "yjs-search": 20
       },
-      "tables_seen": 15941,
-      "embedded_json_blocks": 1434,
+      "tables_seen": 14645,
+      "embedded_json_blocks": 1300,
       "role_like_links": 0,
-      "discovery_pages_queued": 676,
+      "discovery_pages_queued": 681,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 194,
+      "direct_detail_pages_visited": 189,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 194,
-      "direct_detail_title_candidates": 44,
-      "direct_detail_title_rejected": 18,
+      "direct_detail_requests_attempted": 189,
+      "direct_detail_title_candidates": 22,
+      "direct_detail_title_rejected": 11,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 26,
+      "direct_detail_role_rows_emitted": 11,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3015,7 +2992,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·刚刚活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -3023,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-124-590.html",
-          "page_title": "南京中车浦镇海泰制动设备有限公司招聘工艺师_南京校园招聘",
-          "text_preview": "南京中车浦镇海泰制动设备有限公司招聘工艺师_南京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 南京 全职 > 职位详细 说明： 此信息由 河海大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 河海大学 核实，并请同时联系本站处理该转载信息。 [南京]南京中车浦镇海泰制动设备有限公司 职位： 工艺师 发布时间： 2026-10-19 工作地点： 南京 信息来源： 河海大学 职位类型： 全职 专业标签： 自动化 仪器仪表 机械类 电气类 计算机 职位描述 工艺师 15万元/年 2026-10-19 15:26:01发布 职位要求： 职位性质：全职 工作城市：江苏省南京市浦口区 招聘人数：2 学历要求：硕士 职位类别：工程技术人员 需求专业：机械设计制造类,机电设备类,自动化类,轨道装备类,电子信息类 职位描述： 岗位职责 1、负责测试设备的技术要求编制、关键部件选型确认、调试验收、设备管理，维修维保等工作； 2、负责非标自动化测试设备上位机软件设计与开发C#，上位机与PLC、采集卡、仪表等设备通讯开发与调试，完成测试流程、数据采集、逻辑判定、报表存储功能，及现场软硬件联调，故障定位与问题修复等。 任职资格 1、自动"
+          "url_path": "/job-008-102-148.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5dfb950c2ed948ae4b7ef1f0cde0e628530e8651f17e528d37';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-124-595.html",
-          "page_title": "上海群鲤服饰有限公司招聘商品运营|会员运营|零售管理|直播管理|主播_上海校园招聘",
-          "text_preview": "上海群鲤服饰有限公司招聘商品运营|会员运营|零售管理|直播管理|主播_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 江南大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 江南大学 核实，并请同时联系本站处理该转载信息。 [上海]上海群鲤服饰有限公司 职位： 商品运营|会员运营|零售管理|直播管理|主播 发布时间： 2026-10-19 工作地点： 上海 信息来源： 江南大学 职位类型： 全职 专业标签： 电子商务 工商管理 纺织类 职位描述 FILA2027届校招生（商品运营、会员运营、零售管理、直播管理、主播） 18万元/年 2026-10-19 15:38:48发布 职位要求： 职位性质：全职 工作城市：上海市 招聘人数：10 学历要求：本科 职位类别：商业和服务业人员 语言能力：不限 需求专业：纺织服装类,工商管理类,电子商务类,新闻出版类,公共管理类 职位描述： 岗位职责 商品运营岗：商品经理储备梯队，负责商品采买、商品调拨及销售数据分析等。 会员运营岗： 会员运营经理储备梯队，负责会员生命周期运营管理等。 零售管理岗：零售经理储备梯队，负责店铺运营、团队"
+          "url_path": "/job-008-100-561.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5dfb950d4b06181ab7d6a57fe17f085194219bbe67923efe27';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,22 +3016,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 26,
+      "role_records": 11,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 26,
+      "direct_detail_role_records": 11,
       "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ݼרҵƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "商品运营",
-        "会员运营",
-        "直播管理",
-        "签派助理",
-        "销售工程师",
-        "销售工程师助理",
-        "食品研发员"
+        "行政助理",
+        "研究助理",
+        "研究助理",
+        "硬件工程师",
+        "生物信息方向助理研究员",
+        "科研助理",
+        "专职教师"
       ],
       "role_field_samples": [
         {
@@ -3072,58 +3049,58 @@
           }
         },
         {
-          "title": "商品运营",
-          "company": "上海群鲤服饰有限公司",
-          "city": "上海",
-          "salary": "18万元/年",
+          "title": "行政助理",
+          "company": "应届生求职网",
+          "city": "其它",
+          "salary": "面议",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-595.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-650.html",
           "field_lengths": {
-            "description": 715,
-            "responsibilities": 209,
-            "requirements": 327,
+            "description": 969,
+            "responsibilities": 230,
+            "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "会员运营",
-          "company": "上海群鲤服饰有限公司",
-          "city": "上海",
-          "salary": "18万元/年",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-595.html",
+          "title": "研究助理",
+          "company": "深圳理工大学生命健康学院孛儿只斤吉莫课题组",
+          "city": "深圳",
+          "salary": "10万/年",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-655.html",
           "field_lengths": {
-            "description": 715,
-            "responsibilities": 209,
-            "requirements": 327,
+            "description": 2769,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 850
+          }
+        },
+        {
+          "title": "研究助理",
+          "company": "应届生求职网",
+          "city": "其它",
+          "salary": "50-60万元",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-652.html",
+          "field_lengths": {
+            "description": 1447,
+            "responsibilities": 73,
+            "requirements": 414,
             "benefits": 0
           }
         },
         {
-          "title": "直播管理",
-          "company": "上海群鲤服饰有限公司",
-          "city": "上海",
-          "salary": "18万元/年",
+          "title": "硬件工程师",
+          "company": "清华大学基础医学院周牧课题组",
+          "city": "北京",
+          "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-595.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-658.html",
           "field_lengths": {
-            "description": 715,
-            "responsibilities": 209,
-            "requirements": 327,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "签派助理",
-          "company": "苏南瑞丽航空有限公司",
-          "city": "昆明",
-          "salary": "7万元/年",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-601.html",
-          "field_lengths": {
-            "description": 587,
-            "responsibilities": 276,
-            "requirements": 187,
+            "description": 852,
+            "responsibilities": 212,
+            "requirements": 226,
             "benefits": 0
           }
         }
@@ -3136,8 +3113,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-19T13:56:17+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-19T16:27:18+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3951,8 +3928,8 @@
   "published_total_jobs": 6815,
   "published_priority_candidates": 257,
   "published_pending_review": 6558,
-  "records_added_this_run": 105,
-  "records_updated_this_run": 409,
+  "records_added_this_run": 4,
+  "records_updated_this_run": 11,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 4,
@@ -3996,6 +3973,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-19T14:21:14+00:00",
+  "quality_checked_at": "2026-10-19T16:49:15+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
