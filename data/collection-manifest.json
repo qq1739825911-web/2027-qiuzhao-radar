@@ -2,31 +2,9 @@
   "run_date": "2026-10-20",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 10426,
+        "next_offset": 10586,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 521,
-  "records_found_this_run": 521,
-  "active_candidates": 28,
-  "pending_review": 493,
+  "records_found": 40,
+  "records_found_this_run": 40,
+  "active_candidates": 5,
+  "pending_review": 35,
   "results": [
     {
       "id": "boss",
@@ -2972,27 +2950,26 @@
       "records_found": 40,
       "active_candidates": 5,
       "pending_review": 35,
-      "pages_attempted": 500,
-      "pages_failed": 0,
-      "html_bytes": 16891989,
-      "links_seen": 49346,
-      "listing_url_candidates": 1668,
-      "listing_urls_visited": 296,
+      "pages_attempted": 502,
+      "pages_failed": 2,
+      "html_bytes": 17664650,
+      "links_seen": 50181,
+      "listing_url_candidates": 1473,
+      "listing_urls_visited": 244,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 10426,
+      "listing_cursor_next": 10586,
       "listing_rotation_groups": {
-        "yjs-role-city": 49,
-        "yjs-mobile": 4,
-        "yjs-other": 1,
-        "yjs-search": 10,
-        "yjs-major-city": 48,
-        "yjs-subject-city": 48
+        "yjs-role-city": 47,
+        "yjs-major-city": 46,
+        "yjs-subject-city": 46,
+        "yjs-mobile": 2,
+        "yjs-search": 19
       },
-      "tables_seen": 15017,
-      "embedded_json_blocks": 1425,
+      "tables_seen": 16357,
+      "embedded_json_blocks": 1435,
       "role_like_links": 0,
-      "discovery_pages_queued": 679,
+      "discovery_pages_queued": 681,
       "listing_pages_queued": 190,
       "direct_detail_pages_visited": 191,
       "direct_detail_links_queued": 0,
@@ -3023,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-127-807.html",
-          "page_title": "北京迈基诺基因科技股份有限公司招聘医学专员_北京其它校园招聘",
-          "text_preview": "北京迈基诺基因科技股份有限公司招聘医学专员_北京其它校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 其它 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [北京其它]北京迈基诺基因科技股份有限公司 职位： 医学专员 发布时间： 2026-10-20 工作地点： 北京 其它 信息来源： 浙江大学 职位类型： 全职 专业标签： 生物科学 生物工程 基础医学 职位描述 北京迈基诺基因科技股份有限公司 招聘信息 医学专员 2026-10-20 16:19:16 职位描述 岗位职责: 1.与负责区域内的客户、销售进行技术交流，解答其提出的技术问题； 2、定期对销售团队进行产品培训，协助销售团队开展推广宣讲活动，如讲座、科室会等； 3.结合客户反馈和市场信息，定期整理及分析客户反馈的数据，总结定期内客户的报告； 4.参与完成领导布置的其他任务。 任职要求： 1.生物工程、分子生物学、遗传学、医学相关专业，硕士及以上学位，有技术支持相关工作经验； 2.英语听说能力良好、读写能力强，通过六级； 3.专业基础知识扎实，有高通量测序经"
+          "url_path": "/job-008-127-833.html",
+          "page_title": "雅科贝思精密机电（上海）有限公司招聘精密机械设计工程师_杭州校园招聘",
+          "text_preview": "雅科贝思精密机电（上海）有限公司招聘精密机械设计工程师_杭州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [杭州]雅科贝思精密机电（上海）有限公司 职位： 精密机械设计工程师 发布时间： 2026-10-20 工作地点： 其它 信息来源： 浙江大学 职位类型： 全职 专业标签： 机械类 药学 光学工程 化工与制药 轻工类 职位描述 雅科贝思精密机电（上海）有限公司 招聘信息 精密机械设计工程师 2026-10-20 16:12:16 职位描述 工作职责 1.平台机构开发:负责磁悬浮/气浮等精密运动平台的机械设计与 方案优化: 2.装配与验证:参与并指导平台的精密装配、调试及性能验证; 3.系统协作:与研发团队协同推进整机系统设计与控制系统开发 4.技术沉淀:编制量测相关技术规范，建设并维护公司的精密测量 知识体系。 岗位要求 1、全日制统招本科及以上学历，机械制造及其自动化、机械电子工 程、车辆工程等相关专业，硕博优先; 2、具备精密系统建模(运动学、动力学)与精度"
         },
         {
-          "url_path": "/job-008-127-804.html",
-          "page_title": "上海璇相科技有限公司招聘集成光芯片工程师_上海校园招聘",
-          "text_preview": "上海璇相科技有限公司招聘集成光芯片工程师_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [上海]上海璇相科技有限公司 职位： 集成光芯片工程师 发布时间： 2026-10-20 工作地点： 上海 信息来源： 浙江大学 职位类型： 全职 专业标签： 光学工程 物理学 电子信息 职位描述 上海璇相科技有限公司 招聘信息 集成光芯片工程师 2026-10-20 16:20:01 职位描述 职位描述 1.负责片上集成光学、光波导及相关光子芯片的设计、仿真、测试与优化。 2.开展超表面芯片与片上光控技术的协同集成，提升光束调控、耦合及系统集成能力。 ？ 3.参与芯片流片、封装与性能验证，支持其在量子光控和中性原子量子计算系统中的应用。？ 4.与光学、工艺及系统团队协作，推进技术方案落地与迭代。 职位要求 1.光学、物理、微电子、电子工程等相关专业本科及以上学历。 ？2.具备集成光子、光波导、硅光、薄膜铌酸锂或其他光芯片相关研发经验。 3.熟悉光子器件仿真与测试；掌握 Lu"
+          "url_path": "/job-008-127-811.html",
+          "page_title": "黄山工业泵制造有限公司2027招聘机械设计_安徽校园招聘",
+          "text_preview": "黄山工业泵制造有限公司2027招聘机械设计_安徽校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [安徽]黄山工业泵制造有限公司 职位： 2027招聘机械设计 发布时间： 2026-10-20 工作地点： 其它 信息来源： 浙江大学 职位类型： 全职 专业标签： 机械类 自动化 职位描述 黄山工业泵制造有限公司 招聘信息 机械设计 2026-10-20 16:17:22 职位描述 一、机械设计｜10人 ？学历：本科 ？？薪资：8K 14K ？？专业：机械相关专业 岗位职责 1. 负责公司泵类新产品的设计开发，落实项目开发计划，输出全套设计图纸、BOM物料清单以及设计技术文档。 2. 根据客户订单的定制化需求，完成专用产品方案设计、图纸绘制，跟进设计评审、样机试制、试产验证全流程。 3. 跟踪产品样机试验，收集试制反馈问题，优化产品结构，解决产品在加工、装配阶段出现的各类设计问题。 4. 做好图纸版本管理、技术资料归档；对接工艺、生产部门，提供技术支持，配合处理现场生产的"
         }
       ],
       "browser_render_attempts": 0,
@@ -3048,13 +3025,13 @@
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "集成光芯片工程师",
-        "助理电机测试工程师",
-        "助理电机研发工程师",
-        "有机合成研究员",
-        "质量工程师",
-        "材料产品研发岗",
-        "仪器仪表技术研发岗"
+        "精密机械设计工程师",
+        "机械设计",
+        "黄山工业泵制造有限公司",
+        "食品应用研发员",
+        "销售工程师",
+        "后训练工程师",
+        "客户满意与公司质量部培训生"
       ],
       "role_field_samples": [
         {
@@ -3072,72 +3049,72 @@
           }
         },
         {
-          "title": "集成光芯片工程师",
-          "company": "上海璇相科技有限公司",
-          "city": "上海",
+          "title": "精密机械设计工程师",
+          "company": "雅科贝思精密机电（上海）有限公司",
+          "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-804.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-833.html",
           "field_lengths": {
-            "description": 383,
+            "description": 417,
+            "responsibilities": 133,
+            "requirements": 216,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "机械设计",
+          "company": "黄山工业泵制造有限公司",
+          "city": "其它",
+          "salary": "8K",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-811.html",
+          "field_lengths": {
+            "description": 518,
+            "responsibilities": 249,
+            "requirements": 169,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "黄山工业泵制造有限公司",
+          "company": "机械类",
+          "city": "全国",
+          "salary": "",
+          "degree": "待核验",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-811.html",
+          "field_lengths": {
+            "description": 0,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "助理电机测试工程师",
-          "company": "雅科贝思精密机电（上海）有限公司",
+          "title": "食品应用研发员",
+          "company": "杭州天草科技有限公司",
           "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-786.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-805.html",
           "field_lengths": {
-            "description": 523,
-            "responsibilities": 158,
-            "requirements": 173,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "助理电机研发工程师",
-          "company": "雅科贝思精密机电（上海）有限公司",
-          "city": "上海",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-787.html",
-          "field_lengths": {
-            "description": 399,
-            "responsibilities": 67,
-            "requirements": 262,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "有机合成研究员",
-          "company": "康龙化成（北京）新药技术股份有限公司",
-          "city": "北京",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-784.html",
-          "field_lengths": {
-            "description": 775,
-            "responsibilities": 173,
-            "requirements": 335,
+            "description": 397,
+            "responsibilities": 0,
+            "requirements": 119,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-20T17:31:04+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-20T19:14:18+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3951,8 +3928,8 @@
   "published_total_jobs": 7228,
   "published_priority_candidates": 269,
   "published_pending_review": 6959,
-  "records_added_this_run": 92,
-  "records_updated_this_run": 417,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 40,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3996,6 +3973,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-20T17:52:00+00:00",
+  "quality_checked_at": "2026-10-20T19:35:01+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
