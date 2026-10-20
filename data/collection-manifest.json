@@ -2,31 +2,9 @@
   "run_date": "2026-10-20",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 9786,
+        "next_offset": 9946,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 449,
-  "records_found_this_run": 449,
-  "active_candidates": 28,
-  "pending_review": 421,
+  "records_found": 32,
+  "records_found_this_run": 32,
+  "active_candidates": 5,
+  "pending_review": 27,
   "results": [
     {
       "id": "boss",
@@ -2969,40 +2947,39 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 13,
-      "active_candidates": 3,
-      "pending_review": 10,
+      "records_found": 32,
+      "active_candidates": 5,
+      "pending_review": 27,
       "pages_attempted": 500,
       "pages_failed": 0,
-      "html_bytes": 17299945,
-      "links_seen": 49298,
-      "listing_url_candidates": 1668,
-      "listing_urls_visited": 297,
+      "html_bytes": 17551247,
+      "links_seen": 46652,
+      "listing_url_candidates": 2458,
+      "listing_urls_visited": 270,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 9786,
+      "listing_cursor_next": 9946,
       "listing_rotation_groups": {
-        "yjs-subject-city": 48,
-        "yjs-role-city": 48,
-        "yjs-major-city": 48,
-        "yjs-mobile": 4,
-        "yjs-other": 1,
-        "yjs-search": 11
+        "yjs-subject-city": 47,
+        "yjs-major-city": 47,
+        "yjs-role-city": 46,
+        "yjs-mobile": 2,
+        "yjs-search": 18
       },
-      "tables_seen": 15696,
-      "embedded_json_blocks": 1322,
+      "tables_seen": 15429,
+      "embedded_json_blocks": 1374,
       "role_like_links": 0,
-      "discovery_pages_queued": 697,
+      "discovery_pages_queued": 649,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 191,
+      "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 191,
-      "direct_detail_title_candidates": 21,
-      "direct_detail_title_rejected": 9,
+      "direct_detail_requests_attempted": 221,
+      "direct_detail_title_candidates": 41,
+      "direct_detail_title_rejected": 10,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 12,
+      "direct_detail_role_rows_emitted": 31,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3015,7 +2992,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -3023,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-119-807.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5dfb21adabb2052db5bcab78ce3e591ba76fbf62d9af0ed2b8';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-127-650.html",
+          "page_title": "昆山佳乐物业管理有限公司2027招聘秩序维护员_江苏校园招聘",
+          "text_preview": "昆山佳乐物业管理有限公司2027招聘秩序维护员_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 昆山人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 昆山人才网 核实，并请同时联系本站处理该转载信息。 [江苏]昆山佳乐物业管理有限公司 职位： 2027招聘秩序维护员 发布时间： 2026-10-20 工作地点： 其它 信息来源： 昆山人才网 职位类型： 全职 专业标签： 工商管理 公共卫生与预防 职位描述 发布时间：2026-10-20 为进一步加强就业困难人员的生活保障，现面向社会公开招募公益性岗位工作人员，具体事宜如下： 一、招聘对象及相关要求 1.拥护中国共产党的领导，热爱祖国，具有中华人民共和国国籍； 2.遵章守纪、品行端正、服从分配； 3.身体健康、无传染性疾病； 4.有下列情形之一的不得录用： （1）本人受过治安刑事处罚的； （2）有犯罪嫌疑或违法劣迹尚未查清的； （3）有其他不良行为，不宜从事所聘岗位工作的； （4）无纹身、无不良嗜好的。 二、招聘岗位及人数 秩序维护员12名。 三、任职要求 秩序维护员： 1.年龄60周岁以内； 2.性别男； 3.有"
         },
         {
-          "url_path": "/job-008-119-810.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5dfb21ae0113c6b3c4910594263a2c1fdcbb7309eed8af5133';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-127-649.html",
+          "page_title": "林芝市人力资源和社会保障局2026招聘_西藏校园招聘",
+          "text_preview": "林芝市人力资源和社会保障局2026招聘_西藏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广东省人力资源和社会保障厅 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广东省人力资源和社会保障厅 核实，并请同时联系本站处理该转载信息。 [西藏]林芝市人力资源和社会保障局 职位： 2026招聘 发布时间： 2026-10-20 工作地点： 其它 信息来源： 广东省人力资源和社会保障厅 职位类型： 全职 职位描述 西藏自治区林芝市2026年高校毕业生“三支一扶”计划面向广东省定向招募公告 信息来源：本网 时间：2026-10-20 为贯彻落实党中央、国务院关于进一步引导和鼓励高校毕业生到基层工作的决策部署，根据西藏自治区人力资源和社会保障厅统一安排，我市拟选拔一批高校毕业生到基层从事支农和帮扶乡村振兴服务。现将有关事项公告如下： 一、招募对象 1.广东籍高校毕业生，即高考时户籍在广东或者广东普通高等院校毕业生。 2.参加广东省2026年高校毕业生“三支一扶”计划招募笔试且未被招募的人员。 二、招募计划 2026年，林芝市面向广东省定向招募“三支一扶”人员15名，详见林芝市202"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,22 +3016,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 12,
+      "role_records": 31,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 12,
+      "direct_detail_role_records": 31,
       "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "人ӢƸϢ|ѧְ|人ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "销售顾问",
-        "人力资源助理",
-        "分析研究员",
-        "制剂研究员",
-        "助理物联网工程师",
-        "行政秘书",
-        "工科类专业教师"
+        "[西藏]林芝市人力资源和社会保障局",
+        "阿道夫推广培训管培生",
+        "Java开发工程师",
+        "运营管培生",
+        "生产管培生",
+        "SQE管培生",
+        "采购工程师"
       ],
       "role_field_samples": [
         {
@@ -3072,59 +3049,59 @@
           }
         },
         {
-          "title": "销售顾问",
-          "company": "湖南君恩科技有限公司",
-          "city": "长沙、株洲、湘潭、衡阳、岳阳",
-          "salary": "3K-6K/月",
-          "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-192.html",
+          "title": "[西藏]林芝市人力资源和社会保障局",
+          "company": "应届生求职网",
+          "city": "其它",
+          "salary": "10元/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-649.html",
           "field_lengths": {
-            "description": 370,
-            "responsibilities": 146,
-            "requirements": 63,
+            "description": 37,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "阿道夫推广培训管培生",
+          "company": "广州澳谷生物科技有限公司",
+          "city": "广州",
+          "salary": "6K-8K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-594.html",
+          "field_lengths": {
+            "description": 634,
+            "responsibilities": 261,
+            "requirements": 252,
             "benefits": 43
           }
         },
         {
-          "title": "人力资源助理",
-          "company": "湖南永杉锂业有限公司",
-          "city": "长沙",
-          "salary": "6K-8K/月",
+          "title": "Java开发工程师",
+          "company": "广东盈通智联数字技术有限公司",
+          "city": "深圳",
+          "salary": "9K-15K/月",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-193.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-605.html",
           "field_lengths": {
-            "description": 359,
-            "responsibilities": 176,
-            "requirements": 87,
-            "benefits": 21
+            "description": 460,
+            "responsibilities": 122,
+            "requirements": 208,
+            "benefits": 47
           }
         },
         {
-          "title": "分析研究员",
-          "company": "江苏宇锐医药科技有限公司",
-          "city": "常州",
-          "salary": "7万元/年",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-177.html",
+          "title": "运营管培生",
+          "company": "广东盈通智联数字技术有限公司",
+          "city": "佛山",
+          "salary": "8K-14K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-600.html",
           "field_lengths": {
-            "description": 551,
-            "responsibilities": 325,
-            "requirements": 99,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "制剂研究员",
-          "company": "江苏宇锐医药科技有限公司",
-          "city": "常州",
-          "salary": "8万元/年",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-178.html",
-          "field_lengths": {
-            "description": 550,
-            "responsibilities": 319,
-            "requirements": 104,
-            "benefits": 0
+            "description": 329,
+            "responsibilities": 113,
+            "requirements": 88,
+            "benefits": 49
           }
         }
       ],
@@ -3136,8 +3113,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-20T05:15:08+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-20T08:29:59+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3948,14 +3925,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 6964,
-  "published_priority_candidates": 259,
-  "published_pending_review": 6705,
-  "records_added_this_run": 176,
-  "records_updated_this_run": 262,
+  "published_total_jobs": 6993,
+  "published_priority_candidates": 263,
+  "published_pending_review": 6730,
+  "records_added_this_run": 30,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 0,
+    "aggregator_non_detail_or_non_role_records_removed": 1,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3978,8 +3955,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 856,
-    "fields_checked": 5992,
+    "rows": 885,
+    "fields_checked": 6195,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3989,13 +3966,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 856,
+    "company_fields_checked": 885,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-20T05:35:13+00:00",
+  "quality_checked_at": "2026-10-20T08:46:15+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
