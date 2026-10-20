@@ -1,32 +1,10 @@
 {
-  "run_date": "2026-10-19",
+  "run_date": "2026-10-20",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 9466,
+        "next_offset": 9626,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 523,
-  "records_found_this_run": 523,
-  "active_candidates": 33,
-  "pending_review": 490,
+  "records_found": 30,
+  "records_found_this_run": 30,
+  "active_candidates": 7,
+  "pending_review": 23,
   "results": [
     {
       "id": "boss",
@@ -2972,32 +2950,32 @@
       "records_found": 30,
       "active_candidates": 7,
       "pending_review": 23,
-      "pages_attempted": 500,
-      "pages_failed": 0,
-      "html_bytes": 18452262,
-      "links_seen": 52351,
-      "listing_url_candidates": 1654,
+      "pages_attempted": 501,
+      "pages_failed": 1,
+      "html_bytes": 18745211,
+      "links_seen": 62724,
+      "listing_url_candidates": 2500,
       "listing_urls_visited": 254,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 9466,
+      "listing_cursor_next": 9626,
       "listing_rotation_groups": {
-        "yjs-subject-city": 44,
-        "yjs-major-city": 44,
-        "yjs-role-city": 44,
-        "yjs-mobile": 4,
-        "yjs-search": 23,
+        "yjs-role-city": 48,
+        "yjs-major-city": 47,
+        "yjs-search": 15,
+        "yjs-subject-city": 47,
+        "yjs-mobile": 2,
         "yjs-other": 1
       },
-      "tables_seen": 17975,
-      "embedded_json_blocks": 1433,
+      "tables_seen": 18819,
+      "embedded_json_blocks": 1470,
       "role_like_links": 0,
-      "discovery_pages_queued": 683,
+      "discovery_pages_queued": 680,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 187,
+      "direct_detail_pages_visited": 191,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 187,
+      "direct_detail_requests_attempted": 191,
       "direct_detail_title_candidates": 44,
       "direct_detail_title_rejected": 18,
       "direct_detail_score_gate_recovered": 0,
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-124-650.html",
-          "page_title": "良渚实验室|浙江大学陈家明教授课题组招聘行政助理_浙江校园招聘",
-          "text_preview": "良渚实验室|浙江大学陈家明教授课题组招聘行政助理_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [浙江]良渚实验室|浙江大学陈家明教授课题组 职位： 行政助理 发布时间： 2026-10-19 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 工商管理 公共管理 管理科学与工程 职位描述 良渚实验室/浙江大学陈家明教授课题组2026年诚聘行政助理 共计1个岗位，招 若干人 基本信息 发布时间：2026-10-19 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 工商管理 展开 公告详情 一、单位及课题组介绍 良渚实验室（系统医学与精准诊治浙江省实验室）由浙江大学牵头建设，将集聚科技创新和临床优势资源，BT-IT融合，在揭示疾病机制的同时创新精准诊治方法与技术，建设成为国内领先、国际一流的生命健康重大科创平台。 陈家明教授博士毕业于美国加州大学Berkeley分校，现任良渚实验室特聘教授和浙江大学求是讲席教授。团队致力于调"
+          "url_path": "/job-008-124-590.html",
+          "page_title": "南京中车浦镇海泰制动设备有限公司招聘工艺师_南京校园招聘",
+          "text_preview": "南京中车浦镇海泰制动设备有限公司招聘工艺师_南京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 南京 全职 > 职位详细 说明： 此信息由 河海大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 河海大学 核实，并请同时联系本站处理该转载信息。 [南京]南京中车浦镇海泰制动设备有限公司 职位： 工艺师 发布时间： 2026-10-19 工作地点： 南京 信息来源： 河海大学 职位类型： 全职 专业标签： 自动化 仪器仪表 机械类 电气类 计算机 职位描述 工艺师 15万元/年 2026-10-19 15:26:01发布 职位要求： 职位性质：全职 工作城市：江苏省南京市浦口区 招聘人数：2 学历要求：硕士 职位类别：工程技术人员 需求专业：机械设计制造类,机电设备类,自动化类,轨道装备类,电子信息类 职位描述： 岗位职责 1、负责测试设备的技术要求编制、关键部件选型确认、调试验收、设备管理，维修维保等工作； 2、负责非标自动化测试设备上位机软件设计与开发C#，上位机与PLC、采集卡、仪表等设备通讯开发与调试，完成测试流程、数据采集、逻辑判定、报表存储功能，及现场软硬件联调，故障定位与问题修复等。 任职资格 1、自动"
         },
         {
-          "url_path": "/job-008-124-660.html",
-          "page_title": "海南省医学科学院李东伟课题组招聘博士后_海南校园招聘",
-          "text_preview": "海南省医学科学院李东伟课题组招聘博士后_海南校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [海南]海南省医学科学院李东伟课题组 职位： 博士后 发布时间： 2026-10-19 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 生物科学 基础医学 临床医学 职位描述 海南省医学科学院李东伟课题组2026年博士后招聘启事 共计1个岗位，招 若干人 五险一金 绩效奖金 租/购房补贴 基本信息 发布时间：2026-10-19 截止日期：详见正文 学历要求：博士研究生 需求学科（供参考）： 生物学 , 基础医学 , 临床医学 展开 公告详情 一、课题组组长简介 李东伟，海南医科大学基础医学院院长、研究员、博士生导师，海南省医学科学院 PI 课题组长，热带转化医学教育部重点实验室主任。国家自然科学基金青年基金（B 类，原国家优青项目）获得者，海南医科大学青年教师医师协会会长；入选海南省 C 类人才、海南医科大学 C 类高层次人才。主要研究方向：干细胞"
+          "url_path": "/job-008-124-595.html",
+          "page_title": "上海群鲤服饰有限公司招聘商品运营|会员运营|零售管理|直播管理|主播_上海校园招聘",
+          "text_preview": "上海群鲤服饰有限公司招聘商品运营|会员运营|零售管理|直播管理|主播_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 江南大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 江南大学 核实，并请同时联系本站处理该转载信息。 [上海]上海群鲤服饰有限公司 职位： 商品运营|会员运营|零售管理|直播管理|主播 发布时间： 2026-10-19 工作地点： 上海 信息来源： 江南大学 职位类型： 全职 专业标签： 电子商务 工商管理 纺织类 职位描述 FILA2027届校招生（商品运营、会员运营、零售管理、直播管理、主播） 18万元/年 2026-10-19 15:38:48发布 职位要求： 职位性质：全职 工作城市：上海市 招聘人数：10 学历要求：本科 职位类别：商业和服务业人员 语言能力：不限 需求专业：纺织服装类,工商管理类,电子商务类,新闻出版类,公共管理类 职位描述： 岗位职责 商品运营岗：商品经理储备梯队，负责商品采买、商品调拨及销售数据分析等。 会员运营岗： 会员运营经理储备梯队，负责会员生命周期运营管理等。 零售管理岗：零售经理储备梯队，负责店铺运营、团队"
         }
       ],
       "browser_render_attempts": 0,
@@ -3048,13 +3026,13 @@
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "行政助理",
-        "研究助理",
-        "研究助理",
-        "硬件工程师",
-        "生物信息方向助理研究员",
-        "科研助理",
-        "专职教师"
+        "商品运营",
+        "会员运营",
+        "直播管理",
+        "签派助理",
+        "销售工程师",
+        "销售工程师助理",
+        "食品研发员"
       ],
       "role_field_samples": [
         {
@@ -3072,72 +3050,72 @@
           }
         },
         {
-          "title": "行政助理",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "面议",
+          "title": "商品运营",
+          "company": "上海群鲤服饰有限公司",
+          "city": "上海",
+          "salary": "18万元/年",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-650.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-595.html",
           "field_lengths": {
-            "description": 969,
-            "responsibilities": 230,
-            "requirements": 0,
+            "description": 715,
+            "responsibilities": 209,
+            "requirements": 327,
             "benefits": 0
           }
         },
         {
-          "title": "研究助理",
-          "company": "深圳理工大学生命健康学院孛儿只斤吉莫课题组",
-          "city": "深圳",
-          "salary": "10万/年",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-655.html",
+          "title": "会员运营",
+          "company": "上海群鲤服饰有限公司",
+          "city": "上海",
+          "salary": "18万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-595.html",
           "field_lengths": {
-            "description": 2769,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 850
-          }
-        },
-        {
-          "title": "研究助理",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "50-60万元",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-652.html",
-          "field_lengths": {
-            "description": 1447,
-            "responsibilities": 73,
-            "requirements": 414,
+            "description": 715,
+            "responsibilities": 209,
+            "requirements": 327,
             "benefits": 0
           }
         },
         {
-          "title": "硬件工程师",
-          "company": "清华大学基础医学院周牧课题组",
-          "city": "北京",
-          "salary": "",
+          "title": "直播管理",
+          "company": "上海群鲤服饰有限公司",
+          "city": "上海",
+          "salary": "18万元/年",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-124-658.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-595.html",
           "field_lengths": {
-            "description": 852,
-            "responsibilities": 212,
-            "requirements": 226,
+            "description": 715,
+            "responsibilities": 209,
+            "requirements": 327,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "签派助理",
+          "company": "苏南瑞丽航空有限公司",
+          "city": "昆明",
+          "salary": "7万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-124-601.html",
+          "field_lengths": {
+            "description": 587,
+            "responsibilities": 276,
+            "requirements": 187,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-19T22:37:55+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-20T00:18:58+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3949,10 +3927,10 @@
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
   "published_total_jobs": 6833,
-  "published_priority_candidates": 259,
-  "published_pending_review": 6574,
-  "records_added_this_run": 76,
-  "records_updated_this_run": 435,
+  "published_priority_candidates": 256,
+  "published_pending_review": 6577,
+  "records_added_this_run": 4,
+  "records_updated_this_run": 26,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 4,
@@ -3996,6 +3974,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-19T22:54:21+00:00",
+  "quality_checked_at": "2026-10-20T00:42:12+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
