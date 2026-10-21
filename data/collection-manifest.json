@@ -2,31 +2,9 @@
   "run_date": "2026-10-20",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 2500,
-        "next_offset": 10746,
+        "next_offset": 10906,
         "batch_size": 160
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 514,
-  "records_found_this_run": 514,
-  "active_candidates": 28,
-  "pending_review": 486,
+  "records_found": 22,
+  "records_found_this_run": 22,
+  "active_candidates": 2,
+  "pending_review": 20,
   "results": [
     {
       "id": "boss",
@@ -2969,43 +2947,43 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 500,
-      "records_found": 40,
-      "active_candidates": 5,
-      "pending_review": 35,
-      "pages_attempted": 501,
-      "pages_failed": 1,
-      "html_bytes": 18755522,
-      "links_seen": 64662,
+      "records_found": 22,
+      "active_candidates": 2,
+      "pending_review": 20,
+      "pages_attempted": 500,
+      "pages_failed": 0,
+      "html_bytes": 18212124,
+      "links_seen": 63180,
       "listing_url_candidates": 2500,
-      "listing_urls_visited": 247,
+      "listing_urls_visited": 293,
       "listing_pool_size": 2500,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 10746,
+      "listing_cursor_next": 10906,
       "listing_rotation_groups": {
-        "yjs-role-city": 45,
-        "yjs-major-city": 45,
-        "yjs-mobile": 4,
-        "yjs-search": 21,
-        "yjs-subject-city": 44,
-        "yjs-other": 1
+        "yjs-role-city": 48,
+        "yjs-major-city": 48,
+        "yjs-mobile": 2,
+        "yjs-other": 1,
+        "yjs-search": 13,
+        "yjs-subject-city": 48
       },
-      "tables_seen": 19186,
-      "embedded_json_blocks": 1453,
+      "tables_seen": 17657,
+      "embedded_json_blocks": 1345,
       "role_like_links": 0,
-      "discovery_pages_queued": 683,
+      "discovery_pages_queued": 679,
       "listing_pages_queued": 190,
-      "direct_detail_pages_visited": 188,
+      "direct_detail_pages_visited": 191,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 188,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 7,
+      "direct_detail_requests_attempted": 191,
+      "direct_detail_title_candidates": 21,
+      "direct_detail_title_rejected": 3,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 34,
+      "direct_detail_role_rows_emitted": 18,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
-      "public_detail_leads": 2,
+      "public_detail_leads": 0,
       "shared_bulletin_role_leads": 0,
       "direct_detail_links_deferred_by_budget": 0,
       "direct_detail_page_budget": 260,
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-127-833.html",
-          "page_title": "雅科贝思精密机电（上海）有限公司招聘精密机械设计工程师_杭州校园招聘",
-          "text_preview": "雅科贝思精密机电（上海）有限公司招聘精密机械设计工程师_杭州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [杭州]雅科贝思精密机电（上海）有限公司 职位： 精密机械设计工程师 发布时间： 2026-10-20 工作地点： 其它 信息来源： 浙江大学 职位类型： 全职 专业标签： 机械类 药学 光学工程 化工与制药 轻工类 职位描述 雅科贝思精密机电（上海）有限公司 招聘信息 精密机械设计工程师 2026-10-20 16:12:16 职位描述 工作职责 1.平台机构开发:负责磁悬浮/气浮等精密运动平台的机械设计与 方案优化: 2.装配与验证:参与并指导平台的精密装配、调试及性能验证; 3.系统协作:与研发团队协同推进整机系统设计与控制系统开发 4.技术沉淀:编制量测相关技术规范，建设并维护公司的精密测量 知识体系。 岗位要求 1、全日制统招本科及以上学历，机械制造及其自动化、机械电子工 程、车辆工程等相关专业，硕博优先; 2、具备精密系统建模(运动学、动力学)与精度"
+          "url_path": "/job-008-089-408.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df5dfdf1e3365b00effba4e26df8d0a5dc58f69be627f0435';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-127-811.html",
-          "page_title": "黄山工业泵制造有限公司2027招聘机械设计_安徽校园招聘",
-          "text_preview": "黄山工业泵制造有限公司2027招聘机械设计_安徽校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [安徽]黄山工业泵制造有限公司 职位： 2027招聘机械设计 发布时间： 2026-10-20 工作地点： 其它 信息来源： 浙江大学 职位类型： 全职 专业标签： 机械类 自动化 职位描述 黄山工业泵制造有限公司 招聘信息 机械设计 2026-10-20 16:17:22 职位描述 一、机械设计｜10人 ？学历：本科 ？？薪资：8K 14K ？？专业：机械相关专业 岗位职责 1. 负责公司泵类新产品的设计开发，落实项目开发计划，输出全套设计图纸、BOM物料清单以及设计技术文档。 2. 根据客户订单的定制化需求，完成专用产品方案设计、图纸绘制，跟进设计评审、样机试制、试产验证全流程。 3. 跟踪产品样机试验，收集试制反馈问题，优化产品结构，解决产品在加工、装配阶段出现的各类设计问题。 4. 做好图纸版本管理、技术资料归档；对接工艺、生产部门，提供技术支持，配合处理现场生产的"
+          "url_path": "/job-008-090-500.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df5dfd827acac0bafa4d184789cf374949cbc9a75633d3cac';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 36,
-      "public_list_leads": 2,
+      "role_records": 18,
+      "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 34,
+      "direct_detail_role_records": 18,
       "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ϾеƸϢ|ѧְ|Ͼҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "精密机械设计工程师",
-        "机械设计",
-        "黄山工业泵制造有限公司",
-        "食品应用研发员",
-        "销售工程师",
-        "后训练工程师",
-        "客户满意与公司质量部培训生"
+        "集成光芯片工程师",
+        "助理电机测试工程师",
+        "助理电机研发工程师",
+        "有机合成研究员",
+        "质量工程师",
+        "材料产品研发岗",
+        "仪器仪表技术研发岗"
       ],
       "role_field_samples": [
         {
@@ -3072,72 +3050,72 @@
           }
         },
         {
-          "title": "精密机械设计工程师",
-          "company": "雅科贝思精密机电（上海）有限公司",
-          "city": "其它",
+          "title": "集成光芯片工程师",
+          "company": "上海璇相科技有限公司",
+          "city": "上海",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-833.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-804.html",
           "field_lengths": {
-            "description": 417,
-            "responsibilities": 133,
-            "requirements": 216,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "机械设计",
-          "company": "黄山工业泵制造有限公司",
-          "city": "其它",
-          "salary": "8K",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-811.html",
-          "field_lengths": {
-            "description": 518,
-            "responsibilities": 249,
-            "requirements": 169,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "黄山工业泵制造有限公司",
-          "company": "机械类",
-          "city": "全国",
-          "salary": "",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-811.html",
-          "field_lengths": {
-            "description": 0,
+            "description": 383,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "食品应用研发员",
-          "company": "杭州天草科技有限公司",
+          "title": "助理电机测试工程师",
+          "company": "雅科贝思精密机电（上海）有限公司",
           "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-127-805.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-786.html",
           "field_lengths": {
-            "description": 397,
-            "responsibilities": 0,
-            "requirements": 119,
+            "description": 523,
+            "responsibilities": 158,
+            "requirements": 173,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "助理电机研发工程师",
+          "company": "雅科贝思精密机电（上海）有限公司",
+          "city": "上海",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-787.html",
+          "field_lengths": {
+            "description": 399,
+            "responsibilities": 67,
+            "requirements": 262,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "有机合成研究员",
+          "company": "康龙化成（北京）新药技术股份有限公司",
+          "city": "北京",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-127-784.html",
+          "field_lengths": {
+            "description": 775,
+            "responsibilities": 173,
+            "requirements": 335,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-20T21:51:50+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-20T23:51:55+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3951,8 +3929,8 @@
   "published_total_jobs": 7237,
   "published_priority_candidates": 269,
   "published_pending_review": 6968,
-  "records_added_this_run": 43,
-  "records_updated_this_run": 460,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 22,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3996,6 +3974,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-20T22:13:47+00:00",
+  "quality_checked_at": "2026-10-21T00:11:00+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
