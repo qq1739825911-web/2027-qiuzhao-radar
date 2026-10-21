@@ -7,6 +7,19 @@ from collect_public_sources import clean_job_title, clean_yingjiesheng_company_n
 # Only explicit text evidence is accepted; a site-level registry label cannot prove
 # that each linked vacancy belongs to the 2027 graduate cohort.
 COHORT_EVIDENCE_OK = {"page_text", "visible_announcement_title", "job_detail_title", "job_detail_text"}
+# These labels describe a category, not a legal employer, and should not enter the job pool.
+YJS_GENERIC_EMPLOYERS = {
+    "化工与制药", "互联网/科技/AI", "生产制造/工业", "汽车/新能源",
+    "物流/供应链", "金融/银行/证券", "快消/零售", "生物医药/制药",
+    "教育/培训", "房地产/建筑", "咨询/四大", "外企/合资",
+    "私企/民企", "央国企/事业单位", "未分类", "其他", "其它",
+    "全国", "行业", "公司", "企业",
+}
+YJS_GENERIC_EMPLOYERS_COMPACT = {re.sub(r"\s+", "", value).lower() for value in YJS_GENERIC_EMPLOYERS}
+YJS_COMPANY_TITLE_SUFFIX = re.compile(
+    r"(?:有限责任公司|股份有限公司|集团有限公司|有限公司|控股集团|职业技术学院|高等专科学校|师范学院|职业学院|职业学校|大学|学院|研究院|研究所|研究中心|证券公司|银行|医院|高中|集团|公司)$"
+)
+
 
 def should_publish_record(row):
     """Remove aggregator category junk and stale BOSS cycles; allow only clearly tagged public list leads to remain pending."""
@@ -18,12 +31,16 @@ def should_publish_record(row):
     if source_id=="yingjiesheng":
         row["company"]=clean_yingjiesheng_company_name(row.get("company",""))
         employer=re.sub(r"\s+","",str(row.get("company","") or "")).strip().lower()
-        if employer in {"","应届生求职网","应届生求职","www.yingjiesheng.com","yingjiesheng","招聘信息","未知","待核验","待确认"}:
+        if (employer in {"","应届生求职网","应届生求职","www.yingjiesheng.com","yingjiesheng","招聘信息","未知","待核验","待确认"}
+                or employer in YJS_GENERIC_EMPLOYERS_COMPACT):
             return False
 
     if source_id in {"nowcoder","yingjiesheng","boss","qiuzhaowang","iguopin","51job"}:
         title=clean_job_title(row.get("title",""),source_id)
         if not is_specific_role_title(title,source_id):
+            return False
+        # Some YJS listing rows accidentally parse a company legal name as the role title.
+        if source_id=="yingjiesheng" and YJS_COMPANY_TITLE_SUFFIX.search(title.strip()):
             return False
         if granularity=="lead" and row.get("lead_evidence")=="visible_public_job_card" and not is_public_role_lead_title(title,source_id):
             return False

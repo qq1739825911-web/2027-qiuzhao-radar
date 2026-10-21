@@ -732,13 +732,21 @@ check("short historic YJS description is rebuilt from retained responsibility an
 check("YJS website name cannot pass as an employer for a specific vacancy",
       not should_publish_record({"source":"应届生求职网公开岗位","company":"应届生求职网","title":"FinTech方向管理培训生",
         "source_url":"https://m.yingjiesheng.com/job-008-115-342.html","granularity":"review"}))
-check("YJS focused collector has sufficient page, detail and rotating-list budgets",
+check("YJS industry/category label cannot pass as an employer",
+      not should_publish_record({"source":"应届生求职网公开岗位","company":"化工与制药","title":"质量工程师",
+        "source_url":"https://m.yingjiesheng.com/job-008-115-342.html","granularity":"review"}))
+check("YJS legal company name cannot pass as a vacancy title",
+      not should_publish_record({"source":"应届生求职网公开岗位","company":"化工与制药",
+        "title":"[上海]昌意管理咨询（上海）有限公司",
+        "source_url":"https://m.yingjiesheng.com/job-008-129-498.html","granularity":"lead",
+        "lead_evidence":"yingjiesheng_public_listing","status":"pending_review"}))
+check("YJS focused collector has expanded page, detail and rotating-list budgets",
       any(src.get("id")=="yingjiesheng"
-          and src.get("max_pages",0)>=500
-          and src.get("listing_page_limit",0)>=190
-          and src.get("rotation_seed_batch",0)>=160
-          and src.get("listing_pool_limit",0)>=2500
-          and src.get("max_direct_detail_pages",0)>=260
+          and src.get("max_pages",0)>=600
+          and src.get("listing_page_limit",0)>=230
+          and src.get("rotation_seed_batch",0)>=200
+          and src.get("listing_pool_limit",0)>=3000
+          and src.get("max_direct_detail_pages",0)>=320
           for src in constReg))
 
 check("YJS detail role title extracted", fields.get("title") == "AIGC影视创意制作（校招）")
