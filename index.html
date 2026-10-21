@@ -96,7 +96,7 @@ async function loadData(){
  }
  const usedFallback=!(Array.isArray(rows)&&rows.length>0);
  DATA_SOURCE_FALLBACK=usedFallback;
- if(usedFallback) rows=FALLBACK_ROWS;
+ if(usedFallback) rows=FALLBACK_ROWS.filter(x=>x.demo===true&&x.status==="source_entry");
  DATA=rows.map(x=>({
   id:String(x.id||[x.company,x.title,x.city].join("-")),
   company:x.company||"待核验企业",
@@ -125,7 +125,7 @@ async function loadData(){
  DATA=DATA.map(row=>({...row,searchText:[row.company,row.title,row.keywords,row.category,row.city,row.type,row.degree,row.program,row.cohort,row.salary,row.address,row.description,row.requirements,row.responsibilities,row.benefits,row.company_info,row.job_type,row.experience].join(" ").toLocaleLowerCase()}));
  if(usedFallback){
   $("dataNotice").className="notice";
-  $("dataNotice").textContent="在线数据源暂不可用，已启用内置兜底："+DATA.length+" 条。诊断："+errors.join("；");
+  $("dataNotice").textContent="在线岗位数据暂不可用，仅显示 "+DATA.length+" 条信源入口示例，不包含已确认的具体岗位。诊断："+errors.join("；");
  }else{
   $("dataNotice").className="notice good";
   $("dataNotice").textContent="岗位数据读取成功："+DATA.length+" 条（同源数据优先）。";

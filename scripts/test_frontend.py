@@ -19,6 +19,7 @@ checks = {
     "detail sanitizer covers escaped JSON, CSS and footer tails": "const hasSerializedTail" in source and "版权所有" in source and "ie(?:11|undefined)" in source,
     "lazy rendering of company groups exists": 'data-loaded="false"' in source and 'data-company-index="' in source,
     "review bucket fallback exists": 'const emptyBox=$("jobs").querySelector(".empty")' in source,
+    "fallback mode never presents static placeholders as real vacancies": 'if(usedFallback) rows=FALLBACK_ROWS.filter(x=>x.demo===true&&x.status==="source_entry");' in source and "不包含已确认的具体岗位" in source,
     "official recruitment route is distinguished": "function usesOfficialRecruitmentFlow" in source,
     "close button has accessible label": 'aria-label="关闭详情"' in source,
     "reset control exists": 'id="reset"' in source,
