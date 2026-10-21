@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 11426,
+        "next_offset": 11626,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 23,
-  "records_found_this_run": 23,
-  "active_candidates": 5,
-  "pending_review": 18,
+  "records_found": 2,
+  "records_found_this_run": 2,
+  "active_candidates": 0,
+  "pending_review": 2,
   "results": [
     {
       "id": "boss",
@@ -2947,43 +2947,43 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 23,
-      "active_candidates": 5,
-      "pending_review": 18,
-      "pages_attempted": 602,
-      "pages_failed": 2,
-      "html_bytes": 22134885,
-      "links_seen": 76148,
-      "listing_url_candidates": 2899,
-      "listing_urls_visited": 304,
+      "records_found": 2,
+      "active_candidates": 0,
+      "pending_review": 2,
+      "pages_attempted": 600,
+      "pages_failed": 0,
+      "html_bytes": 20283686,
+      "links_seen": 56235,
+      "listing_url_candidates": 1761,
+      "listing_urls_visited": 363,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 11426,
+      "listing_cursor_next": 11626,
       "listing_rotation_groups": {
-        "yjs-role-city": 58,
-        "yjs-major-city": 57,
-        "yjs-search": 23,
-        "yjs-mobile": 4,
-        "yjs-other": 1,
-        "yjs-subject-city": 57
+        "yjs-subject-city": 61,
+        "yjs-role-city": 61,
+        "yjs-major-city": 60,
+        "yjs-search": 15,
+        "yjs-mobile": 2,
+        "yjs-other": 1
       },
-      "tables_seen": 21495,
-      "embedded_json_blocks": 1671,
+      "tables_seen": 17041,
+      "embedded_json_blocks": 1473,
       "role_like_links": 0,
-      "discovery_pages_queued": 779,
+      "discovery_pages_queued": 764,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 253,
+      "direct_detail_pages_visited": 224,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 253,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 20,
-      "direct_detail_score_gate_recovered": 1,
+      "direct_detail_requests_attempted": 224,
+      "direct_detail_title_candidates": 1,
+      "direct_detail_title_rejected": 0,
+      "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 21,
+      "direct_detail_role_rows_emitted": 1,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
-      "public_detail_leads": 1,
+      "public_detail_leads": 0,
       "shared_bulletin_role_leads": 0,
       "direct_detail_links_deferred_by_budget": 0,
       "direct_detail_page_budget": 320,
@@ -2993,7 +2993,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·刚刚活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -3001,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-129-359.html",
-          "page_title": "广东信源物流设备有限公司招聘物料计划岗_广州校园招聘",
-          "text_preview": "广东信源物流设备有限公司招聘物料计划岗_广州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 广州 全职 > 职位详细 说明： 此信息由 五邑大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 五邑大学 核实，并请同时联系本站处理该转载信息。 [广州]广东信源物流设备有限公司 职位： 物料计划岗 发布时间： 2026-10-21 工作地点： 广州 信息来源： 五邑大学 职位类型： 全职 职位描述 广东信源物流设备有限公司 物料计划岗（2027届校招） 7K-10K/月 广东省 广州市 本科及以上 职位诱惑：节日礼物 健康体检 免费班车 薪酬福利：六险一金 发布时间：2026年10月21日 职位描述 岗位职责： 职位描述： 1.在导师指导下，依据销售订单、预测需求、BOM清单、库存数据，运用ERP系统开展MRP运算，编制物料需求计划，输出物料请购、到货计划，保障生产物料供给； 2.跟踪物料采购订单、来料入库进度，核查物料齐套状态，识别缺料、延期、来料不良等风险，及时预警，联动采购、仓库、生产推进异常闭环，减少停工待料风险； 3.配合订单变更、插单、技术变更，动态调整物料计划，更新ERP计划主数据，保障计划数据准确完整；"
+          "url_path": "/job-008-106-053.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df54c95cfd0f97081b08607f91f83f11ffcafea265d2a4af5';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-129-366.html",
-          "page_title": "兴向集团有限公司招聘活动策划_广西校园招聘",
-          "text_preview": "兴向集团有限公司招聘活动策划_广西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广西大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广西大学 核实，并请同时联系本站处理该转载信息。 [广西]兴向集团有限公司 职位： 活动策划 发布时间： 2026-10-21 工作地点： 其它 信息来源： 广西大学 职位类型： 全职 专业标签： 旅游管理 新闻传播 职位描述 兴向集团有限公司 活动策划 薪资：4K-10K/月 工作地点：广西壮族自治区 南宁市 学历：本科及以上 职位诱惑：绩效奖金 岗前培训 节日礼物 弹性工作 薪酬福利：五险 发布时间：2026年10月21日 职位描述 岗位职责： 策划并执行营地主题活动、航空研学课程与节庆活动；对接异业合作资源，负责活动预算、执行与复盘。 岗位要求： 大专及以上，广告、会展、文旅类专业；创意好、落地能力强，熟练使用常用办公与设计工具；有校园大型活动组织经历者优先。 投递说明： 面试 单位简介 兴向集团有限公司，实缴资本1亿元，是扎根广西、面向西南的综合性实业集团。集团以高校数字基础投资运营与智慧校园建设为心主业，以优质经营性不动产及长"
+          "url_path": "/job-008-106-054.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df54c964060dd8e7040c5e5eae4e1959487181c875fd7a0eb';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3017,22 +3017,15 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 22,
-      "public_list_leads": 1,
+      "role_records": 1,
+      "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 21,
+      "direct_detail_role_records": 1,
       "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ϾóƸϢ|ѧְ|Ͼҹ_Ӧְ",
       "role_title_samples": [
-        "AIGC影视创意制作（校招）",
-        "活动策划",
-        "电气工程师",
-        "海外采购岗",
-        "综合能源市场代表",
-        "中医内科医生",
-        "安全管理岗",
-        "综合服务营销岗"
+        "AIGC影视创意制作（校招）"
       ],
       "role_field_samples": [
         {
@@ -3048,73 +3041,17 @@
             "requirements": 311,
             "benefits": 14
           }
-        },
-        {
-          "title": "活动策划",
-          "company": "兴向集团有限公司",
-          "city": "南宁",
-          "salary": "4K-10K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-366.html",
-          "field_lengths": {
-            "description": 223,
-            "responsibilities": 46,
-            "requirements": 57,
-            "benefits": 44
-          }
-        },
-        {
-          "title": "电气工程师",
-          "company": "广州白云电器设备股份有限公司",
-          "city": "广州",
-          "salary": "7K-8K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-376.html",
-          "field_lengths": {
-            "description": 338,
-            "responsibilities": 137,
-            "requirements": 88,
-            "benefits": 39
-          }
-        },
-        {
-          "title": "海外采购岗",
-          "company": "广东信源物流设备有限公司",
-          "city": "广州",
-          "salary": "8K-12K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-360.html",
-          "field_lengths": {
-            "description": 431,
-            "responsibilities": 169,
-            "requirements": 146,
-            "benefits": 41
-          }
-        },
-        {
-          "title": "综合能源市场代表",
-          "company": "衡水华润燃气有限公司",
-          "city": "其它",
-          "salary": "5K-7K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-381.html",
-          "field_lengths": {
-            "description": 590,
-            "responsibilities": 254,
-            "requirements": 208,
-            "benefits": 55
-          }
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-21T09:30:43+00:00",
+      "last_run_at": "2026-10-21T09:58:23+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3926,14 +3863,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 7312,
+  "published_total_jobs": 7306,
   "published_priority_candidates": 279,
-  "published_pending_review": 7033,
-  "records_added_this_run": 14,
-  "records_updated_this_run": 9,
+  "published_pending_review": 7027,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 1,
+    "aggregator_non_detail_or_non_role_records_removed": 6,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3956,8 +3893,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 962,
-    "fields_checked": 6734,
+    "rows": 956,
+    "fields_checked": 6692,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3967,13 +3904,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 962,
+    "company_fields_checked": 956,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-21T09:58:02+00:00",
+  "quality_checked_at": "2026-10-21T10:23:36+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
