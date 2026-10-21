@@ -2,31 +2,9 @@
   "run_date": "2026-10-21",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 12026,
+        "next_offset": 12226,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 503,
-  "records_found_this_run": 503,
-  "active_candidates": 35,
-  "pending_review": 468,
+  "records_found": 42,
+  "records_found_this_run": 42,
+  "active_candidates": 14,
+  "pending_review": 28,
   "results": [
     {
       "id": "boss",
@@ -2969,40 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 36,
-      "active_candidates": 12,
-      "pending_review": 24,
-      "pages_attempted": 600,
-      "pages_failed": 0,
-      "html_bytes": 20697037,
-      "links_seen": 76600,
-      "listing_url_candidates": 3000,
-      "listing_urls_visited": 380,
+      "records_found": 42,
+      "active_candidates": 14,
+      "pending_review": 28,
+      "pages_attempted": 601,
+      "pages_failed": 1,
+      "html_bytes": 22148659,
+      "links_seen": 81382,
+      "listing_url_candidates": 2842,
+      "listing_urls_visited": 270,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 12026,
+      "listing_cursor_next": 12226,
       "listing_rotation_groups": {
         "yjs-role-city": 57,
-        "yjs-search": 23,
         "yjs-major-city": 57,
-        "yjs-subject-city": 57,
+        "yjs-search": 23,
         "yjs-mobile": 5,
-        "yjs-other": 1
+        "yjs-other": 1,
+        "yjs-subject-city": 57
       },
-      "tables_seen": 18838,
-      "embedded_json_blocks": 1838,
+      "tables_seen": 23673,
+      "embedded_json_blocks": 1910,
       "role_like_links": 0,
-      "discovery_pages_queued": 830,
+      "discovery_pages_queued": 850,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 220,
+      "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 220,
-      "direct_detail_title_candidates": 64,
-      "direct_detail_title_rejected": 31,
+      "direct_detail_requests_attempted": 221,
+      "direct_detail_title_candidates": 84,
+      "direct_detail_title_rejected": 45,
       "direct_detail_score_gate_recovered": 2,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 33,
+      "direct_detail_role_rows_emitted": 39,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 1,
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-129-506.html",
-          "page_title": "大湾区大学邓可课题组与中国科学技术大学沈胜春教授招聘博士后_东莞校园招聘",
-          "text_preview": "大湾区大学邓可课题组与中国科学技术大学沈胜春教授招聘博士后_东莞校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [东莞]大湾区大学邓可课题组与中国科学技术大学沈胜春教授 职位： 博士后 发布时间： 2026-10-21 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 物理学 材料类 职位描述 低维量子材料、角分辨光电子能谱方向 | 大湾区大学邓可课题组与中国科学技术大学沈胜春教授2026年联合招收博士后 共计1个岗位，招 1人 五险一金 带薪年假 绩效奖金 定期/免费体检 租房补贴 基本信息 发布时间：2026-10-21 截止日期：详见正文 学历要求：博士研究生 需求学科（供参考）： 物理学 , 材料科学与工程 展开 公告详情 一、 课题组介绍 邓可，大湾区大学物质科学学院助理教授，量子材料与光电子能谱实验室负责人。2013年本科毕业于西安交通大学应用物理系，2019于清华大学物理系获博士学位，2016年至2017年在美国劳伦斯伯克利国家"
+          "url_path": "/job-008-129-496.html",
+          "page_title": "浙江赛豪实业有限公司招聘模具设计岗_浙江校园招聘",
+          "text_preview": "浙江赛豪实业有限公司招聘模具设计岗_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 浙江大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 浙江大学 核实，并请同时联系本站处理该转载信息。 [浙江]浙江赛豪实业有限公司 职位： 模具设计岗 发布时间： 2026-10-21 工作地点： 其它 信息来源： 浙江大学 职位类型： 全职 专业标签： 机械类 材料类 职位描述 浙江赛豪实业有限公司 招聘信息 模具设计岗 2026-10-21 16:06:34 职位描述 ① 本科及以上，机械、材料、高分子等专业 ② 熟练使用UG或SolidWorks做3D建模，掌握AutoCAD出图；了解注塑模具结构与塑料成型工艺 ③ 掌握机械制图与公差配合，了解常用模具钢材与热处理；有Moldflow/模流分析或设计竞赛经历者优先 ④ 空间想象力与动手意愿强，愿长期从事模具技术工作 职位类别:生产/加工/制造 专业要求:不限 单位简介 公司创立于年，通过四十余年在精密高端注塑模具行业的积累与不断创新，现已成为国内领先、国际知名的模具制造企业。 赛豪是国内首批进入中国塑料模具骨干企业联合体成员之"
         },
         {
-          "url_path": "/job-008-129-510.html",
-          "page_title": "哈尔滨友谊宫招聘前台接待_哈尔滨校园招聘",
-          "text_preview": "哈尔滨友谊宫招聘前台接待_哈尔滨校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 哈尔滨学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 哈尔滨学院 核实，并请同时联系本站处理该转载信息。 [哈尔滨]哈尔滨友谊宫 职位： 前台接待 发布时间： 2026-10-21 工作地点： 其它 信息来源： 哈尔滨学院 职位类型： 全职 职位描述 哈尔滨友谊宫 发布时间：2026-10-21 15:53:45 福利:\"带薪年假\",\"定期体检\",\"节日礼物\",\"技能培训\",\"提供住宿\",\"公司有食堂\" 职位名称:前台接待 学历:本科,专科 需求人数:2 需求专业:不限专业 工作地点:黑龙江省哈尔滨市 职位描述:办理入住和退房，房间预订，账务结算等 简历接收邮箱:yyg_hr@ 形象良好，气质佳，有良好的服务意识。 \",\"shortContent\":\"形象良好，气质佳，有良好的服务意识。 登录 或 打开APP 查看全部 上一条： [杭州]萧山农商银行 下一条： [福建]阳光学院 首页 - 登录 Top 电脑版 ( 地址 ) | 触屏版"
+          "url_path": "/job-008-129-489.html",
+          "page_title": "香港中文大学（深圳）理工学院杨升浩项目招聘行政助理_深圳校园招聘",
+          "text_preview": "香港中文大学（深圳）理工学院杨升浩项目招聘行政助理_深圳校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 深圳 其它 全职 > 职位详细 说明： 此信息由 香港中文大学（深圳） 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 香港中文大学（深圳） 核实，并请同时联系本站处理该转载信息。 [深圳]香港中文大学（深圳）理工学院杨升浩项目 职位： 行政助理 发布时间： 2026-10-21 工作地点： 深圳 其它 信息来源： 香港中文大学（深圳） 职位类型： 全职 职位描述 Executive Assistant - Yang Shenghao Project, School of Science and Engineering 行政助理 - 理工学院杨升浩项目 (Ref.PR2026/203/01) 截止日期: 2026-12-31 科研辅助 职位说明 应聘者须具备： 1. 本科及以上学历； 2. 熟练使用 Microsoft Office（Outlook、Word、Excel、PowerPoint）； 3. 具有良好的沟通、人际交往和组织协调能力； 4. 能够独立工作，积极主动，责任心强，并保持持续学习的态度。 工作职责"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 34,
+      "role_records": 40,
       "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 33,
+      "direct_detail_role_records": 39,
       "announcement_records": 2,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "科研助理",
-        "运营综合岗",
-        "研究助理",
-        "技术工程师",
-        "设备工程师",
-        "科研销售经理",
-        "[上海]昌意管理咨询（上海）有限公司"
+        "模具设计岗",
+        "行政助理",
+        "数据科学家",
+        "设备设计工程师",
+        "高中数学教师",
+        "物理教师",
+        "英语教师"
       ],
       "role_field_samples": [
         {
@@ -3072,72 +3050,72 @@
           }
         },
         {
-          "title": "科研助理",
-          "company": "海南省医学科学院新药研发与转化中心",
-          "city": "其它",
-          "salary": "50-60万元",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-507.html",
-          "field_lengths": {
-            "description": 2791,
-            "responsibilities": 417,
-            "requirements": 126,
-            "benefits": 235
-          }
-        },
-        {
-          "title": "运营综合岗",
-          "company": "萧山农商银行",
+          "title": "模具设计岗",
+          "company": "浙江赛豪实业有限公司",
           "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-511.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-496.html",
           "field_lengths": {
-            "description": 354,
-            "responsibilities": 18,
-            "requirements": 44,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "研究助理",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-508.html",
-          "field_lengths": {
-            "description": 1133,
-            "responsibilities": 305,
+            "description": 220,
+            "responsibilities": 0,
             "requirements": 0,
-            "benefits": 518
+            "benefits": 0
           }
         },
         {
-          "title": "技术工程师",
-          "company": "浙江蓝晶芯微电子有限公司",
-          "city": "金华",
-          "salary": "9万元/年",
-          "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-482.html",
+          "title": "行政助理",
+          "company": "香港中文大学（深圳）理工学院杨升浩项目",
+          "city": "深圳",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-489.html",
           "field_lengths": {
-            "description": 396,
-            "responsibilities": 84,
-            "requirements": 157,
+            "description": 575,
+            "responsibilities": 295,
+            "requirements": 0,
             "benefits": 0
+          }
+        },
+        {
+          "title": "数据科学家",
+          "company": "北京大学公共卫生学院刘志科课题组",
+          "city": "北京",
+          "salary": "面议",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-487.html",
+          "field_lengths": {
+            "description": 970,
+            "responsibilities": 464,
+            "requirements": 0,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "设备设计工程师",
+          "company": "常州钠金智能科技有限公司",
+          "city": "常州",
+          "salary": "10万元/年",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-445.html",
+          "field_lengths": {
+            "description": 848,
+            "responsibilities": 292,
+            "requirements": 420,
+            "benefits": 184
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-21T17:38:28+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-21T19:17:53+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3951,8 +3929,8 @@
   "published_total_jobs": 7370,
   "published_priority_candidates": 287,
   "published_pending_review": 7083,
-  "records_added_this_run": 104,
-  "records_updated_this_run": 386,
+  "records_added_this_run": 6,
+  "records_updated_this_run": 36,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 6,
@@ -3996,6 +3974,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-21T18:03:39+00:00",
+  "quality_checked_at": "2026-10-21T19:42:21+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
