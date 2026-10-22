@@ -1,32 +1,10 @@
 {
-  "run_date": "2026-10-21",
+  "run_date": "2026-10-22",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 12426,
+        "next_offset": 12626,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 445,
-  "records_found_this_run": 445,
-  "active_candidates": 36,
-  "pending_review": 409,
+  "records_found": 42,
+  "records_found_this_run": 42,
+  "active_candidates": 14,
+  "pending_review": 28,
   "results": [
     {
       "id": "boss",
@@ -2969,39 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 32,
-      "active_candidates": 13,
-      "pending_review": 19,
-      "pages_attempted": 601,
-      "pages_failed": 1,
-      "html_bytes": 19861124,
-      "links_seen": 61005,
-      "listing_url_candidates": 1500,
-      "listing_urls_visited": 314,
+      "records_found": 42,
+      "active_candidates": 14,
+      "pending_review": 28,
+      "pages_attempted": 622,
+      "pages_failed": 22,
+      "html_bytes": 20178055,
+      "links_seen": 57837,
+      "listing_url_candidates": 1555,
+      "listing_urls_visited": 318,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 12426,
+      "listing_cursor_next": 12626,
       "listing_rotation_groups": {
-        "yjs-subject-city": 63,
-        "yjs-role-city": 63,
-        "yjs-major-city": 62,
-        "yjs-search": 8,
-        "yjs-mobile": 4
+        "yjs-major-city": 57,
+        "yjs-subject-city": 57,
+        "yjs-role-city": 56,
+        "yjs-mobile": 6,
+        "yjs-other": 1,
+        "yjs-search": 23
       },
-      "tables_seen": 18816,
-      "embedded_json_blocks": 1788,
+      "tables_seen": 17684,
+      "embedded_json_blocks": 1862,
       "role_like_links": 0,
-      "discovery_pages_queued": 884,
+      "discovery_pages_queued": 950,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 227,
+      "direct_detail_pages_visited": 242,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 227,
-      "direct_detail_title_candidates": 61,
-      "direct_detail_title_rejected": 32,
-      "direct_detail_score_gate_recovered": 1,
+      "direct_detail_requests_attempted": 242,
+      "direct_detail_title_candidates": 84,
+      "direct_detail_title_rejected": 45,
+      "direct_detail_score_gate_recovered": 2,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 29,
+      "direct_detail_role_rows_emitted": 39,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 1,
@@ -3022,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-120-312.html",
+          "url_path": "/job-008-063-825.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df4e72736a1d6e8ae2d4096f6980dc6259533ccc896d17786';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5df48abeb8bafba325fc64e31650b51aaf9fde0d4557e79935';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-120-769.html",
+          "url_path": "/job-008-064-000.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df4e7201cf6874838544ccce3261fdf8d15fdf715419e8148';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5df48abf829ae16b0bae38331e25c595a34324c920b742ce0d';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3038,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 30,
+      "role_records": 40,
       "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 29,
+      "direct_detail_role_records": 39,
       "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "ϺóƸϢ|ѧְ|Ϻҹ_Ӧְ",
+      "sample_title": "򾰹ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "科研助理",
-        "运营综合岗",
-        "研究助理",
-        "技术工程师",
-        "设备工程师",
-        "科研销售经理",
-        "[上海]昌意管理咨询（上海）有限公司"
+        "模具设计岗",
+        "行政助理",
+        "数据科学家",
+        "设备设计工程师",
+        "高中数学教师",
+        "物理教师",
+        "英语教师"
       ],
       "role_field_samples": [
         {
@@ -3071,72 +3050,72 @@
           }
         },
         {
-          "title": "科研助理",
-          "company": "海南省医学科学院新药研发与转化中心",
-          "city": "其它",
-          "salary": "50-60万元",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-507.html",
-          "field_lengths": {
-            "description": 2791,
-            "responsibilities": 417,
-            "requirements": 126,
-            "benefits": 235
-          }
-        },
-        {
-          "title": "运营综合岗",
-          "company": "萧山农商银行",
+          "title": "模具设计岗",
+          "company": "浙江赛豪实业有限公司",
           "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-511.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-496.html",
           "field_lengths": {
-            "description": 354,
-            "responsibilities": 18,
-            "requirements": 44,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "研究助理",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-508.html",
-          "field_lengths": {
-            "description": 1133,
-            "responsibilities": 305,
+            "description": 220,
+            "responsibilities": 0,
             "requirements": 0,
-            "benefits": 518
+            "benefits": 0
           }
         },
         {
-          "title": "技术工程师",
-          "company": "浙江蓝晶芯微电子有限公司",
-          "city": "金华",
-          "salary": "9万元/年",
-          "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-129-482.html",
+          "title": "行政助理",
+          "company": "香港中文大学（深圳）理工学院杨升浩项目",
+          "city": "深圳",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-489.html",
           "field_lengths": {
-            "description": 396,
-            "responsibilities": 84,
-            "requirements": 157,
+            "description": 575,
+            "responsibilities": 295,
+            "requirements": 0,
             "benefits": 0
+          }
+        },
+        {
+          "title": "数据科学家",
+          "company": "北京大学公共卫生学院刘志科课题组",
+          "city": "北京",
+          "salary": "面议",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-487.html",
+          "field_lengths": {
+            "description": 970,
+            "responsibilities": 464,
+            "requirements": 0,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "设备设计工程师",
+          "company": "常州钠金智能科技有限公司",
+          "city": "常州",
+          "salary": "10万元/年",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-129-445.html",
+          "field_lengths": {
+            "description": 848,
+            "responsibilities": 292,
+            "requirements": 420,
+            "benefits": 184
           }
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "TimeoutError: timed out",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-21T21:58:52+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-22T00:00:01+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3948,13 +3927,13 @@
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
   "published_total_jobs": 7372,
-  "published_priority_candidates": 287,
-  "published_pending_review": 7085,
-  "records_added_this_run": 41,
-  "records_updated_this_run": 389,
+  "published_priority_candidates": 285,
+  "published_pending_review": 7087,
+  "records_added_this_run": 6,
+  "records_updated_this_run": 36,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 2,
+    "aggregator_non_detail_or_non_role_records_removed": 6,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3995,6 +3974,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-21T22:27:29+00:00",
+  "quality_checked_at": "2026-10-22T00:28:46+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
