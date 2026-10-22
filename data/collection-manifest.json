@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 13026,
+        "next_offset": 13226,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 12,
-  "records_found_this_run": 12,
+  "records_found": 11,
+  "records_found_this_run": 11,
   "active_candidates": 0,
-  "pending_review": 12,
+  "pending_review": 11,
   "results": [
     {
       "id": "boss",
@@ -2947,35 +2947,35 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 12,
+      "records_found": 11,
       "active_candidates": 0,
-      "pending_review": 12,
+      "pending_review": 11,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 20554178,
-      "links_seen": 66240,
-      "listing_url_candidates": 2672,
-      "listing_urls_visited": 332,
+      "html_bytes": 23832484,
+      "links_seen": 73819,
+      "listing_url_candidates": 2610,
+      "listing_urls_visited": 211,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 13026,
+      "listing_cursor_next": 13226,
       "listing_rotation_groups": {
-        "yjs-major-city": 57,
-        "yjs-mobile": 6,
-        "yjs-subject-city": 57,
-        "yjs-role-city": 56,
+        "yjs-role-city": 61,
+        "yjs-major-city": 61,
+        "yjs-mobile": 2,
         "yjs-other": 1,
-        "yjs-search": 23
+        "yjs-search": 15,
+        "yjs-subject-city": 60
       },
-      "tables_seen": 17987,
-      "embedded_json_blocks": 1602,
+      "tables_seen": 25809,
+      "embedded_json_blocks": 1563,
       "role_like_links": 0,
-      "discovery_pages_queued": 790,
+      "discovery_pages_queued": 724,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 220,
+      "direct_detail_pages_visited": 286,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 220,
+      "direct_detail_requests_attempted": 286,
       "direct_detail_title_candidates": 21,
       "direct_detail_title_rejected": 12,
       "direct_detail_score_gate_recovered": 0,
@@ -3001,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-130-841.html",
-          "page_title": "江苏沃得机电集团有限公司2027招聘销售工程师_江苏其它校园招聘",
-          "text_preview": "江苏沃得机电集团有限公司2027招聘销售工程师_江苏其它校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 江苏农林职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 江苏农林职业技术学院 核实，并请同时联系本站处理该转载信息。 [江苏其它]江苏沃得机电集团有限公司 职位： 2027招聘销售工程师 发布时间： 2026-10-22 工作地点： 其它 信息来源： 江苏农林职业技术学院 职位类型： 全职 专业标签： 自动化 经济与贸易 工商管理 林学类 职位描述 销售工程师 10万元/年 2026-10-22 08:29:11发布 职位要求： 职位性质：全职 工作城市：江苏省镇江市丹阳市 招聘人数：10 学历要求：专科 职位类别：金融业务人员 需求专业：机械设计制造类,机电设备类,自动化类,汽车制造类,经济贸易类 职位描述： 岗位职责 1、依靠公司分配的经销商，从事农机产品的销售、推广工作； 2、维护客户资源； 3、配合完成公司销售管理各项工作。 任职资格 1、大专及以上学历，专业不限，市场营销、工商管理、机械制造等专业优先； 2、具备良好的沟通协调能力；能接受经常出差；"
+          "url_path": "/job-008-130-881.html",
+          "page_title": "交通运输部天津水运工程科学研究院2027校园招聘_天津校园招聘",
+          "text_preview": "交通运输部天津水运工程科学研究院2027校园招聘_天津校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 天津 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [天津]交通运输部天津水运工程科学研究院 职位： 2027校园招聘 发布时间： 2026-10-22 工作地点： 天津 信息来源： 高校人才网 职位类型： 全职 职位描述 交通运输部天津水运工程科学研究院2027年公开招聘29名工作人员公告（第二批） 共计20个岗位，招 29人 基本信息 发布时间：2026-10-21 截止日期：2026-10-28 学历要求：硕士研究生及以上 需求学科（供参考）： 水利工程 , 交通运输工程 , 船舶与海洋工程 , 电子科学与技术 , 信息与通信工程 , 计算机科学与技术 , 机械工程 , 生态学 , 生物学 , 电气工程 , 控制科学与工程 , 安全科学与工程 , 仪器科学与技术 , 化学工程与技术 , 管理科学与工程 , 土木工程与土木水利 , 系统科学 , 智能科学与技术 , 统计学 , 数学 , 海洋科学 , 测绘科学与"
         },
         {
-          "url_path": "/job-008-130-829.html",
-          "page_title": "南京龙飞文化科技发展有限责任公司招聘教务班主任_南京校园招聘",
-          "text_preview": "南京龙飞文化科技发展有限责任公司招聘教务班主任_南京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 南京 全职 > 职位详细 说明： 此信息由 南京工程学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 南京工程学院 核实，并请同时联系本站处理该转载信息。 [南京]南京龙飞文化科技发展有限责任公司 职位： 教务班主任 发布时间： 2026-10-22 工作地点： 南京 信息来源： 南京工程学院 职位类型： 全职 专业标签： 教育学 职位描述 教务班主任 10万元/年 2026-10-22 15:44:56发布 职位要求： 职位性质：全职 工作城市：江苏省南京市江宁区 招聘人数：2 学历要求：本科 职位类别：其他人员 语言能力：不限 需求专业：教育类 职位描述： 岗位职责 1、了解学生需求，并解决学生困难，对所带在读学员提供高水平服务。 2、沟通维护学员保证学生的出勤。 3、按招课程管理流程对学员在中心的学习进行管理，并与学生和家长建立长期、稳定的关系。 4、具备良好的沟通能力，抗压能力及团队协作能力 任职资格 本科及以上；一年以上相关工作经验，（优秀者可放宽）有责任心、爱心、耐心。 薪资福利 初级教务底薪5500+"
+          "url_path": "/job-008-130-880.html",
+          "page_title": "吉林水利电力职业学院2026招聘48名工作人员_吉林校园招聘",
+          "text_preview": "吉林水利电力职业学院2026招聘48名工作人员_吉林校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [吉林]吉林水利电力职业学院 职位： 2026招聘48名工作人员 发布时间： 2026-10-22 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 职位描述 吉林水利电力职业学院2026年10月公开招聘48名工作人员公告（14号） 共计15个岗位，招 48人 基本信息 发布时间：2026-10-13 截止日期：2026-10-23 学历要求：硕士研究生及以上 需求学科（供参考）： 心理学 , 社会学 , 教育学 , 水利工程 , 安全科学与工程 , 林学 , 土木工程与土木水利 , 电气工程 , 仪器科学与技术 , 机械工程 , 控制科学与工程 , 动力工程及工程热物理 , 理论经济学 , 应用经济学 , 数字经济 , 金融学 , 电子科学与技术 , 信息与通信工程 , 航空宇航科学与技术 , 戏剧、戏曲、影视学 展开 公告详情 根据《事业单位人事管理条"
         }
       ],
       "browser_render_attempts": 0,
@@ -3021,18 +3021,18 @@
       "public_list_leads": 0,
       "public_card_leads": 0,
       "direct_detail_role_records": 9,
-      "announcement_records": 3,
+      "announcement_records": 2,
       "portal_entries": 0,
       "sample_title": "其它招聘_其它应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
+        "基因编辑方向博士后",
         "销售工程师",
         "澳维科技膜材料研发工程师",
         "澳维科技产品开发工程师",
         "抗体开发实验员",
         "农机渠道销售",
-        "数据采集方向计算机视觉算法工程师",
-        "[广东]江门市蒙德电气股份有限公司"
+        "数据采集方向计算机视觉算法工程师"
       ],
       "role_field_samples": [
         {
@@ -3047,6 +3047,20 @@
             "responsibilities": 211,
             "requirements": 311,
             "benefits": 14
+          }
+        },
+        {
+          "title": "基因编辑方向博士后",
+          "company": "西湖大学生命科学学院闫浈实验室",
+          "city": "其它",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-130-885.html",
+          "field_lengths": {
+            "description": 2719,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 0
           }
         },
         {
@@ -3090,20 +3104,6 @@
             "requirements": 81,
             "benefits": 0
           }
-        },
-        {
-          "title": "抗体开发实验员",
-          "company": "百奥赛图江苏基因生物技术有限公司",
-          "city": "南通",
-          "salary": "9万元/年",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-130-834.html",
-          "field_lengths": {
-            "description": 492,
-            "responsibilities": 182,
-            "requirements": 140,
-            "benefits": 0
-          }
         }
       ],
       "link_samples": [],
@@ -3114,7 +3114,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-22T08:34:29+00:00",
+      "last_run_at": "2026-10-22T14:30:41+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3926,11 +3926,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 7417,
+  "published_total_jobs": 7418,
   "published_priority_candidates": 289,
-  "published_pending_review": 7128,
-  "records_added_this_run": 8,
-  "records_updated_this_run": 4,
+  "published_pending_review": 7129,
+  "records_added_this_run": 2,
+  "records_updated_this_run": 9,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 1,
@@ -3956,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1006,
-    "fields_checked": 7042,
+    "rows": 1007,
+    "fields_checked": 7049,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3967,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1006,
+    "company_fields_checked": 1007,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-22T09:01:10+00:00",
+  "quality_checked_at": "2026-10-22T14:53:37+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
