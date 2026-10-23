@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 14426,
+        "next_offset": 14626,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 26,
-  "records_found_this_run": 26,
-  "active_candidates": 8,
-  "pending_review": 18,
+  "records_found": 39,
+  "records_found_this_run": 39,
+  "active_candidates": 4,
+  "pending_review": 35,
   "results": [
     {
       "id": "boss",
@@ -2947,40 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 26,
-      "active_candidates": 8,
-      "pending_review": 18,
+      "records_found": 39,
+      "active_candidates": 4,
+      "pending_review": 35,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 19322913,
-      "links_seen": 56345,
-      "listing_url_candidates": 1662,
-      "listing_urls_visited": 352,
+      "html_bytes": 20675966,
+      "links_seen": 71957,
+      "listing_url_candidates": 2689,
+      "listing_urls_visited": 349,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 14426,
+      "listing_cursor_next": 14626,
       "listing_rotation_groups": {
-        "yjs-major-city": 58,
         "yjs-role-city": 58,
-        "yjs-search": 20,
-        "yjs-subject-city": 57,
+        "yjs-subject-city": 58,
+        "yjs-major-city": 57,
         "yjs-mobile": 6,
-        "yjs-other": 1
+        "yjs-other": 1,
+        "yjs-search": 20
       },
-      "tables_seen": 15731,
-      "embedded_json_blocks": 1671,
+      "tables_seen": 18034,
+      "embedded_json_blocks": 1761,
       "role_like_links": 0,
-      "discovery_pages_queued": 870,
+      "discovery_pages_queued": 897,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 220,
+      "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 220,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 17,
-      "direct_detail_score_gate_recovered": 0,
+      "direct_detail_requests_attempted": 221,
+      "direct_detail_title_candidates": 65,
+      "direct_detail_title_rejected": 27,
+      "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 24,
+      "direct_detail_role_rows_emitted": 38,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2993,7 +2993,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·当前活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -3001,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-090-569.html",
+          "url_path": "/job-008-102-354.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df6c3200f63d4bb83e19bcbf072f391c840472ba12dcfea18';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5df6ad933c8b0619a541f78ec74a227fe52f96c23800ef89ca';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-087-577.html",
+          "url_path": "/job-008-099-850.html",
           "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df6c3218792a1bb232a6cfeeb492c1787e102f70377ae6d4b';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "text_preview": "{\"l1\":\"var arg1='5df6ad9d8dc9ea7ad8382c8a5e304de29828e5061ae4492b76';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3017,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 24,
+      "role_records": 38,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 24,
-      "announcement_records": 2,
+      "direct_detail_role_records": 38,
+      "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "机械设计助理工程师",
-        "股权投资",
-        "护士",
-        "宠物管培生",
-        "电力营销工程师",
-        "安健环工程师",
-        "材料研发管培生"
+        "财务管理",
+        "行政综合员",
+        "审计员",
+        "生产运营岗",
+        "长番剧方向ai设计师",
+        "AIGC视觉生成设计师",
+        "视觉设计实习生"
       ],
       "role_field_samples": [
         {
@@ -3050,59 +3050,59 @@
           }
         },
         {
-          "title": "机械设计助理工程师",
-          "company": "无锡市杰美特科技有限公司",
-          "city": "无锡",
-          "salary": "9万元/年",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-131-719.html",
-          "field_lengths": {
-            "description": 206,
-            "responsibilities": 19,
-            "requirements": 57,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "股权投资",
-          "company": "南京市投资控股有限公司",
-          "city": "南京",
+          "title": "财务管理",
+          "company": "浙江省温岭市水务集团有限公司",
+          "city": "其它",
           "salary": "",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-131-725.html",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-099.html",
           "field_lengths": {
-            "description": 92,
+            "description": 814,
             "responsibilities": 0,
-            "requirements": 189,
-            "benefits": 47
-          }
-        },
-        {
-          "title": "护士",
-          "company": "苏州光明眼科医院有限公司",
-          "city": "苏州",
-          "salary": "6万元/年",
-          "degree": "博士",
-          "source_url": "https://m.yingjiesheng.com/job-008-131-715.html",
-          "field_lengths": {
-            "description": 325,
-            "responsibilities": 83,
-            "requirements": 116,
+            "requirements": 284,
             "benefits": 0
           }
         },
         {
-          "title": "宠物管培生",
-          "company": "南京灰会科技有限公司",
-          "city": "南京",
-          "salary": "8万元/年",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-131-716.html",
+          "title": "行政综合员",
+          "company": "江西长运鹰潭公共交通有限公司",
+          "city": "其它",
+          "salary": "3-5万/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-101.html",
           "field_lengths": {
-            "description": 750,
-            "responsibilities": 326,
-            "requirements": 299,
-            "benefits": 0
+            "description": 2538,
+            "responsibilities": 0,
+            "requirements": 414,
+            "benefits": 394
+          }
+        },
+        {
+          "title": "审计员",
+          "company": "江西长运鹰潭公共交通有限公司",
+          "city": "其它",
+          "salary": "3-5万/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-101.html",
+          "field_lengths": {
+            "description": 2538,
+            "responsibilities": 0,
+            "requirements": 414,
+            "benefits": 394
+          }
+        },
+        {
+          "title": "生产运营岗",
+          "company": "江西长运鹰潭公共交通有限公司",
+          "city": "其它",
+          "salary": "3-5万/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-101.html",
+          "field_lengths": {
+            "description": 2538,
+            "responsibilities": 0,
+            "requirements": 414,
+            "benefits": 394
           }
         }
       ],
@@ -3114,7 +3114,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-23T08:30:22+00:00",
+      "last_run_at": "2026-10-23T14:13:39+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3926,14 +3926,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 7673,
-  "published_priority_candidates": 310,
-  "published_pending_review": 7363,
-  "records_added_this_run": 23,
-  "records_updated_this_run": 3,
+  "published_total_jobs": 7707,
+  "published_priority_candidates": 312,
+  "published_pending_review": 7395,
+  "records_added_this_run": 37,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 1,
+    "aggregator_non_detail_or_non_role_records_removed": 3,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3956,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1082,
-    "fields_checked": 7574,
+    "rows": 1116,
+    "fields_checked": 7812,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3967,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1082,
+    "company_fields_checked": 1116,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-23T08:51:14+00:00",
+  "quality_checked_at": "2026-10-23T14:40:14+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
