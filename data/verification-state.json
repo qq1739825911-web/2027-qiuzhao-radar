@@ -1,5 +1,5 @@
 {
-  "cursor": 1945,
+  "cursor": 2065,
   "failures": {
     "auto-669e5aab3a599d5d": 0,
     "auto-fc4dab695439b9fd": 0,
@@ -8800,11 +8800,27 @@
     "auto-1b59040e01daff8f": 0,
     "auto-f1232fd3e1612486": 0,
     "auto-7c801e9c5fb82d4c": 0,
-    "auto-872b88adf22e87d3": 0
+    "auto-872b88adf22e87d3": 0,
+    "auto-2fc2a8ab6334a076": 0,
+    "auto-2c9f15df6f709248": 0,
+    "auto-9472bda2fc9d887a": 0,
+    "auto-78247664866bae37": 0,
+    "auto-4e35853b2df6c0f8": 0,
+    "auto-fb63d35133c0e194": 0,
+    "auto-49d45e079e81a664": 0,
+    "auto-2064696bbb30c512": 0,
+    "auto-f9a3caf68eaa39e2": 0,
+    "auto-5e923784ed4e7752": 0,
+    "auto-0064afa9c5f05558": 0,
+    "auto-afe942ac0896c237": 0,
+    "auto-5451546d447026bd": 0,
+    "auto-b87c0616edc83c5b": 0,
+    "auto-a9ac12d75f4700d7": 0,
+    "auto-58b46a542db87de6": 0
   },
-  "last_run_at": "2026-10-22T17:57:15+00:00",
+  "last_run_at": "2026-10-23T05:43:28+00:00",
   "last_batch_size": 120,
-  "eligible_count": 2914,
+  "eligible_count": 2984,
   "last_missing_at": {
     "xiaomi-2027-embedded-software-7670893035149052211": "2026-10-18T21:20:37+00:00",
     "xiaomi-2027-ai-software-7670893035119249690": "2026-10-18T21:20:37+00:00",
