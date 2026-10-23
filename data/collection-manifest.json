@@ -2,31 +2,9 @@
   "run_date": "2026-10-23",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 14826,
+        "next_offset": 15026,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 469,
-  "records_found_this_run": 469,
-  "active_candidates": 28,
-  "pending_review": 441,
+  "records_found": 39,
+  "records_found_this_run": 39,
+  "active_candidates": 4,
+  "pending_review": 35,
   "results": [
     {
       "id": "boss",
@@ -2972,31 +2950,32 @@
       "records_found": 39,
       "active_candidates": 4,
       "pending_review": 35,
-      "pages_attempted": 600,
-      "pages_failed": 0,
-      "html_bytes": 20785994,
-      "links_seen": 57420,
-      "listing_url_candidates": 1701,
-      "listing_urls_visited": 305,
+      "pages_attempted": 601,
+      "pages_failed": 1,
+      "html_bytes": 21085525,
+      "links_seen": 62058,
+      "listing_url_candidates": 1888,
+      "listing_urls_visited": 306,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 14826,
+      "listing_cursor_next": 15026,
       "listing_rotation_groups": {
-        "yjs-major-city": 64,
-        "yjs-role-city": 64,
-        "yjs-subject-city": 63,
-        "yjs-mobile": 1,
-        "yjs-search": 8
+        "yjs-role-city": 57,
+        "yjs-major-city": 57,
+        "yjs-search": 23,
+        "yjs-subject-city": 57,
+        "yjs-mobile": 5,
+        "yjs-other": 1
       },
-      "tables_seen": 19367,
-      "embedded_json_blocks": 1756,
+      "tables_seen": 19978,
+      "embedded_json_blocks": 1786,
       "role_like_links": 0,
-      "discovery_pages_queued": 824,
+      "discovery_pages_queued": 830,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 226,
+      "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 226,
+      "direct_detail_requests_attempted": 221,
       "direct_detail_title_candidates": 65,
       "direct_detail_title_rejected": 27,
       "direct_detail_score_gate_recovered": 1,
@@ -3022,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-132-113.html",
-          "page_title": "合肥市百利房地产开发有限公司招聘礼宾员_合肥校园招聘",
-          "text_preview": "合肥市百利房地产开发有限公司招聘礼宾员_合肥校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 安徽师范大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 安徽师范大学 核实，并请同时联系本站处理该转载信息。 [合肥]合肥市百利房地产开发有限公司 职位： 礼宾员 发布时间： 2026-10-23 工作地点： 其它 信息来源： 安徽师范大学 职位类型： 全职 专业标签： 外国文学 旅游管理 工商管理 职位描述 礼宾员 招聘单位：合肥市百利房地产开发有限公司洲际酒店 职位类别：前台迎宾 学历要求：专科及以上 工作地点：合肥市 薪资待遇：面议 发布日期：2026-10-23 专业要求：旅游管理(酒店方向),酒店管理,旅游管理,旅游管理(国际邮轮乘务方向),酒店管理,酒店管理(日语),酒店管理(英语),商务英语 岗位职责 Assist with heavy packages, coats, suitcase, etc. being alert to give assistance courteously and quickly, before having to be asked 主"
+          "url_path": "/job-008-132-100.html",
+          "page_title": "浙江省温岭市国有资产投资集团有限公司招聘基金管理_浙江校园招聘",
+          "text_preview": "浙江省温岭市国有资产投资集团有限公司招聘基金管理_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [浙江]浙江省温岭市国有资产投资集团有限公司 职位： 基金管理 发布时间： 2026-10-23 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 职位描述 浙江省温岭市国有资产投资集团有限公司2026年10月公开招聘1名工作人员公告 共计1个岗位，招 1人 基本信息 发布时间：2026-10-23 截止日期：2026-10-30 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 温岭市国有资产投资集团有限公司于2006年11月组建成立，注册资本金30亿元，是温岭市政府直属国有企业。公司下设2家一级直管子公司，涉及国有资本金的经营、股权投资，资产管理，政府产业基金运作管理等领域。 现因发展需要，温岭市国有资产投资集团有限公司（以下简称温岭市国投集团）面向社会公开招聘1名工作人员，具体事项公告如下： 一、招聘计划 温岭市国投集团计划招聘工作人员1"
         },
         {
-          "url_path": "/job-008-132-114.html",
-          "page_title": "合肥市百利房地产开发有限公司招聘餐饮服务员_合肥校园招聘",
-          "text_preview": "合肥市百利房地产开发有限公司招聘餐饮服务员_合肥校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 安徽师范大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 安徽师范大学 核实，并请同时联系本站处理该转载信息。 [合肥]合肥市百利房地产开发有限公司 职位： 餐饮服务员 发布时间： 2026-10-23 工作地点： 其它 信息来源： 安徽师范大学 职位类型： 全职 专业标签： 外国文学 旅游管理 工商管理 职位描述 餐饮服务员 招聘单位：合肥市百利房地产开发有限公司洲际酒店 职位类别：餐饮服务员 学历要求：高职(专科)及以上 工作地点：合肥市 薪资待遇：面议 发布日期：2026-10-23 专业要求：旅游管理(酒店方向),酒店管理,旅游管理,旅游管理(国际邮轮乘务方向),酒店管理,酒店管理(日语),酒店管理(英语),商务英语 岗位职责 Deliver Food and Beverage service of high standard and in accordance with departmental standards and procedures 按照部门的规范和程序"
+          "url_path": "/job-008-132-099.html",
+          "page_title": "浙江省温岭市水务集团有限公司招聘财务管理|供水生产|工程管理|管网养护工程_浙江校园招聘",
+          "text_preview": "浙江省温岭市水务集团有限公司招聘财务管理|供水生产|工程管理|管网养护工程_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [浙江]浙江省温岭市水务集团有限公司 职位： 财务管理|供水生产|工程管理|管网养护工程 发布时间： 2026-10-23 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 管理科学与工程 工商管理 职位描述 浙江省温岭市水务集团有限公司2026年10月公开招聘4名工作人员公告 共计4个岗位，招 4人 基本信息 发布时间：2026-10-23 截止日期：2026-10-30 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 温岭市水务集团有限公司于2015年12月组建成立，注册资本金1亿元，是温岭市政府直属国有企业。公司下设12家一级子公司，涉及供水、排水民生事业，以及市政供排水设施建设、水务产业投资、新能源开发、现代化农业、生态环境等领域。 现因发展需要，温岭市水务集团有限公司（以下简称温岭市水务集团）面"
         }
       ],
       "browser_render_attempts": 0,
@@ -3044,16 +3023,16 @@
       "direct_detail_role_records": 38,
       "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "其它招聘_其它应届生求职网",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "质量工程师",
-        "工艺工程师",
-        "风险控制部法务专员",
-        "综合行政岗",
-        "安全员",
-        "[北京]北京市中铁工程设计咨询集团有限公司",
-        "研究助理"
+        "财务管理",
+        "行政综合员",
+        "审计员",
+        "生产运营岗",
+        "长番剧方向ai设计师",
+        "AIGC视觉生成设计师",
+        "视觉设计实习生"
       ],
       "role_field_samples": [
         {
@@ -3071,72 +3050,72 @@
           }
         },
         {
-          "title": "质量工程师",
-          "company": "安徽乐鑫电子有限公司",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-115.html",
-          "field_lengths": {
-            "description": 348,
-            "responsibilities": 47,
-            "requirements": 39,
-            "benefits": 136
-          }
-        },
-        {
-          "title": "工艺工程师",
-          "company": "安徽乐鑫电子有限公司",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-116.html",
-          "field_lengths": {
-            "description": 366,
-            "responsibilities": 38,
-            "requirements": 38,
-            "benefits": 143
-          }
-        },
-        {
-          "title": "风险控制部法务专员",
-          "company": "江西晶昊盐化有限公司",
+          "title": "财务管理",
+          "company": "浙江省温岭市水务集团有限公司",
           "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-102.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-099.html",
           "field_lengths": {
-            "description": 974,
+            "description": 814,
             "responsibilities": 0,
-            "requirements": 1087,
+            "requirements": 284,
             "benefits": 0
           }
         },
         {
-          "title": "综合行政岗",
-          "company": "宁波五丰商贸食品冷链有限公司",
+          "title": "行政综合员",
+          "company": "江西长运鹰潭公共交通有限公司",
           "city": "其它",
-          "salary": "",
+          "salary": "3-5万/年",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-103.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-101.html",
           "field_lengths": {
-            "description": 828,
+            "description": 2538,
             "responsibilities": 0,
-            "requirements": 112,
-            "benefits": 0
+            "requirements": 414,
+            "benefits": 394
+          }
+        },
+        {
+          "title": "审计员",
+          "company": "江西长运鹰潭公共交通有限公司",
+          "city": "其它",
+          "salary": "3-5万/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-101.html",
+          "field_lengths": {
+            "description": 2538,
+            "responsibilities": 0,
+            "requirements": 414,
+            "benefits": 394
+          }
+        },
+        {
+          "title": "生产运营岗",
+          "company": "江西长运鹰潭公共交通有限公司",
+          "city": "其它",
+          "salary": "3-5万/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-132-101.html",
+          "field_lengths": {
+            "description": 2538,
+            "responsibilities": 0,
+            "requirements": 414,
+            "benefits": 394
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-23T17:26:22+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-23T19:11:18+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3950,8 +3929,8 @@
   "published_total_jobs": 7770,
   "published_priority_candidates": 312,
   "published_pending_review": 7458,
-  "records_added_this_run": 101,
-  "records_updated_this_run": 352,
+  "records_added_this_run": 3,
+  "records_updated_this_run": 36,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 3,
@@ -3995,6 +3974,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-23T17:50:07+00:00",
+  "quality_checked_at": "2026-10-23T19:35:14+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
