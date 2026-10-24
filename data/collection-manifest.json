@@ -2,31 +2,9 @@
   "run_date": "2026-10-24",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 16626,
+        "next_offset": 16826,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 516,
-  "records_found_this_run": 516,
-  "active_candidates": 28,
-  "pending_review": 488,
+  "records_found": 25,
+  "records_found_this_run": 25,
+  "active_candidates": 4,
+  "pending_review": 21,
   "results": [
     {
       "id": "boss",
@@ -2972,15 +2950,15 @@
       "records_found": 25,
       "active_candidates": 4,
       "pending_review": 21,
-      "pages_attempted": 634,
-      "pages_failed": 34,
-      "html_bytes": 18402403,
-      "links_seen": 48906,
-      "listing_url_candidates": 1305,
-      "listing_urls_visited": 324,
+      "pages_attempted": 655,
+      "pages_failed": 55,
+      "html_bytes": 19597993,
+      "links_seen": 51721,
+      "listing_url_candidates": 1375,
+      "listing_urls_visited": 255,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 16626,
+      "listing_cursor_next": 16826,
       "listing_rotation_groups": {
         "yjs-major-city": 66,
         "yjs-role-city": 65,
@@ -2989,15 +2967,15 @@
         "yjs-other": 1,
         "yjs-search": 15
       },
-      "tables_seen": 13869,
-      "embedded_json_blocks": 1672,
+      "tables_seen": 17432,
+      "embedded_json_blocks": 1675,
       "role_like_links": 0,
-      "discovery_pages_queued": 855,
+      "discovery_pages_queued": 818,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 246,
+      "direct_detail_pages_visited": 267,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 246,
+      "direct_detail_requests_attempted": 267,
       "direct_detail_title_candidates": 45,
       "direct_detail_title_rejected": 20,
       "direct_detail_score_gate_recovered": 1,
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-083-379.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df0ffbd32b642e771213dcf7517d3a6dbad540a953bbb789b';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-132-100.html",
+          "page_title": "浙江省温岭市国有资产投资集团有限公司招聘基金管理_浙江校园招聘",
+          "text_preview": "浙江省温岭市国有资产投资集团有限公司招聘基金管理_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [浙江]浙江省温岭市国有资产投资集团有限公司 职位： 基金管理 发布时间： 2026-10-23 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 职位描述 浙江省温岭市国有资产投资集团有限公司2026年10月公开招聘1名工作人员公告 共计1个岗位，招 1人 基本信息 发布时间：2026-10-23 截止日期：2026-10-30 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 温岭市国有资产投资集团有限公司于2006年11月组建成立，注册资本金30亿元，是温岭市政府直属国有企业。公司下设2家一级直管子公司，涉及国有资本金的经营、股权投资，资产管理，政府产业基金运作管理等领域。 现因发展需要，温岭市国有资产投资集团有限公司（以下简称温岭市国投集团）面向社会公开招聘1名工作人员，具体事项公告如下： 一、招聘计划 温岭市国投集团计划招聘工作人员1"
         },
         {
-          "url_path": "/job-008-083-706.html",
-          "page_title": "",
-          "text_preview": "{\"l1\":\"var arg1='5df0ffbf47f18fc6cd7d74b71f6c7e78790a989e80b615ee90';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
+          "url_path": "/job-008-132-099.html",
+          "page_title": "浙江省温岭市水务集团有限公司招聘财务管理|供水生产|工程管理|管网养护工程_浙江校园招聘",
+          "text_preview": "浙江省温岭市水务集团有限公司招聘财务管理|供水生产|工程管理|管网养护工程_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [浙江]浙江省温岭市水务集团有限公司 职位： 财务管理|供水生产|工程管理|管网养护工程 发布时间： 2026-10-23 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 管理科学与工程 工商管理 职位描述 浙江省温岭市水务集团有限公司2026年10月公开招聘4名工作人员公告 共计4个岗位，招 4人 基本信息 发布时间：2026-10-23 截止日期：2026-10-30 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 温岭市水务集团有限公司于2015年12月组建成立，注册资本金1亿元，是温岭市政府直属国有企业。公司下设12家一级子公司，涉及供水、排水民生事业，以及市政供排水设施建设、水务产业投资、新能源开发、现代化农业、生态环境等领域。 现因发展需要，温岭市水务集团有限公司（以下简称温岭市水务集团）面"
         }
       ],
       "browser_render_attempts": 0,
@@ -3045,7 +3023,7 @@
       "direct_detail_role_records": 25,
       "announcement_records": 0,
       "portal_entries": 0,
-      "sample_title": "ڻƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
         "财务管理",
@@ -3136,8 +3114,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-24T21:10:35+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-24T23:11:25+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3951,8 +3929,8 @@
   "published_total_jobs": 7903,
   "published_priority_candidates": 310,
   "published_pending_review": 7593,
-  "records_added_this_run": 57,
-  "records_updated_this_run": 442,
+  "records_added_this_run": 3,
+  "records_updated_this_run": 22,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 3,
@@ -3996,6 +3974,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-24T21:31:37+00:00",
+  "quality_checked_at": "2026-10-24T23:36:32+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
