@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-24T04:56:00+00:00",
+  "checked_at": "2026-10-25T05:08:50+00:00",
   "enabled_sources": 23,
-  "reachable": 19,
-  "warnings": 4,
+  "reachable": 18,
+  "warnings": 5,
   "results": [
     {
       "id": "boss",
@@ -85,8 +85,8 @@
       "id": "xiaomi",
       "name": "小米",
       "url": "https://hr.xiaomi.com/website/campus.html",
-      "status": "unavailable",
-      "detail": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "xiaopeng",
@@ -99,8 +99,8 @@
       "id": "yingjiesheng",
       "name": "应届生求职网",
       "url": "https://www.yingjiesheng.com/",
-      "status": "reachable",
-      "http_status": 200
+      "status": "unavailable",
+      "http_status": 502
     },
     {
       "id": "cmb",
@@ -134,8 +134,8 @@
       "id": "qiuzhaowang",
       "name": "秋招网",
       "url": "https://qiuzhaowang.com/latest",
-      "status": "reachable",
-      "http_status": 200
+      "status": "unavailable",
+      "detail": "The read operation timed out"
     },
     {
       "id": "meituan",
