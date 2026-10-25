@@ -2,31 +2,9 @@
   "run_date": "2026-10-25",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 17026,
+        "next_offset": 17226,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 454,
-  "records_found_this_run": 454,
-  "active_candidates": 29,
-  "pending_review": 425,
+  "records_found": 1,
+  "records_found_this_run": 1,
+  "active_candidates": 0,
+  "pending_review": 1,
   "results": [
     {
       "id": "boss",
@@ -2966,40 +2944,38 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 11,
-      "active_candidates": 3,
-      "pending_review": 8,
-      "pages_attempted": 634,
-      "pages_failed": 34,
-      "html_bytes": 20195563,
-      "links_seen": 52813,
-      "listing_url_candidates": 1552,
-      "listing_urls_visited": 265,
+      "records_found": 1,
+      "active_candidates": 0,
+      "pending_review": 1,
+      "pages_attempted": 643,
+      "pages_failed": 43,
+      "html_bytes": 18623823,
+      "links_seen": 56831,
+      "listing_url_candidates": 1363,
+      "listing_urls_visited": 266,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 17026,
+      "listing_cursor_next": 17226,
       "listing_rotation_groups": {
-        "yjs-role-city": 66,
-        "yjs-mobile": 4,
-        "yjs-other": 1,
-        "yjs-search": 15,
-        "yjs-major-city": 65,
+        "yjs-role-city": 75,
+        "yjs-major-city": 74,
+        "yjs-mobile": 2,
         "yjs-subject-city": 49
       },
-      "tables_seen": 18888,
-      "embedded_json_blocks": 1576,
+      "tables_seen": 17944,
+      "embedded_json_blocks": 1516,
       "role_like_links": 0,
-      "discovery_pages_queued": 798,
+      "discovery_pages_queued": 776,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 246,
+      "direct_detail_pages_visited": 255,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 246,
-      "direct_detail_title_candidates": 22,
-      "direct_detail_title_rejected": 11,
+      "direct_detail_requests_attempted": 255,
+      "direct_detail_title_candidates": 1,
+      "direct_detail_title_rejected": 0,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 11,
+      "direct_detail_role_rows_emitted": 1,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3020,14 +2996,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-132-113.html",
-          "page_title": "合肥市百利房地产开发有限公司招聘礼宾员_合肥校园招聘",
-          "text_preview": "合肥市百利房地产开发有限公司招聘礼宾员_合肥校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 安徽师范大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 安徽师范大学 核实，并请同时联系本站处理该转载信息。 [合肥]合肥市百利房地产开发有限公司 职位： 礼宾员 发布时间： 2026-10-23 工作地点： 其它 信息来源： 安徽师范大学 职位类型： 全职 专业标签： 外国文学 旅游管理 工商管理 职位描述 礼宾员 招聘单位：合肥市百利房地产开发有限公司洲际酒店 职位类别：前台迎宾 学历要求：专科及以上 工作地点：合肥市 薪资待遇：面议 发布日期：2026-10-23 专业要求：旅游管理(酒店方向),酒店管理,旅游管理,旅游管理(国际邮轮乘务方向),酒店管理,酒店管理(日语),酒店管理(英语),商务英语 岗位职责 Assist with heavy packages, coats, suitcase, etc. being alert to give assistance courteously and quickly, before having to be asked 主"
+          "url_path": "/job-008-083-932.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df01c6a8a7391abc43594013cbee24b83dfcae1682192ed16';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         },
         {
-          "url_path": "/job-008-132-114.html",
-          "page_title": "合肥市百利房地产开发有限公司招聘餐饮服务员_合肥校园招聘",
-          "text_preview": "合肥市百利房地产开发有限公司招聘餐饮服务员_合肥校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 安徽师范大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 安徽师范大学 核实，并请同时联系本站处理该转载信息。 [合肥]合肥市百利房地产开发有限公司 职位： 餐饮服务员 发布时间： 2026-10-23 工作地点： 其它 信息来源： 安徽师范大学 职位类型： 全职 专业标签： 外国文学 旅游管理 工商管理 职位描述 餐饮服务员 招聘单位：合肥市百利房地产开发有限公司洲际酒店 职位类别：餐饮服务员 学历要求：高职(专科)及以上 工作地点：合肥市 薪资待遇：面议 发布日期：2026-10-23 专业要求：旅游管理(酒店方向),酒店管理,旅游管理,旅游管理(国际邮轮乘务方向),酒店管理,酒店管理(日语),酒店管理(英语),商务英语 岗位职责 Deliver Food and Beverage service of high standard and in accordance with departmental standards and procedures 按照部门的规范和程序"
+          "url_path": "/job-008-083-942.html",
+          "page_title": "",
+          "text_preview": "{\"l1\":\"var arg1='5df01c6b17afdb0493e43e2c6a94714e014427e02d8490f2ba';\", \"l2\":\"GET\"} oHhbljdwUXHjoCxImhBkYzc4pn89Ean7KdwWYpzd78OK0urk/N0WRYH1ju+l3Oru6HkBWNWh6fjsv2Y3cgcDeFexewECfFK87/uM4Y/+clRU9bvw+ylfuHgBVi9W6tpCbqnuu+aGpipnyWChdjRXItxCIcT08rfr3BAvMOryufyK5KZ/Ozti3BBvp9OP3uBKbD1piUxYZt+E67Hy8/UsDRkjzC0US9oQUwPdoL775u/cQlM60ty72rzdy9H+iRZ/v6nkveHdFnPV34zXsej24vjA2kUPuVkABlVQXlwKE0W7vbSw77/aEGdP34K64dH4RhMHMXtVrF4nB4UKDl5JkGq0SZA4Ys4KlH0dYs6JFintlZCN3d0WU/tbFl2v8l5aUlDaRTc7i776kUiWlM7RqNxCR/bw2LbcEF9f8YH2Uo4QccvT6bek/aAqUW5oiRYN/7Hot+WhLHm7c4wmdz7aQmM3/bC++qYqXeECoXavJPIqM0MRgBFBGtm4/671sL758Y4W"
         }
       ],
       "browser_render_attempts": 0,
@@ -3036,22 +3012,15 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 11,
+      "role_records": 1,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 11,
+      "direct_detail_role_records": 1,
       "announcement_records": 0,
       "portal_entries": 0,
-      "sample_title": "其它招聘_其它应届生求职网",
+      "sample_title": "ϾƸϢ|ѧְ|Ͼҹ_Ӧְ",
       "role_title_samples": [
-        "AIGC影视创意制作（校招）",
-        "质量工程师",
-        "工艺工程师",
-        "风险控制部法务专员",
-        "综合行政岗",
-        "安全员",
-        "[北京]北京市中铁工程设计咨询集团有限公司",
-        "研究助理"
+        "AIGC影视创意制作（校招）"
       ],
       "role_field_samples": [
         {
@@ -3060,68 +3029,12 @@
           "city": "上海",
           "salary": "8千-1.5万",
           "degree": "本科",
-          "source_url": "http://m.yingjiesheng.com/jobdetail/170935981",
+          "source_url": "https://m.yingjiesheng.com/jobdetail/170935981",
           "field_lengths": {
             "description": 654,
             "responsibilities": 211,
             "requirements": 311,
             "benefits": 14
-          }
-        },
-        {
-          "title": "质量工程师",
-          "company": "安徽乐鑫电子有限公司",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-115.html",
-          "field_lengths": {
-            "description": 348,
-            "responsibilities": 47,
-            "requirements": 39,
-            "benefits": 136
-          }
-        },
-        {
-          "title": "工艺工程师",
-          "company": "安徽乐鑫电子有限公司",
-          "city": "其它",
-          "salary": "面议",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-116.html",
-          "field_lengths": {
-            "description": 366,
-            "responsibilities": 38,
-            "requirements": 38,
-            "benefits": 143
-          }
-        },
-        {
-          "title": "风险控制部法务专员",
-          "company": "江西晶昊盐化有限公司",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-102.html",
-          "field_lengths": {
-            "description": 974,
-            "responsibilities": 0,
-            "requirements": 1087,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "综合行政岗",
-          "company": "宁波五丰商贸食品冷链有限公司",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-132-103.html",
-          "field_lengths": {
-            "description": 828,
-            "responsibilities": 0,
-            "requirements": 112,
-            "benefits": 0
           }
         }
       ],
@@ -3133,8 +3046,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-25T05:16:28+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-25T08:22:51+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3946,13 +3859,13 @@
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
   "published_total_jobs": 7913,
-  "published_priority_candidates": 311,
-  "published_pending_review": 7602,
-  "records_added_this_run": 50,
-  "records_updated_this_run": 385,
+  "published_priority_candidates": 309,
+  "published_pending_review": 7604,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 1,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 2,
+    "aggregator_non_detail_or_non_role_records_removed": 0,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3993,6 +3906,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-25T05:41:32+00:00",
+  "quality_checked_at": "2026-10-25T08:52:40+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
