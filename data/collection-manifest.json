@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 18626,
+        "next_offset": 18826,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 16,
-  "records_found_this_run": 16,
+  "records_found": 2,
+  "records_found_this_run": 2,
   "active_candidates": 0,
-  "pending_review": 16,
+  "pending_review": 2,
   "results": [
     {
       "id": "boss",
@@ -2947,41 +2947,41 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 16,
+      "records_found": 2,
       "active_candidates": 0,
-      "pending_review": 16,
-      "pages_attempted": 600,
-      "pages_failed": 0,
-      "html_bytes": 16714966,
-      "links_seen": 80824,
-      "listing_url_candidates": 2737,
-      "listing_urls_visited": 420,
+      "pending_review": 2,
+      "pages_attempted": 605,
+      "pages_failed": 5,
+      "html_bytes": 18588013,
+      "links_seen": 77541,
+      "listing_url_candidates": 2646,
+      "listing_urls_visited": 296,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 18626,
+      "listing_cursor_next": 18826,
       "listing_rotation_groups": {
-        "yjs-role-city": 162,
-        "yjs-other": 1,
-        "yjs-mobile": 4,
-        "yjs-major-city": 33
+        "yjs-role-city": 60,
+        "yjs-search": 20,
+        "yjs-major-city": 60,
+        "yjs-subject-city": 60
       },
-      "tables_seen": 19996,
-      "embedded_json_blocks": 1401,
+      "tables_seen": 23105,
+      "embedded_json_blocks": 1082,
       "role_like_links": 0,
-      "discovery_pages_queued": 883,
+      "discovery_pages_queued": 765,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 163,
+      "direct_detail_pages_visited": 226,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 163,
-      "direct_detail_title_candidates": 21,
-      "direct_detail_title_rejected": 8,
-      "direct_detail_score_gate_recovered": 1,
+      "direct_detail_requests_attempted": 228,
+      "direct_detail_title_candidates": 1,
+      "direct_detail_title_rejected": 0,
+      "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 13,
+      "direct_detail_role_rows_emitted": 1,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
-      "public_detail_leads": 1,
+      "public_detail_leads": 0,
       "shared_bulletin_role_leads": 0,
       "direct_detail_links_deferred_by_budget": 0,
       "direct_detail_page_budget": 320,
@@ -2991,7 +2991,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·刚刚活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -2999,14 +2999,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-115-775.html",
+          "url_path": "/job-008-129-567.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: g˒\"l['*\"+\" ,*#,cO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3 < (\"}&ncc&||v2rpu\u0010T!Zn4 < ۘO\u0012 ?{?Y7|._^^8_?\u0002\u0004 wVpr \u0018(r\u0013 &j\u0005 < \u0011算? mǬ?_Mmh`\u0007\u0000\u001bLN?#A|\u0017Z /\u0000 ҟͬ޳ æ?CN3\bn J!} iyH}\u0015(ycnųP} \u00173\u0003 x\u0001\u0017 Dh~\u000fE_+dܭ 8HM\b= &pc~ǌ*Xn 7߻oZ?Q|\u001b^\u0001g p\u0012Op谒 5Su\u000ezg\u0006\u0017c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007(\u0014˪{ޟ\b\u0000pY03\u0006JZtwb9\u000ez*\\2Mo\u0017(d&F]id(^aI%F\u0006h nx\u000e:Q\u001b[0h\u0015x\u0007\u0005cv8Ց6Hn\u0019A[T.\u001aUyV\u0016˅ %:6@ m(= F9E\u0012\u0011g\u0006ֽYwS\"NÊG5uk < \u001aCIhx \u0019n\\\u0019#L' &בV h\bɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwbf\\i`\u0019Ǩx pz\u0010@.A24\u0004 zqȨ1kfL 5\u001beжd˓- 2"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: 'ڎْ$Y ٌǺ*J ڦ#d{e;O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015"
         },
         {
-          "url_path": "/job-008-116-026.html",
+          "url_path": "/job-008-129-147.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007Ȳ_\u0003 ^g=$\b\u0002ݣH\u0012H\b\u0010Ub\u0006{w=]]] \u0007|0#t #wQ < ?\u000f\u0017t7/׏>،>ќ?ٲdr\"Z < \u0002'qڪ갎J2Ųq-s쇏>\u0007`on(/N` .aquM?6`/h \u0007157//N \u0013зBWt,I4-umF\u0004Y\u0014lF0Y4yVr\u0019ex;n2~\u0007\u0013= \u0007@\u0001bx;{_nnT\u001b[ߐKo 7\u0006!\u0012at0>_ne\u0012~~E /\u0005zlS [\u0001> ~M\u0011$I+%WLg_2 s=\\ ~?\u0004ppy* 69w0ϡyXs b\u0013~`:)7 }bcM? ץ'׏|0{+8Q\u0004 \u0015(r\u0013 &J\u0005 < \u0011pq]/>ǏY3 =b\u000fBS\u000en0C: \u001b\u00002O\u0004w\u0000llf\u0005\u00196\u0019w/_p;\u0005Q a`LC\u00003 }w;?,L߿_\u0019@ @o#_oI Cځz)؄`C\u0004\u0014_f>1 [bfO\u0004\u0006r\u0017\u0000\u0007L < >[,\u001adJ`ѩW:O~Q\u0007{3 c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007h\u0014˪{ޟ \u0000pY03\u0006ZZtwb9\u000ez*\\2Mo\u0017hd&F]idh^aK-F\u0006h nx\u000e:Q\u001bG0h\u0015x\u0007\u0005cv8\u00116Hn\u0019A[T.\u001aUyV\u0016p˅ ):6@ \u0011m(= F9E\u0012!g\u0006ֽYwSBNÎG5uk < \u001aCIhx \u0019nX\u0019#L' &\u0011V a\u0010\bQ\u001b -o\u0012 ѫp\u0018,܀\u0003ÍNERعnux[VC}\\\u0018\u0011Ĳ͸2Q < eG !s\u0002\u0004!\u00108&t':!دњ15l Bۂ).O4 s \u001abP1v"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: 'ڎrjɌɢ0 6g* < 8ETTl[yzL2܍? %t?,\u000e\u001b?= \u0019C}R>&w\u0006\u00185c\u0002v=[ʚ%Ź L (،`i2@eoGwڇe0w\u000f+\u0012= \u0007`\u0001bx;{ҿ/[7 ۭo\u001bƠ=D\u0001R?t\u00120X&+1W@R\u0010nF!uO @iwx>\\n\u0014a\u0019^rt{ϻ(=CPm\u000f\u0007hlc?s7K E>+7\u0007r_hڧ'>f!|]z{_\b\u0010|݆[ɍJ&`W#sM\u0004~`\u0017${G㞻^|Lg f>z ~5* \u0000n0C:`\u0006y_@k'D;\u0002L6H6{ς ;/ (ywp!Wgﾻ \u0016~&Cy_/ ~|\u0005^s7\u0011= < \u0017c[RBqv#^ 6!x'=e_ 3`%,f\\\u0019kDo\u0007{\u0006Ju\u0013\u000fK < ýǢJ䉮 zD\u0017u;3@ BiP߅@:>ea0il\u0017aq8@]V E 7/\u0005(ℙ1P\u001aܥ\u0013qSiz\u0013]@6J{='C)lG KB],14G[(us W.؂YF0{u?(\u0018éĵIErs%\bڢrרʳ\\.\u0015f(ѱ\u0019\u0006n < \u0007 n\u001b\u0014E\u0019N\b7\u0019.j8C6H/ͺ# \u0012Iv\u001aV \u0011\u0004ڗ////_\u0014 {\u0019c>Q* +(u\u000fZ\u000e$J < \u000f T8,Q;+jt%T{I0f\u0005WkEѦ \u0010Ke&0B BHtЋk}!9>\u000e+b`1Y FMͫ\u000e\u0007 }vrbN(hb`\u001a\u0018&rnH} "
         }
       ],
       "browser_render_attempts": 0,
@@ -3015,22 +3015,15 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 14,
-      "public_list_leads": 1,
+      "role_records": 1,
+      "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 13,
-      "announcement_records": 2,
+      "direct_detail_role_records": 1,
+      "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "繤ʦƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "ԱƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
-        "AIGC影视创意制作（校招）",
-        "审计专员",
-        "食品安全储备干部",
-        "财务BP管培生",
-        "3D设计师",
-        "平面设计",
-        "采购助理",
-        "[广东]中国太平洋财产保险股份有限公司广东分公司"
+        "AIGC影视创意制作（校招）"
       ],
       "role_field_samples": [
         {
@@ -3046,73 +3039,17 @@
             "requirements": 311,
             "benefits": 14
           }
-        },
-        {
-          "title": "审计专员",
-          "company": "中企盈飞（北京）会计服务有限公司",
-          "city": "深圳",
-          "salary": "3K-3K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-133-402.html",
-          "field_lengths": {
-            "description": 235,
-            "responsibilities": 59,
-            "requirements": 67,
-            "benefits": 34
-          }
-        },
-        {
-          "title": "食品安全储备干部",
-          "company": "正大食品（湛江）有限公司",
-          "city": "其它",
-          "salary": "5K-7K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-133-404.html",
-          "field_lengths": {
-            "description": 361,
-            "responsibilities": 188,
-            "requirements": 58,
-            "benefits": 51
-          }
-        },
-        {
-          "title": "财务BP管培生",
-          "company": "中企盈飞（北京）会计服务有限公司",
-          "city": "深圳",
-          "salary": "3K-3K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-133-401.html",
-          "field_lengths": {
-            "description": 242,
-            "responsibilities": 67,
-            "requirements": 59,
-            "benefits": 34
-          }
-        },
-        {
-          "title": "3D设计师",
-          "company": "尚逸科技（江门）有限公司",
-          "city": "其它",
-          "salary": "5K-8K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-133-405.html",
-          "field_lengths": {
-            "description": 642,
-            "responsibilities": 269,
-            "requirements": 293,
-            "benefits": 19
-          }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-26T08:51:32+00:00",
+      "last_run_at": "2026-10-26T16:06:21+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3925,13 +3862,13 @@
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
   "published_total_jobs": 8003,
-  "published_priority_candidates": 271,
-  "published_pending_review": 7732,
-  "records_added_this_run": 13,
-  "records_updated_this_run": 3,
+  "published_priority_candidates": 269,
+  "published_pending_review": 7734,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 1,
+    "aggregator_non_detail_or_non_role_records_removed": 0,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3972,6 +3909,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-26T09:22:59+00:00",
+  "quality_checked_at": "2026-10-26T16:41:17+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
