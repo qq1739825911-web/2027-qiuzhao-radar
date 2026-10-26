@@ -1,5 +1,5 @@
 {
-  "cursor": 2785,
+  "cursor": 2905,
   "failures": {
     "auto-669e5aab3a599d5d": 0,
     "auto-fc4dab695439b9fd": 0,
@@ -8894,9 +8894,9 @@
     "auto-c53eb4f92af483bf": 0,
     "auto-da819a81c81a52c0": 0
   },
-  "last_run_at": "2026-10-25T21:40:44+00:00",
+  "last_run_at": "2026-10-26T23:16:01+00:00",
   "last_batch_size": 120,
-  "eligible_count": 3147,
+  "eligible_count": 3212,
   "last_missing_at": {
     "xiaomi-2027-embedded-software-7670893035149052211": "2026-10-18T21:20:37+00:00",
     "xiaomi-2027-ai-software-7670893035119249690": "2026-10-18T21:20:37+00:00",
