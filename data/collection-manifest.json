@@ -1,32 +1,10 @@
 {
-  "run_date": "2026-10-26",
+  "run_date": "2026-10-27",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 19026,
+        "next_offset": 19226,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 559,
-  "records_found_this_run": 559,
-  "active_candidates": 22,
-  "pending_review": 537,
+  "records_found": 33,
+  "records_found_this_run": 33,
+  "active_candidates": 2,
+  "pending_review": 31,
   "results": [
     {
       "id": "boss",
@@ -2969,40 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 17,
-      "active_candidates": 0,
-      "pending_review": 17,
+      "records_found": 33,
+      "active_candidates": 2,
+      "pending_review": 31,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 15834062,
-      "links_seen": 59759,
-      "listing_url_candidates": 2478,
-      "listing_urls_visited": 379,
+      "html_bytes": 18058153,
+      "links_seen": 63369,
+      "listing_url_candidates": 1717,
+      "listing_urls_visited": 297,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 19026,
+      "listing_cursor_next": 19226,
       "listing_rotation_groups": {
-        "yjs-major-city": 59,
-        "yjs-role-city": 58,
         "yjs-subject-city": 58,
-        "yjs-mobile": 2,
+        "yjs-major-city": 58,
+        "yjs-role-city": 57,
+        "yjs-mobile": 4,
         "yjs-other": 1,
         "yjs-search": 22
       },
-      "tables_seen": 16768,
-      "embedded_json_blocks": 1016,
+      "tables_seen": 22861,
+      "embedded_json_blocks": 1210,
       "role_like_links": 0,
-      "discovery_pages_queued": 809,
+      "discovery_pages_queued": 829,
       "listing_pages_queued": 230,
       "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
       "direct_detail_requests_attempted": 221,
-      "direct_detail_title_candidates": 21,
-      "direct_detail_title_rejected": 6,
+      "direct_detail_title_candidates": 43,
+      "direct_detail_title_rejected": 12,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 15,
+      "direct_detail_role_rows_emitted": 31,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-078-546.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: \u000exʸ*ڜ(X9;\u0016 9p*/z0O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015"
+          "url_path": "/job-008-133-482.html",
+          "page_title": "南通新宙邦电子材料有限公司招聘化工工程师_江苏校园招聘",
+          "text_preview": "南通新宙邦电子材料有限公司招聘化工工程师_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 江南大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 江南大学 核实，并请同时联系本站处理该转载信息。 [江苏]南通新宙邦电子材料有限公司 职位： 化工工程师 发布时间： 2026-10-26 工作地点： 其它 信息来源： 江南大学 职位类型： 全职 专业标签： 化工与制药 设计学 职位描述 化工工程师 13万元/年 2026-10-20 14:24:14发布 职位要求： 职位性质：全职 招聘人数：2 学历要求：硕士 职位类别：工程技术人员 语言能力：英语 需求专业：化学工程与技术 职位描述： 岗位职责 确定工程项目设计方案，制定工程设计、安装施工、试车计划，工艺施工图设计，提出各专业设计条件，解决工程安装、试压、试车中出现的工艺问题，解决新产品、新技术开发应用过程中的技术问题 任职资格 化工相关专业、硕士学历 薪资福利 见公司宣传 联系方式： 联系人：葛** 简历接收邮箱：y****@ 公司介绍： 南通新宙邦电子材料有限公司是创业板上市公司深圳新宙邦科技股份有限公司（股票代码"
         },
         {
-          "url_path": "/job-008-077-967.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: m Ǚ \bī#r\u0012[dێb2ɻly < ϹO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J "
+          "url_path": "/job-008-133-484.html",
+          "page_title": "南通新宙邦电子材料有限公司招聘分析工程师_江苏校园招聘",
+          "text_preview": "南通新宙邦电子材料有限公司招聘分析工程师_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 江南大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 江南大学 核实，并请同时联系本站处理该转载信息。 [江苏]南通新宙邦电子材料有限公司 职位： 分析工程师 发布时间： 2026-10-26 工作地点： 其它 信息来源： 江南大学 职位类型： 全职 专业标签： 化学 职位描述 分析工程师 10万元/年 2026-10-20 14:26:08发布 职位要求： 职位性质：不限 招聘人数：2 学历要求：硕士 职位类别：工程技术人员 语言能力：不限 需求专业：化工技术类 职位描述： 岗位职责 建立分析标准及创新分析技术。 福利介绍： 1、薪酬福利：工资+奖金+津贴+多层面福利，每年有多次调薪机会； 2、社会保险：购买五险一金、人身意外险，为员工提供完善的社会保障； 3、福利津贴：根据不同岗位设置不同的住房补助、话费补助等； 4、员工餐厅:公司为员工提供干净卫生营养合理搭配的工作餐; 5、员工住宿：公司免费为员工提供舒适的住宿环境（雅居乐花园：配厨房、热水器、洗衣机、空调等），附近有大"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,13 +3017,13 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 15,
+      "role_records": 31,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 15,
+      "direct_detail_role_records": 31,
       "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "ǰ̨ƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
         "化工工程师",
@@ -3136,8 +3114,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-26T22:52:41+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-27T00:24:41+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3948,14 +3926,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 8167,
-  "published_priority_candidates": 269,
-  "published_pending_review": 7898,
-  "records_added_this_run": 204,
-  "records_updated_this_run": 336,
+  "published_total_jobs": 8181,
+  "published_priority_candidates": 244,
+  "published_pending_review": 7937,
+  "records_added_this_run": 16,
+  "records_updated_this_run": 17,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 0,
+    "aggregator_non_detail_or_non_role_records_removed": 2,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3978,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1152,
-    "fields_checked": 8064,
+    "rows": 1166,
+    "fields_checked": 8162,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3989,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1152,
+    "company_fields_checked": 1166,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-26T23:16:19+00:00",
+  "quality_checked_at": "2026-10-27T00:56:15+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
