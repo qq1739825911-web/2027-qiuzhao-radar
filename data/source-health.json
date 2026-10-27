@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-10-26T05:10:43+00:00",
+  "checked_at": "2026-10-27T05:26:59+00:00",
   "enabled_sources": 23,
-  "reachable": 20,
-  "warnings": 3,
+  "reachable": 19,
+  "warnings": 4,
   "results": [
     {
       "id": "boss",
@@ -57,8 +57,8 @@
       "id": "51job",
       "name": "前程无忧51job",
       "url": "https://xy.51job.com/",
-      "status": "reachable",
-      "http_status": 200
+      "status": "unavailable",
+      "detail": "<urlopen error [Errno 104] Connection reset by peer>"
     },
     {
       "id": "huawei",
