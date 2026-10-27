@@ -8929,7 +8929,60 @@
     "auto-feef7fec8f639de1": 0,
     "auto-0562a7715d0fa3d9": 0,
     "auto-f294dd7834bc2c09": 0,
-    "auto-1966bf0a50c45928": 0
+    "auto-1966bf0a50c45928": 0,
+    "auto-b641d710ccf5a183": 0,
+    "auto-ed9109ef86e58b56": 0,
+    "auto-b96b518c7106e681": 0,
+    "auto-41add0774fe9b776": 0,
+    "auto-fd124f55ed81d978": 0,
+    "auto-d1852751efd8f699": 0,
+    "auto-fd7bd111d7b1fce0": 0,
+    "auto-2b8d594d05b848d9": 0,
+    "auto-57c94d38176142f3": 0,
+    "auto-1db2b6729c0f5754": 0,
+    "auto-72402c56623611c9": 0,
+    "auto-085cff44c886b9b5": 0,
+    "auto-80915aeb026622c7": 0,
+    "auto-283938ffd4553be5": 0,
+    "auto-492be344e26687de": 0,
+    "auto-87241327196dddd0": 0,
+    "auto-07aaa2fab182a422": 0,
+    "auto-69a1363922e9092a": 0,
+    "auto-3b815a92bb05a3ec": 0,
+    "auto-c9721e4f64a09445": 0,
+    "auto-a1f67e5650d349c4": 0,
+    "auto-c9a601fe07cb0fec": 0,
+    "auto-c3204860bb6d60a1": 0,
+    "auto-bcec3e4b0737a540": 0,
+    "auto-5a098b82c7eb1885": 0,
+    "auto-194fdc68366e1d95": 0,
+    "auto-0e97c02cf040ed4c": 0,
+    "auto-034dc4c482df0ca1": 0,
+    "auto-ce803e50f9d49651": 0,
+    "auto-e3da9f0378b97cbd": 0,
+    "auto-e54fb381858b8a14": 0,
+    "auto-1f1e070edb40a6e2": 0,
+    "auto-5f2806efbee03483": 0,
+    "auto-1c49f3eec1f16ac8": 0,
+    "auto-9f6d4585b92f0442": 0,
+    "auto-de51adf6ed44f240": 0,
+    "auto-52804e1bfafff990": 0,
+    "auto-2288e097fa782435": 0,
+    "auto-b11da51894fb182b": 0,
+    "auto-e7aae2edeaac2c8b": 0,
+    "auto-db899fd727fdb816": 0,
+    "auto-1cd17be1304ac76b": 0,
+    "auto-f477efc35a689035": 0,
+    "auto-eef4eff0567b6c71": 0,
+    "auto-43dbe00c4fa30e75": 0,
+    "auto-42de82af37d15e49": 0,
+    "auto-77ea5e20de31eaf6": 0,
+    "auto-2d1c2d3404482b47": 0,
+    "auto-51e349a4674825d0": 0,
+    "auto-a7ae0ac77c1c822b": 0,
+    "auto-a53acb6ad3537cae": 0,
+    "auto-20685e75e542f30f": 0,
+    "auto-822697df9aeeb1a2": 0
   },
   "last_run_at": "2026-10-26T23:16:01+00:00",
   "last_batch_size": 120,
@@ -8955,13 +9008,13 @@
     "auto-5aa4c50e9756b5bb": "2026-10-20T12:33:06+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-27T09:23:36+00:00"
+    "yingjiesheng": "2026-10-27T15:53:40+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 121
+    "yingjiesheng": 301
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 1099
+    "yingjiesheng": 1109
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
