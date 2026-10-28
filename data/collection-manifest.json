@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 20026,
+        "next_offset": 20226,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 83,
-  "records_found_this_run": 83,
-  "active_candidates": 16,
-  "pending_review": 67,
+  "records_found": 30,
+  "records_found_this_run": 30,
+  "active_candidates": 6,
+  "pending_review": 24,
   "results": [
     {
       "id": "boss",
@@ -2947,40 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 83,
-      "active_candidates": 16,
-      "pending_review": 67,
+      "records_found": 30,
+      "active_candidates": 6,
+      "pending_review": 24,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 16879901,
-      "links_seen": 64755,
-      "listing_url_candidates": 2649,
-      "listing_urls_visited": 378,
+      "html_bytes": 16029933,
+      "links_seen": 61751,
+      "listing_url_candidates": 1749,
+      "listing_urls_visited": 314,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 20026,
+      "listing_cursor_next": 20226,
       "listing_rotation_groups": {
-        "yjs-major-city": 57,
-        "yjs-role-city": 56,
-        "yjs-mobile": 6,
+        "yjs-role-city": 62,
+        "yjs-mobile": 10,
+        "yjs-major-city": 62,
+        "yjs-subject-city": 61,
         "yjs-other": 1,
-        "yjs-search": 24,
-        "yjs-subject-city": 56
+        "yjs-search": 4
       },
-      "tables_seen": 16976,
-      "embedded_json_blocks": 1568,
+      "tables_seen": 19498,
+      "embedded_json_blocks": 1195,
       "role_like_links": 0,
-      "discovery_pages_queued": 965,
+      "discovery_pages_queued": 863,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 219,
+      "direct_detail_pages_visited": 224,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 219,
-      "direct_detail_title_candidates": 111,
-      "direct_detail_title_rejected": 35,
-      "direct_detail_score_gate_recovered": 2,
+      "direct_detail_requests_attempted": 224,
+      "direct_detail_title_candidates": 46,
+      "direct_detail_title_rejected": 18,
+      "direct_detail_score_gate_recovered": 4,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 76,
+      "direct_detail_role_rows_emitted": 28,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 1,
@@ -3001,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-088-570.html",
+          "url_path": "/job-008-110-843.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:(0 0p'z\u00168*ûآj\"XO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:, ɶd.\b < :X\u0016';Ɋ\u0002ghqO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s"
         },
         {
-          "url_path": "/job-008-085-822.html",
+          "url_path": "/job-008-111-010.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:\b ωp\u0002ùY&g9 1cG\u00032?r7\u0016\u0017'\u000f8l?H \u001b`~\u0017fw\u000fǃIݚ\u001b`?' n*k:$\u00166\u0003ɢ`3ɪɳ\u0000 -ßqk =H_#p \u0006h\u000e+aKnݨ6l!Jo\u001bn\u0010\u0005HA:K|bĤ_Y\u0003KA^)7\u001bb\u0017=}\u0000χpqSIRJgx\u0015Wm>f>?fg .#w\u000fW\u000fA= vJóyd \u0016֞ v\u0000d\u000f3\u00197Z\u0001e\u0010 2\b0 = 2l3_ :cQ֤ 8:= ڸ!\u0013#\u0010 A\u00100(A Mn\u001b (z80T$V\\e5\u0014G4/ʅ\u0011N,ی < ,\u0018\u0015ܾ| ]_v\u0011\u0013%\bQ1;Q/\u000e\u00195z֌f\u0003\u0016\u0016LqyA+X$\u0010\u001b\u0014*\u000e\\i~PJ\u0017P_\\vk \u0002bѤLdqr-~/\"[#\bAÆ'eO\u0006˞7/\u0015xE{9c#ۅa9..% \u0012 M6rǆtƺ2'\u0012 \be}_n!ڠOƅ\u0018VX6B\u0004ܫFg\u0010 \u0010G\u0010h_d^|S0e\\y G4\b3=h9\u0000* < < .Wã\u0010C}8F v2 я=+Lp헅 m\u0005 3(r\u0010.fֻ\\\u0012iA \u001a\\eEodKM.[a'zG[\u0014 Je8j\u000en2\u0017]ҠCuF7l5Zl](R`@Bν eٛ｢'U\u0011TqhF\u0011c \u0017cg/\u001aNŜaoh\u0004JG ڱP\u0010F0ѕPA'\u0012ð\u0015t_\u0015 Fz@/%R3\u0019 \u0006j \"S#A/9VR\u000e;]d)\u00185%7F; p\\;u \u0006:i`˹"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:&Hir,'ؖ HjsZ0 'O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012"
         }
       ],
       "browser_render_attempts": 0,
@@ -3017,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 77,
+      "role_records": 29,
       "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 76,
-      "announcement_records": 6,
+      "direct_detail_role_records": 28,
+      "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "԰ƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "ϺİƸϢ|ѧְ|Ϻҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "智能生产制造技工",
-        "IC设计工程师",
-        "分子生物药代分析研究员",
-        "毒理研究员",
-        "审计方向总公司管培生岗",
-        "AI需求方向总公司管培生岗",
-        "数据分析方向总公司管培生岗"
+        "能源环境技术研究员",
+        "低碳利用与热储转换技术研究员",
+        "客服专员",
+        "营销管网部客服专员",
+        "流体方向起落架产品设计岗",
+        "产品经理",
+        "刹车方向起落架产品设计岗"
       ],
       "role_field_samples": [
         {
@@ -3050,58 +3050,58 @@
           }
         },
         {
-          "title": "智能生产制造技工",
-          "company": "珠海冠宇电池股份有限公司",
-          "city": "其它",
-          "salary": "6K-7K/月",
-          "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-134-637.html",
-          "field_lengths": {
-            "description": 342,
-            "responsibilities": 195,
-            "requirements": 32,
-            "benefits": 51
-          }
-        },
-        {
-          "title": "IC设计工程师",
-          "company": "北京智联安科技股份有限公司",
-          "city": "北京",
+          "title": "能源环境技术研究员",
+          "company": "国家能源集团科学技术研究院有限公司",
+          "city": "南京",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-134-630.html",
+          "degree": "博士",
+          "source_url": "https://m.yingjiesheng.com/job-008-136-427.html",
           "field_lengths": {
-            "description": 441,
-            "responsibilities": 196,
-            "requirements": 541,
-            "benefits": 40
-          }
-        },
-        {
-          "title": "分子生物药代分析研究员",
-          "company": "北京赛赋医药研究院有限公司",
-          "city": "其它",
-          "salary": "10000-15000元",
-          "degree": "硕士",
-          "source_url": "https://m.yingjiesheng.com/job-008-134-616.html",
-          "field_lengths": {
-            "description": 49,
-            "responsibilities": 141,
-            "requirements": 140,
+            "description": 1505,
+            "responsibilities": 0,
+            "requirements": 790,
             "benefits": 0
           }
         },
         {
-          "title": "毒理研究员",
-          "company": "北京赛赋医药研究院有限公司",
-          "city": "其它",
-          "salary": "10000-15000元",
-          "degree": "硕士",
-          "source_url": "https://m.yingjiesheng.com/job-008-134-617.html",
+          "title": "低碳利用与热储转换技术研究员",
+          "company": "国家能源集团科学技术研究院有限公司",
+          "city": "南京",
+          "salary": "",
+          "degree": "博士",
+          "source_url": "https://m.yingjiesheng.com/job-008-136-427.html",
           "field_lengths": {
-            "description": 35,
-            "responsibilities": 109,
-            "requirements": 110,
+            "description": 1505,
+            "responsibilities": 0,
+            "requirements": 790,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "客服专员",
+          "company": "福州旗山供水有限公司",
+          "city": "其它",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-136-428.html",
+          "field_lengths": {
+            "description": 812,
+            "responsibilities": 91,
+            "requirements": 0,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "营销管网部客服专员",
+          "company": "福州旗山供水有限公司",
+          "city": "其它",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-136-428.html",
+          "field_lengths": {
+            "description": 812,
+            "responsibilities": 91,
+            "requirements": 0,
             "benefits": 0
           }
         }
@@ -3114,7 +3114,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-28T00:30:33+00:00",
+      "last_run_at": "2026-10-28T20:15:13+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3926,14 +3926,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 8354,
-  "published_priority_candidates": 191,
-  "published_pending_review": 8163,
-  "records_added_this_run": 35,
-  "records_updated_this_run": 48,
+  "published_total_jobs": 8377,
+  "published_priority_candidates": 193,
+  "published_pending_review": 8184,
+  "records_added_this_run": 28,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 1,
+    "aggregator_non_detail_or_non_role_records_removed": 5,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3956,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1256,
-    "fields_checked": 8792,
+    "rows": 1279,
+    "fields_checked": 8953,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3967,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1256,
+    "company_fields_checked": 1279,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-28T06:07:49+00:00",
+  "quality_checked_at": "2026-10-28T20:41:07+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
