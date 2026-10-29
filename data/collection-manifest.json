@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 20826,
+        "next_offset": 21026,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 14,
-  "records_found_this_run": 14,
+  "records_found": 21,
+  "records_found_this_run": 21,
   "active_candidates": 5,
-  "pending_review": 9,
+  "pending_review": 16,
   "results": [
     {
       "id": "boss",
@@ -2947,39 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 14,
+      "records_found": 21,
       "active_candidates": 5,
-      "pending_review": 9,
-      "pages_attempted": 603,
-      "pages_failed": 3,
-      "html_bytes": 15429592,
-      "links_seen": 51566,
-      "listing_url_candidates": 2196,
-      "listing_urls_visited": 363,
+      "pending_review": 16,
+      "pages_attempted": 608,
+      "pages_failed": 8,
+      "html_bytes": 16525101,
+      "links_seen": 64814,
+      "listing_url_candidates": 2628,
+      "listing_urls_visited": 332,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 20826,
+      "listing_cursor_next": 21026,
       "listing_rotation_groups": {
-        "yjs-role-city": 58,
-        "yjs-major-city": 58,
-        "yjs-mobile": 4,
-        "yjs-subject-city": 58,
-        "yjs-search": 22
+        "yjs-subject-city": 57,
+        "yjs-major-city": 57,
+        "yjs-role-city": 57,
+        "yjs-search": 26,
+        "yjs-mobile": 2,
+        "yjs-other": 1
       },
-      "tables_seen": 15974,
-      "embedded_json_blocks": 928,
+      "tables_seen": 16287,
+      "embedded_json_blocks": 1141,
       "role_like_links": 0,
-      "discovery_pages_queued": 809,
+      "discovery_pages_queued": 790,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 222,
+      "direct_detail_pages_visited": 228,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 224,
-      "direct_detail_title_candidates": 22,
-      "direct_detail_title_rejected": 12,
+      "direct_detail_requests_attempted": 228,
+      "direct_detail_title_candidates": 23,
+      "direct_detail_title_rejected": 6,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 10,
+      "direct_detail_role_rows_emitted": 17,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3000,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-107-533.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:k3.o'pz ω((ْ':r*ز* O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8\u0017\u0018U8A\u0016\u0005\u0011LV5M\\\u0006h\u0019 [ AE\"\u001ac\u0000 7@wx^],\u0016/u'u\u000f[vFa QzC4\u0018t;(@\u000eY\u0002[}\u0014d%&\u001aH_ M(\u00158\u0003(}>\u000eχˍ\"LR:Kξroy711\u0013e>>p\u0019{:~\b\u0010-T\u001am'syaC>~{&rtRn\u001b_ MǬ~>DK/u/ \u0001|{+8Q\u0004ҿrzn\u0014Q\u000fl\u00135\u0002d\u000f\bPwsK}6cGϟ_ïPeT\u0003\u0000 &{H\u0011 o h-HyG\u0006f~Yaӟ'\u0019\u0004^\u0010>o\u000eδ < > \u0001֏oy \u000e?\"4\"uLKJh\u00152\u000e wK&\u0004 R\u0004\u0013X1|c}\u0015,7(> `/\u0000^\u000exa}XtXɄ(ѩW:O~Q\u0007{3 1._\u0006]hJ =\u000eS\u0019\u0006Fv\u0018\u0016'\u0003\u0014 e=P\u0004R{RR,N\u0019\u0003%]; \u0007=\u0015.7 zh2R\u0013Js2fytl$DJ\u0012#H\u0003}RY < \u0007n q⨍-e CW1;H\\T$7Wی-*Jx < [+ Za\u0012 asA\\\u0014pF3lbެ;)da#ך5 J$4 < |̈́gl7rXB\u0011FE\u0013[v`[+hvN@4\u0004AFd˛\u000454qmx0w3+\u0006ˮ77pcS+V[]s1Pl =Ҽ(\u0017F; \b4cT ~\u001b,{޼ W\u001553͏\\"
+          "url_path": "/job-008-137-697.html",
+          "page_title": "巴马瑶族自治县乡村振兴研究院招聘科研助理_广西校园招聘",
+          "text_preview": "巴马瑶族自治县乡村振兴研究院招聘科研助理_广西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [广西]巴马瑶族自治县乡村振兴研究院 职位： 科研助理 发布时间： 2026-10-29 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 植物生产 职位描述 巴马瑶族自治县乡村振兴研究院2026年招聘2名科研助理 共计1个岗位，招 2人 五险一金 基本信息 发布时间：2026-10-29 截止日期：2027-04-27 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 01关于我们 巴马瑶族自治县乡村振兴研究院，由中国农业科学院深圳农业基因组研究所和巴马瑶族自治县人民政府合作共建的新型研发机构(事业单位)。旨在开发利用巴马当地特色农业资源等优势，助力巴马全面实现乡村振兴。 02岗位职责 ??????????????2名科研助理 1.主要负责研究相关分子试验，如PCR实验; 2.配合团队其他成员开展相关实验工作。 应聘条件: 1.具备微生物"
         },
         {
-          "url_path": "/job-008-105-368.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:k3mڪZ+y+۲I簬9 V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8\u0017\u0018U8A\u0016\u0005\u0011LV5M\\\u0006h\u0019 [ AE\"\u001ac\u0000 7@wx^],\u0016/u'u\u000f[vFa QzC4\u0018t;(@\u000eY\u0002[}\u0014d%&\u001aH_ M(\u00158\u0003(}>\u000eχˍ\"LR:Kξroy711\u0013e>>p\u0019{:~\b\u0010-T\u001am'syaC>~{&rtRn\u001b_ MǬ~>DK/u/ \u0001|{+8Q\u0004ҿrzn\u0014Q\u000fl\u00135\u0002d\u000f\bPwsK}6cGϟ_ïPeT\u0003\u0000 &{H\u0011 o h-HyG\u0006f~Yaӟ'\u0019\u0004^\u0010>o\u000eδ < > \u0001֏oy \u000e?\"4\"uLKJh\u00152\u000e wK&\u0004 R\u0004\u0013X1|c}\u0015,7(> `/\u0000^\u000exa}XtXɔ < 5Su\u000ezg\u0006\u0017c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007(\u0014˪{ޟ\b\u0000pY03\u0006JZtwb9\u000ez*\\2Mo\u0017(d&F]id(^aI%F\u0006h nx\u000e:Q\u001b[0h\u0015x\u0007\u0005cv8Ց6Hn\u0019A[T.\u001aUyV\u0016˅ %:6@ m(= F9E\u0012\u0011g\u0006ֽYwS\"NÊG5uk < \u001aCIhx \u0019n\\\u0019#L' &בV h\bɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwb\u0019F\u0011i`\u0019Ǩx pz\u0010@.A24\u0004 zqȨ1kfL 5\u001be"
+          "url_path": "/job-008-137-698.html",
+          "page_title": "江苏省特种设备安全监督检验研究院太仓分院招聘特种设备检验检测_江苏校园招聘",
+          "text_preview": "江苏省特种设备安全监督检验研究院太仓分院招聘特种设备检验检测_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [江苏]江苏省特种设备安全监督检验研究院太仓分院 职位： 特种设备检验检测 发布时间： 2026-10-29 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 机械类 化工与制药 职位描述 江苏省特种设备安全监督检验研究院太仓分院2026年招聘1名劳务派遣特种设备检验检测人员简章 共计1个岗位，招 1人 基本信息 发布时间：2026-10-29 截止日期：2026-11-05 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 根据江苏省特种设备安全监督检验研究院关于劳务派遣用工相关规定，现因事业发展需要，江苏省特种设备安全监督检验研究院太仓分院面向社会公开招聘劳务派遣用工人员1名。现将有关招聘事项公告如下： 一、招聘岗位 1.岗位：特种设备检验检测 2.要求： （1）本科及以上学历，具有相应学位，机电控制类、机械工程类、"
         }
       ],
       "browser_render_attempts": 0,
@@ -3016,22 +3017,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 10,
+      "role_records": 17,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 10,
+      "direct_detail_role_records": 17,
       "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "ʵϰƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "计算机应用教师",
-        "英语教师",
-        "采血护士",
-        "电气技术岗",
-        "新能源运营岗",
-        "[湖北]湖北省教育投资有限公司",
-        "资金方向财务管培生"
+        "科研助理",
+        "项目运营管培生",
+        "护士",
+        "产品专员",
+        "市场管培生",
+        "销售管培生",
+        "营销百优生"
       ],
       "role_field_samples": [
         {
@@ -3049,71 +3050,71 @@
           }
         },
         {
-          "title": "计算机应用教师",
-          "company": "山东省菏泽成阳职业中等专业学校",
+          "title": "科研助理",
+          "company": "巴马瑶族自治县乡村振兴研究院",
           "city": "其它",
-          "salary": "",
+          "salary": "4-7k",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-137-700.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-137-697.html",
           "field_lengths": {
-            "description": 1226,
-            "responsibilities": 0,
-            "requirements": 419,
-            "benefits": 358
+            "description": 440,
+            "responsibilities": 153,
+            "requirements": 0,
+            "benefits": 0
           }
         },
         {
-          "title": "英语教师",
+          "title": "项目运营管培生",
+          "company": "杭州羽克电子商务有限公司",
+          "city": "其它",
+          "salary": "",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-137-678.html",
+          "field_lengths": {
+            "description": 354,
+            "responsibilities": 136,
+            "requirements": 156,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "护士",
           "company": "应届生求职网",
-          "city": "其它",
+          "city": "太原",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-137-701.html",
+          "degree": "待核验",
+          "source_url": "https://m.yingjiesheng.com/job-008-137-687.html",
           "field_lengths": {
-            "description": 1209,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 0
+            "description": 1143,
+            "responsibilities": 59,
+            "requirements": 35,
+            "benefits": 79
           }
         },
         {
-          "title": "采血护士",
-          "company": "广州血液中心",
-          "city": "广州",
-          "salary": "面议",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-137-709.html",
-          "field_lengths": {
-            "description": 685,
-            "responsibilities": 0,
-            "requirements": 307,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "电气技术岗",
-          "company": "陕西中煤新能源有限公司",
+          "title": "产品专员",
+          "company": "齐鲁制药山西分公司",
           "city": "其它",
-          "salary": "",
+          "salary": "7k~8k",
           "degree": "本科及以上",
-          "source_url": "http://m.yingjiesheng.com/job-008-137-710.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-137-688.html",
           "field_lengths": {
-            "description": 1008,
-            "responsibilities": 0,
+            "description": 42,
+            "responsibilities": 1089,
             "requirements": 0,
-            "benefits": 0
+            "benefits": 58
           }
         }
       ],
       "link_samples": [],
-      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-29T09:55:16+00:00",
+      "last_run_at": "2026-10-29T20:16:17+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3925,14 +3926,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 8455,
-  "published_priority_candidates": 151,
-  "published_pending_review": 8304,
-  "records_added_this_run": 9,
-  "records_updated_this_run": 5,
+  "published_total_jobs": 8471,
+  "published_priority_candidates": 156,
+  "published_pending_review": 8315,
+  "records_added_this_run": 17,
+  "records_updated_this_run": 4,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 2,
+    "aggregator_non_detail_or_non_role_records_removed": 1,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3955,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1287,
-    "fields_checked": 9009,
+    "rows": 1303,
+    "fields_checked": 9121,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3966,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1287,
+    "company_fields_checked": 1303,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-29T10:25:08+00:00",
+  "quality_checked_at": "2026-10-29T20:48:26+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
