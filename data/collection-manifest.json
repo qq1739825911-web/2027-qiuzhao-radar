@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 21626,
+        "next_offset": 21826,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 9,
-  "records_found_this_run": 9,
-  "active_candidates": 2,
-  "pending_review": 7,
+  "records_found": 24,
+  "records_found_this_run": 24,
+  "active_candidates": 9,
+  "pending_review": 15,
   "results": [
     {
       "id": "boss",
@@ -2947,40 +2947,39 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 9,
-      "active_candidates": 2,
-      "pending_review": 7,
-      "pages_attempted": 608,
-      "pages_failed": 8,
-      "html_bytes": 17875278,
-      "links_seen": 69048,
-      "listing_url_candidates": 2587,
-      "listing_urls_visited": 295,
+      "records_found": 24,
+      "active_candidates": 9,
+      "pending_review": 15,
+      "pages_attempted": 600,
+      "pages_failed": 0,
+      "html_bytes": 15799788,
+      "links_seen": 59588,
+      "listing_url_candidates": 1662,
+      "listing_urls_visited": 363,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 21626,
+      "listing_cursor_next": 21826,
       "listing_rotation_groups": {
-        "yjs-subject-city": 57,
-        "yjs-major-city": 57,
-        "yjs-role-city": 56,
-        "yjs-mobile": 7,
-        "yjs-search": 22,
-        "yjs-other": 1
+        "yjs-subject-city": 59,
+        "yjs-role-city": 59,
+        "yjs-major-city": 59,
+        "yjs-mobile": 5,
+        "yjs-search": 18
       },
-      "tables_seen": 21586,
-      "embedded_json_blocks": 1160,
+      "tables_seen": 17335,
+      "embedded_json_blocks": 1208,
       "role_like_links": 0,
-      "discovery_pages_queued": 790,
+      "discovery_pages_queued": 848,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 226,
+      "direct_detail_pages_visited": 222,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 228,
-      "direct_detail_title_candidates": 21,
-      "direct_detail_title_rejected": 13,
+      "direct_detail_requests_attempted": 222,
+      "direct_detail_title_candidates": 42,
+      "direct_detail_title_rejected": 20,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 8,
+      "direct_detail_role_rows_emitted": 22,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3001,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-138-140.html",
-          "page_title": "舒尔电子（苏州）有限公司招聘IE工业工程实习生_苏州-苏州工业园区校园招聘",
-          "text_preview": "舒尔电子（苏州）有限公司招聘IE工业工程实习生_苏州-苏州工业园区校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 前程无忧(51JOB) 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 前程无忧(51JOB) 核实，并请同时联系本站处理该转载信息。 [苏州-苏州工业园区]舒尔电子（苏州）有限公司 职位： IE工业工程实习生 发布时间： 2026-10-30 工作地点： 其它 信息来源： 前程无忧(51JOB) 职位类型： 全职 专业标签： 工业工程 职位描述 专业1:工业工程 福利:子女医疗保险 带薪病假 职能类别:工业工程师 1. 协助制定和完善制造系统相关标准，包括产线布局、工位设计、物料流及生产流程等。 2. 支持工时研究、产能分析、线平衡及标准工时等工业工程工作。 3. 参与 Lean / Kaizen 改善项目，包括 VSM、标准作业及现场效率提升。 4. 收集并分析生产数据，使用 Excel / Power BI 等工具识别并支持改善机会。 5. 工业工程专业在校生，具备良好的分析、沟通及团队协作能力。 6.面向2027届或2028届本科、研究生应届毕业生 7."
+          "url_path": "/job-008-106-474.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:I*-3 )+pʊm: V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012kA j\u00074?"
         },
         {
-          "url_path": "/job-008-138-904.html",
-          "page_title": "南宁市良庆区六里路小学招聘小学英语|小学音乐_南宁校园招聘",
-          "text_preview": "南宁市良庆区六里路小学招聘小学英语|小学音乐_南宁校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广西民族师范学院文学与传媒学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广西民族师范学院文学与传媒学院 核实，并请同时联系本站处理该转载信息。 [南宁]南宁市良庆区六里路小学 职位： 小学英语|小学音乐 发布时间： 2026-10-30 工作地点： 其它 信息来源： 广西民族师范学院文学与传媒学院 职位类型： 全职 专业标签： 教育学 职位描述 南宁市良庆区六里路小学2026年秋季学期临聘教师招聘信息 作者： 一、招聘岗位 小学英语、小学音乐（舞蹈方向） 二、招聘人数 若干名 三、招聘条件 1.热爱祖国、热爱人民，热爱教育事业，遵纪守法，品行端正，身体健康，有较强的亲和力，有长期从事教育工作的志向； 2.具有扎实的学科功底，钻研能力强，善于组织统筹，有较好的语言表达能力，能够胜任小学教育教学工作； 3.具有相应学科小学及以上教师资格证及普通话等级证书（语文学科二级甲等及以上，其他学科二级乙等及以上）； 4.大学本科及以上学历并获得相应学位的人员。 四、岗位待遇 参照本城"
+          "url_path": "/job-008-104-868.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:I*crgc+ۼj{k9(ض(㹜-[ < :O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013d\u0011LV5M\\\u0006h\u0019 [ AE\"\u001ac\u0000 7@wx^],\u0016/u'u\u000f[vFa QzC4\u0018t;(@\u000eY\u0002[}\u0014d%&\u001aH_ M(\u00158\u0003(}>\u000eχˍ\"LR:Kξroy711\u0013e>>p\u0019{:~\b\u0010-T\u001am'syaC>~{&rtRn\u001b_ MǬ~>DK/u/ \u0001|{+8Q\u0004ҿrzn\u0014Q\u000fl\u00135\u0002d\u000f\bPwsK}6cGϟ_ïPeT\u0003\u0000 &{H\u0011 o h-HyG\u0006f~Yaӟ'\u0019\u0004^\u0010>o\u000eδ < > \u0001֏oy \u000e?\"4\"uLKJh\u00152\u000e wK&\u0004 R\u0004\u0013X1|c}\u0015,7(> `/\u0000^\u000exa}XtXɔ < 5Su\u000ezg\u0006\u0017c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007(\u0014˪{ޟ\b\u0000pY03\u0006JZtwb9\u000ez*\\2Mo\u0017(d&F]id(^aI%F\u0006h nx\u000e:Q\u001b[0h\u0015x\u0007\u0005cv8Ց6Hn\u0019A[T.\u001aUyV\u0016˅ %:6@ m(= F9E\u0012\u0011g\u0006ֽYwS\"NÊG5uk < \u001aCIhx \u0019n\\\u0019#L' &בV h\bɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwbf\\i`\u0019Ǩx pz\u0010@.A24\u0004 zq"
         }
       ],
       "browser_render_attempts": 0,
@@ -3017,22 +3016,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 8,
+      "role_records": 22,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 8,
-      "announcement_records": 1,
+      "direct_detail_role_records": 22,
+      "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "城市经理方向零售管培生",
-        "热能工程师",
-        "科研助理",
-        "化学工程师",
-        "研发管培生",
-        "体育教师",
-        "平台运营"
+        "测试技术员",
+        "电气方向研发工程师",
+        "国际销售工程师",
+        "研发工程助理",
+        "薄膜传感器浆料方向实验室助理",
+        "产品测试工程师",
+        "传感器硬件工程师"
       ],
       "role_field_samples": [
         {
@@ -3050,71 +3049,71 @@
           }
         },
         {
-          "title": "城市经理方向零售管培生",
-          "company": "上海阿吉豆实业发展有限公司",
-          "city": "上海",
-          "salary": "5k-8k",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-906.html",
+          "title": "测试技术员",
+          "company": "株洲麦格米特电气有限责任公司",
+          "city": "株洲",
+          "salary": "4.5K-6.5K/月",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-727.html",
           "field_lengths": {
-            "description": 509,
-            "responsibilities": 102,
-            "requirements": 48,
-            "benefits": 199
-          }
-        },
-        {
-          "title": "热能工程师",
-          "company": "首钢集团有限公司",
-          "city": "北京",
-          "salary": "",
-          "degree": "硕士",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-899.html",
-          "field_lengths": {
-            "description": 205,
-            "responsibilities": 184,
-            "requirements": 0,
-            "benefits": 14
-          }
-        },
-        {
-          "title": "科研助理",
-          "company": "中国药科大学",
-          "city": "南京",
-          "salary": "",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-901.html",
-          "field_lengths": {
-            "description": 388,
-            "responsibilities": 82,
+            "description": 119,
+            "responsibilities": 37,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "化学工程师",
-          "company": "首钢集团有限公司 单位性质 国有企业 单位行业 制造业 标签 中国500强 ; 大型国企 隶属单位 下属单位 单位官微 单位图片 视频介绍 单位介绍",
-          "city": "其它",
-          "salary": "",
-          "degree": "硕士",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-897.html",
+          "title": "电气方向研发工程师",
+          "company": "山东新马制药装备有限公司",
+          "city": "淄博",
+          "salary": "8K-10K/月",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-731.html",
           "field_lengths": {
-            "description": 235,
-            "responsibilities": 176,
-            "requirements": 0,
-            "benefits": 14
+            "description": 412,
+            "responsibilities": 186,
+            "requirements": 90,
+            "benefits": 52
+          }
+        },
+        {
+          "title": "国际销售工程师",
+          "company": "山东新马制药装备有限公司",
+          "city": "淄博",
+          "salary": "6K-12K/月",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-732.html",
+          "field_lengths": {
+            "description": 314,
+            "responsibilities": 90,
+            "requirements": 97,
+            "benefits": 52
+          }
+        },
+        {
+          "title": "研发工程助理",
+          "company": "深圳市明合发纸品有限公司",
+          "city": "深圳",
+          "salary": "5K-7K/月",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-724.html",
+          "field_lengths": {
+            "description": 283,
+            "responsibilities": 49,
+            "requirements": 107,
+            "benefits": 50
           }
         }
       ],
       "link_samples": [],
-      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-30T09:57:57+00:00",
+      "last_run_at": "2026-10-30T19:55:45+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3926,11 +3925,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 8655,
-  "published_priority_candidates": 127,
-  "published_pending_review": 8528,
-  "records_added_this_run": 7,
-  "records_updated_this_run": 2,
+  "published_total_jobs": 8669,
+  "published_priority_candidates": 140,
+  "published_pending_review": 8529,
+  "records_added_this_run": 14,
+  "records_updated_this_run": 10,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3956,8 +3955,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1345,
-    "fields_checked": 9415,
+    "rows": 1359,
+    "fields_checked": 9513,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3967,13 +3966,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1345,
+    "company_fields_checked": 1359,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-30T10:26:53+00:00",
+  "quality_checked_at": "2026-10-30T20:22:26+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
