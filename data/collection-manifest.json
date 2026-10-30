@@ -1,32 +1,10 @@
 {
-  "run_date": "2026-10-29",
+  "run_date": "2026-10-30",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 21226,
+        "next_offset": 21426,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 602,
-  "records_found_this_run": 602,
-  "active_candidates": 41,
-  "pending_review": 561,
+  "records_found": 64,
+  "records_found_this_run": 64,
+  "active_candidates": 17,
+  "pending_review": 47,
   "results": [
     {
       "id": "boss",
@@ -2969,40 +2947,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 65,
+      "records_found": 64,
       "active_candidates": 17,
-      "pending_review": 48,
+      "pending_review": 47,
       "pages_attempted": 601,
       "pages_failed": 1,
-      "html_bytes": 19440132,
-      "links_seen": 79812,
-      "listing_url_candidates": 3000,
-      "listing_urls_visited": 308,
+      "html_bytes": 16408929,
+      "links_seen": 60805,
+      "listing_url_candidates": 1611,
+      "listing_urls_visited": 352,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 21226,
+      "listing_cursor_next": 21426,
       "listing_rotation_groups": {
-        "yjs-role-city": 63,
-        "yjs-major-city": 63,
-        "yjs-subject-city": 63,
-        "yjs-mobile": 6,
+        "yjs-major-city": 57,
+        "yjs-role-city": 57,
+        "yjs-mobile": 7,
         "yjs-other": 1,
-        "yjs-search": 4
+        "yjs-search": 22,
+        "yjs-subject-city": 56
       },
-      "tables_seen": 22430,
-      "embedded_json_blocks": 1765,
+      "tables_seen": 16206,
+      "embedded_json_blocks": 1622,
       "role_like_links": 0,
-      "discovery_pages_queued": 864,
+      "discovery_pages_queued": 969,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 227,
+      "direct_detail_pages_visited": 220,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 227,
-      "direct_detail_title_candidates": 104,
-      "direct_detail_title_rejected": 44,
+      "direct_detail_requests_attempted": 220,
+      "direct_detail_title_candidates": 102,
+      "direct_detail_title_rejected": 43,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 60,
+      "direct_detail_role_rows_emitted": 59,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3023,14 +3001,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-137-697.html",
-          "page_title": "巴马瑶族自治县乡村振兴研究院招聘科研助理_广西校园招聘",
-          "text_preview": "巴马瑶族自治县乡村振兴研究院招聘科研助理_广西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [广西]巴马瑶族自治县乡村振兴研究院 职位： 科研助理 发布时间： 2026-10-29 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 植物生产 职位描述 巴马瑶族自治县乡村振兴研究院2026年招聘2名科研助理 共计1个岗位，招 2人 五险一金 基本信息 发布时间：2026-10-29 截止日期：2027-04-27 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 01关于我们 巴马瑶族自治县乡村振兴研究院，由中国农业科学院深圳农业基因组研究所和巴马瑶族自治县人民政府合作共建的新型研发机构(事业单位)。旨在开发利用巴马当地特色农业资源等优势，助力巴马全面实现乡村振兴。 02岗位职责 ??????????????2名科研助理 1.主要负责研究相关分子试验，如PCR实验; 2.配合团队其他成员开展相关实验工作。 应聘条件: 1.具备微生物"
+          "url_path": "/job-008-119-335.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:9s22[\"Ǩ\"K#y mfeǓ$UPlE~zL2܍? %t?,\u000e\u001b?= \u0019C}R>&w\u0006\u00185c\u0002v=[ʚ%|0 'Ȣ`3ɪ,+ P2 < a\u0019l?݃D*5r\u000fh\u0001;nX,^N ֍jv\u001bh1v~\u000fQ\u000f \u0004̷{i)JL5\u0014\u0004륛rQ+vqo\u0007P| \u000f\u001b7E$t\\1}&ncc&||v2rpu\u0010T!Zn4 < ۘO\u0012 ?{?Y7|._^^8_?\u0002\u0004 wVpr \u0018(r\u0013 &j\u0005 < \u0011算? mǬ?_Mmh`\u0007\u0000\u001bLN?#A|\u0017Z /\u0000 ҟͬ޳ æ?CN3\bn J!} iyH}\u0015(ycnųP} \u00173\u0003 x\u0001\u0017 Dh~\u000fE_+dܭ 8HM\b= &pc~ǌ*Xn 7߻oZ?Q|\u001b^\u0001g p\u0012Op谒)ykG^m -, i^n\u0005+\u0011;\u0016ڡQUVF\u001b4b5\u0019 v2wEЩtZ/s\u0015 / z9\u0014_\u0007nxV \u0015\"l\u000f\u0006$4~ܻ ?]+zR\u0015A\u001bǞf\u00141qQ9vT9> Mۨ\u0014z@\\_ ۈ\u000f\u0015\u000e1 |no\u000e\u001a] tR.!*= ;YAZ`\u0007\u0004R\";s *HhP)25\u0012 Zcu\b(`OÊ%XLQSrj\u00015c\\`\u0013 \u0018\u0006ɨ\u001b~ сU8镌\u001a \u0014eK\u001aړȡ߅-@+JX{\u0012$Fh\u0014숫 \u0003I4Elz`h\u0018ڃ\u0018*pGde\\F:F Mp\u0013 wlpG{6B\u0006t Bmr\u0005\u0004LPE "
         },
         {
-          "url_path": "/job-008-137-698.html",
-          "page_title": "江苏省特种设备安全监督检验研究院太仓分院招聘特种设备检验检测_江苏校园招聘",
-          "text_preview": "江苏省特种设备安全监督检验研究院太仓分院招聘特种设备检验检测_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [江苏]江苏省特种设备安全监督检验研究院太仓分院 职位： 特种设备检验检测 发布时间： 2026-10-29 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 机械类 化工与制药 职位描述 江苏省特种设备安全监督检验研究院太仓分院2026年招聘1名劳务派遣特种设备检验检测人员简章 共计1个岗位，招 1人 基本信息 发布时间：2026-10-29 截止日期：2026-11-05 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 根据江苏省特种设备安全监督检验研究院关于劳务派遣用工相关规定，现因事业发展需要，江苏省特种设备安全监督检验研究院太仓分院面向社会公开招聘劳务派遣用工人员1名。现将有关招聘事项公告如下： 一、招聘岗位 1.岗位：特种设备检验检测 2.要求： （1）本科及以上学历，具有相应学位，机电控制类、机械工程类、"
+          "url_path": "/job-008-118-670.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:9\")zZ-X2ˎ(+ Ȋ\";'O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,"
         }
       ],
       "browser_render_attempts": 0,
@@ -3039,13 +3017,13 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 60,
+      "role_records": 59,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 60,
+      "direct_detail_role_records": 59,
       "announcement_records": 5,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "繤ʦƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
         "科研助理",
@@ -3129,15 +3107,15 @@
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-29T22:58:04+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-10-30T00:57:39+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3948,11 +3926,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 8647,
-  "published_priority_candidates": 162,
-  "published_pending_review": 8485,
-  "records_added_this_run": 224,
-  "records_updated_this_run": 368,
+  "published_total_jobs": 8648,
+  "published_priority_candidates": 128,
+  "published_pending_review": 8520,
+  "records_added_this_run": 4,
+  "records_updated_this_run": 60,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 3,
@@ -3978,8 +3956,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1337,
-    "fields_checked": 9359,
+    "rows": 1338,
+    "fields_checked": 9366,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3989,13 +3967,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1337,
+    "company_fields_checked": 1338,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-29T23:23:10+00:00",
+  "quality_checked_at": "2026-10-30T01:25:47+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
