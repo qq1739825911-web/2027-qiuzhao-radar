@@ -9177,7 +9177,15 @@
     "auto-b6d2e8c2c9226858": 0,
     "auto-7cf6083f2453ecf7": 0,
     "auto-896fc803507435d0": 0,
-    "auto-2b8ac032502094cb": 0
+    "auto-2b8ac032502094cb": 0,
+    "auto-9e6231f030852394": 0,
+    "auto-d8809a4718d41982": 0,
+    "auto-033c8b6934b9d4a4": 0,
+    "auto-3ffd103d61727228": 0,
+    "auto-aa2b46965994b03d": 0,
+    "auto-df7b544aed7ddb9c": 0,
+    "auto-0b8270553234f580": 0,
+    "auto-f393005a2288f8a2": 0
   },
   "last_run_at": "2026-10-30T23:02:46+00:00",
   "last_batch_size": 120,
@@ -9203,13 +9211,13 @@
     "auto-5aa4c50e9756b5bb": "2026-10-20T12:33:06+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-10-30T20:22:02+00:00"
+    "yingjiesheng": "2026-10-31T10:03:41+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 122
+    "yingjiesheng": 302
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 1259
+    "yingjiesheng": 1285
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
