@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 22426,
+        "next_offset": 22626,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 27,
-  "records_found_this_run": 27,
-  "active_candidates": 8,
-  "pending_review": 19,
+  "records_found": 36,
+  "records_found_this_run": 36,
+  "active_candidates": 11,
+  "pending_review": 25,
   "results": [
     {
       "id": "boss",
@@ -2947,40 +2947,39 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 27,
-      "active_candidates": 8,
-      "pending_review": 19,
+      "records_found": 36,
+      "active_candidates": 11,
+      "pending_review": 25,
       "pages_attempted": 601,
       "pages_failed": 1,
-      "html_bytes": 18624613,
-      "links_seen": 77037,
-      "listing_url_candidates": 2888,
-      "listing_urls_visited": 309,
+      "html_bytes": 16253718,
+      "links_seen": 73230,
+      "listing_url_candidates": 2799,
+      "listing_urls_visited": 350,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 22426,
+      "listing_cursor_next": 22626,
       "listing_rotation_groups": {
-        "yjs-role-city": 58,
-        "yjs-major-city": 58,
-        "yjs-subject-city": 57,
+        "yjs-subject-city": 64,
+        "yjs-major-city": 64,
+        "yjs-role-city": 63,
         "yjs-mobile": 8,
-        "yjs-other": 1,
-        "yjs-search": 18
+        "yjs-other": 1
       },
-      "tables_seen": 22862,
-      "embedded_json_blocks": 1456,
+      "tables_seen": 18635,
+      "embedded_json_blocks": 1581,
       "role_like_links": 0,
-      "discovery_pages_queued": 814,
+      "discovery_pages_queued": 950,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 237,
+      "direct_detail_pages_visited": 228,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 237,
-      "direct_detail_title_candidates": 62,
-      "direct_detail_title_rejected": 38,
-      "direct_detail_score_gate_recovered": 1,
+      "direct_detail_requests_attempted": 228,
+      "direct_detail_title_candidates": 81,
+      "direct_detail_title_rejected": 47,
+      "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 24,
+      "direct_detail_role_rows_emitted": 34,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -3001,14 +3000,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-138-858.html",
-          "page_title": "合肥赛默科思半导体材料有限公司2027招聘机加工|质检员_安徽校园招聘",
-          "text_preview": "合肥赛默科思半导体材料有限公司2027招聘机加工|质检员_安徽校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 合肥通用职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 合肥通用职业技术学院 核实，并请同时联系本站处理该转载信息。 [安徽]合肥赛默科思半导体材料有限公司 职位： 2027招聘机加工|质检员 发布时间： 2026-10-30 工作地点： 其它 信息来源： 合肥通用职业技术学院 职位类型： 全职 职位描述 合肥赛默科思半导体材料有限公司招聘简章 发布人：TYjyb0722 发布时间：2026年10月30日 合肥赛默科思半导体材料有限公司 成立于2020年10月，位于安徽省合肥市高新区，是一家自主研发生产型企业，主要产品为半导体设备用高纯石英零部件和高精度测温传感器，公司总投资3.2亿元占地20亩，建设面积19200平方米(含10000平方米洁净厂房)和2000平米办公区域。 公司以\"为半导体石英零部件提供国产化解决方案”为使命，以“成为国内领先的半导体石英零部件和热电偶制造商”为愿景，践行“诚信、激情、创新、敬业、务实“的核心价值观，诚邀广大有识之士和"
+          "url_path": "/job-008-097-396.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:ɨقȦhx*$[y2cZO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012kA "
         },
         {
-          "url_path": "/job-008-138-857.html",
-          "page_title": "武汉中元华电科技股份有限公司2027校园招聘_武汉其它校园招聘",
-          "text_preview": "武汉中元华电科技股份有限公司2027校园招聘_武汉其它校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 武汉 其它 全职 > 职位详细 说明： 此信息由 黄河科技学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 黄河科技学院 核实，并请同时联系本站处理该转载信息。 [武汉其它]武汉中元华电科技股份有限公司 职位： 2027校园招聘 发布时间： 2026-10-30 工作地点： 武汉 其它 信息来源： 黄河科技学院 职位类型： 全职 职位描述 武汉中元华电2027届校园招聘 作者： 时间：2026-10-30 登录 或 打开APP 查看全部 上一条： [安徽]合肥赛默科思半导体材料有限公司 下一条： [山东]山东新马制药装备有限公司 首页 - 登录 Top 电脑版 ( 地址 ) | 触屏版"
+          "url_path": "/job-008-097-369.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007Ȳ_\u0003 ^g=$\b\u0002ݣH\u0012H\b\u0010Ub\u0006{w=]]] \u0007|0#t #wQ < ?\u000f\u0017t7/׏>،>ќ?mmɜ,Ȃ1'y'È*)2ȳ*쇏>\u0007`on(/N` .aquM?6`/h \u0007157//N \u0013зBWt,@\\f\u0014NEf\u0004UMg%\u0001({;Z?>,퇹{_9J1~\u0000\u001b; < .6g[vFa |c \"\u0001 &Hg 3X&+1WԀR\u0010nF8!uO @hwx>\\n\u0014A\u0019^rt\u0015{ϻ(=CPm\u000f\u0007hlc?s7K E>+6\u0007r_hڧ'>f!|]z{_\b,翻 \u001bLQ__Q\\ύ\"7!8m~_! \u0001 R c:5'|믩-t =%\u0000 \u0006= o `-\u0004Hy\u0007\u0006f~Yaӟa~'\u0019\b^\u0010\u0010>o\u000eƴ < > ƅӠ Mǁt|>1`.4\u001bqF\u0019\u0000jo^ 3c5Kw'㠧%&zVY\u000fMFjBkԕzNV,\u0015H)b\u0004i6=\\ q\u0004Va~P0fS kJx\u0011ER Qgke\u0001G\\X+̐c3 \u0010q\u000e\u001a6(3\u0010n3\\(\u0011rmYlݛuG: < %4xZSC1l\u0011^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011\u0016 \u00100(A\u000fMn\u001b hz80T$V\\e5\u0014G /ʅ\u0011N,ی8 ,\u0018\u0015ܾ| p\\_v\u00112'\u0010K\u0010\" cBw\u0002^ 2j\u001a\u0019SC\u0006bY--hdK1W\b!\u0006\u0015c7(T ҕ\u001ae/@5\u0014d-F2\u0011\u000f6j˵̲cQ[ \u0004\u0016٪\\ @o8 4lx2Z\u0006`\u0016Hw1g ~zp7,ťD\u0004KӢܱ!Id\u0003h\u0019aߗ[mmP'ByD\u0014_,\u001b"
         }
       ],
       "browser_render_attempts": 0,
@@ -3017,22 +3016,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 24,
+      "role_records": 34,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 24,
-      "announcement_records": 3,
+      "direct_detail_role_records": 34,
+      "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "其它招聘_其它应届生求职网",
+      "sample_title": "԰ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "数智开发工程师",
-        "制程质量工程师",
-        "项目经理",
-        "传感器结构工程师",
-        "电气工程师",
-        "城市经理方向零售管培生",
-        "热能工程师"
+        "能源交叉研究机构科研助理事务岗",
+        "能源交叉研究机构行政助理事务岗",
+        "硬件测试工程师",
+        "工程技术类管培生",
+        "产品研发类管培生",
+        "市场拓展专员",
+        "智能机器人研发工程师"
       ],
       "role_field_samples": [
         {
@@ -3050,58 +3049,58 @@
           }
         },
         {
-          "title": "数智开发工程师",
-          "company": "天津和光与时能源有限公司",
-          "city": "其它",
-          "salary": "10000-15000元",
+          "title": "能源交叉研究机构科研助理事务岗",
+          "company": "清华大学能源与动力工程系",
+          "city": "北京",
+          "salary": "",
           "degree": "硕士及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-806.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-676.html",
           "field_lengths": {
-            "description": 36,
-            "responsibilities": 261,
-            "requirements": 249,
+            "description": 962,
+            "responsibilities": 0,
+            "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "制程质量工程师",
+          "title": "能源交叉研究机构行政助理事务岗",
+          "company": "清华大学能源与动力工程系",
+          "city": "北京",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-677.html",
+          "field_lengths": {
+            "description": 871,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "硬件测试工程师",
           "company": "杭州曦诺未来科技有限公司",
           "city": "杭州",
-          "salary": "30万元/年",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-815.html",
-          "field_lengths": {
-            "description": 1168,
-            "responsibilities": 500,
-            "requirements": 244,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "项目经理",
-          "company": "杭州曦诺未来科技有限公司",
-          "city": "杭州",
-          "salary": "30万元/年",
-          "degree": "硕士及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-816.html",
-          "field_lengths": {
-            "description": 1129,
-            "responsibilities": 467,
-            "requirements": 209,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "传感器结构工程师",
-          "company": "杭州曦诺未来科技有限公司",
-          "city": "深圳",
           "salary": "40万元/年",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-138-817.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-647.html",
           "field_lengths": {
-            "description": 675,
-            "responsibilities": 205,
-            "requirements": 302,
+            "description": 976,
+            "responsibilities": 308,
+            "requirements": 242,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "工程技术类管培生",
+          "company": "江苏诚意集团有限公司",
+          "city": "徐州",
+          "salary": "9.6万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-138-648.html",
+          "field_lengths": {
+            "description": 408,
+            "responsibilities": 171,
+            "requirements": 91,
             "benefits": 0
           }
         }
@@ -3114,7 +3113,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-10-31T09:35:59+00:00",
+      "last_run_at": "2026-10-31T19:16:59+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3926,11 +3925,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 8793,
-  "published_priority_candidates": 145,
-  "published_pending_review": 8648,
-  "records_added_this_run": 11,
-  "records_updated_this_run": 16,
+  "published_total_jobs": 8802,
+  "published_priority_candidates": 149,
+  "published_pending_review": 8653,
+  "records_added_this_run": 9,
+  "records_updated_this_run": 27,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3956,8 +3955,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1387,
-    "fields_checked": 9709,
+    "rows": 1396,
+    "fields_checked": 9772,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3967,13 +3966,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1387,
+    "company_fields_checked": 1396,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-10-31T10:04:15+00:00",
+  "quality_checked_at": "2026-10-31T19:45:29+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
