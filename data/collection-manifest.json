@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 24026,
+        "next_offset": 24226,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 21,
-  "records_found_this_run": 21,
-  "active_candidates": 3,
-  "pending_review": 18,
+  "records_found": 37,
+  "records_found_this_run": 37,
+  "active_candidates": 12,
+  "pending_review": 25,
   "results": [
     {
       "id": "boss",
@@ -2937,40 +2937,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 21,
-      "active_candidates": 3,
-      "pending_review": 18,
+      "records_found": 37,
+      "active_candidates": 12,
+      "pending_review": 25,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 16535865,
-      "links_seen": 59162,
-      "listing_url_candidates": 1506,
-      "listing_urls_visited": 324,
+      "html_bytes": 16444392,
+      "links_seen": 59723,
+      "listing_url_candidates": 1580,
+      "listing_urls_visited": 338,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 24026,
+      "listing_cursor_next": 24226,
       "listing_rotation_groups": {
-        "yjs-major-city": 59,
-        "yjs-role-city": 59,
         "yjs-subject-city": 58,
-        "yjs-search": 19,
+        "yjs-major-city": 58,
+        "yjs-role-city": 58,
         "yjs-mobile": 4,
-        "yjs-other": 1
+        "yjs-other": 1,
+        "yjs-search": 21
       },
-      "tables_seen": 18580,
-      "embedded_json_blocks": 1198,
+      "tables_seen": 17608,
+      "embedded_json_blocks": 1350,
       "role_like_links": 0,
-      "discovery_pages_queued": 869,
+      "discovery_pages_queued": 895,
       "listing_pages_queued": 230,
       "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
       "direct_detail_requests_attempted": 221,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 24,
-      "direct_detail_score_gate_recovered": 0,
+      "direct_detail_title_candidates": 61,
+      "direct_detail_title_rejected": 28,
+      "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 17,
+      "direct_detail_role_rows_emitted": 33,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2991,14 +2991,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-134-305.html",
+          "url_path": "/job-008-074-437.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:hzʱ\u0004=E\u0015 Y0-\u0018DIM5]7YWxzL2܍? %t?,\u000e\u001b?= \u0019C}R>&w\u0006\u00185c\u0002v=[ʚ%Ź( \b&&J.\u0003Tv \u000fzǭ}X\u0006\u000fs\"J1~\u0000\u001b; < .\u0016-ruڰ(!o C\u0014 C\u0007,\u0001>_ne\u0012~~e /\u0005zl] [\u0001> ~M\u0011&I)%WLg_I2 s=\\ ~?\u0004ppy* 69w0ϡyXs r\u0013~`:)7}bcM? ץ\u0017׏\u0000|>m\u0015ܨd\u0002F_}e9r=7D(\u0007}\u0001O|\u0004;>tv1kO/_S[?Z{*\u0001\u0000\u0006=\bf7h\u0005yB$˼#dg3k,Ȱп i/RH{\u0007gZ R \u0005~yag2T\u00007^?\u0007y \u0011~:%% \u0019wk\u0007;`\u0013n\u000f ,_f>1 [bfO\u0014\u0006z\u0017h\u0000Y\u0007\\ < >{,:dJѩW:O~Q\u0007{3 1._\u0006]hJ =\u000eS\u0019\u0006Fv\u0018\u0016'\u0003\u0014 e=P\u0004R{RR,N\u0019\u0003%]; \u0007=\u0015.7 zh2R\u0013Js2fytl$DJ\u0012#H\u0003}RY < \u0007n q⨍-e CW1;H\\T$7Wی-*Jx < [+ Za\u0012 asA\\\u0014pF3lbެ;)da#ך5 J$4 < |̈́gl7rXB\u0011FE\u0013[v`[+hvN@4\u0004AFd˛\u000454qmx0w3+\u0006ˮ77pcS+V[]s1Pl =Ҽ(\u0017F;l3.4cT ~\u001b,{޼ W\u001553͏\\o\u0017常("
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:`˶0`;g-*,ʦ\"(g*::i:\" O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < "
         },
         {
-          "url_path": "/job-008-134-304.html",
+          "url_path": "/job-008-071-530.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:hzeċȘ̱2J2\u0012븎dy{\bO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:`˶+1\"J)b'x#󒊷=\\XgTcG\u00032?r7\u0016\u0017'\u000f8l?H \u001b`~\u0017fw\u000fǃIݚ\u001b`?' n*k:$\u00166p, 6#j < + P2 < a\u0019l?݃D*5r\u000fh\u0001;nX,^N ֍jv\u001bh1v~\u000fQ\u000f \u0004̷{i)JL5\u0014\u0004륛rQ+vqo\u0007P| \u000f\u001b7E$t\\1}&ncc&||v2rpu\u0010T!Zn4 < ۘO\u0012 ?{?Y7|._^^8_?\u0002\u0004 wVpr \u0018\b (D(\u0007}\u0001O|\u0004;>tv1kO/_S[?Z{*\u0001\u0000\u0006=\bf7h\u0005yB$˼#dg3k,Ȱп i/RH{\u0007gZ R \u0005~yag2T\u00007^?\u0007y \u0011~:%% \u0019wk\u0007;`\u0013n\u000f ,_f>1 [bfO\u0014\u0006z\u0017h\u0000Y\u0007\\ < >{,:dJѩW:O~Q\u0007{3 1._\u0006]hJ =\u000eS\u0019\u0006Fv\u0018\u0016'\u0003\u0014 e=P\u0004R{RR,N\u0019\u0003%]; \u0007=\u0015.7 zh2R\u0013Js2fytl$DJ\u0012#H\u0003}RY < \u0007n q⨍-e CW1;H\\T$7Wی-*Jx < [+ Za\u0012 asA\\\u0014pF3lbެ;)da#ך5 J$4 < |̈́gl7rXB\u0011FE\u0013[v`[+hvN@4\u0004AFd˛\u000454qmx0w3+\u0006ˮ77pcS+V[]s1Pl =Ҽ(\u0017F;l3.4cT ~\u001b,{޼ W\u001553͏\\o\u0017常(H04-j "
         }
       ],
       "browser_render_attempts": 0,
@@ -3007,13 +3007,13 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 17,
+      "role_records": 33,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 17,
+      "direct_detail_role_records": 33,
       "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "ɶеƸϢ|ѧְ|ɶҹ_Ӧְ",
+      "sample_title": "ԺƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
         "电商客服",
@@ -3104,7 +3104,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-02T10:59:07+00:00",
+      "last_run_at": "2026-11-02T23:06:35+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3916,11 +3916,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 9000,
-  "published_priority_candidates": 140,
-  "published_pending_review": 8860,
-  "records_added_this_run": 16,
-  "records_updated_this_run": 5,
+  "published_total_jobs": 9016,
+  "published_priority_candidates": 149,
+  "published_pending_review": 8867,
+  "records_added_this_run": 17,
+  "records_updated_this_run": 20,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 1,
@@ -3946,8 +3946,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1412,
-    "fields_checked": 9884,
+    "rows": 1428,
+    "fields_checked": 9996,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3957,13 +3957,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1412,
+    "company_fields_checked": 1428,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-02T11:30:01+00:00",
+  "quality_checked_at": "2026-11-02T23:22:36+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
