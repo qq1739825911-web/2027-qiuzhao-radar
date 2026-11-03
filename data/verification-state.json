@@ -9485,13 +9485,13 @@
     "auto-5aa4c50e9756b5bb": "2026-10-20T12:33:06+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-11-02T23:22:15+00:00"
+    "yingjiesheng": "2026-11-03T11:18:19+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 1022
+    "yingjiesheng": 1202
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 1325
+    "yingjiesheng": 1337
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
