@@ -314,18 +314,6 @@
       "https://www.nowcoder.com/jobs/activity/v2/special-activity/index/27yx2"
     ],
     "yingjiesheng": [
-      "https://zhiwei.yingjiesheng.com/shiyedanwei/beijing/list_7.html",
-      "https://zhiwei.yingjiesheng.com/shiyedanwei/beijing/list_8.html",
-      "https://zhiwei.yingjiesheng.com/shiyedanwei/beijing/list_9.html",
-      "https://zhiwei.yingjiesheng.com/shiyedanwei/beijing/list_10.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_2.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_3.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_4.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_5.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_6.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_7.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_8.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_9.html",
       "https://www.yingjiesheng.com/major/dongli/beijing/list_10.html",
       "https://www.yingjiesheng.com/major/dongli/beijing/list_12.html",
       "https://zhiwei.yingjiesheng.com/shiyedanwei/shanghai/list_2.html",
@@ -3313,7 +3301,19 @@
       "https://www.yingjiesheng.com/major/meishu/other/list_8.html",
       "https://www.yingjiesheng.com/major/meishu/other/list_9.html",
       "https://www.yingjiesheng.com/major/meishu/other/list_10.html",
-      "https://www.yingjiesheng.com/major/meishu/other/list_30.html"
+      "https://www.yingjiesheng.com/major/meishu/other/list_30.html",
+      "https://zhiwei.yingjiesheng.com/xingzguanli/tianjin/list_1.html",
+      "https://m.yingjiesheng.com/other/joblist_12.html",
+      "https://zhiwei.yingjiesheng.com/jixiesheji/guangzhou/list_1.html",
+      "https://zhiwei.yingjiesheng.com/jixiesheji/shenzhen/list_1.html",
+      "https://zhiwei.yingjiesheng.com/jixiesheji/wuhan/list_1.html",
+      "https://zhiwei.yingjiesheng.com/jixiesheji/nanjing/list_1.html",
+      "https://q.yingjiesheng.com/jobs/search/%E5%9B%BD%E4%BC%81?keyword=%E5%9B%BD%E4%BC%81",
+      "https://q.yingjiesheng.com/jobs/search/%E9%87%91%E8%9E%8D?industry=03%2C42%2C43%2C62&saltype=06%2C07%2C08%2C09",
+      "https://q.yingjiesheng.com/jobs/search/%E4%BC%9A%E8%AE%A1?saltype=06%2C07%2C08%2C09",
+      "https://zhiwei.yingjiesheng.com/xingzguanli/wuhan/list_8.html",
+      "https://zhiwei.yingjiesheng.com/summer/chengdu",
+      "https://zhiwei.yingjiesheng.com/summer/other"
     ]
   },
   "source_listing_cursor": {
@@ -3321,6 +3321,6 @@
     "51job": 1722,
     "boss": 754,
     "nowcoder": 861,
-    "yingjiesheng": 25026
+    "yingjiesheng": 25226
   }
 }
