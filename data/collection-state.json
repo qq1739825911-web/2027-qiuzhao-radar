@@ -1,5 +1,5 @@
 {
-  "qiuzhaowang_next_page": 145,
+  "qiuzhaowang_next_page": 155,
   "qiuzhaowang_last_pages": [
     1,
     2,
@@ -11,16 +11,16 @@
     8,
     9,
     10,
-    135,
-    136,
-    137,
-    138,
-    139,
-    140,
-    141,
-    142,
-    143,
-    144
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154
   ],
   "source_listing_url_pool": {
     "iguopin": [
@@ -287,7 +287,8 @@
       "https://campus.51job.com/tdk-lambda-cn/about.html",
       "https://campus.51job.com/tdk-lambda-cn/job.html",
       "https://campus.51job.com/tdk-lambda-cn/flow.html",
-      "http://campus.51job.com/xacbank2027/company.html"
+      "http://campus.51job.com/xacbank2027/company.html",
+      "https://campus.51job.com/wk2027"
     ],
     "boss": [
       "https://www.zhipin.com/school/shixi",
@@ -298,7 +299,10 @@
       "https://www.zhipin.com/xiaoyuan/gongshanglian",
       "https://www.zhipin.com/xiaoyuan/renshebu/zywl/brqw?experience=108",
       "https://www.zhipin.com/xiaoyuan/renshebu/zywl/dzcsqj?experience=108",
-      "https://www.zhipin.com/xiaoyuan/gongshanglian?experience=108"
+      "https://www.zhipin.com/xiaoyuan/gongshanglian?experience=108",
+      "https://www.zhipin.com/xiaoyuan/gongxinbu?ka=xiaoyuan_r3c3",
+      "https://www.zhipin.com/xiaoyuan/gongxinbu",
+      "https://www.zhipin.com/xiaoyuan/gongxinbu?experience=108"
     ],
     "nowcoder": [
       "https://www.nowcoder.com/jobs/school/schedule",
@@ -314,8 +318,6 @@
       "https://www.nowcoder.com/jobs/activity/v2/special-activity/index/27yx2"
     ],
     "yingjiesheng": [
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_10.html",
-      "https://www.yingjiesheng.com/major/dongli/beijing/list_12.html",
       "https://zhiwei.yingjiesheng.com/shiyedanwei/shanghai/list_2.html",
       "https://zhiwei.yingjiesheng.com/shiyedanwei/shanghai/list_3.html",
       "https://zhiwei.yingjiesheng.com/shiyedanwei/shanghai/list_4.html",
@@ -3313,14 +3315,16 @@
       "https://q.yingjiesheng.com/jobs/search/%E4%BC%9A%E8%AE%A1?saltype=06%2C07%2C08%2C09",
       "https://zhiwei.yingjiesheng.com/xingzguanli/wuhan/list_8.html",
       "https://zhiwei.yingjiesheng.com/summer/chengdu",
-      "https://zhiwei.yingjiesheng.com/summer/other"
+      "https://zhiwei.yingjiesheng.com/summer/other",
+      "https://m.yingjiesheng.com/other/joblist_13.html",
+      "https://zhiwei.yingjiesheng.com/jixiesheji/tianjin/list_1.html"
     ]
   },
   "source_listing_cursor": {
-    "iguopin": 382,
-    "51job": 1722,
-    "boss": 754,
-    "nowcoder": 861,
-    "yingjiesheng": 25226
+    "iguopin": 387,
+    "51job": 1746,
+    "boss": 763,
+    "nowcoder": 872,
+    "yingjiesheng": 25426
   }
 }
