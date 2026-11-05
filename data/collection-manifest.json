@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 25826,
+        "next_offset": 26026,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 19,
-  "records_found_this_run": 19,
-  "active_candidates": 0,
-  "pending_review": 19,
+  "records_found": 30,
+  "records_found_this_run": 30,
+  "active_candidates": 5,
+  "pending_review": 25,
   "results": [
     {
       "id": "boss",
@@ -2932,40 +2932,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 19,
-      "active_candidates": 0,
-      "pending_review": 19,
-      "pages_attempted": 602,
-      "pages_failed": 2,
-      "html_bytes": 16422645,
-      "links_seen": 62595,
-      "listing_url_candidates": 2980,
-      "listing_urls_visited": 311,
+      "records_found": 30,
+      "active_candidates": 5,
+      "pending_review": 25,
+      "pages_attempted": 600,
+      "pages_failed": 0,
+      "html_bytes": 16647381,
+      "links_seen": 59592,
+      "listing_url_candidates": 1655,
+      "listing_urls_visited": 344,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 25826,
+      "listing_cursor_next": 26026,
       "listing_rotation_groups": {
-        "yjs-major-city": 60,
-        "yjs-role-city": 60,
+        "yjs-subject-city": 55,
+        "yjs-role-city": 55,
+        "yjs-major-city": 55,
+        "yjs-search": 21,
         "yjs-mobile": 13,
-        "yjs-other": 1,
-        "yjs-subject-city": 59,
-        "yjs-search": 7
+        "yjs-other": 1
       },
-      "tables_seen": 17983,
-      "embedded_json_blocks": 993,
+      "tables_seen": 18118,
+      "embedded_json_blocks": 1229,
       "role_like_links": 0,
-      "discovery_pages_queued": 724,
+      "discovery_pages_queued": 896,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 287,
+      "direct_detail_pages_visited": 218,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 288,
-      "direct_detail_title_candidates": 22,
-      "direct_detail_title_rejected": 5,
-      "direct_detail_score_gate_recovered": 0,
+      "direct_detail_requests_attempted": 218,
+      "direct_detail_title_candidates": 42,
+      "direct_detail_title_rejected": 16,
+      "direct_detail_score_gate_recovered": 2,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 17,
+      "direct_detail_role_rows_emitted": 26,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2986,14 +2986,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-143-909.html",
-          "page_title": "正元祺国际旅行社（北京）有限公司招聘销售助理_北京校园招聘",
-          "text_preview": "正元祺国际旅行社（北京）有限公司招聘销售助理_北京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 全职 > 职位详细 说明： 此信息由 北京第二外国语学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 北京第二外国语学院 核实，并请同时联系本站处理该转载信息。 [北京]正元祺国际旅行社（北京）有限公司 职位： 销售助理 发布时间： 2026-11-05 工作地点： 北京 信息来源： 北京第二外国语学院 职位类型： 全职 专业标签： 外国文学 职位描述 销售助理 发布时间：2026-11-05 福利:\"五险一金\",\"带薪年假\",\"节日礼物\",\"休闲餐点\" 职位名称:销售助理 学历:硕士 需求人数:2 需求专业:意大利语,会展管理,旅游管理(旅游经济战略与管理),旅游管理（文化旅游与遗产管理方向）,旅游管理（旅游经济战略与管理方向）,旅游管理,旅游管理(旅游规划与开发),商务英语（辅修跨国企业管理相关专业）,商务英语,商务英语（国际商业管理）,俄语(人文交流),意大利语（人文交流）,俄语(经贸合作),俄语,意大利语,意大利语（辅修出入境游相关专业）,俄语口译,俄语,俄语口译 工作地点:北京市石景山区 职位描述:#"
+          "url_path": "/job-008-103-889.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:6 dk˩+* ؎Ȩ`{HǘO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012k"
         },
         {
-          "url_path": "/job-008-143-908.html",
-          "page_title": "广东申菱环境系统股份有限公司招聘BIM工程师_广东校园招聘",
-          "text_preview": "广东申菱环境系统股份有限公司招聘BIM工程师_广东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广州大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广州大学 核实，并请同时联系本站处理该转载信息。 [广东]广东申菱环境系统股份有限公司 职位： BIM工程师 发布时间： 2026-11-05 工作地点： 其它 信息来源： 广州大学 职位类型： 全职 职位描述 BIM工程师 不限 本科生 无经验 6000～8000元/月 职位诱惑： 职位描述 Description 岗位职责： 1、学习并参与工程项目BIM三维模型的搭建，协助完成BIM设计出图； 2、协助进行BIM图纸深化，配合现场装配与施工的技术支持； 3、参与企业BIM族库的建立与日常维护更新； 4、学习工程配件标准化BIM图库的搭建及施工工艺标准的整理。 任职要求： 1、全日制本科及以上学历，建筑环境与能源应用工程、建筑电气与智能化、机械工程等相关专业； 2、了解Revit、Navisworks等BIM软件的基本操作，有课程设计、竞赛或实习中使用经历者优先； 3、具备较强的识图绘图能力和三维空间想象能力，对建筑、"
+          "url_path": "/job-008-097-403.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:6 ̹Hx\u0016ʦ㲌(ī6㈪IO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012kA"
         }
       ],
       "browser_render_attempts": 0,
@@ -3002,22 +3002,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 17,
+      "role_records": 26,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 17,
-      "announcement_records": 2,
+      "direct_detail_role_records": 26,
+      "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "其它招聘_其它应届生求职网",
+      "sample_title": "־ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "销售助理",
-        "BIM工程师",
-        "机电工程师",
-        "仿真工程师",
-        "市场专员",
-        "助理研究员",
-        "深化设计师"
+        "研发经理",
+        "整机工程师",
+        "APSAI算法工程师",
+        "AI开发工程师",
+        "软件开发",
+        "测试开发工程师",
+        "后期编辑"
       ],
       "role_field_samples": [
         {
@@ -3035,71 +3035,71 @@
           }
         },
         {
-          "title": "销售助理",
-          "company": "正元祺国际旅行社（北京）有限公司",
-          "city": "北京",
-          "salary": "",
-          "degree": "硕士",
-          "source_url": "https://m.yingjiesheng.com/job-008-143-909.html",
+          "title": "研发经理",
+          "company": "江苏宏众百德生物科技有限公司",
+          "city": "无锡",
+          "salary": "8.4万元/年",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-143-679.html",
           "field_lengths": {
-            "description": 600,
-            "responsibilities": 192,
-            "requirements": 114,
+            "description": 780,
+            "responsibilities": 355,
+            "requirements": 296,
             "benefits": 0
           }
         },
         {
-          "title": "BIM工程师",
-          "company": "广东申菱环境系统股份有限公司",
+          "title": "整机工程师",
+          "company": "江苏悦达智能农业装备有限公司",
           "city": "其它",
-          "salary": "6000～8000元/月",
+          "salary": "7万元/年",
           "degree": "本科及以上",
-          "source_url": "http://m.yingjiesheng.com/job-008-143-908.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-143-680.html",
           "field_lengths": {
-            "description": 417,
-            "responsibilities": 118,
-            "requirements": 232,
+            "description": 378,
+            "responsibilities": 138,
+            "requirements": 91,
             "benefits": 0
           }
         },
         {
-          "title": "机电工程师",
-          "company": "北京港源建筑装饰工程有限公司",
-          "city": "北京",
-          "salary": "5000～6000元/月",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-143-907.html",
+          "title": "APSAI算法工程师",
+          "company": "江苏金恒信息科技股份有限公司",
+          "city": "南京",
+          "salary": "17万元/年",
+          "degree": "硕士",
+          "source_url": "https://m.yingjiesheng.com/job-008-143-681.html",
           "field_lengths": {
-            "description": 242,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 17
+            "description": 604,
+            "responsibilities": 123,
+            "requirements": 344,
+            "benefits": 0
           }
         },
         {
-          "title": "仿真工程师",
-          "company": "南京凯微机电科技有限公司",
+          "title": "AI开发工程师",
+          "company": "江苏金恒信息科技股份有限公司",
           "city": "南京",
-          "salary": "7万元/年",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-143-903.html",
+          "salary": "13万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-143-682.html",
           "field_lengths": {
-            "description": 397,
-            "responsibilities": 165,
-            "requirements": 93,
+            "description": 760,
+            "responsibilities": 205,
+            "requirements": 418,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-05T10:50:31+00:00",
+      "last_run_at": "2026-11-05T21:27:55+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3911,11 +3911,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 9391,
-  "published_priority_candidates": 148,
-  "published_pending_review": 9243,
-  "records_added_this_run": 16,
-  "records_updated_this_run": 3,
+  "published_total_jobs": 9417,
+  "published_priority_candidates": 153,
+  "published_pending_review": 9264,
+  "records_added_this_run": 26,
+  "records_updated_this_run": 4,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3941,8 +3941,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1575,
-    "fields_checked": 11025,
+    "rows": 1601,
+    "fields_checked": 11207,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3952,13 +3952,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1575,
+    "company_fields_checked": 1601,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-05T11:22:17+00:00",
+  "quality_checked_at": "2026-11-05T21:53:52+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
