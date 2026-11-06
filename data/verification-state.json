@@ -10802,7 +10802,24 @@
     "auto-2457e4d693a66c25": 0,
     "auto-06953883654cc279": 0,
     "auto-2ec8b576cf906353": 0,
-    "auto-6f34c13e82d7253f": 0
+    "auto-6f34c13e82d7253f": 0,
+    "auto-e7f66e6e23e56e4d": 0,
+    "auto-27e7883c2c8401fb": 0,
+    "auto-f4dfd3c48bd84679": 0,
+    "auto-9287d40e0390f308": 0,
+    "auto-229eb037d64defb9": 0,
+    "auto-eba275b0e7f1b1df": 0,
+    "auto-941dda0e40fc2389": 0,
+    "auto-fac312f52cb5453c": 0,
+    "auto-1f8af0e8a2dbb4ff": 0,
+    "auto-59eabf49fbc12356": 0,
+    "auto-132e5c32e980614b": 0,
+    "auto-91fe3e9e6dac76ac": 0,
+    "auto-aeb09a516ebcbf91": 0,
+    "auto-9a274ae214bd3aed": 0,
+    "auto-2d0e3ae2ca8e2bc6": 0,
+    "auto-d7cb5ad229aa9d84": 0,
+    "auto-6b8eb81162f35fdd": 0
   },
   "last_run_at": "2026-11-04T20:26:52+00:00",
   "last_batch_size": 120,
@@ -10844,13 +10861,13 @@
     "auto-9d6a91d5b0c0958e": "2026-11-04T20:26:52+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-11-05T21:53:33+00:00"
+    "yingjiesheng": "2026-11-06T11:19:38+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 677
+    "yingjiesheng": 857
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 1480
+    "yingjiesheng": 1503
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
