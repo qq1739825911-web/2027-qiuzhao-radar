@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 27026,
+        "next_offset": 27226,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 17,
-  "records_found_this_run": 17,
-  "active_candidates": 9,
-  "pending_review": 8,
+  "records_found": 65,
+  "records_found_this_run": 65,
+  "active_candidates": 17,
+  "pending_review": 48,
   "results": [
     {
       "id": "boss",
@@ -2904,40 +2904,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 17,
-      "active_candidates": 9,
-      "pending_review": 8,
-      "pages_attempted": 600,
-      "pages_failed": 0,
-      "html_bytes": 16864931,
-      "links_seen": 56887,
-      "listing_url_candidates": 1712,
-      "listing_urls_visited": 306,
+      "records_found": 65,
+      "active_candidates": 17,
+      "pending_review": 48,
+      "pages_attempted": 603,
+      "pages_failed": 3,
+      "html_bytes": 17592136,
+      "links_seen": 65052,
+      "listing_url_candidates": 2540,
+      "listing_urls_visited": 327,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 27026,
+      "listing_cursor_next": 27226,
       "listing_rotation_groups": {
-        "yjs-major-city": 64,
-        "yjs-role-city": 63,
-        "yjs-search": 4,
-        "yjs-mobile": 5,
-        "yjs-subject-city": 63,
-        "yjs-other": 1
+        "yjs-subject-city": 57,
+        "yjs-major-city": 56,
+        "yjs-role-city": 56,
+        "yjs-mobile": 6,
+        "yjs-other": 1,
+        "yjs-search": 24
       },
-      "tables_seen": 20070,
-      "embedded_json_blocks": 1031,
+      "tables_seen": 19542,
+      "embedded_json_blocks": 1533,
       "role_like_links": 0,
-      "discovery_pages_queued": 784,
+      "discovery_pages_queued": 850,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 226,
+      "direct_detail_pages_visited": 223,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 226,
-      "direct_detail_title_candidates": 25,
-      "direct_detail_title_rejected": 9,
+      "direct_detail_requests_attempted": 223,
+      "direct_detail_title_candidates": 86,
+      "direct_detail_title_rejected": 25,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 16,
+      "direct_detail_role_rows_emitted": 61,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2958,14 +2958,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-144-924.html",
-          "page_title": "岳阳现代服务职业学院2026招聘_湖南校园招聘",
-          "text_preview": "岳阳现代服务职业学院2026招聘_湖南校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [湖南]岳阳现代服务职业学院 职位： 2026招聘 发布时间： 2026-11-06 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 经济学 数学类 计算机 电子信息 工商管理 基础医学 教育学 体育学 机械类 自动化 职位描述 岳阳现代服务职业学院2026年专业带头人及骨干教师招聘公告 共计 26 个岗位，招 若干 人 发布时间：2026-11-06 | 截止时间：详见正文 | 岳阳 住房补贴 五险一金 节日福利 专业培训 餐饮补贴 分享 微信扫一扫 分享给你的朋友吧 收藏 公告热度 单位主页 岳阳现代服务职业学院2026年专业带头人及骨干教师招聘公告 招若干人，共计26个岗位 分享 微信扫一扫 分享给你的朋友吧 收藏 公告热度 单位主页 岳阳现代服务职业学院是由湖南省人民政府批准设立、教育部备案的民办非营利性全日制高等职业学校。学校秉承“技能报国，德行"
+          "url_path": "/job-008-144-786.html",
+          "page_title": "华邦新材料科技无锡有限公司招聘数控车床_江苏校园招聘",
+          "text_preview": "华邦新材料科技无锡有限公司招聘数控车床_江苏校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 无锡职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 无锡职业技术学院 核实，并请同时联系本站处理该转载信息。 [江苏]华邦新材料科技无锡有限公司 职位： 数控车床 发布时间： 2026-11-06 工作地点： 其它 信息来源： 无锡职业技术学院 职位类型： 全职 专业标签： 材料类 海洋工程 航空航天 机械类 职位描述 数控车床 15万元/年 2026-11-06 14:12:05发布 职位要求： 职位性质：全职 工作城市：江苏省无锡市宜兴市 招聘人数：2 学历要求：本科 职位类别：其他专业技术人员 语言能力：不限 需求专业：电力技术类,新能源发电工程类,非金属材料类,船舶与海洋工程装备类,航空装备类 职位描述： 岗位职责 严格按照生产计划、机械加工图纸、工艺文件及技术标准，完成轴类、盘类、套类等各类零件的数控车床加工任务，确保生产进度达标。 熟练操作FANUC、广数等数控系统，完成设备开机点检、程序输入/调试、工件装夹、刀具安装、对刀、参数设定等前期准备工作，保障设备"
         },
         {
-          "url_path": "/job-008-144-923.html",
-          "page_title": "汉高胶粘剂技术（广东）有限公司招聘汉高管培生_上海校园招聘",
-          "text_preview": "汉高胶粘剂技术（广东）有限公司招聘汉高管培生_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 大连外国语大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 大连外国语大学 核实，并请同时联系本站处理该转载信息。 [上海]汉高胶粘剂技术（广东）有限公司 职位： 汉高管培生 发布时间： 2026-11-06 工作地点： 上海 信息来源： 大连外国语大学 职位类型： 全职 职位描述 【2027届、不限】汉高胶粘剂技术（广东）有限公司 发布时间:2026年11月6日 一 、单位简介 通过强大的品牌、卓越的创新和先进的技术，汉高在中国及全球的工业和消费品领域中确立了领先地位。粘合剂技术业务部是全球粘合剂、密封剂和功能性涂料市场的领导者。消费品牌业务部在中国及全球众多市场的美发和洗涤剂及家用护理领域占据领先地位。汉高拥有众多著名国际品牌，如乐泰、百得、施华蔻、沙宣、宝莹、妙力等。 凭借约150年的历史积淀，我们的产品在数百万人的日常生活中发挥着重要作用。2025年，汉高销售额达205亿欧元。中国是汉高全球的重要市场之一，拥有超过4,000余名员工、近30个工厂、办事处、研发与技术"
+          "url_path": "/job-008-144-787.html",
+          "page_title": "南京玺越文化传媒有限公司招聘经纪人_南京校园招聘",
+          "text_preview": "南京玺越文化传媒有限公司招聘经纪人_南京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 南京 全职 > 职位详细 说明： 此信息由 三江学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 三江学院 核实，并请同时联系本站处理该转载信息。 [南京]南京玺越文化传媒有限公司 职位： 经纪人 发布时间： 2026-11-06 工作地点： 南京 信息来源： 三江学院 职位类型： 全职 专业标签： 戏剧与影视 设计学 职位描述 经纪人 12万元/年 2026-11-05 14:59:51发布 职位要求： 职位性质：不限 工作城市：江苏省南京市江宁区 招聘人数：5 学历要求：专科 职位类别：文学艺术工作人员 语言能力：不限 需求专业：艺术设计类,表演艺术类,民族文化艺术类,文化服务类 职位描述： 岗位职责 主要负责挖掘形象良好的主播 能够对接合作流程 任职资格 能够清晰的给主播个人成长空间做规划 有清晰的思路 薪资福利 底薪4000 加提成 联系方式： 联系人：田** 简历接收邮箱：1*********@ 公司介绍： 南京玺越文化传媒，是一家专注直播内容孵化、主播打造、新媒体运营的文化传媒公司。 公司氛围年轻轻松，主打人性化排"
         }
       ],
       "browser_render_attempts": 0,
@@ -2974,22 +2974,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 16,
+      "role_records": 61,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 16,
-      "announcement_records": 1,
+      "direct_detail_role_records": 61,
+      "announcement_records": 4,
       "portal_entries": 0,
       "sample_title": "其它招聘_其它应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "汉高管培生",
-        "财务专员",
-        "人事专员",
-        "法务专员",
-        "风控专员",
-        "建筑工程管理管培生",
-        "研究技术系列助理研究员"
+        "运营助理",
+        "构型管理工程师",
+        "数据工程师",
+        "热能工程师",
+        "外贸跨境运营助理",
+        "电商仓储订单处理员",
+        "仪表维护工程师"
       ],
       "role_field_samples": [
         {
@@ -3007,71 +3007,71 @@
           }
         },
         {
-          "title": "汉高管培生",
-          "company": "汉高胶粘剂技术（广东）有限公司",
-          "city": "上海",
-          "salary": "",
+          "title": "运营助理",
+          "company": "南京玺越文化传媒有限公司",
+          "city": "南京",
+          "salary": "12万元/年",
           "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-923.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-788.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 0,
-            "requirements": 0,
+            "description": 264,
+            "responsibilities": 71,
+            "requirements": 42,
             "benefits": 0
           }
         },
         {
-          "title": "财务专员",
-          "company": "岗位名称 人数",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-922.html",
+          "title": "构型管理工程师",
+          "company": "上海民用航空电子系统有限公司",
+          "city": "上海",
+          "salary": "28万元/年",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-790.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 3018,
-            "requirements": 876,
-            "benefits": 1599
+            "description": 288,
+            "responsibilities": 63,
+            "requirements": 92,
+            "benefits": 0
           }
         },
         {
-          "title": "人事专员",
-          "company": "岗位名称 人数",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-922.html",
+          "title": "数据工程师",
+          "company": "惠生清洁能源科技集团股份有限公司",
+          "city": "南通",
+          "salary": "16万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-782.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 3018,
-            "requirements": 876,
-            "benefits": 1599
+            "description": 187,
+            "responsibilities": 22,
+            "requirements": 28,
+            "benefits": 0
           }
         },
         {
-          "title": "法务专员",
-          "company": "岗位名称 人数",
-          "city": "其它",
-          "salary": "",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-922.html",
+          "title": "热能工程师",
+          "company": "南京博纳能源环保集团有限公司",
+          "city": "南京",
+          "salary": "7万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-783.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 3018,
-            "requirements": 876,
-            "benefits": 1599
+            "description": 434,
+            "responsibilities": 142,
+            "requirements": 155,
+            "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-07T10:02:27+00:00",
+      "last_run_at": "2026-11-07T19:25:05+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3883,14 +3883,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 9636,
-  "published_priority_candidates": 121,
-  "published_pending_review": 9515,
-  "records_added_this_run": 0,
-  "records_updated_this_run": 17,
+  "published_total_jobs": 9649,
+  "published_priority_candidates": 123,
+  "published_pending_review": 9526,
+  "records_added_this_run": 14,
+  "records_updated_this_run": 51,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 0,
+    "aggregator_non_detail_or_non_role_records_removed": 1,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3913,8 +3913,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1695,
-    "fields_checked": 11865,
+    "rows": 1708,
+    "fields_checked": 11956,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3924,13 +3924,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1695,
+    "company_fields_checked": 1708,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-07T10:34:21+00:00",
+  "quality_checked_at": "2026-11-07T19:49:40+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
