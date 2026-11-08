@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 27626,
+        "next_offset": 27826,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 65,
-  "records_found_this_run": 65,
-  "active_candidates": 16,
-  "pending_review": 49,
+  "records_found": 39,
+  "records_found_this_run": 39,
+  "active_candidates": 3,
+  "pending_review": 36,
   "results": [
     {
       "id": "boss",
@@ -2904,40 +2904,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 65,
-      "active_candidates": 16,
-      "pending_review": 49,
+      "records_found": 39,
+      "active_candidates": 3,
+      "pending_review": 36,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 19096713,
-      "links_seen": 74676,
-      "listing_url_candidates": 2705,
-      "listing_urls_visited": 315,
+      "html_bytes": 16244884,
+      "links_seen": 57507,
+      "listing_url_candidates": 1493,
+      "listing_urls_visited": 325,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 27626,
+      "listing_cursor_next": 27826,
       "listing_rotation_groups": {
+        "yjs-subject-city": 56,
         "yjs-major-city": 56,
         "yjs-role-city": 56,
         "yjs-mobile": 7,
-        "yjs-other": 1,
         "yjs-search": 24,
-        "yjs-subject-city": 56
+        "yjs-other": 1
       },
-      "tables_seen": 22662,
-      "embedded_json_blocks": 1557,
+      "tables_seen": 16965,
+      "embedded_json_blocks": 1351,
       "role_like_links": 0,
-      "discovery_pages_queued": 871,
+      "discovery_pages_queued": 831,
       "listing_pages_queued": 230,
       "direct_detail_pages_visited": 219,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
       "direct_detail_requests_attempted": 219,
-      "direct_detail_title_candidates": 88,
-      "direct_detail_title_rejected": 28,
-      "direct_detail_score_gate_recovered": 0,
+      "direct_detail_title_candidates": 62,
+      "direct_detail_title_rejected": 26,
+      "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 60,
+      "direct_detail_role_rows_emitted": 36,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2958,14 +2958,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-144-924.html",
-          "page_title": "岳阳现代服务职业学院2026招聘_湖南校园招聘",
-          "text_preview": "岳阳现代服务职业学院2026招聘_湖南校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [湖南]岳阳现代服务职业学院 职位： 2026招聘 发布时间： 2026-11-06 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 经济学 数学类 计算机 电子信息 工商管理 基础医学 教育学 体育学 机械类 自动化 职位描述 岳阳现代服务职业学院2026年专业带头人及骨干教师招聘公告 共计 26 个岗位，招 若干 人 发布时间：2026-11-06 | 截止时间：详见正文 | 岳阳 住房补贴 五险一金 节日福利 专业培训 餐饮补贴 分享 微信扫一扫 分享给你的朋友吧 收藏 公告热度 单位主页 岳阳现代服务职业学院2026年专业带头人及骨干教师招聘公告 招若干人，共计26个岗位 分享 微信扫一扫 分享给你的朋友吧 收藏 公告热度 单位主页 岳阳现代服务职业学院是由湖南省人民政府批准设立、教育部备案的民办非营利性全日制高等职业学校。学校秉承“技能报国，德行"
+          "url_path": "/job-008-144-905.html",
+          "page_title": "舒尔电子（苏州）有限公司招聘EHS实习生_苏州-苏州工业园区校园招聘",
+          "text_preview": "舒尔电子（苏州）有限公司招聘EHS实习生_苏州-苏州工业园区校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 前程无忧(51JOB) 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 前程无忧(51JOB) 核实，并请同时联系本站处理该转载信息。 [苏州-苏州工业园区]舒尔电子（苏州）有限公司 职位： EHS实习生 发布时间： 2026-11-06 工作地点： 其它 信息来源： 前程无忧(51JOB) 职位类型： 全职 职位描述 专业1:大数据技术 专业2:安全科学与工程类 福利:带薪病假 免费工作餐 职能类别:EHS安全工程师 在团队指导下，协助EHS、安保、人力资源及行政团队开展日常基础工作，包括巡检数据整理、物品出入及门禁卡权限维护；与团队共同运用基础数据分析和数字化工具，持续优化流程，提高工作效率和质量。岗位面向应届毕业生或在校实习生。 【岗位职责】 1. 协助整理、汇总和分析安保巡检记录，识别异常并及时反馈，跟进处理进展； 2. 协助物品出入厂登记、单据核对及台账维护，按流程反馈异常； 3. 按审批流程协助新员工工牌及访客卡办理、门禁权限开通、变更和注销，维护相关记录"
         },
         {
-          "url_path": "/job-008-144-923.html",
-          "page_title": "汉高胶粘剂技术（广东）有限公司招聘汉高管培生_上海校园招聘",
-          "text_preview": "汉高胶粘剂技术（广东）有限公司招聘汉高管培生_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 大连外国语大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 大连外国语大学 核实，并请同时联系本站处理该转载信息。 [上海]汉高胶粘剂技术（广东）有限公司 职位： 汉高管培生 发布时间： 2026-11-06 工作地点： 上海 信息来源： 大连外国语大学 职位类型： 全职 职位描述 【2027届、不限】汉高胶粘剂技术（广东）有限公司 发布时间:2026年11月6日 一 、单位简介 通过强大的品牌、卓越的创新和先进的技术，汉高在中国及全球的工业和消费品领域中确立了领先地位。粘合剂技术业务部是全球粘合剂、密封剂和功能性涂料市场的领导者。消费品牌业务部在中国及全球众多市场的美发和洗涤剂及家用护理领域占据领先地位。汉高拥有众多著名国际品牌，如乐泰、百得、施华蔻、沙宣、宝莹、妙力等。 凭借约150年的历史积淀，我们的产品在数百万人的日常生活中发挥着重要作用。2025年，汉高销售额达205亿欧元。中国是汉高全球的重要市场之一，拥有超过4,000余名员工、近30个工厂、办事处、研发与技术"
+          "url_path": "/job-008-144-931.html",
+          "page_title": "上海科技大学生物医学工程学院智能超声中心招聘工程师|智能超声实验室工程师_上海校园招聘",
+          "text_preview": "上海科技大学生物医学工程学院智能超声中心招聘工程师|智能超声实验室工程师_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [上海]上海科技大学生物医学工程学院智能超声中心 职位： 工程师|智能超声实验室工程师 发布时间： 2026-11-06 工作地点： 上海 信息来源： 高校人才网 职位类型： 全职 专业标签： 生物医学 电子信息 基础医学 自动化 职位描述 上海科技大学生物医学工程学院智能超声中心2026年招聘工程师 共计1个岗位，招 2人 基本信息 发布时间：2026-11-06 截止日期：详见正文 学历要求：硕士研究生及以上 需求学科（供参考）： 电子科学与技术 , 信息与通信工程 , 电气工程 , 生物医学工程 展开 公告详情 生医工学院智能超声中心，以医工交叉为核心，聚焦智能超声领域核心问题与临床转化需求，开展超声成像与感知、人工智能辅助诊断、智能超声治疗设备研发等前沿研究，突破传统超声技术瓶颈。中心将与医疗机构深度合作，搭建开放科研平台与人才培养"
         }
       ],
       "browser_render_attempts": 0,
@@ -2974,22 +2974,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 60,
+      "role_records": 36,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 60,
-      "announcement_records": 5,
+      "direct_detail_role_records": 36,
+      "announcement_records": 3,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "汉高管培生",
-        "财务专员",
-        "人事专员",
-        "法务专员",
-        "风控专员",
-        "建筑工程管理管培生",
-        "研究技术系列助理研究员"
+        "智能超声实验室工程师",
+        "嵌入式工程师",
+        "总经理秘书|助理",
+        "电子工程师",
+        "测试工程师",
+        "IE 工程师",
+        "跨境电商运营经理"
       ],
       "role_field_samples": [
         {
@@ -3007,59 +3007,59 @@
           }
         },
         {
-          "title": "汉高管培生",
-          "company": "汉高胶粘剂技术（广东）有限公司",
+          "title": "智能超声实验室工程师",
+          "company": "上海科技大学生物医学工程学院智能超声中心",
           "city": "上海",
           "salary": "",
-          "degree": "待核验",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-923.html",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-931.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 0,
+            "description": 1142,
+            "responsibilities": 482,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "财务专员",
-          "company": "岗位名称 人数",
-          "city": "其它",
+          "title": "嵌入式工程师",
+          "company": "深圳市兆兴博拓科技股份有限公司",
+          "city": "深圳",
           "salary": "",
           "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-922.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-937.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 3018,
-            "requirements": 876,
-            "benefits": 1599
+            "description": 440,
+            "responsibilities": 79,
+            "requirements": 0,
+            "benefits": 169
           }
         },
         {
-          "title": "人事专员",
-          "company": "岗位名称 人数",
+          "title": "总经理秘书|助理",
+          "company": "广东鸿海汇国际货运代理有限公司",
           "city": "其它",
-          "salary": "",
+          "salary": "5000～6000元/月",
           "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-922.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-940.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 3018,
-            "requirements": 876,
-            "benefits": 1599
+            "description": 415,
+            "responsibilities": 134,
+            "requirements": 199,
+            "benefits": 12
           }
         },
         {
-          "title": "法务专员",
-          "company": "岗位名称 人数",
-          "city": "其它",
+          "title": "电子工程师",
+          "company": "深圳市兆兴博拓科技股份有限公司",
+          "city": "深圳",
           "salary": "",
           "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-144-922.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-144-936.html",
           "field_lengths": {
-            "description": 45,
-            "responsibilities": 3018,
-            "requirements": 876,
-            "benefits": 1599
+            "description": 366,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 169
           }
         }
       ],
@@ -3071,7 +3071,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-08T00:33:10+00:00",
+      "last_run_at": "2026-11-08T19:40:04+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3887,7 +3887,7 @@
   "published_priority_candidates": 119,
   "published_pending_review": 9625,
   "records_added_this_run": 0,
-  "records_updated_this_run": 65,
+  "records_updated_this_run": 39,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3931,6 +3931,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-08T06:34:06+00:00",
+  "quality_checked_at": "2026-11-08T20:01:37+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
