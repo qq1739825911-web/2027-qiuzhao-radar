@@ -2,31 +2,9 @@
   "run_date": "2026-11-10",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 28826,
+        "next_offset": 29026,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 523,
-  "records_found_this_run": 523,
-  "active_candidates": 20,
-  "pending_review": 503,
+  "records_found": 36,
+  "records_found_this_run": 36,
+  "active_candidates": 9,
+  "pending_review": 27,
   "results": [
     {
       "id": "boss",
@@ -2941,39 +2919,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 24,
-      "active_candidates": 5,
-      "pending_review": 19,
+      "records_found": 36,
+      "active_candidates": 9,
+      "pending_review": 27,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 16230087,
-      "links_seen": 59347,
-      "listing_url_candidates": 2670,
-      "listing_urls_visited": 379,
+      "html_bytes": 17476360,
+      "links_seen": 61891,
+      "listing_url_candidates": 2654,
+      "listing_urls_visited": 291,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 28826,
+      "listing_cursor_next": 29026,
       "listing_rotation_groups": {
-        "yjs-major-city": 59,
-        "yjs-role-city": 59,
-        "yjs-subject-city": 58,
-        "yjs-mobile": 2,
-        "yjs-search": 22
+        "yjs-role-city": 64,
+        "yjs-major-city": 64,
+        "yjs-mobile": 3,
+        "yjs-other": 1,
+        "yjs-search": 5,
+        "yjs-subject-city": 63
       },
-      "tables_seen": 17041,
-      "embedded_json_blocks": 1087,
+      "tables_seen": 20769,
+      "embedded_json_blocks": 1323,
       "role_like_links": 0,
-      "discovery_pages_queued": 849,
+      "discovery_pages_queued": 797,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 221,
+      "direct_detail_pages_visited": 253,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 221,
-      "direct_detail_title_candidates": 42,
-      "direct_detail_title_rejected": 19,
+      "direct_detail_requests_attempted": 253,
+      "direct_detail_title_candidates": 63,
+      "direct_detail_title_rejected": 28,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 23,
+      "direct_detail_role_rows_emitted": 35,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2994,14 +2973,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-144-392.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003| ڸ_=w\u001a\u00062x_a3f\u0016\u0003}`c,|L7479I#RԢT \u0007|0#t #wQ < ?\u000f\u0017t7/׏>،>ќ?㚬m: e [2E6U\u0018c=aUƱLu\u0015Na=㞞?f?|9 S ?~#wc?~q\u0002p \u000fk:q\u000f\u0007{aF{x ~M\u0011&I)%WLg_I2 s=\\ ~?\u0004ppy* 69w0ϡyXs r\u0013~`:)7}bcM? ץ \u0001|{+8Q\u0004ҿrzn\u0014ɀ &J\u0005 < \u0011算? mǬ?_Mmh\u000e\u0000w7!~F0F/\u0013\"_ \u0001&\u001b?YgAM˗g\u0018(yw0!Wgﾻ \u0016~&Cy_/ ~|\u0005^s\u0018o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}S@\u000e\u0002\u0015?뀉'\u0016Xڇ{EL\u0013]\u0013,:[/`}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+pDf\u0018! 4mP < \u0017\u0005g8!(gQ\"\u0019rAzuo da#ך5 J$4 < |̈́gl7rXB\u0011FE\u0013[v`[+hvN@4ɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwbf\\i`\u0019Ǩx pz\u0010@.Ach\b \u0013\u0013( Qch͘\u001aJ6\u0010jmA\u0014'[\u001adbEb 1\u0018AR\u0007({A\u000f\u0005e \u0018MDLv?\u0018wۨ .2.Gm\u0018 \\-Uk=@o8 4lx2Z\u0006\u0004myr\\aW w1gl~zp7,ťDAi"
+          "url_path": "/job-008-147-013.html",
+          "page_title": "中国医科大学附属口腔医院招聘审计工作部行政人员|学生工作部专职辅导员|教育工作部行政人员_辽宁校园招聘",
+          "text_preview": "中国医科大学附属口腔医院招聘审计工作部行政人员|学生工作部专职辅导员|教育工作部行政人员_辽宁校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 中国医科大学附属口腔医院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 中国医科大学附属口腔医院 核实，并请同时联系本站处理该转载信息。 [辽宁]中国医科大学附属口腔医院 职位： 审计工作部行政人员|学生工作部专职辅导员|教育工作部行政人员 发布时间： 2026-11-10 工作地点： 其它 信息来源： 中国医科大学附属口腔医院 职位类型： 全职 职位描述 中国医科大学附属口腔医院2026年院聘合同制行政岗位招聘公告 发布日期：2026-11-10 根据我院实际工作需要，现面向社会启动2026年院聘合同制行政岗位招聘工作，相关事宜通知如下。 一、基本原则 坚持公平、公正、公开、择优、适岗的原则。严格执行招聘程序，确保招聘人员质量。 二、应聘条件 （一）具有中华人民共和国国籍。 （二）遵守宪法和法律。 （三）年满十八周岁，具有良好的品行。 （四）应聘者必须具有硕士及以上研究生学历及学位，且为2025或2026年毕业生。 （五）2026"
         },
         {
-          "url_path": "/job-008-144-565.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:k*lYɪ:&x8r&\u000f < =~s@Z\u0019~G\u0004\u0012 \u0016 _tc \u000f!x>) [s\u0003rdz1}; -TeMǒD\\f\u0014NEf\u0004`4yVr\u0019ex;n2~\u0007\u0015Tk \u00030w\u0000ywXԝ=lߗۭ\u001bՆ7D |c \u0000 :Hg ouvS,+k })\bK7fWߺ\u000f4; < .7n0IJ /b:ʽMLe!CSix1ϟ̹%y\u000e\"핛\u0003Io|}4\u0013s n\u0010].Խpܯ~\u0004\b>nCF%\u00130J+ˑQ&\u0002Gy?M x=#@q]/>ǏY3 =b\u000fBS\u000e\u0000w7!~F0F/\u0013\"_ \u0001&\u001b?YgAM˗g\u0010N{AB;8+P̳w\u000fg? Bp\u0002\u0004!\u00108&t'P:!Xњ15l Bۂ).O4 s \u001abP1vBځ+\u000f*]Q *TnMA@l1~0\u001a\\e]T ӏ\u00051\u0012ZdrU{\u0004p:hd `\u0016(w1gl~zp7,ťDAiQFؐX\\F^bq\u0001a-D[\u001bɸP \u0011\u0017F@{ P\u001ax \b\u0002˗˗/_z 1O(\u0006a\u0015\u0007-\u0007`Q%jxt[ b\u000f.^y[&#Q6Vq Лݺ]\u0016P`\u0012z|\u0006%[X\u0019% z W\"pw8-C 7vI]sivk3Z;dPhbS gU-]_+\u0014\u0018_\u001ar(\u000e~F\u0015+\u0016Eٺ Hh޹wAvu,{W* 7=\u0017(br,Eés|8 9@Q)􈁸Z;\u0011 * b\u0016ި \u00155\u0012=\\BTz\u0018v"
+          "url_path": "/job-008-147-027.html",
+          "page_title": "浙江云聚人才服务有限公司2027招聘企业服务专员_浙江校园招聘",
+          "text_preview": "浙江云聚人才服务有限公司2027招聘企业服务专员_浙江校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 金华职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 金华职业技术学院 核实，并请同时联系本站处理该转载信息。 [浙江]浙江云聚人才服务有限公司 职位： 2027招聘企业服务专员 发布时间： 2026-11-10 工作地点： 其它 信息来源： 金华职业技术学院 职位类型： 全职 职位描述 企业服务专员 8万元/年 2026-11-10 14:22:45发布 职位要求： 职位性质：正式 工作城市：浙江省金华市婺城区 招聘人数：10 学历要求：大专及以上 职位类别：商业和服务业人员 需求专业：不限 职位描述： 岗位职责 1、负责网站信息的审核、录入工作，并通过电话回访信息的真实有效性； 2、负责与客户进行沟通，介绍网站入驻规则并引导合作付费会员。 任职资格 1、大专及以上学历； 2、为人热情，细致严谨，善于沟通； 3、有电话营销、客服工作经验的优先。 薪资福利 1、工资：底薪+绩效+奖励（前三个月保底4000-5000） 2、福利：基本工资+绩效工资+提成+话费交通"
         }
       ],
       "browser_render_attempts": 0,
@@ -3010,22 +2989,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 23,
+      "role_records": 35,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 23,
+      "direct_detail_role_records": 35,
       "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "ʵϰƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "计算机系统架构实验课程教学工程师",
-        "饲料生产管培生",
-        "科研助理",
-        "研究助理",
-        "研发工程师",
-        "销售工程师",
-        "销售助理"
+        "审计工作部行政人员",
+        "教育工作部行政人员",
+        "财务部收费员",
+        "视频剪辑师",
+        "市场营销岗",
+        "技术营销工程师",
+        "医疗器械销售员"
       ],
       "role_field_samples": [
         {
@@ -3043,59 +3022,59 @@
           }
         },
         {
-          "title": "计算机系统架构实验课程教学工程师",
-          "company": "上海创芯学院",
+          "title": "审计工作部行政人员",
+          "company": "中国医科大学附属口腔医院",
+          "city": "其它",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-013.html",
+          "field_lengths": {
+            "description": 482,
+            "responsibilities": 0,
+            "requirements": 1101,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "教育工作部行政人员",
+          "company": "中国医科大学附属口腔医院",
+          "city": "其它",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-013.html",
+          "field_lengths": {
+            "description": 482,
+            "responsibilities": 0,
+            "requirements": 1101,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "财务部收费员",
+          "company": "上海市同济口腔医院（同济大学附属口腔医院）",
           "city": "上海",
           "salary": "",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-043.html",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-009.html",
           "field_lengths": {
-            "description": 1338,
-            "responsibilities": 648,
-            "requirements": 0,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "饲料生产管培生",
-          "company": "正大康地农牧集团有限公司",
-          "city": "其它",
-          "salary": "5000～6000元/月",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-047.html",
-          "field_lengths": {
-            "description": 388,
-            "responsibilities": 187,
-            "requirements": 75,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "科研助理",
-          "company": "天津大学药物科学与技术学院",
-          "city": "天津",
-          "salary": "面议",
-          "degree": "硕士及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-046.html",
-          "field_lengths": {
-            "description": 579,
+            "description": 509,
             "responsibilities": 0,
-            "requirements": 0,
+            "requirements": 353,
             "benefits": 0
           }
         },
         {
-          "title": "研究助理",
-          "company": "深圳湾实验室许志平课题组",
-          "city": "深圳",
-          "salary": "12-15万元",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-044.html",
+          "title": "视频剪辑师",
+          "company": "人民日报慧媒有限责任公司",
+          "city": "北京",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-146-972.html",
           "field_lengths": {
-            "description": 2589,
-            "responsibilities": 113,
-            "requirements": 251,
-            "benefits": 789
+            "description": 48,
+            "responsibilities": 0,
+            "requirements": 333,
+            "benefits": 253
           }
         }
       ],
@@ -3107,8 +3086,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-10T19:59:45+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-11-10T21:17:22+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3919,11 +3898,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 10061,
+  "published_total_jobs": 10062,
   "published_priority_candidates": 129,
-  "published_pending_review": 9932,
-  "records_added_this_run": 155,
-  "records_updated_this_run": 354,
+  "published_pending_review": 9933,
+  "records_added_this_run": 2,
+  "records_updated_this_run": 34,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 1,
@@ -3949,8 +3928,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1814,
-    "fields_checked": 12698,
+    "rows": 1815,
+    "fields_checked": 12705,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3960,13 +3939,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1814,
+    "company_fields_checked": 1815,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-10T20:24:05+00:00",
+  "quality_checked_at": "2026-11-10T21:40:39+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
