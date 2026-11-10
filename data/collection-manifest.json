@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-11-09",
+  "run_date": "2026-11-10",
   "collector_version": "5.21",
   "enabled_sources": 23,
   "collected_sources": 1,
@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 28426,
+        "next_offset": 28626,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 75,
-  "records_found_this_run": 75,
-  "active_candidates": 22,
-  "pending_review": 53,
+  "records_found": 23,
+  "records_found_this_run": 23,
+  "active_candidates": 7,
+  "pending_review": 16,
   "results": [
     {
       "id": "boss",
@@ -2909,40 +2909,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 75,
-      "active_candidates": 22,
-      "pending_review": 53,
-      "pages_attempted": 601,
-      "pages_failed": 1,
-      "html_bytes": 18437950,
-      "links_seen": 76441,
-      "listing_url_candidates": 3000,
-      "listing_urls_visited": 369,
+      "records_found": 23,
+      "active_candidates": 7,
+      "pending_review": 16,
+      "pages_attempted": 607,
+      "pages_failed": 7,
+      "html_bytes": 18378808,
+      "links_seen": 67966,
+      "listing_url_candidates": 2400,
+      "listing_urls_visited": 286,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 28426,
+      "listing_cursor_next": 28626,
       "listing_rotation_groups": {
+        "yjs-subject-city": 58,
         "yjs-role-city": 57,
         "yjs-major-city": 57,
-        "yjs-subject-city": 57,
-        "yjs-other": 1,
-        "yjs-mobile": 8,
-        "yjs-search": 20
+        "yjs-search": 22,
+        "yjs-mobile": 5,
+        "yjs-other": 1
       },
-      "tables_seen": 19807,
-      "embedded_json_blocks": 1756,
+      "tables_seen": 23000,
+      "embedded_json_blocks": 1252,
       "role_like_links": 0,
-      "discovery_pages_queued": 870,
+      "discovery_pages_queued": 876,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 221,
+      "direct_detail_pages_visited": 224,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 221,
-      "direct_detail_title_candidates": 103,
-      "direct_detail_title_rejected": 31,
-      "direct_detail_score_gate_recovered": 3,
+      "direct_detail_requests_attempted": 228,
+      "direct_detail_title_candidates": 42,
+      "direct_detail_title_rejected": 20,
+      "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 72,
+      "direct_detail_role_rows_emitted": 22,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2963,14 +2963,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-146-063.html",
-          "page_title": "清华大学生命科学学院王继纵课题组招聘行政兼科研助理_北京校园招聘",
-          "text_preview": "清华大学生命科学学院王继纵课题组招聘行政兼科研助理_北京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 全职 > 职位详细 说明： 此信息由 清华大学招聘网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 清华大学招聘网 核实，并请同时联系本站处理该转载信息。 [北京]清华大学生命科学学院王继纵课题组 职位： 行政兼科研助理 发布时间： 2026-11-09 工作地点： 北京 信息来源： 清华大学招聘网 职位类型： 全职 专业标签： 生物科学 职位描述 王继纵课题组行政兼科研助理 发布日期:2026-11-09 截止日期:2026-11-30 生命科学学院|招1人 所需专业:生物学相关 资质要求:无 学习经历及工作经历满足以下条件之一 ： 1.学位要求本科及以上 并且 工作年限要求不限 核心职责及次要职责： 1.负责课题组日常管理，包含财务经费管理，定期（一月一次）对经费执行情况进行汇报； 2.负责科研项目申请材料及时报送，科研经费及时认领、中期检查、项目结题、财务决算，合同管理、专利管理等工作，配合科研院做好相关工作； 3.负责课题组材料及设备购置申请、审批及报销； 4.协助管理课题组研究生日常事务； 5.负"
+          "url_path": "/job-008-138-471.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:8s+r-Ěٞ+ ˺\"+0Ȧc:O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3 < &}&ncc&||v2rpu\u0010T!Zn4 < ۘO\u0012 ?{?Y7|._^^8_?\u0002\u0004 wVpr \u0018(r\u0013 &j\u0005 < \u0011算? mǬ?_Mmh`\u0007\u0000\u001bLN?#A|\u0017Z /\u0000 ҟͬ޳ æ?CN3\bn J!} iyH}\u0015(ycnųP} \u00173\u0003 x\u0001\u0017 Dh~\u000fE_+dܭ 8HM\b= &pc~ǌ*Xn 7߻oZ?Q|\u001b^\u0001g p\u0012Op谒)ykG^m -, i^n\u0005+\u0011;\u0016ڡQUVF\u001b4b5\u0019 v2wEЩtZ/s\u0015 / z9\u0014_\u0007nxV \u0015\"l\u000f\u0006$4~ܻ ?]+zR\u0015A\u001bǞf\u00141qQ9vT9> Mۨ\u0014z@\\_ ۈ\u000f\u0015\u000e1 |no\u000e\u001a] tR.!*= ;YAZ`\u0007\u0004R\";s *HhP)25\u0012 Zcu\b(`OÊ%XLQSrj\u00015c\\`\u0013 \u0018\u0006ɨ\u001b~ сU8镌\u001a \u0014eK\u001aړȡ߅-@+JX{\u0012$Fh\u0014숫 \u0003I4Elz`h\u0018ڃ\u0018*pGde\\F:F Mp\u0013 wlpG{6B\u0006t Bmr\u0005\u0004LPE H"
         },
         {
-          "url_path": "/job-008-146-064.html",
-          "page_title": "清华大学万科公共卫生与健康学院招聘全球卫生与治理科研助理_北京校园招聘",
-          "text_preview": "清华大学万科公共卫生与健康学院招聘全球卫生与治理科研助理_北京校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 北京 全职 > 职位详细 说明： 此信息由 清华大学招聘网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 清华大学招聘网 核实，并请同时联系本站处理该转载信息。 [北京]清华大学万科公共卫生与健康学院 职位： 全球卫生与治理科研助理 发布时间： 2026-11-09 工作地点： 北京 信息来源： 清华大学招聘网 职位类型： 全职 专业标签： 管理科学与工程 生物医学 基础医学 工商管理 自动化 计算机 职位描述 全球卫生与治理科研助理TK-5 发布日期:2026-11-09 截止日期:2026-11-18 万科公共卫生与健康学院|招1人 所需专业:公共卫生、流行病学、卫生政策、全球健康，以及人工智能、计算机科学与技术、自动化、生物医学工程、工程管理等相关专业 资质要求:无 学习经历及工作经历满足以下条件之一 ： 1.学位要求硕士及以上 并且 工作年限要求不限 核心职责及次要职责： 1.制定项目实施方案及工作计划，落实关键节点，保证项目的按期推进和顺利达成；2.参与项目的实施与管理，日常关系维护及沟通协作事宜"
+          "url_path": "/job-008-138-242.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:8⩖Ɉ\u0002ϳ*csĘHKO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{ELɃ\u0001 zD\u0017u;3@ BiP߅@:>ea0il\u0017aq8@]V E 7/\u0005(ℙ1P\u001aܥ\u0013qSiz\u0013]@\u0010P\u001au\u00146ˣc{%!R.\u0018A\u001a-9px+\u0017Gml,U\u0018⽺ \u0014TGڤ\"\u0012f\u0004mQTkTZYV.\u0017 3 \u0003}7D\u0006 ` '\u001b \u00175JD!g\u001b\u0017[fݑ\u000eO$; + ԭPj %n& Bp\u0002\u0004!\u00108&t'P:!Xњ15l Bۂ).O4 s \u001abP1vBځ+\u000f*]Q *TnMA@l1~0\u001a\\e]T ӏ\u00051\u0012ZdrU{\u0004p:hd `\u0016(w1gl~zp7,ťDAiQFؐX\\F^b"
         }
       ],
       "browser_render_attempts": 0,
@@ -2979,22 +2979,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 72,
+      "role_records": 22,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 72,
-      "announcement_records": 3,
+      "direct_detail_role_records": 22,
+      "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ɶƸϢ|ѧְ|ɶҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "行政兼科研助理",
-        "全球卫生与治理科研助理",
-        "研发员",
-        "研究助理",
-        "智慧制造学院",
-        "大数据与人工智能学院高层次人才",
-        "香精研发工程师"
+        "审计工作部行政人员",
+        "教育工作部行政人员",
+        "财务部收费员",
+        "视频剪辑师",
+        "市场营销岗",
+        "技术营销工程师",
+        "医疗器械销售员"
       ],
       "role_field_samples": [
         {
@@ -3012,71 +3012,71 @@
           }
         },
         {
-          "title": "行政兼科研助理",
-          "company": "清华大学生命科学学院王继纵课题组",
-          "city": "北京",
+          "title": "审计工作部行政人员",
+          "company": "中国医科大学附属口腔医院",
+          "city": "其它",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-146-063.html",
-          "field_lengths": {
-            "description": 434,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "全球卫生与治理科研助理",
-          "company": "清华大学万科公共卫生与健康学院",
-          "city": "北京",
-          "salary": "11-18万",
           "degree": "硕士及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-146-064.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-013.html",
           "field_lengths": {
-            "description": 597,
+            "description": 482,
             "responsibilities": 0,
-            "requirements": 0,
+            "requirements": 1101,
             "benefits": 0
           }
         },
         {
-          "title": "研发员",
-          "company": "重庆桥头食品有限公司",
-          "city": "重庆",
+          "title": "教育工作部行政人员",
+          "company": "中国医科大学附属口腔医院",
+          "city": "其它",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-013.html",
+          "field_lengths": {
+            "description": 482,
+            "responsibilities": 0,
+            "requirements": 1101,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "财务部收费员",
+          "company": "上海市同济口腔医院（同济大学附属口腔医院）",
+          "city": "上海",
+          "salary": "",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-009.html",
+          "field_lengths": {
+            "description": 509,
+            "responsibilities": 0,
+            "requirements": 353,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "视频剪辑师",
+          "company": "人民日报慧媒有限责任公司",
+          "city": "北京",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-146-065.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-146-972.html",
           "field_lengths": {
-            "description": 0,
+            "description": 48,
             "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "研究助理",
-          "company": "广州医科大学基础医学院特聘教授任艺课题组",
-          "city": "广州",
-          "salary": "",
-          "degree": "硕士",
-          "source_url": "https://m.yingjiesheng.com/job-008-146-066.html",
-          "field_lengths": {
-            "description": 696,
-            "responsibilities": 30,
-            "requirements": 236,
-            "benefits": 0
+            "requirements": 333,
+            "benefits": 253
           }
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-09T23:46:21+00:00",
+      "last_run_at": "2026-11-10T11:07:47+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3888,11 +3888,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 9926,
-  "published_priority_candidates": 122,
-  "published_pending_review": 9804,
-  "records_added_this_run": 71,
-  "records_updated_this_run": 4,
+  "published_total_jobs": 9946,
+  "published_priority_candidates": 129,
+  "published_pending_review": 9817,
+  "records_added_this_run": 21,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 1,
@@ -3918,8 +3918,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1781,
-    "fields_checked": 12467,
+    "rows": 1801,
+    "fields_checked": 12607,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3929,13 +3929,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1781,
+    "company_fields_checked": 1801,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-10T07:39:14+00:00",
+  "quality_checked_at": "2026-11-10T11:41:31+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
