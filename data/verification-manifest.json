@@ -1,1098 +1,736 @@
 {
-  "last_run_at": "2026-11-10T21:40:17+00:00",
-  "scope": "yingjiesheng",
-  "scope_source_ids": [
-    "yingjiesheng"
-  ],
-  "checked": 180,
-  "records_touched": 187,
-  "eligible_direct_links": 1674,
-  "link_alive": 180,
-  "missing_needs_recheck": 0,
+  "last_run_at": "2026-11-11T20:17:44+00:00",
+  "scope": "__all__",
+  "scope_source_ids": [],
+  "checked": 120,
+  "records_touched": 410,
+  "eligible_direct_links": 4219,
+  "link_alive": 114,
+  "missing_needs_recheck": 11,
   "unknown": 0,
-  "closed_after_two_checks": 0,
-  "batch_size": 180,
+  "closed_after_two_checks": 8,
+  "batch_size": 120,
   "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
   "checked_items": [
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-419.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31759",
+      "result": "alive",
+      "http_status": 200,
+      "records": 15
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-31757",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-31760",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-422.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31763",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 5
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-435.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31767",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 5
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-423.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31769",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 12
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-413.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31756",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 7
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-425.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-444.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31762",
       "result": "alive",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-442.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31774",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 5
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-439.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31770",
       "result": "alive",
       "http_status": 200,
-      "records": 1
+      "records": 4
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-437.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-449.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-448.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-431.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-418.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-456.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-460.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-461.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-462.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-450.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-463.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-465.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-466.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-478.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-469.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-468.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-480.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-482.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-827.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-828.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-829.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-830.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-840.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-838.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-842.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-481.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-119-180.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-119-186.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-119-194.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-068.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-119-204.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-119-207.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-069.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-119-205.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-073.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-071.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-074.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-216.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-083.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-120-076.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-122-169.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-121-345.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-122-183.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-122-227.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-167.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-168.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-173.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-176.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-174.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-177.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-121-350.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-178.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-192.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-193.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-367.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-463.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-461.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-464.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-465.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-467.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-469.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-470.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-497.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-506.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-498.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-521.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-468.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-466.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-594.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-598.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-601.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-603.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-604.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-605.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-606.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-614.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-615.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-523.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-600.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-617.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-618.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-619.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-784.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-387.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-445.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-446.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-449.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-450.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-452.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-455.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-456.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-127-783.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-458.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-482.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-483.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-489.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-493.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-494.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-495.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-496.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-507.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-392.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-395.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-487.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-396.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-129-490.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-400.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-401.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-813.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-393.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-832.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-834.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-399.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-131-491.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-131-498.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-131-999.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-130-817.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-132-050.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-132-060.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-133-415.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-132-066.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-133-418.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-131-995.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-133-419.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-131-563.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-133-420.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-223.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-184.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-234.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-251.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-244.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-263.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-258.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-334.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-337.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-225.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-387.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-338.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-141-388.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-560.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-561.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-578.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-580.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-582.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-586.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-583.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-588.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-589.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-587.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-590.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-596.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-602.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-599.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-603.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-605.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-604.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-606.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-608.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-592.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31773",
       "result": "alive",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-614.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32133",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-617.html",
+      "url": "https://qiuzhaowang.com/jobs/position-31777",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32132",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-619.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32139",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32134",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-621.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32136",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32146",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32151",
+      "result": "missing",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-31775",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32152",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32158",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-623.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32159",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-625.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32154",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32160",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-626.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32147",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-627.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32161",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32162",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32166",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32165",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32164",
+      "result": "alive",
+      "http_status": 200,
+      "records": 7
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32167",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32171",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32168",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-630.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32172",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-629.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32177",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32180",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32192",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32195",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32193",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32206",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32214",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32208",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32196",
+      "result": "alive",
+      "http_status": 200,
+      "records": 11
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32217",
+      "result": "alive",
+      "http_status": 200,
+      "records": 13
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32218",
+      "result": "alive",
+      "http_status": 200,
+      "records": 16
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32219",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-611.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32198",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32220",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-631.html",
+      "url": "https://qiuzhaowang.com/jobs/position-32223",
+      "result": "alive",
+      "http_status": 200,
+      "records": 14
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32265",
+      "result": "missing",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32222",
+      "result": "alive",
+      "http_status": 200,
+      "records": 7
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32993",
+      "result": "missing",
+      "http_status": 404,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-33153",
+      "result": "missing",
+      "http_status": 404,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/459521",
       "result": "alive",
       "http_status": 200,
       "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460854",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460826",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460813?channel=npJobTab&deliverSource=1",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/459525",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/459523",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/459519",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460855",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460892",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460896",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460903",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460862",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460899",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460861",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460894",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460902",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460904",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460910",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460913",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460917",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460909",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460908",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460906",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/460916",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462583",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462586",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462537",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462579",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462585",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462548",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462554",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462542",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462607",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462594",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462610",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462606",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462596",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462608",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462611",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462601",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32485",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32509",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32500",
+      "result": "alive",
+      "http_status": 200,
+      "records": 5
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32524",
+      "result": "alive",
+      "http_status": 200,
+      "records": 11
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32530",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32536",
+      "result": "alive",
+      "http_status": 200,
+      "records": 18
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32561",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32565",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32572",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32577",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32574",
+      "result": "alive",
+      "http_status": 200,
+      "records": 2
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32573",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/463029",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/464713?channel=npJobTab&deliverSource=1",
+      "result": "missing",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32579",
+      "result": "alive",
+      "http_status": 200,
+      "records": 17
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/464720?channel=npJobTab&deliverSource=1",
+      "result": "missing",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462616",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://www.nowcoder.com/jobs/detail/462612",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32582",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32583",
+      "result": "alive",
+      "http_status": 200,
+      "records": 4
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32584",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32588",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32595",
+      "result": "alive",
+      "http_status": 200,
+      "records": 1
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32599",
+      "result": "alive",
+      "http_status": 200,
+      "records": 9
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32603",
+      "result": "alive",
+      "http_status": 200,
+      "records": 6
+    },
+    {
+      "url": "https://qiuzhaowang.com/jobs/position-32594",
+      "result": "alive",
+      "http_status": 200,
+      "records": 3
     }
   ],
   "scope_runs": {
@@ -2195,738 +1833,738 @@
       ]
     },
     "__all__": {
-      "last_run_at": "2026-11-10T20:23:55+00:00",
+      "last_run_at": "2026-11-11T20:17:44+00:00",
       "scope": "__all__",
       "scope_source_ids": [],
       "checked": 120,
-      "records_touched": 307,
-      "eligible_direct_links": 4150,
-      "link_alive": 120,
-      "missing_needs_recheck": 0,
+      "records_touched": 410,
+      "eligible_direct_links": 4219,
+      "link_alive": 114,
+      "missing_needs_recheck": 11,
       "unknown": 0,
-      "closed_after_two_checks": 0,
+      "closed_after_two_checks": 8,
       "batch_size": 120,
       "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
       "checked_items": [
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-48840",
+          "url": "https://qiuzhaowang.com/jobs/position-31759",
           "result": "alive",
           "http_status": 200,
-          "records": 1
+          "records": 15
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-48856",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-48881",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-48928",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49002",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-48953",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49010",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/470861?channel=npJobTab&deliverSource=1",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/470898?channel=npJobTab&deliverSource=1",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/470846?channel=npJobTab&deliverSource=1",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49024",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49040",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/470869?channel=npJobTab&deliverSource=1",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/470863?channel=npJobTab&deliverSource=1",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49078",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49076",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49100",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49102",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49218",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49199",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49255",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49296",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49175",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49135",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49197",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49094",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32722",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32734",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32728",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49354",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32740",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49322",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49369",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32735",
-          "result": "alive",
-          "http_status": 200,
-          "records": 5
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32753",
-          "result": "alive",
-          "http_status": 200,
-          "records": 10
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49388",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32736",
-          "result": "alive",
-          "http_status": 200,
-          "records": 10
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32761",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32770",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32773",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32778",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32786",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32787",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32747",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32762",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32818",
-          "result": "alive",
-          "http_status": 200,
-          "records": 13
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32822",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32799",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32830",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32836",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32809",
+          "url": "https://qiuzhaowang.com/jobs/position-31757",
           "result": "alive",
           "http_status": 200,
           "records": 6
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32839",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32804",
+          "url": "https://qiuzhaowang.com/jobs/position-31760",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32797",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32821",
+          "url": "https://qiuzhaowang.com/jobs/position-31763",
           "result": "alive",
           "http_status": 200,
           "records": 5
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32840",
-          "result": "alive",
-          "http_status": 200,
-          "records": 10
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32841",
-          "result": "alive",
-          "http_status": 200,
-          "records": 18
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32878",
+          "url": "https://qiuzhaowang.com/jobs/position-31767",
           "result": "alive",
           "http_status": 200,
           "records": 5
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32883",
-          "result": "alive",
-          "http_status": 200,
-          "records": 8
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32894",
-          "result": "alive",
-          "http_status": 200,
-          "records": 25
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32900",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32901",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32902",
+          "url": "https://qiuzhaowang.com/jobs/position-31769",
           "result": "alive",
           "http_status": 200,
           "records": 12
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32921",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32844",
-          "result": "alive",
-          "http_status": 200,
-          "records": 8
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32864",
-          "result": "alive",
-          "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32932",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32927",
-          "result": "alive",
-          "http_status": 200,
-          "records": 9
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32934",
-          "result": "alive",
-          "http_status": 200,
-          "records": 3
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-32879",
+          "url": "https://qiuzhaowang.com/jobs/position-31756",
           "result": "alive",
           "http_status": 200,
           "records": 7
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-32935",
+          "url": "https://qiuzhaowang.com/jobs/position-31762",
           "result": "alive",
           "http_status": 200,
-          "records": 8
+          "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49868",
+          "url": "https://qiuzhaowang.com/jobs/position-31774",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-31770",
+          "result": "alive",
+          "http_status": 200,
+          "records": 4
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-31773",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32133",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49888",
+          "url": "https://qiuzhaowang.com/jobs/position-31777",
+          "result": "alive",
+          "http_status": 200,
+          "records": 9
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32132",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49906",
+          "url": "https://qiuzhaowang.com/jobs/position-32139",
+          "result": "alive",
+          "http_status": 200,
+          "records": 4
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32134",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49908",
+          "url": "https://qiuzhaowang.com/jobs/position-32136",
+          "result": "alive",
+          "http_status": 200,
+          "records": 9
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32146",
+          "result": "alive",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32151",
+          "result": "missing",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-31775",
+          "result": "alive",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32152",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32158",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49938",
+          "url": "https://qiuzhaowang.com/jobs/position-32159",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49968",
+          "url": "https://qiuzhaowang.com/jobs/position-32154",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32160",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-49972",
+          "url": "https://qiuzhaowang.com/jobs/position-32147",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/223717?channel=npJobTab&deliverSource=1",
+          "url": "https://qiuzhaowang.com/jobs/position-32161",
+          "result": "alive",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32162",
+          "result": "alive",
+          "http_status": 200,
+          "records": 9
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32166",
+          "result": "alive",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32165",
+          "result": "alive",
+          "http_status": 200,
+          "records": 4
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32164",
+          "result": "alive",
+          "http_status": 200,
+          "records": 7
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32167",
+          "result": "alive",
+          "http_status": 200,
+          "records": 4
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32171",
+          "result": "alive",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32168",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/250399?channel=npJobTab&deliverSource=1",
+          "url": "https://qiuzhaowang.com/jobs/position-32172",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/198547?channel=npJobTab&deliverSource=1",
+          "url": "https://qiuzhaowang.com/jobs/position-32177",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32180",
+          "result": "alive",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32192",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32195",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32193",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32206",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32214",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32208",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32196",
+          "result": "alive",
+          "http_status": 200,
+          "records": 11
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32217",
+          "result": "alive",
+          "http_status": 200,
+          "records": 13
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32218",
+          "result": "alive",
+          "http_status": 200,
+          "records": 16
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32219",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50015",
+          "url": "https://qiuzhaowang.com/jobs/position-32198",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32220",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50011",
+          "url": "https://qiuzhaowang.com/jobs/position-32223",
+          "result": "alive",
+          "http_status": 200,
+          "records": 14
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32265",
+          "result": "missing",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32222",
+          "result": "alive",
+          "http_status": 200,
+          "records": 7
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32993",
+          "result": "missing",
+          "http_status": 404,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-33153",
+          "result": "missing",
+          "http_status": 404,
+          "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/459521",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50033",
+          "url": "https://www.nowcoder.com/jobs/detail/460854",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50045",
+          "url": "https://www.nowcoder.com/jobs/detail/460826",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50052",
+          "url": "https://www.nowcoder.com/jobs/detail/460813?channel=npJobTab&deliverSource=1",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50084",
+          "url": "https://www.nowcoder.com/jobs/detail/459525",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50088",
+          "url": "https://www.nowcoder.com/jobs/detail/459523",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/121395?channel=npJobTab&deliverSource=1",
+          "url": "https://www.nowcoder.com/jobs/detail/459519",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/250407?channel=npJobTab&deliverSource=1",
+          "url": "https://www.nowcoder.com/jobs/detail/460855",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/271998?channel=npJobTab&deliverSource=1",
+          "url": "https://www.nowcoder.com/jobs/detail/460892",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50096",
+          "url": "https://www.nowcoder.com/jobs/detail/460896",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50110",
+          "url": "https://www.nowcoder.com/jobs/detail/460903",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50098",
+          "url": "https://www.nowcoder.com/jobs/detail/460862",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50132",
+          "url": "https://www.nowcoder.com/jobs/detail/460899",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50200",
+          "url": "https://www.nowcoder.com/jobs/detail/460861",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50218",
+          "url": "https://www.nowcoder.com/jobs/detail/460894",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50242",
+          "url": "https://www.nowcoder.com/jobs/detail/460902",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50244",
+          "url": "https://www.nowcoder.com/jobs/detail/460904",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50255",
+          "url": "https://www.nowcoder.com/jobs/detail/460910",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50259",
+          "url": "https://www.nowcoder.com/jobs/detail/460913",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50270",
+          "url": "https://www.nowcoder.com/jobs/detail/460917",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50373",
+          "url": "https://www.nowcoder.com/jobs/detail/460909",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50388",
+          "url": "https://www.nowcoder.com/jobs/detail/460908",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50287",
+          "url": "https://www.nowcoder.com/jobs/detail/460906",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50393",
+          "url": "https://www.nowcoder.com/jobs/detail/460916",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50407",
+          "url": "https://www.nowcoder.com/jobs/detail/462583",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50420",
+          "url": "https://www.nowcoder.com/jobs/detail/462586",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50519",
+          "url": "https://www.nowcoder.com/jobs/detail/462537",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50513",
+          "url": "https://www.nowcoder.com/jobs/detail/462579",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50536",
+          "url": "https://www.nowcoder.com/jobs/detail/462585",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50551",
+          "url": "https://www.nowcoder.com/jobs/detail/462548",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50577",
+          "url": "https://www.nowcoder.com/jobs/detail/462554",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50684",
+          "url": "https://www.nowcoder.com/jobs/detail/462542",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50669",
+          "url": "https://www.nowcoder.com/jobs/detail/462607",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50755",
+          "url": "https://www.nowcoder.com/jobs/detail/462594",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50810",
+          "url": "https://www.nowcoder.com/jobs/detail/462610",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50765",
+          "url": "https://www.nowcoder.com/jobs/detail/462606",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50358",
+          "url": "https://www.nowcoder.com/jobs/detail/462596",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/campus-supplement-50757",
+          "url": "https://www.nowcoder.com/jobs/detail/462608",
           "result": "alive",
           "http_status": 200,
           "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/462611",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/462601",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32485",
+          "result": "alive",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32509",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32500",
+          "result": "alive",
+          "http_status": 200,
+          "records": 5
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32524",
+          "result": "alive",
+          "http_status": 200,
+          "records": 11
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32530",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32536",
+          "result": "alive",
+          "http_status": 200,
+          "records": 18
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32561",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32565",
+          "result": "alive",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32572",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32577",
+          "result": "alive",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32574",
+          "result": "alive",
+          "http_status": 200,
+          "records": 2
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32573",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/463029",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/464713?channel=npJobTab&deliverSource=1",
+          "result": "missing",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32579",
+          "result": "alive",
+          "http_status": 200,
+          "records": 17
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/464720?channel=npJobTab&deliverSource=1",
+          "result": "missing",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/462616",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://www.nowcoder.com/jobs/detail/462612",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32582",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32583",
+          "result": "alive",
+          "http_status": 200,
+          "records": 4
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32584",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32588",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32595",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32599",
+          "result": "alive",
+          "http_status": 200,
+          "records": 9
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32603",
+          "result": "alive",
+          "http_status": 200,
+          "records": 6
+        },
+        {
+          "url": "https://qiuzhaowang.com/jobs/position-32594",
+          "result": "alive",
+          "http_status": 200,
+          "records": 3
         }
       ]
     }
