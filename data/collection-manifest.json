@@ -2,31 +2,9 @@
   "run_date": "2026-11-11",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 29226,
+        "next_offset": 29426,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 524,
-  "records_found_this_run": 524,
-  "active_candidates": 18,
-  "pending_review": 506,
+  "records_found": 61,
+  "records_found_this_run": 61,
+  "active_candidates": 4,
+  "pending_review": 57,
   "results": [
     {
       "id": "boss",
@@ -2941,40 +2919,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 48,
-      "active_candidates": 3,
-      "pending_review": 45,
-      "pages_attempted": 601,
-      "pages_failed": 1,
-      "html_bytes": 18992666,
-      "links_seen": 76961,
-      "listing_url_candidates": 3000,
-      "listing_urls_visited": 300,
+      "records_found": 61,
+      "active_candidates": 4,
+      "pending_review": 57,
+      "pages_attempted": 600,
+      "pages_failed": 0,
+      "html_bytes": 16628752,
+      "links_seen": 60609,
+      "listing_url_candidates": 1637,
+      "listing_urls_visited": 353,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 29226,
+      "listing_cursor_next": 29426,
       "listing_rotation_groups": {
-        "yjs-major-city": 58,
-        "yjs-role-city": 58,
-        "yjs-mobile": 5,
-        "yjs-search": 20,
-        "yjs-subject-city": 58,
-        "yjs-other": 1
+        "yjs-major-city": 57,
+        "yjs-role-city": 57,
+        "yjs-mobile": 6,
+        "yjs-other": 1,
+        "yjs-search": 22,
+        "yjs-subject-city": 57
       },
-      "tables_seen": 22753,
-      "embedded_json_blocks": 1416,
+      "tables_seen": 17516,
+      "embedded_json_blocks": 1484,
       "role_like_links": 0,
-      "discovery_pages_queued": 796,
+      "discovery_pages_queued": 938,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 255,
+      "direct_detail_pages_visited": 220,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 255,
-      "direct_detail_title_candidates": 69,
-      "direct_detail_title_rejected": 22,
+      "direct_detail_requests_attempted": 220,
+      "direct_detail_title_candidates": 89,
+      "direct_detail_title_rejected": 29,
       "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 47,
+      "direct_detail_role_rows_emitted": 60,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 0,
@@ -2995,14 +2973,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-147-856.html",
-          "page_title": "Beijing Normal-Hong kong Baptist University (BNBU)招聘行政助理|高级行政助理_广东校园招聘",
-          "text_preview": "Beijing Normal-Hong kong Baptist University (BNBU)招聘行政助理|高级行政助理_广东校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 北京师范大学香港浸会大学联合国际学院人力资源处 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 北京师范大学香港浸会大学联合国际学院人力资源处 核实，并请同时联系本站处理该转载信息。 [广东]Beijing Normal-Hong kong Baptist University (BNBU) 职位： 行政助理|高级行政助理 发布时间： 2026-11-11 工作地点： 其它 信息来源： 北京师范大学香港浸会大学联合国际学院人力资源处 职位类型： 全职 职位描述 Administrative Positions 行政职位 博士后管理委员会--行政助理/高级行政助理 博士后管理委员会--行政助理/高级行政助理 Beijing Normal-Hong Kong Baptist University (BNBU) now invites candidates for the position: Job D"
+          "url_path": "/job-008-139-159.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: e3*Ȋ*I\u0012/Ji)6ʞHlq JJO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < "
         },
         {
-          "url_path": "/job-008-147-854.html",
-          "page_title": "深圳理工大学生命健康学院韩明虎课题组招聘研究助理_深圳校园招聘",
-          "text_preview": "深圳理工大学生命健康学院韩明虎课题组招聘研究助理_深圳校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 深圳 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [深圳]深圳理工大学生命健康学院韩明虎课题组 职位： 研究助理 发布时间： 2026-11-11 工作地点： 深圳 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 生物科学 基础医学 教育学 职位描述 深圳理工大学生命健康学院韩明虎课题组2026年研究人员招聘公告 共计1个岗位，招 若干人 提供住房公寓 五险一金 带薪年假 定期/免费体检 餐饮补贴 科研资金 基本信息 发布时间：2026-11-11 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 生物学 , 基础医学 展开 公告详情 一、 学校简介 深圳理工大学（以下简称“深圳理工”）是深圳市人民政府举办的公办高校，于2024年5月获教育部批复设立。深圳理工是深圳新成立的一所大学，深圳是一座充满魅力、动力、活力和创新力的城市。学校以中国科学院深圳先进技术研究院（以下简称“先进院”"
+          "url_path": "/job-008-138-221.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$: ȫ#9(J q\"Hx(0Ŋ(O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012"
         }
       ],
       "browser_render_attempts": 0,
@@ -3011,22 +2989,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 47,
+      "role_records": 60,
       "public_list_leads": 0,
       "public_card_leads": 0,
-      "direct_detail_role_records": 47,
+      "direct_detail_role_records": 60,
       "announcement_records": 1,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "人繤ʦƸϢ|ѧְ|人ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "行政助理",
-        "高级行政助理",
-        "研究助理",
-        "研发助理",
-        "技术助理",
-        "环保工程师",
-        "冲压模具设计工程师"
+        "营销管培生",
+        "技术管培生",
+        "职能管培生",
+        "工业品类营销管培生",
+        "前台客服接待",
+        "变压器设计培训生",
+        "财务人员"
       ],
       "role_field_samples": [
         {
@@ -3044,72 +3022,72 @@
           }
         },
         {
-          "title": "行政助理",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "",
-          "degree": "博士",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-856.html",
-          "field_lengths": {
-            "description": 2010,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "高级行政助理",
-          "company": "应届生求职网",
-          "city": "其它",
-          "salary": "",
-          "degree": "博士",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-856.html",
-          "field_lengths": {
-            "description": 2010,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "研究助理",
-          "company": "深圳理工大学生命健康学院韩明虎课题组",
-          "city": "深圳",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-854.html",
-          "field_lengths": {
-            "description": 1555,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 139
-          }
-        },
-        {
-          "title": "研发助理",
-          "company": "东岳氟硅科技集团有限公司",
-          "city": "其它",
-          "salary": "",
+          "title": "营销管培生",
+          "company": "圣湘生物科技股份有限公司",
+          "city": "武汉",
+          "salary": "8万元/年",
           "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-147-844.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-804.html",
           "field_lengths": {
-            "description": 534,
-            "responsibilities": 0,
-            "requirements": 0,
+            "description": 360,
+            "responsibilities": 110,
+            "requirements": 101,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "技术管培生",
+          "company": "圣湘生物科技股份有限公司",
+          "city": "武汉",
+          "salary": "8万元/年",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-803.html",
+          "field_lengths": {
+            "description": 385,
+            "responsibilities": 140,
+            "requirements": 97,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "职能管培生",
+          "company": "浙江新农化工股份有限公司",
+          "city": "杭州",
+          "salary": "11万元/年",
+          "degree": "硕士",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-802.html",
+          "field_lengths": {
+            "description": 366,
+            "responsibilities": 24,
+            "requirements": 166,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "工业品类营销管培生",
+          "company": "浙江新农化工股份有限公司",
+          "city": "杭州",
+          "salary": "11万元/年",
+          "degree": "硕士",
+          "source_url": "https://m.yingjiesheng.com/job-008-147-801.html",
+          "field_lengths": {
+            "description": 369,
+            "responsibilities": 22,
+            "requirements": 165,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "HTTPError: HTTP Error 502: Bad Gateway",
+      "last_error": "",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-11T19:51:11+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-11-11T21:55:52+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3920,14 +3898,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 10185,
-  "published_priority_candidates": 125,
-  "published_pending_review": 10060,
-  "records_added_this_run": 160,
-  "records_updated_this_run": 344,
+  "published_total_jobs": 10197,
+  "published_priority_candidates": 126,
+  "published_pending_review": 10071,
+  "records_added_this_run": 15,
+  "records_updated_this_run": 46,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 2,
+    "aggregator_non_detail_or_non_role_records_removed": 3,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3950,8 +3928,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1859,
-    "fields_checked": 13013,
+    "rows": 1871,
+    "fields_checked": 13097,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3961,13 +3939,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1859,
+    "company_fields_checked": 1871,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-11T20:17:58+00:00",
+  "quality_checked_at": "2026-11-11T22:24:07+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
