@@ -11226,7 +11226,40 @@
     "auto-8616e0e8c6164952": 0,
     "auto-2809b611aef1ed63": 0,
     "auto-2bb6961eb116af33": 1,
-    "auto-6034d5d9604ef966": 1
+    "auto-6034d5d9604ef966": 1,
+    "auto-87c1d011ef1d9e4f": 0,
+    "auto-c3dcb0a695ca8c86": 0,
+    "auto-e33ea60f4824d9ad": 0,
+    "auto-84d64ad957e74ea3": 0,
+    "auto-3d50abff9ebc36e0": 0,
+    "auto-83454b8b3e32e4ce": 0,
+    "auto-9592b2729099ff37": 0,
+    "auto-52b250fe8caed881": 0,
+    "auto-80ae56271f349785": 0,
+    "auto-d838c2e7a01b82ee": 0,
+    "auto-3f4b88d7d581f05e": 0,
+    "auto-ed93d175ba4608c3": 0,
+    "auto-d4bc6a642f3858d1": 0,
+    "auto-13fd04f1c120a4fd": 0,
+    "auto-866d4b3814f7de5a": 0,
+    "auto-fd25008766f0d6c8": 0,
+    "auto-e42368d5a74359ac": 0,
+    "auto-a5577100256e1136": 0,
+    "auto-259cc34bb88507bb": 0,
+    "auto-c169516f16b2ad08": 0,
+    "auto-82df5e4d16e9d18d": 0,
+    "auto-354fd19ca29a84f9": 0,
+    "auto-381c6f4243bee26e": 0,
+    "auto-a145706e36da62df": 0,
+    "auto-16dbb9d863b60135": 0,
+    "auto-14247ee22892c020": 0,
+    "auto-8b7887de63ac1601": 0,
+    "auto-aecf5a2ffb127971": 0,
+    "auto-d9abece1f6413332": 0,
+    "auto-f946d09e347b1584": 0,
+    "auto-58ac8b344bc07dd7": 0,
+    "auto-df8854679251ac69": 0,
+    "auto-33cfc11655d54711": 0
   },
   "last_run_at": "2026-11-11T20:17:44+00:00",
   "last_batch_size": 120,
@@ -11273,13 +11306,13 @@
     "auto-6034d5d9604ef966": "2026-11-11T20:17:44+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-11-11T22:23:41+00:00"
+    "yingjiesheng": "2026-11-12T11:34:10+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 722
+    "yingjiesheng": 902
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 1723
+    "yingjiesheng": 1740
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180
