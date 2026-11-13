@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-11-12",
+  "run_date": "2026-11-13",
   "collector_version": "5.21",
   "enabled_sources": 23,
   "collected_sources": 1,
@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 29826,
+        "next_offset": 30026,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 22,
-  "records_found_this_run": 22,
-  "active_candidates": 3,
-  "pending_review": 19,
+  "records_found": 43,
+  "records_found_this_run": 43,
+  "active_candidates": 2,
+  "pending_review": 41,
   "results": [
     {
       "id": "boss",
@@ -2919,43 +2919,43 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 22,
-      "active_candidates": 3,
-      "pending_review": 19,
-      "pages_attempted": 600,
-      "pages_failed": 0,
-      "html_bytes": 13958779,
-      "links_seen": 57161,
-      "listing_url_candidates": 2463,
-      "listing_urls_visited": 373,
+      "records_found": 43,
+      "active_candidates": 2,
+      "pending_review": 41,
+      "pages_attempted": 605,
+      "pages_failed": 5,
+      "html_bytes": 16504730,
+      "links_seen": 64475,
+      "listing_url_candidates": 2913,
+      "listing_urls_visited": 292,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 29826,
+      "listing_cursor_next": 30026,
       "listing_rotation_groups": {
-        "yjs-role-city": 64,
-        "yjs-major-city": 64,
-        "yjs-subject-city": 64,
-        "yjs-mobile": 3,
-        "yjs-search": 4,
-        "yjs-other": 1
+        "yjs-major-city": 58,
+        "yjs-role-city": 58,
+        "yjs-subject-city": 57,
+        "yjs-mobile": 7,
+        "yjs-other": 1,
+        "yjs-search": 19
       },
-      "tables_seen": 15259,
-      "embedded_json_blocks": 1090,
+      "tables_seen": 17845,
+      "embedded_json_blocks": 1253,
       "role_like_links": 0,
-      "discovery_pages_queued": 843,
+      "discovery_pages_queued": 749,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 227,
+      "direct_detail_pages_visited": 306,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 227,
-      "direct_detail_title_candidates": 41,
-      "direct_detail_title_rejected": 20,
-      "direct_detail_score_gate_recovered": 0,
+      "direct_detail_requests_attempted": 306,
+      "direct_detail_title_candidates": 67,
+      "direct_detail_title_rejected": 27,
+      "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 21,
+      "direct_detail_role_rows_emitted": 40,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
-      "public_detail_leads": 0,
+      "public_detail_leads": 1,
       "shared_bulletin_role_leads": 0,
       "direct_detail_links_deferred_by_budget": 0,
       "direct_detail_page_budget": 320,
@@ -2965,7 +2965,7 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网",
-          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管·今日活跃 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决"
+          "text_preview": "AIGC影视创意制作（校招）招聘_上海基美影业股份有限公司招聘信息-应届生求职网 登录 AIGC影视创意制作（校招） 8千-1.5万 本科 全职 影视动画、新媒体技术 上海-静安区 王女士 主管 职位亮点 年终奖金,五险一金,周末双休 职位描述 特效 创意构思 ai 新媒体 内容创新 aigc 技术赋能 项目协作 影视行业 视频创作 岗位职责： 1. 独立完成AI视频全流程创作（创意构思→AI分镜→生成→剪辑→特效→成片优化），保证作品质感与效率； 2. 主动探索AIGC领域的最新进展+影视行业趋势，学习AIGC视频最新工具、新玩法，优化创作工作流，结合市场趋势产出差异化原创内容； 3. 负责AI视频相关项目，明确目标并推进落地，主动解决创作中的各类问题，确保高效交付； 4. 配合团队完成项目协作，主动承担职责，技术赋能内容创新，助力团队AI视频业务创新发展。 任职要求： 工作经验不限 ·专业要求： ·影视、新媒体、后期相关专业优先，1-3年视频创作经验，核心聚焦AI视频领域；具备扎实的AI视频制作能力，能熟练运用相关AI工具完成基础创作，能精准把控画面质感与创作细节； ·非科班需提供成熟AI视频作品（体现自身AI制作能力与审美），应届生行动力强、作品优秀可考虑。 ·工具能力：熟练运用Runway、可灵、即梦、TapNow等AI视频全流程工具，能独立完成成片创作，灵活解决创作难题；"
         },
         {
           "url_path": "/jobdetail/173508261",
@@ -2973,14 +2973,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-143-555.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:劜Ȃ)\u0016ǩ(p#ۼ,\u0016O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012kA j"
+          "url_path": "/job-008-149-606.html",
+          "page_title": "广东实验中学越秀学校招聘英语教师|数学教师|物理教师|经济教师|助教_广州校园招聘",
+          "text_preview": "广东实验中学越秀学校招聘英语教师|数学教师|物理教师|经济教师|助教_广州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 广州 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [广州]广东实验中学越秀学校 职位： 英语教师|数学教师|物理教师|经济教师|助教 发布时间： 2026-11-13 工作地点： 广州 信息来源： 高校人才网 职位类型： 全职 职位描述 广东实验中学越秀学校2026-2027学年公开招聘国际课程教师 共计5个岗位，招 6人 基本信息 发布时间：2026-11-13 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 一、学校介绍 省实越秀国际部介绍 广东实验中学越秀学校（简称省实越秀）是广州市越秀区全日制完全中学，广东省一级学校，广州市示范性高中，首批广州市教育国际化窗口学校，广州市中小学国际理解教育试点学校。 2023年7月，我校与加拿大哥伦比亚国际学院合作举办的中外合作办学项目OSSD课程，获得广东省教育厅正式批准，设立国际课程中心（International "
         },
         {
-          "url_path": "/job-008-143-553.html",
-          "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:劜☦'ӵLִdQdb%sdNt\u0005EX~zL2܍? %t?,\u000e\u001b?= \u0019C}R>&w\u0006\u00185c\u0002v=[ʚ%Ź( \b&&J.\u0003Tv \u000fzǭ}X\u0006\u000fs\"J1~\u0000\u001b; < .\u0016-ruڰ(!o C\u0014 C\u0007,\u0001>_ne\u0012~~e /\u0005zl] [\u0001> ~M\u0011&I)%WLg_I2 s=\\ ~?\u0004ppy* 69w0ϡyXs r\u0013~`:)7}bcM? ץ\u0017׏\u0000|>m\u0015ܨd\u0002F_}e9r=7D(\u0007}\u0001O|\u0004;>tv1kO/_S[?Z{*\u0001\u0000\u0006=\bf7h\u0005yB$˼#dg3k,Ȱп i/RH{\u0007gZ R \u0005~yag2T\u00007^?\u0007y \u0011~:%% \u0019wk\u0007;`\u0013n\u000f ,_f>1 [bfO\u0014\u0006z\u0017h\u0000Y\u0007\\ < >{,:dJѩW:O~Q\u0007{3 1._\u0006]hJ =\u000eS\u0019\u0006Fv\u0018\u0016'\u0003\u0014 e=P\u0004R{RR,N\u0019\u0003%]; \u0007=\u0015.7 zh2R\u0013Js2fytl$DJ\u0012#H\u0003}RY < \u0007n q⨍-e CW1;H\\T$7Wی-*Jx < [+ Za\u0012 asA\\\u0014pF3lbެ;)da#ך5 J$4 < |̈́gl7rXB\u0011FE\u0013[v`[+hvN@4\u0004AFd˛\u000454qmx0w3+\u0006ˮ77pcS+V[]s1Pl =Ҽ(\u0017F;l3.4cT ~\u001b,{޼ W\u001553͏\\o\u0017常(H"
+          "url_path": "/job-008-149-603.html",
+          "page_title": "信阳学院社会科学学院|马克思主义学院招聘青年专任教师_河南校园招聘",
+          "text_preview": "信阳学院社会科学学院|马克思主义学院招聘青年专任教师_河南校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [河南]信阳学院社会科学学院|马克思主义学院 职位： 青年专任教师 发布时间： 2026-11-13 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 法学 职位描述 信阳学院社会科学学院、马克思主义学院2026年人才引进公告 共计2个岗位，招 8人 安家费 科研启动费 五险一金 节日福利 餐饮补贴 带薪寒暑假 基本信息 发布时间：2026-11-13 截止日期：详见正文 学历要求：硕士研究生及以上 需求学科（供参考）： 法学与法律 , 马克思主义理论 展开 公告详情 信阳学院位于鄂豫皖区域性中心城市、全国文明城市河南省信阳市。学校创办于2003年，前身为信阳师范学院华锐学院，2016年经教育部批准转设为全日制民办普通本科高校，是豫南地区首所民办普通本科高校。 学校环境优美，景色宜人，山水相映，绿围翠绕，春有杜鹃绽放，夏有栀子花开，秋天丹"
         }
       ],
       "browser_render_attempts": 0,
@@ -2989,22 +2989,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 21,
-      "public_list_leads": 0,
+      "role_records": 41,
+      "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 21,
-      "announcement_records": 1,
+      "direct_detail_role_records": 40,
+      "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "ۺƸϢ|ѧְ|ҹ_Ӧְ",
+      "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "建筑工程师",
-        "[全国]中审众环会计师事务所（特殊普通合伙）",
-        "Android方向Java软件工程师",
-        "软件项目经理SPM",
-        "医生助理",
-        "热处理工程师",
-        "大模型算法工程师"
+        "英语教师",
+        "数学教师",
+        "物理教师",
+        "经济教师",
+        "青年专任教师",
+        "副研究员",
+        "设备工程师"
       ],
       "role_field_samples": [
         {
@@ -3022,71 +3022,71 @@
           }
         },
         {
-          "title": "建筑工程师",
-          "company": "中国二十冶集团有限公司",
-          "city": "上海、天津",
-          "salary": "8000-10000元",
-          "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/job-008-148-607.html",
+          "title": "英语教师",
+          "company": "广东实验中学越秀学校",
+          "city": "广州",
+          "salary": "",
+          "degree": "本科及以上",
+          "source_url": "http://m.yingjiesheng.com/job-008-149-606.html",
           "field_lengths": {
-            "description": 32,
+            "description": 788,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "[全国]中审众环会计师事务所（特殊普通合伙）",
-          "company": "中审众环会计师事务所（特殊普通合伙）",
-          "city": "上海、北京、深圳、广州、南京、成都、武汉、天津",
-          "salary": "6000-8000元",
+          "title": "数学教师",
+          "company": "广东实验中学越秀学校",
+          "city": "广州",
+          "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-148-608.html",
+          "source_url": "http://m.yingjiesheng.com/job-008-149-606.html",
           "field_lengths": {
-            "description": 458,
+            "description": 788,
             "responsibilities": 0,
-            "requirements": 1811,
+            "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "Android方向Java软件工程师",
-          "company": "深圳市九州华科通讯有限公司长沙分公司",
-          "city": "长沙",
-          "salary": "8K-12K/月",
+          "title": "物理教师",
+          "company": "广东实验中学越秀学校",
+          "city": "广州",
+          "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-148-610.html",
+          "source_url": "http://m.yingjiesheng.com/job-008-149-606.html",
           "field_lengths": {
-            "description": 493,
-            "responsibilities": 120,
-            "requirements": 257,
-            "benefits": 21
+            "description": 788,
+            "responsibilities": 0,
+            "requirements": 0,
+            "benefits": 0
           }
         },
         {
-          "title": "软件项目经理SPM",
-          "company": "深圳市九州华科通讯有限公司长沙分公司",
-          "city": "长沙",
-          "salary": "6K-9K/月",
+          "title": "经济教师",
+          "company": "广东实验中学越秀学校",
+          "city": "广州",
+          "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-148-609.html",
+          "source_url": "http://m.yingjiesheng.com/job-008-149-606.html",
           "field_lengths": {
-            "description": 638,
-            "responsibilities": 274,
-            "requirements": 108,
+            "description": 788,
+            "responsibilities": 0,
+            "requirements": 0,
             "benefits": 0
           }
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-12T21:50:08+00:00",
+      "last_run_at": "2026-11-13T10:55:19+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3898,11 +3898,11 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 10226,
+  "published_total_jobs": 10265,
   "published_priority_candidates": 101,
-  "published_pending_review": 10125,
-  "records_added_this_run": 12,
-  "records_updated_this_run": 10,
+  "published_pending_review": 10164,
+  "records_added_this_run": 40,
+  "records_updated_this_run": 3,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 1,
@@ -3928,8 +3928,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 1900,
-    "fields_checked": 13300,
+    "rows": 1939,
+    "fields_checked": 13573,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3939,13 +3939,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 1900,
+    "company_fields_checked": 1939,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-13T07:05:43+00:00",
+  "quality_checked_at": "2026-11-13T11:25:06+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
