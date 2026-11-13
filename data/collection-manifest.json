@@ -2,31 +2,9 @@
   "run_date": "2026-11-13",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 30226,
+        "next_offset": 30426,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 585,
-  "records_found_this_run": 585,
-  "active_candidates": 46,
-  "pending_review": 539,
+  "records_found": 78,
+  "records_found_this_run": 78,
+  "active_candidates": 18,
+  "pending_review": 60,
   "results": [
     {
       "id": "boss",
@@ -2925,30 +2903,29 @@
       "pending_review": 60,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 16568889,
-      "links_seen": 57337,
-      "listing_url_candidates": 2668,
-      "listing_urls_visited": 260,
+      "html_bytes": 17847215,
+      "links_seen": 70778,
+      "listing_url_candidates": 2571,
+      "listing_urls_visited": 310,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 30226,
+      "listing_cursor_next": 30426,
       "listing_rotation_groups": {
-        "yjs-major-city": 57,
-        "yjs-role-city": 57,
+        "yjs-role-city": 58,
+        "yjs-major-city": 58,
         "yjs-mobile": 8,
-        "yjs-other": 1,
-        "yjs-search": 20,
-        "yjs-subject-city": 57
+        "yjs-search": 18,
+        "yjs-subject-city": 58
       },
-      "tables_seen": 18443,
-      "embedded_json_blocks": 1479,
+      "tables_seen": 19462,
+      "embedded_json_blocks": 1713,
       "role_like_links": 0,
-      "discovery_pages_queued": 779,
+      "discovery_pages_queued": 869,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 311,
+      "direct_detail_pages_visited": 221,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 311,
+      "direct_detail_requests_attempted": 221,
       "direct_detail_title_candidates": 112,
       "direct_detail_title_rejected": 37,
       "direct_detail_score_gate_recovered": 2,
@@ -2974,14 +2951,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-149-606.html",
-          "page_title": "广东实验中学越秀学校招聘英语教师|数学教师|物理教师|经济教师|助教_广州校园招聘",
-          "text_preview": "广东实验中学越秀学校招聘英语教师|数学教师|物理教师|经济教师|助教_广州校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 广州 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [广州]广东实验中学越秀学校 职位： 英语教师|数学教师|物理教师|经济教师|助教 发布时间： 2026-11-13 工作地点： 广州 信息来源： 高校人才网 职位类型： 全职 职位描述 广东实验中学越秀学校2026-2027学年公开招聘国际课程教师 共计5个岗位，招 6人 基本信息 发布时间：2026-11-13 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 展开 公告详情 一、学校介绍 省实越秀国际部介绍 广东实验中学越秀学校（简称省实越秀）是广州市越秀区全日制完全中学，广东省一级学校，广州市示范性高中，首批广州市教育国际化窗口学校，广州市中小学国际理解教育试点学校。 2023年7月，我校与加拿大哥伦比亚国际学院合作举办的中外合作办学项目OSSD课程，获得广东省教育厅正式批准，设立国际课程中心（International "
+          "url_path": "/job-008-149-630.html",
+          "page_title": "上海市普陀区中心医院2026招聘_上海校园招聘",
+          "text_preview": "上海市普陀区中心医院2026招聘_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [上海]上海市普陀区中心医院 职位： 2026招聘 发布时间： 2026-11-13 工作地点： 上海 信息来源： 高校人才网 职位类型： 全职 专业标签： 生物科学 基础医学 临床医学 中医学 药学 中药学 职位描述 上海市普陀区中心医院2026年度招聘信息 共计32个岗位，招 若干人 绩效奖金 交通补贴 年终奖金 五险一金 餐饮补贴 高温补贴 专业培训 包住 基本信息 发布时间：2026-11-13 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 临床医学 , 基础医学 , 生物学 , 中医学 , 中西医结合 , 医学技术 , 药学 , 中药学 展开 公告详情 医院拥有总资产11亿元，医学装备5.8亿元，建筑面积10万余平方米，核定床位1050张，实际开放床位1083张。每年门急诊患者近180万人次，出院患者近6万人次，手术患者近4万人次。医院奉行以病人为中心"
         },
         {
-          "url_path": "/job-008-149-603.html",
-          "page_title": "信阳学院社会科学学院|马克思主义学院招聘青年专任教师_河南校园招聘",
-          "text_preview": "信阳学院社会科学学院|马克思主义学院招聘青年专任教师_河南校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [河南]信阳学院社会科学学院|马克思主义学院 职位： 青年专任教师 发布时间： 2026-11-13 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 法学 职位描述 信阳学院社会科学学院、马克思主义学院2026年人才引进公告 共计2个岗位，招 8人 安家费 科研启动费 五险一金 节日福利 餐饮补贴 带薪寒暑假 基本信息 发布时间：2026-11-13 截止日期：详见正文 学历要求：硕士研究生及以上 需求学科（供参考）： 法学与法律 , 马克思主义理论 展开 公告详情 信阳学院位于鄂豫皖区域性中心城市、全国文明城市河南省信阳市。学校创办于2003年，前身为信阳师范学院华锐学院，2016年经教育部批准转设为全日制民办普通本科高校，是豫南地区首所民办普通本科高校。 学校环境优美，景色宜人，山水相映，绿围翠绕，春有杜鹃绽放，夏有栀子花开，秋天丹"
+          "url_path": "/job-008-149-627.html",
+          "page_title": "江西省水利投资集团有限公司2027校园招聘_江西校园招聘",
+          "text_preview": "江西省水利投资集团有限公司2027校园招聘_江西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [江西]江西省水利投资集团有限公司 职位： 2027校园招聘 发布时间： 2026-11-13 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 水利类 轻工类 职位描述 江西省水利投资集团有限公司2027年校园招聘12名工作人员公告（第一批次） 共计9个岗位，招 12人 六险二金 租房补贴 高温补贴 通讯补贴 节日福利 定期/免费体检 带薪年假 生活补贴 专业培训 基本信息 发布时间：2026-11-13 截止日期：2026-12-08 学历要求：硕士研究生及以上 需求学科（供参考）： 环境科学与工程 , 材料科学与工程 , 化学工程与技术 , 电子科学与技术 , 信息与通信工程 , 人工智能 , 集成电路科学与工程 , 计算机科学与技术 , 能源动力 , 林学 , 软件工程 , 智能科学与技术 , 电气工程 , 控制科学与工程 , 水利工程 ,"
         }
       ],
       "browser_render_attempts": 0,
@@ -2999,13 +2976,13 @@
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "英语教师",
-        "数学教师",
-        "物理教师",
-        "经济教师",
-        "青年专任教师",
-        "副研究员",
-        "设备工程师"
+        "[江西]江西省水利投资集团有限公司",
+        "呼吸介入助理岗",
+        "阿里项目组结构设计",
+        "科研助理",
+        "研发专员",
+        "工艺管培生",
+        "行政专员"
       ],
       "role_field_samples": [
         {
@@ -3023,56 +3000,56 @@
           }
         },
         {
-          "title": "英语教师",
-          "company": "广东实验中学越秀学校",
-          "city": "广州",
+          "title": "[江西]江西省水利投资集团有限公司",
+          "company": "江西省水利投资集团有限公司",
+          "city": "其它",
+          "salary": "",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-627.html",
+          "field_lengths": {
+            "description": 2504,
+            "responsibilities": 0,
+            "requirements": 485,
+            "benefits": 266
+          }
+        },
+        {
+          "title": "呼吸介入助理岗",
+          "company": "南昌大学第一附属医院",
+          "city": "其它",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-606.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-631.html",
           "field_lengths": {
-            "description": 788,
+            "description": 163,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "数学教师",
-          "company": "广东实验中学越秀学校",
-          "city": "广州",
+          "title": "阿里项目组结构设计",
+          "company": "中国科学院高能物理研究所粒子天体物理中心",
+          "city": "北京",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-606.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-609.html",
           "field_lengths": {
-            "description": 788,
-            "responsibilities": 0,
-            "requirements": 0,
+            "description": 492,
+            "responsibilities": 83,
+            "requirements": 204,
             "benefits": 0
           }
         },
         {
-          "title": "物理教师",
-          "company": "广东实验中学越秀学校",
+          "title": "科研助理",
+          "company": "中国科学院广州生物医药与健康研究院肺部疾病表观遗传组（吴凡|Thomas Braun）",
           "city": "广州",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-606.html",
+          "salary": "25-40万元",
+          "degree": "硕士研究生及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-612.html",
           "field_lengths": {
-            "description": 788,
-            "responsibilities": 0,
-            "requirements": 0,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "经济教师",
-          "company": "广东实验中学越秀学校",
-          "city": "广州",
-          "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-606.html",
-          "field_lengths": {
-            "description": 788,
+            "description": 1152,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
@@ -3087,8 +3064,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-13T20:00:22+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-11-13T21:25:13+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3902,8 +3879,8 @@
   "published_total_jobs": 10400,
   "published_priority_candidates": 116,
   "published_pending_review": 10284,
-  "records_added_this_run": 186,
-  "records_updated_this_run": 380,
+  "records_added_this_run": 1,
+  "records_updated_this_run": 77,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 1,
@@ -3947,6 +3924,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-13T20:20:39+00:00",
+  "quality_checked_at": "2026-11-13T21:50:24+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
