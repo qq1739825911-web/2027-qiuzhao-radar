@@ -11465,7 +11465,62 @@
     "auto-3f8377e63b63cc65": 0,
     "auto-bdd8de0f2c3a7b3c": 0,
     "auto-a2c927767013824e": 0,
-    "auto-0bbdc492bb249870": 0
+    "auto-0bbdc492bb249870": 0,
+    "auto-3bc1224b24f6e199": 0,
+    "auto-8d79e07450047d15": 0,
+    "auto-2810b3fa5d0b7b39": 0,
+    "auto-aa71905f2d455410": 0,
+    "auto-d6eeb3feeec70981": 0,
+    "auto-c5ef19a90545b409": 0,
+    "auto-0bad1df293d9ee69": 0,
+    "auto-2dbc35e5841f0c37": 0,
+    "auto-183820f417fd7d6d": 0,
+    "auto-a805a7a85a9e2761": 0,
+    "auto-840ee28bbc5561a3": 0,
+    "auto-93374729bb965820": 0,
+    "auto-e91a1231686ea3ed": 0,
+    "auto-b93e322b5f620ba5": 0,
+    "auto-4d5667e49310404f": 0,
+    "auto-8f4b83b6dfff5aa2": 0,
+    "auto-5674e2efc3d5b955": 0,
+    "auto-edef22e97b32b1bc": 0,
+    "auto-255d12d1fc27660b": 0,
+    "auto-086a31d835ef7cc2": 0,
+    "auto-5dfa05d4bb09d96b": 0,
+    "auto-274f850c5b5ccae0": 0,
+    "auto-da1201bf8a05ab51": 0,
+    "auto-2dda1fda27b9ecea": 0,
+    "auto-3350868ab9a978ba": 0,
+    "auto-195d7ba4bbae1d3b": 0,
+    "auto-b672055145d9bb4a": 0,
+    "auto-c3ec65eb454e635d": 0,
+    "auto-ce9064bffd81138d": 0,
+    "auto-69d6911ffdbd29a3": 0,
+    "auto-5b7fac2446575cae": 0,
+    "auto-d393eff99c1ba000": 0,
+    "auto-74ecd9de13a823ac": 0,
+    "auto-96eeff413f5dafa6": 0,
+    "auto-8db8845944dc8084": 0,
+    "auto-bb8497d8aa6a590d": 0,
+    "auto-fb0aab8646955f61": 0,
+    "auto-a1d734ed322b37b0": 0,
+    "auto-1edc4f1ea7882bb8": 0,
+    "auto-a176928706972141": 0,
+    "auto-1eb7e75b2d3b3b07": 0,
+    "auto-a6b2d79eb3c656bc": 0,
+    "auto-34f39a024a43096a": 0,
+    "auto-3cc14f73de80b3cc": 0,
+    "auto-450c7c3af4195dcd": 0,
+    "auto-7306edd38efebfe8": 0,
+    "auto-a9416b11da69cf8f": 0,
+    "auto-3f0b31540491bfda": 0,
+    "auto-b95f760af1e63243": 0,
+    "auto-9089a7099d4d5c30": 0,
+    "auto-5fa5140cb094b688": 0,
+    "auto-7778f60ef76f4e49": 0,
+    "auto-da9f6a90b36ea865": 0,
+    "auto-afbcbe60d656c8ee": 0,
+    "auto-6a4495b49fec168b": 0
   },
   "last_run_at": "2026-11-14T18:57:06+00:00",
   "last_batch_size": 120,
@@ -11512,13 +11567,13 @@
     "auto-6034d5d9604ef966": "2026-11-11T20:17:44+00:00"
   },
   "scope_last_run_at": {
-    "yingjiesheng": "2026-11-14T20:17:12+00:00"
+    "yingjiesheng": "2026-11-15T11:16:16+00:00"
   },
   "scope_cursors": {
-    "yingjiesheng": 1622
+    "yingjiesheng": 1802
   },
   "scope_eligible_counts": {
-    "yingjiesheng": 1837
+    "yingjiesheng": 1866
   },
   "scope_batch_sizes": {
     "yingjiesheng": 180

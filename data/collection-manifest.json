@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 31226,
+        "next_offset": 31426,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 140,
-  "records_found_this_run": 140,
-  "active_candidates": 30,
-  "pending_review": 110,
+  "records_found": 81,
+  "records_found_this_run": 81,
+  "active_candidates": 9,
+  "pending_review": 72,
   "results": [
     {
       "id": "boss",
@@ -2919,39 +2919,40 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 140,
-      "active_candidates": 30,
-      "pending_review": 110,
+      "records_found": 81,
+      "active_candidates": 9,
+      "pending_review": 72,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 18717930,
-      "links_seen": 80054,
-      "listing_url_candidates": 2744,
-      "listing_urls_visited": 314,
+      "html_bytes": 17419301,
+      "links_seen": 63849,
+      "listing_url_candidates": 2517,
+      "listing_urls_visited": 313,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 31226,
+      "listing_cursor_next": 31426,
       "listing_rotation_groups": {
-        "yjs-search": 18,
-        "yjs-role-city": 58,
-        "yjs-major-city": 57,
-        "yjs-subject-city": 57,
-        "yjs-mobile": 10
+        "yjs-role-city": 56,
+        "yjs-major-city": 56,
+        "yjs-mobile": 12,
+        "yjs-subject-city": 55,
+        "yjs-other": 1,
+        "yjs-search": 20
       },
-      "tables_seen": 17821,
-      "embedded_json_blocks": 2485,
+      "tables_seen": 19023,
+      "embedded_json_blocks": 1793,
       "role_like_links": 0,
-      "discovery_pages_queued": 970,
+      "discovery_pages_queued": 892,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 220,
+      "direct_detail_pages_visited": 218,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
-      "direct_detail_requests_attempted": 220,
-      "direct_detail_title_candidates": 215,
-      "direct_detail_title_rejected": 79,
-      "direct_detail_score_gate_recovered": 3,
+      "direct_detail_requests_attempted": 218,
+      "direct_detail_title_candidates": 131,
+      "direct_detail_title_rejected": 53,
+      "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 136,
+      "direct_detail_role_rows_emitted": 78,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
       "public_detail_leads": 1,
@@ -2972,14 +2973,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-149-505.html",
-          "page_title": "杭州数链矩阵智能科技有限公司招聘大模型应用方向AI训练师_南宁校园招聘",
-          "text_preview": "杭州数链矩阵智能科技有限公司招聘大模型应用方向AI训练师_南宁校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广西职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广西职业技术学院 核实，并请同时联系本站处理该转载信息。 [南宁]杭州数链矩阵智能科技有限公司 职位： 大模型应用方向AI训练师 发布时间： 2026-11-13 工作地点： 其它 信息来源： 广西职业技术学院 职位类型： 全职 职位描述 杭州数链矩阵智能科技有限公司 AI训练师（大模型应用方向） 薪资：6K-10K/月 工作地点：南宁市 学历：大专及以上 薪酬福利：五险一金 发布时间：2026年11月12日 职位描述 岗位职责： 【岗位职责】 1. 负责\"智链\"大模型在贷后处置场景中的应用测试、效果评估与优化建议输出； 2. 参与智能体（Agent）的提示词设计、调试与迭代优化； 3. 收集一线业务团队的使用反馈，整理形成产品优化需求文档并跟进落地。 岗位要求： 【任职要求】 1. 大数据技术或人工智能相关专业，专科及以上学历； 2. 了解大语言模型基本原理，具有主流大模型产品的实际使用经验； 3."
+          "url_path": "/job-008-149-316.html",
+          "page_title": "广东博迈医疗科技股份有限公司招聘客户质量方向质量工程师_东莞校园招聘",
+          "text_preview": "广东博迈医疗科技股份有限公司招聘客户质量方向质量工程师_东莞校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 兰州大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 兰州大学 核实，并请同时联系本站处理该转载信息。 [东莞]广东博迈医疗科技股份有限公司 职位： 客户质量方向质量工程师 发布时间： 2026-11-13 工作地点： 其它 信息来源： 兰州大学 职位类型： 全职 职位描述 【27届校招】质量工程师（客户质量方向） 『来源：广东博迈医疗科技股份有限公司』『发布时间：2026-11-12』 单位信息: 单位名称: 广东博迈医疗科技股份有限公司 所在地区: 广东省东莞市-广东省东莞市松山湖园区工业北四路1号15栋301室 单位性质: 其他 单位简介: 岗位职责 1.与客户保持常态化联系，深入了解客户的需求及遇到的质量问题，积极沟通并协同探讨解决方案，维护良好的客户关系。 2.系统收集质量相关问题的数据，对问题进行梳理和分析，探寻其中存在的规律或趋势，形成专业的分析报告，为质量改进提供依据。 3.针对质量问题制定切实可行的改进方案和计划，与公司内部各相关部门协作，共同推"
         },
         {
-          "url_path": "/job-008-149-500.html",
-          "page_title": "广西华舟新型材料有限公司招聘安全生产管培生_广西校园招聘",
-          "text_preview": "广西华舟新型材料有限公司招聘安全生产管培生_广西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 广西职业技术学院 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 广西职业技术学院 核实，并请同时联系本站处理该转载信息。 [广西]广西华舟新型材料有限公司 职位： 安全生产管培生 发布时间： 2026-11-13 工作地点： 其它 信息来源： 广西职业技术学院 职位类型： 全职 职位描述 广西华舟新型材料有限公司 安全生产管培生 薪资：5K-8K/月 工作地点：广西壮族自治区 来宾市 学历：大专及以上 薪酬福利：五险一金 发布时间：2026年11月13日 职位描述 岗位职责： 1、负责公司安全、环保及职业健康管理，开展现场安全巡查、劳保与危废管理，排查隐患并督促整改，制止现场违章作业。 2、组织安全培训、危险源辨识和应急演练，撰写安全材料，推进双重预防体系建设。 岗位要求： 不限专业 投递说明： 初面-终面 单位简介 广西华舟新型材料有限公司是华舟控股（集团）有限公司旗下全资子公司。华舟控股（集团）有限公司是一家产业投资控股集团，旗下拥有多家全资子公司，集团旗下子公司佛山市华舟"
+          "url_path": "/job-008-149-324.html",
+          "page_title": "南方医科大学南方医院2026招聘专职研究人员_江西校园招聘",
+          "text_preview": "南方医科大学南方医院2026招聘专职研究人员_江西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [江西]南方医科大学南方医院 职位： 2026招聘专职研究人员 发布时间： 2026-11-13 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 职位描述 南方医科大学南方医院2026年公开招聘50名专职研究人员 共计1个岗位，招 50人 基本信息 发布时间：2026-11-12 截止日期：详见正文 学历要求：博士研究生 需求学科（供参考）： 基础医学 , 临床医学 , 口腔医学 , 公共卫生与预防医学 , 中医学 , 中西医结合 , 药学 , 中药学 , 特种医学 , 医学技术 , 护理学 展开 公告详情 一、招聘信息 研究岗位 招聘若干人 岗位名称：专职研究人员 招聘科室：南方医科大学南方医院 二、招聘时间 截止时间：长期有效 三、应聘条件 博士研究生学历，并取得相应的学位 四、工作职责 （一） 招聘数量 医学博士50名（专业不限） （二） 聘用形式 "
         }
       ],
       "browser_render_attempts": 0,
@@ -2988,22 +2989,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 137,
+      "role_records": 79,
       "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 136,
-      "announcement_records": 3,
+      "direct_detail_role_records": 78,
+      "announcement_records": 2,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "其它招聘_其它应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "安全生产管培生",
-        "信息化管培生",
-        "财务管培生",
-        "食安管培生",
-        "数据管理工程师",
-        "会计专员",
-        "产品专员"
+        "客户质量方向质量工程师",
+        "数据运营助理",
+        "AI训练数据方向大数据处理专员",
+        "信息安全工程师",
+        "结构助理工程师",
+        "Java软件开发",
+        "Python开发"
       ],
       "role_field_samples": [
         {
@@ -3012,7 +3013,7 @@
           "city": "上海",
           "salary": "8千-1.5万",
           "degree": "本科",
-          "source_url": "https://m.yingjiesheng.com/jobdetail/170935981",
+          "source_url": "http://m.yingjiesheng.com/jobdetail/170935981",
           "field_lengths": {
             "description": 654,
             "responsibilities": 211,
@@ -3021,59 +3022,59 @@
           }
         },
         {
-          "title": "安全生产管培生",
-          "company": "广西华舟新型材料有限公司",
+          "title": "客户质量方向质量工程师",
+          "company": "广东博迈医疗科技股份有限公司 所在地区: 广东省东莞市-广东省东莞市松山湖园区工业北四路1号15栋301室 单位性质: 其他",
           "city": "其它",
-          "salary": "5K-8K/月",
-          "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-500.html",
+          "salary": "",
+          "degree": "硕士及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-316.html",
           "field_lengths": {
-            "description": 201,
-            "responsibilities": 94,
-            "requirements": 4,
-            "benefits": 21
+            "description": 132,
+            "responsibilities": 171,
+            "requirements": 172,
+            "benefits": 0
           }
         },
         {
-          "title": "信息化管培生",
-          "company": "广西华舟新型材料有限公司",
-          "city": "其它",
-          "salary": "5K-8K/月",
+          "title": "数据运营助理",
+          "company": "杭州数链矩阵智能科技有限公司",
+          "city": "南宁",
+          "salary": "3K-3K/月",
           "degree": "大专及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-501.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-326.html",
           "field_lengths": {
-            "description": 134,
-            "responsibilities": 21,
-            "requirements": 11,
-            "benefits": 21
+            "description": 311,
+            "responsibilities": 100,
+            "requirements": 118,
+            "benefits": 0
           }
         },
         {
-          "title": "财务管培生",
-          "company": "广西华舟新型材料有限公司",
-          "city": "佛山",
-          "salary": "5K-8K/月",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-503.html",
+          "title": "AI训练数据方向大数据处理专员",
+          "company": "杭州数链矩阵智能科技有限公司",
+          "city": "南宁",
+          "salary": "3K-3K/月",
+          "degree": "大专及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-327.html",
           "field_lengths": {
-            "description": 260,
+            "description": 319,
             "responsibilities": 123,
-            "requirements": 22,
-            "benefits": 21
+            "requirements": 99,
+            "benefits": 0
           }
         },
         {
-          "title": "食安管培生",
-          "company": "乐禾食品集团股份有限公司",
-          "city": "广州、武汉",
-          "salary": "7K-9K/月",
+          "title": "信息安全工程师",
+          "company": "广东博迈医疗科技股份有限公司 所在地区: 广东省东莞市-广东省东莞市松山湖园区工业北四路1号15栋301室 单位性质: 其他",
+          "city": "其它",
+          "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-499.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-149-306.html",
           "field_lengths": {
-            "description": 297,
-            "responsibilities": 77,
-            "requirements": 97,
-            "benefits": 47
+            "description": 126,
+            "responsibilities": 149,
+            "requirements": 157,
+            "benefits": 0
           }
         }
       ],
@@ -3085,7 +3086,7 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-15T01:00:28+00:00",
+      "last_run_at": "2026-11-15T10:48:49+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3897,14 +3898,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 10502,
-  "published_priority_candidates": 106,
-  "published_pending_review": 10396,
-  "records_added_this_run": 19,
-  "records_updated_this_run": 121,
+  "published_total_jobs": 10505,
+  "published_priority_candidates": 105,
+  "published_pending_review": 10400,
+  "records_added_this_run": 4,
+  "records_updated_this_run": 77,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 3,
+    "aggregator_non_detail_or_non_role_records_removed": 1,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3927,8 +3928,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 2037,
-    "fields_checked": 14259,
+    "rows": 2040,
+    "fields_checked": 14280,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3938,13 +3939,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 2037,
+    "company_fields_checked": 2040,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-15T07:01:00+00:00",
+  "quality_checked_at": "2026-11-15T11:16:47+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
