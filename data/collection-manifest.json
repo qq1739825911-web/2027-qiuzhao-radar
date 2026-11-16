@@ -39,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 32026,
+        "next_offset": 32226,
         "batch_size": 200
       },
       "51job": {
@@ -59,10 +59,10 @@
       }
     }
   },
-  "records_found": 47,
-  "records_found_this_run": 47,
-  "active_candidates": 13,
-  "pending_review": 34,
+  "records_found": 33,
+  "records_found_this_run": 33,
+  "active_candidates": 3,
+  "pending_review": 30,
   "results": [
     {
       "id": "boss",
@@ -2919,42 +2919,43 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 47,
-      "active_candidates": 13,
-      "pending_review": 34,
-      "pages_attempted": 600,
-      "pages_failed": 0,
-      "html_bytes": 18043327,
-      "links_seen": 77601,
-      "listing_url_candidates": 2915,
-      "listing_urls_visited": 370,
+      "records_found": 33,
+      "active_candidates": 3,
+      "pending_review": 30,
+      "pages_attempted": 601,
+      "pages_failed": 1,
+      "html_bytes": 17459948,
+      "links_seen": 63546,
+      "listing_url_candidates": 1694,
+      "listing_urls_visited": 301,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 32026,
+      "listing_cursor_next": 32226,
       "listing_rotation_groups": {
-        "yjs-role-city": 58,
-        "yjs-mobile": 7,
-        "yjs-search": 19,
-        "yjs-major-city": 58,
-        "yjs-subject-city": 58
+        "yjs-subject-city": 57,
+        "yjs-major-city": 57,
+        "yjs-role-city": 56,
+        "yjs-mobile": 9,
+        "yjs-other": 1,
+        "yjs-search": 20
       },
-      "tables_seen": 19103,
-      "embedded_json_blocks": 1642,
+      "tables_seen": 21344,
+      "embedded_json_blocks": 1251,
       "role_like_links": 0,
-      "discovery_pages_queued": 849,
+      "discovery_pages_queued": 810,
       "listing_pages_queued": 230,
-      "direct_detail_pages_visited": 221,
+      "direct_detail_pages_visited": 220,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
       "direct_detail_requests_attempted": 221,
-      "direct_detail_title_candidates": 83,
-      "direct_detail_title_rejected": 39,
+      "direct_detail_title_candidates": 44,
+      "direct_detail_title_rejected": 13,
       "direct_detail_score_gate_recovered": 1,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 44,
+      "direct_detail_role_rows_emitted": 31,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
-      "public_detail_leads": 0,
+      "public_detail_leads": 1,
       "shared_bulletin_role_leads": 0,
       "direct_detail_links_deferred_by_budget": 0,
       "direct_detail_page_budget": 320,
@@ -2972,14 +2973,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-149-630.html",
-          "page_title": "上海市普陀区中心医院2026招聘_上海校园招聘",
-          "text_preview": "上海市普陀区中心医院2026招聘_上海校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 上海 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [上海]上海市普陀区中心医院 职位： 2026招聘 发布时间： 2026-11-13 工作地点： 上海 信息来源： 高校人才网 职位类型： 全职 专业标签： 生物科学 基础医学 临床医学 中医学 药学 中药学 职位描述 上海市普陀区中心医院2026年度招聘信息 共计32个岗位，招 若干人 绩效奖金 交通补贴 年终奖金 五险一金 餐饮补贴 高温补贴 专业培训 包住 基本信息 发布时间：2026-11-13 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 临床医学 , 基础医学 , 生物学 , 中医学 , 中西医结合 , 医学技术 , 药学 , 中药学 展开 公告详情 医院拥有总资产11亿元，医学装备5.8亿元，建筑面积10万余平方米，核定床位1050张，实际开放床位1083张。每年门急诊患者近180万人次，出院患者近6万人次，手术患者近4万人次。医院奉行以病人为中心"
+          "url_path": "/job-008-150-647.html",
+          "page_title": "成都九江伟业科技有限公司招聘大疆无人机解决方案技术支持_成都校园招聘",
+          "text_preview": "成都九江伟业科技有限公司招聘大疆无人机解决方案技术支持_成都校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 成都 全职 > 职位详细 说明： 此信息由 四川大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 四川大学 核实，并请同时联系本站处理该转载信息。 [成都]成都九江伟业科技有限公司 职位： 大疆无人机解决方案技术支持 发布时间： 2026-11-16 工作地点： 成都 信息来源： 四川大学 职位类型： 全职 专业标签： 电子信息 土木类 航空航天 测绘类 职位描述 大疆无人机-解决方案技术支持 发布企业：成都九江伟业科技有限公司 丨 发布时间：2026-11-16 职位信息 职位名称 类型 性质 最低学历要求 人数 薪资 大疆无人机-解决方案技术支持 售前技术|售后技术|技术支持|解决方案 全职 本科 5 4000-8000 发布时间 2026-11-16 15:16:44 职位有效期 2026-12-30 23:59:59 专业 土木工程；测试计量技术及仪器；航空宇航科学与技术；飞行器控制与信息工程 工作地址 四川省成都市金牛区 职位要求 1、持有CAAC中型无人机机长证；2、本科及以上学历，无人机、测绘"
         },
         {
-          "url_path": "/job-008-149-627.html",
-          "page_title": "江西省水利投资集团有限公司2027校园招聘_江西校园招聘",
-          "text_preview": "江西省水利投资集团有限公司2027校园招聘_江西校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 其它 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [江西]江西省水利投资集团有限公司 职位： 2027校园招聘 发布时间： 2026-11-13 工作地点： 其它 信息来源： 高校人才网 职位类型： 全职 专业标签： 水利类 轻工类 职位描述 江西省水利投资集团有限公司2027年校园招聘12名工作人员公告（第一批次） 共计9个岗位，招 12人 六险二金 租房补贴 高温补贴 通讯补贴 节日福利 定期/免费体检 带薪年假 生活补贴 专业培训 基本信息 发布时间：2026-11-13 截止日期：2026-12-08 学历要求：硕士研究生及以上 需求学科（供参考）： 环境科学与工程 , 材料科学与工程 , 化学工程与技术 , 电子科学与技术 , 信息与通信工程 , 人工智能 , 集成电路科学与工程 , 计算机科学与技术 , 能源动力 , 林学 , 软件工程 , 智能科学与技术 , 电气工程 , 控制科学与工程 , 水利工程 ,"
+          "url_path": "/job-008-150-591.html",
+          "page_title": "天津市武清区协和基础医学转化研究院招聘研发助理_天津校园招聘",
+          "text_preview": "天津市武清区协和基础医学转化研究院招聘研发助理_天津校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 天津 全职 > 职位详细 说明： 此信息由 南开大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 南开大学 核实，并请同时联系本站处理该转载信息。 [天津]天津市武清区协和基础医学转化研究院 职位： 研发助理 发布时间： 2026-11-16 工作地点： 天津 信息来源： 南开大学 职位类型： 全职 专业标签： 基础医学 生物科学 职位描述 研发助理 天津市武清区协和基础医学转化研究院 职位投递邮箱：pumcibms@ 工作地域：天津市 职位类别：科学研究人员 / 工程技术人员 学历要求：硕士研究生 招聘人数：3人 发布时间：2026-11-16 * 专业要求： 生物学，基础医学，生物科学等相关专业硕士及以上学历 * 职位描述： 岗位职责： 1. 精准记录实验数据、整理技术资料，按时输出实验报告、技术总结等成果文件，配合完成项目验收工作。 2. 负责大型仪器的管理、使用、功能开发，收集、整理相关仪器数据。 3. 协助高级研发人员申报项目，专利。 4. 协助实验室其他日常建设、运行工作。 5. 领导安排的其他任务 任"
         }
       ],
       "browser_render_attempts": 0,
@@ -2988,22 +2989,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 44,
-      "public_list_leads": 0,
+      "role_records": 32,
+      "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 44,
-      "announcement_records": 3,
+      "direct_detail_role_records": 31,
+      "announcement_records": 1,
       "portal_entries": 0,
       "sample_title": "招聘_应届生求职网",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "[江西]江西省水利投资集团有限公司",
-        "呼吸介入助理岗",
-        "阿里项目组结构设计",
-        "科研助理",
-        "研发专员",
-        "工艺管培生",
-        "行政专员"
+        "大疆无人机解决方案技术支持",
+        "研发助理",
+        "机械结构工程师",
+        "上位机软件工程师",
+        "机器人系统软件工程师",
+        "具身智能具身智能算法工程师",
+        "云端调度软件研发工程师"
       ],
       "role_field_samples": [
         {
@@ -3021,56 +3022,56 @@
           }
         },
         {
-          "title": "[江西]江西省水利投资集团有限公司",
-          "company": "江西省水利投资集团有限公司",
-          "city": "其它",
+          "title": "大疆无人机解决方案技术支持",
+          "company": "成都九江伟业科技有限公司",
+          "city": "成都",
           "salary": "",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-627.html",
+          "degree": "本科及以上",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-647.html",
           "field_lengths": {
-            "description": 2504,
-            "responsibilities": 0,
-            "requirements": 485,
-            "benefits": 266
+            "description": 583,
+            "responsibilities": 395,
+            "requirements": 0,
+            "benefits": 308
           }
         },
         {
-          "title": "呼吸介入助理岗",
-          "company": "南昌大学第一附属医院",
-          "city": "其它",
+          "title": "研发助理",
+          "company": "天津市武清区协和基础医学转化研究院",
+          "city": "天津",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-631.html",
+          "degree": "硕士及以上",
+          "source_url": "http://m.yingjiesheng.com/job-008-150-591.html",
           "field_lengths": {
-            "description": 163,
+            "description": 25,
+            "responsibilities": 137,
+            "requirements": 205,
+            "benefits": 0
+          }
+        },
+        {
+          "title": "机械结构工程师",
+          "company": "天津天羿科技有限公司",
+          "city": "天津",
+          "salary": "",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-600.html",
+          "field_lengths": {
+            "description": 1317,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "阿里项目组结构设计",
-          "company": "中国科学院高能物理研究所粒子天体物理中心",
-          "city": "北京",
+          "title": "上位机软件工程师",
+          "company": "天津天羿科技有限公司",
+          "city": "天津",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-609.html",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-600.html",
           "field_lengths": {
-            "description": 492,
-            "responsibilities": 83,
-            "requirements": 204,
-            "benefits": 0
-          }
-        },
-        {
-          "title": "科研助理",
-          "company": "中国科学院广州生物医药与健康研究院肺部疾病表观遗传组（吴凡|Thomas Braun）",
-          "city": "广州",
-          "salary": "25-40万元",
-          "degree": "硕士研究生及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-149-612.html",
-          "field_lengths": {
-            "description": 1152,
+            "description": 1317,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
@@ -3078,14 +3079,14 @@
         }
       ],
       "link_samples": [],
-      "last_error": "",
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "parser_modes": [
         "links",
         "tables",
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-16T01:00:15+00:00",
+      "last_run_at": "2026-11-16T11:11:36+00:00",
       "run_scope": "source_subset"
     },
     {
@@ -3897,14 +3898,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 10545,
-  "published_priority_candidates": 96,
-  "published_pending_review": 10449,
-  "records_added_this_run": 3,
-  "records_updated_this_run": 44,
+  "published_total_jobs": 10574,
+  "published_priority_candidates": 100,
+  "published_pending_review": 10474,
+  "records_added_this_run": 31,
+  "records_updated_this_run": 2,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 3,
+    "aggregator_non_detail_or_non_role_records_removed": 2,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3927,8 +3928,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 2040,
-    "fields_checked": 14280,
+    "rows": 2069,
+    "fields_checked": 14483,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3938,13 +3939,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 2040,
+    "company_fields_checked": 2069,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-16T07:08:30+00:00",
+  "quality_checked_at": "2026-11-16T11:45:23+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
