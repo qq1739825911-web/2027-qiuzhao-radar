@@ -2,31 +2,9 @@
   "run_date": "2026-11-16",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 32426,
+        "next_offset": 32626,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 620,
-  "records_found_this_run": 620,
-  "active_candidates": 42,
-  "pending_review": 578,
+  "records_found": 73,
+  "records_found_this_run": 73,
+  "active_candidates": 8,
+  "pending_review": 65,
   "results": [
     {
       "id": "boss",
@@ -2920,43 +2898,43 @@
       "id": "yingjiesheng",
       "company": "应届生求职网",
       "pages_visited": 600,
-      "records_found": 89,
-      "active_candidates": 13,
-      "pending_review": 76,
+      "records_found": 73,
+      "active_candidates": 8,
+      "pending_review": 65,
       "pages_attempted": 600,
       "pages_failed": 0,
-      "html_bytes": 16990871,
-      "links_seen": 65894,
-      "listing_url_candidates": 1941,
-      "listing_urls_visited": 355,
+      "html_bytes": 17429441,
+      "links_seen": 69559,
+      "listing_url_candidates": 2828,
+      "listing_urls_visited": 373,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 32426,
+      "listing_cursor_next": 32626,
       "listing_rotation_groups": {
-        "yjs-role-city": 57,
-        "yjs-major-city": 57,
-        "yjs-other": 1,
-        "yjs-search": 20,
+        "yjs-role-city": 56,
+        "yjs-major-city": 56,
+        "yjs-mobile": 11,
         "yjs-subject-city": 56,
-        "yjs-mobile": 9
+        "yjs-search": 20,
+        "yjs-other": 1
       },
-      "tables_seen": 17402,
-      "embedded_json_blocks": 1814,
+      "tables_seen": 18769,
+      "embedded_json_blocks": 1626,
       "role_like_links": 0,
-      "discovery_pages_queued": 891,
+      "discovery_pages_queued": 958,
       "listing_pages_queued": 230,
       "direct_detail_pages_visited": 219,
       "direct_detail_links_queued": 0,
       "direct_detail_links_skipped_access_limit": 0,
       "direct_detail_requests_attempted": 219,
-      "direct_detail_title_candidates": 124,
-      "direct_detail_title_rejected": 40,
-      "direct_detail_score_gate_recovered": 1,
+      "direct_detail_title_candidates": 102,
+      "direct_detail_title_rejected": 34,
+      "direct_detail_score_gate_recovered": 0,
       "direct_detail_score_gate_skipped": 0,
-      "direct_detail_role_rows_emitted": 84,
+      "direct_detail_role_rows_emitted": 68,
       "detail_access_limited": 0,
       "detail_access_limited_samples": [],
-      "public_detail_leads": 2,
+      "public_detail_leads": 1,
       "shared_bulletin_role_leads": 0,
       "direct_detail_links_deferred_by_budget": 0,
       "direct_detail_page_budget": 320,
@@ -2974,14 +2952,14 @@
           "text_preview": "招聘_招聘信息-应届生求职网 登录 职位描述 公司信息"
         },
         {
-          "url_path": "/job-008-150-641.html",
-          "page_title": "武昌首义学院信息科学与工程学院招聘实验技术人员_武汉校园招聘",
-          "text_preview": "武昌首义学院信息科学与工程学院招聘实验技术人员_武汉校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 武汉 全职 > 职位详细 说明： 此信息由 高校人才网 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 高校人才网 核实，并请同时联系本站处理该转载信息。 [武汉]武昌首义学院信息科学与工程学院 职位： 实验技术人员 发布时间： 2026-11-16 工作地点： 武汉 信息来源： 高校人才网 职位类型： 全职 专业标签： 电子信息 计算机 职位描述 武昌首义学院信息科学与工程学院2026年实验技术人员招聘启事 共计1个岗位，招 1人 基本信息 发布时间：2026-11-16 截止日期：详见正文 学历要求：本科及以上 需求学科（供参考）： 电子科学与技术 , 信息与通信工程 , 计算机科学与技术 展开 公告详情 因工作需要，信息科学与工程学院面向社会公开招聘实验技术人员1名（武昌校区），年龄 22-40 周岁。 一、 岗位职责 1.负责智能硬件、计算机软硬件维护，可独立完成人工智能、边缘 AI、鸿蒙智能硬件等设备调试运维； 2.做好实验教学、学科竞赛技术支撑，协助教师开展实验教学，解答学生技术问题； 3.承担实验室日常运"
+          "url_path": "/job-008-132-737.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:$Ȣڮ#*\u0002')\u0016Jj;\bp < 0O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$\u0004V\\Q8df\u0004UMg%\u0001*{;Z?>,퇹{_HF\u0018m?\u0000s W|\u0017KIÖ}ݺQmn}C\u00107\u0006! tVw}/m72YI?\u0006җ`tSn6J.\u000e{\u0000Js\u000fr\b+ۤ}|D9\\F \u000e j{88D go?11릟\u000fK Gc>6 NnT2\u0001 \u001bEn\"p\u0003DM'C>\u0002 R c:5'|믩-T =\u0015\u0000w g\u00043țo\u0002Z B,\u0003rq\u00162Z!ޫA Nu$M*+mF\u0016K%FU\u0005lra0C0wC9hp۠x. vpBQpQD\u0019rAzuo HӰkM\u001a\u000fP\u0012\u001a >f³yF\u001bz|,!Wu\b\" ǭI;pu{\u0015qCp;'vG \u001a jaMQ\u001a86A;z\u0019\u0015eכ\u001bPp`٩H\u0015+׭\u0018wj( i^ #X\u0019\u0017y\u001aX1*ǹ}:\\a^#\u0004'\u0010K\u0010 cBw\u0002^ 2j\u001a\u0019SC\u0006bY--(dK1WH!\u0006\u0015c7(T ҕ\u001ae/B5\u0014\u0004\u0016I\u0007n\u001bZfE1_\u0010#Ej/WG\u0010 OF`@ =o^+lr\u001a\u0019sG wr\\\\J\u0014$\u0018\u00165m ueO %\u0016'\u001b\u0010F\bBAٟ \u00111~l\bDWi >\u000e! о|ɼ|yy寧`˸ 9Ri\u0010fXA{r\u0000&\u0019Uyx\\G!p lN*Ξ8\u001a-}R^_+ʧ',R\u0006~8^3̙ "
         },
         {
-          "url_path": "/job-008-150-645.html",
-          "page_title": "成都九江伟业科技有限公司招聘大疆无人机B端政企客户经理_成都校园招聘",
-          "text_preview": "成都九江伟业科技有限公司招聘大疆无人机B端政企客户经理_成都校园招聘 应届生求职网 全职推荐 兼职实习 宣讲会 行业招聘 BBS论坛 北京 上海 广州 深圳 更多 首页 > 成都 全职 > 职位详细 说明： 此信息由 四川大学 审核并发布（ 查看原发布网址 ），应届生求职网转载该信息只是出于传递更多就业招聘信息，促进大学生就业的目的。如您对此转载信息有疑义，请与原信息发布者 四川大学 核实，并请同时联系本站处理该转载信息。 [成都]成都九江伟业科技有限公司 职位： 大疆无人机B端政企客户经理 发布时间： 2026-11-16 工作地点： 成都 信息来源： 四川大学 职位类型： 全职 专业标签： 工商管理 职位描述 大疆无人机-B端政企客户经理 发布企业：成都九江伟业科技有限公司 丨 发布时间：2026-11-16 职位信息 职位名称 类型 性质 最低学历要求 人数 薪资 大疆无人机-B端政企客户经理 市场营销|销售 全职 本科 5 4000-8000 发布时间 2026-11-16 15:18:12 职位有效期 2026-12-30 23:59:59 专业 不限 工作地址 四川省成都市金牛区 职位要求 1、本科及以上学历，有B端电销、客户外呼、政企对接相关经验优先2.、熟练基础Excel办公操作，学习能力强，目标感充足，具备基础抗压能力3.、踏实稳定、愿意主动学习，想深耕销售赛道、"
+          "url_path": "/job-008-132-748.html",
+          "page_title": "",
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$:$Ȣ J\"\"ɢb*0 9\u000e\u0012O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0003f\u0005\u0011LV5M\\\u0006h\u0019 [ AE\"\u001ac\u0000 7@wx^],\u0016/u'u\u000f[vFa QzC4\u0018t;(@\u000eY\u0002[}\u0014d%&\u001aH_ M(\u00158\u0003(}>\u000eχˍ\"LR:Kξroy711\u0013e>>p\u0019{:~\b\u0010-T\u001am'syaC>~{&rtRn\u001b_ MǬ~>DK/u/ \u0001|{+8Q\u0004ҿrzn\u0014Q\u000fl\u00135\u0002d\u000f\bPwsK}6cGϟ_ïPeT\u0003\u0000 &{H\u0011 o h-HyG\u0006f~Yaӟ'\u0019\u0004^\u0010>o\u000eδ < > \u0001֏oy \u000e?\"4\"uLKJh\u00152\u000e wK&\u0004 R\u0004\u0013X1|c}\u0015,7(> `/\u0000^\u000exa}XtXɔ < 5Su\u000ezg\u0006\u0017c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007(\u0014˪{ޟ\b\u0000pY03\u0006JZtwb9\u000ez*\\2Mo\u0017(d&F]id(^aI%F\u0006h nx\u000e:Q\u001b[0h\u0015x\u0007\u0005cv8Ց6Hn\u0019A[T.\u001aUyV\u0016˅ %:6@ m(= F9E\u0012\u0011g\u0006ֽYwS\"NÊG5uk < \u001aCIhx \u0019n\\\u0019#L' &בV h\bɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwbf\\i`\u0019Ǩx pz\u0010@.A24\u0004 zqȨ1kfL 5"
         }
       ],
       "browser_render_attempts": 0,
@@ -2990,22 +2968,22 @@
       "browser_rendered_body_chars": 0,
       "browser_rendered_links": 0,
       "browser_render_samples": [],
-      "role_records": 86,
-      "public_list_leads": 2,
+      "role_records": 69,
+      "public_list_leads": 1,
       "public_card_leads": 0,
-      "direct_detail_role_records": 84,
-      "announcement_records": 3,
+      "direct_detail_role_records": 68,
+      "announcement_records": 4,
       "portal_entries": 0,
-      "sample_title": "招聘_应届生求职网",
+      "sample_title": "ӢƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [
         "AIGC影视创意制作（校招）",
-        "大疆无人机B端政企客户经理",
-        "特别研究助理",
-        "跨境电商运营专员",
-        "销售工程师",
-        "嵌入式软件工程师",
-        "FPGA工程师",
-        "大疆无人机大客户销售"
+        "[上海]上海唐银投资发展有限公司",
+        "嵌入式开发工程师",
+        "硬件开发工程师",
+        "采购担当",
+        "IE工程师",
+        "面料研发工程师",
+        "小语种销售"
       ],
       "role_field_samples": [
         {
@@ -3023,59 +3001,59 @@
           }
         },
         {
-          "title": "大疆无人机B端政企客户经理",
-          "company": "成都九江伟业科技有限公司",
-          "city": "成都",
+          "title": "[上海]上海唐银投资发展有限公司",
+          "company": "上海唐银投资发展有限公司",
+          "city": "上海",
           "salary": "",
           "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-150-645.html",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-425.html",
           "field_lengths": {
-            "description": 384,
-            "responsibilities": 262,
-            "requirements": 0,
-            "benefits": 308
+            "description": 76,
+            "responsibilities": 103,
+            "requirements": 932,
+            "benefits": 95
           }
         },
         {
-          "title": "特别研究助理",
-          "company": "中国科学院大学公共政策与管理学院陈凯华教授课题组",
-          "city": "北京",
+          "title": "嵌入式开发工程师",
+          "company": "若提出需要长时间培训，签约前长时间实习、收取培训费、扣押证件等不合理要求时，应慎重考虑并及时向学院或就业指导中心反映。联系电话：60600324",
+          "city": "其它",
           "salary": "",
-          "degree": "博士",
-          "source_url": "https://m.yingjiesheng.com/job-008-150-649.html",
+          "degree": "硕士",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-428.html",
           "field_lengths": {
-            "description": 1032,
+            "description": 176,
             "responsibilities": 0,
             "requirements": 0,
             "benefits": 0
           }
         },
         {
-          "title": "跨境电商运营专员",
-          "company": "石家庄数英仪器有限公司 单位性质 其他企业 单位行业 制造业 标签 高新技术企业 隶属单位 下属单位 单位官微 单位图片 视频介绍 单位介绍",
-          "city": "石家庄",
+          "title": "硬件开发工程师",
+          "company": "若提出需要长时间培训，签约前长时间实习、收取培训费、扣押证件等不合理要求时，应慎重考虑并及时向学院或就业指导中心反映。联系电话：60600324",
+          "city": "其它",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-150-644.html",
+          "degree": "硕士",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-427.html",
           "field_lengths": {
-            "description": 638,
-            "responsibilities": 179,
+            "description": 176,
+            "responsibilities": 0,
             "requirements": 0,
-            "benefits": 62
+            "benefits": 0
           }
         },
         {
-          "title": "销售工程师",
-          "company": "石家庄数英仪器有限公司 单位性质 其他企业 单位行业 制造业 标签 高新技术企业 隶属单位 下属单位 单位官微 单位图片 视频介绍 单位介绍",
-          "city": "石家庄",
+          "title": "采购担当",
+          "company": "若提出需要长时间培训，签约前长时间实习、收取培训费、扣押证件等不合理要求时，应慎重考虑并及时向学院或就业指导中心反映。联系电话：60600324",
+          "city": "天津",
           "salary": "",
-          "degree": "本科及以上",
-          "source_url": "https://m.yingjiesheng.com/job-008-150-643.html",
+          "degree": "本科",
+          "source_url": "https://m.yingjiesheng.com/job-008-150-430.html",
           "field_lengths": {
-            "description": 616,
-            "responsibilities": 182,
+            "description": 199,
+            "responsibilities": 0,
             "requirements": 0,
-            "benefits": 62
+            "benefits": 0
           }
         }
       ],
@@ -3087,8 +3065,8 @@
         "embedded_json"
       ],
       "source_status": "ok",
-      "last_run_at": "2026-11-16T22:30:09+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-11-16T23:44:26+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3899,14 +3877,14 @@
   ],
   "policy": "Public official pages only; no login/CAPTCHA/private API/anti-bot bypass.",
   "granularity": "Only high-confidence concrete role records are active; program/announcement/navigation pages remain pending_review.",
-  "published_total_jobs": 10687,
-  "published_priority_candidates": 113,
-  "published_pending_review": 10574,
-  "records_added_this_run": 167,
-  "records_updated_this_run": 440,
+  "published_total_jobs": 10707,
+  "published_priority_candidates": 122,
+  "published_pending_review": 10585,
+  "records_added_this_run": 21,
+  "records_updated_this_run": 52,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
-    "aggregator_non_detail_or_non_role_records_removed": 3,
+    "aggregator_non_detail_or_non_role_records_removed": 1,
     "policy": "聚合来源的独立详情岗位必须有明确岗位名与岗位级详情链接；仅国聘/前程无忧公开职位列表中带真实企业名、具体岗位名和应届/校招证据的无详情卡片，才可作为低置信待核验线索。搜索入口、企业介绍、HR话术、行业目录不得作为岗位，公告与官方入口单独保留。BOSS公开卡片因详情访问受限单独统计，不能冒充已核实详情岗位。",
     "collector_title_rule": "is_specific_role_title",
     "sources": [
@@ -3929,8 +3907,8 @@
     ]
   },
   "yingjiesheng_text_cleanup": {
-    "rows": 2124,
-    "fields_checked": 14868,
+    "rows": 2144,
+    "fields_checked": 15008,
     "fields_changed": 0,
     "records_changed": 0,
     "json_markers_before": 0,
@@ -3940,13 +3918,13 @@
     "tail_noise_before": 0,
     "tail_noise_remaining": 0,
     "samples": [],
-    "company_fields_checked": 2124,
+    "company_fields_checked": 2144,
     "company_fields_changed": 0,
     "company_metadata_before": 0,
     "company_metadata_remaining": 0,
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-16T22:55:28+00:00",
+  "quality_checked_at": "2026-11-17T00:12:24+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
