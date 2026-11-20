@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-19T07:47:42+00:00",
+  "checked_at": "2026-11-20T07:39:37+00:00",
   "enabled_sources": 23,
   "reachable": 19,
   "warnings": 4,
@@ -43,8 +43,8 @@
       "id": "boc",
       "name": "中国银行",
       "url": "https://www.boc.cn/aboutboc/bi4/",
-      "status": "unavailable",
-      "detail": "<urlopen error [Errno 101] Network is unreachable>"
+      "status": "reachable",
+      "http_status": 200
     },
     {
       "id": "cib",
@@ -127,8 +127,8 @@
       "id": "baidu",
       "name": "百度",
       "url": "https://talent.baidu.com/jobs/list?projectType=3&recruitType=GRADUATE",
-      "status": "reachable",
-      "http_status": 200
+      "status": "unavailable",
+      "detail": "The read operation timed out"
     },
     {
       "id": "qiuzhaowang",
