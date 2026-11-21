@@ -1,1095 +1,733 @@
 {
-  "last_run_at": "2026-11-20T22:41:16+00:00",
-  "scope": "yingjiesheng",
-  "scope_source_ids": [
-    "yingjiesheng"
-  ],
-  "checked": 180,
-  "records_touched": 195,
-  "eligible_direct_links": 1963,
-  "link_alive": 180,
+  "last_run_at": "2026-11-21T20:11:56+00:00",
+  "scope": "__all__",
+  "scope_source_ids": [],
+  "checked": 120,
+  "records_touched": 122,
+  "eligible_direct_links": 4646,
+  "link_alive": 120,
   "missing_needs_recheck": 0,
   "unknown": 0,
   "closed_after_two_checks": 0,
-  "batch_size": 180,
+  "batch_size": 120,
   "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
   "checked_items": [
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-657.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-611.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-662.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-617.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-663.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-618.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-651.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-614.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-665.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-615.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-664.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-601.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-650.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-608.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-658.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-600.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-676.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-658.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-675.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-669.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-268.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-664.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-134-678.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-668.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-263.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-676.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-242.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-672.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-269.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-670.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-271.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-671.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-272.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-677.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-273.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-679.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-280.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-678.html",
       "result": "alive",
       "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-274.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-284.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-281.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-290.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-289.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-299.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-295.html",
-      "result": "alive",
-      "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-298.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-686.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-300.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-833.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-302.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-687.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-307.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-683.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-306.html",
+      "url": "https://m.yingjiesheng.com/job-008-114-685.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-308.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-043.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-310.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-573.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-312.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-575.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-309.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-620.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-311.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-577.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-317.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-590.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-315.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-582.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-316.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-576.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-319.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-623.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-321.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-624.html",
       "result": "alive",
       "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-326.html",
-      "result": "alive",
-      "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-327.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-631.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-329.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-632.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-330.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-625.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-313.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-627.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-331.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-626.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-334.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-633.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-332.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-635.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-318.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-686.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-335.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-990.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-336.html",
+      "url": "https://m.yingjiesheng.com/job-008-115-999.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-338.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-064.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-360.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-089.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-362.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-065.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-361.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-211.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-363.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-216.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-364.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-222.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-367.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-379.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-241.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-337.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-304.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-383.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-315.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-385.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-287.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-384.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-316.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-412.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-341.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-415.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-327.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-419.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-336.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-418.html",
+      "url": "https://m.yingjiesheng.com/job-008-123-594.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-425.html",
+      "url": "https://m.yingjiesheng.com/job-008-123-564.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-423.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-549.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-430.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-313.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-431.html",
+      "url": "https://m.yingjiesheng.com/job-008-116-320.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-435.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-550.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-432.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-588.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-438.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 2
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-414.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-586.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-441.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-587.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-439.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-592.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-581.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-589.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-585.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-593.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-582.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-594.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-583.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-595.html",
       "result": "alive",
       "http_status": 200,
       "records": 3
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-590.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-599.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-595.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-601.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-603.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-596.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-149-605.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-612.html",
       "result": "alive",
       "http_status": 200,
-      "records": 2
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-606.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 4
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-610.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-111-865.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-112-752.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-149-594.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-316.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-407.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-506.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-510.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-555.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-544.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-115-801.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-601.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-612.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-633.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-634.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-635.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-636.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-116-652.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-117-654.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-117-708.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-117-707.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-117-763.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-117-882.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-117-999.html",
-      "result": "alive",
-      "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-068.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-613.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-116-669.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-629.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-074.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-631.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-134.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-655.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-139.html",
+      "url": "https://m.yingjiesheng.com/job-008-124-658.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-154.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-116.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-155.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-117.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-067.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-168.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-156.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-167.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-160.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-174.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-161.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-176.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-073.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-177.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-162.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-192.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-178.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-178.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-179.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-193.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-182.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-367.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-183.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-370.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-187.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-173.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-188.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-461.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-189.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-465.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-192.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-464.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-168.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-467.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-196.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-466.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-201.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-468.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-204.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-469.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-207.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-470.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-209.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-497.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-212.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-498.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-214.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-506.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-216.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-463.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-213.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-521.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-195.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-594.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-217.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-523.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-227.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-261.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-263.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-230.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-211.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-264.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-269.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-273.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-294.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-311.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-310.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-313.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-354.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-371.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-385.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-386.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-388.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-404.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-394.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-395.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-406.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-408.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-412.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-441.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 1
-    },
-    {
-      "url": "https://m.yingjiesheng.com/job-008-118-447.html",
-      "result": "alive",
-      "http_status": 200,
-      "records": 3
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-476.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-598.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-118-825.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-601.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-119-193.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-603.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-067.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-605.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-152.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-604.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-211.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-606.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-213.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-614.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-214.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-615.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-215.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-617.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-210.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-600.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
     },
     {
-      "url": "https://m.yingjiesheng.com/job-008-120-212.html",
+      "url": "https://m.yingjiesheng.com/job-008-127-618.html",
       "result": "alive",
       "http_status": 200,
       "records": 1
@@ -2195,735 +1833,735 @@
       ]
     },
     "__all__": {
-      "last_run_at": "2026-11-19T21:21:01+00:00",
+      "last_run_at": "2026-11-21T20:11:56+00:00",
       "scope": "__all__",
       "scope_source_ids": [],
       "checked": 120,
-      "records_touched": 176,
-      "eligible_direct_links": 4622,
-      "link_alive": 94,
+      "records_touched": 122,
+      "eligible_direct_links": 4646,
+      "link_alive": 120,
       "missing_needs_recheck": 0,
-      "unknown": 26,
+      "unknown": 0,
       "closed_after_two_checks": 0,
       "batch_size": 120,
       "note": "链接可访问仅代表页面可打开，不等于岗位仍在招或已满足2027届条件；同一链接下的多个岗位共用一次检查结果。",
       "checked_items": [
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-862.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-611.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-866.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-617.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-869.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-618.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-870.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-614.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-873.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-615.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-882.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-601.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-875.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-608.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-874.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-600.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-861.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-658.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-894.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-669.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-860.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-111-871.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-111-867.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-112-714.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-664.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-112-753.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-668.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-111-883.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-111-884.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-112-938.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-676.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-111-885.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 2
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-111-886.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-009.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-672.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-371.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-670.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-370.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-671.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-399.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-677.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-400.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-679.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-112-796.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-678.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-112-572.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-409.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-686.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-116-638.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-833.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-113-422.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-687.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-116-639.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-683.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-116-646.html",
+          "url": "https://m.yingjiesheng.com/job-008-114-685.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-116-637.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-043.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-116-648.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-573.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-806.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-575.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-810.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-620.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-811.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-577.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-112-676.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-813.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-590.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-113-407.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-113-419.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-116-640.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-816.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-582.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-116-641.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-116-643.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-138-819.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-576.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-824.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-623.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-872.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-624.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-116-649.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-899.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-631.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-901.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-632.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-885.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-625.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-906.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-627.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-247.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-626.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-248.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-633.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-900.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-635.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-250.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-686.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-251.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-990.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-252.html",
+          "url": "https://m.yingjiesheng.com/job-008-115-999.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-253.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-064.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-255.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-089.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-257.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-065.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-260.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-211.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-138-812.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-261.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-216.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-263.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-222.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-264.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-241.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-329.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-304.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-138-814.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-140-336.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-315.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-352.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-287.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-355.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-316.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-138-817.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-140-256.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-262.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-140-364.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-341.html",
           "result": "alive",
           "http_status": 200,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-140-265.html",
-          "result": "unknown",
-          "http_status": 0,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-366.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-327.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-367.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-336.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-330.html",
-          "result": "unknown",
-          "http_status": 0,
+          "url": "https://m.yingjiesheng.com/job-008-123-594.html",
+          "result": "alive",
+          "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-368.html",
+          "url": "https://m.yingjiesheng.com/job-008-123-564.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-348.html",
-          "result": "unknown",
-          "http_status": 0,
+          "url": "https://m.yingjiesheng.com/job-008-124-549.html",
+          "result": "alive",
+          "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-370.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-313.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-141-180.html",
+          "url": "https://m.yingjiesheng.com/job-008-116-320.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-141-179.html",
+          "url": "https://m.yingjiesheng.com/job-008-124-550.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-141-181.html",
+          "url": "https://m.yingjiesheng.com/job-008-124-588.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-354.html",
-          "result": "unknown",
-          "http_status": 0,
+          "url": "https://m.yingjiesheng.com/job-008-124-586.html",
+          "result": "alive",
+          "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-141-183.html",
+          "url": "https://m.yingjiesheng.com/job-008-124-587.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-141-182.html",
+          "url": "https://m.yingjiesheng.com/job-008-124-592.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-141-199.html",
+          "url": "https://m.yingjiesheng.com/job-008-124-589.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-34425",
+          "url": "https://m.yingjiesheng.com/job-008-124-593.html",
           "result": "alive",
           "http_status": 200,
-          "records": 6
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-34457",
+          "url": "https://m.yingjiesheng.com/job-008-124-594.html",
           "result": "alive",
           "http_status": 200,
-          "records": 2
+          "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-34462",
+          "url": "https://m.yingjiesheng.com/job-008-124-595.html",
           "result": "alive",
           "http_status": 200,
           "records": 3
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-34451",
-          "result": "alive",
-          "http_status": 200,
-          "records": 4
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-34452",
-          "result": "alive",
-          "http_status": 200,
-          "records": 11
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-34494",
-          "result": "alive",
-          "http_status": 200,
-          "records": 6
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-34498",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-34488",
-          "result": "alive",
-          "http_status": 200,
-          "records": 2
-        },
-        {
-          "url": "https://qiuzhaowang.com/jobs/position-34495",
-          "result": "alive",
-          "http_status": 200,
-          "records": 7
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-141-198.html",
+          "url": "https://m.yingjiesheng.com/job-008-124-599.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://m.yingjiesheng.com/job-008-140-362.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://m.yingjiesheng.com/job-008-140-363.html",
-          "result": "unknown",
-          "http_status": 0,
-          "records": 1
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/198548?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-601.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/135128?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-596.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/111429?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-612.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/309905?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-613.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/364066?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-629.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/412845?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-631.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/394289?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-655.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/420272?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-124-658.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-29893",
+          "url": "https://m.yingjiesheng.com/job-008-127-116.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-29901",
+          "url": "https://m.yingjiesheng.com/job-008-127-117.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-29898",
-          "result": "alive",
-          "http_status": 200,
-          "records": 8
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/460533?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-127-168.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://qiuzhaowang.com/jobs/position-29905",
-          "result": "alive",
-          "http_status": 200,
-          "records": 15
-        },
-        {
-          "url": "https://www.nowcoder.com/jobs/detail/474386?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-127-167.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/444947?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-127-174.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/99947?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-127-176.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/99948?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-127-177.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
         },
         {
-          "url": "https://www.nowcoder.com/jobs/detail/84031?channel=npJobTab&deliverSource=1",
+          "url": "https://m.yingjiesheng.com/job-008-127-192.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-178.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-193.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-367.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-370.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-173.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-461.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-465.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-464.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-467.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-466.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-468.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-469.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-470.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-497.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-498.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-506.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-463.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-521.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-594.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-523.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-598.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-601.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-603.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-605.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-604.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-606.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-614.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-615.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-617.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-600.html",
+          "result": "alive",
+          "http_status": 200,
+          "records": 1
+        },
+        {
+          "url": "https://m.yingjiesheng.com/job-008-127-618.html",
           "result": "alive",
           "http_status": 200,
           "records": 1
