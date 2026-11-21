@@ -2,31 +2,9 @@
   "run_date": "2026-11-21",
   "collector_version": "5.21",
   "enabled_sources": 23,
-  "collected_sources": 23,
-  "run_scope": "all_enabled_sources",
+  "collected_sources": 1,
+  "run_scope": "source_subset",
   "run_scope_source_ids": [
-    "51job",
-    "alibaba",
-    "baidu",
-    "boc",
-    "boss",
-    "bytedance",
-    "ccb",
-    "cib",
-    "citic",
-    "cmb",
-    "huawei",
-    "icbc",
-    "iguopin",
-    "meituan",
-    "nio",
-    "nowcoder",
-    "pdd",
-    "psbc",
-    "qiuzhaowang",
-    "tencent",
-    "xiaomi",
-    "xiaopeng",
     "yingjiesheng"
   ],
   "pagination_state": {
@@ -61,7 +39,7 @@
       },
       "yingjiesheng": {
         "known_public_list_urls": 3000,
-        "next_offset": 34026,
+        "next_offset": 34226,
         "batch_size": 200
       },
       "51job": {
@@ -81,10 +59,10 @@
       }
     }
   },
-  "records_found": 540,
-  "records_found_this_run": 540,
-  "active_candidates": 17,
-  "pending_review": 523,
+  "records_found": 0,
+  "records_found_this_run": 0,
+  "active_candidates": 0,
+  "pending_review": 0,
   "results": [
     {
       "id": "boss",
@@ -3013,25 +2991,25 @@
       "records_found": 0,
       "active_candidates": 0,
       "pending_review": 0,
-      "pages_attempted": 602,
-      "pages_failed": 2,
-      "html_bytes": 18423127,
-      "links_seen": 76331,
-      "listing_url_candidates": 2953,
-      "listing_urls_visited": 307,
+      "pages_attempted": 601,
+      "pages_failed": 1,
+      "html_bytes": 16155744,
+      "links_seen": 59017,
+      "listing_url_candidates": 1862,
+      "listing_urls_visited": 312,
       "listing_pool_size": 3000,
       "stale_cycle_urls_pruned": 0,
-      "listing_cursor_next": 34026,
+      "listing_cursor_next": 34226,
       "listing_rotation_groups": {
-        "yjs-role-city": 60,
-        "yjs-major-city": 59,
-        "yjs-subject-city": 59,
-        "yjs-search": 22
+        "yjs-subject-city": 60,
+        "yjs-major-city": 60,
+        "yjs-role-city": 59,
+        "yjs-search": 21
       },
-      "tables_seen": 22251,
-      "embedded_json_blocks": 1050,
+      "tables_seen": 18277,
+      "embedded_json_blocks": 909,
       "role_like_links": 0,
-      "discovery_pages_queued": 766,
+      "discovery_pages_queued": 765,
       "listing_pages_queued": 230,
       "direct_detail_pages_visited": 224,
       "direct_detail_links_queued": 0,
@@ -3054,22 +3032,22 @@
         {
           "url_path": "/jobdetail/170935981",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ ٜH ﰂ$8*,czc +:b 2O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ爢hYx ,*\u0016qz0.Ϛd2exO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015"
         },
         {
           "url_path": "/jobdetail/173508261",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ < ؞Y'%ڶ2m-ɞb\u000e o\u000e2O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ爢$: or칢\b( y\u0002O > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012kA "
         },
         {
-          "url_path": "/job-008-153-921.html",
+          "url_path": "/job-008-152-504.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_Y{\u0007 kÎ\u000fI$ޣH\u0012H\b\u0010ao >ޡ%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ < ǉ%lɲI\u0005y)%Ɏ:r1\u0001je \u001b \u0013؇K~X 6$]{0? 3ڻ|Ln 0jq\u0004`{pP5 K\u0012Ms]Q8A\u0016\u0005\u0011LV5M\\\u0006h\u0019 [ AE\"\u001ac\u0000 7@wx^],\u0016/u'u\u000f[vFa QzC4\u0018t;(@\u000eY\u0002[}\u0014d%&\u001aH_ M(\u00158\u0003(}>\u000eχˍ\"LR:Kξroy711\u0013e>>p\u0019{:~\b\u0010-T\u001am'syaC>~{&rtRn\u001b_ MǬ~>DK/u/ \u0001|{+8Q\u0004ҿrzn\u0014Q\u000fl\u00135\u0002d\u000f\bPwsK}6cGϟ_ïPeT\u0003\u0000 &{H\u0011 o h-HyG\u0006f~Yaӟ'\u0019\u0004^\u0010>o\u000eδ < > \u0001֏oy \u000e?\"4\"uLKJh\u00152\u000e wK&\u0004 R\u0004\u0013X1|c}\u0015,7(> `/\u0000^\u000exa}XtXɔ < 5Su\u000ezg\u0006\u0017c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007(\u0014˪{ޟ\b\u0000pY03\u0006JZtwb9\u000ez*\\2Mo\u0017(d&F]id(^aI%F\u0006h nx\u000e:Q\u001b[0h\u0015x\u0007\u0005cv8Ց6Hn\u0019A[T.\u001aUyV\u0016˅ %:6@ m(= F9E\u0012\u0011g\u0006ֽYwS\"NÊG5uk < \u001aCIhx \u0019n\\\u0019#L' &בV h\bɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwbf\\i`\u0019Ǩx pz\u0010@.A24\u0004 zqȨ1kf"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ爢K* * 'J*I < #1#\bhzIpËO > V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J "
         },
         {
-          "url_path": "/job-008-153-917.html",
+          "url_path": "/job-008-152-074.html",
           "page_title": "",
-          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUC\u0006h\u0019 [ AE\"\u001ac\u0000 7@wx^],\u0016/u'u\u000f[vFa QzC4\u0018t;(@\u000eY\u0002[}\u0014d%&\u001aH_ M(\u00158\u0003(}>\u000eχˍ\"LR:Kξroy711\u0013e>>p\u0019{:~\b\u0010-T\u001am'syaC>~{&rtRn\u001b_ MǬ~>DK/u/ \u0001|{+8Q\u0004ҿrzn\u0014Q\u000fl\u00135\u0002d\u000f\bPwsK}6cGϟ_ïPeT\u0003\u0000 &{H\u0011 o h-HyG\u0006f~Yaӟ'\u0019\u0004^\u0010>o\u000eδ < > \u0001֏oy \u000e?\"4\"uLKJh\u00152\u000e wK&\u0004 R\u0004\u0013X1|c}\u0015,7(> `/\u0000^\u000exa}XtXɔ < 5Su\u000ezg\u0006\u0017c\\ȿ < Д\u001az Hǧ\u00133 &B1,N\u001a\u0007(\u0014˪{ޟ\b\u0000pY03\u0006JZtwb9\u000ez*\\2Mo\u0017(d&F]id(^aI%F\u0006h nx\u000e:Q\u001b[0h\u0015x\u0007\u0005cv8Ց6Hn\u0019A[T.\u001aUyV\u0016˅ %:6@ m(= F9E\u0012\u0011g\u0006ֽYwS\"NÊG5uk < \u001aCIhx \u0019n\\\u0019#L' &בV h\bɖ7E jht\u0006aUg_W ]on@QÁf\"W\\b < ->zyQ.\bwbf\\i`\u0019Ǩx pz\u0010@.A24\u0004 zqȨ1kfL 5\u001beжd˓- 2\\\"\u0018TݠPvJJWj"
+          "text_preview": "\b\u0000\u0000\u0000\u0000\u0000\u0004\u0003|\u0007_=w\u0007\u0016(\u0007ϲ{H\"'\u0011\u0004{\"I !@\u0004Uu\u0019 s%uWW=\u0015:H \\ܭFe`~?\\|7YC߼|\u0006[_? c3`Fs6$ڜ\"+i V 8}aG5?ظ\u00070{ < O\u0000 9L`\u000e\u0007w UYӱ$Ѵ8׵\u0019\u0013dQ\u0019dUYeގO︵\u000f`a W$R鯑{8F\u000fq\u00034\u0015bRwR_nnT\u001b[\u00107DA{\u0002~ %`gKMLVbϯ X/ݔ_C~>|ܸ)$)3+6iw3 3Q{\u000e \u000e\u000er;O < 2n\u001894\u000f|Wn\"\u000fL'妿ѴOO}̺CtRq\u0011 翻 \u001bL(믯,GF\b 6QS/I\u0000u=wn ?f|%?kj UGkO\u0005;\u0000`t\u0019 \u001b2O\u0004w\u0004llf\u0005\u00196\u0019w/_Ap;\u0005Q iLC@3 }w;?,L߿_\u0019` o#B{x/RZ!nqGz\u0014lB!O0{ ǿ>fWrKXl}3@\u000f\u0002 ?뀋' xڇ{EL\u0013]\u0013 < :j[/}wfp8ƅӠ Mǁt|>1`.\u0014\u001bqB\u0019@jo^ P 3c5Kw'㠧%&zRY\u000fMFjBiԕzNR,\u0015H)Xb\u0004iP6=\\ \u0005Va~P0fS kJx\u0011ER Qgke\u0001[\\X+Pc3 \u0010y\u000e\u001a6(3\u0010n3\\(\u0011qm^lݛuG: < %4xZSC1l^. KU1¨tqk\u000ey lk\u0005m\u0010Ή\u0011 hlyS&N o\u0010^uu`\u0006\u0014u= \u0018nlv*zuk.ݲ\u001aG\u0017p'mE\u0006qqn_\u000eWخ/;\b D\u0012(CCН@\u0017\u001acFkPXV m J < s\u0015{,\u0012kA j\u00074?tF zP/.5"
         }
       ],
       "browser_render_attempts": 0,
@@ -3084,7 +3062,7 @@
       "direct_detail_role_records": 0,
       "announcement_records": 0,
       "portal_entries": 0,
-      "sample_title": "应届生求职APP –大学生求职app官方下载",
+      "sample_title": "ƸϢ|ѧְ|ҹ_Ӧְ",
       "role_title_samples": [],
       "role_field_samples": [],
       "link_samples": [],
@@ -3095,8 +3073,8 @@
         "embedded_json"
       ],
       "source_status": "listing_only_no_job_details",
-      "last_run_at": "2026-11-21T19:46:22+00:00",
-      "run_scope": "all_enabled_sources"
+      "last_run_at": "2026-11-21T20:53:46+00:00",
+      "run_scope": "source_subset"
     },
     {
       "id": "cmb",
@@ -3910,8 +3888,8 @@
   "published_total_jobs": 11007,
   "published_priority_candidates": 88,
   "published_pending_review": 10919,
-  "records_added_this_run": 173,
-  "records_updated_this_run": 353,
+  "records_added_this_run": 0,
+  "records_updated_this_run": 0,
   "quality_gate_version": "2.3",
   "source_quality_filters": {
     "aggregator_non_detail_or_non_role_records_removed": 0,
@@ -3955,6 +3933,6 @@
     "title_prefix_before": 0,
     "title_prefix_remaining": 0
   },
-  "quality_checked_at": "2026-11-21T20:12:12+00:00",
+  "quality_checked_at": "2026-11-21T21:14:24+00:00",
   "review_bucket_note": "可优先核验仅表示岗位详情链接近期可访问、职位名和2027届证据满足规则；不代表雇主确认仍在招聘。"
 }
