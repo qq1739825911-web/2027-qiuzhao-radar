@@ -1,5 +1,5 @@
 {
-  "cursor": 1953,
+  "cursor": 2073,
   "failures": {
     "auto-669e5aab3a599d5d": 0,
     "auto-fc4dab695439b9fd": 0,
@@ -12152,11 +12152,17 @@
     "auto-b1ecf4ebf44b7135": 0,
     "auto-dff594f2cb6fb595": 0,
     "auto-cf59bb76662c092c": 0,
-    "auto-50e6827f82526c49": 0
+    "auto-50e6827f82526c49": 0,
+    "auto-bfb952550ae187ca": 0,
+    "auto-666b29230ede896b": 0,
+    "auto-bc10368099cd8cad": 0,
+    "auto-b6ac33a3b631ef41": 0,
+    "auto-057ce448dc9ae323": 0,
+    "auto-171f8b147e393086": 0
   },
-  "last_run_at": "2026-11-22T20:16:35+00:00",
+  "last_run_at": "2026-11-24T00:49:46+00:00",
   "last_batch_size": 120,
-  "eligible_count": 4663,
+  "eligible_count": 4688,
   "last_missing_at": {
     "xiaomi-2027-embedded-software-7670893035149052211": "2026-11-08T22:54:54+00:00",
     "xiaomi-2027-ai-software-7670893035119249690": "2026-11-08T22:54:54+00:00",
